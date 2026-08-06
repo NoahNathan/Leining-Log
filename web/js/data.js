@@ -75,41 +75,16 @@ async function getParshaIndex() {
   return parshaIndex;
 }
 
-// Full detail bundle for a given parsha id (individual or combined).
+// Full detail bundle for a given parsha id (individual or combined). Combined
+// (double) parshiot are scored directly against their own combined-reading
+// aliyah divisions in difficulty-scores.json -- not averaged from components.
 export async function getParshaDetail(id) {
   const idx = await getParshaIndex();
   const parsha = idx.byId.get(id);
   if (!parsha) return null;
   const haftarah = idx.haftarahById.get(id) || null;
-  let difficulty = idx.difficultyById.get(id) || null;
-  let difficultyIsAverage = false;
-  if (!difficulty && parsha.combinedEntry) {
-    // combined weeks aren't individually scored -- average the two components
-    const parts = id.split('-');
-    const d1 = idx.difficultyById.get(parts[0]);
-    const d2 = idx.difficultyById.get(parts.slice(1).join('-'));
-    if (d1 && d2) {
-      difficulty = {
-        parshaId: id,
-        parshaScores: avgScores([d1.parshaScores, d2.parshaScores]),
-        parshaFinalScore: round1((d1.parshaFinalScore + d2.parshaFinalScore) / 2),
-        aliyot: null,
-        componentScores: [d1, d2],
-      };
-      difficultyIsAverage = true;
-    }
-  }
-  return { parsha, haftarah, difficulty, difficultyIsAverage };
-}
-
-function avgScores(list) {
-  const keys = Object.keys(list[0]);
-  const out = {};
-  for (const k of keys) out[k] = round1(list.reduce((s, o) => s + o[k], 0) / list.length);
-  return out;
-}
-function round1(n) {
-  return Math.round(n * 10) / 10;
+  const difficulty = idx.difficultyById.get(id) || null;
+  return { parsha, haftarah, difficulty };
 }
 
 export async function listAllParshiotForSearch() {

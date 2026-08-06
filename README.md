@@ -37,7 +37,8 @@ JS + CSS, no framework, no bundler) that reads straight from `/data` via
 | `chagim.json` | Torah + maftir + haftarah readings for every Yom Tov day, fast day, Rosh Chodesh, and special Shabbat (Shekalim/Zachor/Parah/HaChodesh/Shuva/etc.), for both `diaspora` and `israel`, with nusach splits and `specialTrope` notes. |
 | `megillot.json` | The Five Megillot (Shir HaShirim, Rut, Eicha, Kohelet, Esther) and when/how each is customarily read. Hand-authored, not from the Hebcal data. |
 | `difficulty-rubric.md` | The methodology behind the difficulty scores -- read this before trusting `difficulty-scores.json` at face value. |
-| `difficulty-scores.json` | Every aliyah and every parsha scored 0-10 on length, vocabulary, trope, repetition, and hidden challenges, plus a final average score. |
+| `word-difficulty.json` | Per-aliyah vocabulary statistics computed directly from the Masoretic Torah text: word rarity (how often each word occurs elsewhere in the Torah) and pronunciation complexity, plus example rare/hard words per aliyah. Feeds into `difficulty-scores.json`'s vocabulary criterion. |
+| `difficulty-scores.json` | Every aliyah and every parsha -- **including the 7 combined/double parshiot**, scored directly against their own combined-reading aliyot, not averaged -- scored 0-10 on length, vocabulary, trope, repetition, and hidden challenges, plus a length-weighted final score. |
 | `calendar-100y/` | Every Shabbat parsha reading and every chag/fast/Rosh Chodesh reading, 2026-2126, for both regions -- ~21,800 rows split into 10 decade files plus an `index.json`. Rows reference the files above by id rather than duplicating aliyah data. |
 
 ## Where the data comes from
@@ -66,10 +67,12 @@ npm run gen:all
 
 This rebuilds everything in `/data` from scratch, in dependency order
 (`gen:parshiot` → `gen:haftarot` → `gen:chagim` → `gen:annotate` →
-`gen:difficulty` → `gen:calendar`). Re-run it whenever the Hebcal libraries
-are upgraded, or edit the individual `gen_*.mjs` scripts to extend/adjust
-the data (e.g. push the calendar range past 2126, add more `specialTrope`
-or difficulty overrides).
+`gen:wordstats` → `gen:difficulty` → `gen:calendar`). Re-run it whenever the
+Hebcal libraries are upgraded, or edit the individual `gen_*.mjs` scripts to
+extend/adjust the data (e.g. push the calendar range past 2126, add more
+`specialTrope` or difficulty overrides). `gen:wordstats` loads the full
+Torah text via the `@shafeh/tanach` package purely to compute word-frequency
+statistics locally -- the text itself isn't redistributed in `/data`.
 
 **`data/difficulty-rubric.md` is hand-written, not generated** -- `gen:all`
 never creates it. If you ever wipe `/data` and rebuild, restore that one

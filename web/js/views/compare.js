@@ -48,7 +48,10 @@ export async function renderCompare(container) {
     sorted.forEach((p, i) => {
       const row = el('tr', { class: 'compare-row', onclick: () => toggleExpand(p.parshaId, tbody, row) });
       row.append(el('td', { class: 'muted' }, String(i + 1)));
-      row.append(el('td', { class: 'parsha-cell' }, displayParshaName(p.parshaId)));
+      row.append(el('td', { class: 'parsha-cell' }, [
+        displayParshaName(p.parshaId),
+        p.combined ? el('span', { class: 'tag combined-tag' }, 'combined') : null,
+      ]));
       for (const c of COLUMNS) {
         const val = c.path(p);
         row.append(el('td', {}, el('span', {
@@ -125,7 +128,10 @@ function buildSideBySide(all) {
 
 function sbsColumn(p) {
   const col = el('div', { class: 'sbs-col' });
-  col.append(el('h4', {}, displayParshaName(p.parshaId)));
+  col.append(el('h4', {}, [
+    displayParshaName(p.parshaId),
+    p.combined ? el('span', { class: 'tag combined-tag' }, 'combined') : null,
+  ]));
   col.append(el('div', {
     class: 'badge badge-lg',
     style: `color:${scoreColor(p.parshaFinalScore)}; background:${scoreColorBg(p.parshaFinalScore)}; border-color:${scoreColor(p.parshaFinalScore)}33`,

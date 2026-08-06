@@ -328,6 +328,7 @@ table { width: 100%; border-collapse: collapse; }
   font-weight: 700;
 }
 .tag-today { background: var(--accent); color: white; }
+.combined-tag { margin-left: 8px; font-size: 0.68rem; padding: 2px 8px; vertical-align: middle; }
 
 .plain-list { margin: 0; padding-left: 18px; font-size: 0.9rem; }
 .plain-list li { margin-bottom: 4px; }

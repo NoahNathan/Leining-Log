@@ -69,7 +69,7 @@ function ordinal(n) {
   return n + (s[(v - 20) % 10] || s[v] || s[0]);
 }
 
-export function renderParshaDetail({ parsha, haftarah, difficulty, difficultyIsAverage }, opts = {}) {
+export function renderParshaDetail({ parsha, haftarah, difficulty }, opts = {}) {
   const card = el('div', { class: 'card detail-card' });
 
   const header = el('div', { class: 'detail-header' }, [
@@ -81,7 +81,7 @@ export function renderParshaDetail({ parsha, haftarah, difficulty, difficultyIsA
     ]),
     difficulty ? el('div', { class: 'header-score' }, [
       scoreBadge(difficulty.parshaFinalScore, { size: 'lg' }),
-      el('div', { class: 'muted small' }, difficultyIsAverage ? 'averaged from component parshiot' : 'overall difficulty'),
+      el('div', { class: 'muted small' }, 'overall difficulty'),
     ]) : null,
   ]);
   card.append(header);

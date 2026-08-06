@@ -69,7 +69,12 @@ This rebuilds everything in `/data` from scratch, in dependency order
 `gen:difficulty` → `gen:calendar`). Re-run it whenever the Hebcal libraries
 are upgraded, or edit the individual `gen_*.mjs` scripts to extend/adjust
 the data (e.g. push the calendar range past 2126, add more `specialTrope`
-overrides, or retune the difficulty rubric weights).
+or difficulty overrides).
+
+**`data/difficulty-rubric.md` is hand-written, not generated** -- `gen:all`
+never creates it. If you ever wipe `/data` and rebuild, restore that one
+file from git (or rewrite it) separately; don't assume `gen:all` alone
+reconstructs the full directory.
 
 ## Nusach coverage
 

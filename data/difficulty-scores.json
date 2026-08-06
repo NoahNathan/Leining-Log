@@ -1,7 +1,7 @@
 {
-  "description": "Difficulty ratings (0-10 per criterion, plus a simple-average final score) for every aliyah and for each parsha as a whole. Generated with a transparent rule-based methodology, NOT a survey of actual leining outcomes -- see difficulty-rubric.md for the full methodology, the content-profile tags used, and honest caveats about where this should be refined (e.g. with real chazzanim feedback or app usage data).",
+  "description": "Difficulty ratings (0-10 per criterion, plus a length-weighted final score) for every aliyah and for each parsha as a whole. Generated with a transparent rule-based methodology, NOT a survey of actual leining outcomes -- see difficulty-rubric.md for the full methodology (including the length weighting and the 'known leining' familiarity discount), the content-profile tags used, and honest caveats about where this should be refined (e.g. with real chazzanim feedback or app usage data).",
   "methodology": "difficulty-rubric.md",
-  "generatedAt": "2026-08-06T01:03:30.762Z",
+  "generatedAt": "2026-08-06T01:55:49.461Z",
   "parshiot": [
     {
       "parshaId": "Pinchas",
@@ -32,7 +32,7 @@
             "repetition": 7,
             "hiddenChallenges": 5
           },
-          "finalScore": 7
+          "finalScore": 8
         },
         {
           "aliyah": 3,
@@ -44,7 +44,7 @@
             "repetition": 7,
             "hiddenChallenges": 5
           },
-          "finalScore": 6
+          "finalScore": 7
         },
         {
           "aliyah": 4,
@@ -56,7 +56,7 @@
             "repetition": 7,
             "hiddenChallenges": 5
           },
-          "finalScore": 6
+          "finalScore": 7
         },
         {
           "aliyah": 5,
@@ -80,7 +80,7 @@
             "repetition": 7,
             "hiddenChallenges": 5
           },
-          "finalScore": 7
+          "finalScore": 8
         },
         {
           "aliyah": 7,
@@ -92,7 +92,7 @@
             "repetition": 7,
             "hiddenChallenges": 5
           },
-          "finalScore": 7
+          "finalScore": 8
         }
       ],
       "parshaScores": {
@@ -102,7 +102,7 @@
         "repetition": 7,
         "hiddenChallenges": 5
       },
-      "parshaFinalScore": 6.4,
+      "parshaFinalScore": 7.1,
       "hardestAliyah": 2,
       "easiestAliyah": 1
     },
@@ -123,7 +123,7 @@
             "repetition": 7,
             "hiddenChallenges": 5
           },
-          "finalScore": 6
+          "finalScore": 7
         },
         {
           "aliyah": 2,
@@ -135,7 +135,7 @@
             "repetition": 7,
             "hiddenChallenges": 5
           },
-          "finalScore": 6
+          "finalScore": 5
         },
         {
           "aliyah": 3,
@@ -154,13 +154,14 @@
           "verses": 48,
           "scores": {
             "length": 10,
-            "vocabulary": 7,
+            "vocabulary": 6,
             "trope": 5,
-            "repetition": 10,
-            "hiddenChallenges": 5
+            "repetition": 7,
+            "hiddenChallenges": 4
           },
-          "finalScore": 7,
-          "note": "Start of the 12 nearly-identical Nesiim offerings (Num 7) -- easy to lose your place"
+          "finalScore": 8,
+          "note": "Ends with Birkat Kohanim (Num 6:24-26), recited daily by kohanim and heard weekly by the whole congregation during duchening -- familiar, though it is only the tail of a long aliyah otherwise dominated by the (unfamiliar) sotah and nazir laws.",
+          "wellKnown": true
         },
         {
           "aliyah": 5,
@@ -172,8 +173,8 @@
             "repetition": 10,
             "hiddenChallenges": 5
           },
-          "finalScore": 7,
-          "note": "Nesiim offerings continue (Num 7) -- near-identical repeated text"
+          "finalScore": 8,
+          "note": "Start of the 12 nearly-identical Nesiim offerings (Num 7:1-41) -- easy to lose your place"
         },
         {
           "aliyah": 6,
@@ -185,8 +186,8 @@
             "repetition": 10,
             "hiddenChallenges": 5
           },
-          "finalScore": 7,
-          "note": "Nesiim offerings continue (Num 7) -- near-identical repeated text"
+          "finalScore": 8,
+          "note": "Nesiim offerings continue (Num 7:42-71) -- near-identical repeated text"
         },
         {
           "aliyah": 7,
@@ -195,22 +196,23 @@
             "length": 7,
             "vocabulary": 7,
             "trope": 5,
-            "repetition": 7,
+            "repetition": 10,
             "hiddenChallenges": 5
           },
-          "finalScore": 6
+          "finalScore": 7,
+          "note": "Nesiim offerings conclude (Num 7:72-89) -- near-identical repeated text"
         }
       ],
       "parshaScores": {
         "length": 7.1,
-        "vocabulary": 7,
+        "vocabulary": 6.9,
         "trope": 5,
         "repetition": 8.3,
-        "hiddenChallenges": 5
+        "hiddenChallenges": 4.9
       },
-      "parshaFinalScore": 6.3,
+      "parshaFinalScore": 6.9,
       "hardestAliyah": 4,
-      "easiestAliyah": 3
+      "easiestAliyah": 2
     },
     {
       "parshaId": "Bamidbar",
@@ -240,7 +242,7 @@
             "repetition": 8,
             "hiddenChallenges": 5
           },
-          "finalScore": 7
+          "finalScore": 8
         },
         {
           "aliyah": 3,
@@ -252,7 +254,7 @@
             "repetition": 8,
             "hiddenChallenges": 5
           },
-          "finalScore": 7
+          "finalScore": 8
         },
         {
           "aliyah": 4,
@@ -264,7 +266,7 @@
             "repetition": 8,
             "hiddenChallenges": 5
           },
-          "finalScore": 6
+          "finalScore": 5
         },
         {
           "aliyah": 5,
@@ -276,7 +278,7 @@
             "repetition": 8,
             "hiddenChallenges": 5
           },
-          "finalScore": 6
+          "finalScore": 7
         },
         {
           "aliyah": 6,
@@ -300,7 +302,7 @@
             "repetition": 8,
             "hiddenChallenges": 5
           },
-          "finalScore": 6
+          "finalScore": 7
         }
       ],
       "parshaScores": {
@@ -310,9 +312,9 @@
         "repetition": 8,
         "hiddenChallenges": 5
       },
-      "parshaFinalScore": 6.1,
+      "parshaFinalScore": 6.6,
       "hardestAliyah": 2,
-      "easiestAliyah": 6
+      "easiestAliyah": 4
     },
     {
       "parshaId": "Vayakhel",
@@ -330,7 +332,7 @@
             "repetition": 6,
             "hiddenChallenges": 5
           },
-          "finalScore": 6
+          "finalScore": 7
         },
         {
           "aliyah": 2,
@@ -366,7 +368,7 @@
             "repetition": 6,
             "hiddenChallenges": 5
           },
-          "finalScore": 6
+          "finalScore": 5
         },
         {
           "aliyah": 5,
@@ -378,7 +380,7 @@
             "repetition": 6,
             "hiddenChallenges": 5
           },
-          "finalScore": 7
+          "finalScore": 8
         },
         {
           "aliyah": 6,
@@ -402,7 +404,7 @@
             "repetition": 6,
             "hiddenChallenges": 5
           },
-          "finalScore": 6
+          "finalScore": 7
         }
       ],
       "parshaScores": {
@@ -412,213 +414,9 @@
         "repetition": 6,
         "hiddenChallenges": 5
       },
-      "parshaFinalScore": 6,
+      "parshaFinalScore": 6.3,
       "hardestAliyah": 5,
       "easiestAliyah": 2
-    },
-    {
-      "parshaId": "Pekudei",
-      "profile": [
-        "RITUAL"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 12,
-          "scores": {
-            "length": 4,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 2,
-          "verses": 20,
-          "scores": {
-            "length": 8,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 3,
-          "verses": 11,
-          "scores": {
-            "length": 4,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 4,
-          "verses": 11,
-          "scores": {
-            "length": 4,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 5,
-          "verses": 16,
-          "scores": {
-            "length": 6,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 6,
-          "verses": 11,
-          "scores": {
-            "length": 4,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 7,
-          "verses": 11,
-          "scores": {
-            "length": 4,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        }
-      ],
-      "parshaScores": {
-        "length": 4.9,
-        "vocabulary": 8,
-        "trope": 5,
-        "repetition": 6,
-        "hiddenChallenges": 5
-      },
-      "parshaFinalScore": 6,
-      "hardestAliyah": 1,
-      "easiestAliyah": 1
-    },
-    {
-      "parshaId": "Terumah",
-      "profile": [
-        "RITUAL"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 16,
-          "scores": {
-            "length": 6,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 2,
-          "verses": 24,
-          "scores": {
-            "length": 9,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 7
-        },
-        {
-          "aliyah": 3,
-          "verses": 14,
-          "scores": {
-            "length": 5,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 4,
-          "verses": 16,
-          "scores": {
-            "length": 6,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 5,
-          "verses": 7,
-          "scores": {
-            "length": 2,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 6,
-          "verses": 8,
-          "scores": {
-            "length": 3,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 7,
-          "verses": 11,
-          "scores": {
-            "length": 4,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        }
-      ],
-      "parshaScores": {
-        "length": 5,
-        "vocabulary": 8,
-        "trope": 5,
-        "repetition": 6,
-        "hiddenChallenges": 5
-      },
-      "parshaFinalScore": 5.9,
-      "hardestAliyah": 2,
-      "easiestAliyah": 5
     },
     {
       "parshaId": "Vayikra",
@@ -672,7 +470,7 @@
             "repetition": 6,
             "hiddenChallenges": 5
           },
-          "finalScore": 6
+          "finalScore": 7
         },
         {
           "aliyah": 5,
@@ -684,7 +482,7 @@
             "repetition": 6,
             "hiddenChallenges": 5
           },
-          "finalScore": 7
+          "finalScore": 8
         },
         {
           "aliyah": 6,
@@ -696,7 +494,7 @@
             "repetition": 6,
             "hiddenChallenges": 5
           },
-          "finalScore": 6
+          "finalScore": 7
         },
         {
           "aliyah": 7,
@@ -718,112 +516,9 @@
         "repetition": 6,
         "hiddenChallenges": 5
       },
-      "parshaFinalScore": 5.9,
+      "parshaFinalScore": 6.3,
       "hardestAliyah": 5,
       "easiestAliyah": 2
-    },
-    {
-      "parshaId": "Ha'azinu",
-      "profile": [
-        "POETRY"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 6,
-          "scores": {
-            "length": 2,
-            "vocabulary": 6,
-            "trope": 10,
-            "repetition": 3,
-            "hiddenChallenges": 9
-          },
-          "finalScore": 6,
-          "note": "Opening of Shirat Ha'azinu -- poetic column layout"
-        },
-        {
-          "aliyah": 2,
-          "verses": 6,
-          "scores": {
-            "length": 2,
-            "vocabulary": 6,
-            "trope": 9,
-            "repetition": 3,
-            "hiddenChallenges": 8
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 3,
-          "verses": 6,
-          "scores": {
-            "length": 2,
-            "vocabulary": 6,
-            "trope": 9,
-            "repetition": 3,
-            "hiddenChallenges": 8
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 4,
-          "verses": 10,
-          "scores": {
-            "length": 3,
-            "vocabulary": 6,
-            "trope": 9,
-            "repetition": 3,
-            "hiddenChallenges": 8
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 5,
-          "verses": 11,
-          "scores": {
-            "length": 4,
-            "vocabulary": 6,
-            "trope": 9,
-            "repetition": 3,
-            "hiddenChallenges": 8
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 6,
-          "verses": 4,
-          "scores": {
-            "length": 1,
-            "vocabulary": 6,
-            "trope": 9,
-            "repetition": 3,
-            "hiddenChallenges": 8
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 7,
-          "verses": 9,
-          "scores": {
-            "length": 3,
-            "vocabulary": 6,
-            "trope": 9,
-            "repetition": 3,
-            "hiddenChallenges": 8
-          },
-          "finalScore": 6
-        }
-      ],
-      "parshaScores": {
-        "length": 2.4,
-        "vocabulary": 6,
-        "trope": 9.1,
-        "repetition": 3,
-        "hiddenChallenges": 8.1
-      },
-      "parshaFinalScore": 5.9,
-      "hardestAliyah": 1,
-      "easiestAliyah": 6
     },
     {
       "parshaId": "Tetzaveh",
@@ -853,7 +548,7 @@
             "repetition": 6,
             "hiddenChallenges": 5
           },
-          "finalScore": 6
+          "finalScore": 7
         },
         {
           "aliyah": 3,
@@ -877,7 +572,7 @@
             "repetition": 6,
             "hiddenChallenges": 5
           },
-          "finalScore": 6
+          "finalScore": 7
         },
         {
           "aliyah": 5,
@@ -889,7 +584,7 @@
             "repetition": 6,
             "hiddenChallenges": 5
           },
-          "finalScore": 6
+          "finalScore": 7
         },
         {
           "aliyah": 6,
@@ -923,214 +618,9 @@
         "repetition": 6,
         "hiddenChallenges": 5
       },
-      "parshaFinalScore": 5.7,
-      "hardestAliyah": 1,
+      "parshaFinalScore": 6.1,
+      "hardestAliyah": 2,
       "easiestAliyah": 6
-    },
-    {
-      "parshaId": "Tzav",
-      "profile": [
-        "RITUAL"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 11,
-          "scores": {
-            "length": 4,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 2,
-          "verses": 22,
-          "scores": {
-            "length": 8,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 3,
-          "verses": 28,
-          "scores": {
-            "length": 9,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 7
-        },
-        {
-          "aliyah": 4,
-          "verses": 13,
-          "scores": {
-            "length": 5,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 7
-          },
-          "finalScore": 6,
-          "note": "Contains a shalshelet (Lev 8:23, miluim blood on Aharon's ear)"
-        },
-        {
-          "aliyah": 5,
-          "verses": 8,
-          "scores": {
-            "length": 3,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 6,
-          "verses": 8,
-          "scores": {
-            "length": 3,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 7,
-          "verses": 7,
-          "scores": {
-            "length": 2,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        }
-      ],
-      "parshaScores": {
-        "length": 4.9,
-        "vocabulary": 8,
-        "trope": 5,
-        "repetition": 6,
-        "hiddenChallenges": 5.3
-      },
-      "parshaFinalScore": 5.7,
-      "hardestAliyah": 3,
-      "easiestAliyah": 5
-    },
-    {
-      "parshaId": "Metzora",
-      "profile": [
-        "RITUAL"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 12,
-          "scores": {
-            "length": 4,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 2,
-          "verses": 8,
-          "scores": {
-            "length": 3,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 3,
-          "verses": 12,
-          "scores": {
-            "length": 4,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 4,
-          "verses": 21,
-          "scores": {
-            "length": 8,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 5,
-          "verses": 19,
-          "scores": {
-            "length": 7,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 6,
-          "verses": 13,
-          "scores": {
-            "length": 5,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 7,
-          "verses": 5,
-          "scores": {
-            "length": 1,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        }
-      ],
-      "parshaScores": {
-        "length": 4.6,
-        "vocabulary": 8,
-        "trope": 5,
-        "repetition": 6,
-        "hiddenChallenges": 5
-      },
-      "parshaFinalScore": 5.7,
-      "hardestAliyah": 1,
-      "easiestAliyah": 2
     },
     {
       "parshaId": "Emor",
@@ -1161,7 +651,7 @@
             "repetition": 5,
             "hiddenChallenges": 5
           },
-          "finalScore": 6
+          "finalScore": 7
         },
         {
           "aliyah": 3,
@@ -1185,7 +675,7 @@
             "repetition": 5,
             "hiddenChallenges": 5
           },
-          "finalScore": 6
+          "finalScore": 7
         },
         {
           "aliyah": 5,
@@ -1197,7 +687,7 @@
             "repetition": 5,
             "hiddenChallenges": 5
           },
-          "finalScore": 5
+          "finalScore": 4
         },
         {
           "aliyah": 6,
@@ -1221,7 +711,7 @@
             "repetition": 5,
             "hiddenChallenges": 5
           },
-          "finalScore": 6
+          "finalScore": 7
         }
       ],
       "parshaScores": {
@@ -1231,422 +721,9 @@
         "repetition": 5,
         "hiddenChallenges": 5
       },
-      "parshaFinalScore": 5.7,
-      "hardestAliyah": 1,
+      "parshaFinalScore": 6,
+      "hardestAliyah": 2,
       "easiestAliyah": 5
-    },
-    {
-      "parshaId": "Tazria",
-      "profile": [
-        "RITUAL"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 13,
-          "scores": {
-            "length": 5,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 2,
-          "verses": 12,
-          "scores": {
-            "length": 4,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 3,
-          "verses": 6,
-          "scores": {
-            "length": 2,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 4,
-          "verses": 5,
-          "scores": {
-            "length": 1,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 5,
-          "verses": 11,
-          "scores": {
-            "length": 4,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 6,
-          "verses": 15,
-          "scores": {
-            "length": 6,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 7,
-          "verses": 5,
-          "scores": {
-            "length": 1,
-            "vocabulary": 8,
-            "trope": 5,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        }
-      ],
-      "parshaScores": {
-        "length": 3.3,
-        "vocabulary": 8,
-        "trope": 5,
-        "repetition": 6,
-        "hiddenChallenges": 5
-      },
-      "parshaFinalScore": 5.6,
-      "hardestAliyah": 1,
-      "easiestAliyah": 3
-    },
-    {
-      "parshaId": "Masei",
-      "profile": [
-        "GENEALOGY",
-        "LEGAL"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 10,
-          "scores": {
-            "length": 3,
-            "vocabulary": 7,
-            "trope": 4,
-            "repetition": 9,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6,
-          "note": "42 journey-stations list (Num 33) -- long place-name list"
-        },
-        {
-          "aliyah": 2,
-          "verses": 39,
-          "scores": {
-            "length": 10,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 3,
-          "verses": 22,
-          "scores": {
-            "length": 8,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 4,
-          "verses": 14,
-          "scores": {
-            "length": 5,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 5,
-          "verses": 8,
-          "scores": {
-            "length": 3,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 6,
-          "verses": 26,
-          "scores": {
-            "length": 9,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 7,
-          "verses": 13,
-          "scores": {
-            "length": 5,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 6,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        }
-      ],
-      "parshaScores": {
-        "length": 6.1,
-        "vocabulary": 6.1,
-        "trope": 4,
-        "repetition": 6.4,
-        "hiddenChallenges": 5
-      },
-      "parshaFinalScore": 5.6,
-      "hardestAliyah": 1,
-      "easiestAliyah": 4
-    },
-    {
-      "parshaId": "Beshalach",
-      "profile": [
-        "NARRATIVE",
-        "POETRY"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 14,
-          "scores": {
-            "length": 5,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 2,
-          "verses": 6,
-          "scores": {
-            "length": 2,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 3,
-          "verses": 11,
-          "scores": {
-            "length": 4,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 4,
-          "verses": 32,
-          "scores": {
-            "length": 9,
-            "vocabulary": 5,
-            "trope": 9,
-            "repetition": 3,
-            "hiddenChallenges": 7
-          },
-          "finalScore": 7,
-          "note": "Shirat HaYam (Az Yashir) -- special layout & elevated melody"
-        },
-        {
-          "aliyah": 5,
-          "verses": 11,
-          "scores": {
-            "length": 4,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 6,
-          "verses": 26,
-          "scores": {
-            "length": 9,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 7,
-          "verses": 16,
-          "scores": {
-            "length": 6,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        }
-      ],
-      "parshaScores": {
-        "length": 5.6,
-        "vocabulary": 5,
-        "trope": 6.4,
-        "repetition": 3,
-        "hiddenChallenges": 5.3
-      },
-      "parshaFinalScore": 5.3,
-      "hardestAliyah": 4,
-      "easiestAliyah": 2
-    },
-    {
-      "parshaId": "Achrei Mot",
-      "profile": [
-        "RITUAL",
-        "LEGAL"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 17,
-          "scores": {
-            "length": 7,
-            "vocabulary": 7,
-            "trope": 5,
-            "repetition": 5,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 2,
-          "verses": 7,
-          "scores": {
-            "length": 2,
-            "vocabulary": 7,
-            "trope": 5,
-            "repetition": 5,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 3,
-          "verses": 10,
-          "scores": {
-            "length": 3,
-            "vocabulary": 7,
-            "trope": 5,
-            "repetition": 5,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 4,
-          "verses": 7,
-          "scores": {
-            "length": 2,
-            "vocabulary": 7,
-            "trope": 5,
-            "repetition": 5,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 5,
-          "verses": 14,
-          "scores": {
-            "length": 5,
-            "vocabulary": 7,
-            "trope": 5,
-            "repetition": 5,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 6,
-          "verses": 16,
-          "scores": {
-            "length": 6,
-            "vocabulary": 7,
-            "trope": 5,
-            "repetition": 5,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 7,
-          "verses": 9,
-          "scores": {
-            "length": 3,
-            "vocabulary": 7,
-            "trope": 5,
-            "repetition": 5,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        }
-      ],
-      "parshaScores": {
-        "length": 4,
-        "vocabulary": 7,
-        "trope": 5,
-        "repetition": 5,
-        "hiddenChallenges": 5
-      },
-      "parshaFinalScore": 5.3,
-      "hardestAliyah": 1,
-      "easiestAliyah": 2
     },
     {
       "parshaId": "Vayishlach",
@@ -1677,7 +754,7 @@
             "repetition": 5,
             "hiddenChallenges": 4
           },
-          "finalScore": 5
+          "finalScore": 6
         },
         {
           "aliyah": 3,
@@ -1713,19 +790,20 @@
             "repetition": 5,
             "hiddenChallenges": 4
           },
-          "finalScore": 6
+          "finalScore": 7
         },
         {
           "aliyah": 6,
           "verses": 37,
           "scores": {
             "length": 10,
-            "vocabulary": 5,
+            "vocabulary": 6,
             "trope": 4,
-            "repetition": 5,
+            "repetition": 6,
             "hiddenChallenges": 4
           },
-          "finalScore": 6
+          "finalScore": 8,
+          "note": "Eisav's genealogy begins (Gen 36:1-19) -- unfamiliar names"
         },
         {
           "aliyah": 7,
@@ -1737,125 +815,20 @@
             "repetition": 7,
             "hiddenChallenges": 4
           },
-          "finalScore": 6,
-          "note": "Eisav's genealogy (Gen 36) -- long list of unfamiliar names"
+          "finalScore": 7,
+          "note": "Eisav's genealogy concludes (Gen 36:20-43) -- long list of unfamiliar names"
         }
       ],
       "parshaScores": {
         "length": 6.9,
-        "vocabulary": 5.1,
+        "vocabulary": 5.3,
         "trope": 4,
-        "repetition": 5.3,
+        "repetition": 5.4,
         "hiddenChallenges": 4
       },
-      "parshaFinalScore": 5.1,
-      "hardestAliyah": 5,
-      "easiestAliyah": 1
-    },
-    {
-      "parshaId": "Ki Tavo",
-      "profile": [
-        "LEGAL",
-        "TOCHACHA"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 11,
-          "scores": {
-            "length": 4,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 7
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 2,
-          "verses": 4,
-          "scores": {
-            "length": 1,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 7
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 3,
-          "verses": 4,
-          "scores": {
-            "length": 1,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 7
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 4,
-          "verses": 10,
-          "scores": {
-            "length": 3,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 7
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 5,
-          "verses": 22,
-          "scores": {
-            "length": 8,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 7
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 6,
-          "verses": 63,
-          "scores": {
-            "length": 10,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 10
-          },
-          "finalScore": 7,
-          "note": "Tochacha (curses) -- traditional custom to read quickly and quietly"
-        },
-        {
-          "aliyah": 7,
-          "verses": 8,
-          "scores": {
-            "length": 3,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 9
-          },
-          "finalScore": 5,
-          "note": "Tochacha (curses) continues"
-        }
-      ],
-      "parshaScores": {
-        "length": 4.3,
-        "vocabulary": 6,
-        "trope": 4,
-        "repetition": 4,
-        "hiddenChallenges": 7.7
-      },
-      "parshaFinalScore": 5.1,
+      "parshaFinalScore": 5.9,
       "hardestAliyah": 6,
-      "easiestAliyah": 2
+      "easiestAliyah": 1
     },
     {
       "parshaId": "Bereshit",
@@ -1874,7 +847,7 @@
             "repetition": 5,
             "hiddenChallenges": 4
           },
-          "finalScore": 6
+          "finalScore": 7
         },
         {
           "aliyah": 2,
@@ -1898,7 +871,7 @@
             "repetition": 5,
             "hiddenChallenges": 4
           },
-          "finalScore": 5
+          "finalScore": 7
         },
         {
           "aliyah": 4,
@@ -1910,7 +883,7 @@
             "repetition": 5,
             "hiddenChallenges": 4
           },
-          "finalScore": 5
+          "finalScore": 6
         },
         {
           "aliyah": 5,
@@ -1922,7 +895,7 @@
             "repetition": 5,
             "hiddenChallenges": 4
           },
-          "finalScore": 4
+          "finalScore": 3
         },
         {
           "aliyah": 6,
@@ -1934,7 +907,7 @@
             "repetition": 5,
             "hiddenChallenges": 4
           },
-          "finalScore": 5
+          "finalScore": 7
         },
         {
           "aliyah": 7,
@@ -1956,7 +929,522 @@
         "repetition": 5,
         "hiddenChallenges": 4
       },
-      "parshaFinalScore": 5,
+      "parshaFinalScore": 5.7,
+      "hardestAliyah": 1,
+      "easiestAliyah": 5
+    },
+    {
+      "parshaId": "Terumah",
+      "profile": [
+        "RITUAL"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 16,
+          "scores": {
+            "length": 6,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 2,
+          "verses": 24,
+          "scores": {
+            "length": 9,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 8
+        },
+        {
+          "aliyah": 3,
+          "verses": 14,
+          "scores": {
+            "length": 5,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 4,
+          "verses": 16,
+          "scores": {
+            "length": 6,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 5,
+          "verses": 7,
+          "scores": {
+            "length": 2,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 6,
+          "verses": 8,
+          "scores": {
+            "length": 3,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 7,
+          "verses": 11,
+          "scores": {
+            "length": 4,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 5
+        }
+      ],
+      "parshaScores": {
+        "length": 5,
+        "vocabulary": 8,
+        "trope": 5,
+        "repetition": 6,
+        "hiddenChallenges": 5
+      },
+      "parshaFinalScore": 5.7,
+      "hardestAliyah": 2,
+      "easiestAliyah": 5
+    },
+    {
+      "parshaId": "Tzav",
+      "profile": [
+        "RITUAL"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 11,
+          "scores": {
+            "length": 4,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 2,
+          "verses": 22,
+          "scores": {
+            "length": 8,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 7
+        },
+        {
+          "aliyah": 3,
+          "verses": 28,
+          "scores": {
+            "length": 9,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 8
+        },
+        {
+          "aliyah": 4,
+          "verses": 13,
+          "scores": {
+            "length": 5,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 5,
+          "verses": 8,
+          "scores": {
+            "length": 3,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 6,
+          "verses": 8,
+          "scores": {
+            "length": 3,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 7
+          },
+          "finalScore": 5,
+          "note": "Contains a shalshelet (Lev 8:23, miluim blood on Aharon's ear)"
+        },
+        {
+          "aliyah": 7,
+          "verses": 7,
+          "scores": {
+            "length": 2,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 4
+        }
+      ],
+      "parshaScores": {
+        "length": 4.9,
+        "vocabulary": 8,
+        "trope": 5,
+        "repetition": 6,
+        "hiddenChallenges": 5.3
+      },
+      "parshaFinalScore": 5.7,
+      "hardestAliyah": 3,
+      "easiestAliyah": 7
+    },
+    {
+      "parshaId": "Beha'alotcha",
+      "profile": [
+        "NARRATIVE",
+        "LEGAL"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 14,
+          "scores": {
+            "length": 5,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 2,
+          "verses": 12,
+          "scores": {
+            "length": 4,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 3,
+          "verses": 14,
+          "scores": {
+            "length": 5,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 4,
+          "verses": 19,
+          "scores": {
+            "length": 7,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 5,
+          "verses": 24,
+          "scores": {
+            "length": 9,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 7
+        },
+        {
+          "aliyah": 6,
+          "verses": 31,
+          "scores": {
+            "length": 9,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 7
+        },
+        {
+          "aliyah": 7,
+          "verses": 22,
+          "scores": {
+            "length": 8,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 6
+        }
+      ],
+      "parshaScores": {
+        "length": 6.7,
+        "vocabulary": 5,
+        "trope": 4,
+        "repetition": 3,
+        "hiddenChallenges": 4
+      },
+      "parshaFinalScore": 5.7,
+      "hardestAliyah": 5,
+      "easiestAliyah": 2
+    },
+    {
+      "parshaId": "Masei",
+      "profile": [
+        "GENEALOGY",
+        "LEGAL"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 10,
+          "scores": {
+            "length": 3,
+            "vocabulary": 7,
+            "trope": 4,
+            "repetition": 7,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 4,
+          "note": "Journey-stations list begins (Num 33:1-10)"
+        },
+        {
+          "aliyah": 2,
+          "verses": 39,
+          "scores": {
+            "length": 10,
+            "vocabulary": 7,
+            "trope": 4,
+            "repetition": 9,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 8,
+          "note": "Bulk of the 42 journey-stations list (Num 33:11-49) -- long place-name list"
+        },
+        {
+          "aliyah": 3,
+          "verses": 22,
+          "scores": {
+            "length": 8,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 7
+        },
+        {
+          "aliyah": 4,
+          "verses": 14,
+          "scores": {
+            "length": 5,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 5,
+          "verses": 8,
+          "scores": {
+            "length": 3,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 6,
+          "verses": 26,
+          "scores": {
+            "length": 9,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 7
+        },
+        {
+          "aliyah": 7,
+          "verses": 13,
+          "scores": {
+            "length": 5,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 5
+        }
+      ],
+      "parshaScores": {
+        "length": 6.1,
+        "vocabulary": 6.3,
+        "trope": 4,
+        "repetition": 6.6,
+        "hiddenChallenges": 5
+      },
+      "parshaFinalScore": 5.7,
+      "hardestAliyah": 2,
+      "easiestAliyah": 1
+    },
+    {
+      "parshaId": "Re'eh",
+      "profile": [
+        "LEGAL"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 17,
+          "scores": {
+            "length": 7,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 2,
+          "verses": 18,
+          "scores": {
+            "length": 7,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 3,
+          "verses": 22,
+          "scores": {
+            "length": 8,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 4,
+          "verses": 21,
+          "scores": {
+            "length": 8,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 5,
+          "verses": 8,
+          "scores": {
+            "length": 3,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 6,
+          "verses": 18,
+          "scores": {
+            "length": 7,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 7,
+          "verses": 22,
+          "scores": {
+            "length": 8,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 6
+        }
+      ],
+      "parshaScores": {
+        "length": 6.9,
+        "vocabulary": 6,
+        "trope": 4,
+        "repetition": 4,
+        "hiddenChallenges": 5
+      },
+      "parshaFinalScore": 5.7,
       "hardestAliyah": 1,
       "easiestAliyah": 5
     },
@@ -2001,7 +1489,7 @@
             "repetition": 5,
             "hiddenChallenges": 4
           },
-          "finalScore": 5
+          "finalScore": 6
         },
         {
           "aliyah": 4,
@@ -2037,7 +1525,7 @@
             "repetition": 5,
             "hiddenChallenges": 4
           },
-          "finalScore": 6
+          "finalScore": 7
         },
         {
           "aliyah": 7,
@@ -2049,7 +1537,7 @@
             "repetition": 5,
             "hiddenChallenges": 4
           },
-          "finalScore": 5
+          "finalScore": 7
         }
       ],
       "parshaScores": {
@@ -2059,86 +1547,186 @@
         "repetition": 5,
         "hiddenChallenges": 4
       },
-      "parshaFinalScore": 5,
+      "parshaFinalScore": 5.6,
       "hardestAliyah": 6,
       "easiestAliyah": 5
     },
     {
-      "parshaId": "Vaetchanan",
+      "parshaId": "Metzora",
       "profile": [
-        "NARRATIVE",
-        "POETRY"
+        "RITUAL"
       ],
       "aliyot": [
         {
           "aliyah": 1,
-          "verses": 11,
+          "verses": 12,
           "scores": {
             "length": 4,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
             "hiddenChallenges": 5
           },
           "finalScore": 5
         },
         {
           "aliyah": 2,
-          "verses": 36,
+          "verses": 8,
           "scores": {
-            "length": 10,
-            "vocabulary": 5,
-            "trope": 8,
-            "repetition": 3,
-            "hiddenChallenges": 6
+            "length": 3,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
           },
-          "finalScore": 6,
-          "note": "Aseret HaDibrot repeated (Deut 5) -- ta'am elyon in many congregations"
+          "finalScore": 5
         },
         {
           "aliyah": 3,
-          "verses": 9,
+          "verses": 12,
           "scores": {
-            "length": 3,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
+            "length": 4,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
             "hiddenChallenges": 5
           },
-          "finalScore": 4
+          "finalScore": 5
         },
         {
           "aliyah": 4,
-          "verses": 18,
+          "verses": 21,
+          "scores": {
+            "length": 8,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 7
+        },
+        {
+          "aliyah": 5,
+          "verses": 19,
           "scores": {
             "length": 7,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 7
+        },
+        {
+          "aliyah": 6,
+          "verses": 13,
+          "scores": {
+            "length": 5,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 7,
+          "verses": 5,
+          "scores": {
+            "length": 1,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 4
+        }
+      ],
+      "parshaScores": {
+        "length": 4.6,
+        "vocabulary": 8,
+        "trope": 5,
+        "repetition": 6,
+        "hiddenChallenges": 5
+      },
+      "parshaFinalScore": 5.6,
+      "hardestAliyah": 4,
+      "easiestAliyah": 7
+    },
+    {
+      "parshaId": "Pekudei",
+      "profile": [
+        "RITUAL"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 12,
+          "scores": {
+            "length": 4,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 2,
+          "verses": 20,
+          "scores": {
+            "length": 8,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 7
+        },
+        {
+          "aliyah": 3,
+          "verses": 11,
+          "scores": {
+            "length": 4,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 4,
+          "verses": 11,
+          "scores": {
+            "length": 4,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
             "hiddenChallenges": 5
           },
           "finalScore": 5
         },
         {
           "aliyah": 5,
-          "verses": 15,
+          "verses": 16,
           "scores": {
             "length": 6,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
             "hiddenChallenges": 5
           },
-          "finalScore": 5
+          "finalScore": 6
         },
         {
           "aliyah": 6,
-          "verses": 22,
+          "verses": 11,
           "scores": {
-            "length": 8,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
+            "length": 4,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
             "hiddenChallenges": 5
           },
           "finalScore": 5
@@ -2148,24 +1736,232 @@
           "verses": 11,
           "scores": {
             "length": 4,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
             "hiddenChallenges": 5
           },
           "finalScore": 5
         }
       ],
       "parshaScores": {
+        "length": 4.9,
+        "vocabulary": 8,
+        "trope": 5,
+        "repetition": 6,
+        "hiddenChallenges": 5
+      },
+      "parshaFinalScore": 5.4,
+      "hardestAliyah": 2,
+      "easiestAliyah": 1
+    },
+    {
+      "parshaId": "Sh'lach",
+      "profile": [
+        "NARRATIVE",
+        "LEGAL"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 20,
+          "scores": {
+            "length": 8,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 2,
+          "verses": 20,
+          "scores": {
+            "length": 8,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 3,
+          "verses": 18,
+          "scores": {
+            "length": 7,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 4,
+          "verses": 27,
+          "scores": {
+            "length": 9,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 7
+        },
+        {
+          "aliyah": 5,
+          "verses": 9,
+          "scores": {
+            "length": 3,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 6,
+          "verses": 10,
+          "scores": {
+            "length": 3,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 7,
+          "verses": 15,
+          "scores": {
+            "length": 6,
+            "vocabulary": 4,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 5,
+          "note": "Ends with the third paragraph of the Shema / the tzitzit passage (Num 15:37-41), recited twice daily -- widely known by heart, though it is only the tail of this aliyah.",
+          "wellKnown": true
+        }
+      ],
+      "parshaScores": {
+        "length": 6.3,
+        "vocabulary": 4.9,
+        "trope": 4,
+        "repetition": 3,
+        "hiddenChallenges": 3.7
+      },
+      "parshaFinalScore": 5.4,
+      "hardestAliyah": 4,
+      "easiestAliyah": 5
+    },
+    {
+      "parshaId": "Vaera",
+      "profile": [
+        "NARRATIVE",
+        "GENEALOGY"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 12,
+          "scores": {
+            "length": 4,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 5,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 2,
+          "verses": 15,
+          "scores": {
+            "length": 6,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 5,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 3,
+          "verses": 9,
+          "scores": {
+            "length": 3,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 5,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 4,
+          "verses": 28,
+          "scores": {
+            "length": 9,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 5,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 7
+        },
+        {
+          "aliyah": 5,
+          "verses": 12,
+          "scores": {
+            "length": 4,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 5,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 6,
+          "verses": 26,
+          "scores": {
+            "length": 9,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 5,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 7
+        },
+        {
+          "aliyah": 7,
+          "verses": 19,
+          "scores": {
+            "length": 7,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 5,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 6
+        }
+      ],
+      "parshaScores": {
         "length": 6,
         "vocabulary": 5,
-        "trope": 6.3,
-        "repetition": 3,
-        "hiddenChallenges": 5.1
+        "trope": 4,
+        "repetition": 5,
+        "hiddenChallenges": 4
       },
-      "parshaFinalScore": 5,
-      "hardestAliyah": 2,
-      "easiestAliyah": 3
+      "parshaFinalScore": 5.3,
+      "hardestAliyah": 4,
+      "easiestAliyah": 1
     },
     {
       "parshaId": "Mishpatim",
@@ -2183,7 +1979,7 @@
             "repetition": 4,
             "hiddenChallenges": 5
           },
-          "finalScore": 5
+          "finalScore": 6
         },
         {
           "aliyah": 2,
@@ -2195,7 +1991,7 @@
             "repetition": 4,
             "hiddenChallenges": 5
           },
-          "finalScore": 5
+          "finalScore": 6
         },
         {
           "aliyah": 3,
@@ -2207,7 +2003,7 @@
             "repetition": 4,
             "hiddenChallenges": 5
           },
-          "finalScore": 5
+          "finalScore": 6
         },
         {
           "aliyah": 4,
@@ -2243,7 +2039,7 @@
             "repetition": 4,
             "hiddenChallenges": 5
           },
-          "finalScore": 4
+          "finalScore": 3
         },
         {
           "aliyah": 7,
@@ -2255,7 +2051,7 @@
             "repetition": 4,
             "hiddenChallenges": 5
           },
-          "finalScore": 6
+          "finalScore": 7
         }
       ],
       "parshaScores": {
@@ -2265,628 +2061,112 @@
         "repetition": 4,
         "hiddenChallenges": 5
       },
-      "parshaFinalScore": 4.9,
+      "parshaFinalScore": 5.3,
       "hardestAliyah": 7,
-      "easiestAliyah": 4
+      "easiestAliyah": 6
     },
     {
-      "parshaId": "Bechukotai",
+      "parshaId": "Vayera",
       "profile": [
-        "LEGAL",
-        "TOCHACHA"
+        "NARRATIVE"
       ],
       "aliyot": [
         {
           "aliyah": 1,
-          "verses": 3,
-          "scores": {
-            "length": 1,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 7
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 2,
-          "verses": 4,
-          "scores": {
-            "length": 1,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 7
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 3,
-          "verses": 37,
-          "scores": {
-            "length": 10,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 7
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 4,
-          "verses": 15,
-          "scores": {
-            "length": 6,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 7
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 5,
-          "verses": 6,
-          "scores": {
-            "length": 2,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 10
-          },
-          "finalScore": 5,
-          "note": "Tochacha (curses) -- traditional custom to read quickly and quietly"
-        },
-        {
-          "aliyah": 6,
-          "verses": 7,
-          "scores": {
-            "length": 2,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 9
-          },
-          "finalScore": 5,
-          "note": "Tochacha (curses) continues"
-        },
-        {
-          "aliyah": 7,
-          "verses": 6,
-          "scores": {
-            "length": 2,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 7
-          },
-          "finalScore": 5
-        }
-      ],
-      "parshaScores": {
-        "length": 3.4,
-        "vocabulary": 6,
-        "trope": 4,
-        "repetition": 4,
-        "hiddenChallenges": 7.7
-      },
-      "parshaFinalScore": 4.9,
-      "hardestAliyah": 3,
-      "easiestAliyah": 1
-    },
-    {
-      "parshaId": "Balak",
-      "profile": [
-        "NARRATIVE",
-        "POETRY"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 11,
-          "scores": {
-            "length": 4,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 2,
-          "verses": 8,
-          "scores": {
-            "length": 3,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 3,
-          "verses": 18,
-          "scores": {
-            "length": 7,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 4,
-          "verses": 15,
-          "scores": {
-            "length": 6,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 5,
           "verses": 14,
           "scores": {
             "length": 5,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
           },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 6,
-          "verses": 17,
-          "scores": {
-            "length": 7,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 7,
-          "verses": 21,
-          "scores": {
-            "length": 8,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        }
-      ],
-      "parshaScores": {
-        "length": 5.7,
-        "vocabulary": 5,
-        "trope": 6,
-        "repetition": 3,
-        "hiddenChallenges": 5
-      },
-      "parshaFinalScore": 4.9,
-      "hardestAliyah": 1,
-      "easiestAliyah": 2
-    },
-    {
-      "parshaId": "Re'eh",
-      "profile": [
-        "LEGAL"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 17,
-          "scores": {
-            "length": 7,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
+          "finalScore": 4
         },
         {
           "aliyah": 2,
-          "verses": 18,
+          "verses": 19,
           "scores": {
             "length": 7,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 5
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
           },
           "finalScore": 5
         },
         {
           "aliyah": 3,
-          "verses": 22,
-          "scores": {
-            "length": 8,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 4,
-          "verses": 21,
-          "scores": {
-            "length": 8,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 5,
-          "verses": 8,
-          "scores": {
-            "length": 3,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 6,
-          "verses": 18,
-          "scores": {
-            "length": 7,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 7,
-          "verses": 22,
-          "scores": {
-            "length": 8,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        }
-      ],
-      "parshaScores": {
-        "length": 6.9,
-        "vocabulary": 6,
-        "trope": 4,
-        "repetition": 4,
-        "hiddenChallenges": 5
-      },
-      "parshaFinalScore": 4.9,
-      "hardestAliyah": 1,
-      "easiestAliyah": 5
-    },
-    {
-      "parshaId": "Ki Teitzei",
-      "profile": [
-        "LEGAL"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 12,
-          "scores": {
-            "length": 4,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 2,
-          "verses": 9,
-          "scores": {
-            "length": 3,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 3,
-          "verses": 29,
-          "scores": {
-            "length": 9,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 4,
-          "verses": 17,
-          "scores": {
-            "length": 7,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 5,
-          "verses": 6,
-          "scores": {
-            "length": 2,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 6,
-          "verses": 9,
-          "scores": {
-            "length": 3,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 7,
-          "verses": 28,
-          "scores": {
-            "length": 9,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 6
-        }
-      ],
-      "parshaScores": {
-        "length": 5.3,
-        "vocabulary": 6,
-        "trope": 4,
-        "repetition": 4,
-        "hiddenChallenges": 5
-      },
-      "parshaFinalScore": 4.9,
-      "hardestAliyah": 3,
-      "easiestAliyah": 2
-    },
-    {
-      "parshaId": "Yitro",
-      "profile": [
-        "NARRATIVE",
-        "POETRY"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 12,
-          "scores": {
-            "length": 4,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 2,
-          "verses": 11,
-          "scores": {
-            "length": 4,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 3,
-          "verses": 4,
-          "scores": {
-            "length": 1,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 4,
-          "verses": 6,
-          "scores": {
-            "length": 2,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 5,
-          "verses": 13,
-          "scores": {
-            "length": 5,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 6,
           "verses": 20,
           "scores": {
             "length": 8,
-            "vocabulary": 5,
-            "trope": 9,
-            "repetition": 3,
-            "hiddenChallenges": 7
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 4
           },
           "finalScore": 6,
-          "note": "Aseret HaDibrot -- ta'am elyon alternate cantillation"
-        },
-        {
-          "aliyah": 7,
-          "verses": 9,
-          "scores": {
-            "length": 3,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 4
-        }
-      ],
-      "parshaScores": {
-        "length": 3.9,
-        "vocabulary": 5,
-        "trope": 6.4,
-        "repetition": 3,
-        "hiddenChallenges": 5.3
-      },
-      "parshaFinalScore": 4.7,
-      "hardestAliyah": 6,
-      "easiestAliyah": 3
-    },
-    {
-      "parshaId": "Ki Tisa",
-      "profile": [
-        "NARRATIVE",
-        "RITUAL"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 45,
-          "scores": {
-            "length": 10,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 2,
-          "verses": 47,
-          "scores": {
-            "length": 10,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 6
-        },
-        {
-          "aliyah": 3,
-          "verses": 5,
-          "scores": {
-            "length": 1,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 4
+          "note": "Contains a shalshelet (Gen 19:16, Lot lingers) -- a trope mark used only 4x in the whole Torah"
         },
         {
           "aliyah": 4,
-          "verses": 7,
+          "verses": 40,
           "scores": {
-            "length": 2,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 4
+            "length": 10,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
           },
-          "finalScore": 4
+          "finalScore": 6
         },
         {
           "aliyah": 5,
-          "verses": 9,
-          "scores": {
-            "length": 3,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 6,
           "verses": 17,
           "scores": {
             "length": 7,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 4
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
           },
           "finalScore": 5
         },
         {
-          "aliyah": 7,
-          "verses": 9,
+          "aliyah": 6,
+          "verses": 13,
           "scores": {
-            "length": 3,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 4
+            "length": 5,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
           },
           "finalScore": 4
+        },
+        {
+          "aliyah": 7,
+          "verses": 24,
+          "scores": {
+            "length": 9,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 6
         }
       ],
       "parshaScores": {
-        "length": 5.1,
-        "vocabulary": 6,
-        "trope": 4,
-        "repetition": 4,
-        "hiddenChallenges": 4
+        "length": 7.3,
+        "vocabulary": 3,
+        "trope": 3,
+        "repetition": 2,
+        "hiddenChallenges": 2.3
       },
-      "parshaFinalScore": 4.7,
-      "hardestAliyah": 1,
-      "easiestAliyah": 3
+      "parshaFinalScore": 5.1,
+      "hardestAliyah": 3,
+      "easiestAliyah": 1
     },
     {
       "parshaId": "Vayigash",
@@ -2953,7 +2233,7 @@
             "repetition": 5,
             "hiddenChallenges": 4
           },
-          "finalScore": 5
+          "finalScore": 7
         },
         {
           "aliyah": 6,
@@ -2965,7 +2245,7 @@
             "repetition": 5,
             "hiddenChallenges": 4
           },
-          "finalScore": 5
+          "finalScore": 6
         },
         {
           "aliyah": 7,
@@ -2977,7 +2257,7 @@
             "repetition": 5,
             "hiddenChallenges": 4
           },
-          "finalScore": 5
+          "finalScore": 6
         }
       ],
       "parshaScores": {
@@ -2987,12 +2267,12 @@
         "repetition": 5,
         "hiddenChallenges": 4
       },
-      "parshaFinalScore": 4.6,
-      "hardestAliyah": 1,
+      "parshaFinalScore": 5.1,
+      "hardestAliyah": 5,
       "easiestAliyah": 2
     },
     {
-      "parshaId": "Vayechi",
+      "parshaId": "Balak",
       "profile": [
         "NARRATIVE",
         "POETRY"
@@ -3000,54 +2280,18 @@
       "aliyot": [
         {
           "aliyah": 1,
-          "verses": 13,
+          "verses": 11,
           "scores": {
-            "length": 5,
+            "length": 4,
             "vocabulary": 5,
             "trope": 6,
             "repetition": 3,
             "hiddenChallenges": 5
           },
-          "finalScore": 5
+          "finalScore": 4
         },
         {
           "aliyah": 2,
-          "verses": 7,
-          "scores": {
-            "length": 2,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 3,
-          "verses": 6,
-          "scores": {
-            "length": 2,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 4,
-          "verses": 18,
-          "scores": {
-            "length": 7,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 5,
           "verses": 8,
           "scores": {
             "length": 3,
@@ -3059,10 +2303,46 @@
           "finalScore": 4
         },
         {
-          "aliyah": 6,
-          "verses": 27,
+          "aliyah": 3,
+          "verses": 18,
           "scores": {
-            "length": 9,
+            "length": 7,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 4,
+          "verses": 15,
+          "scores": {
+            "length": 6,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 5,
+          "verses": 14,
+          "scores": {
+            "length": 5,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 6,
+          "verses": 17,
+          "scores": {
+            "length": 7,
             "vocabulary": 5,
             "trope": 6,
             "repetition": 3,
@@ -3072,9 +2352,219 @@
         },
         {
           "aliyah": 7,
-          "verses": 6,
+          "verses": 21,
           "scores": {
-            "length": 2,
+            "length": 8,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 6
+        }
+      ],
+      "parshaScores": {
+        "length": 5.7,
+        "vocabulary": 5,
+        "trope": 6,
+        "repetition": 3,
+        "hiddenChallenges": 5
+      },
+      "parshaFinalScore": 5.1,
+      "hardestAliyah": 3,
+      "easiestAliyah": 1
+    },
+    {
+      "parshaId": "Matot",
+      "profile": [
+        "LEGAL",
+        "NARRATIVE"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 16,
+          "scores": {
+            "length": 6,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 2,
+          "verses": 12,
+          "scores": {
+            "length": 4,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 3,
+          "verses": 12,
+          "scores": {
+            "length": 4,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 4,
+          "verses": 17,
+          "scores": {
+            "length": 7,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 5,
+          "verses": 13,
+          "scores": {
+            "length": 5,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 6,
+          "verses": 19,
+          "scores": {
+            "length": 7,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 7,
+          "verses": 23,
+          "scores": {
+            "length": 8,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 6
+        }
+      ],
+      "parshaScores": {
+        "length": 5.9,
+        "vocabulary": 5,
+        "trope": 4,
+        "repetition": 3,
+        "hiddenChallenges": 4
+      },
+      "parshaFinalScore": 5.1,
+      "hardestAliyah": 4,
+      "easiestAliyah": 2
+    },
+    {
+      "parshaId": "Vaetchanan",
+      "profile": [
+        "NARRATIVE",
+        "POETRY"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 11,
+          "scores": {
+            "length": 4,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 2,
+          "verses": 36,
+          "scores": {
+            "length": 10,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 7
+        },
+        {
+          "aliyah": 3,
+          "verses": 9,
+          "scores": {
+            "length": 3,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 4,
+          "verses": 18,
+          "scores": {
+            "length": 7,
+            "vocabulary": 3,
+            "trope": 8,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 6,
+          "note": "Aseret HaDibrot repeated (Deut 5:6-18) -- ta'am elyon in many congregations The Aseret HaDibrot are also one of the most familiar passages in the Torah -- this softens the vocabulary/unfamiliarity difficulty even though the ta'am elyon trope override above still applies in full.",
+          "wellKnown": true
+        },
+        {
+          "aliyah": 5,
+          "verses": 15,
+          "scores": {
+            "length": 6,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 6,
+          "verses": 22,
+          "scores": {
+            "length": 8,
+            "vocabulary": 2,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 1
+          },
+          "finalScore": 6,
+          "note": "Contains the Shema and V'ahavta (Deut 6:4-9), recited twice daily -- most regular daveners already know this passage by heart, which offsets much of the unfamiliarity-driven difficulty (the words still must be read correctly from the text, not recited from memory).",
+          "wellKnown": true
+        },
+        {
+          "aliyah": 7,
+          "verses": 11,
+          "scores": {
+            "length": 4,
             "vocabulary": 5,
             "trope": 6,
             "repetition": 3,
@@ -3084,80 +2574,184 @@
         }
       ],
       "parshaScores": {
-        "length": 4.3,
-        "vocabulary": 5,
-        "trope": 6,
+        "length": 6,
+        "vocabulary": 4.3,
+        "trope": 6.3,
         "repetition": 3,
-        "hiddenChallenges": 5
+        "hiddenChallenges": 4.4
       },
-      "parshaFinalScore": 4.6,
-      "hardestAliyah": 6,
-      "easiestAliyah": 2
+      "parshaFinalScore": 5.1,
+      "hardestAliyah": 2,
+      "easiestAliyah": 1
     },
     {
-      "parshaId": "Vaera",
+      "parshaId": "Vayetzei",
       "profile": [
-        "NARRATIVE",
-        "GENEALOGY"
+        "NARRATIVE"
       ],
       "aliyot": [
         {
           "aliyah": 1,
-          "verses": 12,
+          "verses": 13,
           "scores": {
-            "length": 4,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 5,
-            "hiddenChallenges": 4
+            "length": 5,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
           },
           "finalScore": 4
         },
         {
           "aliyah": 2,
-          "verses": 15,
+          "verses": 17,
           "scores": {
-            "length": 6,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 5,
-            "hiddenChallenges": 4
+            "length": 7,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
           },
           "finalScore": 5
         },
         {
           "aliyah": 3,
-          "verses": 9,
+          "verses": 31,
           "scores": {
-            "length": 3,
+            "length": 9,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 4,
+          "verses": 14,
+          "scores": {
+            "length": 5,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 5,
+          "verses": 32,
+          "scores": {
+            "length": 9,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 6,
+          "verses": 26,
+          "scores": {
+            "length": 9,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 7,
+          "verses": 15,
+          "scores": {
+            "length": 6,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 4
+        }
+      ],
+      "parshaScores": {
+        "length": 7.1,
+        "vocabulary": 3,
+        "trope": 3,
+        "repetition": 2,
+        "hiddenChallenges": 2
+      },
+      "parshaFinalScore": 5,
+      "hardestAliyah": 3,
+      "easiestAliyah": 1
+    },
+    {
+      "parshaId": "Beshalach",
+      "profile": [
+        "NARRATIVE",
+        "POETRY"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 14,
+          "scores": {
+            "length": 5,
             "vocabulary": 5,
-            "trope": 4,
-            "repetition": 5,
-            "hiddenChallenges": 4
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 2,
+          "verses": 6,
+          "scores": {
+            "length": 2,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 3,
+          "verses": 11,
+          "scores": {
+            "length": 4,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
           },
           "finalScore": 4
         },
         {
           "aliyah": 4,
-          "verses": 28,
+          "verses": 32,
           "scores": {
             "length": 9,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 5,
-            "hiddenChallenges": 4
+            "vocabulary": 3,
+            "trope": 9,
+            "repetition": 3,
+            "hiddenChallenges": 6
           },
-          "finalScore": 5
+          "finalScore": 7,
+          "note": "Shirat HaYam / Az Yashir (Ex 15:1-19) -- special brick-layout & elevated melody Az Yashir is recited daily in Pesukei D'Zimra -- most daveners know the words well, though that familiarity doesn't fully prepare a reader to lead its special trope solo.",
+          "wellKnown": true
         },
         {
           "aliyah": 5,
-          "verses": 12,
+          "verses": 11,
           "scores": {
             "length": 4,
             "vocabulary": 5,
-            "trope": 4,
-            "repetition": 5,
-            "hiddenChallenges": 4
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
           },
           "finalScore": 4
         },
@@ -3167,391 +2761,57 @@
           "scores": {
             "length": 9,
             "vocabulary": 5,
-            "trope": 4,
-            "repetition": 5,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 7,
-          "verses": 19,
-          "scores": {
-            "length": 7,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 5,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 5
-        }
-      ],
-      "parshaScores": {
-        "length": 6,
-        "vocabulary": 5,
-        "trope": 4,
-        "repetition": 5,
-        "hiddenChallenges": 4
-      },
-      "parshaFinalScore": 4.6,
-      "hardestAliyah": 2,
-      "easiestAliyah": 1
-    },
-    {
-      "parshaId": "Beha'alotcha",
-      "profile": [
-        "NARRATIVE",
-        "LEGAL"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 14,
-          "scores": {
-            "length": 5,
-            "vocabulary": 5,
-            "trope": 4,
+            "trope": 6,
             "repetition": 3,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 2,
-          "verses": 12,
-          "scores": {
-            "length": 4,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 3,
-          "verses": 14,
-          "scores": {
-            "length": 5,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 4,
-          "verses": 19,
-          "scores": {
-            "length": 7,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 5,
-          "verses": 24,
-          "scores": {
-            "length": 9,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 6,
-          "verses": 31,
-          "scores": {
-            "length": 9,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 7,
-          "verses": 22,
-          "scores": {
-            "length": 8,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 5
-        }
-      ],
-      "parshaScores": {
-        "length": 6.7,
-        "vocabulary": 5,
-        "trope": 4,
-        "repetition": 3,
-        "hiddenChallenges": 4
-      },
-      "parshaFinalScore": 4.6,
-      "hardestAliyah": 4,
-      "easiestAliyah": 1
-    },
-    {
-      "parshaId": "Sh'lach",
-      "profile": [
-        "NARRATIVE",
-        "LEGAL"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 20,
-          "scores": {
-            "length": 8,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 2,
-          "verses": 20,
-          "scores": {
-            "length": 8,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 3,
-          "verses": 18,
-          "scores": {
-            "length": 7,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 4,
-          "verses": 27,
-          "scores": {
-            "length": 9,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 5,
-          "verses": 9,
-          "scores": {
-            "length": 3,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 6,
-          "verses": 10,
-          "scores": {
-            "length": 3,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 7,
-          "verses": 15,
-          "scores": {
-            "length": 6,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 4
-        }
-      ],
-      "parshaScores": {
-        "length": 6.3,
-        "vocabulary": 5,
-        "trope": 4,
-        "repetition": 3,
-        "hiddenChallenges": 4
-      },
-      "parshaFinalScore": 4.6,
-      "hardestAliyah": 1,
-      "easiestAliyah": 5
-    },
-    {
-      "parshaId": "Chukat",
-      "profile": [
-        "RITUAL",
-        "NARRATIVE"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 17,
-          "scores": {
-            "length": 7,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 2,
-          "verses": 11,
-          "scores": {
-            "length": 4,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 3,
-          "verses": 7,
-          "scores": {
-            "length": 2,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 4,
-          "verses": 8,
-          "scores": {
-            "length": 3,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 5,
-          "verses": 17,
-          "scores": {
-            "length": 7,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 5
-        },
-        {
-          "aliyah": 6,
-          "verses": 11,
-          "scores": {
-            "length": 4,
-            "vocabulary": 6,
-            "trope": 5,
-            "repetition": 4,
             "hiddenChallenges": 5
           },
-          "finalScore": 5,
-          "note": "Includes the archaic poetic fragment \"Az Yashir Yisrael\" and a quote from the Book of the Wars of Hashem"
+          "finalScore": 7
         },
         {
           "aliyah": 7,
           "verses": 16,
           "scores": {
             "length": 6,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 4
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
           },
           "finalScore": 5
         }
       ],
       "parshaScores": {
-        "length": 4.7,
-        "vocabulary": 6,
-        "trope": 4.1,
-        "repetition": 4,
-        "hiddenChallenges": 4.1
+        "length": 5.6,
+        "vocabulary": 4.7,
+        "trope": 6.4,
+        "repetition": 3,
+        "hiddenChallenges": 5.1
       },
-      "parshaFinalScore": 4.6,
-      "hardestAliyah": 1,
+      "parshaFinalScore": 5,
+      "hardestAliyah": 4,
       "easiestAliyah": 2
     },
     {
-      "parshaId": "Shoftim",
+      "parshaId": "Ki Teitzei",
       "profile": [
         "LEGAL"
       ],
       "aliyot": [
         {
           "aliyah": 1,
-          "verses": 18,
+          "verses": 12,
           "scores": {
-            "length": 7,
+            "length": 4,
             "vocabulary": 6,
             "trope": 4,
             "repetition": 4,
             "hiddenChallenges": 5
           },
-          "finalScore": 5
+          "finalScore": 4
         },
         {
           "aliyah": 2,
-          "verses": 7,
-          "scores": {
-            "length": 2,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 3,
-          "verses": 5,
-          "scores": {
-            "length": 1,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 4,
-          "verses": 8,
+          "verses": 9,
           "scores": {
             "length": 3,
             "vocabulary": 6,
@@ -3562,19 +2822,19 @@
           "finalScore": 4
         },
         {
-          "aliyah": 5,
-          "verses": 22,
+          "aliyah": 3,
+          "verses": 29,
           "scores": {
-            "length": 8,
+            "length": 9,
             "vocabulary": 6,
             "trope": 4,
             "repetition": 4,
             "hiddenChallenges": 5
           },
-          "finalScore": 5
+          "finalScore": 7
         },
         {
-          "aliyah": 6,
+          "aliyah": 4,
           "verses": 17,
           "scores": {
             "length": 7,
@@ -3583,31 +2843,157 @@
             "repetition": 4,
             "hiddenChallenges": 5
           },
-          "finalScore": 5
+          "finalScore": 6
         },
         {
-          "aliyah": 7,
-          "verses": 20,
+          "aliyah": 5,
+          "verses": 6,
           "scores": {
-            "length": 8,
+            "length": 2,
             "vocabulary": 6,
             "trope": 4,
             "repetition": 4,
             "hiddenChallenges": 5
           },
-          "finalScore": 5
+          "finalScore": 3
+        },
+        {
+          "aliyah": 6,
+          "verses": 9,
+          "scores": {
+            "length": 3,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 7,
+          "verses": 28,
+          "scores": {
+            "length": 9,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 7
         }
       ],
       "parshaScores": {
-        "length": 5.1,
+        "length": 5.3,
         "vocabulary": 6,
         "trope": 4,
         "repetition": 4,
         "hiddenChallenges": 5
       },
-      "parshaFinalScore": 4.6,
-      "hardestAliyah": 1,
-      "easiestAliyah": 2
+      "parshaFinalScore": 5,
+      "hardestAliyah": 3,
+      "easiestAliyah": 5
+    },
+    {
+      "parshaId": "Miketz",
+      "profile": [
+        "NARRATIVE"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 14,
+          "scores": {
+            "length": 5,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 2,
+          "verses": 24,
+          "scores": {
+            "length": 9,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 3,
+          "verses": 14,
+          "scores": {
+            "length": 5,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 4,
+          "verses": 23,
+          "scores": {
+            "length": 8,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 5,
+          "verses": 35,
+          "scores": {
+            "length": 10,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 6,
+          "verses": 14,
+          "scores": {
+            "length": 5,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 7,
+          "verses": 22,
+          "scores": {
+            "length": 8,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 5
+        }
+      ],
+      "parshaScores": {
+        "length": 7.1,
+        "vocabulary": 3,
+        "trope": 3,
+        "repetition": 2,
+        "hiddenChallenges": 2
+      },
+      "parshaFinalScore": 4.9,
+      "hardestAliyah": 2,
+      "easiestAliyah": 1
     },
     {
       "parshaId": "Bo",
@@ -3662,7 +3048,7 @@
             "repetition": 4,
             "hiddenChallenges": 4
           },
-          "finalScore": 5
+          "finalScore": 7
         },
         {
           "aliyah": 5,
@@ -3686,7 +3072,7 @@
             "repetition": 4,
             "hiddenChallenges": 4
           },
-          "finalScore": 5
+          "finalScore": 6
         },
         {
           "aliyah": 7,
@@ -3708,12 +3094,12 @@
         "repetition": 4,
         "hiddenChallenges": 4
       },
-      "parshaFinalScore": 4.4,
+      "parshaFinalScore": 4.9,
       "hardestAliyah": 4,
       "easiestAliyah": 1
     },
     {
-      "parshaId": "Shmini",
+      "parshaId": "Ki Tisa",
       "profile": [
         "NARRATIVE",
         "RITUAL"
@@ -3721,18 +3107,42 @@
       "aliyot": [
         {
           "aliyah": 1,
-          "verses": 16,
+          "verses": 45,
           "scores": {
-            "length": 6,
+            "length": 10,
             "vocabulary": 6,
             "trope": 4,
             "repetition": 4,
             "hiddenChallenges": 4
           },
-          "finalScore": 5
+          "finalScore": 7
         },
         {
           "aliyah": 2,
+          "verses": 47,
+          "scores": {
+            "length": 10,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 7
+        },
+        {
+          "aliyah": 3,
+          "verses": 5,
+          "scores": {
+            "length": 1,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 4,
           "verses": 7,
           "scores": {
             "length": 2,
@@ -3741,37 +3151,13 @@
             "repetition": 4,
             "hiddenChallenges": 4
           },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 3,
-          "verses": 12,
-          "scores": {
-            "length": 4,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 4,
-          "verses": 4,
-          "scores": {
-            "length": 1,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 4,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 4
+          "finalScore": 3
         },
         {
           "aliyah": 5,
-          "verses": 5,
+          "verses": 9,
           "scores": {
-            "length": 1,
+            "length": 3,
             "vocabulary": 6,
             "trope": 4,
             "repetition": 4,
@@ -3781,37 +3167,551 @@
         },
         {
           "aliyah": 6,
-          "verses": 32,
+          "verses": 17,
           "scores": {
-            "length": 9,
+            "length": 7,
             "vocabulary": 6,
             "trope": 4,
             "repetition": 4,
             "hiddenChallenges": 4
           },
-          "finalScore": 5
+          "finalScore": 6
         },
         {
           "aliyah": 7,
-          "verses": 15,
+          "verses": 9,
           "scores": {
-            "length": 6,
+            "length": 3,
             "vocabulary": 6,
             "trope": 4,
             "repetition": 4,
             "hiddenChallenges": 4
           },
-          "finalScore": 5
+          "finalScore": 4
         }
       ],
       "parshaScores": {
-        "length": 4.1,
+        "length": 5.1,
         "vocabulary": 6,
         "trope": 4,
         "repetition": 4,
         "hiddenChallenges": 4
       },
-      "parshaFinalScore": 4.4,
+      "parshaFinalScore": 4.9,
+      "hardestAliyah": 1,
+      "easiestAliyah": 3
+    },
+    {
+      "parshaId": "Tazria",
+      "profile": [
+        "RITUAL"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 13,
+          "scores": {
+            "length": 5,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 2,
+          "verses": 12,
+          "scores": {
+            "length": 4,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 3,
+          "verses": 6,
+          "scores": {
+            "length": 2,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 4,
+          "verses": 5,
+          "scores": {
+            "length": 1,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 5,
+          "verses": 11,
+          "scores": {
+            "length": 4,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 6,
+          "verses": 15,
+          "scores": {
+            "length": 6,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 7,
+          "verses": 5,
+          "scores": {
+            "length": 1,
+            "vocabulary": 8,
+            "trope": 5,
+            "repetition": 6,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 4
+        }
+      ],
+      "parshaScores": {
+        "length": 3.3,
+        "vocabulary": 8,
+        "trope": 5,
+        "repetition": 6,
+        "hiddenChallenges": 5
+      },
+      "parshaFinalScore": 4.9,
+      "hardestAliyah": 1,
+      "easiestAliyah": 3
+    },
+    {
+      "parshaId": "Shoftim",
+      "profile": [
+        "LEGAL"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 18,
+          "scores": {
+            "length": 7,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 2,
+          "verses": 7,
+          "scores": {
+            "length": 2,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 3,
+          "verses": 5,
+          "scores": {
+            "length": 1,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 4,
+          "verses": 8,
+          "scores": {
+            "length": 3,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 5,
+          "verses": 22,
+          "scores": {
+            "length": 8,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 6,
+          "verses": 17,
+          "scores": {
+            "length": 7,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 7,
+          "verses": 20,
+          "scores": {
+            "length": 8,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 6
+        }
+      ],
+      "parshaScores": {
+        "length": 5.1,
+        "vocabulary": 6,
+        "trope": 4,
+        "repetition": 4,
+        "hiddenChallenges": 5
+      },
+      "parshaFinalScore": 4.9,
+      "hardestAliyah": 1,
+      "easiestAliyah": 2
+    },
+    {
+      "parshaId": "Ki Tavo",
+      "profile": [
+        "LEGAL",
+        "TOCHACHA"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 11,
+          "scores": {
+            "length": 4,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 7
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 2,
+          "verses": 4,
+          "scores": {
+            "length": 1,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 7
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 3,
+          "verses": 4,
+          "scores": {
+            "length": 1,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 7
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 4,
+          "verses": 10,
+          "scores": {
+            "length": 3,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 7
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 5,
+          "verses": 22,
+          "scores": {
+            "length": 8,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 8
+          },
+          "finalScore": 7,
+          "note": "The 12 curses of Har Eival (Deut 27:15-26) -- repetitive \"cursed be... amen\" refrain"
+        },
+        {
+          "aliyah": 6,
+          "verses": 63,
+          "scores": {
+            "length": 10,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 10
+          },
+          "finalScore": 8,
+          "note": "Tochacha (curses, Deut 28:15-68) -- traditional custom to read quickly and quietly; the longest aliyah in the Torah by verse count"
+        },
+        {
+          "aliyah": 7,
+          "verses": 8,
+          "scores": {
+            "length": 3,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 7
+          },
+          "finalScore": 4
+        }
+      ],
+      "parshaScores": {
+        "length": 4.3,
+        "vocabulary": 6,
+        "trope": 4,
+        "repetition": 4,
+        "hiddenChallenges": 7.6
+      },
+      "parshaFinalScore": 4.9,
+      "hardestAliyah": 6,
+      "easiestAliyah": 2
+    },
+    {
+      "parshaId": "Shemot",
+      "profile": [
+        "NARRATIVE"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 17,
+          "scores": {
+            "length": 7,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 2,
+          "verses": 15,
+          "scores": {
+            "length": 6,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 3,
+          "verses": 15,
+          "scores": {
+            "length": 6,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 4,
+          "verses": 15,
+          "scores": {
+            "length": 6,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 5,
+          "verses": 24,
+          "scores": {
+            "length": 9,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 6,
+          "verses": 14,
+          "scores": {
+            "length": 5,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 7,
+          "verses": 24,
+          "scores": {
+            "length": 9,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 6
+        }
+      ],
+      "parshaScores": {
+        "length": 6.9,
+        "vocabulary": 3,
+        "trope": 3,
+        "repetition": 2,
+        "hiddenChallenges": 2
+      },
+      "parshaFinalScore": 4.7,
+      "hardestAliyah": 5,
+      "easiestAliyah": 2
+    },
+    {
+      "parshaId": "Achrei Mot",
+      "profile": [
+        "RITUAL",
+        "LEGAL"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 17,
+          "scores": {
+            "length": 7,
+            "vocabulary": 7,
+            "trope": 5,
+            "repetition": 5,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 2,
+          "verses": 7,
+          "scores": {
+            "length": 2,
+            "vocabulary": 7,
+            "trope": 5,
+            "repetition": 5,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 3,
+          "verses": 10,
+          "scores": {
+            "length": 3,
+            "vocabulary": 7,
+            "trope": 5,
+            "repetition": 5,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 4,
+          "verses": 7,
+          "scores": {
+            "length": 2,
+            "vocabulary": 7,
+            "trope": 5,
+            "repetition": 5,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 5,
+          "verses": 14,
+          "scores": {
+            "length": 5,
+            "vocabulary": 7,
+            "trope": 5,
+            "repetition": 5,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 6,
+          "verses": 16,
+          "scores": {
+            "length": 6,
+            "vocabulary": 7,
+            "trope": 5,
+            "repetition": 5,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 7,
+          "verses": 9,
+          "scores": {
+            "length": 3,
+            "vocabulary": 7,
+            "trope": 5,
+            "repetition": 5,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 4
+        }
+      ],
+      "parshaScores": {
+        "length": 4,
+        "vocabulary": 7,
+        "trope": 5,
+        "repetition": 5,
+        "hiddenChallenges": 5
+      },
+      "parshaFinalScore": 4.7,
       "hardestAliyah": 1,
       "easiestAliyah": 2
     },
@@ -3844,7 +3744,7 @@
             "repetition": 4,
             "hiddenChallenges": 4
           },
-          "finalScore": 4
+          "finalScore": 3
         },
         {
           "aliyah": 3,
@@ -3856,7 +3756,7 @@
             "repetition": 4,
             "hiddenChallenges": 4
           },
-          "finalScore": 5
+          "finalScore": 7
         },
         {
           "aliyah": 4,
@@ -3868,7 +3768,7 @@
             "repetition": 4,
             "hiddenChallenges": 4
           },
-          "finalScore": 4
+          "finalScore": 3
         },
         {
           "aliyah": 5,
@@ -3892,7 +3792,7 @@
             "repetition": 4,
             "hiddenChallenges": 4
           },
-          "finalScore": 5
+          "finalScore": 7
         },
         {
           "aliyah": 7,
@@ -3914,14 +3814,841 @@
         "repetition": 4,
         "hiddenChallenges": 4
       },
-      "parshaFinalScore": 4.4,
+      "parshaFinalScore": 4.7,
+      "hardestAliyah": 3,
+      "easiestAliyah": 2
+    },
+    {
+      "parshaId": "Chukat",
+      "profile": [
+        "RITUAL",
+        "NARRATIVE"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 17,
+          "scores": {
+            "length": 7,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 2,
+          "verses": 11,
+          "scores": {
+            "length": 4,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 3,
+          "verses": 7,
+          "scores": {
+            "length": 2,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 4,
+          "verses": 8,
+          "scores": {
+            "length": 3,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 5,
+          "verses": 17,
+          "scores": {
+            "length": 7,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 6,
+          "verses": 11,
+          "scores": {
+            "length": 4,
+            "vocabulary": 6,
+            "trope": 5,
+            "repetition": 4,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 5,
+          "note": "Includes the archaic poetic fragment \"Az Yashir Yisrael\" and a quote from the Book of the Wars of Hashem"
+        },
+        {
+          "aliyah": 7,
+          "verses": 16,
+          "scores": {
+            "length": 6,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 5
+        }
+      ],
+      "parshaScores": {
+        "length": 4.7,
+        "vocabulary": 6,
+        "trope": 4.1,
+        "repetition": 4,
+        "hiddenChallenges": 4.1
+      },
+      "parshaFinalScore": 4.7,
+      "hardestAliyah": 1,
+      "easiestAliyah": 3
+    },
+    {
+      "parshaId": "Bechukotai",
+      "profile": [
+        "LEGAL",
+        "TOCHACHA"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 3,
+          "scores": {
+            "length": 1,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 7
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 2,
+          "verses": 4,
+          "scores": {
+            "length": 1,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 7
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 3,
+          "verses": 37,
+          "scores": {
+            "length": 10,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 10
+          },
+          "finalScore": 8,
+          "note": "Tochacha (curses, Lev 26:14-46) -- traditional custom to read quickly and quietly"
+        },
+        {
+          "aliyah": 4,
+          "verses": 15,
+          "scores": {
+            "length": 6,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 7
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 5,
+          "verses": 6,
+          "scores": {
+            "length": 2,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 7
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 6,
+          "verses": 7,
+          "scores": {
+            "length": 2,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 7
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 7,
+          "verses": 6,
+          "scores": {
+            "length": 2,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 7
+          },
+          "finalScore": 4
+        }
+      ],
+      "parshaScores": {
+        "length": 3.4,
+        "vocabulary": 6,
+        "trope": 4,
+        "repetition": 4,
+        "hiddenChallenges": 7.4
+      },
+      "parshaFinalScore": 4.6,
+      "hardestAliyah": 3,
+      "easiestAliyah": 1
+    },
+    {
+      "parshaId": "Ha'azinu",
+      "profile": [
+        "POETRY"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 6,
+          "scores": {
+            "length": 2,
+            "vocabulary": 6,
+            "trope": 10,
+            "repetition": 3,
+            "hiddenChallenges": 9
+          },
+          "finalScore": 5,
+          "note": "Opening of Shirat Ha'azinu -- poetic column layout"
+        },
+        {
+          "aliyah": 2,
+          "verses": 6,
+          "scores": {
+            "length": 2,
+            "vocabulary": 6,
+            "trope": 9,
+            "repetition": 3,
+            "hiddenChallenges": 8
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 3,
+          "verses": 6,
+          "scores": {
+            "length": 2,
+            "vocabulary": 6,
+            "trope": 9,
+            "repetition": 3,
+            "hiddenChallenges": 8
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 4,
+          "verses": 10,
+          "scores": {
+            "length": 3,
+            "vocabulary": 6,
+            "trope": 9,
+            "repetition": 3,
+            "hiddenChallenges": 8
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 5,
+          "verses": 11,
+          "scores": {
+            "length": 4,
+            "vocabulary": 6,
+            "trope": 9,
+            "repetition": 3,
+            "hiddenChallenges": 8
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 6,
+          "verses": 4,
+          "scores": {
+            "length": 1,
+            "vocabulary": 6,
+            "trope": 9,
+            "repetition": 3,
+            "hiddenChallenges": 8
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 7,
+          "verses": 9,
+          "scores": {
+            "length": 3,
+            "vocabulary": 6,
+            "trope": 9,
+            "repetition": 3,
+            "hiddenChallenges": 8
+          },
+          "finalScore": 5
+        }
+      ],
+      "parshaScores": {
+        "length": 2.4,
+        "vocabulary": 6,
+        "trope": 9.1,
+        "repetition": 3,
+        "hiddenChallenges": 8.1
+      },
+      "parshaFinalScore": 4.6,
       "hardestAliyah": 1,
       "easiestAliyah": 2
     },
     {
-      "parshaId": "Matot",
+      "parshaId": "Vayechi",
       "profile": [
-        "LEGAL",
+        "NARRATIVE",
+        "POETRY"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 13,
+          "scores": {
+            "length": 5,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 2,
+          "verses": 7,
+          "scores": {
+            "length": 2,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 3,
+          "verses": 6,
+          "scores": {
+            "length": 2,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 4,
+          "verses": 18,
+          "scores": {
+            "length": 7,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 5,
+          "verses": 8,
+          "scores": {
+            "length": 3,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 6,
+          "verses": 27,
+          "scores": {
+            "length": 9,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 7
+        },
+        {
+          "aliyah": 7,
+          "verses": 6,
+          "scores": {
+            "length": 2,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 3
+        }
+      ],
+      "parshaScores": {
+        "length": 4.3,
+        "vocabulary": 5,
+        "trope": 6,
+        "repetition": 3,
+        "hiddenChallenges": 5
+      },
+      "parshaFinalScore": 4.4,
+      "hardestAliyah": 6,
+      "easiestAliyah": 2
+    },
+    {
+      "parshaId": "Lech-Lecha",
+      "profile": [
+        "NARRATIVE"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 13,
+          "scores": {
+            "length": 5,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 2,
+          "verses": 11,
+          "scores": {
+            "length": 4,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 3,
+          "verses": 14,
+          "scores": {
+            "length": 5,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 4,
+          "verses": 20,
+          "scores": {
+            "length": 8,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 5,
+          "verses": 10,
+          "scores": {
+            "length": 3,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 6,
+          "verses": 37,
+          "scores": {
+            "length": 10,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 7,
+          "verses": 21,
+          "scores": {
+            "length": 8,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 5
+        }
+      ],
+      "parshaScores": {
+        "length": 6.1,
+        "vocabulary": 3,
+        "trope": 3,
+        "repetition": 2,
+        "hiddenChallenges": 2
+      },
+      "parshaFinalScore": 4.3,
+      "hardestAliyah": 6,
+      "easiestAliyah": 2
+    },
+    {
+      "parshaId": "Yitro",
+      "profile": [
+        "NARRATIVE",
+        "POETRY"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 12,
+          "scores": {
+            "length": 4,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 2,
+          "verses": 11,
+          "scores": {
+            "length": 4,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 3,
+          "verses": 4,
+          "scores": {
+            "length": 1,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 4,
+          "verses": 6,
+          "scores": {
+            "length": 2,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 5,
+          "verses": 13,
+          "scores": {
+            "length": 5,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 6,
+          "verses": 20,
+          "scores": {
+            "length": 8,
+            "vocabulary": 3,
+            "trope": 9,
+            "repetition": 3,
+            "hiddenChallenges": 6
+          },
+          "finalScore": 7,
+          "note": "Aseret HaDibrot (Ex 20:2-14) -- ta'am elyon alternate cantillation The Aseret HaDibrot are also one of the most familiar passages in the Torah -- this softens the vocabulary/unfamiliarity difficulty even though the ta'am elyon trope override above still applies in full.",
+          "wellKnown": true
+        },
+        {
+          "aliyah": 7,
+          "verses": 9,
+          "scores": {
+            "length": 3,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 4
+        }
+      ],
+      "parshaScores": {
+        "length": 3.9,
+        "vocabulary": 4.7,
+        "trope": 6.4,
+        "repetition": 3,
+        "hiddenChallenges": 5.1
+      },
+      "parshaFinalScore": 4.3,
+      "hardestAliyah": 6,
+      "easiestAliyah": 3
+    },
+    {
+      "parshaId": "Shmini",
+      "profile": [
+        "NARRATIVE",
+        "RITUAL"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 16,
+          "scores": {
+            "length": 6,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 2,
+          "verses": 7,
+          "scores": {
+            "length": 2,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 3,
+          "verses": 12,
+          "scores": {
+            "length": 4,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 4,
+          "verses": 4,
+          "scores": {
+            "length": 1,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 5,
+          "verses": 5,
+          "scores": {
+            "length": 1,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 6,
+          "verses": 32,
+          "scores": {
+            "length": 9,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 7
+        },
+        {
+          "aliyah": 7,
+          "verses": 15,
+          "scores": {
+            "length": 6,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 4,
+            "hiddenChallenges": 4
+          },
+          "finalScore": 5
+        }
+      ],
+      "parshaScores": {
+        "length": 4.1,
+        "vocabulary": 6,
+        "trope": 4,
+        "repetition": 4,
+        "hiddenChallenges": 4
+      },
+      "parshaFinalScore": 4.3,
+      "hardestAliyah": 6,
+      "easiestAliyah": 2
+    },
+    {
+      "parshaId": "Eikev",
+      "profile": [
+        "NARRATIVE"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 25,
+          "scores": {
+            "length": 9,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 2,
+          "verses": 13,
+          "scores": {
+            "length": 5,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 3,
+          "verses": 26,
+          "scores": {
+            "length": 9,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 4,
+          "verses": 11,
+          "scores": {
+            "length": 4,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 5,
+          "verses": 20,
+          "scores": {
+            "length": 8,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 6,
+          "verses": 12,
+          "scores": {
+            "length": 4,
+            "vocabulary": 1,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 0
+          },
+          "finalScore": 3,
+          "note": "Contains the second paragraph of the Shema (Deut 11:13-21), recited twice daily -- widely known by heart.",
+          "wellKnown": true
+        },
+        {
+          "aliyah": 7,
+          "verses": 4,
+          "scores": {
+            "length": 1,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 2
+        }
+      ],
+      "parshaScores": {
+        "length": 5.7,
+        "vocabulary": 2.7,
+        "trope": 3,
+        "repetition": 2,
+        "hiddenChallenges": 1.7
+      },
+      "parshaFinalScore": 4.1,
+      "hardestAliyah": 1,
+      "easiestAliyah": 7
+    },
+    {
+      "parshaId": "Chayei Sara",
+      "profile": [
         "NARRATIVE"
       ],
       "aliyot": [
@@ -3930,95 +4657,301 @@
           "verses": 16,
           "scores": {
             "length": 6,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 4
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
           },
           "finalScore": 4
         },
         {
           "aliyah": 2,
-          "verses": 12,
+          "verses": 13,
           "scores": {
-            "length": 4,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 4
+            "length": 5,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
           },
           "finalScore": 4
         },
         {
           "aliyah": 3,
-          "verses": 12,
-          "scores": {
-            "length": 4,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 4,
           "verses": 17,
           "scores": {
             "length": 7,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
             "hiddenChallenges": 4
           },
-          "finalScore": 5
+          "finalScore": 5,
+          "note": "Contains a shalshelet (Gen 24:12, Eliezer prays)"
+        },
+        {
+          "aliyah": 4,
+          "verses": 26,
+          "scores": {
+            "length": 9,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 6
         },
         {
           "aliyah": 5,
-          "verses": 13,
+          "verses": 15,
           "scores": {
-            "length": 5,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 4
+            "length": 6,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
           },
           "finalScore": 4
         },
         {
           "aliyah": 6,
-          "verses": 19,
+          "verses": 11,
+          "scores": {
+            "length": 4,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 7,
+          "verses": 7,
+          "scores": {
+            "length": 2,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 2
+        }
+      ],
+      "parshaScores": {
+        "length": 5.6,
+        "vocabulary": 3,
+        "trope": 3,
+        "repetition": 2,
+        "hiddenChallenges": 2.3
+      },
+      "parshaFinalScore": 4,
+      "hardestAliyah": 4,
+      "easiestAliyah": 7
+    },
+    {
+      "parshaId": "Vayeshev",
+      "profile": [
+        "NARRATIVE"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 11,
+          "scores": {
+            "length": 4,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 2,
+          "verses": 11,
+          "scores": {
+            "length": 4,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 3,
+          "verses": 14,
+          "scores": {
+            "length": 5,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 4
+        },
+        {
+          "aliyah": 4,
+          "verses": 30,
+          "scores": {
+            "length": 9,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 5,
+          "verses": 6,
+          "scores": {
+            "length": 2,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 2
+        },
+        {
+          "aliyah": 6,
+          "verses": 17,
           "scores": {
             "length": 7,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
             "hiddenChallenges": 4
           },
-          "finalScore": 5
+          "finalScore": 5,
+          "note": "Contains a shalshelet (Gen 39:8, Yosef refuses)"
         },
         {
           "aliyah": 7,
           "verses": 23,
           "scores": {
             "length": 8,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 4
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
           },
           "finalScore": 5
         }
       ],
       "parshaScores": {
-        "length": 5.9,
-        "vocabulary": 5,
-        "trope": 4,
-        "repetition": 3,
-        "hiddenChallenges": 4
+        "length": 5.6,
+        "vocabulary": 3,
+        "trope": 3,
+        "repetition": 2,
+        "hiddenChallenges": 2.3
       },
-      "parshaFinalScore": 4.4,
+      "parshaFinalScore": 4,
       "hardestAliyah": 4,
+      "easiestAliyah": 5
+    },
+    {
+      "parshaId": "Devarim",
+      "profile": [
+        "NARRATIVE"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 10,
+          "scores": {
+            "length": 3,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 2,
+          "verses": 11,
+          "scores": {
+            "length": 4,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 3,
+          "verses": 17,
+          "scores": {
+            "length": 7,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 4,
+          "verses": 9,
+          "scores": {
+            "length": 3,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 5,
+          "verses": 29,
+          "scores": {
+            "length": 9,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 6
+        },
+        {
+          "aliyah": 6,
+          "verses": 21,
+          "scores": {
+            "length": 8,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 5
+        },
+        {
+          "aliyah": 7,
+          "verses": 8,
+          "scores": {
+            "length": 3,
+            "vocabulary": 3,
+            "trope": 3,
+            "repetition": 2,
+            "hiddenChallenges": 2
+          },
+          "finalScore": 3
+        }
+      ],
+      "parshaScores": {
+        "length": 5.3,
+        "vocabulary": 3,
+        "trope": 3,
+        "repetition": 2,
+        "hiddenChallenges": 2
+      },
+      "parshaFinalScore": 4,
+      "hardestAliyah": 5,
       "easiestAliyah": 1
     },
     {
@@ -4073,7 +5006,7 @@
             "repetition": 4,
             "hiddenChallenges": 5
           },
-          "finalScore": 4
+          "finalScore": 3
         },
         {
           "aliyah": 5,
@@ -4085,7 +5018,7 @@
             "repetition": 4,
             "hiddenChallenges": 5
           },
-          "finalScore": 4
+          "finalScore": 3
         },
         {
           "aliyah": 6,
@@ -4109,7 +5042,7 @@
             "repetition": 4,
             "hiddenChallenges": 5
           },
-          "finalScore": 4
+          "finalScore": 3
         }
       ],
       "parshaScores": {
@@ -4119,9 +5052,9 @@
         "repetition": 4,
         "hiddenChallenges": 5
       },
-      "parshaFinalScore": 4.3,
+      "parshaFinalScore": 3.9,
       "hardestAliyah": 1,
-      "easiestAliyah": 2
+      "easiestAliyah": 4
     },
     {
       "parshaId": "Behar",
@@ -4151,7 +5084,7 @@
             "repetition": 4,
             "hiddenChallenges": 5
           },
-          "finalScore": 4
+          "finalScore": 3
         },
         {
           "aliyah": 3,
@@ -4163,7 +5096,7 @@
             "repetition": 4,
             "hiddenChallenges": 5
           },
-          "finalScore": 4
+          "finalScore": 3
         },
         {
           "aliyah": 4,
@@ -4175,7 +5108,7 @@
             "repetition": 4,
             "hiddenChallenges": 5
           },
-          "finalScore": 4
+          "finalScore": 3
         },
         {
           "aliyah": 5,
@@ -4211,7 +5144,7 @@
             "repetition": 4,
             "hiddenChallenges": 5
           },
-          "finalScore": 5
+          "finalScore": 4
         }
       ],
       "parshaScores": {
@@ -4221,1033 +5154,9 @@
         "repetition": 4,
         "hiddenChallenges": 5
       },
-      "parshaFinalScore": 4.3,
+      "parshaFinalScore": 3.7,
       "hardestAliyah": 1,
       "easiestAliyah": 2
-    },
-    {
-      "parshaId": "Vezot Haberakhah",
-      "profile": [
-        "POETRY",
-        "NARRATIVE"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 7,
-          "scores": {
-            "length": 2,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 2,
-          "verses": 5,
-          "scores": {
-            "length": 1,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 3,
-          "verses": 5,
-          "scores": {
-            "length": 1,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 4,
-          "verses": 4,
-          "scores": {
-            "length": 1,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 5,
-          "verses": 5,
-          "scores": {
-            "length": 1,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 6,
-          "verses": 3,
-          "scores": {
-            "length": 1,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 7,
-          "verses": 12,
-          "scores": {
-            "length": 4,
-            "vocabulary": 5,
-            "trope": 6,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "finalScore": 5
-        }
-      ],
-      "parshaScores": {
-        "length": 1.6,
-        "vocabulary": 5,
-        "trope": 6,
-        "repetition": 3,
-        "hiddenChallenges": 5
-      },
-      "parshaFinalScore": 4.1,
-      "hardestAliyah": 7,
-      "easiestAliyah": 1
-    },
-    {
-      "parshaId": "Miketz",
-      "profile": [
-        "NARRATIVE"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 14,
-          "scores": {
-            "length": 5,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 2,
-          "verses": 24,
-          "scores": {
-            "length": 9,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 3,
-          "verses": 14,
-          "scores": {
-            "length": 5,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 4,
-          "verses": 23,
-          "scores": {
-            "length": 8,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 5,
-          "verses": 35,
-          "scores": {
-            "length": 10,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 6,
-          "verses": 14,
-          "scores": {
-            "length": 5,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 7,
-          "verses": 22,
-          "scores": {
-            "length": 8,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 4
-        }
-      ],
-      "parshaScores": {
-        "length": 7.1,
-        "vocabulary": 3,
-        "trope": 3,
-        "repetition": 2,
-        "hiddenChallenges": 2
-      },
-      "parshaFinalScore": 3.6,
-      "hardestAliyah": 2,
-      "easiestAliyah": 1
-    },
-    {
-      "parshaId": "Lech-Lecha",
-      "profile": [
-        "NARRATIVE"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 13,
-          "scores": {
-            "length": 5,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 2,
-          "verses": 11,
-          "scores": {
-            "length": 4,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 3,
-          "verses": 14,
-          "scores": {
-            "length": 5,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 4,
-          "verses": 20,
-          "scores": {
-            "length": 8,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 5,
-          "verses": 10,
-          "scores": {
-            "length": 3,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 6,
-          "verses": 37,
-          "scores": {
-            "length": 10,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 7,
-          "verses": 21,
-          "scores": {
-            "length": 8,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 4
-        }
-      ],
-      "parshaScores": {
-        "length": 6.1,
-        "vocabulary": 3,
-        "trope": 3,
-        "repetition": 2,
-        "hiddenChallenges": 2
-      },
-      "parshaFinalScore": 3.4,
-      "hardestAliyah": 4,
-      "easiestAliyah": 1
-    },
-    {
-      "parshaId": "Vayera",
-      "profile": [
-        "NARRATIVE"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 14,
-          "scores": {
-            "length": 5,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 2,
-          "verses": 19,
-          "scores": {
-            "length": 7,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 3,
-          "verses": 20,
-          "scores": {
-            "length": 8,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 4,
-          "note": "Contains a shalshelet (Gen 19:16, Lot lingers) -- a trope mark used only 4x in the whole Torah"
-        },
-        {
-          "aliyah": 4,
-          "verses": 40,
-          "scores": {
-            "length": 10,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 5,
-          "verses": 17,
-          "scores": {
-            "length": 7,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 6,
-          "verses": 13,
-          "scores": {
-            "length": 5,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 7,
-          "verses": 24,
-          "scores": {
-            "length": 9,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 4
-        }
-      ],
-      "parshaScores": {
-        "length": 7.3,
-        "vocabulary": 3,
-        "trope": 3,
-        "repetition": 2,
-        "hiddenChallenges": 2.3
-      },
-      "parshaFinalScore": 3.4,
-      "hardestAliyah": 3,
-      "easiestAliyah": 1
-    },
-    {
-      "parshaId": "Vayetzei",
-      "profile": [
-        "NARRATIVE"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 13,
-          "scores": {
-            "length": 5,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 2,
-          "verses": 17,
-          "scores": {
-            "length": 7,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 3,
-          "verses": 31,
-          "scores": {
-            "length": 9,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 4,
-          "verses": 14,
-          "scores": {
-            "length": 5,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 5,
-          "verses": 32,
-          "scores": {
-            "length": 9,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 6,
-          "verses": 26,
-          "scores": {
-            "length": 9,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 7,
-          "verses": 15,
-          "scores": {
-            "length": 6,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        }
-      ],
-      "parshaScores": {
-        "length": 7.1,
-        "vocabulary": 3,
-        "trope": 3,
-        "repetition": 2,
-        "hiddenChallenges": 2
-      },
-      "parshaFinalScore": 3.4,
-      "hardestAliyah": 3,
-      "easiestAliyah": 1
-    },
-    {
-      "parshaId": "Vayeshev",
-      "profile": [
-        "NARRATIVE"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 11,
-          "scores": {
-            "length": 4,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 2,
-          "verses": 11,
-          "scores": {
-            "length": 4,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 3,
-          "verses": 14,
-          "scores": {
-            "length": 5,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 4,
-          "verses": 30,
-          "scores": {
-            "length": 9,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 5,
-          "verses": 6,
-          "scores": {
-            "length": 2,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 3,
-          "note": "Contains a shalshelet (Gen 39:8, Yosef refuses)"
-        },
-        {
-          "aliyah": 6,
-          "verses": 17,
-          "scores": {
-            "length": 7,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 7,
-          "verses": 23,
-          "scores": {
-            "length": 8,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 4
-        }
-      ],
-      "parshaScores": {
-        "length": 5.6,
-        "vocabulary": 3,
-        "trope": 3,
-        "repetition": 2,
-        "hiddenChallenges": 2.3
-      },
-      "parshaFinalScore": 3.3,
-      "hardestAliyah": 4,
-      "easiestAliyah": 1
-    },
-    {
-      "parshaId": "Shemot",
-      "profile": [
-        "NARRATIVE"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 17,
-          "scores": {
-            "length": 7,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 2,
-          "verses": 15,
-          "scores": {
-            "length": 6,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 3,
-          "verses": 15,
-          "scores": {
-            "length": 6,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 4,
-          "verses": 15,
-          "scores": {
-            "length": 6,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 5,
-          "verses": 24,
-          "scores": {
-            "length": 9,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 6,
-          "verses": 14,
-          "scores": {
-            "length": 5,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 7,
-          "verses": 24,
-          "scores": {
-            "length": 9,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 4
-        }
-      ],
-      "parshaScores": {
-        "length": 6.9,
-        "vocabulary": 3,
-        "trope": 3,
-        "repetition": 2,
-        "hiddenChallenges": 2
-      },
-      "parshaFinalScore": 3.3,
-      "hardestAliyah": 5,
-      "easiestAliyah": 1
-    },
-    {
-      "parshaId": "Devarim",
-      "profile": [
-        "NARRATIVE"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 10,
-          "scores": {
-            "length": 3,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 2,
-          "verses": 11,
-          "scores": {
-            "length": 4,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 3,
-          "verses": 17,
-          "scores": {
-            "length": 7,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 4,
-          "verses": 9,
-          "scores": {
-            "length": 3,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 5,
-          "verses": 29,
-          "scores": {
-            "length": 9,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 6,
-          "verses": 21,
-          "scores": {
-            "length": 8,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 7,
-          "verses": 8,
-          "scores": {
-            "length": 3,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        }
-      ],
-      "parshaScores": {
-        "length": 5.3,
-        "vocabulary": 3,
-        "trope": 3,
-        "repetition": 2,
-        "hiddenChallenges": 2
-      },
-      "parshaFinalScore": 3.3,
-      "hardestAliyah": 5,
-      "easiestAliyah": 1
-    },
-    {
-      "parshaId": "Eikev",
-      "profile": [
-        "NARRATIVE"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 25,
-          "scores": {
-            "length": 9,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 2,
-          "verses": 13,
-          "scores": {
-            "length": 5,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 3,
-          "verses": 26,
-          "scores": {
-            "length": 9,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 4,
-          "verses": 11,
-          "scores": {
-            "length": 4,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 5,
-          "verses": 20,
-          "scores": {
-            "length": 8,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 6,
-          "verses": 12,
-          "scores": {
-            "length": 4,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 7,
-          "verses": 4,
-          "scores": {
-            "length": 1,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 2
-        }
-      ],
-      "parshaScores": {
-        "length": 5.7,
-        "vocabulary": 3,
-        "trope": 3,
-        "repetition": 2,
-        "hiddenChallenges": 2
-      },
-      "parshaFinalScore": 3.3,
-      "hardestAliyah": 1,
-      "easiestAliyah": 7
-    },
-    {
-      "parshaId": "Chayei Sara",
-      "profile": [
-        "NARRATIVE"
-      ],
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "verses": 16,
-          "scores": {
-            "length": 6,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 2,
-          "verses": 13,
-          "scores": {
-            "length": 5,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 4
-          },
-          "finalScore": 3,
-          "note": "Contains a shalshelet (Gen 24:12, Eliezer prays)"
-        },
-        {
-          "aliyah": 3,
-          "verses": 17,
-          "scores": {
-            "length": 7,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 4,
-          "verses": 26,
-          "scores": {
-            "length": 9,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 4
-        },
-        {
-          "aliyah": 5,
-          "verses": 15,
-          "scores": {
-            "length": 6,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 6,
-          "verses": 11,
-          "scores": {
-            "length": 4,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 3
-        },
-        {
-          "aliyah": 7,
-          "verses": 7,
-          "scores": {
-            "length": 2,
-            "vocabulary": 3,
-            "trope": 3,
-            "repetition": 2,
-            "hiddenChallenges": 2
-          },
-          "finalScore": 2
-        }
-      ],
-      "parshaScores": {
-        "length": 5.6,
-        "vocabulary": 3,
-        "trope": 3,
-        "repetition": 2,
-        "hiddenChallenges": 2.3
-      },
-      "parshaFinalScore": 3,
-      "hardestAliyah": 4,
-      "easiestAliyah": 7
     },
     {
       "parshaId": "Toldot",
@@ -5265,7 +5174,7 @@
             "repetition": 2,
             "hiddenChallenges": 2
           },
-          "finalScore": 4
+          "finalScore": 5
         },
         {
           "aliyah": 2,
@@ -5313,7 +5222,7 @@
             "repetition": 2,
             "hiddenChallenges": 2
           },
-          "finalScore": 4
+          "finalScore": 6
         },
         {
           "aliyah": 6,
@@ -5325,7 +5234,7 @@
             "repetition": 2,
             "hiddenChallenges": 2
           },
-          "finalScore": 4
+          "finalScore": 5
         },
         {
           "aliyah": 7,
@@ -5347,9 +5256,112 @@
         "repetition": 2,
         "hiddenChallenges": 2
       },
-      "parshaFinalScore": 3,
-      "hardestAliyah": 1,
+      "parshaFinalScore": 3.6,
+      "hardestAliyah": 5,
       "easiestAliyah": 2
+    },
+    {
+      "parshaId": "Vezot Haberakhah",
+      "profile": [
+        "POETRY",
+        "NARRATIVE"
+      ],
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "verses": 7,
+          "scores": {
+            "length": 2,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 2,
+          "verses": 5,
+          "scores": {
+            "length": 1,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 3,
+          "verses": 5,
+          "scores": {
+            "length": 1,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 4,
+          "verses": 4,
+          "scores": {
+            "length": 1,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 5,
+          "verses": 5,
+          "scores": {
+            "length": 1,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 6,
+          "verses": 3,
+          "scores": {
+            "length": 1,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 3
+        },
+        {
+          "aliyah": 7,
+          "verses": 12,
+          "scores": {
+            "length": 4,
+            "vocabulary": 5,
+            "trope": 6,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "finalScore": 4
+        }
+      ],
+      "parshaScores": {
+        "length": 1.6,
+        "vocabulary": 5,
+        "trope": 6,
+        "repetition": 3,
+        "hiddenChallenges": 5
+      },
+      "parshaFinalScore": 3.1,
+      "hardestAliyah": 7,
+      "easiestAliyah": 1
     },
     {
       "parshaId": "Nitzavim",
@@ -5391,7 +5403,7 @@
             "repetition": 2,
             "hiddenChallenges": 2
           },
-          "finalScore": 3
+          "finalScore": 4
         },
         {
           "aliyah": 4,
@@ -5449,7 +5461,7 @@
         "repetition": 2,
         "hiddenChallenges": 2
       },
-      "parshaFinalScore": 2.1,
+      "parshaFinalScore": 2.3,
       "hardestAliyah": 3,
       "easiestAliyah": 1
     },

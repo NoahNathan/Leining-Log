@@ -1,0 +1,680 @@
+{
+  "description": "The 7 pairs of parshiot that are sometimes read combined (double parshiot), with the combined aliyah division used when read together. Whether a given pair is combined in a given year, and whether Israel/Diaspora years match, is calendar-dependent -- see calendar_100y for the actual per-year determination.",
+  "source": "@hebcal/leyning v10.0.0 (getLeyningForParsha)",
+  "generatedAt": "2026-08-06T01:03:29.634Z",
+  "count": 7,
+  "combinedParshiot": [
+    {
+      "id": "Vayakhel-Pekudei",
+      "englishName": "Vayakhel-Pekudei",
+      "hebrewName": "וַיַּקְהֵל־פְקוּדֵי",
+      "book": "Exodus",
+      "parshaNum": [
+        22,
+        23
+      ],
+      "combined": true,
+      "torahRange": "Exodus 35:1-40:38",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Exodus",
+          "start": "35:1",
+          "end": "35:29",
+          "verses": 29
+        },
+        {
+          "aliyah": 2,
+          "book": "Exodus",
+          "start": "35:30",
+          "end": "37:16",
+          "verses": 60
+        },
+        {
+          "aliyah": 3,
+          "book": "Exodus",
+          "start": "37:17",
+          "end": "37:29",
+          "verses": 13
+        },
+        {
+          "aliyah": 4,
+          "book": "Exodus",
+          "start": "38:1",
+          "end": "39:1",
+          "verses": 32
+        },
+        {
+          "aliyah": 5,
+          "book": "Exodus",
+          "start": "39:2",
+          "end": "39:21",
+          "verses": 20
+        },
+        {
+          "aliyah": 6,
+          "book": "Exodus",
+          "start": "39:22",
+          "end": "39:43",
+          "verses": 22
+        },
+        {
+          "aliyah": 7,
+          "book": "Exodus",
+          "start": "40:1",
+          "end": "40:38",
+          "verses": 38
+        }
+      ],
+      "maftir": {
+        "book": "Exodus",
+        "start": "40:34",
+        "end": "40:38",
+        "verses": 5
+      },
+      "totalVerses": 214,
+      "avgAliyahVerses": 30.6,
+      "longestAliyah": 2,
+      "shortestAliyah": 3,
+      "weekdayReading": [
+        {
+          "aliyah": 1,
+          "book": "Exodus",
+          "start": "35:1",
+          "end": "35:3",
+          "verses": 3
+        },
+        {
+          "aliyah": 2,
+          "book": "Exodus",
+          "start": "35:4",
+          "end": "35:10",
+          "verses": 7
+        },
+        {
+          "aliyah": 3,
+          "book": "Exodus",
+          "start": "35:11",
+          "end": "35:20",
+          "verses": 10
+        }
+      ]
+    },
+    {
+      "id": "Tazria-Metzora",
+      "englishName": "Tazria-Metzora",
+      "hebrewName": "תַזְרִיעַ־מְצֹרָע",
+      "book": "Leviticus",
+      "parshaNum": [
+        27,
+        28
+      ],
+      "combined": true,
+      "torahRange": "Leviticus 12:1-15:33",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Leviticus",
+          "start": "12:1",
+          "end": "13:23",
+          "verses": 31
+        },
+        {
+          "aliyah": 2,
+          "book": "Leviticus",
+          "start": "13:24",
+          "end": "13:39",
+          "verses": 16
+        },
+        {
+          "aliyah": 3,
+          "book": "Leviticus",
+          "start": "13:40",
+          "end": "13:54",
+          "verses": 15
+        },
+        {
+          "aliyah": 4,
+          "book": "Leviticus",
+          "start": "13:55",
+          "end": "14:20",
+          "verses": 25
+        },
+        {
+          "aliyah": 5,
+          "book": "Leviticus",
+          "start": "14:21",
+          "end": "14:32",
+          "verses": 12
+        },
+        {
+          "aliyah": 6,
+          "book": "Leviticus",
+          "start": "14:33",
+          "end": "15:15",
+          "verses": 40
+        },
+        {
+          "aliyah": 7,
+          "book": "Leviticus",
+          "start": "15:16",
+          "end": "15:33",
+          "verses": 18
+        }
+      ],
+      "maftir": {
+        "book": "Leviticus",
+        "start": "15:31",
+        "end": "15:33",
+        "verses": 3
+      },
+      "totalVerses": 157,
+      "avgAliyahVerses": 22.4,
+      "longestAliyah": 6,
+      "shortestAliyah": 5,
+      "weekdayReading": [
+        {
+          "aliyah": 1,
+          "book": "Leviticus",
+          "start": "12:1",
+          "end": "12:4",
+          "verses": 4
+        },
+        {
+          "aliyah": 2,
+          "book": "Leviticus",
+          "start": "12:5",
+          "end": "12:8",
+          "verses": 4
+        },
+        {
+          "aliyah": 3,
+          "book": "Leviticus",
+          "start": "13:1",
+          "end": "13:5",
+          "verses": 5
+        }
+      ]
+    },
+    {
+      "id": "Achrei Mot-Kedoshim",
+      "englishName": "Achrei Mot-Kedoshim",
+      "hebrewName": "אַחֲרֵי מוֹת־קְדֹשִׁים",
+      "book": "Leviticus",
+      "parshaNum": [
+        29,
+        30
+      ],
+      "combined": true,
+      "torahRange": "Leviticus 16:1-20:27",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Leviticus",
+          "start": "16:1",
+          "end": "16:24",
+          "verses": 24
+        },
+        {
+          "aliyah": 2,
+          "book": "Leviticus",
+          "start": "16:25",
+          "end": "17:7",
+          "verses": 17
+        },
+        {
+          "aliyah": 3,
+          "book": "Leviticus",
+          "start": "17:8",
+          "end": "18:21",
+          "verses": 30
+        },
+        {
+          "aliyah": 4,
+          "book": "Leviticus",
+          "start": "18:22",
+          "end": "19:14",
+          "verses": 23
+        },
+        {
+          "aliyah": 5,
+          "book": "Leviticus",
+          "start": "19:15",
+          "end": "19:32",
+          "verses": 18
+        },
+        {
+          "aliyah": 6,
+          "book": "Leviticus",
+          "start": "19:33",
+          "end": "20:7",
+          "verses": 12
+        },
+        {
+          "aliyah": 7,
+          "book": "Leviticus",
+          "start": "20:8",
+          "end": "20:27",
+          "verses": 20
+        }
+      ],
+      "maftir": {
+        "book": "Leviticus",
+        "start": "20:25",
+        "end": "20:27",
+        "verses": 3
+      },
+      "totalVerses": 144,
+      "avgAliyahVerses": 20.6,
+      "longestAliyah": 3,
+      "shortestAliyah": 6,
+      "weekdayReading": [
+        {
+          "aliyah": 1,
+          "book": "Leviticus",
+          "start": "16:1",
+          "end": "16:6",
+          "verses": 6
+        },
+        {
+          "aliyah": 2,
+          "book": "Leviticus",
+          "start": "16:7",
+          "end": "16:11",
+          "verses": 5
+        },
+        {
+          "aliyah": 3,
+          "book": "Leviticus",
+          "start": "16:12",
+          "end": "16:17",
+          "verses": 6
+        }
+      ]
+    },
+    {
+      "id": "Behar-Bechukotai",
+      "englishName": "Behar-Bechukotai",
+      "hebrewName": "בְּהַר־בְּחֻקֹּתַי",
+      "book": "Leviticus",
+      "parshaNum": [
+        32,
+        33
+      ],
+      "combined": true,
+      "torahRange": "Leviticus 25:1-27:34",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Leviticus",
+          "start": "25:1",
+          "end": "25:18",
+          "verses": 18
+        },
+        {
+          "aliyah": 2,
+          "book": "Leviticus",
+          "start": "25:19",
+          "end": "25:28",
+          "verses": 10
+        },
+        {
+          "aliyah": 3,
+          "book": "Leviticus",
+          "start": "25:29",
+          "end": "25:38",
+          "verses": 10
+        },
+        {
+          "aliyah": 4,
+          "book": "Leviticus",
+          "start": "25:39",
+          "end": "26:9",
+          "verses": 26
+        },
+        {
+          "aliyah": 5,
+          "book": "Leviticus",
+          "start": "26:10",
+          "end": "26:46",
+          "verses": 37
+        },
+        {
+          "aliyah": 6,
+          "book": "Leviticus",
+          "start": "27:1",
+          "end": "27:15",
+          "verses": 15
+        },
+        {
+          "aliyah": 7,
+          "book": "Leviticus",
+          "start": "27:16",
+          "end": "27:34",
+          "verses": 19
+        }
+      ],
+      "maftir": {
+        "book": "Leviticus",
+        "start": "27:32",
+        "end": "27:34",
+        "verses": 3
+      },
+      "totalVerses": 135,
+      "avgAliyahVerses": 19.3,
+      "longestAliyah": 5,
+      "shortestAliyah": 2,
+      "weekdayReading": [
+        {
+          "aliyah": 1,
+          "book": "Leviticus",
+          "start": "25:1",
+          "end": "25:3",
+          "verses": 3
+        },
+        {
+          "aliyah": 2,
+          "book": "Leviticus",
+          "start": "25:4",
+          "end": "25:7",
+          "verses": 4
+        },
+        {
+          "aliyah": 3,
+          "book": "Leviticus",
+          "start": "25:8",
+          "end": "25:13",
+          "verses": 6
+        }
+      ]
+    },
+    {
+      "id": "Chukat-Balak",
+      "englishName": "Chukat-Balak",
+      "hebrewName": "חֻקַּת־בָּלָק",
+      "book": "Numbers",
+      "parshaNum": [
+        39,
+        40
+      ],
+      "combined": true,
+      "torahRange": "Numbers 19:1-25:9",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Numbers",
+          "start": "19:1",
+          "end": "20:6",
+          "verses": 28
+        },
+        {
+          "aliyah": 2,
+          "book": "Numbers",
+          "start": "20:7",
+          "end": "20:21",
+          "verses": 15
+        },
+        {
+          "aliyah": 3,
+          "book": "Numbers",
+          "start": "20:22",
+          "end": "21:20",
+          "verses": 28
+        },
+        {
+          "aliyah": 4,
+          "book": "Numbers",
+          "start": "21:21",
+          "end": "22:12",
+          "verses": 27
+        },
+        {
+          "aliyah": 5,
+          "book": "Numbers",
+          "start": "22:13",
+          "end": "22:38",
+          "verses": 26
+        },
+        {
+          "aliyah": 6,
+          "book": "Numbers",
+          "start": "22:39",
+          "end": "23:26",
+          "verses": 29
+        },
+        {
+          "aliyah": 7,
+          "book": "Numbers",
+          "start": "23:27",
+          "end": "25:9",
+          "verses": 38
+        }
+      ],
+      "maftir": {
+        "book": "Numbers",
+        "start": "25:7",
+        "end": "25:9",
+        "verses": 3
+      },
+      "totalVerses": 191,
+      "avgAliyahVerses": 27.3,
+      "longestAliyah": 7,
+      "shortestAliyah": 2,
+      "weekdayReading": [
+        {
+          "aliyah": 1,
+          "book": "Numbers",
+          "start": "19:1",
+          "end": "19:6",
+          "verses": 6
+        },
+        {
+          "aliyah": 2,
+          "book": "Numbers",
+          "start": "19:7",
+          "end": "19:9",
+          "verses": 3
+        },
+        {
+          "aliyah": 3,
+          "book": "Numbers",
+          "start": "19:10",
+          "end": "19:17",
+          "verses": 8
+        }
+      ]
+    },
+    {
+      "id": "Matot-Masei",
+      "englishName": "Matot-Masei",
+      "hebrewName": "מַטּוֹת־מַסְעֵי",
+      "book": "Numbers",
+      "parshaNum": [
+        42,
+        43
+      ],
+      "combined": true,
+      "torahRange": "Numbers 30:2-36:13",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Numbers",
+          "start": "30:2",
+          "end": "31:12",
+          "verses": 28
+        },
+        {
+          "aliyah": 2,
+          "book": "Numbers",
+          "start": "31:13",
+          "end": "31:54",
+          "verses": 42
+        },
+        {
+          "aliyah": 3,
+          "book": "Numbers",
+          "start": "32:1",
+          "end": "32:19",
+          "verses": 19
+        },
+        {
+          "aliyah": 4,
+          "book": "Numbers",
+          "start": "32:20",
+          "end": "33:49",
+          "verses": 72
+        },
+        {
+          "aliyah": 5,
+          "book": "Numbers",
+          "start": "33:50",
+          "end": "34:15",
+          "verses": 22
+        },
+        {
+          "aliyah": 6,
+          "book": "Numbers",
+          "start": "34:16",
+          "end": "35:8",
+          "verses": 22
+        },
+        {
+          "aliyah": 7,
+          "book": "Numbers",
+          "start": "35:9",
+          "end": "36:13",
+          "verses": 39
+        }
+      ],
+      "maftir": {
+        "book": "Numbers",
+        "start": "36:11",
+        "end": "36:13",
+        "verses": 3
+      },
+      "totalVerses": 244,
+      "avgAliyahVerses": 34.9,
+      "longestAliyah": 4,
+      "shortestAliyah": 3,
+      "weekdayReading": [
+        {
+          "aliyah": 1,
+          "book": "Numbers",
+          "start": "30:2",
+          "end": "30:9",
+          "verses": 8
+        },
+        {
+          "aliyah": 2,
+          "book": "Numbers",
+          "start": "30:10",
+          "end": "30:13",
+          "verses": 4
+        },
+        {
+          "aliyah": 3,
+          "book": "Numbers",
+          "start": "30:14",
+          "end": "30:17",
+          "verses": 4
+        }
+      ]
+    },
+    {
+      "id": "Nitzavim-Vayeilech",
+      "englishName": "Nitzavim-Vayeilech",
+      "hebrewName": "נִצָּבִים־וַיֵּלֶךְ",
+      "book": "Deuteronomy",
+      "parshaNum": [
+        51,
+        52
+      ],
+      "combined": true,
+      "torahRange": "Deuteronomy 29:9-31:30",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Deuteronomy",
+          "start": "29:9",
+          "end": "29:28",
+          "verses": 20
+        },
+        {
+          "aliyah": 2,
+          "book": "Deuteronomy",
+          "start": "30:1",
+          "end": "30:6",
+          "verses": 6
+        },
+        {
+          "aliyah": 3,
+          "book": "Deuteronomy",
+          "start": "30:7",
+          "end": "30:14",
+          "verses": 8
+        },
+        {
+          "aliyah": 4,
+          "book": "Deuteronomy",
+          "start": "30:15",
+          "end": "31:6",
+          "verses": 12
+        },
+        {
+          "aliyah": 5,
+          "book": "Deuteronomy",
+          "start": "31:7",
+          "end": "31:13",
+          "verses": 7
+        },
+        {
+          "aliyah": 6,
+          "book": "Deuteronomy",
+          "start": "31:14",
+          "end": "31:19",
+          "verses": 6
+        },
+        {
+          "aliyah": 7,
+          "book": "Deuteronomy",
+          "start": "31:20",
+          "end": "31:30",
+          "verses": 11
+        }
+      ],
+      "maftir": {
+        "book": "Deuteronomy",
+        "start": "31:28",
+        "end": "31:30",
+        "verses": 3
+      },
+      "totalVerses": 70,
+      "avgAliyahVerses": 10,
+      "longestAliyah": 1,
+      "shortestAliyah": 2,
+      "weekdayReading": [
+        {
+          "aliyah": 1,
+          "book": "Deuteronomy",
+          "start": "29:9",
+          "end": "29:11",
+          "verses": 3
+        },
+        {
+          "aliyah": 2,
+          "book": "Deuteronomy",
+          "start": "29:12",
+          "end": "29:14",
+          "verses": 3
+        },
+        {
+          "aliyah": 3,
+          "book": "Deuteronomy",
+          "start": "29:15",
+          "end": "29:28",
+          "verses": 14
+        }
+      ]
+    }
+  ]
+}

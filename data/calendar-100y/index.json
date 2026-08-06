@@ -1,0 +1,88 @@
+{
+  "description": "Index of the 100-year (2026-2126) Torah-reading calendar, split into decade files to keep individual files manageable. Each row's parshaId/chagId references parshiot.json/parshiot-combined.json/chagim.json rather than duplicating aliyah data.",
+  "source": "@hebcal/core + @hebcal/leyning v10.0.0, computed locally (not a third-party API call)",
+  "generatedAt": "2026-08-06T01:03:31.915Z",
+  "totalRows": 21838,
+  "files": [
+    {
+      "file": "2026-2035.json",
+      "yearRange": [
+        2026,
+        2035
+      ],
+      "count": 2176
+    },
+    {
+      "file": "2036-2045.json",
+      "yearRange": [
+        2036,
+        2045
+      ],
+      "count": 2193
+    },
+    {
+      "file": "2046-2055.json",
+      "yearRange": [
+        2046,
+        2055
+      ],
+      "count": 2184
+    },
+    {
+      "file": "2056-2065.json",
+      "yearRange": [
+        2056,
+        2065
+      ],
+      "count": 2183
+    },
+    {
+      "file": "2066-2075.json",
+      "yearRange": [
+        2066,
+        2075
+      ],
+      "count": 2184
+    },
+    {
+      "file": "2076-2085.json",
+      "yearRange": [
+        2076,
+        2085
+      ],
+      "count": 2182
+    },
+    {
+      "file": "2086-2095.json",
+      "yearRange": [
+        2086,
+        2095
+      ],
+      "count": 2184
+    },
+    {
+      "file": "2096-2105.json",
+      "yearRange": [
+        2096,
+        2105
+      ],
+      "count": 2182
+    },
+    {
+      "file": "2106-2115.json",
+      "yearRange": [
+        2106,
+        2115
+      ],
+      "count": 2187
+    },
+    {
+      "file": "2116-2125.json",
+      "yearRange": [
+        2116,
+        2125
+      ],
+      "count": 2183
+    }
+  ]
+}

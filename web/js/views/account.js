@@ -23,7 +23,7 @@ function aliyahLabel(key) {
 export async function renderAccount(container) {
   container.innerHTML = '';
   container.append(el('div', { class: 'view-heading' }, [
-    el('h1', {}, 'My Torah'),
+    el('h1', {}, 'My Leining'),
     el('p', { class: 'muted' }, 'Track which aliyot and parshiot you\'ve leined, and see how much of the Torah you\'ve covered.'),
   ]));
 

@@ -86,7 +86,7 @@ reconstructs the full directory.
 
 ## Account & progress tracking
 
-The "My Torah" tab lets users sign in and log which aliyot/parshiot they've
+The "My Leining" tab lets users sign in and log which aliyot/parshiot they've
 leined, optionally flagging one as their bar mitzvah parsha and noting the
 year (Hebrew and/or Gregorian) they last read it. It computes % of the
 Torah learned from real per-aliyah verse counts already in `parshiot.json`
@@ -112,7 +112,7 @@ secrecy of the API key (which is meant to be public/client-side).
    has custom email restrictions, check Authentication -> Providers ->
    Email.
 
-Until `supabaseClient.js` is filled in, the "My Torah" tab shows a friendly
+Until `supabaseClient.js` is filled in, the "My Leining" tab shows a friendly
 "not configured yet" notice instead of a broken login form -- the rest of
 the app is unaffected either way.
 

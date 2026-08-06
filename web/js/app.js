@@ -9,8 +9,8 @@ const VIEWS = {
   home: { label: 'This Week', render: renderHome },
   search: { label: 'Search', render: renderSearch },
   compare: { label: 'Compare', render: renderCompare },
+  account: { label: 'My Leining', render: renderAccount },
   howitworks: { label: 'How It Works', render: renderHowItWorks },
-  account: { label: 'My Torah', render: renderAccount },
 };
 
 const tabsHost = document.getElementById('tabs');

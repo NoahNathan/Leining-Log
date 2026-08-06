@@ -298,6 +298,64 @@ body { min-height: 100vh; display: flex; flex-direction: column; }
 }
 .parsha-chip:hover { background: var(--accent-soft); border-color: var(--accent); }
 
+.account-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.progress-headline {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.progress-percent { font-size: 2rem; font-weight: 800; color: var(--accent); }
+.progress-track {
+  height: 12px;
+  background: var(--accent-soft);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+.progress-fill { height: 100%; background: var(--accent); border-radius: 999px; transition: width 0.2s; }
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  margin: 4px 0 12px;
+}
+
+.log-list { display: flex; flex-direction: column; gap: 2px; }
+.log-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--card-border);
+  font-size: 0.9rem;
+}
+.log-row:last-child { border-bottom: none; }
+.log-parsha { font-weight: 600; }
+
+.howitworks-section p { line-height: 1.6; margin: 0 0 10px; }
+.howitworks-section p:last-child { margin-bottom: 0; }
+.howitworks-section .plain-list li { line-height: 1.6; margin-bottom: 6px; }
+.formula-box {
+  background: var(--bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.88rem;
+  overflow-x: auto;
+  margin: 0 0 12px;
+}
+
 .badge {
   display: inline-block;
   border: 1px solid;

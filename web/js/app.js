@@ -24,6 +24,11 @@ function parseHash() {
   if (m) return { type: 'parsha', id: decodeURIComponent(m[1]) };
   m = hash.match(/^chag\/(.+)$/);
   if (m) return { type: 'chag', id: decodeURIComponent(m[1]) };
+  // Supabase's magic-link redirect lands back here with the session tokens
+  // in the URL hash (e.g. #access_token=...&type=magiclink). Route straight
+  // to My Leining without touching location.hash ourselves -- the Supabase
+  // client still needs to read those tokens out of it on this same load.
+  if (/access_token=/.test(hash)) return { type: 'tab', tab: 'account' };
   return { type: 'tab', tab: VIEWS[hash] ? hash : 'home' };
 }
 

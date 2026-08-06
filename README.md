@@ -15,9 +15,14 @@ just lookup and comparison.
 npm run dev
 ```
 
-Then open <http://localhost:8080>. It's a zero-build static site (vanilla
-JS + CSS, no framework, no bundler) that reads straight from `/data` via
-`fetch`, served by the small dependency-free server in `serve.mjs`.
+Then open <http://localhost:8080> (redirects to `/web/`). It's a zero-build
+static site (vanilla JS + CSS, no framework, no bundler) that reads
+straight from the sibling `/data` directory via `fetch` using relative
+paths, served locally by the small dependency-free server in `serve.mjs`.
+
+The same relative-path layout is deployed live via GitHub Pages (see
+`.github/workflows/deploy-pages.yml`) -- pushes to `main` publish the app
+at `https://<owner>.github.io/Leining-Log/`.
 
 - **This Week** -- defaults to the upcoming Shabbat's parsha (Diaspora or
   Israel), with the full aliyah breakdown, difficulty ratings, special-trope

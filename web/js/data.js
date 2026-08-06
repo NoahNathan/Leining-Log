@@ -12,7 +12,7 @@ async function loadJSON(path) {
   return promise;
 }
 
-const DATA = '/data/';
+const DATA = '../data/';
 
 export async function getParshiot() {
   const d = await loadJSON(DATA + 'parshiot.json');

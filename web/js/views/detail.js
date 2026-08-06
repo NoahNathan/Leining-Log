@@ -7,10 +7,18 @@ function scoreBadge(score, { size = 'md' } = {}) {
   }, [`${score.toFixed ? (Number.isInteger(score) ? score : score.toFixed(1)) : score}`, ' · ', scoreLabel(score)]);
 }
 
+const CRITERION_TOOLTIPS = {
+  Length: 'How many verses — the single biggest factor in the score.',
+  Vocabulary: 'How rare and hard-to-pronounce the words are, based on real word-frequency data from the Torah.',
+  Trope: 'How complex or unusual the cantillation (trop) is.',
+  Repetition: 'Repeated, formulaic phrasing — this actually makes an aliyah easier, so a low score here helps.',
+  Gotchas: 'Easy-to-fumble details that are not captured by length, vocab, trope, or repetition alone — similar-sounding names, numbers, or look-alike words.',
+};
+
 function miniBar(label, score) {
   const pct = Math.max(4, (score / 10) * 100);
   return el('div', { class: 'minibar-row' }, [
-    el('span', { class: 'minibar-label' }, label),
+    el('span', { class: 'minibar-label', title: CRITERION_TOOLTIPS[label] || '' }, label),
     el('div', { class: 'minibar-track' }, [
       el('div', { class: 'minibar-fill', style: `width:${pct}%; background:${scoreColor(score)}` }),
     ]),
@@ -55,10 +63,10 @@ function qualify(label, score) {
     if (score >= 7) return 'little repetition to lean on, so it is easy to lose your place';
     return 'some repeated structure';
   }
-  if (label === 'Hidden challenges') {
+  if (label === 'Gotchas') {
     if (score >= 7) return 'several easy-to-fumble details (similar names, numbers, look-alike words)';
     if (score >= 4) return 'a few subtle traps';
-    return 'few hidden surprises';
+    return 'not much to trip you up';
   }
   return '';
 }
@@ -80,7 +88,7 @@ function buildWhyPanel(d, a) {
     { label: 'Vocabulary', score: d.scores.vocabulary },
     { label: 'Trope', score: d.scores.trope },
     { label: 'Repetition', score: d.scores.repetition },
-    { label: 'Hidden challenges', score: d.scores.hiddenChallenges },
+    { label: 'Gotchas', score: d.scores.hiddenChallenges },
   ];
   const list = el('div', { class: 'why-criteria' });
   for (const c of criteria) {
@@ -202,7 +210,7 @@ export function renderParshaDetail({ parsha, haftarah, difficulty }, opts = {}) 
       miniBar('Vocabulary', difficulty.parshaScores.vocabulary),
       miniBar('Trope', difficulty.parshaScores.trope),
       miniBar('Repetition', difficulty.parshaScores.repetition),
-      miniBar('Hidden challenges', difficulty.parshaScores.hiddenChallenges),
+      miniBar('Gotchas', difficulty.parshaScores.hiddenChallenges),
     ]);
     card.append(bars);
     if (difficulty.hardestAliyah) {
@@ -265,7 +273,7 @@ export function renderChagDetail(chag) {
       miniBar('Vocabulary', difficulty.scores.vocabulary),
       miniBar('Trope', difficulty.scores.trope),
       miniBar('Repetition', difficulty.scores.repetition),
-      miniBar('Hidden challenges', difficulty.scores.hiddenChallenges),
+      miniBar('Gotchas', difficulty.scores.hiddenChallenges),
     ]);
     card.append(bars);
     if (difficulty.aliyot.length > 1) {

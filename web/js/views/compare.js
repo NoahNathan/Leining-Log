@@ -8,7 +8,7 @@ const COLUMNS = [
   { key: 'vocabulary', label: 'Vocab', path: (p) => p.parshaScores.vocabulary },
   { key: 'trope', label: 'Trope', path: (p) => p.parshaScores.trope },
   { key: 'repetition', label: 'Repeat.', path: (p) => p.parshaScores.repetition },
-  { key: 'hiddenChallenges', label: 'Hidden', path: (p) => p.parshaScores.hiddenChallenges },
+  { key: 'hiddenChallenges', label: 'Gotchas', path: (p) => p.parshaScores.hiddenChallenges },
 ];
 
 let sortKey = 'parshaFinalScore';

@@ -318,6 +318,41 @@ table { width: 100%; border-collapse: collapse; }
 .aliyah-note { color: var(--text-muted); font-size: 0.82rem; }
 .maftir-line { margin-top: 10px; font-size: 0.9rem; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
 
+.aliyah-row.expandable { cursor: pointer; }
+.aliyah-row.expandable:hover { background: var(--accent-soft); }
+.why-caret { color: var(--text-muted); font-size: 0.75rem; margin-left: 5px; }
+.why-row td { padding: 0; background: var(--bg); border-bottom: 1px solid var(--card-border); }
+.why-panel { padding: 14px 16px; }
+.why-note {
+  margin: 0 0 12px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  background: var(--accent-soft);
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+}
+.why-criteria { display: flex; flex-direction: column; gap: 7px; }
+.why-criterion {
+  display: grid;
+  grid-template-columns: 118px 42px 1fr;
+  gap: 10px;
+  align-items: baseline;
+  font-size: 0.85rem;
+}
+.why-criterion-label { color: var(--text-muted); font-weight: 600; }
+.why-criterion-score { font-weight: 700; }
+.why-words { margin-top: 10px; font-size: 0.82rem; }
+.why-words-label { color: var(--text-muted); display: block; margin-bottom: 5px; }
+.word-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.word-chip {
+  background: var(--bg-elevated);
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  padding: 3px 11px;
+  font-size: 0.92rem;
+  direction: rtl;
+}
+
 .tag {
   display: inline-block;
   background: var(--accent-soft);
@@ -391,4 +426,5 @@ table { width: 100%; border-collapse: collapse; }
   .header-score { text-align: left; }
   .sbs-result { grid-template-columns: 1fr; }
   .minibar-row { grid-template-columns: 90px 1fr 28px; }
+  .why-criterion { grid-template-columns: 96px 36px 1fr; font-size: 0.8rem; }
 }

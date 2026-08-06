@@ -33,6 +33,12 @@ const HEBREW_LETTER = /[א-ת]/;
 const NON_LETTER = /[^א-תְ-ׇּׁׂ֑-֯]/g;
 const GUTTURALS = /[אהחע]/g;
 
+// A word is only surfaced in the UI as a "rare word" if its exact form
+// (with any attached prefix/suffix) appears at most this many times across
+// the whole Torah (~80,000 word tokens) -- not merely "less often than the
+// other words in this one aliyah."
+const RARE_OCCURRENCE_THRESHOLD = 5;
+
 function tokenizeVerse(text) {
   return text.split(/[\s־]+/) // whitespace or maqaf
     .map(t => t.replace(NON_LETTER, ''))
@@ -152,12 +158,19 @@ function rawAliyahStats(bookEn, startRef, endRef) {
   const rawRarity = rarityVals.reduce((s, v) => s + v, 0) / rarityVals.length;
   const rawPron = pronVals.reduce((s, v) => s + v, 0) / pronVals.length;
 
+  // Only surface a word as a "rare example" if it genuinely clears an
+  // absolute rarity bar -- not just "the least-common word in this
+  // particular aliyah," which for a short, ordinary-vocabulary aliyah could
+  // still be a perfectly common word. Words are sorted ascending by Torah-
+  // wide frequency, so once one exceeds the threshold the rest do too.
   const seenR = new Set();
   const rareExamples = [];
   for (const w of [...words].sort((a, b) => freq.get(a.consonantal) - freq.get(b.consonantal))) {
     if (seenR.has(w.consonantal)) continue;
+    const occ = freq.get(w.consonantal);
+    if (occ > RARE_OCCURRENCE_THRESHOLD) break;
     seenR.add(w.consonantal);
-    rareExamples.push({ word: w.surface, occurrencesInTorah: freq.get(w.consonantal) });
+    rareExamples.push({ word: w.surface, occurrencesInTorah: occ });
     if (rareExamples.length >= 3) break;
   }
   const seenH = new Set();

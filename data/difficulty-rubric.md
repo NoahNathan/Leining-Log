@@ -7,6 +7,12 @@ ideally by letting gabbaim/baalei korei rate their own aliyot in the app and
 blending that feedback in.
 
 > **Revision history, newest first:**
+> 6. **"Rare word" examples now require a real absolute rarity threshold**
+>    (occurring at most 5 times across the whole Torah), instead of always
+>    showing the 3 least-common words in that one aliyah regardless of
+>    whether even the least-common one was actually rare. An aliyah with no
+>    word meeting that bar now shows no "rare words" at all, rather than a
+>    misleadingly-labeled example. See "Vocabulary" below.
 > 5. **Repetition now eases difficulty instead of adding to it**, and
 >    **final scores are rescaled against the whole dataset** so the full
 >    1-10 range is genuinely used (previously the hardest aliyah in the
@@ -192,11 +198,17 @@ This entirely replaced the old content-profile vocabulary baseline
 (`RITUAL` used to just mean "vocab = 8" for every aliyah in Terumah,
 Vayikra, Tazria, etc. regardless of what the actual words were).
 
-The full computation, plus each aliyah's 3 rarest words and 3
+The full computation, plus each aliyah's rarest words (up to 3, each
+required to occur **at most 5 times across the whole Torah** to qualify --
+an aliyah where nothing clears that bar shows none, rather than "the 3
+least-common words in this aliyah" mislabeled as rare) and 3
 hardest-to-pronounce words (useful for direct display in the app), is saved
 separately in `data/word-difficulty.json` and consumed by
 `gen_difficulty.mjs`; regenerate it with `npm run gen:wordstats` before
-`gen:difficulty` (already wired into `gen:all` in the right order).
+`gen:difficulty` (already wired into `gen:all` in the right order). Across
+the full ~918-aliyah pool, only 2 aliyot have no word meeting the threshold
+(a 3-verse Sukkot Chol HaMoed reading where every word, while collectively
+driving a high vocabulary score, individually occurs more than 5 times).
 
 **Honest limitations of this method:**
 - Frequency is counted on the **exact inflected surface form** (consonants

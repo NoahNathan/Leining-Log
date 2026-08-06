@@ -125,7 +125,7 @@ function buildWhyPanel(d, a) {
   wrap.append(list);
   const vd = d.vocabDetail;
   if (vd && vd.rareExamples && vd.rareExamples.length) {
-    wrap.append(wordChipRow('Rare words (seldom appear elsewhere in the Torah)', vd.rareExamples.map((w) => w.occurrencesInTorah === 1 ? `${w.word} (1×)` : `${w.word} (${w.occurrencesInTorah}×)`)));
+    wrap.append(wordChipRow('Rare words (this exact form appears only a few times in the whole Torah)', vd.rareExamples.map((w) => w.occurrencesInTorah === 1 ? `${w.word} — 1× in the Torah` : `${w.word} — ${w.occurrencesInTorah}× in the Torah`)));
   }
   if (vd && vd.hardToPronounceExamples && vd.hardToPronounceExamples.length) {
     wrap.append(wordChipRow('Tricky to pronounce', vd.hardToPronounceExamples.map((w) => w.word)));

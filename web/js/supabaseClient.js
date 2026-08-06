@@ -2,8 +2,8 @@
 // "Account & progress tracking" section for exact steps). Both values are
 // meant to be public/client-side -- Row Level Security (see db/schema.sql)
 // is what actually protects each user's data, not secrecy of these keys.
-const SUPABASE_URL = 'YOUR_SUPABASE_PROJECT_URL';
-const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+const SUPABASE_URL = 'https://hykscgzbazjipmctenbf.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_qm4qYvcMnKTNp7oqmlO0Eg_mJ1l-T_d';
 
 export const isConfigured = SUPABASE_URL !== 'YOUR_SUPABASE_PROJECT_URL' && SUPABASE_ANON_KEY !== 'YOUR_SUPABASE_ANON_KEY';
 

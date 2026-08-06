@@ -1,5 +1,27 @@
 import { el, citeRange, displayParshaName, scoreColor, scoreColorBg, scoreLabel } from '../util.js';
 
+const TIKKUN_BOOK_NUMBER = { Genesis: 1, Exodus: 2, Leviticus: 3, Numbers: 4, Deuteronomy: 5 };
+
+// Links to Adat Shalom's ScrollScraper Tikkun, which needs exact
+// chapter/verse boundaries in its URL to jump straight to a reading.
+function tikkunUrl({ book, start, end }) {
+  const bookNum = TIKKUN_BOOK_NUMBER[book];
+  if (!bookNum) return null;
+  const [startc, startv] = start.split(':').map(Number);
+  const [endc, endv] = end.split(':').map(Number);
+  const params = new URLSearchParams({
+    book: bookNum, audioRepeatCount: 1, coloring: 0, doShading: 'on',
+    startc, startv, endc, endv,
+  });
+  return `https://scrollscraper.adatshalom.net/scrollscraper.cgi?${params}`;
+}
+
+function tikkunLink(ref) {
+  const url = tikkunUrl(ref);
+  if (!url) return null;
+  return el('a', { href: url, target: '_blank', rel: 'noopener', class: 'tikkun-link', title: 'Find this reading in the Tikkun' }, 'Tikkun ↗');
+}
+
 function scoreBadge(score, { size = 'md' } = {}) {
   return el('span', {
     class: `badge badge-${size}`,
@@ -151,7 +173,9 @@ export function renderAliyahTable(aliyot, { maftir, difficultyAliyot } = {}) {
     const caret = d ? el('span', { class: 'why-caret' }, ' ⌄') : null;
     row.append(el('td', {}, d ? [scoreBadge(d.finalScore, { size: 'sm' }), caret] : '—'));
     const noteText = a.specialTrope || (d && d.note) || '';
-    row.append(el('td', { class: 'aliyah-note' }, noteText));
+    const link = tikkunLink(a);
+    if (link) link.addEventListener('click', (e) => e.stopPropagation());
+    row.append(el('td', { class: 'aliyah-note' }, [noteText, link]));
     if (d) {
       row.addEventListener('click', () => {
         const isOpen = row.dataset.expanded === 'true';
@@ -180,6 +204,7 @@ export function renderAliyahTable(aliyot, { maftir, difficultyAliyot } = {}) {
       el('strong', {}, 'Maftir: '), citeRange(maftir),
       maftir.reason ? el('span', { class: 'tag' }, maftir.reason) : null,
       maftirDifficulty ? scoreBadge(maftirDifficulty.finalScore, { size: 'sm' }) : null,
+      tikkunLink(maftir),
     ]);
     return el('div', {}, [table, foot]);
   }

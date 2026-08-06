@@ -7,6 +7,12 @@ ideally by letting gabbaim/baalei korei rate their own aliyot in the app and
 blending that feedback in.
 
 > **Revision history, newest first:**
+> 4. **Every chag/fast/Rosh Chodesh/special-Shabbat reading in chagim.json
+>    is now scored too** (see "Chagim" below), in a new `chagim` array
+>    alongside `parshiot`. Also fixed the vocabulary aggregation: the first
+>    cut at "compute vocabulary from real word data" (revision 3) technically
+>    worked but compressed almost every aliyah into a narrow 4-6 band --
+>    see "Vocabulary" below for what was wrong and how it's fixed now.
 > 3. **Vocabulary is now computed from the real Torah text**, not guessed
 >    from a content-profile category -- see "Vocabulary" below. **Combined
 >    (double) parshiot are now scored directly** against their own
@@ -57,6 +63,23 @@ predictor of how hard an aliyah is to prepare and deliver -- a long,
 plain-vocabulary aliyah is still a bigger undertaking than a short, tricky
 one. Retune it via the `RUBRIC_WEIGHTS` constant in `tools/gen_difficulty.mjs`.
 
+**Why final scores almost never reach 9-10, and why that's not a bug:** to
+land at 9+, an aliyah needs to be at or near the *longest in the entire
+Torah* (length=10, worth 4/8 of the score) **and** simultaneously have
+near-max vocabulary, trope, repetition, *and* hidden-challenge scores --
+four largely independent things that don't naturally co-occur. In practice
+the longest aliyot tend to be substantive narrative or legal content that
+covers a lot of ground precisely *because* it isn't also maximally poetic,
+maximally rare-vocabulary, and maximally repetitive all at once. Across the
+full dataset (parshiot + combined + chagim, ~860 aliyot) exactly one aliyah
+currently reaches 9 (Masei's 39-verse bulk of the journey-station list --
+longest-percentile length, rarest-percentile vocabulary from all those
+place names, *and* a repetition override, genuinely stacking all four);
+none reach 10. That's an honest property of averaging several
+mostly-independent 0-10 measurements, not evidence that the 9-10 band is
+broken or unreachable by construction -- it's just genuinely rare for every
+axis to peak on the same aliyah.
+
 ## Vocabulary: computed from real word data, not a category guess
 
 `tools/gen_word_stats.mjs` loads the full Masoretic Torah text (all 5 books,
@@ -78,9 +101,34 @@ aliyah, two independent measurements:
    vowel treatment), +1-2 for a dagesh. Also scored as a 1-10 percentile
    rank, this time against every word's raw complexity score.
 
-An aliyah's **vocabulary score is the average of its words' rarity and
-pronunciation scores**, averaged again across every word token in the
-aliyah. This entirely replaced the old content-profile vocabulary baseline
+**How the per-word scores turn into one aliyah-level number matters a lot,**
+and the first attempt at this got it wrong in a way worth explaining, since
+the fix generalizes:
+
+- **Naive fix #1 (shipped, then corrected): average every word token's
+  score.** This is what shipped first, and it barely varied between
+  aliyot (nearly everything landed in a 4-6 band) -- because filler words
+  like "et", "asher", "vayomer" can be 10-15% of an aliyah's tokens by
+  themselves, and a token-level mean gets swamped by that repetition no
+  matter how many genuinely rare words are also present.
+- **Naive fix #2 (tried, rejected): average over *distinct* word types**
+  (a word repeated 10 times counts once). This overcorrected in the
+  opposite direction -- almost everything landed in a 7-9 band -- because
+  Biblical Hebrew's morphology means the *majority* of distinct word forms
+  in literally any passage are individually rare (measured on this corpus:
+  53% of all ~12,900 distinct forms are hapax legomena, 77% occur 3 times
+  or fewer), so "the rare portion of this aliyah's distinct vocabulary" is
+  large and roughly constant everywhere, regardless of content.
+- **What it actually does now:** compute each aliyah's raw token-level mean
+  (naive fix #1's number), then **percentile-rank that mean against every
+  other aliyah's raw mean** -- the same technique the `length` criterion
+  already used successfully. An aliyah doesn't need an absolute score on
+  some fixed scale; it needs to be measured *relative to every other
+  aliyah in the dataset*, exactly like length is. This is computed once
+  across parshiot, combined parshiot, and chagim together (918 aliyot),
+  so a chag reading and a parsha aliyah are directly comparable.
+
+This entirely replaced the old content-profile vocabulary baseline
 (`RITUAL` used to just mean "vocab = 8" for every aliyah in Terumah,
 Vayikra, Tazria, etc. regardless of what the actual words were).
 
@@ -138,6 +186,45 @@ property of the parsha itself -- see `calendar-100y/` for the real
 per-year, per-region determination. The app looks up whichever `parshaId`
 that week's calendar row actually specifies (single or combined), and
 `difficulty-scores.json` now has a real, directly-computed entry either way.
+
+## Chagim are scored too, in their own array
+
+Every reading in `chagim.json` that actually has Torah text attached (114
+entries total; 8 -- Shabbat HaGadol, Shabbat Shuva, Erev Purim, Erev Tisha
+B'Av -- have no distinct Torah/maftir reading of their own and are skipped)
+gets scored the same way, using the same five criteria, the same length
+scale, and the same word-frequency vocabulary data as the parshiot -- so a
+chag reading and a parsha aliyah are directly comparable. Results live in a
+separate `chagim` array in `difficulty-scores.json` (keyed by `chagId`,
+matching `chagim.json`), not mixed into `parshiot`, since a chag reading
+isn't a parsha.
+
+Content-profile tags are assigned by pattern-matching the chag's name (see
+`chagProfile()` in `tools/gen_difficulty.mjs`) rather than a hand-listed
+table, since most Diaspora/Israel pairs share identical Torah content.
+Specific overrides were added for the same kind of well-documented features
+as the parshiot get, re-verified against chagim.json's actual verse ranges:
+- **Aseret HaDibrot** on Shavuot day 1 (both regions) -- same ta'am elyon
+  trope bump and familiarity discount as Yitro/Vaetchanan.
+- **Az Yashir** on Pesach VII (both regions) -- same trope bump and
+  familiarity discount as Beshalach.
+- **The daily-decreasing bull count** on Sukkot Chol HaMoed / Hoshana Raba
+  (Num 29) -- each day repeats the same offering formula with the bull
+  count one lower than the previous day, a distinctive repetition/
+  easy-to-default-to-the-wrong-number hazard that isn't present in the
+  parallel Pesach Chol HaMoed readings (different content entirely: the
+  Ex 33-34 revelation narrative), so it's a chag-specific override, not
+  inherited from any parsha.
+- **Chanukah's** nightly readings share the `GENEALOGY` profile tag with
+  Nasso, since they're literally the same repetitive Nesiim gift-list text
+  (Num 7), one nasi's day at a time.
+
+`Tish'a B'Av` reuses the `TOCHACHA` profile tag for its high hidden-
+challenge baseline (the custom of chanting slowly/quietly, and borrowing
+Eicha-trope motifs) even though its actual content (Deut 4:25-40) isn't
+curses -- a deliberate repurposing of that tag's *emotionally loaded,
+read-carefully* meaning rather than its literal name; noted here so it
+doesn't look like miscategorization.
 
 ## How trope/repetition/hidden-challenge scores were assigned
 

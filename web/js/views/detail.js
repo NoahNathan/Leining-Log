@@ -40,11 +40,11 @@ export function renderAliyahTable(aliyot, { maftir, difficultyAliyot } = {}) {
   ]));
   table.append(thead);
   const tbody = el('tbody');
-  const byNum = new Map((difficultyAliyot || []).map((a) => [a.aliyah, a]));
+  const byNum = new Map((difficultyAliyot || []).map((a) => [String(a.aliyah), a]));
   for (const a of aliyot) {
-    const d = byNum.get(a.aliyah);
+    const d = byNum.get(String(a.aliyah));
     const row = el('tr');
-    row.append(el('td', { class: 'aliyah-num' }, `${a.aliyah === 7 ? '7th' : ordinal(a.aliyah)}`));
+    row.append(el('td', { class: 'aliyah-num' }, aliyahLabel(a.aliyah)));
     row.append(el('td', {}, citeRange(a)));
     row.append(el('td', { class: 'muted' }, `${a.verses}v`));
     row.append(el('td', {}, d ? scoreBadge(d.finalScore, { size: 'sm' }) : '—'));
@@ -54,9 +54,11 @@ export function renderAliyahTable(aliyot, { maftir, difficultyAliyot } = {}) {
   }
   table.append(tbody);
   if (maftir) {
+    const maftirDifficulty = byNum.get('M');
     const foot = el('div', { class: 'maftir-line' }, [
       el('strong', {}, 'Maftir: '), citeRange(maftir),
       maftir.reason ? el('span', { class: 'tag' }, maftir.reason) : null,
+      maftirDifficulty ? scoreBadge(maftirDifficulty.finalScore, { size: 'sm' }) : null,
     ]);
     return el('div', {}, [table, foot]);
   }
@@ -67,6 +69,11 @@ function ordinal(n) {
   const s = ['th', 'st', 'nd', 'rd'];
   const v = n % 100;
   return n + (s[(v - 20) % 10] || s[v] || s[0]);
+}
+
+// aliyah keys are 'M' for maftir, otherwise a number (or numeric string)
+function aliyahLabel(key) {
+  return key === 'M' ? 'Maftir' : ordinal(Number(key));
 }
 
 export function renderParshaDetail({ parsha, haftarah, difficulty }, opts = {}) {
@@ -110,7 +117,7 @@ export function renderParshaDetail({ parsha, haftarah, difficulty }, opts = {}) 
     ]);
     card.append(bars);
     if (difficulty.hardestAliyah) {
-      card.append(el('p', { class: 'muted small' }, `Hardest aliyah: ${ordinal(difficulty.hardestAliyah)}. Easiest: ${ordinal(difficulty.easiestAliyah)}.`));
+      card.append(el('p', { class: 'muted small' }, `Hardest aliyah: ${aliyahLabel(difficulty.hardestAliyah)}. Easiest: ${aliyahLabel(difficulty.easiestAliyah)}.`));
     }
   }
 
@@ -144,12 +151,17 @@ function stat(label, value) {
 
 export function renderChagDetail(chag) {
   const card = el('div', { class: 'card detail-card' });
+  const difficulty = chag.difficulty || null;
   card.append(el('div', { class: 'detail-header' }, [
     el('div', {}, [
       el('div', { class: 'eyebrow' }, chag.region === 'israel' ? 'Israel' : 'Diaspora'),
       el('h2', {}, chag.name),
       el('div', { class: 'torah-range' }, chag.summary || ''),
     ]),
+    difficulty ? el('div', { class: 'header-score' }, [
+      scoreBadge(difficulty.finalScore, { size: 'lg' }),
+      el('div', { class: 'muted small' }, 'overall difficulty'),
+    ]) : null,
   ]));
   if (chag.specialTrope) {
     card.append(el('div', { class: 'card subcard notes-card' }, [
@@ -157,15 +169,29 @@ export function renderChagDetail(chag) {
       el('p', { class: 'note-line' }, chag.specialTrope),
     ]));
   }
+  if (difficulty) {
+    const bars = el('div', { class: 'card subcard' }, [
+      el('h3', {}, 'Difficulty breakdown'),
+      miniBar('Length', difficulty.scores.length),
+      miniBar('Vocabulary', difficulty.scores.vocabulary),
+      miniBar('Trope', difficulty.scores.trope),
+      miniBar('Repetition', difficulty.scores.repetition),
+      miniBar('Hidden challenges', difficulty.scores.hiddenChallenges),
+    ]);
+    card.append(bars);
+    if (difficulty.aliyot.length > 1) {
+      card.append(el('p', { class: 'muted small' }, `Hardest: ${aliyahLabel(difficulty.hardestAliyah)}. Easiest: ${aliyahLabel(difficulty.easiestAliyah)}.`));
+    }
+  }
   if (chag.aliyot && chag.aliyot.length) {
     card.append(el('div', { class: 'card subcard' }, [
       el('h3', {}, 'Aliyot'),
-      renderAliyahTable(chag.aliyot, { maftir: chag.maftir }),
+      renderAliyahTable(chag.aliyot, { maftir: chag.maftir, difficultyAliyot: difficulty && difficulty.aliyot }),
     ]));
   } else if (chag.maftir) {
     card.append(el('div', { class: 'card subcard' }, [
       el('h3', {}, 'Maftir only'),
-      el('p', {}, citeRange(chag.maftir)),
+      renderAliyahTable([{ aliyah: 'M', ...chag.maftir }], { difficultyAliyot: difficulty && difficulty.aliyot }),
     ]));
   }
   card.append(el('div', { class: 'card subcard' }, [

@@ -44,6 +44,11 @@ export async function getDifficulty() {
   return d.parshiot;
 }
 
+export async function getChagDifficulty() {
+  const d = await loadJSON(DATA + 'difficulty-scores.json');
+  return d.chagim;
+}
+
 export async function getCalendarIndex() {
   return loadJSON(DATA + 'calendar-100y/index.json');
 }
@@ -133,7 +138,18 @@ export async function findUpcomingOccurrences(parshaId, region = 'diaspora', fro
   return found.slice(0, count);
 }
 
+let chagDifficultyIndex = null;
+async function getChagDifficultyIndex() {
+  if (chagDifficultyIndex) return chagDifficultyIndex;
+  const difficulty = await getChagDifficulty();
+  chagDifficultyIndex = new Map(difficulty.map((d) => [d.chagId, d]));
+  return chagDifficultyIndex;
+}
+
 export async function getChagById(chagId) {
-  const chagim = await getChagim();
-  return chagim.find((c) => c.id === chagId) || null;
+  const [chagim, diffIdx] = await Promise.all([getChagim(), getChagDifficultyIndex()]);
+  const chag = chagim.find((c) => c.id === chagId) || null;
+  if (!chag) return null;
+  const difficulty = diffIdx.get(chagId) || null;
+  return { ...chag, difficulty };
 }

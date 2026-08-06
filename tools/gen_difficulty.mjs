@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync } from 'fs';
 
 const { parshiot } = JSON.parse(readFileSync('../data/parshiot.json', 'utf8'));
 const { combinedParshiot } = JSON.parse(readFileSync('../data/parshiot-combined.json', 'utf8'));
+const { chagim } = JSON.parse(readFileSync('../data/chagim.json', 'utf8'));
 const wordDifficulty = JSON.parse(readFileSync('../data/word-difficulty.json', 'utf8')).aliyot;
 
 // ---- Content-profile tags -> baseline sub-scores (0-10) for trope/repetition/hidden ----
@@ -109,7 +110,10 @@ function blendProfile(tags) {
   return out;
 }
 
-// ---- length score: percentile rank of verse count across ALL aliyot (individual parshiot only -- combined weeks reuse the same scale) ----
+// ---- length score: percentile rank of verse count across ALL individual-parsha aliyot ----
+// (Combined parshiot and chagim are scored against this same fixed scale --
+// not re-based on their own population -- so a 20-verse aliyah always means
+// the same length score everywhere in the dataset.)
 const allCounts = [];
 for (const p of parshiot) for (const a of p.aliyot) allCounts.push(a.verses);
 allCounts.sort((a,b)=>a-b);
@@ -123,26 +127,29 @@ function lengthScore(verses) {
 // Length now dominates the final score by design (see difficulty-rubric.md):
 // it alone counts for as much as all four other criteria combined.
 const RUBRIC_WEIGHTS = { length: 4, vocab: 1, trope: 1, repetition: 1, hidden: 1 };
+const TOTAL_WEIGHT = Object.values(RUBRIC_WEIGHTS).reduce((s, w) => s + w, 0);
 
-function scoreParsha(p, { combined }) {
-  const tags = PARSHA_PROFILE[p.id] || ['NARRATIVE'];
+// Generic scorer: given a reading's items (each with a key + verse count),
+// its content-profile tags, and any specific overrides/familiarity
+// discounts keyed `${id}:${itemKey}`, produces the same shape of result for
+// parshiot, combined parshiot, and chagim alike.
+function scoreReading(id, items, tags, overridesMap, familiarMap) {
   const base = blendProfile(tags);
-  const aliyahScores = [];
-  for (const a of p.aliyot) {
-    const ov = ALIYAH_OVERRIDES[`${p.id}:${a.aliyah}`] || {};
-    const fam = FAMILIAR_PASSAGE_DISCOUNTS[`${p.id}:${a.aliyah}`] || {};
-    const wd = wordDifficulty[p.id]?.[String(a.aliyah)];
+  const itemScores = [];
+  for (const item of items) {
+    const ov = overridesMap[`${id}:${item.key}`] || {};
+    const fam = familiarMap[`${id}:${item.key}`] || {};
+    const wd = wordDifficulty[id]?.[item.key];
     const vocabBase = wd ? wd.vocab : 5; // fallback should never actually trigger
     const vocab = clamp(vocabBase + (fam.vocab || 0));
     const trope = clamp(base.trope + (ov.trope || 0));
     const repetition = clamp(base.repetition + (ov.repetition || 0));
     const hidden = clamp(base.hidden + (ov.hidden || 0) + (fam.hidden || 0));
-    const length = lengthScore(a.verses);
-    const totalW = Object.values(RUBRIC_WEIGHTS).reduce((s,w)=>s+w,0);
+    const length = lengthScore(item.verses);
     const final = clamp((length*RUBRIC_WEIGHTS.length + vocab*RUBRIC_WEIGHTS.vocab + trope*RUBRIC_WEIGHTS.trope +
-                          repetition*RUBRIC_WEIGHTS.repetition + hidden*RUBRIC_WEIGHTS.hidden) / totalW);
+                          repetition*RUBRIC_WEIGHTS.repetition + hidden*RUBRIC_WEIGHTS.hidden) / TOTAL_WEIGHT);
     const entry = {
-      aliyah: a.aliyah, verses: a.verses,
+      aliyah: item.key, verses: item.verses,
       scores: { length, vocabulary: vocab, trope, repetition, hiddenChallenges: hidden },
       finalScore: final,
     };
@@ -152,42 +159,134 @@ function scoreParsha(p, { combined }) {
     const notes = [ov.note, fam.note].filter(Boolean);
     if (notes.length) entry.note = notes.join(' ');
     if (fam.note) entry.wellKnown = true;
-    aliyahScores.push(entry);
+    itemScores.push(entry);
   }
-  const avg = (key) => Math.round((aliyahScores.reduce((s,a)=>s+a.scores[key],0)/aliyahScores.length)*10)/10;
-  const parshaFinal = Math.round((aliyahScores.reduce((s,a)=>s+a.finalScore,0)/aliyahScores.length)*10)/10;
-  const result = {
-    parshaId: p.id,
-    combined,
+  const avg = (key) => Math.round((itemScores.reduce((s,a)=>s+a.scores[key],0)/itemScores.length)*10)/10;
+  const finalScore = Math.round((itemScores.reduce((s,a)=>s+a.finalScore,0)/itemScores.length)*10)/10;
+  return {
     profile: tags,
-    aliyot: aliyahScores,
-    parshaScores: {
+    aliyot: itemScores,
+    scores: {
       length: avg('length'), vocabulary: avg('vocabulary'), trope: avg('trope'),
       repetition: avg('repetition'), hiddenChallenges: avg('hiddenChallenges'),
     },
-    parshaFinalScore: parshaFinal,
-    hardestAliyah: aliyahScores.reduce((m,a)=>a.finalScore>m.finalScore?a:m, aliyahScores[0]).aliyah,
-    easiestAliyah: aliyahScores.reduce((m,a)=>a.finalScore<m.finalScore?a:m, aliyahScores[0]).aliyah,
+    finalScore,
+    hardestAliyah: itemScores.reduce((m,a)=>a.finalScore>m.finalScore?a:m, itemScores[0]).aliyah,
+    easiestAliyah: itemScores.reduce((m,a)=>a.finalScore<m.finalScore?a:m, itemScores[0]).aliyah,
+  };
+}
+
+function scoreParsha(p, { combined }) {
+  const tags = PARSHA_PROFILE[p.id] || ['NARRATIVE'];
+  const items = p.aliyot.map(a => ({ key: String(a.aliyah), verses: a.verses }));
+  const scored = scoreReading(p.id, items, tags, ALIYAH_OVERRIDES, FAMILIAR_PASSAGE_DISCOUNTS);
+  const result = {
+    parshaId: p.id,
+    combined,
+    profile: scored.profile,
+    aliyot: scored.aliyot,
+    parshaScores: scored.scores,
+    parshaFinalScore: scored.finalScore,
+    hardestAliyah: scored.hardestAliyah,
+    easiestAliyah: scored.easiestAliyah,
   };
   if (combined) result.componentParshiot = p.id.split('-');
   return result;
+}
+
+// ---- Chagim: content-profile tags by id-prefix pattern (DIASPORA/IL pairs ----
+// share identical Torah content in every case in this dataset, so one
+// pattern covers both regions). Verified against actual chagim.json book/
+// verse ranges, not assumed -- see difficulty-rubric.md for specifics.
+function chagProfile(name) {
+  if (/^Rosh Chodesh/.test(name)) return ['RITUAL'];
+  if (/^Chanukah/.test(name)) return ['RITUAL', 'GENEALOGY']; // Nesiim-family repetitive gift lists (Num 7), same text as Nasso
+  if (/^(Purim|Shushan Purim)$/.test(name)) return ['NARRATIVE'];
+  if (/^(Asara B'Tevet|Ta'anit Esther|Tzom Gedaliah|Tzom Tammuz)$/.test(name)) return ['NARRATIVE'];
+  if (/^Tish'a B'Av/.test(name)) return ['NARRATIVE', 'TOCHACHA']; // borrows TOCHACHA's "read slow/quiet, emotionally loaded" baseline, not curses content
+  if (/^Rosh Hashana/.test(name)) return ['NARRATIVE'];
+  if (/^Yom Kippur/.test(name)) return ['RITUAL', 'LEGAL'];
+  if (/^(Pesach I|Pesach VIII)$/.test(name)) return ['NARRATIVE', 'RITUAL'];
+  if (/^Pesach (II|III|IV|V|VI)( |$)/.test(name)) return ['RITUAL'];
+  if (/^Pesach VII/.test(name)) return ['NARRATIVE', 'POETRY'];
+  if (/^Sukkot (I|II)$/.test(name)) return ['RITUAL'];
+  if (/^Sukkot (III|IV|V|VI|VII)/.test(name)) return ['RITUAL'];
+  if (/^Shmini Atzeret/.test(name)) return ['LEGAL'];
+  if (/^Simchat Torah/.test(name)) return ['POETRY', 'NARRATIVE'];
+  if (/^Shavuot/.test(name)) return ['NARRATIVE', 'POETRY'];
+  if (/^Shabbat (Shekalim|Parah|HaChodesh)/.test(name)) return ['RITUAL'];
+  if (/^Shabbat Zachor/.test(name)) return ['NARRATIVE'];
+  if (/^Yom HaAtzma'ut/.test(name)) return ['NARRATIVE'];
+  return ['NARRATIVE'];
+}
+
+// Chag-specific overrides -- same idea as ALIYAH_OVERRIDES above, keyed
+// `${chagId}:${itemKey}` where itemKey is the numbered aliyah or 'M' for
+// maftir. Each verified against the actual book/verse range in chagim.json.
+const CHAG_OVERRIDES = {};
+for (const region of ['DIASPORA', 'IL']) {
+  Object.assign(CHAG_OVERRIDES, {
+    [`Shavuot I__${region}:4`]: { trope: +3, hidden: +2, note: 'Aseret HaDibrot (Ex 20:2-14) -- ta\'am elyon alternate cantillation' },
+    [`Shavuot__${region}:4`]:   { trope: +3, hidden: +2, note: 'Aseret HaDibrot (Ex 20:2-14) -- ta\'am elyon alternate cantillation' },
+    [`Pesach VII__${region}:5`]:{ trope: +3, hidden: +2, note: 'Shirat HaYam / Az Yashir (Ex 14:26-15:26) -- special brick-layout & elevated melody' },
+    [`Sukkot III (CH''M)__${region}:1`]: { repetition: +2, note: 'Start of the daily-decreasing bull count (Num 29) -- each Sukkot chol-hamoed day repeats the same offering formula with the bull count one lower than the day before, easy to default to the wrong number' },
+    [`Sukkot IV (CH''M)__${region}:1`]:  { repetition: +2, note: 'Daily-decreasing bull count continues (Num 29)' },
+    [`Sukkot V (CH''M)__${region}:1`]:   { repetition: +2, note: 'Daily-decreasing bull count continues (Num 29)' },
+    [`Sukkot VI (CH''M)__${region}:1`]:  { repetition: +2, note: 'Daily-decreasing bull count continues (Num 29)' },
+    [`Sukkot VII (Hoshana Raba)__${region}:1`]: { repetition: +2, note: 'Daily-decreasing bull count concludes (Num 29)' },
+  });
+}
+const CHAG_FAMILIAR = {};
+for (const region of ['DIASPORA', 'IL']) {
+  Object.assign(CHAG_FAMILIAR, {
+    [`Shavuot I__${region}:4`]: { vocab: -2, hidden: -1, note: 'The Aseret HaDibrot are one of the most familiar passages in the Torah -- softens the vocabulary/unfamiliarity difficulty even though the ta\'am elyon trope override still applies in full.' },
+    [`Shavuot__${region}:4`]:   { vocab: -2, hidden: -1, note: 'The Aseret HaDibrot are one of the most familiar passages in the Torah -- softens the vocabulary/unfamiliarity difficulty even though the ta\'am elyon trope override still applies in full.' },
+    [`Pesach VII__${region}:5`]:{ vocab: -2, hidden: -1, note: 'Az Yashir is recited daily in Pesukei D\'Zimra -- most daveners know the words well, though that familiarity doesn\'t fully prepare a reader to lead its special trope solo.' },
+  });
+}
+
+function scoreChag(c) {
+  const items = [
+    ...(c.aliyot || []).map(a => ({ key: String(a.aliyah), verses: a.verses })),
+    ...(c.maftir ? [{ key: 'M', verses: c.maftir.verses }] : []),
+  ];
+  if (items.length === 0) return null; // e.g. Shabbat HaGadol/Shuva, Erev Purim/Tisha B'Av -- no distinct Torah reading
+  const name = c.name;
+  const tags = chagProfile(name);
+  const scored = scoreReading(c.id, items, tags, CHAG_OVERRIDES, CHAG_FAMILIAR);
+  return {
+    chagId: c.id,
+    name,
+    region: c.region,
+    profile: scored.profile,
+    aliyot: scored.aliyot,
+    scores: scored.scores,
+    finalScore: scored.finalScore,
+    hardestAliyah: scored.hardestAliyah,
+    easiestAliyah: scored.easiestAliyah,
+  };
 }
 
 const results = parshiot.map(p => scoreParsha(p, { combined: false }));
 const combinedResults = combinedParshiot.map(p => scoreParsha(p, { combined: true }));
 const allResults = [...results, ...combinedResults].sort((a,b) => b.parshaFinalScore - a.parshaFinalScore);
 
+const chagResults = chagim.map(scoreChag).filter(Boolean).sort((a,b) => b.finalScore - a.finalScore);
+
 writeFileSync('../data/difficulty-scores.json', JSON.stringify({
-  description: "Difficulty ratings (0-10 per criterion, plus a length-weighted final score) for every aliyah and for each parsha as a whole -- including the 7 combined (double) parshiot, each scored against its own combined-reading aliyah divisions rather than averaged from its two components. Generated with a transparent rule-based methodology, NOT a survey of actual leining outcomes. Vocabulary is computed from real word-frequency + pronunciation-complexity data over the Masoretic Torah text (see word-difficulty.json); the other four criteria are a content-profile heuristic. See difficulty-rubric.md for the full methodology and honest caveats.",
+  description: "Difficulty ratings (0-10 per criterion, plus a length-weighted final score) for every aliyah of every parsha -- including the 7 combined (double) parshiot, each scored against its own combined-reading aliyah divisions rather than averaged from its two components -- AND every chag/fast/Rosh Chodesh/special-Shabbat reading in chagim.json (see the separate 'chagim' array). Generated with a transparent rule-based methodology, NOT a survey of actual leining outcomes. Vocabulary is computed from real word-frequency + pronunciation-complexity data over the Masoretic Torah text (see word-difficulty.json); the other four criteria are a content-profile heuristic. See difficulty-rubric.md for the full methodology and honest caveats.",
   methodology: "difficulty-rubric.md",
   generatedAt: new Date().toISOString(),
   count: allResults.length,
   individualCount: results.length,
   combinedCount: combinedResults.length,
   parshiot: allResults,
+  chagimCount: chagResults.length,
+  chagim: chagResults,
 }, null, 2));
 
-console.log('Wrote difficulty-scores.json:', results.length, 'individual +', combinedResults.length, 'combined =', allResults.length, 'total');
-console.log('Top 5 hardest overall:', allResults.slice(0,5).map(r=>`${r.parshaId} (${r.parshaFinalScore})${r.combined?' [combined]':''}`));
-console.log('Top 5 easiest overall:', allResults.slice(-5).map(r=>`${r.parshaId} (${r.parshaFinalScore})${r.combined?' [combined]':''}`));
-console.log('Well-known aliyot flagged:', allResults.flatMap(r=>r.aliyot.filter(a=>a.wellKnown).map(a=>`${r.parshaId}:${a.aliyah}`)));
+console.log('Wrote difficulty-scores.json:', results.length, 'individual +', combinedResults.length, 'combined parshiot,', chagResults.length, 'chagim entries');
+console.log('Top 5 hardest parshiot:', allResults.slice(0,5).map(r=>`${r.parshaId} (${r.parshaFinalScore})${r.combined?' [combined]':''}`));
+console.log('Top 5 easiest parshiot:', allResults.slice(-5).map(r=>`${r.parshaId} (${r.parshaFinalScore})${r.combined?' [combined]':''}`));
+console.log('Top 5 hardest chagim:', chagResults.slice(0,5).map(r=>`${r.chagId} (${r.finalScore})`));
+console.log('Top 5 easiest chagim:', chagResults.slice(-5).map(r=>`${r.chagId} (${r.finalScore})`));

@@ -1,0 +1,57 @@
+import { el, todayISO, formatDateLong } from '../util.js';
+import { findUpcomingParsha, getParshaDetail } from '../data.js';
+import { renderParshaDetail } from './detail.js';
+
+let region = 'diaspora';
+
+export async function renderHome(container) {
+  container.innerHTML = '';
+  const regionToggle = el('div', { class: 'toggle-group' }, [
+    toggleBtn('Diaspora', 'diaspora'),
+    toggleBtn('Israel', 'israel'),
+  ]);
+  const heading = el('div', { class: 'view-heading' }, [
+    el('h1', {}, "This Week's Leining"),
+    el('p', { class: 'muted' }, "Defaults to the upcoming Shabbat's parsha, aliyot, haftarah, and difficulty."),
+  ]);
+  const controls = el('div', { class: 'controls-row' }, [regionToggle]);
+  const body = el('div', { class: 'view-body' }, [el('p', { class: 'muted' }, 'Loading…')]);
+  container.append(heading, controls, body);
+
+  async function load() {
+    body.innerHTML = '';
+    body.append(el('p', { class: 'muted' }, 'Loading…'));
+    const today = todayISO();
+    const row = await findUpcomingParsha(region, today);
+    body.innerHTML = '';
+    if (!row) {
+      body.append(el('p', {}, 'Could not find an upcoming parsha in the stored calendar range.'));
+      return;
+    }
+    const detail = await getParshaDetail(row.parshaId);
+    if (!detail) {
+      body.append(el('p', {}, `No data found for ${row.parshaId}.`));
+      return;
+    }
+    const dateBanner = el('div', { class: 'date-banner' }, [
+      el('span', { class: 'date-banner-date' }, formatDateLong(row.date)),
+      row.date === today ? el('span', { class: 'tag tag-today' }, 'Today') : null,
+      row.specialReading ? el('span', { class: 'tag' }, Object.values(row.specialReading)[0]) : null,
+    ]);
+    body.append(dateBanner, renderParshaDetail(detail, { eyebrow: 'Upcoming Parashat HaShavua' }));
+  }
+
+  function toggleBtn(label, value) {
+    const btn = el('button', {
+      class: `toggle-btn ${region === value ? 'active' : ''}`,
+      onclick: async () => {
+        region = value;
+        [...regionToggle.children].forEach((c) => c.classList.toggle('active', c.textContent === label));
+        await load();
+      },
+    }, label);
+    return btn;
+  }
+
+  await load();
+}

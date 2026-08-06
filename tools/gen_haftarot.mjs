@@ -12,9 +12,18 @@ const ALL = [
  "Chukat-Balak","Matot-Masei","Nitzavim-Vayeilech"
 ];
 
+// Some haftarot (Shemot, Yitro, Mishpatim, Tzav, Masei/Matot-Masei) are read
+// as two non-adjacent excerpts -- @hebcal/leyning represents those as an
+// array of citations rather than one, so cite() must handle both shapes.
 function cite(h) {
   if (!h) return null;
+  if (Array.isArray(h)) return h.map(cite);
   return { book: h.k, start: h.b, end: h.e, verses: h.v };
+}
+function citeKey(v) {
+  // stable string form for equality-checking single citations OR arrays of them
+  if (!v) return '';
+  return (Array.isArray(v) ? v : [v]).map(p => `${p.book} ${p.start}-${p.end}`).join('; ');
 }
 
 const haftarot = ALL.map(name => {
@@ -22,7 +31,7 @@ const haftarot = ALL.map(name => {
   const ashkenazi = cite(r.haft);
   const sefardi = r.seph ? cite(r.seph) : null;
   const chabad = r.chabad ? cite(r.chabad) : null;
-  const differsFromAshkenazi = (v) => v && ashkenazi && !(v.book===ashkenazi.book && v.start===ashkenazi.start && v.end===ashkenazi.end);
+  const differsFromAshkenazi = (v) => v && ashkenazi && citeKey(v) !== citeKey(ashkenazi);
   return {
     id: name,
     parsha: r.name.en,

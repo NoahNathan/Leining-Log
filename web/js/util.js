@@ -14,6 +14,8 @@ export function formatDateLong(iso) {
 
 export function citeRange(entry) {
   if (!entry) return '';
+  // some haftarot are two non-adjacent excerpts, represented as an array
+  if (Array.isArray(entry)) return entry.map(citeRange).join(', ');
   if (entry.start === entry.end) return `${entry.book} ${entry.start}`;
   return `${entry.book} ${entry.start}-${entry.end}`;
 }

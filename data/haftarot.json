@@ -6,7 +6,7 @@
     "Yemenite Baladi nusach",
     "Yemenite Shami nusach"
   ],
-  "generatedAt": "2026-08-06T01:03:29.907Z",
+  "generatedAt": "2026-08-06T02:50:06.873Z",
   "count": 61,
   "haftarot": [
     {
@@ -253,7 +253,20 @@
       "id": "Shemot",
       "parsha": "Shemot",
       "nusach": {
-        "ashkenazi": {},
+        "ashkenazi": [
+          {
+            "book": "Isaiah",
+            "start": "27:6",
+            "end": "28:13",
+            "verses": 21
+          },
+          {
+            "book": "Isaiah",
+            "start": "29:22",
+            "end": "29:23",
+            "verses": 2
+          }
+        ],
         "sefardi": {
           "book": "Jeremiah",
           "start": "1:1",
@@ -330,7 +343,20 @@
       "id": "Yitro",
       "parsha": "Yitro",
       "nusach": {
-        "ashkenazi": {},
+        "ashkenazi": [
+          {
+            "book": "Isaiah",
+            "start": "6:1",
+            "end": "7:6",
+            "verses": 19
+          },
+          {
+            "book": "Isaiah",
+            "start": "9:5",
+            "end": "9:6",
+            "verses": 2
+          }
+        ],
         "sefardi": {
           "book": "Isaiah",
           "start": "6:1",
@@ -347,7 +373,20 @@
       "id": "Mishpatim",
       "parsha": "Mishpatim",
       "nusach": {
-        "ashkenazi": {},
+        "ashkenazi": [
+          {
+            "book": "Jeremiah",
+            "start": "34:8",
+            "end": "34:22",
+            "verses": 15
+          },
+          {
+            "book": "Jeremiah",
+            "start": "33:25",
+            "end": "33:26",
+            "verses": 2
+          }
+        ],
         "sefardi": {
           "sameAs": "ashkenazi"
         },
@@ -484,15 +523,39 @@
       "id": "Tzav",
       "parsha": "Tzav",
       "nusach": {
-        "ashkenazi": {},
+        "ashkenazi": [
+          {
+            "book": "Jeremiah",
+            "start": "7:21",
+            "end": "8:3",
+            "verses": 17
+          },
+          {
+            "book": "Jeremiah",
+            "start": "9:22",
+            "end": "9:23",
+            "verses": 2
+          }
+        ],
         "sefardi": {
           "sameAs": "ashkenazi"
         },
-        "chabad": {
-          "sameAs": "ashkenazi"
-        }
+        "chabad": [
+          {
+            "book": "Jeremiah",
+            "start": "7:21",
+            "end": "7:28",
+            "verses": 8
+          },
+          {
+            "book": "Jeremiah",
+            "start": "9:22",
+            "end": "9:23",
+            "verses": 2
+          }
+        ]
       },
-      "variesByNusach": false
+      "variesByNusach": true
     },
     {
       "id": "Shmini",
@@ -833,13 +896,39 @@
       "id": "Masei",
       "parsha": "Masei",
       "nusach": {
-        "ashkenazi": {},
-        "sefardi": {},
+        "ashkenazi": [
+          {
+            "book": "Jeremiah",
+            "start": "2:4",
+            "end": "2:28",
+            "verses": 25
+          },
+          {
+            "book": "Jeremiah",
+            "start": "3:4",
+            "end": "3:4",
+            "verses": 1
+          }
+        ],
+        "sefardi": [
+          {
+            "book": "Jeremiah",
+            "start": "2:4",
+            "end": "2:28",
+            "verses": 25
+          },
+          {
+            "book": "Jeremiah",
+            "start": "4:1",
+            "end": "4:2",
+            "verses": 2
+          }
+        ],
         "chabad": {
           "sameAs": "ashkenazi"
         }
       },
-      "variesByNusach": null
+      "variesByNusach": true
     },
     {
       "id": "Devarim",
@@ -1158,13 +1247,39 @@
       "id": "Matot-Masei",
       "parsha": "Matot-Masei",
       "nusach": {
-        "ashkenazi": {},
-        "sefardi": {},
+        "ashkenazi": [
+          {
+            "book": "Jeremiah",
+            "start": "2:4",
+            "end": "2:28",
+            "verses": 25
+          },
+          {
+            "book": "Jeremiah",
+            "start": "3:4",
+            "end": "3:4",
+            "verses": 1
+          }
+        ],
+        "sefardi": [
+          {
+            "book": "Jeremiah",
+            "start": "2:4",
+            "end": "2:28",
+            "verses": 25
+          },
+          {
+            "book": "Jeremiah",
+            "start": "4:1",
+            "end": "4:2",
+            "verses": 2
+          }
+        ],
         "chabad": {
           "sameAs": "ashkenazi"
         }
       },
-      "variesByNusach": null
+      "variesByNusach": true
     },
     {
       "id": "Nitzavim-Vayeilech",

@@ -7,6 +7,11 @@ ideally by letting gabbaim/baalei korei rate their own aliyot in the app and
 blending that feedback in.
 
 > **Revision history, newest first:**
+> 5. **Repetition now eases difficulty instead of adding to it**, and
+>    **final scores are rescaled against the whole dataset** so the full
+>    1-10 range is genuinely used (previously the hardest aliyah in the
+>    entire dataset topped out at 9). Both are explained below in
+>    "Repetition changed direction" and "Rescaling for full-range variance."
 > 4. **Every chag/fast/Rosh Chodesh/special-Shabbat reading in chagim.json
 >    is now scored too** (see "Chagim" below), in a new `chagim` array
 >    alongside `parshiot`. Also fixed the vocabulary aggregation: the first
@@ -39,11 +44,13 @@ blending that feedback in.
    combinations show up, and whether the passage uses a non-default
    cantillation system at all (e.g. the "ta'am elyon" used for the Aseret
    HaDibrot, or the elevated Shirah melody for Az Yashir/Ha'azinu).
-4. **Repetition** -- how repetitive/formulaic the text is. This cuts both
-   ways: repetition can make text easier to predict, but it also makes it
-   dangerously easy to lose your place or skip/duplicate a line (e.g. the
-   12 near-identical Nesiim offerings in Nasso, the 42-station journey list
-   in Masei, the Mishkan construction/inventory lists in Vayakhel/Pekudei).
+4. **Repetition** -- how formulaic/predictable the text is, and it **lowers**
+   the difficulty score: once a reader has the template (the 12 near-identical
+   Nesiim offerings in Nasso, the 42-station journey list in Masei), each
+   repetition is easier than genuinely novel text would be. See "Repetition
+   changed direction" below for why this flipped from an earlier version
+   that scored it the opposite way, and where the real "lose your place"
+   risk of repetitive text actually gets counted instead.
 5. **Hidden challenges** -- a catch-all for things that don't fit neatly
    above: rare trope marks that appear only a handful of times in the whole
    Torah (e.g. the shalshelet, used only 4 times), passages customarily read
@@ -63,22 +70,75 @@ predictor of how hard an aliyah is to prepare and deliver -- a long,
 plain-vocabulary aliyah is still a bigger undertaking than a short, tricky
 one. Retune it via the `RUBRIC_WEIGHTS` constant in `tools/gen_difficulty.mjs`.
 
-**Why final scores almost never reach 9-10, and why that's not a bug:** to
-land at 9+, an aliyah needs to be at or near the *longest in the entire
-Torah* (length=10, worth 4/8 of the score) **and** simultaneously have
-near-max vocabulary, trope, repetition, *and* hidden-challenge scores --
-four largely independent things that don't naturally co-occur. In practice
-the longest aliyot tend to be substantive narrative or legal content that
-covers a lot of ground precisely *because* it isn't also maximally poetic,
-maximally rare-vocabulary, and maximally repetitive all at once. Across the
-full dataset (parshiot + combined + chagim, ~860 aliyot) exactly one aliyah
-currently reaches 9 (Masei's 39-verse bulk of the journey-station list --
-longest-percentile length, rarest-percentile vocabulary from all those
-place names, *and* a repetition override, genuinely stacking all four);
-none reach 10. That's an honest property of averaging several
-mostly-independent 0-10 measurements, not evidence that the 9-10 band is
-broken or unreachable by construction -- it's just genuinely rare for every
-axis to peak on the same aliyah.
+## Repetition changed direction
+
+The original version of this rubric scored repetitive/formulaic content
+(Nesiim gifts, journey-station lists, the Sukkot chol-hamoed
+daily-decreasing bull counts) as *harder*, reasoning that repetition makes
+it easy to lose your place. That's backwards as the dominant effect: a
+reader who has internalized "traveled from X, camped at Y" or "this nasi
+brought one silver bowl, one silver basin..." can produce the *next*
+repetition of that formula faster and more confidently than an equal
+stretch of genuinely novel text -- repetition is a learnable shortcut, not
+a hazard, for the bulk of the text. It was a real, direct correction: the
+Masei aliyah with the bulk of the journey-station list was inflated to a 9
+purely because its repetition was scored as a difficulty *adder*; with the
+sign fixed, that aliyah is still hard (still 9, now on genuinely-earned
+length and vocabulary alone -- see the rarest-word/hardest-to-pronounce
+examples in `word-difficulty.json`), but no longer for the wrong reason.
+
+The real residual risk of formulaic text -- losing track of which
+repetition you're on, defaulting to autopilot and saying the wrong nasi's
+gift or the previous day's bull count -- is genuine, but it's a different
+thing than "repetition is hard," so it's now scored as a small
+**hidden-challenges** bump on the specific aliyot where it applies (Nasso's
+three Nesiim aliyot, Masei's journey-station aliyot, the Sukkot chol-hamoed
+bull-count aliyot), separate from and on top of a *negative* repetition
+adjustment. Eisav's genealogy (Gen 36) lost its repetition override
+entirely in this pass -- it was never a repeated formula, just many
+distinct rare names in a row, which the real word-frequency vocabulary
+score already captures accurately without double-counting it under
+repetition too.
+
+`PROFILES`' baseline repetition values dropped accordingly: `GENEALOGY`
+(census lists, gift lists) from 8 to 2, `RITUAL` (much of which is also
+formulaic korbanot/construction instruction) from 6 to 3. `NARRATIVE` moved
+up slightly, from 2 to 3, as the honest baseline for text that has no
+repeated-formula discount to lean on at all.
+
+## Rescaling for full-range variance
+
+Before this revision, the hardest single aliyah in the entire dataset
+(~860 aliyot across parshiot, combined parshiot, and chagim) scored 9, and
+nothing reached 10 -- because landing at the true top requires an aliyah to
+be at or near the *longest in the whole Torah* **and** simultaneously
+near-max on vocabulary, trope, repetition, and hidden challenges all at
+once, which rarely coincides on one aliyah. That's a real property of
+averaging several mostly-independent measurements, but it meant the
+1-10 scale was never actually fully used, which understates how different
+the hardest and easiest readings really are from each other.
+
+The fix: after computing every aliyah's raw weighted score, **rescale the
+whole pool against itself** -- find the single hardest and single easiest
+raw score across all ~860 aliyot, then linearly stretch every score so the
+hardest becomes a real 10 and the easiest a real 1. This is the same
+percentile-style technique `length` and `vocabulary` already used
+individually, now applied to the *combined* final score too. It doesn't
+change any aliyah's *ranking* relative to the others -- it's a monotonic
+stretch -- but it does spread the whole distribution out, which is exactly
+what "higher variance" means here: more of the scale in active use, bigger
+gaps between genuinely different aliyot, rather than everything clustering
+in a narrow middle band.
+
+With repetition's direction fixed and this rescaling applied, the current
+hardest aliyot are Pinchas's second census (longest aliyah, rarest
+vocabulary from the tribal/family names) and the three Tochacha passages in
+Bechukotai/Behar-Bechukotai/Ki Tavo (near-longest, high vocabulary from
+Deuteronomy's dense rebuke language, and the maximum hidden-challenge score
+for the traditional fast/quiet reading custom) -- four aliyot, all scoring
+a genuine 10. Re-run `npm run gen:difficulty` (or `gen:all`) any time the
+overrides or weights change; the rescale bounds are recomputed from
+whatever the pool actually contains, not hard-coded.
 
 ## Vocabulary: computed from real word data, not a category guess
 
@@ -210,8 +270,9 @@ as the parshiot get, re-verified against chagim.json's actual verse ranges:
   familiarity discount as Beshalach.
 - **The daily-decreasing bull count** on Sukkot Chol HaMoed / Hoshana Raba
   (Num 29) -- each day repeats the same offering formula with the bull
-  count one lower than the previous day, a distinctive repetition/
-  easy-to-default-to-the-wrong-number hazard that isn't present in the
+  count one lower than the previous day: a repetition discount for the
+  learnable formula, plus a small hidden-challenge bump for the real
+  risk of defaulting to the previous day's number. Not present in the
   parallel Pesach Chol HaMoed readings (different content entirely: the
   Ex 33-34 revelation narrative), so it's a chag-specific override, not
   inherited from any parsha.

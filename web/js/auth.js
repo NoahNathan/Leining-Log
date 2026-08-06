@@ -2,13 +2,20 @@ import { getSupabase, isConfigured } from './supabaseClient.js';
 
 export { isConfigured };
 
-export async function signInWithMagicLink(email) {
+// Returns the new user + session (session is null if the Supabase project
+// still requires email confirmation before first sign-in).
+export async function signUp(email, password) {
   const supabase = await getSupabase();
   if (!supabase) throw new Error('Supabase is not configured yet.');
-  const { error } = await supabase.auth.signInWithOtp({
-    email,
-    options: { emailRedirectTo: location.origin + location.pathname },
-  });
+  const { data, error } = await supabase.auth.signUp({ email, password });
+  if (error) throw error;
+  return data;
+}
+
+export async function signInWithPassword(email, password) {
+  const supabase = await getSupabase();
+  if (!supabase) throw new Error('Supabase is not configured yet.');
+  const { error } = await supabase.auth.signInWithPassword({ email, password });
   if (error) throw error;
 }
 

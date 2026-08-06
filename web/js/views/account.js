@@ -1,5 +1,5 @@
 import { el, displayParshaName } from '../util.js';
-import { isConfigured, signInWithMagicLink, signOut, onAuthChange } from '../auth.js';
+import { isConfigured, signUp, signInWithPassword, signOut, onAuthChange } from '../auth.js';
 import {
   listAllParshiotForSearch, getMyProfile, setBarMitzvahParsha,
   getMyLeiningLog, addLeiningLogEntry, removeLeiningLogEntry, computeTorahProgress,
@@ -46,35 +46,60 @@ export async function renderAccount(container) {
   });
 }
 
-function renderLoggedOut(body) {
+let authMode = 'signin'; // or 'signup'
+
+function renderLoggedOut(body, initialStatus) {
   body.innerHTML = '';
-  const email = el('input', { type: 'email', class: 'text-input', placeholder: 'you@example.com', required: true });
-  const status = el('p', { class: 'muted small' }, '');
-  const btn = el('button', { class: 'btn-primary', type: 'submit' }, 'Send magic link');
+  const isSignup = authMode === 'signup';
+  const email = el('input', { type: 'email', class: 'text-input', placeholder: 'you@example.com', required: true, autocomplete: 'email' });
+  const password = el('input', {
+    type: 'password', class: 'text-input', placeholder: 'Password', required: true, minlength: '6',
+    autocomplete: isSignup ? 'new-password' : 'current-password',
+  });
+  const status = el('p', { class: `muted small` }, initialStatus ? initialStatus.text : '');
+  if (initialStatus) status.className = initialStatus.className;
+  const submitLabel = () => (isSignup ? 'Create account' : 'Sign in');
+  const btn = el('button', { class: 'btn-primary', type: 'submit' }, submitLabel());
+
   const form = el('form', {
     class: 'search-row',
     onsubmit: async (e) => {
       e.preventDefault();
-      if (!email.value) return;
+      if (!email.value || !password.value) return;
       btn.disabled = true;
-      btn.textContent = 'Sending…';
+      btn.textContent = isSignup ? 'Creating…' : 'Signing in…';
       try {
-        await signInWithMagicLink(email.value);
-        status.textContent = `Check ${email.value} for a sign-in link.`;
-        status.className = 'muted small';
+        if (isSignup) {
+          const data = await signUp(email.value, password.value);
+          if (!data.session) {
+            authMode = 'signin';
+            renderLoggedOut(body, { text: `Account created. Check ${email.value} to confirm your email, then sign in.`, className: 'muted small' });
+            return;
+          }
+          // Confirmation disabled on this Supabase project -- signed in
+          // immediately; onAuthChange picks up the new session and re-renders.
+        } else {
+          await signInWithPassword(email.value, password.value);
+        }
       } catch (err) {
         status.textContent = err.message;
         status.className = 'error small';
+        btn.disabled = false;
+        btn.textContent = submitLabel();
       }
-      btn.disabled = false;
-      btn.textContent = 'Send magic link';
     },
-  }, [email, btn]);
+  }, [email, password, btn]);
+
+  const toggle = el('button', {
+    class: 'btn-share', type: 'button',
+    onclick: () => { authMode = isSignup ? 'signin' : 'signup'; renderLoggedOut(body); },
+  }, isSignup ? 'Already have an account? Sign in' : 'New here? Create an account');
+
   body.append(el('div', { class: 'card subcard' }, [
-    el('h3', {}, 'Sign in'),
-    el('p', { class: 'muted small' }, 'No password needed -- we\'ll email you a one-time link.'),
+    el('h3', {}, isSignup ? 'Create account' : 'Sign in'),
     form,
     status,
+    toggle,
   ]));
 }
 

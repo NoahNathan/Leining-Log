@@ -1,6 +1,7 @@
 import { renderHome } from './views/home.js';
 import { renderSearch } from './views/search.js';
 import { renderCompare } from './views/compare.js';
+import { renderParshaPermalink, renderChagPermalink } from './views/permalink.js';
 
 const VIEWS = {
   home: { label: 'This Week', render: renderHome },
@@ -11,9 +12,15 @@ const VIEWS = {
 const tabsHost = document.getElementById('tabs');
 const viewHost = document.getElementById('view');
 
-function currentTab() {
+// Parsha/chag permalinks (#parsha/<id>, #chag/<id>) render directly rather
+// than through a tab, so a single URL can be shared straight to that reading.
+function parseHash() {
   const hash = location.hash.replace('#', '');
-  return VIEWS[hash] ? hash : 'home';
+  let m = hash.match(/^parsha\/(.+)$/);
+  if (m) return { type: 'parsha', id: decodeURIComponent(m[1]) };
+  m = hash.match(/^chag\/(.+)$/);
+  if (m) return { type: 'chag', id: decodeURIComponent(m[1]) };
+  return { type: 'tab', tab: VIEWS[hash] ? hash : 'home' };
 }
 
 function buildTabs() {
@@ -29,15 +36,18 @@ function buildTabs() {
 }
 
 async function route() {
-  const tab = currentTab();
-  [...tabsHost.children].forEach((b) => b.classList.toggle('active', b.dataset.tab === tab));
+  const parsed = parseHash();
+  const activeTab = parsed.type === 'tab' ? parsed.tab : 'search';
+  [...tabsHost.children].forEach((b) => b.classList.toggle('active', b.dataset.tab === activeTab));
   viewHost.innerHTML = '';
   const loading = document.createElement('p');
   loading.className = 'muted';
   loading.textContent = 'Loading…';
   viewHost.append(loading);
   try {
-    await VIEWS[tab].render(viewHost);
+    if (parsed.type === 'parsha') await renderParshaPermalink(viewHost, parsed.id);
+    else if (parsed.type === 'chag') await renderChagPermalink(viewHost, parsed.id);
+    else await VIEWS[parsed.tab].render(viewHost);
   } catch (err) {
     console.error(err);
     viewHost.innerHTML = '';

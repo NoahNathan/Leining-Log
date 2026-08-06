@@ -1,15 +1,17 @@
 import { el, todayISO, formatDateLong, displayParshaName } from '../util.js';
-import { findByDate, getParshaDetail, getChagById, listAllParshiotForSearch, findUpcomingOccurrences } from '../data.js';
+import { findByDate, getParshaDetail, getChagById, listAllParshiotForSearch } from '../data.js';
 import { renderParshaDetail, renderChagDetail } from './detail.js';
 
 let mode = 'date';
 let region = 'diaspora';
 
+const BOOK_ORDER = ['Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy'];
+
 export async function renderSearch(container) {
   container.innerHTML = '';
   container.append(el('div', { class: 'view-heading' }, [
     el('h1', {}, 'Search'),
-    el('p', { class: 'muted' }, 'Look up a specific calendar date, or jump straight to a parsha.'),
+    el('p', { class: 'muted' }, 'Look up a specific calendar date, or browse and click any parsha.'),
   ]));
 
   const modeToggle = el('div', { class: 'toggle-group' }, [
@@ -27,16 +29,6 @@ export async function renderSearch(container) {
   const resultsHost = el('div', { class: 'view-body' });
   container.append(formHost, resultsHost);
 
-  const allParshiot = await listAllParshiotForSearch();
-  const datalist = el('datalist', { id: 'parsha-options' });
-  const nameToId = new Map();
-  for (const p of allParshiot.sort((a, b) => a.parshaNum > b.parshaNum ? 1 : -1)) {
-    const label = displayParshaName(p.englishName || p.id);
-    nameToId.set(label, p.id);
-    datalist.append(el('option', { value: label }));
-  }
-  document.body.append(datalist);
-
   function modeBtn(label, value) {
     return el('button', {
       class: `toggle-btn ${mode === value ? 'active' : ''}`,
@@ -46,11 +38,16 @@ export async function renderSearch(container) {
   function regionBtn(label, value) {
     return el('button', {
       class: `toggle-btn ${region === value ? 'active' : ''}`,
-      onclick: () => { region = value; syncToggle(regionToggle, label); },
+      onclick: () => { region = value; syncToggle(regionToggle, label); if (mode === 'date') runDateSearch(currentDateValue()); },
     }, label);
   }
   function syncToggle(group, activeLabel) {
     [...group.children].forEach((c) => c.classList.toggle('active', c.textContent === activeLabel));
+  }
+
+  let dateInputRef = null;
+  function currentDateValue() {
+    return dateInputRef ? dateInputRef.value : todayISO();
   }
 
   function refreshForm() {
@@ -59,20 +56,13 @@ export async function renderSearch(container) {
     resultsHost.innerHTML = '';
     if (mode === 'date') {
       const input = el('input', { type: 'date', class: 'text-input', value: todayISO() });
+      dateInputRef = input;
       const btn = el('button', { class: 'btn-primary', onclick: () => runDateSearch(input.value) }, 'Look up date');
       formHost.append(el('div', { class: 'search-row' }, [input, btn]));
       runDateSearch(input.value);
     } else {
-      const input = el('input', {
-        type: 'text', class: 'text-input', list: 'parsha-options',
-        placeholder: 'Start typing a parsha name…',
-      });
-      const btn = el('button', {
-        class: 'btn-primary',
-        onclick: () => runParshaSearch(nameToId.get(input.value) || input.value),
-      }, 'Look up parsha');
-      input.addEventListener('keydown', (e) => { if (e.key === 'Enter') btn.click(); });
-      formHost.append(el('div', { class: 'search-row' }, [input, btn]));
+      resultsHost.append(el('p', { class: 'muted' }, 'Loading parshiot…'));
+      renderParshaBrowser();
     }
   }
 
@@ -103,24 +93,34 @@ export async function renderSearch(container) {
     }
   }
 
-  async function runParshaSearch(id) {
+  async function renderParshaBrowser() {
+    const all = await listAllParshiotForSearch();
     resultsHost.innerHTML = '';
-    if (!id) return;
-    resultsHost.append(el('p', { class: 'muted' }, 'Loading…'));
-    const detail = await getParshaDetail(id);
-    resultsHost.innerHTML = '';
-    if (!detail) {
-      resultsHost.append(el('p', {}, `Couldn't find a parsha called "${id}". Pick one from the suggestions.`));
-      return;
+
+    const individual = all.filter((p) => !p.combinedEntry).sort((a, b) => a.parshaNum - b.parshaNum);
+    const combined = all.filter((p) => p.combinedEntry).sort((a, b) => a.parshaNum[0] - b.parshaNum[0]);
+
+    const browser = el('div', { class: 'card parsha-browser' });
+    for (const book of BOOK_ORDER) {
+      const inBook = individual.filter((p) => p.book === book);
+      if (!inBook.length) continue;
+      browser.append(el('h3', { class: 'book-heading' }, book));
+      browser.append(el('div', { class: 'parsha-grid' }, inBook.map(parshaChip)));
     }
-    resultsHost.append(renderParshaDetail(detail, { eyebrow: 'Parsha lookup' }));
-    const upcoming = await findUpcomingOccurrences(id, region, todayISO(), 3);
-    if (upcoming.length) {
-      resultsHost.append(el('div', { class: 'card subcard' }, [
-        el('h3', {}, 'Next occurrences'),
-        el('ul', { class: 'plain-list' }, upcoming.map((r) => el('li', {}, formatDateLong(r.date)))),
-      ]));
+    resultsHost.append(browser);
+
+    if (combined.length) {
+      const combinedCard = el('div', { class: 'card subcard' }, [
+        el('h3', {}, 'Combined readings'),
+        el('p', { class: 'muted small' }, 'Read together on one Shabbat in some years, with their own aliyah divisions.'),
+        el('div', { class: 'parsha-grid' }, combined.map(parshaChip)),
+      ]);
+      resultsHost.append(combinedCard);
     }
+  }
+
+  function parshaChip(p) {
+    return el('a', { href: `#parsha/${encodeURIComponent(p.id)}`, class: 'parsha-chip' }, displayParshaName(p.englishName || p.id));
   }
 
   refreshForm();

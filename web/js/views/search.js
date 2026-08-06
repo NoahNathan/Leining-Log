@@ -141,9 +141,11 @@ export async function renderSearch(container) {
       el('h3', {}, 'Festivals, fasts & special readings'),
       el('p', { class: 'muted small' }, 'Holidays, fast days, Rosh Chodesh, and special-Shabbat Torah readings.'),
     ]);
+    const claimed = new Set();
     for (const cat of CHAG_CATEGORIES) {
-      const names = [...byName.keys()].filter((n) => cat.test(n));
+      const names = [...byName.keys()].filter((n) => !claimed.has(n) && cat.test(n));
       if (!names.length) continue;
+      names.forEach((n) => claimed.add(n));
       wrap.append(el('h3', { class: 'book-heading' }, cat.label));
       wrap.append(el('div', { class: 'parsha-grid' }, names.map((n) => chagChip(n, byName.get(n)))));
     }

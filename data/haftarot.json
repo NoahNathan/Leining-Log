@@ -938,7 +938,11 @@
           "book": "Isaiah",
           "start": "1:1",
           "end": "1:27",
-          "verses": 27
+          "verses": 27,
+          "specialTrope": {
+            "range": "1:21-1:27",
+            "note": "This is 'Shabbat Chazon', the Shabbat before Tisha B'Av. By widespread Ashkenazi custom, the closing verses (from \"Eichah hayetah lezonah\") are chanted in the mournful Eicha (Lamentations) trope rather than the standard haftarah melody."
+          }
         },
         "sefardi": {
           "sameAs": "ashkenazi"

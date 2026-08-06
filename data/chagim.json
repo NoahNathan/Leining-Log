@@ -4932,7 +4932,11 @@
           "book": "Jeremiah",
           "start": "8:13",
           "end": "9:23",
-          "verses": 34
+          "verses": 34,
+          "specialTrope": {
+            "range": "8:13-9:23",
+            "note": "The entire haftarah is traditionally chanted in the mournful Eicha (Lamentations) trope rather than the standard haftarah melody."
+          }
         },
         "sefardi": {
           "sameAs": "ashkenazi"
@@ -4978,7 +4982,11 @@
           "book": "Jeremiah",
           "start": "8:13",
           "end": "9:23",
-          "verses": 34
+          "verses": 34,
+          "specialTrope": {
+            "range": "8:13-9:23",
+            "note": "The entire haftarah is traditionally chanted in the mournful Eicha (Lamentations) trope rather than the standard haftarah melody."
+          }
         },
         "sefardi": {
           "sameAs": "ashkenazi"
@@ -5024,7 +5032,11 @@
           "book": "Jeremiah",
           "start": "8:13",
           "end": "9:23",
-          "verses": 34
+          "verses": 34,
+          "specialTrope": {
+            "range": "8:13-9:23",
+            "note": "The entire haftarah is traditionally chanted in the mournful Eicha (Lamentations) trope rather than the standard haftarah melody."
+          }
         },
         "sefardi": {
           "sameAs": "ashkenazi"
@@ -5070,7 +5082,11 @@
           "book": "Jeremiah",
           "start": "8:13",
           "end": "9:23",
-          "verses": 34
+          "verses": 34,
+          "specialTrope": {
+            "range": "8:13-9:23",
+            "note": "The entire haftarah is traditionally chanted in the mournful Eicha (Lamentations) trope rather than the standard haftarah melody."
+          }
         },
         "sefardi": {
           "sameAs": "ashkenazi"

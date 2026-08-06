@@ -30,6 +30,17 @@ function tikkunLink(ref) {
   return el('a', { href: url, target: '_blank', rel: 'noopener', class: 'tikkun-link', title: 'Find this reading in the Tikkun' }, 'Tikkun ↗');
 }
 
+// Spans the first aliyah's start through the last aliyah's end -- one link
+// for the whole reading, rather than having to click through each aliyah.
+function wholeReadingTikkunLink(aliyot) {
+  if (!aliyot || !aliyot.length) return null;
+  const first = aliyot[0];
+  const last = aliyot[aliyot.length - 1];
+  const url = tikkunUrl({ book: first.book, start: first.start, end: last.end });
+  if (!url) return null;
+  return el('a', { href: url, target: '_blank', rel: 'noopener', class: 'tikkun-link', title: 'Find the whole reading in the Tikkun' }, 'Whole reading in Tikkun ↗');
+}
+
 function scoreBadge(score, { size = 'md' } = {}) {
   return el('span', {
     class: `badge badge-${size}`,
@@ -80,15 +91,30 @@ function shareButton(hashPath) {
   return btn;
 }
 
+// Sefaria book names use underscores for spaces (e.g. "I Samuel" -> "I_Samuel"),
+// and chapter:verse refs use a dot rather than our data's colon.
+function sefariaUrl(ref) {
+  if (!ref || ref.sameAs) return null;
+  const book = ref.book.replace(/ /g, '_');
+  const start = ref.start.replace(':', '.');
+  const end = ref.end.replace(':', '.');
+  return `https://www.sefaria.org/${book}.${start}-${end}`;
+}
+
 function nusachRow(nusach) {
   if (!nusach) return el('p', { class: 'muted' }, 'No haftarah data.');
   const entries = Object.entries(nusach).filter(([, v]) => v);
   const wrap = el('div', { class: 'nusach-tabs' });
   for (const [name, v] of entries) {
     const text = v.sameAs ? `Same as ${v.sameAs}` : citeRange(v);
+    const url = sefariaUrl(v);
     wrap.append(el('div', { class: 'nusach-chip' }, [
       el('span', { class: 'nusach-name' }, name[0].toUpperCase() + name.slice(1)),
-      el('span', { class: 'nusach-cite' }, text),
+      el('span', { class: 'nusach-cite' }, [
+        text,
+        url ? el('a', { href: url, target: '_blank', rel: 'noopener', class: 'tikkun-link', title: 'Read this haftarah on Sefaria' }, 'Text ↗') : null,
+      ]),
+      v.specialTrope ? el('p', { class: 'nusach-note muted small' }, `${v.specialTrope.range}: ${v.specialTrope.note}`) : null,
     ]));
   }
   return wrap;
@@ -291,7 +317,7 @@ export function renderParshaDetail({ parsha, haftarah, difficulty }, opts = {}) 
   }
 
   card.append(el('div', { class: 'card subcard' }, [
-    el('h3', {}, 'Aliyot'),
+    el('div', { class: 'subcard-heading-row' }, [el('h3', {}, 'Aliyot'), wholeReadingTikkunLink(parsha.aliyot)]),
     renderAliyahTable(parsha.aliyot, { maftir: parsha.maftir, difficultyAliyot: difficulty && difficulty.aliyot, profile: difficulty && difficulty.profile, readingId: parsha.id }),
   ]));
 
@@ -349,7 +375,7 @@ export function renderChagDetail(chag) {
   }
   if (chag.aliyot && chag.aliyot.length) {
     card.append(el('div', { class: 'card subcard' }, [
-      el('h3', {}, 'Aliyot'),
+      el('div', { class: 'subcard-heading-row' }, [el('h3', {}, 'Aliyot'), wholeReadingTikkunLink(chag.aliyot)]),
       renderAliyahTable(chag.aliyot, { maftir: chag.maftir, difficultyAliyot: difficulty && difficulty.aliyot, profile: difficulty && difficulty.profile, readingId: chag.id }),
     ]));
   } else if (chag.maftir) {

@@ -39,8 +39,44 @@ for (const c of chagimFile.chagim) {
   const note = CHAG_TROPE_NOTES[c.id];
   if (note && !c.specialTrope) c.specialTrope = note;
 }
+
+// ---------- 2b. Verse-level haftarah specialTrope notes (haftarot.json + chagim.json nusach) ----------
+// Distinct from the general aliyah/chag notes above: these attach to the
+// specific haftarah citation itself, with the exact verse range the custom
+// applies to, so they can be shown right next to that citation rather than
+// only mentioned in passing in a parsha/chag-level note.
+const haftarotFile = JSON.parse(readFileSync('../data/haftarot.json', 'utf8'));
+
+const HAFTARAH_TROPE_NOTES = {
+  'Devarim:ashkenazi': {
+    range: '1:21-1:27',
+    note: "This is 'Shabbat Chazon', the Shabbat before Tisha B'Av. By widespread Ashkenazi custom, the closing verses (from \"Eichah hayetah lezonah\") are chanted in the mournful Eicha (Lamentations) trope rather than the standard haftarah melody.",
+  },
+};
+for (const h of haftarotFile.haftarot) {
+  for (const [nusachName, entry] of Object.entries(h.nusach)) {
+    const note = HAFTARAH_TROPE_NOTES[`${h.id}:${nusachName}`];
+    if (note && entry && !entry.sameAs) entry.specialTrope = note;
+  }
+}
+writeFileSync('../data/haftarot.json', JSON.stringify(haftarotFile, null, 2));
+
+const CHAG_HAFTARAH_TROPE_NOTES = {};
+for (const id of ["Tish'a B'Av__DIASPORA", "Tish'a B'Av__IL", "Tish'a B'Av (observed)__DIASPORA", "Tish'a B'Av (observed)__IL"]) {
+  CHAG_HAFTARAH_TROPE_NOTES[`${id}:ashkenazi`] = {
+    range: '8:13-9:23',
+    note: 'The entire haftarah is traditionally chanted in the mournful Eicha (Lamentations) trope rather than the standard haftarah melody.',
+  };
+}
+for (const c of chagimFile.chagim) {
+  for (const [nusachName, entry] of Object.entries(c.nusach || {})) {
+    const note = CHAG_HAFTARAH_TROPE_NOTES[`${c.id}:${nusachName}`];
+    if (note && entry && !entry.sameAs) entry.specialTrope = note;
+  }
+}
 writeFileSync('../data/chagim.json', JSON.stringify(chagimFile, null, 2));
-console.log('Annotated chagim.json with up to', Object.keys(CHAG_TROPE_NOTES).length, 'specialTrope notes');
+console.log('Annotated chagim.json with up to', Object.keys(CHAG_TROPE_NOTES).length, 'specialTrope notes and', Object.keys(CHAG_HAFTARAH_TROPE_NOTES).length, 'verse-level haftarah notes');
+console.log('Annotated haftarot.json with', Object.keys(HAFTARAH_TROPE_NOTES).length, 'verse-level specialTrope notes');
 
 // ---------- 3. megillot.json (not part of Torah leyning API - hand-authored) ----------
 const megillot = [

@@ -186,6 +186,10 @@ function buildWhyPanel(d, a) {
   if (vd && vd.hardToPronounceExamples && vd.hardToPronounceExamples.length) {
     wrap.append(wordChipRow('Tricky to pronounce', vd.hardToPronounceExamples.map((w) => w.word)));
   }
+  if (d.ambiguousSpellingExamples && d.ambiguousSpellingExamples.length) {
+    wrap.append(wordChipRow('Looks the same without nikkud, read differently', d.ambiguousSpellingExamples.map((w) => w.word)));
+    wrap.append(el('p', { class: 'why-note' }, d.ambiguousSpellingExamples[0].note));
+  }
   return wrap;
 }
 

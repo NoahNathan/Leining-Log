@@ -162,7 +162,8 @@ function scoreReadingRaw(id, items, tags, overridesMap, familiarMap) {
     const vocab = clamp10(vocabBase + (fam.vocab || 0));
     const trope = clamp10(base.trope + (ov.trope || 0));
     const repetition = clamp10(base.repetition + (ov.repetition || 0));
-    const hidden = clamp10(base.hidden + (ov.hidden || 0) + (fam.hidden || 0));
+    const ambiguousBump = wd && wd.ambiguousSpellingExamples && wd.ambiguousSpellingExamples.length ? 1 : 0;
+    const hidden = clamp10(base.hidden + (ov.hidden || 0) + (fam.hidden || 0) + ambiguousBump);
     const length = lengthScore(item.verses);
     const rawFinal = (length*RUBRIC_WEIGHTS.length + vocab*RUBRIC_WEIGHTS.vocab + trope*RUBRIC_WEIGHTS.trope +
                        repetition*RUBRIC_WEIGHTS.repetition + hidden*RUBRIC_WEIGHTS.hidden) / TOTAL_WEIGHT;
@@ -173,6 +174,9 @@ function scoreReadingRaw(id, items, tags, overridesMap, familiarMap) {
     };
     if (wd) {
       entry.vocabDetail = { rarity: wd.rarity, pronunciation: wd.pronunciation, rareExamples: wd.rareExamples, hardToPronounceExamples: wd.hardToPronounceExamples };
+      if (wd.ambiguousSpellingExamples && wd.ambiguousSpellingExamples.length) {
+        entry.ambiguousSpellingExamples = wd.ambiguousSpellingExamples;
+      }
     }
     const notes = [ov.note, fam.note].filter(Boolean);
     if (notes.length) entry.note = notes.join(' ');

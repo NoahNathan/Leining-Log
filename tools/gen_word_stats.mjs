@@ -47,6 +47,33 @@ function tokenizeVerse(text) {
 const stripTrope = (w) => w.replace(TROPE, '');
 const stripNiqqud = (w) => w.replace(NIQQUD, '');
 
+// A narrow, text-grounded "gotcha": the Torah spells the 3rd-person feminine
+// pronoun "hi" (she) the same as the masculine "hu" (he) -- both ה-ו-א --
+// through most of the Torah, relying on the reader to know from the niqqud
+// (chirik under the heh, הִוא, vs. shuruk in the vav, הוּא) which one it is.
+// It's the canonical example of "looks identical without nikkudot, but is
+// pronounced (and means) something different" -- detected directly from the
+// vocalized text itself, not guessed.
+const ARCHAIC_FEMININE_HU = /הִוא$/;
+function isArchaicFeminineHu(surface) { return ARCHAIC_FEMININE_HU.test(surface); }
+
+// A second, broader source of the same kind of gotcha: formal Ketiv/Qere --
+// the ~70 places in the Chumash where the Torah scroll's actual written
+// letters (ketiv) differ from what's traditionally read aloud (qere), by
+// long-standing Masoretic tradition. @shafeh/tanach marks every one of these
+// explicitly in its source markup (the qere word appears in the running
+// text, immediately followed by an inline "(כתיב ...)" note giving the
+// ketiv) -- this reads that annotation directly rather than maintaining a
+// hand-typed list, so it can't drift from the actual text.
+const KSIV_RE = /([֑-״]+)<span class="instructional ksiv"> \(כתיב ([^)]+?)\s*\)\s*<\/span>/g;
+function extractKetivQere(rawText) {
+  const out = [];
+  for (const m of rawText.matchAll(KSIV_RE)) {
+    out.push({ qere: stripNiqqud(stripTrope(m[1])), ketiv: m[2].trim() });
+  }
+  return out;
+}
+
 // ---- pass 1: load every Torah verse once, tokenize, build frequency table ----
 const versesByBookChapter = {}; // { Genesis: { 1: [{verse, words:[{surface, consonantal}]}] } }
 const freq = new Map(); // consonantal form -> count
@@ -66,7 +93,7 @@ for (const [bookEn, bookHe] of Object.entries(BOOK_EN_TO_HE)) {
         totalTokens++;
         return { surface, consonantal: cons };
       });
-      return { verse: v.verse, words };
+      return { verse: v.verse, words, ketivQere: extractKetivQere(v.text) };
     });
     ch++;
   }
@@ -182,7 +209,24 @@ function rawAliyahStats(bookEn, startRef, endRef) {
     if (hardExamples.length >= 3) break;
   }
 
-  return { wordCount: words.length, rawRarity, rawPron, rareExamples, hardToPronounceExamples: hardExamples };
+  const seenA = new Set();
+  const ambiguousSpellingExamples = [];
+  for (const w of words) {
+    if (!isArchaicFeminineHu(w.surface) || seenA.has(w.surface)) continue;
+    seenA.add(w.surface);
+    ambiguousSpellingExamples.push({ word: w.surface, note: 'Spelled the same as הוּא ("hu", he) but read here as "hi" (she) -- an archaic Torah spelling.' });
+  }
+  const seenK = new Set();
+  for (const v of verses) {
+    for (const kq of v.ketivQere) {
+      const key = `${kq.ketiv}>${kq.qere}`;
+      if (seenK.has(key)) continue;
+      seenK.add(key);
+      ambiguousSpellingExamples.push({ word: kq.qere, note: `Formal Ketiv/Qere: the Torah scroll is written ${kq.ketiv} but traditionally read aloud as ${kq.qere}.` });
+    }
+  }
+
+  return { wordCount: words.length, rawRarity, rawPron, rareExamples, hardToPronounceExamples: hardExamples, ambiguousSpellingExamples };
 }
 
 // ---- gather every aliyah (individual parshiot, combined parshiot, chagim) ----
@@ -233,11 +277,12 @@ for (const e of entries) {
     rarity, pronunciation, vocab,
     rareExamples: e.raw.rareExamples,
     hardToPronounceExamples: e.raw.hardToPronounceExamples,
+    ambiguousSpellingExamples: e.raw.ambiguousSpellingExamples,
   };
 }
 
 writeFileSync('../data/word-difficulty.json', JSON.stringify({
-  description: "Per-aliyah vocabulary-difficulty statistics computed directly from the Masoretic Torah text (via @shafeh/tanach), not guessed from a content-profile category. Covers every individual parsha, every combined (double) parsha, and every chag/fast/Rosh Chodesh/special-Shabbat reading in chagim.json. For each aliyah: raw word-frequency rarity and pronunciation-complexity are averaged across its actual words, then percentile-ranked against every OTHER aliyah in this same dataset (mirroring how the 'length' criterion is scored) so the full 1-10 range is meaningfully used rather than clustering in a narrow band. 'vocab' is the rounded average of 'rarity' and 'pronunciation', and feeds directly into difficulty-scores.json's vocabulary criterion.",
+  description: "Per-aliyah vocabulary-difficulty statistics computed directly from the Masoretic Torah text (via @shafeh/tanach), not guessed from a content-profile category. Covers every individual parsha, every combined (double) parsha, and every chag/fast/Rosh Chodesh/special-Shabbat reading in chagim.json. For each aliyah: raw word-frequency rarity and pronunciation-complexity are averaged across its actual words, then percentile-ranked against every OTHER aliyah in this same dataset (mirroring how the 'length' criterion is scored) so the full 1-10 range is meaningfully used rather than clustering in a narrow band. 'vocab' is the rounded average of 'rarity' and 'pronunciation', and feeds directly into difficulty-scores.json's vocabulary criterion. 'ambiguousSpellingExamples' flags two distinct, text-grounded 'written one way, read another' gotchas -- not a guessed or hand-typed list: (1) the archaic הוא/הִיא feminine-pronoun spelling, detected from the niqqud in the vocalized text itself; (2) every formal Ketiv/Qere in the Chumash (the Torah scroll's written letters vs. what's traditionally read aloud), read directly out of @shafeh/tanach's own ketiv/qere markup. It feeds into difficulty-scores.json's hiddenChallenges criterion.",
   corpus: { totalWordTokens: totalTokens, uniqueConsonantalForms: freq.size, aliyotScored: entries.length },
   methodology: "difficulty-rubric.md",
   generatedAt: new Date().toISOString(),

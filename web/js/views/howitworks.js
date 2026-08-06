@@ -27,7 +27,7 @@ export async function renderHowItWorks(container) {
       el('li', {}, [el('strong', {}, 'Vocabulary'), ' -- how unusual the actual words are, and how tricky they are to pronounce. Measured from the real text, not guessed.']),
       el('li', {}, [el('strong', {}, 'Trope'), ' -- how often unusual cantillation shows up, and whether the passage uses a special melody (like the Aseret HaDibrot or Az Yashir).']),
       el('li', {}, [el('strong', {}, 'Repetition'), ' -- how formulaic the text is. This actually ', el('em', {}, 'lowers'), ' difficulty: once you have the pattern down, each repeat is easier than the same amount of brand-new text.']),
-      el('li', {}, [el('strong', {}, 'Gotchas'), ' -- easy-to-fumble details the other four don\'t capture: rare trope marks, passages customarily read quietly, or text only read once a year with little chance to practice.']),
+      el('li', {}, [el('strong', {}, 'Gotchas'), ' -- easy-to-fumble details the other four don\'t capture: rare trope marks, passages customarily read quietly, text only read once a year with little chance to practice, or words that look the same without nikkud but are read differently.']),
     ]),
   ));
 
@@ -38,6 +38,15 @@ export async function renderHowItWorks(container) {
   container.append(section('Vocabulary is measured, not guessed',
     p('Every word in every aliyah is checked against the rest of the Torah for two things: how often that same word shows up elsewhere (a word you\'ve seen a hundred times is easy; a word that appears only once has nowhere it could\'ve been practiced), and how tricky it looks to pronounce.'),
     p('The "Rare words" shown on each aliyah are only the ones that genuinely occur a handful of times or fewer in the whole Torah -- not just whatever happens to be the least-common word in that one aliyah. If nothing in an aliyah is truly rare, none are shown.'),
+  ));
+
+  container.append(section('Words that look the same but aren\'t',
+    p('One specific gotcha is also measured straight from the text rather than guessed: words spelled identically without nikkud but read completely differently. There are two sources for this, both read directly out of the real vocalized text:'),
+    el('ul', { class: 'plain-list' }, [
+      el('li', {}, [el('strong', {}, 'The archaic הוא/הִיא spelling'), ' -- the Torah spells the feminine pronoun "hi" (she) the same as the masculine "hu" (he), both הוא, distinguished only by the niqqud.']),
+      el('li', {}, [el('strong', {}, 'Formal Ketiv/Qere'), ' -- the ~70 places in the Chumash where the Torah scroll\'s actual written letters differ from what\'s traditionally read aloud, by long-standing Masoretic tradition.']),
+    ]),
+    p('When one of these shows up in an aliyah, it adds a small bump to that aliyah\'s Gotchas score, and the specific word(s) are shown in the "why" breakdown.'),
   ));
 
   container.append(section('Some passages get an easier score because they\'re familiar',
@@ -54,7 +63,7 @@ export async function renderHowItWorks(container) {
 
   container.append(section('Where this falls short',
     el('ul', { class: 'plain-list' }, [
-      el('li', {}, 'Trope, repetition, and gotcha scores mostly come from the general character of the parsha, not a line-by-line check of every aliyah. Vocabulary is the one thing measured directly from the words themselves.'),
+      el('li', {}, 'Trope and repetition scores mostly come from the general character of the parsha, not a line-by-line check of every aliyah. Vocabulary, and the ambiguous-spelling part of Gotchas, are measured directly from the words themselves; the rest of Gotchas is still the general character-based baseline plus specific hand-curated overrides.'),
       el('li', {}, '"Difficulty" here means difficulty to prepare and read aloud -- it says nothing about how meaningful or significant a passage is.'),
       el('li', {}, 'No real feedback from actual leining is built in yet. This is a starting point, meant to improve as people use it.'),
     ]),

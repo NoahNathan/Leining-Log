@@ -323,6 +323,31 @@ that directly, so they keep the two-layer rule system:)
    assumed from memory.
 3. **Familiarity discounts** -- applied last, on top of the above, for the
    well-known liturgical passages below.
+4. **Ambiguous-spelling bump** -- the one hidden-challenge sub-signal that
+   *is* measured directly from the text rather than hand-curated: any aliyah
+   containing a "written one way, read another" word gets a flat +1 to
+   hidden-challenges (once per aliyah, regardless of how many such words it
+   has). Two distinct, text-grounded phenomena feed this, both detected in
+   `gen_word_stats.mjs` straight from the vocalized text -- neither is a
+   hand-typed list:
+   - The archaic Torah spelling of the feminine pronoun "hi" (she) as הוא --
+     identical to the masculine "hu" (he), distinguished only by the niqqud
+     (הִוא vs. הוּא). Also catches the same archaic vav-for-yud spelling in
+     compounds like הַהִוא ("that", feminine).
+   - Every formal **Ketiv/Qere** in the Chumash (~70 total) -- the specific
+     places where the Torah scroll's actual written letters differ from what
+     is traditionally read aloud, by long-standing Masoretic tradition (e.g.
+     Devarim 22's נער written but נערה read, or Devarim 28:27's euphemism
+     substitution). `@shafeh/tanach` marks every one of these explicitly in
+     its own source markup, so this reads that annotation directly rather
+     than maintaining a hand-typed list that could drift from the real text.
+
+   This is deliberately narrower than it could be: an earlier, broader "any
+   word whose vowels vary elsewhere in this aliyah" scan produced mostly
+   noise (meteg marks, ordinary pausal-form vowel shifts) rather than genuine
+   look-alike traps, so only these two specific, well-documented phenomena
+   are flagged. See each aliyah's optional `ambiguousSpellingExamples` field
+   in `difficulty-scores.json`.
 
 This means most aliyot in, say, a `RITUAL`-tagged parsha share very similar
 trope/repetition/hidden scores to each other unless they happen to be one of

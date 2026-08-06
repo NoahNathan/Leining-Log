@@ -247,6 +247,57 @@ body { min-height: 100vh; display: flex; flex-direction: column; }
 .torah-range { color: var(--text-muted); font-size: 0.92rem; margin-top: 2px; }
 .header-score { text-align: right; }
 
+.eyebrow-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.btn-share {
+  font-family: inherit;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+.btn-share:hover { background: var(--accent-soft); color: var(--accent); }
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.back-link:hover { text-decoration: underline; }
+
+.parsha-browser { padding: 20px; }
+.book-heading {
+  margin: 18px 0 10px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-2);
+  font-weight: 700;
+}
+.book-heading:first-child { margin-top: 0; }
+.parsha-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+.parsha-chip {
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+  background: var(--bg);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: background 0.15s, border-color 0.15s;
+}
+.parsha-chip:hover { background: var(--accent-soft); border-color: var(--accent); }
+
 .badge {
   display: inline-block;
   border: 1px solid;

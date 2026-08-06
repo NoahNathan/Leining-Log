@@ -26,6 +26,30 @@ function miniBar(label, score) {
   ]);
 }
 
+function shareButton(hashPath) {
+  const label = '🔗 Copy link';
+  const btn = el('button', { class: 'btn-share', title: 'Copy a shareable link to this page', type: 'button' }, label);
+  btn.addEventListener('click', async (e) => {
+    e.stopPropagation();
+    const url = `${location.origin}${location.pathname}#${hashPath}`;
+    try {
+      await navigator.clipboard.writeText(url);
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = url;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.append(ta);
+      ta.select();
+      document.execCommand('copy');
+      ta.remove();
+    }
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => { btn.textContent = label; }, 1500);
+  });
+  return btn;
+}
+
 function nusachRow(nusach) {
   if (!nusach) return el('p', { class: 'muted' }, 'No haftarah data.');
   const entries = Object.entries(nusach).filter(([, v]) => v);
@@ -178,7 +202,10 @@ export function renderParshaDetail({ parsha, haftarah, difficulty }, opts = {}) 
 
   const header = el('div', { class: 'detail-header' }, [
     el('div', {}, [
-      el('div', { class: 'eyebrow' }, opts.eyebrow || 'Parashat HaShavua'),
+      el('div', { class: 'eyebrow-row' }, [
+        el('div', { class: 'eyebrow' }, opts.eyebrow || 'Parashat HaShavua'),
+        shareButton(`parsha/${encodeURIComponent(parsha.id)}`),
+      ]),
       el('h2', {}, displayParshaName(parsha.englishName || parsha.id)),
       el('div', { class: 'hebrew-name' }, parsha.hebrewName || ''),
       el('div', { class: 'torah-range' }, parsha.torahRange),
@@ -251,7 +278,10 @@ export function renderChagDetail(chag) {
   const difficulty = chag.difficulty || null;
   card.append(el('div', { class: 'detail-header' }, [
     el('div', {}, [
-      el('div', { class: 'eyebrow' }, chag.region === 'israel' ? 'Israel' : 'Diaspora'),
+      el('div', { class: 'eyebrow-row' }, [
+        el('div', { class: 'eyebrow' }, chag.region === 'israel' ? 'Israel' : 'Diaspora'),
+        shareButton(`chag/${encodeURIComponent(chag.id)}`),
+      ]),
       el('h2', {}, chag.name),
       el('div', { class: 'torah-range' }, chag.summary || ''),
     ]),

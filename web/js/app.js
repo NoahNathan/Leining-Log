@@ -1,12 +1,16 @@
 import { renderHome } from './views/home.js';
 import { renderSearch } from './views/search.js';
 import { renderCompare } from './views/compare.js';
+import { renderAccount } from './views/account.js';
+import { renderHowItWorks } from './views/howitworks.js';
 import { renderParshaPermalink, renderChagPermalink } from './views/permalink.js';
 
 const VIEWS = {
   home: { label: 'This Week', render: renderHome },
   search: { label: 'Search', render: renderSearch },
   compare: { label: 'Compare', render: renderCompare },
+  account: { label: 'My Torah', render: renderAccount },
+  howitworks: { label: 'How It Works', render: renderHowItWorks },
 };
 
 const tabsHost = document.getElementById('tabs');

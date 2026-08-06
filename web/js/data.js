@@ -153,3 +153,106 @@ export async function getChagById(chagId) {
   const difficulty = diffIdx.get(chagId) || null;
   return { ...chag, difficulty };
 }
+
+// ---------- leining-log progress ("% of Torah learned") ----------
+// Computed entirely client-side from real per-aliyah verse counts already
+// in parshiot.json -- the DB only needs to store which (parsha, aliyah)
+// pairs a user has logged, not any verse-count math.
+export async function computeTorahProgress(logEntries) {
+  const parshiot = await getParshiot();
+  const byId = new Map(parshiot.map((p) => [p.id, p]));
+  const totalVerses = parshiot.reduce((s, p) => s + p.totalVerses, 0);
+  const books = ['Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy'];
+  const byBook = Object.fromEntries(books.map((b) => [b, { learned: 0, total: 0 }]));
+  for (const p of parshiot) byBook[p.book].total += p.totalVerses;
+
+  // Whole-parsha entries subsume any specific-aliyah entries for that same
+  // parsha (no double counting); otherwise sum the distinct aliyot logged.
+  const wholeParshaIds = new Set(logEntries.filter((e) => e.aliyah_key === 'ALL').map((e) => e.parsha_id));
+  const loggedAliyot = new Map(); // parshaId -> Set of aliyah_key
+  for (const e of logEntries) {
+    if (e.aliyah_key === 'ALL' || wholeParshaIds.has(e.parsha_id)) continue;
+    if (!loggedAliyot.has(e.parsha_id)) loggedAliyot.set(e.parsha_id, new Set());
+    loggedAliyot.get(e.parsha_id).add(e.aliyah_key);
+  }
+
+  let learnedVerses = 0;
+  for (const parshaId of wholeParshaIds) {
+    const p = byId.get(parshaId);
+    if (!p) continue;
+    learnedVerses += p.totalVerses;
+    byBook[p.book].learned += p.totalVerses;
+  }
+  for (const [parshaId, keys] of loggedAliyot) {
+    const p = byId.get(parshaId);
+    if (!p) continue;
+    for (const key of keys) {
+      const a = p.aliyot.find((a) => String(a.aliyah) === key);
+      if (!a) continue;
+      learnedVerses += a.verses;
+      byBook[p.book].learned += a.verses;
+    }
+  }
+
+  return {
+    learnedVerses,
+    totalVerses,
+    percent: totalVerses ? Math.round((learnedVerses / totalVerses) * 1000) / 10 : 0,
+    byBook,
+  };
+}
+
+let supabasePromise = null;
+async function sb() {
+  if (!supabasePromise) supabasePromise = import('./supabaseClient.js').then((m) => m.getSupabase());
+  return supabasePromise;
+}
+
+export async function getMyProfile(userId) {
+  const client = await sb();
+  if (!client) return null;
+  const { data, error } = await client.from('profiles').select('*').eq('id', userId).maybeSingle();
+  if (error) throw error;
+  return data;
+}
+
+export async function setBarMitzvahParsha(userId, parshaId) {
+  const client = await sb();
+  if (!client) return;
+  const { error } = await client.from('profiles').update({ bar_mitzvah_parsha_id: parshaId }).eq('id', userId);
+  if (error) throw error;
+}
+
+export async function getMyLeiningLog(userId) {
+  const client = await sb();
+  if (!client) return [];
+  const { data, error } = await client
+    .from('leining_log')
+    .select('*')
+    .eq('user_id', userId)
+    .order('created_at', { ascending: false });
+  if (error) throw error;
+  return data || [];
+}
+
+// aliyahKey: 'ALL' (the default) logs the whole parsha; otherwise '1'..'7'/'M'.
+export async function addLeiningLogEntry(userId, { parshaId, aliyahKey = 'ALL', yearHebrew = null, yearGregorian = null, isBarMitzvah = false }) {
+  const client = await sb();
+  if (!client) throw new Error('Supabase is not configured yet.');
+  const { error } = await client.from('leining_log').upsert({
+    user_id: userId,
+    parsha_id: parshaId,
+    aliyah_key: aliyahKey,
+    year_hebrew: yearHebrew,
+    year_gregorian: yearGregorian,
+    is_bar_mitzvah: isBarMitzvah,
+  }, { onConflict: 'user_id,parsha_id,aliyah_key' });
+  if (error) throw error;
+}
+
+export async function removeLeiningLogEntry(id) {
+  const client = await sb();
+  if (!client) return;
+  const { error } = await client.from('leining_log').delete().eq('id', id);
+  if (error) throw error;
+}

@@ -84,6 +84,38 @@ never creates it. If you ever wipe `/data` and rebuild, restore that one
 file from git (or rewrite it) separately; don't assume `gen:all` alone
 reconstructs the full directory.
 
+## Account & progress tracking
+
+The "My Torah" tab lets users sign in and log which aliyot/parshiot they've
+leined, optionally flagging one as their bar mitzvah parsha and noting the
+year (Hebrew and/or Gregorian) they last read it. It computes % of the
+Torah learned from real per-aliyah verse counts already in `parshiot.json`
+-- no extra data needed.
+
+**Backend: [Supabase](https://supabase.com)** (Postgres + Auth + Row Level
+Security), chosen because it's free at this scale, requires no server to
+run, and works directly from a static site via its client-side JS SDK --
+Row Level Security is what actually keeps each user's data private, not
+secrecy of the API key (which is meant to be public/client-side).
+
+**One-time setup:**
+1. Create a free project at [supabase.com](https://supabase.com).
+2. In the project's SQL Editor, paste and run `db/schema.sql` -- it creates
+   the `profiles` and `leining_log` tables, enables Row Level Security, and
+   sets up a trigger so every new signup gets a profile row automatically.
+   Safe to re-run.
+3. In Project Settings -> API, copy the **Project URL** and **anon/public
+   key**, and paste them into `web/js/supabaseClient.js` (replacing the
+   `YOUR_SUPABASE_PROJECT_URL` / `YOUR_SUPABASE_ANON_KEY` placeholders).
+4. Email auth (magic link / OTP) is enabled by default on new Supabase
+   projects -- no extra config needed for sign-in to work. If your project
+   has custom email restrictions, check Authentication -> Providers ->
+   Email.
+
+Until `supabaseClient.js` is filled in, the "My Torah" tab shows a friendly
+"not configured yet" notice instead of a broken login form -- the rest of
+the app is unaffected either way.
+
 ## Nusach coverage
 
 - **Ashkenazi, Sefardi, and Chabad** haftarah/maftir variants are populated

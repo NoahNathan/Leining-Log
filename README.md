@@ -2,10 +2,30 @@
 
 Gabbai App or Log of Leining
 
-This repo currently holds the **seed data** for the app: a structured,
-regenerable dataset of every Torah/haftarah reading, its length, its
-difficulty, and its date for the next 100 years. The app itself (UI, DB,
-scheduling/assignment features) isn't built yet -- this is step one.
+This repo holds the **seed data** (a structured, regenerable dataset of
+every Torah/haftarah reading, its length, its difficulty, and its date for
+the next 100 years) plus a **first web app** on top of it -- a static
+site to look up any date or parsha and browse difficulty ratings. There's
+no server/DB/auth yet, so no user accounts, assignments, or scheduling --
+just lookup and comparison.
+
+## Running the app
+
+```
+npm run dev
+```
+
+Then open <http://localhost:8080>. It's a zero-build static site (vanilla
+JS + CSS, no framework, no bundler) that reads straight from `/data` via
+`fetch`, served by the small dependency-free server in `serve.mjs`.
+
+- **This Week** -- defaults to the upcoming Shabbat's parsha (Diaspora or
+  Israel), with the full aliyah breakdown, difficulty ratings, special-trope
+  notes, and haftarah by nusach.
+- **Search** -- look up any calendar date (parsha or chag) or jump straight
+  to a parsha by name.
+- **Compare** -- sortable difficulty table across all 54 parshiot, plus a
+  side-by-side two-parsha comparison.
 
 ## What's in `/data`
 

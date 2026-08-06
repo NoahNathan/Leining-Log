@@ -32,6 +32,75 @@ function nusachRow(nusach) {
   return wrap;
 }
 
+function qualify(label, score) {
+  if (label === 'Length') {
+    if (score >= 8) return 'one of the longest aliyot in the leining';
+    if (score >= 6) return 'longer than most aliyot';
+    if (score >= 4) return 'about average length';
+    return 'a short aliyah';
+  }
+  if (label === 'Vocabulary') {
+    if (score >= 7) return 'several rare or hard-to-pronounce words';
+    if (score >= 5) return 'some uncommon vocabulary';
+    if (score >= 3) return 'mostly familiar words';
+    return 'very familiar, common vocabulary';
+  }
+  if (label === 'Trope') {
+    if (score >= 7) return 'complex, less-common cantillation patterns';
+    if (score >= 5) return 'moderately varied trope';
+    return 'straightforward, common trope patterns';
+  }
+  if (label === 'Repetition') {
+    if (score <= 3) return 'repeated / formulaic phrasing — actually makes it easier to follow';
+    if (score >= 7) return 'little repetition to lean on, so it is easy to lose your place';
+    return 'some repeated structure';
+  }
+  if (label === 'Hidden challenges') {
+    if (score >= 7) return 'several easy-to-fumble details (similar names, numbers, look-alike words)';
+    if (score >= 4) return 'a few subtle traps';
+    return 'few hidden surprises';
+  }
+  return '';
+}
+
+function wordChipRow(label, words) {
+  return el('div', { class: 'why-words' }, [
+    el('span', { class: 'why-words-label' }, label + ':'),
+    el('div', { class: 'word-chips' }, words.map((w) => el('span', { class: 'word-chip' }, w))),
+  ]);
+}
+
+function buildWhyPanel(d, a) {
+  const wrap = el('div', { class: 'why-panel' });
+  if (d.note) {
+    wrap.append(el('p', { class: 'why-note' }, d.note));
+  }
+  const criteria = [
+    { label: 'Length', score: d.scores.length },
+    { label: 'Vocabulary', score: d.scores.vocabulary },
+    { label: 'Trope', score: d.scores.trope },
+    { label: 'Repetition', score: d.scores.repetition },
+    { label: 'Hidden challenges', score: d.scores.hiddenChallenges },
+  ];
+  const list = el('div', { class: 'why-criteria' });
+  for (const c of criteria) {
+    list.append(el('div', { class: 'why-criterion' }, [
+      el('span', { class: 'why-criterion-label' }, c.label),
+      el('span', { class: 'why-criterion-score', style: `color:${scoreColor(c.score)}` }, `${c.score}/10`),
+      el('span', { class: 'why-criterion-note muted' }, c.label === 'Length' ? `${a.verses} verses — ${qualify(c.label, c.score)}` : qualify(c.label, c.score)),
+    ]));
+  }
+  wrap.append(list);
+  const vd = d.vocabDetail;
+  if (vd && vd.rareExamples && vd.rareExamples.length) {
+    wrap.append(wordChipRow('Rare words (seldom appear elsewhere in the Torah)', vd.rareExamples.map((w) => w.occurrencesInTorah === 1 ? `${w.word} (1×)` : `${w.word} (${w.occurrencesInTorah}×)`)));
+  }
+  if (vd && vd.hardToPronounceExamples && vd.hardToPronounceExamples.length) {
+    wrap.append(wordChipRow('Tricky to pronounce', vd.hardToPronounceExamples.map((w) => w.word)));
+  }
+  return wrap;
+}
+
 export function renderAliyahTable(aliyot, { maftir, difficultyAliyot } = {}) {
   const table = el('table', { class: 'aliyah-table' });
   const thead = el('thead', {}, el('tr', {}, [
@@ -43,13 +112,33 @@ export function renderAliyahTable(aliyot, { maftir, difficultyAliyot } = {}) {
   const byNum = new Map((difficultyAliyot || []).map((a) => [String(a.aliyah), a]));
   for (const a of aliyot) {
     const d = byNum.get(String(a.aliyah));
-    const row = el('tr');
+    const row = el('tr', { class: d ? 'aliyah-row expandable' : 'aliyah-row' });
     row.append(el('td', { class: 'aliyah-num' }, aliyahLabel(a.aliyah)));
     row.append(el('td', {}, citeRange(a)));
     row.append(el('td', { class: 'muted' }, `${a.verses}v`));
-    row.append(el('td', {}, d ? scoreBadge(d.finalScore, { size: 'sm' }) : '—'));
+    const caret = d ? el('span', { class: 'why-caret' }, ' ⌄') : null;
+    row.append(el('td', {}, d ? [scoreBadge(d.finalScore, { size: 'sm' }), caret] : '—'));
     const noteText = a.specialTrope || (d && d.note) || '';
     row.append(el('td', { class: 'aliyah-note' }, noteText));
+    if (d) {
+      row.addEventListener('click', () => {
+        const isOpen = row.dataset.expanded === 'true';
+        tbody.querySelectorAll('.why-row').forEach((n) => n.remove());
+        tbody.querySelectorAll('.aliyah-row').forEach((r) => {
+          r.dataset.expanded = 'false';
+          const c = r.querySelector('.why-caret');
+          if (c) c.textContent = ' ⌄';
+        });
+        if (isOpen) return;
+        row.dataset.expanded = 'true';
+        caret.textContent = ' ⌃';
+        const tr = el('tr', { class: 'why-row' });
+        const td = el('td', { colspan: '5' });
+        td.append(buildWhyPanel(d, a));
+        tr.append(td);
+        row.after(tr);
+      });
+    }
     tbody.append(row);
   }
   table.append(tbody);

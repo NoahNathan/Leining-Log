@@ -1,0 +1,41 @@
+{
+  "description": "The Five Megillot and their public reading occasions. This is NOT sourced from the Hebcal leyning API (which only covers Torah/haftarah readings) -- it is hand-authored from well-established custom, and timing in particular varies by kehillah more than the Torah-reading data above.",
+  "generatedAt": "2026-08-06T01:03:30.541Z",
+  "megillot": [
+    {
+      "id": "Shir HaShirim",
+      "english": "Song of Songs",
+      "occasion": "Pesach",
+      "when": "Ashkenazi custom: read on Shabbat Chol HaMoed Pesach (or on the last day/8th day if no Chol HaMoed Shabbat falls that year). Sephardi/Israeli custom: commonly read on the 7th day of Pesach, or nightly/at the seder in some communities. Timing varies meaningfully by kehillah -- treat this as a starting point, not a universal rule.",
+      "trope": "Chanted in its own distinct megillah cantillation system, not the weekday Torah trope; melodies are largely oral/communal tradition rather than a single fixed te'amim system printed the way Torah trope is."
+    },
+    {
+      "id": "Rut",
+      "english": "Ruth",
+      "occasion": "Shavuot",
+      "when": "Widely read on Shavuot (day 1 in most Ashkenazi communities, some read on day 2 or both days), reflecting the harvest setting of the book and David's descent from Ruth (traditionally born/died on Shavuot).",
+      "trope": "Chanted in its own distinct megillah cantillation, generally simpler/less universally standardized than Esther's trope."
+    },
+    {
+      "id": "Eicha",
+      "english": "Lamentations",
+      "occasion": "Tisha B'Av",
+      "when": "Read the evening of Tisha B'Av (and often repeated, more quietly, the following morning) as part of the mourning service.",
+      "trope": "Has its own dedicated, highly recognizable mournful cantillation system, entirely distinct from Torah trope; several of its melodic motifs also get 'borrowed' into the Torah/haftarah readings on Tisha B'Av and Shabbat Chazon (see chagim.json specialTrope notes)."
+    },
+    {
+      "id": "Kohelet",
+      "english": "Ecclesiastes",
+      "occasion": "Sukkot",
+      "when": "Ashkenazi custom: read on Shabbat Chol HaMoed Sukkot (or Shmini Atzeret/Simchat Torah if no Chol HaMoed Shabbat falls that year). Sephardi/Israeli custom varies more; some communities do not read it publicly with a berachah-level formality at all.",
+      "trope": "Chanted in its own megillah cantillation, distinct from Torah trope."
+    },
+    {
+      "id": "Esther",
+      "english": "Esther",
+      "occasion": "Purim",
+      "when": "Read twice: the evening of Purim (14 Adar, 15 Adar in walled cities/Shushan Purim) and again the following morning.",
+      "trope": "Has the most fully standardized and universally-known megillah cantillation system of the five; four verses ('the four verses of redemption') are traditionally chanted aloud by the congregation before the reader repeats them, and the ten sons of Haman (9:7-9) are traditionally read in one breath."
+    }
+  ]
+}

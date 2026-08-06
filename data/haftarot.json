@@ -1,0 +1,1304 @@
+{
+  "description": "Haftarah readings for the annual (fullkriyah) Shabbat Torah-reading cycle, split by nusach where customs differ. 'ashkenazi' is the default/most common custom; 'sefardi' covers Sephardic and Edot HaMizrach communities; 'chabad' covers the Chabad-Lubavitch (Nusach Ari/Sefard) tradition specifically. Most Chassidic 'Sefard'-nusach shuls that are not Chabad follow the Ashkenazi haftarah custom unless noted otherwise locally. Italian (Italki) and Yemenite (Baladi/Shami) haftarah customs are NOT yet populated here -- they differ from all three of the above in a number of parshiot and would need a dedicated source to add reliably; treat their absence as a known gap, not as 'same as Ashkenazi'.",
+  "source": "@hebcal/leyning v10.0.0 (getLeyningForParsha: haft/seph/chabad fields)",
+  "knownGaps": [
+    "Italian (Italki) nusach",
+    "Yemenite Baladi nusach",
+    "Yemenite Shami nusach"
+  ],
+  "generatedAt": "2026-08-06T02:50:06.873Z",
+  "count": 61,
+  "haftarot": [
+    {
+      "id": "Bereshit",
+      "parsha": "Bereshit",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Isaiah",
+          "start": "42:5",
+          "end": "43:10",
+          "verses": 31
+        },
+        "sefardi": {
+          "book": "Isaiah",
+          "start": "42:5",
+          "end": "42:21",
+          "verses": 17
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": true
+    },
+    {
+      "id": "Noach",
+      "parsha": "Noach",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Isaiah",
+          "start": "54:1",
+          "end": "55:5",
+          "verses": 22
+        },
+        "sefardi": {
+          "book": "Isaiah",
+          "start": "54:1",
+          "end": "54:10",
+          "verses": 10
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": true
+    },
+    {
+      "id": "Lech-Lecha",
+      "parsha": "Lech-Lecha",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Isaiah",
+          "start": "40:27",
+          "end": "41:16",
+          "verses": 21
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Vayera",
+      "parsha": "Vayera",
+      "nusach": {
+        "ashkenazi": {
+          "book": "II Kings",
+          "start": "4:1",
+          "end": "4:37",
+          "verses": 37
+        },
+        "sefardi": {
+          "book": "II Kings",
+          "start": "4:1",
+          "end": "4:23",
+          "verses": 23
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": true
+    },
+    {
+      "id": "Chayei Sara",
+      "parsha": "Chayei Sara",
+      "nusach": {
+        "ashkenazi": {
+          "book": "I Kings",
+          "start": "1:1",
+          "end": "1:31",
+          "verses": 31
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Toldot",
+      "parsha": "Toldot",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Malachi",
+          "start": "1:1",
+          "end": "2:7",
+          "verses": 21
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Vayetzei",
+      "parsha": "Vayetzei",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Hosea",
+          "start": "12:13",
+          "end": "14:10",
+          "verses": 28
+        },
+        "sefardi": {
+          "book": "Hosea",
+          "start": "11:7",
+          "end": "12:12",
+          "verses": 17
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": true
+    },
+    {
+      "id": "Vayishlach",
+      "parsha": "Vayishlach",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Obadiah",
+          "start": "1:1",
+          "end": "1:21",
+          "verses": 21
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Vayeshev",
+      "parsha": "Vayeshev",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Amos",
+          "start": "2:6",
+          "end": "3:8",
+          "verses": 19
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Miketz",
+      "parsha": "Miketz",
+      "nusach": {
+        "ashkenazi": {
+          "book": "I Kings",
+          "start": "3:15",
+          "end": "4:1",
+          "verses": 15
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Vayigash",
+      "parsha": "Vayigash",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Ezekiel",
+          "start": "37:15",
+          "end": "37:28",
+          "verses": 14
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Vayechi",
+      "parsha": "Vayechi",
+      "nusach": {
+        "ashkenazi": {
+          "book": "I Kings",
+          "start": "2:1",
+          "end": "2:12",
+          "verses": 12
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Shemot",
+      "parsha": "Shemot",
+      "nusach": {
+        "ashkenazi": [
+          {
+            "book": "Isaiah",
+            "start": "27:6",
+            "end": "28:13",
+            "verses": 21
+          },
+          {
+            "book": "Isaiah",
+            "start": "29:22",
+            "end": "29:23",
+            "verses": 2
+          }
+        ],
+        "sefardi": {
+          "book": "Jeremiah",
+          "start": "1:1",
+          "end": "2:3",
+          "verses": 22
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": true
+    },
+    {
+      "id": "Vaera",
+      "parsha": "Vaera",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Ezekiel",
+          "start": "28:25",
+          "end": "29:21",
+          "verses": 23
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Bo",
+      "parsha": "Bo",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Jeremiah",
+          "start": "46:13",
+          "end": "46:28",
+          "verses": 16
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Beshalach",
+      "parsha": "Beshalach",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Judges",
+          "start": "4:4",
+          "end": "5:31",
+          "verses": 52
+        },
+        "sefardi": {
+          "book": "Judges",
+          "start": "5:1",
+          "end": "5:31",
+          "verses": 31
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": true
+    },
+    {
+      "id": "Yitro",
+      "parsha": "Yitro",
+      "nusach": {
+        "ashkenazi": [
+          {
+            "book": "Isaiah",
+            "start": "6:1",
+            "end": "7:6",
+            "verses": 19
+          },
+          {
+            "book": "Isaiah",
+            "start": "9:5",
+            "end": "9:6",
+            "verses": 2
+          }
+        ],
+        "sefardi": {
+          "book": "Isaiah",
+          "start": "6:1",
+          "end": "6:13",
+          "verses": 13
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": true
+    },
+    {
+      "id": "Mishpatim",
+      "parsha": "Mishpatim",
+      "nusach": {
+        "ashkenazi": [
+          {
+            "book": "Jeremiah",
+            "start": "34:8",
+            "end": "34:22",
+            "verses": 15
+          },
+          {
+            "book": "Jeremiah",
+            "start": "33:25",
+            "end": "33:26",
+            "verses": 2
+          }
+        ],
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Terumah",
+      "parsha": "Terumah",
+      "nusach": {
+        "ashkenazi": {
+          "book": "I Kings",
+          "start": "5:26",
+          "end": "6:13",
+          "verses": 20
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Tetzaveh",
+      "parsha": "Tetzaveh",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Ezekiel",
+          "start": "43:10",
+          "end": "43:27",
+          "verses": 18
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Ki Tisa",
+      "parsha": "Ki Tisa",
+      "nusach": {
+        "ashkenazi": {
+          "book": "I Kings",
+          "start": "18:1",
+          "end": "18:39",
+          "verses": 39
+        },
+        "sefardi": {
+          "book": "I Kings",
+          "start": "18:20",
+          "end": "18:39",
+          "verses": 20
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": true
+    },
+    {
+      "id": "Vayakhel",
+      "parsha": "Vayakhel",
+      "nusach": {
+        "ashkenazi": {
+          "book": "I Kings",
+          "start": "7:40",
+          "end": "7:50",
+          "verses": 11
+        },
+        "sefardi": {
+          "book": "I Kings",
+          "start": "7:13",
+          "end": "7:26",
+          "verses": 14
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": true
+    },
+    {
+      "id": "Pekudei",
+      "parsha": "Pekudei",
+      "nusach": {
+        "ashkenazi": {
+          "book": "I Kings",
+          "start": "7:51",
+          "end": "8:21",
+          "verses": 22
+        },
+        "sefardi": {
+          "book": "I Kings",
+          "start": "7:40",
+          "end": "7:50",
+          "verses": 11
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": true
+    },
+    {
+      "id": "Vayikra",
+      "parsha": "Vayikra",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Isaiah",
+          "start": "43:21",
+          "end": "44:23",
+          "verses": 31
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Tzav",
+      "parsha": "Tzav",
+      "nusach": {
+        "ashkenazi": [
+          {
+            "book": "Jeremiah",
+            "start": "7:21",
+            "end": "8:3",
+            "verses": 17
+          },
+          {
+            "book": "Jeremiah",
+            "start": "9:22",
+            "end": "9:23",
+            "verses": 2
+          }
+        ],
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": [
+          {
+            "book": "Jeremiah",
+            "start": "7:21",
+            "end": "7:28",
+            "verses": 8
+          },
+          {
+            "book": "Jeremiah",
+            "start": "9:22",
+            "end": "9:23",
+            "verses": 2
+          }
+        ]
+      },
+      "variesByNusach": true
+    },
+    {
+      "id": "Shmini",
+      "parsha": "Shmini",
+      "nusach": {
+        "ashkenazi": {
+          "book": "II Samuel",
+          "start": "6:1",
+          "end": "7:17",
+          "verses": 40
+        },
+        "sefardi": {
+          "book": "II Samuel",
+          "start": "6:1",
+          "end": "6:19",
+          "verses": 19
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": true
+    },
+    {
+      "id": "Tazria",
+      "parsha": "Tazria",
+      "nusach": {
+        "ashkenazi": {
+          "book": "II Kings",
+          "start": "4:42",
+          "end": "5:19",
+          "verses": 22
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Metzora",
+      "parsha": "Metzora",
+      "nusach": {
+        "ashkenazi": {
+          "book": "II Kings",
+          "start": "7:3",
+          "end": "7:20",
+          "verses": 18
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Achrei Mot",
+      "parsha": "Achrei Mot",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Amos",
+          "start": "9:7",
+          "end": "9:15",
+          "verses": 9
+        },
+        "sefardi": {
+          "book": "Ezekiel",
+          "start": "22:1",
+          "end": "22:16",
+          "verses": 16
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": true
+    },
+    {
+      "id": "Kedoshim",
+      "parsha": "Kedoshim",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Ezekiel",
+          "start": "22:1",
+          "end": "22:19",
+          "verses": 19
+        },
+        "sefardi": {
+          "book": "Ezekiel",
+          "start": "20:2",
+          "end": "20:20",
+          "verses": 19
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": true
+    },
+    {
+      "id": "Emor",
+      "parsha": "Emor",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Ezekiel",
+          "start": "44:15",
+          "end": "44:31",
+          "verses": 17
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Behar",
+      "parsha": "Behar",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Jeremiah",
+          "start": "32:6",
+          "end": "32:27",
+          "verses": 22
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "book": "Jeremiah",
+          "start": "32:6",
+          "end": "32:22",
+          "verses": 17
+        }
+      },
+      "variesByNusach": true
+    },
+    {
+      "id": "Bechukotai",
+      "parsha": "Bechukotai",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Jeremiah",
+          "start": "16:19",
+          "end": "17:14",
+          "verses": 17
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Bamidbar",
+      "parsha": "Bamidbar",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Hosea",
+          "start": "2:1",
+          "end": "2:22",
+          "verses": 22
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Nasso",
+      "parsha": "Nasso",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Judges",
+          "start": "13:2",
+          "end": "13:25",
+          "verses": 24
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Beha'alotcha",
+      "parsha": "Beha'alotcha",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Zechariah",
+          "start": "2:14",
+          "end": "4:7",
+          "verses": 21
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Sh'lach",
+      "parsha": "Sh'lach",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Joshua",
+          "start": "2:1",
+          "end": "2:24",
+          "verses": 24
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Korach",
+      "parsha": "Korach",
+      "nusach": {
+        "ashkenazi": {
+          "book": "I Samuel",
+          "start": "11:14",
+          "end": "12:22",
+          "verses": 24
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Chukat",
+      "parsha": "Chukat",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Judges",
+          "start": "11:1",
+          "end": "11:33",
+          "verses": 33
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Balak",
+      "parsha": "Balak",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Micah",
+          "start": "5:6",
+          "end": "6:8",
+          "verses": 17
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Pinchas",
+      "parsha": "Pinchas",
+      "nusach": {
+        "ashkenazi": {
+          "book": "I Kings",
+          "start": "18:46",
+          "end": "19:21",
+          "verses": 22
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Matot",
+      "parsha": "Matot",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Jeremiah",
+          "start": "1:1",
+          "end": "2:3",
+          "verses": 22
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Masei",
+      "parsha": "Masei",
+      "nusach": {
+        "ashkenazi": [
+          {
+            "book": "Jeremiah",
+            "start": "2:4",
+            "end": "2:28",
+            "verses": 25
+          },
+          {
+            "book": "Jeremiah",
+            "start": "3:4",
+            "end": "3:4",
+            "verses": 1
+          }
+        ],
+        "sefardi": [
+          {
+            "book": "Jeremiah",
+            "start": "2:4",
+            "end": "2:28",
+            "verses": 25
+          },
+          {
+            "book": "Jeremiah",
+            "start": "4:1",
+            "end": "4:2",
+            "verses": 2
+          }
+        ],
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": true
+    },
+    {
+      "id": "Devarim",
+      "parsha": "Devarim",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Isaiah",
+          "start": "1:1",
+          "end": "1:27",
+          "verses": 27
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Vaetchanan",
+      "parsha": "Vaetchanan",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Isaiah",
+          "start": "40:1",
+          "end": "40:26",
+          "verses": 26
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Eikev",
+      "parsha": "Eikev",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Isaiah",
+          "start": "49:14",
+          "end": "51:3",
+          "verses": 27
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Re'eh",
+      "parsha": "Re'eh",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Isaiah",
+          "start": "54:11",
+          "end": "55:5",
+          "verses": 12
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Shoftim",
+      "parsha": "Shoftim",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Isaiah",
+          "start": "51:12",
+          "end": "52:12",
+          "verses": 24
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Ki Teitzei",
+      "parsha": "Ki Teitzei",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Isaiah",
+          "start": "54:1",
+          "end": "54:10",
+          "verses": 10
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Ki Tavo",
+      "parsha": "Ki Tavo",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Isaiah",
+          "start": "60:1",
+          "end": "60:22",
+          "verses": 22
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Nitzavim",
+      "parsha": "Nitzavim",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Isaiah",
+          "start": "61:10",
+          "end": "63:9",
+          "verses": 23
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Vayeilech",
+      "parsha": "Vayeilech",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Isaiah",
+          "start": "55:6",
+          "end": "56:8",
+          "verses": 16
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Ha'azinu",
+      "parsha": "Ha'azinu",
+      "nusach": {
+        "ashkenazi": {
+          "book": "II Samuel",
+          "start": "22:1",
+          "end": "22:51",
+          "verses": 51
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Vezot Haberakhah",
+      "parsha": "Vezot Haberakhah",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Joshua",
+          "start": "1:1",
+          "end": "1:18",
+          "verses": 18
+        },
+        "sefardi": {
+          "book": "Joshua",
+          "start": "1:1",
+          "end": "1:9",
+          "verses": 9
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": true
+    },
+    {
+      "id": "Vayakhel-Pekudei",
+      "parsha": "Vayakhel-Pekudei",
+      "nusach": {
+        "ashkenazi": {
+          "book": "I Kings",
+          "start": "7:51",
+          "end": "8:21",
+          "verses": 22
+        },
+        "sefardi": {
+          "book": "I Kings",
+          "start": "7:40",
+          "end": "7:50",
+          "verses": 11
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": true
+    },
+    {
+      "id": "Tazria-Metzora",
+      "parsha": "Tazria-Metzora",
+      "nusach": {
+        "ashkenazi": {
+          "book": "II Kings",
+          "start": "7:3",
+          "end": "7:20",
+          "verses": 18
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Achrei Mot-Kedoshim",
+      "parsha": "Achrei Mot-Kedoshim",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Amos",
+          "start": "9:7",
+          "end": "9:15",
+          "verses": 9
+        },
+        "sefardi": {
+          "book": "Ezekiel",
+          "start": "20:2",
+          "end": "20:20",
+          "verses": 19
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": true
+    },
+    {
+      "id": "Behar-Bechukotai",
+      "parsha": "Behar-Bechukotai",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Jeremiah",
+          "start": "16:19",
+          "end": "17:14",
+          "verses": 17
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Chukat-Balak",
+      "parsha": "Chukat-Balak",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Micah",
+          "start": "5:6",
+          "end": "6:8",
+          "verses": 17
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    },
+    {
+      "id": "Matot-Masei",
+      "parsha": "Matot-Masei",
+      "nusach": {
+        "ashkenazi": [
+          {
+            "book": "Jeremiah",
+            "start": "2:4",
+            "end": "2:28",
+            "verses": 25
+          },
+          {
+            "book": "Jeremiah",
+            "start": "3:4",
+            "end": "3:4",
+            "verses": 1
+          }
+        ],
+        "sefardi": [
+          {
+            "book": "Jeremiah",
+            "start": "2:4",
+            "end": "2:28",
+            "verses": 25
+          },
+          {
+            "book": "Jeremiah",
+            "start": "4:1",
+            "end": "4:2",
+            "verses": 2
+          }
+        ],
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": true
+    },
+    {
+      "id": "Nitzavim-Vayeilech",
+      "parsha": "Nitzavim-Vayeilech",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Isaiah",
+          "start": "61:10",
+          "end": "63:9",
+          "verses": 23
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      },
+      "variesByNusach": null
+    }
+  ]
+}

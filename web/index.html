@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leining Log</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%96%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="#home">
+        <span class="brand-mark">📖</span>
+        <span class="brand-name">Leining Log</span>
+      </a>
+      <nav id="tabs" class="tabs"></nav>
+      <button id="theme-toggle" class="theme-toggle" title="Toggle light/dark" aria-label="Toggle light/dark">◐</button>
+    </div>
+  </header>
+  <main id="view" class="view-container"></main>
+  <footer class="site-footer">
+    <p>Data generated from Hebcal (@hebcal/core, @hebcal/leyning). Difficulty ratings are a tunable heuristic — see <code>data/difficulty-rubric.md</code>.</p>
+  </footer>
+  <script type="module" src="js/app.js"></script>
+  <script>
+    const stored = localStorage.getItem('leining-theme');
+    if (stored) document.documentElement.setAttribute('data-theme', stored);
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      const cur = document.documentElement.getAttribute('data-theme') ||
+        (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      const next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('leining-theme', next);
+    });
+  </script>
+</body>
+</html>

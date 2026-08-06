@@ -1,0 +1,10 @@
+{
+  "name": "leining-log",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Gabbai app / log of leining -- Torah & haftarah reading lookup, difficulty ratings, and a 100-year reading calendar.",
+  "type": "module",
+  "scripts": {
+    "dev": "node serve.mjs"
+  }
+}

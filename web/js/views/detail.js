@@ -1,4 +1,12 @@
 import { el, citeRange, displayParshaName, scoreColor, scoreColorBg, scoreLabel } from '../util.js';
+import { contentTags } from '../contentTags.js';
+
+function contentTagChips(tags) {
+  if (!tags || !tags.length) return null;
+  return el('div', { class: 'content-tags' }, tags.map((t) =>
+    el('span', { class: `content-tag${t === 'Famous' ? ' content-tag-famous' : ''}` }, t)
+  ));
+}
 
 const TIKKUN_BOOK_NUMBER = { Genesis: 1, Exodus: 2, Leviticus: 3, Numbers: 4, Deuteronomy: 5 };
 
@@ -155,7 +163,7 @@ function buildWhyPanel(d, a) {
   return wrap;
 }
 
-export function renderAliyahTable(aliyot, { maftir, difficultyAliyot } = {}) {
+export function renderAliyahTable(aliyot, { maftir, difficultyAliyot, profile, readingId } = {}) {
   const table = el('table', { class: 'aliyah-table' });
   const thead = el('thead', {}, el('tr', {}, [
     el('th', {}, '#'), el('th', {}, 'Verses'), el('th', {}, 'Count'),
@@ -168,7 +176,8 @@ export function renderAliyahTable(aliyot, { maftir, difficultyAliyot } = {}) {
     const d = byNum.get(String(a.aliyah));
     const row = el('tr', { class: d ? 'aliyah-row expandable' : 'aliyah-row' });
     row.append(el('td', { class: 'aliyah-num' }, aliyahLabel(a.aliyah)));
-    row.append(el('td', {}, citeRange(a)));
+    const tags = contentTags({ profile, aliyahKey: String(a.aliyah), readingId, wellKnown: d && d.wellKnown });
+    row.append(el('td', {}, [citeRange(a), contentTagChips(tags)]));
     row.append(el('td', { class: 'muted' }, `${a.verses}v`));
     const caret = d ? el('span', { class: 'why-caret' }, ' ⌄') : null;
     row.append(el('td', {}, d ? [scoreBadge(d.finalScore, { size: 'sm' }), caret] : '—'));
@@ -198,17 +207,20 @@ export function renderAliyahTable(aliyot, { maftir, difficultyAliyot } = {}) {
     tbody.append(row);
   }
   table.append(tbody);
+  const scrollWrap = el('div', { class: 'table-scroll' }, table);
   if (maftir) {
     const maftirDifficulty = byNum.get('M');
+    const maftirTags = contentTags({ profile, aliyahKey: 'M', readingId, wellKnown: maftirDifficulty && maftirDifficulty.wellKnown });
     const foot = el('div', { class: 'maftir-line' }, [
       el('strong', {}, 'Maftir: '), citeRange(maftir),
       maftir.reason ? el('span', { class: 'tag' }, maftir.reason) : null,
       maftirDifficulty ? scoreBadge(maftirDifficulty.finalScore, { size: 'sm' }) : null,
       tikkunLink(maftir),
+      contentTagChips(maftirTags),
     ]);
-    return el('div', {}, [table, foot]);
+    return el('div', {}, [scrollWrap, foot]);
   }
-  return table;
+  return scrollWrap;
 }
 
 function ordinal(n) {
@@ -280,7 +292,7 @@ export function renderParshaDetail({ parsha, haftarah, difficulty }, opts = {}) 
 
   card.append(el('div', { class: 'card subcard' }, [
     el('h3', {}, 'Aliyot'),
-    renderAliyahTable(parsha.aliyot, { maftir: parsha.maftir, difficultyAliyot: difficulty && difficulty.aliyot }),
+    renderAliyahTable(parsha.aliyot, { maftir: parsha.maftir, difficultyAliyot: difficulty && difficulty.aliyot, profile: difficulty && difficulty.profile, readingId: parsha.id }),
   ]));
 
   card.append(el('div', { class: 'card subcard' }, [
@@ -338,12 +350,12 @@ export function renderChagDetail(chag) {
   if (chag.aliyot && chag.aliyot.length) {
     card.append(el('div', { class: 'card subcard' }, [
       el('h3', {}, 'Aliyot'),
-      renderAliyahTable(chag.aliyot, { maftir: chag.maftir, difficultyAliyot: difficulty && difficulty.aliyot }),
+      renderAliyahTable(chag.aliyot, { maftir: chag.maftir, difficultyAliyot: difficulty && difficulty.aliyot, profile: difficulty && difficulty.profile, readingId: chag.id }),
     ]));
   } else if (chag.maftir) {
     card.append(el('div', { class: 'card subcard' }, [
       el('h3', {}, 'Maftir only'),
-      renderAliyahTable([{ aliyah: 'M', ...chag.maftir }], { difficultyAliyot: difficulty && difficulty.aliyot }),
+      renderAliyahTable([{ aliyah: 'M', ...chag.maftir }], { difficultyAliyot: difficulty && difficulty.aliyot, profile: difficulty && difficulty.profile, readingId: chag.id }),
     ]));
   }
   card.append(el('div', { class: 'card subcard' }, [

@@ -1,5 +1,5 @@
 import { el, scoreColor, scoreColorBg, scoreLabel, displayParshaName } from '../util.js';
-import { listScoredParshiot, getParshaDetail } from '../data.js';
+import { listScoredParshiot, getParshaDetail, listAllParshiotForSearch } from '../data.js';
 import { renderParshaDetail } from './detail.js';
 
 const COLUMNS = [
@@ -14,6 +14,14 @@ const COLUMNS = [
 let sortKey = 'parshaFinalScore';
 let sortDir = -1; // hardest first
 let expandedId = null;
+let sbsSort = 'order';
+
+const SBS_SORTS = [
+  { key: 'alpha', label: 'A–Z', cmp: (a, b) => a.parshaId.localeCompare(b.parshaId) },
+  { key: 'order', label: 'Parsha order', cmp: (a, b) => a.parshaNum - b.parshaNum },
+  { key: 'sizeDesc', label: 'Size: big → small', cmp: (a, b) => b.totalVerses - a.totalVerses },
+  { key: 'sizeAsc', label: 'Size: small → big', cmp: (a, b) => a.totalVerses - b.totalVerses },
+];
 
 export async function renderCompare(container) {
   container.innerHTML = '';
@@ -22,24 +30,36 @@ export async function renderCompare(container) {
     el('p', { class: 'muted' }, 'Sort every parsha by difficulty, or line two up side by side.'),
   ]));
 
-  const all = await listScoredParshiot();
+  const [scored, meta] = await Promise.all([listScoredParshiot(), listAllParshiotForSearch()]);
+  const metaById = new Map(meta.map((p) => [p.id, p]));
+  const all = scored.map((p) => {
+    const m = metaById.get(p.parshaId);
+    const parshaNum = m ? (Array.isArray(m.parshaNum) ? m.parshaNum[0] : m.parshaNum) : 999;
+    const totalVerses = m ? m.totalVerses : 0;
+    return { ...p, parshaNum, totalVerses };
+  });
 
   container.append(buildSideBySide(all));
 
   const tableHost = el('div', { class: 'card' });
   container.append(tableHost);
 
+  function comparator(key) {
+    if (key === 'parshaOrder') return (a, b) => a.parshaNum - b.parshaNum;
+    if (key === 'parshaAlpha') return (a, b) => a.parshaId.localeCompare(b.parshaId);
+    const col = COLUMNS.find((c) => c.key === key);
+    return (a, b) => col.path(a) - col.path(b);
+  }
+
   function draw() {
     tableHost.innerHTML = '';
-    const sorted = [...all].sort((a, b) => {
-      const col = COLUMNS.find((c) => c.key === sortKey);
-      return (col.path(a) - col.path(b)) * sortDir;
-    });
+    const cmp = comparator(sortKey);
+    const sorted = [...all].sort((a, b) => cmp(a, b) * sortDir);
     const table = el('table', { class: 'compare-table' });
     const thead = el('thead');
     const headRow = el('tr', {}, [
-      el('th', {}, '#'),
-      el('th', {}, 'Parsha'),
+      sortableHeader({ key: 'parshaOrder', label: 'Order' }),
+      sortableHeader({ key: 'parshaAlpha', label: 'Parsha' }),
       ...COLUMNS.map((c) => sortableHeader(c)),
     ]);
     thead.append(headRow);
@@ -62,7 +82,7 @@ export async function renderCompare(container) {
       tbody.append(row);
     });
     table.append(tbody);
-    tableHost.append(table);
+    tableHost.append(el('div', { class: 'table-scroll' }, table));
   }
 
   function sortableHeader(col) {
@@ -71,7 +91,8 @@ export async function renderCompare(container) {
     return el('th', {
       class: `sortable ${active ? 'active' : ''}`,
       onclick: () => {
-        if (sortKey === col.key) sortDir *= -1; else { sortKey = col.key; sortDir = -1; }
+        if (sortKey === col.key) sortDir *= -1;
+        else { sortKey = col.key; sortDir = (col.key === 'parshaOrder' || col.key === 'parshaAlpha') ? 1 : -1; }
         draw();
       },
     }, col.label + arrow);
@@ -98,19 +119,34 @@ export async function renderCompare(container) {
 function buildSideBySide(all) {
   const wrap = el('div', { class: 'card subcard' });
   wrap.append(el('h3', {}, 'Side-by-side'));
-  const options = all
-    .slice()
-    .sort((a, b) => a.parshaId.localeCompare(b.parshaId))
-    .map((p) => el('option', { value: p.parshaId }, displayParshaName(p.parshaId)));
 
-  const selA = el('select', { class: 'text-input' }, options.map((o) => o.cloneNode(true)));
-  const selB = el('select', { class: 'text-input' }, options.map((o) => o.cloneNode(true)));
-  selA.value = all[0] && all[0].parshaId;
-  selB.value = all[1] && all[1].parshaId;
+  const sortToggle = el('div', { class: 'toggle-group' }, SBS_SORTS.map((s) => el('button', {
+    class: `toggle-btn ${sbsSort === s.key ? 'active' : ''}`,
+    type: 'button',
+    onclick: () => {
+      sbsSort = s.key;
+      [...sortToggle.children].forEach((c) => c.classList.toggle('active', c.textContent === s.label));
+      rebuildOptions();
+    },
+  }, s.label)));
+
+  const selA = el('select', { class: 'text-input' });
+  const selB = el('select', { class: 'text-input' });
   const resultHost = el('div', { class: 'sbs-result' });
-  const btn = el('button', { class: 'btn-primary', onclick: () => draw() }, 'Compare');
+  const btn = el('button', { class: 'btn-primary', onclick: () => drawResult() }, 'Compare');
 
-  function draw() {
+  function rebuildOptions() {
+    const prevA = selA.value, prevB = selB.value;
+    const sort = SBS_SORTS.find((s) => s.key === sbsSort);
+    const sorted = [...all].sort(sort.cmp);
+    const buildOptions = () => sorted.map((p) => el('option', { value: p.parshaId }, displayParshaName(p.parshaId)));
+    selA.innerHTML = ''; selA.append(...buildOptions());
+    selB.innerHTML = ''; selB.append(...buildOptions());
+    selA.value = sorted.some((p) => p.parshaId === prevA) ? prevA : (sorted[0] && sorted[0].parshaId);
+    selB.value = sorted.some((p) => p.parshaId === prevB) ? prevB : (sorted[1] && sorted[1].parshaId);
+  }
+
+  function drawResult() {
     resultHost.innerHTML = '';
     const pa = all.find((p) => p.parshaId === selA.value);
     const pb = all.find((p) => p.parshaId === selB.value);
@@ -118,11 +154,13 @@ function buildSideBySide(all) {
     resultHost.append(sbsColumn(pa), sbsColumn(pb));
   }
 
+  rebuildOptions();
   wrap.append(
+    sortToggle,
     el('div', { class: 'search-row' }, [selA, el('span', { class: 'vs' }, 'vs'), selB, btn]),
     resultHost,
   );
-  draw();
+  drawResult();
   return wrap;
 }
 

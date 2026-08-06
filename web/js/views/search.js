@@ -1,22 +1,39 @@
 import { el, todayISO, formatDateLong, displayParshaName } from '../util.js';
-import { findByDate, getParshaDetail, getChagById, listAllParshiotForSearch } from '../data.js';
+import { findByDate, getParshaDetail, getChagById, getChagim, listAllParshiotForSearch } from '../data.js';
 import { renderParshaDetail, renderChagDetail } from './detail.js';
 
-let mode = 'date';
+let mode = 'parsha';
 let region = 'diaspora';
 
 const BOOK_ORDER = ['Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy'];
+
+const CHAG_CATEGORIES = [
+  { label: 'Rosh Hashana & Yom Kippur', test: (n) => /^(Rosh Hashana|Yom Kippur)/.test(n) },
+  { label: 'Sukkot & Simchat Torah', test: (n) => /^(Sukkot|Shmini Atzeret|Simchat Torah)/.test(n) },
+  { label: 'Chanukah', test: (n) => /^Chanukah/.test(n) },
+  { label: 'Purim', test: (n) => /^(Purim|Shushan Purim|Ta'anit Esther)/.test(n) },
+  { label: 'Pesach', test: (n) => /^Pesach/.test(n) },
+  { label: 'Shavuot', test: (n) => /^Shavuot/.test(n) },
+  { label: 'Fast Days', test: (n) => /^(Tzom|Asara|Tish'a)/.test(n) },
+  { label: 'Special Shabbatot', test: (n) => /^Shabbat/.test(n) },
+  { label: 'Rosh Chodesh', test: (n) => /^Rosh Chodesh/.test(n) },
+  { label: 'Other', test: () => true },
+];
+
+function parshaNumOf(p) {
+  return Array.isArray(p.parshaNum) ? p.parshaNum[0] : p.parshaNum;
+}
 
 export async function renderSearch(container) {
   container.innerHTML = '';
   container.append(el('div', { class: 'view-heading' }, [
     el('h1', {}, 'Search'),
-    el('p', { class: 'muted' }, 'Look up a specific calendar date, or browse and click any parsha.'),
+    el('p', { class: 'muted' }, 'Browse and click any parsha or holiday, or look up a specific calendar date.'),
   ]));
 
   const modeToggle = el('div', { class: 'toggle-group' }, [
-    modeBtn('By date', 'date'),
     modeBtn('By parsha', 'parsha'),
+    modeBtn('By date', 'date'),
   ]);
   const regionToggle = el('div', { class: 'toggle-group' }, [
     regionBtn('Diaspora', 'diaspora'),
@@ -38,7 +55,12 @@ export async function renderSearch(container) {
   function regionBtn(label, value) {
     return el('button', {
       class: `toggle-btn ${region === value ? 'active' : ''}`,
-      onclick: () => { region = value; syncToggle(regionToggle, label); if (mode === 'date') runDateSearch(currentDateValue()); },
+      onclick: () => {
+        region = value;
+        syncToggle(regionToggle, label);
+        if (mode === 'date') runDateSearch(currentDateValue());
+        else refreshForm();
+      },
     }, label);
   }
   function syncToggle(group, activeLabel) {
@@ -61,8 +83,8 @@ export async function renderSearch(container) {
       formHost.append(el('div', { class: 'search-row' }, [input, btn]));
       runDateSearch(input.value);
     } else {
-      resultsHost.append(el('p', { class: 'muted' }, 'Loading parshiot…'));
-      renderParshaBrowser();
+      resultsHost.append(el('p', { class: 'muted' }, 'Loading…'));
+      renderBrowser();
     }
   }
 
@@ -93,34 +115,52 @@ export async function renderSearch(container) {
     }
   }
 
-  async function renderParshaBrowser() {
-    const all = await listAllParshiotForSearch();
+  async function renderBrowser() {
+    const [allParshiot, allChagim] = await Promise.all([listAllParshiotForSearch(), getChagim()]);
     resultsHost.innerHTML = '';
-
-    const individual = all.filter((p) => !p.combinedEntry).sort((a, b) => a.parshaNum - b.parshaNum);
-    const combined = all.filter((p) => p.combinedEntry).sort((a, b) => a.parshaNum[0] - b.parshaNum[0]);
 
     const browser = el('div', { class: 'card parsha-browser' });
     for (const book of BOOK_ORDER) {
-      const inBook = individual.filter((p) => p.book === book);
+      const inBook = allParshiot.filter((p) => p.book === book).sort((a, b) => parshaNumOf(a) - parshaNumOf(b));
       if (!inBook.length) continue;
       browser.append(el('h3', { class: 'book-heading' }, book));
       browser.append(el('div', { class: 'parsha-grid' }, inBook.map(parshaChip)));
     }
     resultsHost.append(browser);
+    resultsHost.append(buildChagBrowser(allChagim));
+  }
 
-    if (combined.length) {
-      const combinedCard = el('div', { class: 'card subcard' }, [
-        el('h3', {}, 'Combined readings'),
-        el('p', { class: 'muted small' }, 'Read together on one Shabbat in some years, with their own aliyah divisions.'),
-        el('div', { class: 'parsha-grid' }, combined.map(parshaChip)),
-      ]);
-      resultsHost.append(combinedCard);
+  function buildChagBrowser(allChagim) {
+    const withReading = allChagim.filter((c) => (c.aliyot && c.aliyot.length) || c.maftir);
+    const byName = new Map();
+    for (const c of withReading) {
+      if (!byName.has(c.name)) byName.set(c.name, []);
+      byName.get(c.name).push(c);
     }
+    const wrap = el('div', { class: 'card subcard' }, [
+      el('h3', {}, 'Festivals, fasts & special readings'),
+      el('p', { class: 'muted small' }, 'Holidays, fast days, Rosh Chodesh, and special-Shabbat Torah readings.'),
+    ]);
+    for (const cat of CHAG_CATEGORIES) {
+      const names = [...byName.keys()].filter((n) => cat.test(n));
+      if (!names.length) continue;
+      wrap.append(el('h3', { class: 'book-heading' }, cat.label));
+      wrap.append(el('div', { class: 'parsha-grid' }, names.map((n) => chagChip(n, byName.get(n)))));
+    }
+    return wrap;
+  }
+
+  function chagChip(name, entries) {
+    const preferred = entries.find((c) => c.region === region) || entries[0];
+    return el('a', { href: `#chag/${encodeURIComponent(preferred.id)}`, class: 'chag-chip' }, name);
   }
 
   function parshaChip(p) {
-    return el('a', { href: `#parsha/${encodeURIComponent(p.id)}`, class: 'parsha-chip' }, displayParshaName(p.englishName || p.id));
+    return el('a', {
+      href: `#parsha/${encodeURIComponent(p.id)}`,
+      class: `parsha-chip${p.combinedEntry ? ' combined-chip' : ''}`,
+      title: p.combinedEntry ? 'Combined (double) parsha' : '',
+    }, displayParshaName(p.englishName || p.id));
   }
 
   refreshForm();

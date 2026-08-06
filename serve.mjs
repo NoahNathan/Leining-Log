@@ -1,14 +1,12 @@
 // Zero-dependency static file server for local dev / preview.
-// Serves web/ as the site root, and exposes the repo-level data/ directory
-// at /data so the app's fetch('/data/...') calls work without a build step.
+// Serves the repo root as-is (web/, data/, index.html) -- the same layout
+// GitHub Pages deploys -- so relative paths behave identically in both.
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { extname, join, normalize } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const REPO_ROOT = fileURLToPath(new URL('.', import.meta.url));
-const WEB_ROOT = join(REPO_ROOT, 'web');
-const DATA_ROOT = join(REPO_ROOT, 'data');
 const PORT = process.env.PORT ? Number(process.env.PORT) : 8080;
 
 const MIME = {
@@ -17,6 +15,7 @@ const MIME = {
   '.mjs': 'text/javascript; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
+  '.md': 'text/markdown; charset=utf-8',
   '.svg': 'image/svg+xml',
   '.png': 'image/png',
   '.ico': 'image/x-icon',
@@ -30,16 +29,14 @@ function resolveSafe(root, urlPath) {
 }
 
 const server = createServer(async (req, res) => {
+  const urlPath = decodeURIComponent(req.url.split('?')[0]);
+  if (urlPath === '/') {
+    res.writeHead(302, { Location: '/web/' });
+    res.end();
+    return;
+  }
   try {
-    let urlPath = decodeURIComponent(req.url.split('?')[0]);
-    let root = WEB_ROOT;
-    if (urlPath === '/') {
-      urlPath = '/index.html';
-    } else if (urlPath.startsWith('/data/')) {
-      root = DATA_ROOT;
-      urlPath = urlPath.slice('/data'.length);
-    }
-    const filePath = resolveSafe(root, urlPath);
+    const filePath = resolveSafe(REPO_ROOT, urlPath);
     if (!filePath) {
       res.writeHead(403);
       res.end('Forbidden');
@@ -58,5 +55,5 @@ const server = createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`Leining-Log dev server running at http://localhost:${PORT}`);
+  console.log(`Leining-Log dev server running at http://localhost:${PORT}/web/`);
 });

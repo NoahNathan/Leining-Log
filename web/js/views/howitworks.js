@@ -65,7 +65,6 @@ export async function renderHowItWorks(container) {
     el('ul', { class: 'plain-list' }, [
       el('li', {}, 'Trope and repetition scores mostly come from the general character of the parsha, not a line-by-line check of every aliyah. Vocabulary, and the ambiguous-spelling part of Gotchas, are measured directly from the words themselves; the rest of Gotchas is still the general character-based baseline plus specific hand-curated overrides.'),
       el('li', {}, '"Difficulty" here means difficulty to prepare and read aloud -- it says nothing about how meaningful or significant a passage is.'),
-      el('li', {}, 'No real feedback from actual leining is built in yet. This is a starting point, meant to improve as people use it.'),
     ]),
   ));
 }

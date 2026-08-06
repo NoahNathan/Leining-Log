@@ -107,10 +107,14 @@ secrecy of the API key (which is meant to be public/client-side).
 3. In Project Settings -> API, copy the **Project URL** and **anon/public
    key**, and paste them into `web/js/supabaseClient.js` (replacing the
    `YOUR_SUPABASE_PROJECT_URL` / `YOUR_SUPABASE_ANON_KEY` placeholders).
-4. Email auth (magic link / OTP) is enabled by default on new Supabase
-   projects -- no extra config needed for sign-in to work. If your project
-   has custom email restrictions, check Authentication -> Providers ->
-   Email.
+4. Sign-in uses email + password (Authentication -> Providers -> Email is
+   enabled by default on new Supabase projects, so no extra config is
+   needed). New Supabase projects require confirming the signup email
+   before first sign-in by default -- if you'd rather skip that step
+   entirely (e.g. while the project's default sender email isn't
+   configured to look like it's from this app), turn off "Confirm email"
+   under Authentication -> Providers -> Email and new accounts can sign in
+   immediately after creating one.
 
 Until `supabaseClient.js` is filled in, the "My Leining" tab shows a friendly
 "not configured yet" notice instead of a broken login form -- the rest of

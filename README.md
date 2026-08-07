@@ -120,6 +120,19 @@ Until `supabaseClient.js` is filled in, the "My Leining" tab shows a friendly
 "not configured yet" notice instead of a broken login form -- the rest of
 the app is unaffected either way.
 
+**Optional: get an email whenever someone signs up.** See
+`supabase/functions/notify-signup/README.md` for a Database Webhook + Edge
+Function that emails you on every new signup via Resend.
+
+**Gabbai Mode** (Beta) lets a signed-in user run one or more named minyanim,
+invite other existing users into a leining rotation, and -- once a leiner
+accepts -- see their shared reading history in a coverage summary and assign
+them to upcoming dates. It's built entirely on `db/schema.sql`, so re-running
+that file in the SQL Editor (safe, idempotent, same as step 2 above) is the
+only setup step needed; no new Supabase project settings to change. Sharing
+is opt-in per invite: a leiner's history is never visible to a gabbai until
+they explicitly accept.
+
 ## Nusach coverage
 
 - **Ashkenazi, Sefardi, and Chabad** haftarah/maftir variants are populated

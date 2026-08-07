@@ -1,7 +1,9 @@
+import { el } from './util.js';
 import { renderHome } from './views/home.js';
 import { renderSearch } from './views/search.js';
 import { renderCompare } from './views/compare.js';
 import { renderAccount } from './views/account.js';
+import { renderGabbai } from './views/gabbai.js';
 import { renderHowItWorks } from './views/howitworks.js';
 import { renderParshaPermalink, renderChagPermalink } from './views/permalink.js';
 import { initAccountBanner } from './accountBanner.js';
@@ -11,6 +13,7 @@ const VIEWS = {
   search: { label: 'Search', render: renderSearch },
   compare: { label: 'Compare', render: renderCompare },
   account: { label: 'My Leining', render: renderAccount },
+  gabbai: { label: 'Gabbai Mode', badge: 'Beta', render: renderGabbai },
   howitworks: { label: 'How It Works', render: renderHowItWorks },
 };
 
@@ -38,7 +41,8 @@ function buildTabs() {
   for (const [key, view] of Object.entries(VIEWS)) {
     const btn = document.createElement('button');
     btn.className = 'tab-btn';
-    btn.textContent = view.label;
+    btn.append(view.badge ? view.label + ' ' : view.label);
+    if (view.badge) btn.append(el('span', { class: 'tag combined-tag' }, view.badge));
     btn.dataset.tab = key;
     btn.addEventListener('click', () => { location.hash = key; });
     tabsHost.append(btn);

@@ -120,6 +120,10 @@ Until `supabaseClient.js` is filled in, the "My Leining" tab shows a friendly
 "not configured yet" notice instead of a broken login form -- the rest of
 the app is unaffected either way.
 
+**Optional: get an email whenever someone signs up.** See
+`supabase/functions/notify-signup/README.md` for a Database Webhook + Edge
+Function that emails you on every new signup via Resend.
+
 ## Nusach coverage
 
 - **Ashkenazi, Sefardi, and Chabad** haftarah/maftir variants are populated

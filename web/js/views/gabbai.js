@@ -219,39 +219,43 @@ async function renderCoverageCard(minyan, acceptedMembers, logs) {
   card.append(el('h4', { class: 'book-heading' }, 'Leiners'));
   for (const m of acceptedMembers) {
     const progress = await computeTorahProgress(logsByUser.get(m.leiner_user_id) || []);
-    card.append(el('div', { class: 'minibar-row' }, [
-      el('span', { class: 'minibar-label' }, m.leiner_email),
-      el('div', { class: 'minibar-track' }, [
-        el('div', { class: 'minibar-fill', style: `width:${Math.max(2, progress.percent)}%; background:var(--accent)` }),
+    card.append(el('div', { class: 'leiner-row' }, [
+      el('span', { class: 'leiner-label', title: m.leiner_email }, m.leiner_email),
+      el('div', { class: 'leiner-track' }, [
+        el('div', { class: 'leiner-fill', style: `width:${Math.max(2, progress.percent)}%; background:var(--accent)` }),
       ]),
-      el('span', { class: 'minibar-value' }, `${progress.percent}%`),
+      el('span', { class: 'leiner-value' }, `${progress.percent}%`),
     ]));
   }
 
   const grid = await computeMinyanCoverage(logs);
   card.append(el('h4', { class: 'book-heading' }, 'Parsha coverage -- one box per aliyah, filled once anyone in the group has read it'));
+  const gridHost = el('div', { class: 'coverage-grid' });
   for (const book of BOOK_ORDER) {
     const inBook = grid.filter((g) => g.book === book);
-    if (!inBook.length) continue;
     for (const entry of inBook) {
       const chips = entry.aliyot.map((a) => coverageChip(String(a.aliyah), a.covered, false));
       if (entry.hasMaftir) chips.push(coverageChip('M', entry.maftirCovered, true));
-      card.append(el('div', { class: 'coverage-parsha-row' }, [
-        el('span', { class: 'coverage-parsha-label' }, displayParshaName(entry.englishName || entry.parshaId)),
+      gridHost.append(el('div', { class: 'coverage-parsha-row' }, [
+        el('span', { class: 'coverage-parsha-label', title: displayParshaName(entry.englishName || entry.parshaId) }, displayParshaName(entry.englishName || entry.parshaId)),
         el('div', { class: 'coverage-chips' }, chips),
       ]));
     }
   }
+  card.append(gridHost);
   return card;
 }
 
 function coverageChip(label, covered, isMaftir) {
   const color = scoreColor(covered ? 0 : 10);
   const bg = scoreColorBg(covered ? 0 : 10);
+  const title = isMaftir
+    ? 'On a regular Shabbat, maftir re-reads the tail of aliyah 7 -- counted covered whenever shevii is (special-occasion maftir readings aren\'t tracked here)'
+    : (covered ? 'Read by someone in this minyan' : 'Not yet read by anyone in this minyan');
   return el('span', {
     class: `coverage-chip${isMaftir ? ' maftir' : ''}`,
     style: `color:${color}; background:${bg}; border-color:${color}`,
-    title: covered ? 'Read by someone in this minyan' : 'Not yet read by anyone in this minyan',
+    title,
   }, label);
 }
 

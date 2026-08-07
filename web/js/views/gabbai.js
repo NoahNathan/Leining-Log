@@ -1,6 +1,6 @@
-import { el, displayParshaName, todayISO, formatDateLong, scoreColor } from '../util.js';
+import { el, displayParshaName, todayISO, formatDateLong, scoreColor, scoreColorBg } from '../util.js';
 import { isConfigured, onAuthChange } from '../auth.js';
-import { listAllParshiotForSearch, findByDate, computeTorahProgress, computeMinyanCoverage } from '../data.js';
+import { listAllParshiotForSearch, findByDate, listUpcomingParshiot, computeTorahProgress, computeMinyanCoverage } from '../data.js';
 import {
   listMyMinyanim, createMinyan, deleteMinyan,
   listMinyanMembers, inviteMember, removeMember,
@@ -197,9 +197,9 @@ async function buildMinyanDetail(minyan, allParshiot, onChanged) {
   ]);
 
   const wrap = el('div');
-  wrap.append(await renderCoverageCard(minyan, accepted, logs));
   wrap.append(renderMembersCard(minyan, members, onChanged));
-  wrap.append(renderScheduleCard(minyan, accepted, assignments, allParshiot, onChanged));
+  wrap.append(renderScheduleCard(minyan, accepted, assignments, onChanged));
+  wrap.append(await renderCoverageCard(minyan, accepted, logs));
   return wrap;
 }
 
@@ -229,22 +229,30 @@ async function renderCoverageCard(minyan, acceptedMembers, logs) {
   }
 
   const grid = await computeMinyanCoverage(logs);
-  card.append(el('h4', { class: 'book-heading' }, 'Parsha coverage -- where the group has gaps'));
+  card.append(el('h4', { class: 'book-heading' }, 'Parsha coverage -- one box per aliyah, filled once anyone in the group has read it'));
   for (const book of BOOK_ORDER) {
     const inBook = grid.filter((g) => g.book === book);
     if (!inBook.length) continue;
     for (const entry of inBook) {
-      const gapScore = Math.max(0, Math.min(10, (100 - entry.percent) / 10));
-      card.append(el('div', { class: 'minibar-row' }, [
-        el('span', { class: 'minibar-label' }, displayParshaName(entry.englishName || entry.parshaId)),
-        el('div', { class: 'minibar-track' }, [
-          el('div', { class: 'minibar-fill', style: `width:${Math.max(2, entry.percent)}%; background:${scoreColor(gapScore)}` }),
-        ]),
-        el('span', { class: 'minibar-value' }, `${entry.percent}%`),
+      const chips = entry.aliyot.map((a) => coverageChip(String(a.aliyah), a.covered, false));
+      if (entry.hasMaftir) chips.push(coverageChip('M', entry.maftirCovered, true));
+      card.append(el('div', { class: 'coverage-parsha-row' }, [
+        el('span', { class: 'coverage-parsha-label' }, displayParshaName(entry.englishName || entry.parshaId)),
+        el('div', { class: 'coverage-chips' }, chips),
       ]));
     }
   }
   return card;
+}
+
+function coverageChip(label, covered, isMaftir) {
+  const color = scoreColor(covered ? 0 : 10);
+  const bg = scoreColorBg(covered ? 0 : 10);
+  return el('span', {
+    class: `coverage-chip${isMaftir ? ' maftir' : ''}`,
+    style: `color:${color}; background:${bg}; border-color:${color}`,
+    title: covered ? 'Read by someone in this minyan' : 'Not yet read by anyone in this minyan',
+  }, label);
 }
 
 function renderMembersCard(minyan, members, onChanged) {
@@ -297,57 +305,112 @@ function renderMembersCard(minyan, members, onChanged) {
   return card;
 }
 
-function renderScheduleCard(minyan, acceptedMembers, assignments, allParshiot, onChanged) {
+function renderScheduleCard(minyan, acceptedMembers, assignments, onChanged) {
   const card = el('div', { class: 'card subcard' }, [el('h3', {}, 'Schedule a reading')]);
 
   if (!acceptedMembers.length) {
     card.append(el('p', { class: 'muted small' }, 'Get at least one accepted member before scheduling.'));
   } else {
-    const dateInput = el('input', { type: 'date', class: 'text-input', min: todayISO() });
-    const memberSelect = el('select', { class: 'text-input' }, acceptedMembers.map((m) =>
-      el('option', { value: m.leiner_user_id }, m.leiner_email)
-    ));
-    const assignBtn = el('button', { class: 'btn-primary', type: 'submit', disabled: true }, 'Assign');
-    const preview = el('p', { class: 'muted small' }, '');
-    const status = el('span', { class: 'muted small' }, '');
-    let resolvedParshaId = null;
+    let mode = 'parsha'; // 'parsha' | 'date'
+    const formHost = el('div');
+    const parshaModeBtn = el('button', {
+      class: 'toggle-btn active', type: 'button', onclick: () => { mode = 'parsha'; syncModeToggle(); draw(); },
+    }, 'By parsha');
+    const dateModeBtn = el('button', {
+      class: 'toggle-btn', type: 'button', onclick: () => { mode = 'date'; syncModeToggle(); draw(); },
+    }, 'By date');
+    const modeToggle = el('div', { class: 'toggle-group' }, [parshaModeBtn, dateModeBtn]);
+    function syncModeToggle() {
+      parshaModeBtn.classList.toggle('active', mode === 'parsha');
+      dateModeBtn.classList.toggle('active', mode === 'date');
+    }
+    card.append(modeToggle, formHost);
 
-    async function refreshPreview() {
-      resolvedParshaId = null;
-      preview.textContent = '';
-      assignBtn.disabled = true;
-      if (!dateInput.value) return;
-      const rows = await findByDate(dateInput.value, 'diaspora');
-      const parshaRow = rows.find((r) => r.type === 'parsha');
-      if (parshaRow) {
-        resolvedParshaId = parshaRow.parshaId;
-        preview.textContent = `Reading: ${displayParshaName(parshaRow.parshaId)}`;
-        assignBtn.disabled = false;
+    async function draw() {
+      formHost.innerHTML = '';
+      const memberSelect = el('select', { class: 'text-input' }, acceptedMembers.map((m) =>
+        el('option', { value: m.leiner_user_id }, m.leiner_email)
+      ));
+      const assignBtn = el('button', { class: 'btn-primary', type: 'submit', disabled: true }, 'Assign');
+      const preview = el('p', { class: 'muted small' }, '');
+      const status = el('span', { class: 'muted small' }, '');
+      let resolvedParshaId = null;
+      let resolvedDate = null;
+
+      function resetPreview() {
+        resolvedParshaId = null;
+        resolvedDate = null;
+        preview.textContent = '';
+        assignBtn.disabled = true;
+      }
+
+      let picker;
+      if (mode === 'parsha') {
+        picker = el('select', { class: 'text-input', disabled: true }, [el('option', { value: '' }, 'Loading upcoming weeks…')]);
+        picker.addEventListener('change', () => {
+          resetPreview();
+          if (!picker.value) return;
+          const [date, parshaId] = picker.value.split('|');
+          resolvedDate = date;
+          resolvedParshaId = parshaId;
+          preview.textContent = `Reading: ${displayParshaName(parshaId)} on ${formatDateLong(date)}`;
+          assignBtn.disabled = false;
+        });
       } else {
-        preview.textContent = 'No weekly parsha reading on this date.';
+        // No min -- unlike the "by parsha" list (always forward-looking),
+        // "by date" also lets you look up any past date for reference.
+        // Scheduling itself still only accepts future dates -- assignReading
+        // rejects the past server-side and surfaces ASSIGN_MESSAGES.date_in_past.
+        picker = el('input', { type: 'date', class: 'text-input' });
+        picker.addEventListener('change', async () => {
+          resetPreview();
+          if (!picker.value) return;
+          const rows = await findByDate(picker.value, 'diaspora');
+          const parshaRow = rows.find((r) => r.type === 'parsha');
+          if (parshaRow) {
+            resolvedDate = picker.value;
+            resolvedParshaId = parshaRow.parshaId;
+            preview.textContent = `Reading: ${displayParshaName(parshaRow.parshaId)}`;
+            assignBtn.disabled = false;
+          } else {
+            preview.textContent = 'No weekly parsha reading on this date.';
+          }
+        });
+      }
+
+      const form = el('form', {
+        class: 'search-row',
+        onsubmit: async (e) => {
+          e.preventDefault();
+          if (!resolvedParshaId || !resolvedDate) return;
+          status.textContent = 'Assigning…';
+          status.className = 'muted small';
+          try {
+            const result = await assignReading(minyan.id, memberSelect.value, resolvedDate, resolvedParshaId, 'diaspora');
+            status.textContent = ASSIGN_MESSAGES[result] || result;
+            if (result === 'assigned') onChanged();
+            else status.className = 'error small';
+          } catch (err) {
+            status.textContent = err.message;
+            status.className = 'error small';
+          }
+        },
+      }, [picker, memberSelect, assignBtn, status]);
+      formHost.append(form, preview);
+
+      if (mode === 'parsha') {
+        const upcoming = await listUpcomingParshiot('diaspora', todayISO(), 20);
+        picker.innerHTML = '';
+        picker.disabled = false;
+        picker.append(el('option', { value: '' }, 'Choose a week…'));
+        for (const row of upcoming) {
+          const gYear = row.date.slice(0, 4);
+          const hYear = row.hebrewDate.trim().split(' ').pop();
+          picker.append(el('option', { value: `${row.date}|${row.parshaId}` }, `${displayParshaName(row.parshaId)} — ${gYear}/${hYear}`));
+        }
       }
     }
-    dateInput.addEventListener('change', refreshPreview);
-
-    const form = el('form', {
-      class: 'search-row',
-      onsubmit: async (e) => {
-        e.preventDefault();
-        if (!resolvedParshaId) return;
-        status.textContent = 'Assigning…';
-        status.className = 'muted small';
-        try {
-          const result = await assignReading(minyan.id, memberSelect.value, dateInput.value, resolvedParshaId, 'diaspora');
-          status.textContent = ASSIGN_MESSAGES[result] || result;
-          if (result === 'assigned') onChanged();
-          else status.className = 'error small';
-        } catch (err) {
-          status.textContent = err.message;
-          status.className = 'error small';
-        }
-      },
-    }, [dateInput, memberSelect, assignBtn, status]);
-    card.append(form, preview);
+    draw();
   }
 
   if (assignments.length) {

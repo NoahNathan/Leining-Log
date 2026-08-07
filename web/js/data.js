@@ -138,6 +138,25 @@ export async function findUpcomingOccurrences(parshaId, region = 'diaspora', fro
   return found.slice(0, count);
 }
 
+// Next N calendar 'parsha' occurrences (any parsha, chronological), for a
+// region, from a date -- e.g. "the next 20 weeks" for a gabbai to schedule
+// against, as opposed to findUpcomingOccurrences' single-parsha lookup.
+export async function listUpcomingParshiot(region = 'diaspora', fromISO = todayISO(), count = 20) {
+  const [y] = fromISO.split('-').map(Number);
+  const found = [];
+  let year = y;
+  let safety = 0;
+  while (found.length < count && safety < 12) {
+    const rows = await getDecadeRows(year);
+    const matches = rows.filter((r) => r.type === 'parsha' && r.region === region && r.date >= fromISO);
+    found.push(...matches);
+    year += 10;
+    safety++;
+  }
+  found.sort((a, b) => a.date.localeCompare(b.date));
+  return found.slice(0, count);
+}
+
 let chagDifficultyIndex = null;
 async function getChagDifficultyIndex() {
   if (chagDifficultyIndex) return chagDifficultyIndex;
@@ -219,21 +238,25 @@ export async function computeMinyanCoverage(allMemberLogRows) {
   }
 
   return parshiot.map((p) => {
-    let coveredVerses = 0;
-    if (wholeParshaIds.has(p.id)) {
-      coveredVerses = p.totalVerses;
-    } else {
-      const keys = loggedAliyot.get(p.id);
-      if (keys) for (const a of p.aliyot) if (keys.has(String(a.aliyah))) coveredVerses += a.verses;
-    }
+    const isWhole = wholeParshaIds.has(p.id);
+    const keys = loggedAliyot.get(p.id);
+    const aliyot = p.aliyot.map((a) => ({
+      aliyah: a.aliyah,
+      covered: isWhole || (keys ? keys.has(String(a.aliyah)) : false),
+    }));
+    const maftirCovered = p.maftir ? (isWhole || (keys ? keys.has('M') : false)) : null;
+    const coveredCount = aliyot.filter((a) => a.covered).length + (maftirCovered ? 1 : 0);
+    const totalCount = aliyot.length + (p.maftir ? 1 : 0);
     return {
       parshaId: p.id,
       englishName: p.englishName,
       book: p.book,
       parshaNum: p.parshaNum,
-      coveredVerses,
-      totalVerses: p.totalVerses,
-      percent: p.totalVerses ? Math.round((coveredVerses / p.totalVerses) * 1000) / 10 : 0,
+      aliyot,
+      hasMaftir: !!p.maftir,
+      maftirCovered,
+      coveredCount,
+      totalCount,
     };
   }).sort((a, b) => (Array.isArray(a.parshaNum) ? a.parshaNum[0] : a.parshaNum) - (Array.isArray(b.parshaNum) ? b.parshaNum[0] : b.parshaNum));
 }

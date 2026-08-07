@@ -14,11 +14,12 @@ const BOOK_ORDER = ['Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy'];
 
 const INVITE_MESSAGES = {
   invited: 'Invitation sent.',
+  self_added: 'Added you to this minyan.',
   already_member: "They're already invited or already a member.",
   not_found: 'No account found for that email -- they need to sign up first.',
   not_authorized: "You don't have permission to invite to this minyan.",
-  cannot_invite_self: "You can't invite yourself.",
 };
+const INVITE_SUCCESS_RESULTS = new Set(['invited', 'self_added']);
 const ASSIGN_MESSAGES = {
   assigned: 'Assigned!',
   not_authorized: "You don't have permission to assign for this minyan.",
@@ -261,7 +262,7 @@ function renderMembersCard(minyan, members, onChanged) {
       try {
         const result = await inviteMember(minyan.id, emailInput.value);
         status.textContent = INVITE_MESSAGES[result] || result;
-        if (result === 'invited') {
+        if (INVITE_SUCCESS_RESULTS.has(result)) {
           emailInput.value = '';
           onChanged();
         } else {

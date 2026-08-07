@@ -244,11 +244,11 @@ function rawAliyahStats(bookEn, startRef, endRef) {
     }
   }
 
-  // Informational only (see comment on isOneLetterApart) -- not folded into
-  // any score, since roughly 63% of aliyot have at least one such pair, far
-  // too common to usefully discriminate difficulty, and root-relatedness
-  // can't be verified without real morphological data. Shortest pairs first
-  // -- short, common words are the ones actually at risk of a quick misread.
+  // Count is folded into the Gotchas score (percentile-ranked below, like
+  // rarity/pronunciation); the capped list below is just for display. See
+  // comment on isOneLetterApart for what counts as a pair. Shortest pairs
+  // first -- short, common words are the ones actually at risk of a quick
+  // misread.
   const distinctForms = new Map(); // consonantal -> first surface seen
   for (const w of words) if (!distinctForms.has(w.consonantal)) distinctForms.set(w.consonantal, w.surface);
   const consList = [...distinctForms.keys()];
@@ -263,7 +263,7 @@ function rawAliyahStats(bookEn, startRef, endRef) {
     a: distinctForms.get(c1), b: distinctForms.get(c2),
   }));
 
-  return { wordCount: words.length, rawRarity, rawPron, rareExamples, hardToPronounceExamples: hardExamples, ambiguousSpellingExamples, lookAlikeWordPairs };
+  return { wordCount: words.length, rawRarity, rawPron, rareExamples, hardToPronounceExamples: hardExamples, ambiguousSpellingExamples, lookAlikeWordPairs, lookAlikePairCount: lookAlikePairsRaw.length };
 }
 
 // ---- gather every aliyah (individual parshiot, combined parshiot, chagim) ----
@@ -316,11 +316,12 @@ for (const e of entries) {
     hardToPronounceExamples: e.raw.hardToPronounceExamples,
     ambiguousSpellingExamples: e.raw.ambiguousSpellingExamples,
     lookAlikeWordPairs: e.raw.lookAlikeWordPairs,
+    lookAlikePairCount: e.raw.lookAlikePairCount,
   };
 }
 
 writeFileSync('../data/word-difficulty.json', JSON.stringify({
-  description: "Per-aliyah vocabulary-difficulty statistics computed directly from the Masoretic Torah text (via @shafeh/tanach), not guessed from a content-profile category. Covers every individual parsha, every combined (double) parsha, and every chag/fast/Rosh Chodesh/special-Shabbat reading in chagim.json. For each aliyah: raw word-frequency rarity and pronunciation-complexity are averaged across its actual words, then percentile-ranked against every OTHER aliyah in this same dataset (mirroring how the 'length' criterion is scored) so the full 1-10 range is meaningfully used rather than clustering in a narrow band. 'vocab' is the rounded average of 'rarity' and 'pronunciation', and feeds directly into difficulty-scores.json's vocabulary criterion. 'ambiguousSpellingExamples' flags two distinct, text-grounded 'written one way, read another' gotchas -- not a guessed or hand-typed list: (1) the archaic הוא/הִיא feminine-pronoun spelling, detected from the niqqud in the vocalized text itself; (2) every formal Ketiv/Qere in the Chumash (the Torah scroll's written letters vs. what's traditionally read aloud), read directly out of @shafeh/tanach's own ketiv/qere markup. It feeds into difficulty-scores.json's hiddenChallenges criterion. 'lookAlikeWordPairs' is purely informational (does NOT feed any score): up to 3 pairs of distinct words within the same aliyah that differ by exactly one internal ו/י, so they look nearly identical without nikkud -- a real misreading risk when reading from an unvocalized scroll. Deliberately not scored: about 63% of aliyot have at least one, and there's no reliable way to tell from spelling alone whether a pair is genuinely two different words or just the same root in different grammatical forms (see difficulty-rubric.md for a related normalization attempt that was tried and rejected for the same reason).",
+  description: "Per-aliyah vocabulary-difficulty statistics computed directly from the Masoretic Torah text (via @shafeh/tanach), not guessed from a content-profile category. Covers every individual parsha, every combined (double) parsha, and every chag/fast/Rosh Chodesh/special-Shabbat reading in chagim.json. For each aliyah: raw word-frequency rarity and pronunciation-complexity are averaged across its actual words, then percentile-ranked against every OTHER aliyah in this same dataset (mirroring how the 'length' criterion is scored) so the full 1-10 range is meaningfully used rather than clustering in a narrow band. 'vocab' is the rounded average of 'rarity' and 'pronunciation', and feeds directly into difficulty-scores.json's vocabulary criterion. 'ambiguousSpellingExamples' flags two distinct, text-grounded 'written one way, read another' gotchas -- not a guessed or hand-typed list: (1) the archaic הוא/הִיא feminine-pronoun spelling, detected from the niqqud in the vocalized text itself; (2) every formal Ketiv/Qere in the Chumash (the Torah scroll's written letters vs. what's traditionally read aloud), read directly out of @shafeh/tanach's own ketiv/qere markup. It feeds into difficulty-scores.json's hiddenChallenges criterion. 'lookAlikeWordPairs' (up to 3, for display) and 'lookAlikePairCount' (the true total) flag pairs of distinct words within the same aliyah that differ by exactly one internal ו/י, so they look nearly identical without nikkud -- a real misreading risk when reading from an unvocalized scroll. 'lookAlikePairCount' feeds a small, threshold-based (not percentile-ranked -- see difficulty-rubric.md for why percentile-ranking this specific count backfired) bump into difficulty-scores.json's hiddenChallenges, so the ~58% of aliyot with 0-1 pairs (the common case) get no bump, and only the genuinely pair-dense tail scores higher. There's still no reliable way to tell from spelling alone whether a given pair is genuinely two different words or just the same root in different grammatical forms (see difficulty-rubric.md for a related normalization attempt that was tried and rejected for the same reason) -- the score reflects density of near-identical spellings, not a confirmed count of true word-confusion traps.",
   corpus: { totalWordTokens: totalTokens, uniqueConsonantalForms: freq.size, aliyotScored: entries.length },
   methodology: "difficulty-rubric.md",
   generatedAt: new Date().toISOString(),

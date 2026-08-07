@@ -208,18 +208,12 @@ async function sb() {
   return supabasePromise;
 }
 
-export async function getMyProfile(userId) {
-  const client = await sb();
-  if (!client) return null;
-  const { data, error } = await client.from('profiles').select('*').eq('id', userId).maybeSingle();
-  if (error) throw error;
-  return data;
-}
-
-export async function setBarMitzvahParsha(userId, parshaId) {
+// A user can only have one bar mitzvah parsha -- clear any previously
+// flagged log entry before the caller upserts the new one as is_bar_mitzvah.
+export async function clearBarMitzvahFlag(userId) {
   const client = await sb();
   if (!client) return;
-  const { error } = await client.from('profiles').update({ bar_mitzvah_parsha_id: parshaId }).eq('id', userId);
+  const { error } = await client.from('leining_log').update({ is_bar_mitzvah: false }).eq('user_id', userId).eq('is_bar_mitzvah', true);
   if (error) throw error;
 }
 
@@ -236,18 +230,20 @@ export async function getMyLeiningLog(userId) {
 }
 
 // aliyahKey: 'ALL' (the default) logs the whole parsha; otherwise '1'..'7'/'M'.
+// Returns the row's id, so callers (e.g. quick-log toggles) can remove it later.
 export async function addLeiningLogEntry(userId, { parshaId, aliyahKey = 'ALL', yearHebrew = null, yearGregorian = null, isBarMitzvah = false }) {
   const client = await sb();
   if (!client) throw new Error('Supabase is not configured yet.');
-  const { error } = await client.from('leining_log').upsert({
+  const { data, error } = await client.from('leining_log').upsert({
     user_id: userId,
     parsha_id: parshaId,
     aliyah_key: aliyahKey,
     year_hebrew: yearHebrew,
     year_gregorian: yearGregorian,
     is_bar_mitzvah: isBarMitzvah,
-  }, { onConflict: 'user_id,parsha_id,aliyah_key' });
+  }, { onConflict: 'user_id,parsha_id,aliyah_key' }).select('id').single();
   if (error) throw error;
+  return data.id;
 }
 
 export async function removeLeiningLogEntry(id) {

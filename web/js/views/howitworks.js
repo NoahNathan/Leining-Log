@@ -38,6 +38,7 @@ export async function renderHowItWorks(container) {
   container.append(section('Vocabulary is measured, not guessed',
     p('Every word in every aliyah is checked against the rest of the Torah for two things: how often that same word shows up elsewhere (a word you\'ve seen a hundred times is easy; a word that appears only once has nowhere it could\'ve been practiced), and how tricky it looks to pronounce.'),
     p('The "Rare words" shown on each aliyah are only the ones that genuinely occur a handful of times or fewer in the whole Torah -- not just whatever happens to be the least-common word in that one aliyah. If nothing in an aliyah is truly rare, none are shown.'),
+    p('One honest caveat: this checks the ', el('em', {}, 'exact spelling'), ' as written, not the underlying word regardless of spelling. Hebrew sometimes spells the same word two different ways in different places (with or without an extra letter for the vowel sound, like כל vs. כול), which can make a word look slightly rarer than it really is. We looked into automatically merging those variants and deliberately didn\'t ship it -- a first attempt at "ignore extra ו/י letters" ended up wrongly merging real, unrelated words (in one case, the everyday word "will be" with God\'s name), which would have been worse than leaving it alone. Fixing this properly needs real word-by-word grammatical analysis, not a shortcut.'),
   ));
 
   container.append(section('Words that look the same but aren\'t',
@@ -65,6 +66,7 @@ export async function renderHowItWorks(container) {
     el('ul', { class: 'plain-list' }, [
       el('li', {}, 'Trope and repetition scores mostly come from the general character of the parsha, not a line-by-line check of every aliyah. Vocabulary, and the ambiguous-spelling part of Gotchas, are measured directly from the words themselves; the rest of Gotchas is still the general character-based baseline plus specific hand-curated overrides.'),
       el('li', {}, '"Difficulty" here means difficulty to prepare and read aloud -- it says nothing about how meaningful or significant a passage is.'),
+      el('li', {}, 'Vocabulary rarity is measured by exact spelling, not by the underlying word -- see "Vocabulary is measured, not guessed" above.'),
     ]),
   ));
 }

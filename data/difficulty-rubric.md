@@ -224,6 +224,22 @@ driving a high vocabulary score, individually occurs more than 5 times).
   syllabification/phonology engine. It captures well-known trouble spots
   (guttural clusters, chataf vowels) but won't catch everything a real
   chazan would flag.
+- **Plene/defective (male/chaser) spelling variants are not merged, and a
+  naive fix for this was tried and deliberately rejected as unsafe.** Some
+  words are spelled with an extra internal ו/י (matres lectionis) in one
+  Torah occurrence and without it in another (e.g. כל/כול), which splits
+  that word's true frequency across two "different" consonantal forms and
+  can overstate its rarity. The obvious fix -- strip internal ו/י before
+  counting frequency -- was tested directly against the real text and
+  rejected: Hebrew's weak-root morphology means ו/י are very often genuine
+  root letters, not optional vowel-letters, so blind stripping merges
+  unrelated words (`את` with `אות`, `בן` "son" with `בין` "between", `עד`
+  "until" with `עוד` "still" -- and, unacceptably, `יהיה` with `יהוה`).
+  Fixing this correctly needs real morphological/lemma data (the same
+  `OpenScriptures morphhb` gap noted above), not a blanket heuristic, so
+  exact-spelling frequency counting stays as the honest baseline rather
+  than shipping a fix that trades one inaccuracy for a worse, unpredictable
+  one.
 
 ## Combined (double) parshiot are scored directly, not averaged
 

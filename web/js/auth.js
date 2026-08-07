@@ -33,9 +33,19 @@ export async function getCurrentUser() {
 }
 
 // Calls `callback(user | null)` immediately with the current state, then
-// again on every future sign-in/sign-out.
+// again on every future sign-in/sign-out. Never throws -- a network hiccup
+// loading the Supabase client (e.g. the esm.sh CDN being unreachable) is
+// treated the same as "not configured": callers get a clean logged-out
+// state instead of an unhandled rejection.
 export async function onAuthChange(callback) {
-  const supabase = await getSupabase();
+  let supabase;
+  try {
+    supabase = await getSupabase();
+  } catch (err) {
+    console.error('Supabase client unavailable:', err);
+    callback(null);
+    return () => {};
+  }
   if (!supabase) {
     callback(null);
     return () => {};

@@ -50,7 +50,7 @@ export async function renderHowItWorks(container) {
     p('When one of these shows up in an aliyah, it adds a small bump to that aliyah\'s Gotchas score, and the specific word(s) are shown in the "why" breakdown.'),
   ));
 
-  container.append(section('Look-alike word pairs',
+  container.append(section('Look-alike word pairs count toward the score',
     p('The actual public reading is done from a Torah scroll with no nikkud at all, so two genuinely different words that happen to differ by just one letter (like עד "until" vs. עוד "still", or בן "son" vs. בין "between") are a real, easy way to misread. When an aliyah has any of these pairs, up to 3 are shown in the "why" breakdown as a heads-up.'),
     p('Most aliyot have zero or one such pair, which is common enough that it doesn\'t add anything to the score -- but an aliyah with several is genuinely more of a minefield, so 2-3 pairs adds a small bump to Gotchas, 4-5 a bit more, and 6+ (about 1 in 70 aliyot) the most. There\'s still no reliable way to tell from spelling alone whether a given pair is truly two different words or just the same root written two different ways, so this measures density of near-identical spellings, not a confirmed count of real traps.'),
   ));

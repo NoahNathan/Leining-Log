@@ -160,8 +160,10 @@ function shareButton(hashPath) {
 
 // Sefaria book names use underscores for spaces (e.g. "I Samuel" -> "I_Samuel"),
 // and chapter:verse refs use a dot rather than our data's colon.
+// Some haftarot are two non-adjacent excerpts (an array) -- return one URL per part.
 function sefariaUrl(ref) {
   if (!ref || ref.sameAs) return null;
+  if (Array.isArray(ref)) return ref.map(sefariaUrl).filter(Boolean);
   const book = ref.book.replace(/ /g, '_');
   const start = ref.start.replace(':', '.');
   const end = ref.end.replace(':', '.');
@@ -175,12 +177,13 @@ function nusachRow(nusach) {
   for (const [name, v] of entries) {
     const text = v.sameAs ? `Same as ${v.sameAs}` : citeRange(v);
     const url = sefariaUrl(v);
+    const urls = Array.isArray(url) ? url : (url ? [url] : []);
+    const links = urls.map((u, i) => el('a', {
+      href: u, target: '_blank', rel: 'noopener', class: 'tikkun-link', title: 'Read this on Sefaria',
+    }, urls.length > 1 ? `Text ${i + 1} ↗` : 'Text ↗'));
     wrap.append(el('div', { class: 'nusach-chip' }, [
       el('span', { class: 'nusach-name' }, name[0].toUpperCase() + name.slice(1)),
-      el('span', { class: 'nusach-cite' }, [
-        text,
-        url ? el('a', { href: url, target: '_blank', rel: 'noopener', class: 'tikkun-link', title: 'Read this haftarah on Sefaria' }, 'Text ↗') : null,
-      ]),
+      el('span', { class: 'nusach-cite' }, [text, ...links]),
       v.specialTrope ? el('p', { class: 'nusach-note muted small' }, `${v.specialTrope.range}: ${v.specialTrope.note}`) : null,
     ]));
   }

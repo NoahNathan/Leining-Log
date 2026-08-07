@@ -4,6 +4,7 @@ import { renderCompare } from './views/compare.js';
 import { renderAccount } from './views/account.js';
 import { renderHowItWorks } from './views/howitworks.js';
 import { renderParshaPermalink, renderChagPermalink } from './views/permalink.js';
+import { initAccountBanner } from './accountBanner.js';
 
 const VIEWS = {
   home: { label: 'This Week', render: renderHome },
@@ -70,3 +71,4 @@ async function route() {
 buildTabs();
 window.addEventListener('hashchange', route);
 route();
+initAccountBanner();

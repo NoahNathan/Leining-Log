@@ -244,7 +244,17 @@ export async function computeMinyanCoverage(allMemberLogRows) {
       aliyah: a.aliyah,
       covered: isWhole || (keys ? keys.has(String(a.aliyah)) : false),
     }));
-    const maftirCovered = p.maftir ? (isWhole || (keys ? keys.has('M') : false)) : null;
+    // On a regular Shabbat, maftir is just the tail of aliyah 7 (shevii)
+    // read again as a separate honor -- every parsha's maftir range is a
+    // strict subset of its aliyah 7 range. Reading shevii means those
+    // verses have been read, so maftir counts as covered whenever shevii
+    // is, without needing its own explicit log entry -- it can still turn
+    // covered independently from an explicit 'M' log (e.g. someone given
+    // only the maftir honor). This only covers the "regular" maftir text;
+    // special-occasion maftir (Rosh Chodesh, festivals, Chanukah, etc.) is
+    // calendar-dependent, not part of this per-parsha data at all.
+    const shevii = aliyot[aliyot.length - 1];
+    const maftirCovered = p.maftir ? (isWhole || (shevii && shevii.covered) || (keys ? keys.has('M') : false)) : null;
     const coveredCount = aliyot.filter((a) => a.covered).length + (maftirCovered ? 1 : 0);
     const totalCount = aliyot.length + (p.maftir ? 1 : 0);
     return {

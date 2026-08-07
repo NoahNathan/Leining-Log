@@ -238,12 +238,16 @@ grant select, insert, delete on public.reading_assignments to authenticated;
 
 -- Looks up the target email server-side rather than handing the client
 -- a raw user id for an arbitrary email guess. Re-inviting someone who
--- previously declined resets them back to pending.
+-- previously declined resets them back to pending. A gabbai "inviting"
+-- themselves (a common case -- gabbaim usually read too) skips the
+-- pending/consent step entirely and is added as accepted immediately,
+-- since there's no one else whose consent is needed.
 create or replace function public.invite_leiner_to_minyan(p_minyan_id uuid, p_email text)
-returns text -- 'invited' | 'already_member' | 'not_found' | 'not_authorized' | 'cannot_invite_self'
+returns text -- 'invited' | 'self_added' | 'already_member' | 'not_found' | 'not_authorized'
 language plpgsql security definer set search_path = '' as $$
 declare
   v_target_id uuid;
+  v_is_self boolean;
 begin
   if not exists (select 1 from public.minyanim where id = p_minyan_id and gabbai_user_id = auth.uid()) then
     return 'not_authorized';
@@ -251,17 +255,23 @@ begin
 
   select id into v_target_id from auth.users where lower(email) = lower(p_email) limit 1;
   if v_target_id is null then return 'not_found'; end if;
-  if v_target_id = auth.uid() then return 'cannot_invite_self'; end if;
+  v_is_self := (v_target_id = auth.uid());
 
-  insert into public.minyan_members (minyan_id, leiner_user_id, leiner_email, status)
-  values (p_minyan_id, v_target_id, lower(p_email), 'pending')
+  insert into public.minyan_members (minyan_id, leiner_user_id, leiner_email, status, responded_at)
+  values (
+    p_minyan_id, v_target_id, lower(p_email),
+    case when v_is_self then 'accepted' else 'pending' end,
+    case when v_is_self then now() else null end
+  )
   on conflict (minyan_id, leiner_user_id) do update
-    set status = 'pending', leiner_email = excluded.leiner_email,
-        invited_at = now(), responded_at = null
-    where public.minyan_members.status = 'declined';
+    set status = case when v_is_self then 'accepted' else 'pending' end,
+        leiner_email = excluded.leiner_email,
+        invited_at = now(),
+        responded_at = case when v_is_self then now() else null end
+    where public.minyan_members.status = 'declined' or v_is_self;
 
   if not found then return 'already_member'; end if;
-  return 'invited';
+  return case when v_is_self then 'self_added' else 'invited' end;
 end;
 $$;
 grant execute on function public.invite_leiner_to_minyan(uuid, text) to authenticated;

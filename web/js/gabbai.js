@@ -66,9 +66,11 @@ export async function listMinyanMembers(minyanId) {
   return data || [];
 }
 
-// Returns one of: 'invited' | 'already_member' | 'not_found' |
-// 'not_authorized' | 'cannot_invite_self' -- resolved server-side inside
-// the RPC so the client never handles a raw user id for an email guess.
+// Returns one of: 'invited' | 'self_added' | 'already_member' | 'not_found' |
+// 'not_authorized' -- resolved server-side inside the RPC so the client
+// never handles a raw user id for an email guess. Inviting yourself (a
+// common case -- gabbaim usually read too) skips straight to 'self_added'
+// with no pending/consent step, since no one else's consent is needed.
 export async function inviteMember(minyanId, email) {
   const client = await sb();
   const { data, error } = await client.rpc('invite_leiner_to_minyan', {

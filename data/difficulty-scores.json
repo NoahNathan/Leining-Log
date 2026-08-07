@@ -1,7 +1,7 @@
 {
   "description": "Difficulty ratings (0-10 per criterion, plus a length-weighted, then dataset-wide-rescaled final score) for every aliyah of every parsha -- including the 7 combined (double) parshiot, each scored against its own combined-reading aliyah divisions rather than averaged from its two components -- AND every chag/fast/Rosh Chodesh/special-Shabbat reading in chagim.json (see the separate 'chagim' array). Generated with a transparent rule-based methodology, NOT a survey of actual leining outcomes. Vocabulary is computed from real word-frequency + pronunciation-complexity data over the Masoretic Torah text (see word-difficulty.json); the other four criteria are a content-profile heuristic. Final scores are rescaled against the full pool of ~860 aliyot (parshiot + combined + chagim) so the hardest aliyah in the dataset is a real 10 and the easiest a real 1. See difficulty-rubric.md for the full methodology and honest caveats.",
   "methodology": "difficulty-rubric.md",
-  "generatedAt": "2026-08-06T20:28:12.783Z",
+  "generatedAt": "2026-08-07T00:51:18.396Z",
   "count": 61,
   "individualCount": 54,
   "combinedCount": 7,
@@ -60,6 +60,20 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "עַד",
+              "b": "עוֹד"
+            },
+            {
+              "a": "עָלָה",
+              "b": "עָלֶיהָ"
+            },
+            {
+              "a": "פָתוּחַ",
+              "b": "פֶּתַח"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -101,6 +115,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "גְבוּלֶֽךָ",
+              "b": "גְּבֻלֶֽךָ"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -146,6 +166,16 @@
             {
               "word": "הִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "יוֹם",
+              "b": "יַם"
+            },
+            {
+              "a": "וּמֵת",
+              "b": "וַיָּמָת"
             }
           ],
           "note": "Includes the archaic poetic fragment \"Az Yashir Yisrael\" (Num 21:17-20) and a quote from the Book of the Wars of Hashem",
@@ -200,6 +230,20 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written ויירש but traditionally read aloud as ויורש."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "עִיר",
+              "b": "עָר"
+            },
+            {
+              "a": "יוֹשֵׁב",
+              "b": "ישֵׁב"
+            },
+            {
+              "a": "צִפּוֹר",
+              "b": "צִפֹּר"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -241,6 +285,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עוֹד",
+              "b": "עַד"
+            },
+            {
+              "a": "הֲלֹךְ",
+              "b": "הוֹלֵךְ"
+            },
+            {
+              "a": "אֵלָֽי",
+              "b": "אוּלַי"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -282,6 +340,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיִּבֶן",
+              "b": "וּבֶן"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -323,6 +387,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אוּלַי",
+              "b": "אֵלַי"
+            },
+            {
+              "a": "הָלַךְ",
+              "b": "הוֹלֵךְ"
+            },
+            {
+              "a": "אֲשֶׁר",
+              "b": "אַשּׁוּר"
+            }
+          ],
           "finalScore": 9
         }
       ],
@@ -387,6 +465,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֵשׁ",
+              "b": "אִישׁ"
+            },
+            {
+              "a": "נְדִיב",
+              "b": "נָדַב"
+            },
+            {
+              "a": "לַֽעֲשׂת",
+              "b": "לַֽעֲשׂוֹת"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -434,6 +526,20 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written קצוותיו but traditionally read aloud as קצותיו."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אַמּוֹת",
+              "b": "אַמֹּת"
+            },
+            {
+              "a": "לַֽעֲשׂת",
+              "b": "לַֽעֲשׂוֹת"
+            },
+            {
+              "a": "וְהָיוּ",
+              "b": "וַיִּֽהְיוּ"
+            }
+          ],
           "finalScore": 9
         },
         {
@@ -475,6 +581,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "כֻּלָּהּ",
+              "b": "כֵּלֶֽיהָ"
+            },
+            {
+              "a": "מִצִּדֶּיהָ",
+              "b": "מִצִּדָּהּ"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -516,6 +632,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "מֵאוֹת",
+              "b": "מְאַת"
+            },
+            {
+              "a": "עַמּֽוּדֵיהֶם",
+              "b": "עַמֻּֽדֵיהֶם"
+            },
+            {
+              "a": "הָֽעַמּוּדִים",
+              "b": "הָֽעַמֻּדִים"
+            }
+          ],
           "finalScore": 9
         },
         {
@@ -561,6 +691,20 @@
             {
               "word": "קצותיו",
               "note": "Formal Ketiv/Qere: the Torah scroll is written קצוותיו but traditionally read aloud as קצותיו."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "חוֹתָם",
+              "b": "חֹתָם"
+            },
+            {
+              "a": "שְׁמוֹת",
+              "b": "שְׁמֹת"
+            },
+            {
+              "a": "מֻֽסַבֹּת",
+              "b": "מֽוּסַבֹּת"
             }
           ],
           "finalScore": 8
@@ -610,6 +754,16 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written בריחו but traditionally read aloud as בריחיו."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "עוֹרֹת",
+              "b": "עֹרֹת"
+            },
+            {
+              "a": "בְּרִיחָיו",
+              "b": "בריחו"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -651,6 +805,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הָֽעֵדוּת",
+              "b": "הָֽעֵדֻת"
+            }
+          ],
           "finalScore": 8
         }
       ],
@@ -716,6 +876,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "בֵֽית",
+              "b": "בַת"
+            },
+            {
+              "a": "אוֹתָֽם",
+              "b": "אֹתָם"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -763,6 +933,16 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written קרואי but traditionally read aloud as קריאי."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "הָֽאֲרוֹדִי",
+              "b": "הָֽאַרְדִּי"
+            },
+            {
+              "a": "הַֽחֶצְרוֹנִי",
+              "b": "הַֽחֶצְרֹנִי"
+            }
+          ],
           "finalScore": 10
         },
         {
@@ -804,6 +984,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אִישׁ",
+              "b": "אֵשׁ"
+            },
+            {
+              "a": "בֵּין",
+              "b": "בֶּן"
+            },
+            {
+              "a": "מוֹת",
+              "b": "מֵת"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -927,6 +1121,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֹלָה",
+              "b": "עוֹלָה"
+            },
+            {
+              "a": "עֹלַת",
+              "b": "עוֹלַת"
+            }
+          ],
           "finalScore": 9
         },
         {
@@ -968,6 +1172,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אַיִל",
+              "b": "אֶל"
+            },
+            {
+              "a": "וְנִסְכָּֽהּ",
+              "b": "וּנְסָכֶֽיהָ"
+            },
+            {
+              "a": "וְנִסְכֵּיהֶם",
+              "b": "וְנִסְכֵּהֶם"
+            }
+          ],
           "finalScore": 9
         }
       ],
@@ -1030,6 +1248,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "בֵּין",
+              "b": "בֶּן"
+            },
+            {
+              "a": "אֹתָהּ",
+              "b": "אוֹתָהּ"
+            },
+            {
+              "a": "וְאִשָּׁה",
+              "b": "וְאִישָׁהּ"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -1071,6 +1303,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "מֵאֵת",
+              "b": "מֵאוֹת"
+            },
+            {
+              "a": "וּמִמַּֽחֲצִת",
+              "b": "וּמִמַּֽחֲצִית"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -1122,6 +1364,12 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written תנואון but traditionally read aloud as תניאון."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "עַד",
+              "b": "עוֹד"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -1167,6 +1415,16 @@
             {
               "word": "הִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "יוֹם",
+              "b": "יַם"
+            },
+            {
+              "a": "אֲלֵיהֶם",
+              "b": "אֲלֵהֶם"
             }
           ],
           "note": "Contains the bulk of the 42 journey-stations list (Num 33:1-49) alongside the Reuven/Gad settlement narrative -- the list's repeated formula eases it, but it's a long, 72-verse aliyah with many station names to keep straight",
@@ -1215,6 +1473,16 @@
             {
               "word": "והיו",
               "note": "Formal Ketiv/Qere: the Torah scroll is written והיה֙ but traditionally read aloud as והיו."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "הַגְּבוּל",
+              "b": "הַגְּבֻל"
+            },
+            {
+              "a": "הַגָּדוֹל",
+              "b": "הַגָּדֹל"
             }
           ],
           "finalScore": 7
@@ -1299,6 +1567,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "בֵּין",
+              "b": "בֶּן"
+            },
+            {
+              "a": "יֵשֵׁב",
+              "b": "יָשׁוּב"
+            }
+          ],
           "finalScore": 8
         }
       ],
@@ -1370,6 +1648,20 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written ידו but traditionally read aloud as ידיו."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "בַּד",
+              "b": "בְּיַד"
+            },
+            {
+              "a": "אֵשׁ",
+              "b": "אִישׁ"
+            },
+            {
+              "a": "וְאַל",
+              "b": "וְאַיִל"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -1411,6 +1703,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֹתָם",
+              "b": "אוֹתָֽם"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -1456,6 +1754,16 @@
             {
               "word": "הִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "בַת",
+              "b": "בַּיִת"
+            },
+            {
+              "a": "עֹלָה",
+              "b": "עָלֶיהָ"
             }
           ],
           "finalScore": 8
@@ -1505,6 +1813,12 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "קָדוֹשׁ",
+              "b": "קֹדֶשׁ"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -1552,6 +1866,20 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "עָוֶל",
+              "b": "עַל"
+            },
+            {
+              "a": "אֶל",
+              "b": "אֵיל"
+            },
+            {
+              "a": "תִקֹּם",
+              "b": "תָּקוּם"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -1597,6 +1925,12 @@
             {
               "word": "הַהִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "לִזְנוֹת",
+              "b": "לִזְנֹת"
             }
           ],
           "finalScore": 5
@@ -1648,6 +1982,12 @@
             {
               "word": "וְהִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "יֽוּמְתוּ",
+              "b": "יָמֻֽתוּ"
             }
           ],
           "finalScore": 8
@@ -1720,6 +2060,12 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written קריאי but traditionally read aloud as קרואי."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֲבֹתָם",
+              "b": "אֲבוֹתָם"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -1761,6 +2107,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "שֵׁמוֹת",
+              "b": "שֵׁמֹת"
+            },
+            {
+              "a": "הָֽעֵדֻת",
+              "b": "הָֽעֵדֽוּת"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -1802,6 +2158,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "מֵאֽוֹת",
+              "b": "מְאַת"
+            }
+          ],
           "finalScore": 9
         },
         {
@@ -1843,6 +2205,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "לֵוִי",
+              "b": "לִי"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -1925,6 +2293,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "בְּכֹר",
+              "b": "בְּכוֹר"
+            },
+            {
+              "a": "מֵאֵת",
+              "b": "מֵאוֹת"
+            }
+          ],
           "finalScore": 4
         },
         {
@@ -2030,6 +2408,12 @@
             {
               "word": "הִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "תָבֹא",
+              "b": "תָּבִיא"
             }
           ],
           "finalScore": 8
@@ -2177,6 +2561,20 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אוֹתָם",
+              "b": "אֹתָם"
+            },
+            {
+              "a": "עֵינוֹ",
+              "b": "עֵינָיו"
+            },
+            {
+              "a": "הַצִּפּוֹר",
+              "b": "הַצִּפֹּר"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -2265,6 +2663,20 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "יָשׁוּב",
+              "b": "יֵשֵׁב"
+            },
+            {
+              "a": "הִטּֽוֹחַ",
+              "b": "הִטֹּחַ"
+            },
+            {
+              "a": "אֹתָם",
+              "b": "אוֹתָם"
+            }
+          ],
           "finalScore": 9
         },
         {
@@ -2310,6 +2722,20 @@
             {
               "word": "הִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "זָבָה",
+              "b": "זוֹבָהּ"
+            },
+            {
+              "a": "עֹלָה",
+              "b": "עָלֶיהָ"
+            },
+            {
+              "a": "הַנֹּגֵעַ",
+              "b": "הַנּוֹגֵעַ"
             }
           ],
           "finalScore": 6
@@ -2381,6 +2807,12 @@
             {
               "word": "הִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "וְשַׁבְתֶּם",
+              "b": "וִֽישַׁבְתֶּם"
             }
           ],
           "finalScore": 7
@@ -2475,6 +2907,12 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written אשר־לא but traditionally read aloud as אשרלו."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "חוֹמָה",
+              "b": "חֹמָה"
+            }
+          ],
           "finalScore": 4
         },
         {
@@ -2516,6 +2954,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עַד",
+              "b": "עוֹד"
+            },
+            {
+              "a": "אֹתָם",
+              "b": "אוֹתָם"
+            }
+          ],
           "finalScore": 9
         },
         {
@@ -2557,6 +3005,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עָלֶיהָ",
+              "b": "עָלֶה"
+            },
+            {
+              "a": "עֻלְּכֶם",
+              "b": "עֲלֵיכֶם"
+            },
+            {
+              "a": "וַֽהֲשִׁמּוֹתִי",
+              "b": "וַֽהֲשִׁמֹּתִי"
+            }
+          ],
           "note": "Tochacha (curses, Lev 26:14-46) -- traditional custom to read quickly and quietly",
           "finalScore": 10
         },
@@ -2605,6 +3067,12 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "בֶּן",
+              "b": "בֵּין"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -2646,6 +3114,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עַד",
+              "b": "עֽוֹד"
+            },
+            {
+              "a": "הַיֹּבֵל",
+              "b": "הַיּוֹבֵל"
+            },
+            {
+              "a": "חֲמִֽשִׁתוֹ",
+              "b": "חֲמִֽשִׁיתוֹ"
+            }
+          ],
           "finalScore": 7
         }
       ],
@@ -2758,6 +3240,12 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "עַד",
+              "b": "עוֹד"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -2805,6 +3293,12 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written צוארו but traditionally read aloud as עלצואריו."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "צַוָּארָיו",
+              "b": "צוארו"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -2846,6 +3340,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "סֻכֹּת",
+              "b": "סֻכּֽוֹת"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -2905,6 +3405,20 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written הנער but traditionally read aloud as אתהנער."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "בַּת",
+              "b": "בֵּית"
+            },
+            {
+              "a": "לִי",
+              "b": "לֵוִי"
+            },
+            {
+              "a": "עַד",
+              "b": "עוֹד"
+            }
+          ],
           "finalScore": 9
         },
         {
@@ -2960,6 +3474,16 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written את־יעיש but traditionally read aloud as אתיעוש."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "בֵּֽית",
+              "b": "בַּת"
+            },
+            {
+              "a": "עוֹד",
+              "b": "עַד"
+            }
+          ],
           "finalScore": 9
         },
         {
@@ -3001,6 +3525,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "דִּשֹׁן",
+              "b": "דִישָׁן"
+            }
+          ],
           "finalScore": 8
         }
       ],
@@ -3062,6 +3592,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אוֹתָם",
+              "b": "אֹתָֽם"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -3103,6 +3639,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "לְמִשְׁפְּחוֹתָם",
+              "b": "לְמִשְׁפְּחֹתָם"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -3144,6 +3686,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֶל",
+              "b": "אֵיל"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -3199,6 +3747,20 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אִישָׁהּ",
+              "b": "אִשָּׁה"
+            },
+            {
+              "a": "הָאִישׁ",
+              "b": "הָאֵשׁ"
+            },
+            {
+              "a": "אֹתָךְ",
+              "b": "אוֹתָךְ"
+            }
+          ],
           "note": "Ends with Birkat Kohanim (Num 6:24-26), recited daily by kohanim and heard weekly by the whole congregation during duchening -- familiar, though it is only the tail of a long aliyah otherwise dominated by the (unfamiliar) sotah and nazir laws.",
           "wellKnown": true,
           "finalScore": 9
@@ -3242,6 +3804,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֶל",
+              "b": "אַיִל"
+            },
+            {
+              "a": "אֹתָֽם",
+              "b": "אוֹתָם"
+            },
+            {
+              "a": "הִקְרִיב",
+              "b": "הִקְרִב"
+            }
+          ],
           "note": "Start of the 12 nearly-identical Nesiim offerings (Num 7:1-41) -- the repeated formula is easier once learned, but it's easy to grab the wrong nasi's paragraph",
           "finalScore": 8
         },
@@ -3326,6 +3902,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אַיִל",
+              "b": "אֶל"
+            },
+            {
+              "a": "מֵאֵת",
+              "b": "מֵאוֹת"
+            }
+          ],
           "note": "Nesiim offerings conclude (Num 7:72-89) -- same formula, same risk of losing track of which day/nasi you're on",
           "finalScore": 6
         }
@@ -3428,6 +4014,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "נְדִיב",
+              "b": "נָדַב"
+            },
+            {
+              "a": "וַיָּבֹאוּ",
+              "b": "וַיָּבִיאוּ"
+            }
+          ],
           "finalScore": 4
         },
         {
@@ -3469,6 +4065,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "לַֽעֲשׂת",
+              "b": "לַֽעֲשׂוֹת"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -3510,6 +4112,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הַקִּיצוֹנָה",
+              "b": "הַקִּֽיצֹנָה"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -3557,6 +4165,16 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written קצוותיו but traditionally read aloud as קצותיו."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "וְהָיוּ",
+              "b": "וַיִּֽהְיוּ"
+            },
+            {
+              "a": "קְצוֹתָֽיו",
+              "b": "קצוותיו"
+            }
+          ],
           "finalScore": 9
         },
         {
@@ -3598,6 +4216,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "כֻּלָּהּ",
+              "b": "כֵּלֶֽיהָ"
+            },
+            {
+              "a": "מִצִּדֶּיהָ",
+              "b": "מִצִּדָּהּ"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -3639,6 +4267,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עַמּֽוּדֵיהֶם",
+              "b": "עַמֻּֽדֵיהֶם"
+            },
+            {
+              "a": "הָֽעַמּוּדִים",
+              "b": "הָֽעַמֻּדִים"
+            },
+            {
+              "a": "וַֽחֲשֻֽׁקֵיהֶם",
+              "b": "וַֽחֲשֽׁוּקֵיהֶם"
+            }
+          ],
           "finalScore": 8
         }
       ],
@@ -3704,6 +4346,16 @@
             {
               "word": "הִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "הַנֵּרֹת",
+              "b": "הַנֵּרֽוֹת"
+            },
+            {
+              "a": "הַמְּנוֹרָה",
+              "b": "הַמְּנֹרָה"
             }
           ],
           "finalScore": 5
@@ -3794,6 +4446,16 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "לַֽעֲשׂת",
+              "b": "לַֽעֲשׂוֹת"
+            },
+            {
+              "a": "בְּמֽוֹעֲדֽוֹ",
+              "b": "בְּמֹֽעֲדוֹ"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -3835,6 +4497,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "בַּֽחֲצֹֽצְרוֹת",
+              "b": "בַּֽחֲצֹֽצְרֹת"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -3917,6 +4585,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֵשׁ",
+              "b": "אִישׁ"
+            },
+            {
+              "a": "הֵם",
+              "b": "הַיָּם"
+            },
+            {
+              "a": "עֲלֵיהֶם",
+              "b": "עֲלֵהֶם"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -3966,6 +4648,20 @@
             {
               "word": "עניו",
               "note": "Formal Ketiv/Qere: the Torah scroll is written ענו but traditionally read aloud as עניו."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "הַיָּם",
+              "b": "הַיּוֹם"
+            },
+            {
+              "a": "עָנָיו",
+              "b": "ענו"
+            },
+            {
+              "a": "הַשְּׂלָיו",
+              "b": "השלו"
             }
           ],
           "finalScore": 8
@@ -4069,6 +4765,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֵת",
+              "b": "אַוַּת"
+            },
+            {
+              "a": "וּתְרֻמַת",
+              "b": "וּתְרוּמַת"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -4114,6 +4820,20 @@
             {
               "word": "הַהִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֶת",
+              "b": "אוֹת"
+            },
+            {
+              "a": "אוֹתָם",
+              "b": "אֹתָם"
+            },
+            {
+              "a": "חֹלֵם",
+              "b": "חֲלוֹם"
             }
           ],
           "finalScore": 8
@@ -4245,6 +4965,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "נֹתֵֽן",
+              "b": "נָתוֹן"
+            },
+            {
+              "a": "שְׂכַר",
+              "b": "שָׂכִיר"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -4286,6 +5016,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "יָֽדְךָ",
+              "b": "יָדֶיךָ"
+            },
+            {
+              "a": "וּבֵיתֶֽךָ",
+              "b": "וּבִתֶּךָ"
+            },
+            {
+              "a": "שִׁבְעַת",
+              "b": "שָֽׁבֻעֽוֹת"
+            }
+          ],
           "finalScore": 7
         }
       ],
@@ -4387,6 +5131,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֵלַי",
+              "b": "אוּלַי"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -4436,6 +5186,16 @@
             {
               "word": "הִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֲלֵהֶם",
+              "b": "אֲלֵיהֶם"
+            },
+            {
+              "a": "וַיָּבֹאוּ",
+              "b": "וַיָּבִיאוּ"
             }
           ],
           "note": "Contains a shalshelet (Gen 19:16, Lot lingers) -- a trope mark used only 4x in the whole Torah",
@@ -4488,6 +5248,20 @@
             {
               "word": "וְהִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "בֵּן",
+              "b": "בֵּין"
+            },
+            {
+              "a": "מֵת",
+              "b": "מוֹת"
+            },
+            {
+              "a": "וְעַל",
+              "b": "וַיַּעַל"
             }
           ],
           "finalScore": 8
@@ -4625,6 +5399,20 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֶל",
+              "b": "אַיִל"
+            },
+            {
+              "a": "וְלֶךְ",
+              "b": "וַיֵּלֶךְ"
+            },
+            {
+              "a": "הַיּוֹם",
+              "b": "הַיָּם"
+            }
+          ],
           "finalScore": 7
         }
       ],
@@ -4692,6 +5480,12 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written לא־יִקְרְחֻ֤ה but traditionally read aloud as לאיקרחו."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "קֹֽדֶשׁ",
+              "b": "קָדוֹשׁ"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -4743,6 +5537,12 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "מְקַדְּשָֽׁם",
+              "b": "מַקְדִּשִׁים"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -4784,6 +5584,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "בָּנָיו",
+              "b": "בְּנוֹ"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -4833,6 +5639,20 @@
             {
               "word": "ונסכו",
               "note": "Formal Ketiv/Qere: the Torah scroll is written ונסכה but traditionally read aloud as ונסכו."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "בֵּין",
+              "b": "בֶּן"
+            },
+            {
+              "a": "תָבֹאוּ",
+              "b": "תָּבִיאוּ"
+            },
+            {
+              "a": "מֽוֹשְׁבֹֽתֵיכֶֽם",
+              "b": "מֽשְׁבֹֽתֵיכֶֽם"
             }
           ],
           "finalScore": 8
@@ -4929,6 +5749,20 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֹתָם",
+              "b": "אוֹתָם"
+            },
+            {
+              "a": "מֽוֹעֲדֵי",
+              "b": "מֹֽעֲדֵי"
+            },
+            {
+              "a": "בַּסֻּכֹּת",
+              "b": "בַסֻּכּוֹת"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -4970,6 +5804,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וְרָֽגְמוּ",
+              "b": "וַיִּרְגְּמוּ"
+            }
+          ],
           "finalScore": 7
         }
       ],
@@ -5031,6 +5871,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "יוֹם",
+              "b": "יַם"
+            }
+          ],
           "note": "Journey-stations list begins (Num 33:1-10)",
           "finalScore": 4
         },
@@ -5125,6 +5971,16 @@
             {
               "word": "והיו",
               "note": "Formal Ketiv/Qere: the Torah scroll is written והיה֙ but traditionally read aloud as והיו."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "הַגְּבוּל",
+              "b": "הַגְּבֻל"
+            },
+            {
+              "a": "הַגָּדוֹל",
+              "b": "הַגָּדֹל"
             }
           ],
           "finalScore": 8
@@ -5250,6 +6106,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "יֵשֵׁב",
+              "b": "יָשׁוּב"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -5352,6 +6214,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הַיּוֹם",
+              "b": "הַיָּם"
+            },
+            {
+              "a": "רֶמֶשׂ",
+              "b": "רוֹמֵשׂ"
+            },
+            {
+              "a": "וְכָל",
+              "b": "וַיְכַל"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -5397,6 +6273,20 @@
             {
               "word": "הַהִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיָּשֶׂם",
+              "b": "וְשֵֽׁם"
+            },
+            {
+              "a": "אֲשֶׁר",
+              "b": "אַשּׁוּר"
+            },
+            {
+              "a": "וַיִּיצֶר",
+              "b": "וַיִּצֶר"
             }
           ],
           "finalScore": 6
@@ -5446,6 +6336,20 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "לְאִשָּׁה",
+              "b": "לְאִישָׁהּ"
+            },
+            {
+              "a": "וְהָיוּ",
+              "b": "וַיִּֽהְיוּ"
+            },
+            {
+              "a": "וַיֹּאכַֽל",
+              "b": "וָֽאֹכֵֽל"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -5487,6 +6391,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֶת",
+              "b": "אוֹת"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -5534,6 +6444,12 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "יָבָל",
+              "b": "יוּבָל"
+            }
+          ],
           "finalScore": 2
         },
         {
@@ -5575,6 +6491,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "מֵאֹת",
+              "b": "מֵאוֹת"
+            },
+            {
+              "a": "וְיֶלֶד",
+              "b": "וַיּוֹלֶד"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -5616,6 +6542,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "מֵאוֹת",
+              "b": "מֵאֹת"
+            },
+            {
+              "a": "וַיִּֽהְיוּ",
+              "b": "וְהָיוּ"
+            },
+            {
+              "a": "וּשְׁמֹנִים",
+              "b": "וּשְׁמוֹנִים"
+            }
+          ],
           "finalScore": 5
         }
       ],
@@ -5676,6 +6616,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "חֹלֵם",
+              "b": "חֲלֽוֹם"
+            },
+            {
+              "a": "עֹלֹת",
+              "b": "עֹלוֹת"
+            },
+            {
+              "a": "יְפוֹת",
+              "b": "יְפֹת"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -5717,6 +6671,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֹלֹת",
+              "b": "עֹלוֹת"
+            },
+            {
+              "a": "פָּרוֹת",
+              "b": "פָּרֹת"
+            },
+            {
+              "a": "וַיֹּאמֶר",
+              "b": "וָֽאֹמַר"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -5758,6 +6726,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֵֽין",
+              "b": "אֹן"
+            },
+            {
+              "a": "בַּת",
+              "b": "בֵּית"
+            },
+            {
+              "a": "אֹן",
+              "b": "אֽוֹן"
+            }
+          ],
           "finalScore": 4
         },
         {
@@ -5799,6 +6781,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֲלֵיהֶם",
+              "b": "אֲלֵהֶם"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -5840,6 +6828,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֵלַי",
+              "b": "אוּלַי"
+            },
+            {
+              "a": "שֻׁבוּ",
+              "b": "שׁוּבוּ"
+            },
+            {
+              "a": "הָעֵד",
+              "b": "הַעוֹד"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -5881,6 +6883,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "בָּא",
+              "b": "בּוֹא"
+            },
+            {
+              "a": "אֲלֵהֶם",
+              "b": "אֱלֹהִים"
+            },
+            {
+              "a": "וַיִּשְׁתַּֽחֲווּ",
+              "b": "וישתחו"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -6046,6 +7062,16 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "עַד",
+              "b": "עוֹד"
+            },
+            {
+              "a": "הַגָּדוֹל",
+              "b": "הַגָּדֹל"
+            }
+          ],
           "finalScore": 9
         },
         {
@@ -6138,6 +7164,12 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written מצותו but traditionally read aloud as תי."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֲלֵהֶם",
+              "b": "אֱלֹהִים"
+            }
+          ],
           "note": "Aseret HaDibrot repeated (Deut 5:6-18) -- ta'am elyon in many congregations The Aseret HaDibrot are also one of the most familiar passages in the Torah -- this softens the vocabulary/unfamiliarity difficulty even though the ta'am elyon trope override above still applies in full.",
           "wellKnown": true,
           "finalScore": 7
@@ -6181,6 +7213,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וָחָֽי",
+              "b": "וַיֶּֽחִי"
+            },
+            {
+              "a": "וּֽשֲׁמָע",
+              "b": "וַיִּשְׁמַע"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -6222,6 +7264,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "לְבָנֶיךָ",
+              "b": "לְבִנְךָ"
+            }
+          ],
           "note": "Contains the Shema and V'ahavta (Deut 6:4-9), recited twice daily -- most regular daveners already know this passage by heart, which offsets much of the unfamiliarity-driven difficulty (the words still must be read correctly from the text, not recited from memory).",
           "wellKnown": true,
           "finalScore": 7
@@ -6269,6 +7317,16 @@
             {
               "word": "תיו",
               "note": "Formal Ketiv/Qere: the Torah scroll is written מצותו but traditionally read aloud as תיו."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "מִצְוֹתָיו",
+              "b": "מצותו"
+            },
+            {
+              "a": "לְשֽׂנְאָיו",
+              "b": "לְשׂנְאוֹ"
             }
           ],
           "finalScore": 5
@@ -6378,6 +7436,16 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "עוֹד",
+              "b": "עַד"
+            },
+            {
+              "a": "בִּתּוֹ",
+              "b": "בֵּיתוֹ"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -6429,6 +7497,16 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written בגד but traditionally read aloud as גד."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "לִּי",
+              "b": "לֵוִֽי"
+            },
+            {
+              "a": "נַפְתּוּלֵי",
+              "b": "נַפְתָּלִֽי"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -6470,6 +7548,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "יוֹסֵף",
+              "b": "יֹסֵף"
+            }
+          ],
           "finalScore": 4
         },
         {
@@ -6511,6 +7595,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיָּשֶׂם",
+              "b": "וְשָׂם"
+            },
+            {
+              "a": "וַיֹּאמַר",
+              "b": "וָֽאֹמַר"
+            },
+            {
+              "a": "כִּתְמוֹל",
+              "b": "כִּתְמֹל"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -6552,6 +7650,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "לֹא",
+              "b": "לוֹא"
+            },
+            {
+              "a": "וַיִּקַּח",
+              "b": "וְקַח"
+            },
+            {
+              "a": "בְּנוֹתֶיךָ",
+              "b": "בְנֹתֶיךָ"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -6593,6 +7705,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "בָּנַי",
+              "b": "בֵּינִי"
+            }
+          ],
           "finalScore": 5
         }
       ],
@@ -6654,6 +7772,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "לְהַֽחֲיֹת",
+              "b": "לְהַֽחֲיֽוֹת"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -6742,6 +7866,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עַד",
+              "b": "עוֹד"
+            },
+            {
+              "a": "וַיָּחֶל",
+              "b": "וַיִּיָּחֶל"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -6789,6 +7923,20 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written הוצא but traditionally read aloud as היצא."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "עוֹד",
+              "b": "עֹד"
+            },
+            {
+              "a": "רוֹמֵשׂ",
+              "b": "רֶמֶשׂ"
+            },
+            {
+              "a": "וַיַּעַל",
+              "b": "וְעַל"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -6830,6 +7978,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֶת",
+              "b": "אֽוֹת"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -6885,6 +8039,20 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written וּצְבֹיִ֖ם but traditionally read aloud as וצבוים."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֲשֶׁר",
+              "b": "אַשּׁוּר"
+            },
+            {
+              "a": "גִּבֹּר",
+              "b": "גִּבּוֹר"
+            },
+            {
+              "a": "מִשְׁפְּחוֹת",
+              "b": "מִשְׁפְּחֹת"
+            }
+          ],
           "finalScore": 9
         },
         {
@@ -6926,6 +8094,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "מְאַת",
+              "b": "מֵאוֹת"
+            }
+          ],
           "finalScore": 7
         }
       ],
@@ -6992,6 +8166,12 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written אשר־לא but traditionally read aloud as אשרלו."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "וְיָֽלְדָה",
+              "b": "וִֽילָדֶיהָ"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -7033,6 +8213,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "בּוֹר",
+              "b": "בֹּר"
+            },
+            {
+              "a": "מִתְּמֹל",
+              "b": "מִתְּמוֹל"
+            },
+            {
+              "a": "שִׁלְשֹׁם",
+              "b": "שְׁלשִׁים"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -7086,6 +8280,16 @@
             {
               "word": "כסותו",
               "note": "Formal Ketiv/Qere: the Torah scroll is written כסותה but traditionally read aloud as כסותו."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אִישׁ",
+              "b": "אֵשׁ"
+            },
+            {
+              "a": "מֵת",
+              "b": "מוֹת"
             }
           ],
           "finalScore": 7
@@ -7252,6 +8456,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "יָם",
+              "b": "יוֹם"
+            }
+          ],
           "finalScore": 8
         }
       ],
@@ -7353,6 +8563,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אִתְּךָ",
+              "b": "אֽוֹתְךָ"
+            },
+            {
+              "a": "תַּֽעֲשֶׂה",
+              "b": "תֵּֽיעָשֶׂה"
+            },
+            {
+              "a": "מִצִּדֶּיהָ",
+              "b": "מִצִּדָּהּ"
+            }
+          ],
           "finalScore": 9
         },
         {
@@ -7394,6 +8618,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הַקִּיצוֹנָה",
+              "b": "הַקִּֽיצֹנָה"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -7435,6 +8665,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וְיִֽהְיוּ",
+              "b": "וְהָיוּ"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -7476,6 +8712,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הָֽעֵדוּת",
+              "b": "הָֽעֵדֻת"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -7564,6 +8806,16 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written ועמדו but traditionally read aloud as ועמודיו."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "וְעַמֻּדָיו",
+              "b": "ועמדו"
+            },
+            {
+              "a": "וְעַמֻּדָיו",
+              "b": "וְעַמּוּדָיו"
+            }
+          ],
           "finalScore": 6
         }
       ],
@@ -7631,6 +8883,12 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "ישֵׁב",
+              "b": "יוֹשֵׁב"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -7678,6 +8936,20 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "יְלִידֵי",
+              "b": "יְלִדֵי"
+            },
+            {
+              "a": "אֶשְׁכֹּל",
+              "b": "אֶשְׁכּוֹל"
+            },
+            {
+              "a": "וַיָּשֻׁבוּ",
+              "b": "וַיָּשִׁיבוּ"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -7723,6 +8995,16 @@
             {
               "word": "הִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיֹּֽאמְרוּ",
+              "b": "וְאָֽמְרוּ"
+            },
+            {
+              "a": "וּבְעַמֻּד",
+              "b": "וּבְעַמּוּד"
             }
           ],
           "finalScore": 7
@@ -7864,6 +9146,12 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֲרִסֹתֵכֶם",
+              "b": "עֲרִסֹתֵיכֶם"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -7974,6 +9262,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "סִבְלֹת",
+              "b": "סִבְלוֹת"
+            }
+          ],
           "finalScore": 4
         },
         {
@@ -8015,6 +9309,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "בֵֽית",
+              "b": "בַּת"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -8097,6 +9397,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וּבָאַשׁ",
+              "b": "וַיִּבְאַשׁ"
+            },
+            {
+              "a": "לִשְׁתּוֹת",
+              "b": "לִשְׁתֹּת"
+            },
+            {
+              "a": "וְעָלוּ",
+              "b": "וַיַּֽעֲלוּ"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -8144,6 +9458,20 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֲלֵהֶם",
+              "b": "אֱלֹהִים"
+            },
+            {
+              "a": "הַכִּנָּם",
+              "b": "הַכִּנִּים"
+            },
+            {
+              "a": "מְשַׁלֵּחַ",
+              "b": "מַשְׁלִיחַ"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -8185,6 +9513,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וְסָר",
+              "b": "וַיָּסַר"
+            },
+            {
+              "a": "הוֹיָה",
+              "b": "הָיָה"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -8226,6 +9564,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיַּמְטֵר",
+              "b": "וּמָטָר"
+            },
+            {
+              "a": "אֲלֵהֶם",
+              "b": "אֱלֹהִים"
+            }
+          ],
           "finalScore": 6
         }
       ],
@@ -8287,6 +9635,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הַיָּם",
+              "b": "הֵם"
+            },
+            {
+              "a": "וְשָׁבוּ",
+              "b": "וְיָשֻׁבוּ"
+            },
+            {
+              "a": "הַשְׁבֵּעַ",
+              "b": "הִשְׁבִּיעַ"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -8328,6 +9690,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עוֹד",
+              "b": "עַד"
+            },
+            {
+              "a": "הַיָּם",
+              "b": "הַיּוֹם"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -8369,6 +9741,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיֵּלֶךְ",
+              "b": "וַיּוֹלֶךְ"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -8410,6 +9788,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הַיָּם",
+              "b": "הֵם"
+            },
+            {
+              "a": "יָֽדְךָ",
+              "b": "יָדֶֽיךָ"
+            },
+            {
+              "a": "בַּיָּם",
+              "b": "בַּיּוֹם"
+            }
+          ],
           "note": "Shirat HaYam / Az Yashir (Ex 15:1-19) -- special brick-layout & elevated melody Az Yashir is recited daily in Pesukei D'Zimra -- most daveners know the words well, though that familiarity doesn't fully prepare a reader to lead its special trope solo.",
           "wellKnown": true,
           "finalScore": 9
@@ -8504,6 +9896,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הֶעְדִּיף",
+              "b": "הָעֹדֵף"
+            },
+            {
+              "a": "יָמִים",
+              "b": "יוֹמָיִם"
+            },
+            {
+              "a": "הַשְּׁבִיעִי",
+              "b": "הַשְּׁבִעִֽי"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -8545,6 +9951,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עוֹד",
+              "b": "עַד"
+            },
+            {
+              "a": "יָדוֹ",
+              "b": "יָדָיו"
+            },
+            {
+              "a": "בִּרְפִידִים",
+              "b": "בִּרְפִידִֽם"
+            }
+          ],
           "finalScore": 6
         }
       ],
@@ -8605,6 +10025,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "נִיחוֹחַ",
+              "b": "נִיחֹחַ"
+            },
+            {
+              "a": "וְהַקֶּרֶב",
+              "b": "וְהִקְרִיב"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -8646,6 +10076,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֹלָה",
+              "b": "עָלֶיהָ"
+            },
+            {
+              "a": "מַצֹּת",
+              "b": "מַצּוֹת"
+            },
+            {
+              "a": "תַקְרִיב",
+              "b": "תַקְרִב"
+            }
+          ],
           "finalScore": 4
         },
         {
@@ -8728,6 +10172,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הַכְּלָיֹת",
+              "b": "הַכְּלָיוֹת"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -8769,6 +10219,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "קַרְנוֹת",
+              "b": "קַרְנֹת"
+            },
+            {
+              "a": "הַכְּלָיֹת",
+              "b": "הַכְּלָיוֹת"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -8810,6 +10270,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "לֹא",
+              "b": "לוֹא"
+            },
+            {
+              "a": "תִּגַּע",
+              "b": "תַגִּיעַ"
+            },
+            {
+              "a": "עָלֶֽיהָ",
+              "b": "עֹלָה"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -8851,6 +10325,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֶל",
+              "b": "אַיִל"
+            },
+            {
+              "a": "יוֹסֵף",
+              "b": "יֹסֵף"
+            }
+          ],
           "finalScore": 6
         }
       ],
@@ -8912,6 +10396,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "צִפּוֹר",
+              "b": "צִפֹּר"
+            },
+            {
+              "a": "אוּלַי",
+              "b": "אֵלָי"
+            }
+          ],
           "finalScore": 4
         },
         {
@@ -8994,6 +10488,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "שָׁלשׁ",
+              "b": "שָׁלוֹשׁ"
+            },
+            {
+              "a": "הֲלוֹא",
+              "b": "הֲלֹא"
+            },
+            {
+              "a": "אוּלַי",
+              "b": "אֵלָי"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -9076,6 +10584,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיִּבֶן",
+              "b": "וּבֶן"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -9117,6 +10631,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אוּלַי",
+              "b": "אֵלַי"
+            },
+            {
+              "a": "בָרוּךְ",
+              "b": "בָרֵךְ"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -9158,6 +10682,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הוֹלֵךְ",
+              "b": "הָלַךְ"
+            },
+            {
+              "a": "אֲשֶׁר",
+              "b": "אַשּׁוּר"
+            },
+            {
+              "a": "וְקָם",
+              "b": "וַיָּקָם"
+            }
+          ],
           "finalScore": 8
         }
       ],
@@ -9219,6 +10757,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֹתָהּ",
+              "b": "אוֹתָהּ"
+            },
+            {
+              "a": "וְאִשָּׁה",
+              "b": "וְאִישָׁהּ"
+            },
+            {
+              "a": "נִדְרָהּ",
+              "b": "נְדָרֶיהָ"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -9342,6 +10894,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "מֵאֵת",
+              "b": "מֵאוֹת"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -9383,6 +10941,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "מֵאוֹת",
+              "b": "מֵאֵת"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -9434,6 +10998,12 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written תנואון but traditionally read aloud as תניאון."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "עַד",
+              "b": "עוֹד"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -9475,6 +11045,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֲלֵיהֶם",
+              "b": "אֲלֵהֶם"
+            }
+          ],
           "finalScore": 7
         }
       ],
@@ -9541,6 +11117,12 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "הָֽעִבְרִיֹּת",
+              "b": "הָעִבְרִיּוֹת"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -9582,6 +11164,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "לֵוִי",
+              "b": "לִי"
+            },
+            {
+              "a": "הַיִּלּוֹד",
+              "b": "הַיֶּלֶד"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -9623,6 +11215,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיַּרְא",
+              "b": "וַיִּירָא"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -9668,6 +11266,16 @@
             {
               "word": "הַהִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֱלֹהִים",
+              "b": "אֲלֵהֶֽם"
+            },
+            {
+              "a": "אֲבֽוֹתֵיכֶם",
+              "b": "אֲבֹֽתֵיכֶם"
             }
           ],
           "finalScore": 5
@@ -9717,6 +11325,16 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written מזה but traditionally read aloud as מהזה."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "וָֽאֹמַר",
+              "b": "וַיֹּאמֶר"
+            },
+            {
+              "a": "הָֽאֹתוֹת",
+              "b": "הָֽאֹתֹֽת"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -9758,6 +11376,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיֹּאמֶר",
+              "b": "וָֽאֹמַר"
+            }
+          ],
           "finalScore": 4
         },
         {
@@ -9799,6 +11423,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֲלֵיהֶם",
+              "b": "עֲלֵהֶם"
+            },
+            {
+              "a": "עִבְדוּ",
+              "b": "עֲבָדָיו"
+            }
+          ],
           "finalScore": 7
         }
       ],
@@ -9859,6 +11493,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "שְׁמוֹת",
+              "b": "שְׁמֹת"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -9904,6 +11544,20 @@
             {
               "word": "מטבעתיו",
               "note": "Formal Ketiv/Qere: the Torah scroll is written מטבעתו but traditionally read aloud as מטבעתיו."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "שְׁמֹת",
+              "b": "שְׁמוֹת"
+            },
+            {
+              "a": "טַבְּעוֹת",
+              "b": "טַבְּעֹת"
+            },
+            {
+              "a": "הָֽאֵפֹד",
+              "b": "הָֽאֵפוֹד"
             }
           ],
           "finalScore": 7
@@ -9988,6 +11642,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֹתָם",
+              "b": "אוֹתָם"
+            },
+            {
+              "a": "מַצּוֹת",
+              "b": "מַצֹּת"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -10029,6 +11693,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֵיל",
+              "b": "אֶל"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -10172,6 +11842,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיֹּאמֶר",
+              "b": "וָֽאֹמַר"
+            },
+            {
+              "a": "עַבְדְּךָ",
+              "b": "עֲבָדֶיךָ"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -10213,6 +11893,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֲבָדֶיךָ",
+              "b": "עַבְדְּךָ"
+            }
+          ],
           "finalScore": 4
         },
         {
@@ -10254,6 +11940,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "בִּנְךָ",
+              "b": "בָנֶיךָ"
+            },
+            {
+              "a": "בִנְיָמִין",
+              "b": "בִנְיָֽמִן"
+            }
+          ],
           "finalScore": 4
         },
         {
@@ -10295,6 +11991,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "חֲלִפוֹת",
+              "b": "חֲלִפֹת"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -10383,6 +12085,20 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "חָֽי",
+              "b": "חַיַּי"
+            },
+            {
+              "a": "וַיֹּאמֶר",
+              "b": "וְאָמַר"
+            },
+            {
+              "a": "אֲבֹתֵינוּ",
+              "b": "אֲבוֹתֵֽינוּ"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -10428,6 +12144,20 @@
             {
               "word": "הַהִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיִּתֵּן",
+              "b": "וְתֶן"
+            },
+            {
+              "a": "וַיּוֹשֵׁב",
+              "b": "וַיֵּשֶׁב"
+            },
+            {
+              "a": "וַיָּבֹאוּ",
+              "b": "וַיָּבִיאוּ"
             }
           ],
           "finalScore": 7
@@ -10490,6 +12220,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וּמוֹרֶה",
+              "b": "וּמֹרֶה"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -10602,6 +12338,16 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written ולנער but traditionally read aloud as ולנערה."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אָבִיהָ",
+              "b": "אָבָה"
+            },
+            {
+              "a": "וּשְׂנֵאָֽהּ",
+              "b": "וַיִּשְׂנָאֶֽהָ"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -10643,6 +12389,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "קָדוֹשׁ",
+              "b": "קָדֵשׁ"
+            },
+            {
+              "a": "מַֽחֲנֶךָ",
+              "b": "מַחֲנֶיךָ"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -10772,6 +12528,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עַל",
+              "b": "עָֽוֶל"
+            },
+            {
+              "a": "בֵּין",
+              "b": "בִּן"
+            },
+            {
+              "a": "זָכוֹר",
+              "b": "זֵכֶר"
+            }
+          ],
           "finalScore": 8
         }
       ],
@@ -10833,6 +12603,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "גָּדוֹל",
+              "b": "גָּדֹל"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -10956,6 +12732,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֹתָם",
+              "b": "אוֹתָם"
+            }
+          ],
           "finalScore": 4
         },
         {
@@ -11047,6 +12829,20 @@
             {
               "word": "ישכבנה",
               "note": "Formal Ketiv/Qere: the Torah scroll is written ישגלנה but traditionally read aloud as ישכבנה."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "עַד",
+              "b": "עוֹד"
+            },
+            {
+              "a": "אֹֽיְבֶיךָ",
+              "b": "אֹֽיְבֶֽךָ"
+            },
+            {
+              "a": "וְרָאוּ",
+              "b": "וְיָֽרְאוּ"
             }
           ],
           "note": "Tochacha (curses, Deut 28:15-68) -- traditional custom to read quickly and quietly; the longest aliyah in the Torah by verse count",
@@ -11198,6 +12994,12 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "וָלֵֽךְ",
+              "b": "וַיֵּלֶךְ"
+            }
+          ],
           "finalScore": 4
         },
         {
@@ -11239,6 +13041,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "רָב",
+              "b": "רִיב"
+            }
+          ],
           "finalScore": 4
         },
         {
@@ -11288,6 +13096,12 @@
             {
               "word": "צבוים",
               "note": "Formal Ketiv/Qere: the Torah scroll is written צביים but traditionally read aloud as צבוים."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֶל",
+              "b": "אֵיל"
             }
           ],
           "finalScore": 7
@@ -11372,6 +13186,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אִֽישׁ",
+              "b": "אֵשׁ"
+            },
+            {
+              "a": "עַד",
+              "b": "עוֹד"
+            },
+            {
+              "a": "בֵּין",
+              "b": "בֵּן"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -11417,6 +13245,20 @@
             {
               "word": "הַהִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "וּבֵין",
+              "b": "וּבֶן"
+            },
+            {
+              "a": "וַיְכַל",
+              "b": "וְכָל"
+            },
+            {
+              "a": "יְלִיד",
+              "b": "יוֹלִיד"
             }
           ],
           "finalScore": 6
@@ -11485,6 +13327,20 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "בְּנֵי",
+              "b": "בֵּינִי"
+            },
+            {
+              "a": "מֵאֹת",
+              "b": "מֵאוֹת"
+            },
+            {
+              "a": "שְׁמָעוּנִי",
+              "b": "שְׁמָעֵנִי"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -11530,6 +13386,12 @@
             {
               "word": "הִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "תָּשִׁיב",
+              "b": "תָשֵׁב"
             }
           ],
           "finalScore": 4
@@ -11581,6 +13443,20 @@
             {
               "word": "והנערה",
               "note": "Formal Ketiv/Qere: the Torah scroll is written והנער but traditionally read aloud as והנערה."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "עַד",
+              "b": "עוֹד"
+            },
+            {
+              "a": "בַּת",
+              "b": "בֵּֽית"
+            },
+            {
+              "a": "יָדָהּ",
+              "b": "יָדֶיהָ"
             }
           ],
           "note": "Contains a shalshelet (Gen 24:12, Eliezer prays)",
@@ -11639,6 +13515,20 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written ויישם but traditionally read aloud as ויושם."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "בֵּית",
+              "b": "בַּת"
+            },
+            {
+              "a": "בָּרוּךְ",
+              "b": "בֵּרַךְ"
+            },
+            {
+              "a": "וַיֹּאמֶר",
+              "b": "וָֽאֹמַר"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -11690,6 +13580,16 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written לנער but traditionally read aloud as לנערה."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיּוֹצֵא",
+              "b": "וַיֵּצֵא"
+            },
+            {
+              "a": "שַׁלְּחֻנִי",
+              "b": "שַׁלְּחוּנִי"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -11731,6 +13631,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "חַי",
+              "b": "חַיֵּי"
+            },
+            {
+              "a": "מְדָן",
+              "b": "מִדְיָן"
+            },
+            {
+              "a": "בְּנוֹ",
+              "b": "בָּנָיו"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -11832,6 +13746,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "בָּנָיו",
+              "b": "בָּנוּ"
+            },
+            {
+              "a": "דַּבְּרוֹ",
+              "b": "דְּבָרָֽיו"
+            }
+          ],
           "finalScore": 4
         },
         {
@@ -11873,6 +13797,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֲלֵיהֶם",
+              "b": "אֲלֵהֶם"
+            }
+          ],
           "finalScore": 4
         },
         {
@@ -11918,6 +13848,12 @@
             {
               "word": "הִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "בְּנוֹ",
+              "b": "בָּנָיו"
             }
           ],
           "finalScore": 5
@@ -11973,6 +13909,20 @@
             {
               "word": "הִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "עַד",
+              "b": "עוֹד"
+            },
+            {
+              "a": "בַּת",
+              "b": "בֵית"
+            },
+            {
+              "a": "אֵלֶֽיהָ",
+              "b": "אֵלֶּה"
             }
           ],
           "finalScore": 8
@@ -12057,6 +14007,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "בָּא",
+              "b": "בּוֹא"
+            }
+          ],
           "note": "Contains a shalshelet (Gen 39:8, Yosef refuses)",
           "finalScore": 6
         },
@@ -12103,6 +14059,20 @@
             {
               "word": "וְהִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אִתְּךָ",
+              "b": "אֽוֹתְךָ"
+            },
+            {
+              "a": "אֲלֵיהֶם",
+              "b": "אֲלֵהֶם"
+            },
+            {
+              "a": "הָֽאוֹפִֽים",
+              "b": "הָֽאֹפִים"
             }
           ],
           "finalScore": 7
@@ -12165,6 +14135,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "מֵאוֹת",
+              "b": "מְאַת"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -12210,6 +14186,20 @@
             {
               "word": "קצותיו",
               "note": "Formal Ketiv/Qere: the Torah scroll is written קצוותיו but traditionally read aloud as קצותיו."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "חוֹתָם",
+              "b": "חֹתָם"
+            },
+            {
+              "a": "שְׁמוֹת",
+              "b": "שְׁמֹת"
+            },
+            {
+              "a": "מֻֽסַבֹּת",
+              "b": "מֽוּסַבֹּת"
             }
           ],
           "finalScore": 8
@@ -12300,6 +14290,16 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written בריחו but traditionally read aloud as בריחיו."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "עוֹרֹת",
+              "b": "עֹרֹת"
+            },
+            {
+              "a": "בְּרִיחָיו",
+              "b": "בריחו"
+            }
+          ],
           "finalScore": 4
         },
         {
@@ -12341,6 +14341,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הָֽעֵדוּת",
+              "b": "הָֽעֵדֻת"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -12382,6 +14388,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הָֽעֵדֻת",
+              "b": "הָֽעֵדוּת"
+            }
+          ],
           "finalScore": 4
         },
         {
@@ -12530,6 +14542,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "קֹדֶשׁ",
+              "b": "קָדוֹשׁ"
+            },
+            {
+              "a": "הִמָּשַׁח",
+              "b": "הַמָּשִׁיחַ"
+            },
+            {
+              "a": "הַקֶּֽרֶב",
+              "b": "הִקְרִיב"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -12575,6 +14601,12 @@
             {
               "word": "הַהִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "חַלּוֹת",
+              "b": "חַלֹּת"
             }
           ],
           "finalScore": 8
@@ -12659,6 +14691,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֶל",
+              "b": "אֵיל"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -12802,6 +14840,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אוֹתָם",
+              "b": "אֹתָם"
+            },
+            {
+              "a": "הַצִּפּוֹר",
+              "b": "הַצִּפֹּר"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -12931,6 +14979,16 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "הִטּֽוֹחַ",
+              "b": "הִטֹּחַ"
+            },
+            {
+              "a": "הַצִּפֹּר",
+              "b": "הַצִּפּוֹר"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -12972,6 +15030,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אוֹתָם",
+              "b": "אֹתָם"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -13019,6 +15083,16 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "זָבָה",
+              "b": "זוֹבָהּ"
+            },
+            {
+              "a": "הַנֹּגֵעַ",
+              "b": "הַנּוֹגֵעַ"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -13060,6 +15134,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֹלָה",
+              "b": "עָלֶיהָ"
+            }
+          ],
           "finalScore": 3
         }
       ],
@@ -13124,6 +15204,16 @@
             {
               "word": "תיו",
               "note": "Formal Ketiv/Qere: the Torah scroll is written מצותו but traditionally read aloud as תיו."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֵֽינְךָ",
+              "b": "עֵינֶיךָ"
+            },
+            {
+              "a": "מִצְוֹתָיו",
+              "b": "מצותו"
             }
           ],
           "finalScore": 8
@@ -13208,6 +15298,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֹתָם",
+              "b": "אוֹתָם"
+            },
+            {
+              "a": "לוּחֹת",
+              "b": "לֻחֹת"
+            },
+            {
+              "a": "לֻחֹת",
+              "b": "לֻחוֹת"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -13255,6 +15359,12 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "לוּחֹת",
+              "b": "לֻחֹת"
+            }
+          ],
           "finalScore": 4
         },
         {
@@ -13296,6 +15406,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֽוֹד",
+              "b": "עַד"
+            },
+            {
+              "a": "אוֹתָם",
+              "b": "אַתֶּם"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -13450,6 +15570,12 @@
             {
               "word": "הַהִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֵד",
+              "b": "עֽוֹד"
             }
           ],
           "finalScore": 6
@@ -13616,6 +15742,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הָאֵשׁ",
+              "b": "הָאִישׁ"
+            },
+            {
+              "a": "שָׁלוֹשׁ",
+              "b": "שָׁלשׁ"
+            },
+            {
+              "a": "מִתְּמֹל",
+              "b": "מִתְּמוֹל"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -13657,6 +15797,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֵד",
+              "b": "עוֹד"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -13861,6 +16007,20 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written על־במותי but traditionally read aloud as עלבמתי."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֱלוֹהַּ",
+              "b": "אֱלֹהַּ"
+            },
+            {
+              "a": "בָּמֳתֵי",
+              "b": "במותי"
+            },
+            {
+              "a": "וְשֶׁמֶן",
+              "b": "וַיִּשְׁמַן"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -13902,6 +16062,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֵשׁ",
+              "b": "אִישׁ"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -14086,6 +16252,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֲבָדָיו",
+              "b": "עִבְדוּ"
+            },
+            {
+              "a": "וְיַֽעַבְדוּ",
+              "b": "וְעִבְדוּ"
+            }
+          ],
           "finalScore": 4
         },
         {
@@ -14168,6 +16344,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עַד",
+              "b": "עוֹד"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -14213,6 +16395,20 @@
             {
               "word": "הַהִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "בֵּין",
+              "b": "בֶּן"
+            },
+            {
+              "a": "אִישׁ",
+              "b": "אֵשׁ"
+            },
+            {
+              "a": "מַצּוֹת",
+              "b": "מַצֹּת"
             }
           ],
           "finalScore": 8
@@ -14297,6 +16493,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֲבָדָיו",
+              "b": "עִבְדוּ"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -14338,6 +16540,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "מַצֹּת",
+              "b": "מַצּוֹת"
+            },
+            {
+              "a": "יְבִֽיאֲךָ",
+              "b": "יְבִֽאֲךָ"
+            }
+          ],
           "finalScore": 5
         }
       ],
@@ -14446,6 +16658,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אִישׁ",
+              "b": "אֵשׁ"
+            },
+            {
+              "a": "וּקְחוּ",
+              "b": "וַיִּקְחוּ"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -14487,6 +16709,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הָאִישׁ",
+              "b": "הָאֵשׁ"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -14528,6 +16756,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וְתֶן",
+              "b": "וַיִּתֵּן"
+            },
+            {
+              "a": "וְכַפֵּר",
+              "b": "וַיְכַפֵּר"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -14569,6 +16807,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֲבֹתָם",
+              "b": "אֲבוֹתָֽם"
+            },
+            {
+              "a": "הָֽעֵדוּת",
+              "b": "הָֽעֵדֻֽת"
+            },
+            {
+              "a": "נְשִֽׂיאֵהֶם",
+              "b": "נְשִֽׂיאֵיהֶם"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -14614,6 +16866,20 @@
             {
               "word": "הִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "לֵוִי",
+              "b": "לִי"
+            },
+            {
+              "a": "הָֽעֵדוּת",
+              "b": "הָֽעֵדֻֽת"
+            },
+            {
+              "a": "יִקְרָבוּ",
+              "b": "יַקְרִיבוּ"
             }
           ],
           "finalScore": 8
@@ -14722,6 +16988,16 @@
             {
               "word": "הַהִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "עַד",
+              "b": "עוֹד"
+            },
+            {
+              "a": "עָלָה",
+              "b": "עָלֶיהָ"
             }
           ],
           "finalScore": 6
@@ -14853,6 +17129,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "גְבוּלֶֽךָ",
+              "b": "גְּבֻלֶֽךָ"
+            }
+          ],
           "finalScore": 4
         },
         {
@@ -14894,6 +17176,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "יוֹם",
+              "b": "יַם"
+            },
+            {
+              "a": "וּמֵת",
+              "b": "וַיָּמָת"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -14993,6 +17285,16 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written ויירש but traditionally read aloud as ויורש."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "עִיר",
+              "b": "עָר"
+            },
+            {
+              "a": "סִיחֹן",
+              "b": "סִיחֽוֹן"
+            }
+          ],
           "finalScore": 6
         }
       ],
@@ -15057,6 +17359,12 @@
             {
               "word": "הַהִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "הַיָּם",
+              "b": "הַיּוֹם"
             }
           ],
           "finalScore": 3
@@ -15235,6 +17543,20 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "קֻמוּ",
+              "b": "קוּמוּ"
+            },
+            {
+              "a": "סִיחֹן",
+              "b": "סִיחוֹן"
+            },
+            {
+              "a": "וְהַמֹּאָבִים",
+              "b": "וְהַמּוֹאָבִים"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -15288,6 +17610,16 @@
             {
               "word": "ואתבניו",
               "note": "Formal Ketiv/Qere: the Torah scroll is written ואת־בנו but traditionally read aloud as ואתבניו."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "בָּנָיו",
+              "b": "בנו"
+            },
+            {
+              "a": "אוֹתָם",
+              "b": "אֹתָם"
             }
           ],
           "finalScore": 7
@@ -15404,6 +17736,16 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "שִֽׂים",
+              "b": "שֵׁם"
+            },
+            {
+              "a": "בִּנְךָ",
+              "b": "בָנֶיךָ"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -15486,6 +17828,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "לֵאמוֹר",
+              "b": "לֵאמֹר"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -15535,6 +17883,16 @@
             {
               "word": "סותו",
               "note": "Formal Ketiv/Qere: the Torah scroll is written סותה but traditionally read aloud as סותו."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "בַּיַּיִן",
+              "b": "בֵּין"
+            },
+            {
+              "a": "אָבִיךָ",
+              "b": "אֹֽיְבֶיךָ"
             }
           ],
           "finalScore": 7
@@ -15619,6 +17977,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אוֹתָם",
+              "b": "אֹתָֽם"
+            },
+            {
+              "a": "וַיְכַל",
+              "b": "וְכֹל"
+            },
+            {
+              "a": "עַמָּֽיו",
+              "b": "עִמּוֹ"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -15731,6 +18103,20 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֶת",
+              "b": "אוֹת"
+            },
+            {
+              "a": "בֵּֽין",
+              "b": "בֶּן"
+            },
+            {
+              "a": "בְּנֵֽי",
+              "b": "בֵּינִי"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -15772,6 +18158,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "לִּי",
+              "b": "לֵוִֽי"
+            },
+            {
+              "a": "אֵלָֽי",
+              "b": "אוּלַי"
+            },
+            {
+              "a": "וַיֵּשֶׁב",
+              "b": "וְשָׁב"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -15895,6 +18295,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיַּעַל",
+              "b": "וְעַל"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -15977,6 +18383,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וְכָל",
+              "b": "וַיְכַל"
+            },
+            {
+              "a": "וַיְדַבֵּר",
+              "b": "וְדִבֶּר"
+            }
+          ],
           "finalScore": 3
         }
       ],
@@ -16139,6 +18555,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיִּגְדַּל",
+              "b": "וְגָדֵל"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -16227,6 +18649,20 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written צידה but traditionally read aloud as ציד."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיִּקַּח",
+              "b": "וְקַח"
+            },
+            {
+              "a": "וַיֵּלֶךְ",
+              "b": "וְלֵךְ"
+            },
+            {
+              "a": "אוּלַי",
+              "b": "אֵלָי"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -16274,6 +18710,20 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written וישתחו but traditionally read aloud as וישתחוו."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיִּקַּח",
+              "b": "וְקַח"
+            },
+            {
+              "a": "וְיֹאכַל",
+              "b": "וָֽאֹכַל"
+            },
+            {
+              "a": "וְיִשְׁתַּֽחֲווּ",
+              "b": "וישתחו"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -16315,6 +18765,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיִּשְׁלַח",
+              "b": "וְשִׁלַּח"
+            }
+          ],
           "finalScore": 1
         }
       ],
@@ -16376,6 +18832,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וְאַל",
+              "b": "וְאַיִל"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -16421,6 +18883,12 @@
             {
               "word": "ידיו",
               "note": "Formal Ketiv/Qere: the Torah scroll is written ידו but traditionally read aloud as ידיו."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "יָדָיו",
+              "b": "ידו"
             }
           ],
           "finalScore": 3
@@ -16597,6 +19065,12 @@
             {
               "word": "הִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "בַת",
+              "b": "בַּיִת"
             }
           ],
           "finalScore": 6
@@ -16783,6 +19257,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עָלֶיהָ",
+              "b": "עָלֶה"
+            },
+            {
+              "a": "עֻלְּכֶם",
+              "b": "עֲלֵיכֶם"
+            },
+            {
+              "a": "וַֽהֲשִׁמּוֹתִי",
+              "b": "וַֽהֲשִׁמֹּתִי"
+            }
+          ],
           "note": "Tochacha (curses, Lev 26:14-46) -- traditional custom to read quickly and quietly",
           "finalScore": 10
         },
@@ -16831,6 +19319,12 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "בֶּן",
+              "b": "בֵּין"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -16872,6 +19366,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עַד",
+              "b": "עֽוֹד"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -16913,6 +19413,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הַיֹּבֵל",
+              "b": "הַיּוֹבֵל"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -17179,6 +19685,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "יָרֹה",
+              "b": "יִיָּרֶה"
+            },
+            {
+              "a": "וְכִבְּסוּ",
+              "b": "וַיְכַבְּסוּ"
+            },
+            {
+              "a": "הַשְּׁלִישִׁי",
+              "b": "הַשְּׁלִשִׁי"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -17220,6 +19740,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיַּעַל",
+              "b": "וְעַל"
+            },
+            {
+              "a": "אֲלֵהֶֽם",
+              "b": "אֱלֹהִים"
+            }
+          ],
           "note": "Aseret HaDibrot (Ex 20:2-14) -- ta'am elyon alternate cantillation The Aseret HaDibrot are also one of the most familiar passages in the Torah -- this softens the vocabulary/unfamiliarity difficulty even though the ta'am elyon trope override above still applies in full.",
           "wellKnown": true,
           "finalScore": 7
@@ -17324,6 +19854,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וְאַיִל",
+              "b": "וְאֶל"
+            },
+            {
+              "a": "וַֽעֲשֵׂה",
+              "b": "וַיַּֽעֲשֶׂהָ"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -17371,6 +19911,12 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written את־ידו but traditionally read aloud as אתידיו."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "יָדָיו",
+              "b": "ידו"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -17412,6 +19958,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֵשׁ",
+              "b": "אִישׁ"
+            },
+            {
+              "a": "אֹתָֽם",
+              "b": "אוֹתָם"
+            },
+            {
+              "a": "אֲלֵהֶם",
+              "b": "אֲלֵיהֶם"
+            }
+          ],
           "finalScore": 4
         },
         {
@@ -17457,6 +20017,12 @@
             {
               "word": "הִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "קֹדֶשׁ",
+              "b": "קָדוֹשׁ"
             }
           ],
           "finalScore": 2
@@ -17557,6 +20123,16 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written אשׁר־לא but traditionally read aloud as אשרלו."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "בַּמָּיִם",
+              "b": "בַּיַּמִּים"
+            },
+            {
+              "a": "הַפַּרְסָה",
+              "b": "הִפְרִיסָה"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -17598,6 +20174,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "זֶרַע",
+              "b": "זֵרוּעַ"
+            }
+          ],
           "finalScore": 5
         }
       ],
@@ -17662,6 +20244,12 @@
             {
               "word": "הִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "תָבֹא",
+              "b": "תָּבִיא"
             }
           ],
           "finalScore": 5
@@ -18010,6 +20598,12 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "קָדוֹשׁ",
+              "b": "קֹדֶשׁ"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -18055,6 +20649,16 @@
             {
               "word": "וְהִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "עָוֶל",
+              "b": "עַל"
+            },
+            {
+              "a": "אֶל",
+              "b": "אֵיל"
             }
           ],
           "finalScore": 4
@@ -18186,6 +20790,12 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "לִזְנוֹת",
+              "b": "לִזְנֹת"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -18235,6 +20845,12 @@
             {
               "word": "וְהִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "יֽוּמְתוּ",
+              "b": "יָמֻֽתוּ"
             }
           ],
           "finalScore": 6
@@ -18436,6 +21052,12 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "הַיּֽוֹם",
+              "b": "הַיָּם"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -18518,6 +21140,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אוֹתָֽם",
+              "b": "אַתֶּם"
+            }
+          ],
           "finalScore": 2
         },
         {
@@ -18559,6 +21187,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "שָׁמָּה",
+              "b": "שִׂימָהּ"
+            },
+            {
+              "a": "וַיֹּאמֶר",
+              "b": "וְאָמַר"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -18844,6 +21482,12 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written אשר־לא but traditionally read aloud as אשרלו."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "חוֹמָה",
+              "b": "חֹמָה"
+            }
+          ],
           "finalScore": 4
         },
         {
@@ -18926,6 +21570,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עַד",
+              "b": "עוֹד"
+            }
+          ],
           "finalScore": 4
         }
       ],
@@ -18987,6 +21637,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אִישׁ",
+              "b": "אֵשׁ"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -19233,6 +21889,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עַד",
+              "b": "עוֹד"
+            },
+            {
+              "a": "הַיָּם",
+              "b": "הַיּוֹם"
+            }
+          ],
           "finalScore": 4
         }
       ],
@@ -19514,6 +22180,12 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "הַיּוֹם",
+              "b": "הַיָּם"
+            }
+          ],
           "finalScore": 2
         },
         {
@@ -19738,6 +22410,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אוֹתָם",
+              "b": "אַתֶּם"
+            }
+          ],
           "finalScore": 2
         },
         {
@@ -19779,6 +22457,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "שָׁמָּה",
+              "b": "שִׂימָהּ"
+            },
+            {
+              "a": "וַיֹּאמֶר",
+              "b": "וְאָמַר"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -19932,6 +22620,20 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אַיִל",
+              "b": "אֶל"
+            },
+            {
+              "a": "מֵאֵת",
+              "b": "מֵאוֹת"
+            },
+            {
+              "a": "הַנֵּרֹת",
+              "b": "הַנֵּרֽוֹת"
+            }
+          ],
           "finalScore": 9
         }
       ],
@@ -20000,6 +22702,20 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אַיִל",
+              "b": "אֶל"
+            },
+            {
+              "a": "מֵאֵת",
+              "b": "מֵאוֹת"
+            },
+            {
+              "a": "הַנֵּרֹת",
+              "b": "הַנֵּרֽוֹת"
+            }
+          ],
           "finalScore": 9
         }
       ],
@@ -20062,6 +22778,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֶל",
+              "b": "אַיִל"
+            },
+            {
+              "a": "אֹתָֽם",
+              "b": "אוֹתָם"
+            },
+            {
+              "a": "הָֽעֲגָלֹת",
+              "b": "הָֽעֲגָלוֹת"
+            }
+          ],
           "finalScore": 7
         }
       ],
@@ -20124,6 +22854,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֶל",
+              "b": "אַיִל"
+            },
+            {
+              "a": "אֹתָֽם",
+              "b": "אוֹתָם"
+            },
+            {
+              "a": "הָֽעֲגָלֹת",
+              "b": "הָֽעֲגָלוֹת"
+            }
+          ],
           "finalScore": 7
         }
       ],
@@ -20189,6 +22933,20 @@
             {
               "word": "הַהִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אִישׁ",
+              "b": "אֵשׁ"
+            },
+            {
+              "a": "בֶּן",
+              "b": "בֵּין"
+            },
+            {
+              "a": "מַצּוֹת",
+              "b": "מַצֹּת"
             }
           ],
           "finalScore": 7
@@ -20258,6 +23016,20 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אִישׁ",
+              "b": "אֵשׁ"
+            },
+            {
+              "a": "בֶּן",
+              "b": "בֵּין"
+            },
+            {
+              "a": "מַצּוֹת",
+              "b": "מַצֹּת"
+            }
+          ],
           "finalScore": 7
         }
       ],
@@ -20325,6 +23097,16 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "עַד",
+              "b": "עוֹד"
+            },
+            {
+              "a": "עָלָה",
+              "b": "עָלֶיהָ"
+            }
+          ],
           "finalScore": 7
         }
       ],
@@ -20390,6 +23172,16 @@
             {
               "word": "הַהִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "עַד",
+              "b": "עוֹד"
+            },
+            {
+              "a": "עָלָה",
+              "b": "עָלֶיהָ"
             }
           ],
           "finalScore": 7
@@ -20557,6 +23349,20 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֹתָם",
+              "b": "אוֹתָם"
+            },
+            {
+              "a": "שַׁבָּתוֹת",
+              "b": "שַׁבְּתֹת"
+            },
+            {
+              "a": "מֽוֹעֲדֵי",
+              "b": "מֹֽעֲדֵי"
+            }
+          ],
           "finalScore": 8
         },
         {
@@ -20598,6 +23404,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֹלַת",
+              "b": "עוֹלַת"
+            }
+          ],
           "finalScore": 3
         }
       ],
@@ -20660,6 +23472,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הַשְׁבֵּעַ",
+              "b": "הִשְׁבִּיעַ"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -20701,6 +23519,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הַיָּם",
+              "b": "הֵם"
+            },
+            {
+              "a": "וְרָדַף",
+              "b": "וַיִּרְדֹּף"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -20742,6 +23570,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עוֹד",
+              "b": "עַד"
+            },
+            {
+              "a": "הַיָּם",
+              "b": "הַיּוֹם"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -20783,6 +23621,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיֵּלֶךְ",
+              "b": "וַיּוֹלֶךְ"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -20824,6 +23668,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הַיָּם",
+              "b": "הֵם"
+            },
+            {
+              "a": "יָֽדְךָ",
+              "b": "יָדֶֽיךָ"
+            },
+            {
+              "a": "בַּיָּם",
+              "b": "בַּיּוֹם"
+            }
+          ],
           "note": "Shirat HaYam / Az Yashir (Ex 14:26-15:26) -- special brick-layout & elevated melody Az Yashir is recited daily in Pesukei D'Zimra -- most daveners know the words well, though that familiarity doesn't fully prepare a reader to lead its special trope solo.",
           "wellKnown": true,
           "finalScore": 9
@@ -20867,6 +23725,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֹלַת",
+              "b": "עוֹלַת"
+            }
+          ],
           "finalScore": 4
         }
       ],
@@ -20929,6 +23793,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הַשְׁבֵּעַ",
+              "b": "הִשְׁבִּיעַ"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -20970,6 +23840,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הַיָּם",
+              "b": "הֵם"
+            },
+            {
+              "a": "וְרָדַף",
+              "b": "וַיִּרְדֹּף"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -21011,6 +23891,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עוֹד",
+              "b": "עַד"
+            },
+            {
+              "a": "הַיָּם",
+              "b": "הַיּוֹם"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -21052,6 +23942,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיֵּלֶךְ",
+              "b": "וַיּוֹלֶךְ"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -21093,6 +23989,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הַיָּם",
+              "b": "הֵם"
+            },
+            {
+              "a": "יָֽדְךָ",
+              "b": "יָדֶֽיךָ"
+            },
+            {
+              "a": "בַּיָּם",
+              "b": "בַּיּוֹם"
+            }
+          ],
           "note": "Shirat HaYam / Az Yashir (Ex 14:26-15:26) -- special brick-layout & elevated melody Az Yashir is recited daily in Pesukei D'Zimra -- most daveners know the words well, though that familiarity doesn't fully prepare a reader to lead its special trope solo.",
           "wellKnown": true,
           "finalScore": 9
@@ -21136,6 +24046,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֹלַת",
+              "b": "עוֹלַת"
+            }
+          ],
           "finalScore": 4
         }
       ],
@@ -21248,6 +24164,12 @@
             {
               "word": "ונסכו",
               "note": "Formal Ketiv/Qere: the Torah scroll is written ונסכה but traditionally read aloud as ונסכו."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "בֵּין",
+              "b": "בֶּן"
             }
           ],
           "finalScore": 5
@@ -21385,6 +24307,20 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֹתָם",
+              "b": "אוֹתָם"
+            },
+            {
+              "a": "מֽוֹעֲדֵי",
+              "b": "מֹֽעֲדֵי"
+            },
+            {
+              "a": "בַּסֻּכֹּת",
+              "b": "בַסֻּכּוֹת"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -21426,6 +24362,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֹלַת",
+              "b": "עוֹלַת"
+            }
+          ],
           "finalScore": 4
         }
       ],
@@ -21488,6 +24430,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אִישׁ",
+              "b": "אֵשׁ"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -21693,6 +24641,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עַד",
+              "b": "עוֹד"
+            },
+            {
+              "a": "הַיָּם",
+              "b": "הַיּוֹם"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -21734,6 +24692,20 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הַיּוֹם",
+              "b": "הַיָּם"
+            },
+            {
+              "a": "רֶמֶשׂ",
+              "b": "רוֹמֵשׂ"
+            },
+            {
+              "a": "וְכָל",
+              "b": "וַיְכַל"
+            }
+          ],
           "finalScore": 9
         },
         {
@@ -21775,6 +24747,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אַיִל",
+              "b": "אֶל"
+            }
+          ],
           "finalScore": 4
         }
       ],
@@ -21887,6 +24865,12 @@
             {
               "word": "ונסכו",
               "note": "Formal Ketiv/Qere: the Torah scroll is written ונסכה but traditionally read aloud as ונסכו."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "בֵּין",
+              "b": "בֶּן"
             }
           ],
           "finalScore": 5
@@ -22022,6 +25006,20 @@
             {
               "word": "הִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֹתָם",
+              "b": "אוֹתָם"
+            },
+            {
+              "a": "מֽוֹעֲדֵי",
+              "b": "מֹֽעֲדֵי"
+            },
+            {
+              "a": "בַּסֻּכֹּת",
+              "b": "בַסֻּכּוֹת"
             }
           ],
           "finalScore": 5
@@ -22168,6 +25166,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "יָרֹה",
+              "b": "יִיָּרֶה"
+            },
+            {
+              "a": "הַשְּׁלִישִׁי",
+              "b": "הַשְּׁלִשִׁי"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -22250,6 +25258,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיַּעַל",
+              "b": "וְעַל"
+            },
+            {
+              "a": "אֲלֵהֶֽם",
+              "b": "אֱלֹהִים"
+            }
+          ],
           "note": "Aseret HaDibrot (Ex 20:2-14) -- ta'am elyon alternate cantillation The Aseret HaDibrot are one of the most familiar passages in the Torah -- softens the vocabulary/unfamiliarity difficulty even though the ta'am elyon trope override still applies in full.",
           "wellKnown": true,
           "finalScore": 7
@@ -22437,6 +25455,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "יָרֹה",
+              "b": "יִיָּרֶה"
+            },
+            {
+              "a": "הַשְּׁלִישִׁי",
+              "b": "הַשְּׁלִשִׁי"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -22519,6 +25547,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיַּעַל",
+              "b": "וְעַל"
+            },
+            {
+              "a": "אֲלֵהֶֽם",
+              "b": "אֱלֹהִים"
+            }
+          ],
           "note": "Aseret HaDibrot (Ex 20:2-14) -- ta'am elyon alternate cantillation The Aseret HaDibrot are one of the most familiar passages in the Torah -- softens the vocabulary/unfamiliarity difficulty even though the ta'am elyon trope override still applies in full.",
           "wellKnown": true,
           "finalScore": 7
@@ -22664,6 +25702,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֵֽינְךָ",
+              "b": "עֵינֶיךָ"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -22709,6 +25753,12 @@
             {
               "word": "תיו",
               "note": "Formal Ketiv/Qere: the Torah scroll is written מצותו but traditionally read aloud as תיו."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "מִצְוֹתָיו",
+              "b": "מצותו"
             }
           ],
           "finalScore": 3
@@ -22813,6 +25863,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֵֽינְךָ",
+              "b": "עֵינֶיךָ"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -22858,6 +25914,12 @@
             {
               "word": "תיו",
               "note": "Formal Ketiv/Qere: the Torah scroll is written מצותו but traditionally read aloud as תיו."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "מִצְוֹתָיו",
+              "b": "מצותו"
             }
           ],
           "finalScore": 3
@@ -23095,6 +26157,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֹלַת",
+              "b": "עוֹלַת"
+            }
+          ],
           "finalScore": 3
         }
       ],
@@ -23289,6 +26357,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֹלַת",
+              "b": "עוֹלַת"
+            }
+          ],
           "finalScore": 3
         }
       ],
@@ -23398,6 +26472,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "נֹתֵֽן",
+              "b": "נָתוֹן"
+            },
+            {
+              "a": "שְׂכַר",
+              "b": "שָׂכִיר"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -23562,6 +26646,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "שָֽׁבֻעֹת",
+              "b": "שָֽׁבֻעֽוֹת"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -23603,6 +26693,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הַסֻּכֹּת",
+              "b": "הַסֻּכּוֹת"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -23973,6 +27069,20 @@
             {
               "word": "הִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֹתָם",
+              "b": "אוֹתָם"
+            },
+            {
+              "a": "מֽוֹעֲדֵי",
+              "b": "מֹֽעֲדֵי"
+            },
+            {
+              "a": "בַּסֻּכֹּת",
+              "b": "בַסֻּכּוֹת"
             }
           ],
           "finalScore": 5
@@ -24347,6 +27457,20 @@
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֹתָם",
+              "b": "אוֹתָם"
+            },
+            {
+              "a": "מֽוֹעֲדֵי",
+              "b": "מֹֽעֲדֵי"
+            },
+            {
+              "a": "בַּסֻּכֹּת",
+              "b": "בַסֻּכּוֹת"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -24449,6 +27573,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיַּעַל",
+              "b": "וְעַל"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -24572,6 +27702,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֹלַת",
+              "b": "עוֹלַת"
+            }
+          ],
           "finalScore": 3
         }
       ],
@@ -25605,6 +28741,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וְנִסְכָּֽהּ",
+              "b": "וּנְסָכֶֽיהָ"
+            }
+          ],
           "finalScore": 4
         }
       ],
@@ -25782,6 +28924,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וְנִסְכָּֽהּ",
+              "b": "וּנְסָכֶֽיהָ"
+            }
+          ],
           "finalScore": 4
         }
       ],
@@ -25959,6 +29107,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וּנְסָכֶֽיהָ",
+              "b": "וְנִסְכָּֽהּ"
+            },
+            {
+              "a": "וְנִסְכֵּיהֶם",
+              "b": "וְנִסְכֵּהֶם"
+            }
+          ],
           "finalScore": 4
         }
       ],
@@ -26136,6 +29294,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וּנְסָכֶֽיהָ",
+              "b": "וְנִסְכָּֽהּ"
+            },
+            {
+              "a": "וְנִסְכֵּיהֶם",
+              "b": "וְנִסְכֵּהֶם"
+            }
+          ],
           "finalScore": 4
         }
       ],
@@ -26313,6 +29481,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וּנְסָכֶֽיהָ",
+              "b": "וְנִסְכָּֽהּ"
+            },
+            {
+              "a": "וְנִסְכֵּיהֶם",
+              "b": "וְנִסְכֵּהֶם"
+            }
+          ],
           "finalScore": 4
         }
       ],
@@ -26421,6 +29599,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "נֹתֵֽן",
+              "b": "נָתוֹן"
+            },
+            {
+              "a": "שְׂכַר",
+              "b": "שָׂכִיר"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -26585,6 +29773,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "שָֽׁבֻעֹת",
+              "b": "שָֽׁבֻעֽוֹת"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -26626,6 +29820,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הַסֻּכֹּת",
+              "b": "הַסֻּכּוֹת"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -26667,6 +29867,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אַיִל",
+              "b": "אֶל"
+            }
+          ],
           "finalScore": 3
         }
       ],
@@ -27559,6 +30765,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וְאַל",
+              "b": "וְאַיִל"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -27686,6 +30898,12 @@
             {
               "word": "ידיו",
               "note": "Formal Ketiv/Qere: the Torah scroll is written ידו but traditionally read aloud as ידיו."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "יָדָיו",
+              "b": "ידו"
             }
           ],
           "finalScore": 3
@@ -27873,6 +31091,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וְאַל",
+              "b": "וְאַיִל"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -28000,6 +31224,12 @@
             {
               "word": "ידיו",
               "note": "Formal Ketiv/Qere: the Torah scroll is written ידו but traditionally read aloud as ידיו."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "יָדָיו",
+              "b": "ידו"
             }
           ],
           "finalScore": 3
@@ -28350,6 +31580,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיַּעַל",
+              "b": "וְעַל"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -28473,6 +31709,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֹלַת",
+              "b": "עוֹלַת"
+            }
+          ],
           "finalScore": 3
         }
       ],
@@ -28698,6 +31940,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיַּעַל",
+              "b": "וְעַל"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -28821,6 +32069,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֹלַת",
+              "b": "עוֹלַת"
+            }
+          ],
           "finalScore": 3
         }
       ],
@@ -28923,6 +32177,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "מַצֹּת",
+              "b": "מַצּוֹת"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -29005,6 +32265,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֹלַת",
+              "b": "עוֹלַת"
+            }
+          ],
           "finalScore": 3
         }
       ],
@@ -29066,6 +32332,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "בְּמֽוֹעֲדֽוֹ",
+              "b": "בְּמֹֽעֲדוֹ"
+            }
+          ],
           "finalScore": 2
         },
         {
@@ -29195,6 +32467,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֹלַת",
+              "b": "עוֹלַת"
+            }
+          ],
           "finalScore": 3
         }
       ],
@@ -29256,6 +32534,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "בְּמֽוֹעֲדֽוֹ",
+              "b": "בְּמֹֽעֲדוֹ"
+            }
+          ],
           "finalScore": 2
         },
         {
@@ -29385,6 +32669,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֹלַת",
+              "b": "עוֹלַת"
+            }
+          ],
           "finalScore": 3
         }
       ],
@@ -33855,6 +37145,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הִקְרִיב",
+              "b": "הִקְרִב"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -33975,6 +37271,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הִקְרִיב",
+              "b": "הִקְרִב"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -34985,6 +38287,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֲבָדָיו",
+              "b": "עִבְדוּ"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -35108,6 +38416,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֹלַת",
+              "b": "עוֹלַת"
+            }
+          ],
           "finalScore": 4
         }
       ],
@@ -35252,6 +38566,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֲבָדָיו",
+              "b": "עִבְדוּ"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -35375,6 +38695,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֹלַת",
+              "b": "עוֹלַת"
+            }
+          ],
           "finalScore": 4
         }
       ],
@@ -35478,6 +38804,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עַד",
+              "b": "עוֹד"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -35622,6 +38954,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עַד",
+              "b": "עוֹד"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -35766,6 +39104,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עַד",
+              "b": "עוֹד"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -35910,6 +39254,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עַד",
+              "b": "עוֹד"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -36136,6 +39486,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "שָֽׁבֻעֹת",
+              "b": "שָֽׁבֻעֽוֹת"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -36177,6 +39533,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "הַסֻּכֹּת",
+              "b": "הַסֻּכּוֹת"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -36218,6 +39580,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֹלַת",
+              "b": "עוֹלַת"
+            }
+          ],
           "finalScore": 3
         }
       ],
@@ -36279,6 +39647,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אִישׁ",
+              "b": "אֵשׁ"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -36525,6 +39899,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עַד",
+              "b": "עוֹד"
+            },
+            {
+              "a": "הַיָּם",
+              "b": "הַיּוֹם"
+            }
+          ],
           "finalScore": 4
         },
         {
@@ -36566,6 +39950,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אַיִל",
+              "b": "אֶל"
+            }
+          ],
           "finalScore": 3
         }
       ],
@@ -36782,6 +40172,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "זָכוֹר",
+              "b": "זֵכֶר"
+            }
+          ],
           "finalScore": 2
         }
       ],
@@ -36843,6 +40239,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "זָכוֹר",
+              "b": "זֵכֶר"
+            }
+          ],
           "finalScore": 2
         }
       ],
@@ -36904,6 +40306,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וְלֶךְ",
+              "b": "וַיֵּלֶךְ"
+            }
+          ],
           "finalScore": 1
         },
         {
@@ -36986,6 +40394,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֶל",
+              "b": "אַיִל"
+            }
+          ],
           "finalScore": 2
         },
         {
@@ -37176,6 +40590,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וְלֶךְ",
+              "b": "וַיֵּלֶךְ"
+            }
+          ],
           "finalScore": 1
         },
         {
@@ -37258,6 +40678,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֶל",
+              "b": "אַיִל"
+            }
+          ],
           "finalScore": 2
         },
         {
@@ -37530,6 +40956,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיַּעַל",
+              "b": "וְעַל"
+            }
+          ],
           "finalScore": 2
         }
       ],
@@ -37673,6 +41105,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיַּעַל",
+              "b": "וְעַל"
+            }
+          ],
           "finalScore": 2
         }
       ],
@@ -37775,6 +41213,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "יָדוֹ",
+              "b": "יָדָיו"
+            }
+          ],
           "finalScore": 2
         },
         {
@@ -37918,6 +41362,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "יָדוֹ",
+              "b": "יָדָיו"
+            }
+          ],
           "finalScore": 2
         },
         {
@@ -38061,6 +41511,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "יָדוֹ",
+              "b": "יָדָיו"
+            }
+          ],
           "finalScore": 2
         },
         {
@@ -38245,6 +41701,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיַּעַל",
+              "b": "וְעַל"
+            }
+          ],
           "finalScore": 2
         }
       ],
@@ -38388,6 +41850,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיַּעַל",
+              "b": "וְעַל"
+            }
+          ],
           "finalScore": 2
         }
       ],
@@ -38531,6 +41999,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיַּעַל",
+              "b": "וְעַל"
+            }
+          ],
           "finalScore": 2
         }
       ],
@@ -38674,6 +42148,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיַּעַל",
+              "b": "וְעַל"
+            }
+          ],
           "finalScore": 2
         }
       ],
@@ -38817,6 +42297,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיַּעַל",
+              "b": "וְעַל"
+            }
+          ],
           "finalScore": 2
         }
       ],
@@ -38960,6 +42446,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיַּעַל",
+              "b": "וְעַל"
+            }
+          ],
           "finalScore": 2
         }
       ],

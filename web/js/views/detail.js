@@ -257,6 +257,10 @@ function buildWhyPanel(d, a) {
     wrap.append(wordChipRow('Looks the same without nikkud, read differently', d.ambiguousSpellingExamples.map((w) => w.word)));
     wrap.append(el('p', { class: 'why-note' }, d.ambiguousSpellingExamples[0].note));
   }
+  if (d.lookAlikeWordPairs && d.lookAlikeWordPairs.length) {
+    wrap.append(wordChipRow('Watch for these look-alikes in this aliyah', d.lookAlikeWordPairs.map((pr) => `${pr.a} / ${pr.b}`)));
+    wrap.append(el('p', { class: 'why-note' }, 'These pairs differ by just one letter (ו/י) without nikkud -- worth double-checking you\'re reading the right one, whether or not they turn out to share a root.'));
+  }
   return wrap;
 }
 

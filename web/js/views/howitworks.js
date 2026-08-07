@@ -50,6 +50,11 @@ export async function renderHowItWorks(container) {
     p('When one of these shows up in an aliyah, it adds a small bump to that aliyah\'s Gotchas score, and the specific word(s) are shown in the "why" breakdown.'),
   ));
 
+  container.append(section('Look-alike word pairs -- shown, but not scored',
+    p('The actual public reading is done from a Torah scroll with no nikkud at all, so two genuinely different words that happen to differ by just one letter (like עד "until" vs. עוד "still", or בן "son" vs. בין "between") are a real, easy way to misread. When an aliyah has any of these pairs, they\'re shown in the "why" breakdown as a heads-up.'),
+    p('This one deliberately does ', el('em', {}, 'not'), ' add to the difficulty score, unlike the gotchas above. About 63% of all aliyot have at least one such pair -- common enough that scoring it wouldn\'t tell you anything about which aliyot are actually harder than others, and there\'s no reliable way to tell from spelling alone whether a given pair is truly two different words or just the same root written two different ways. So it\'s treated as useful information to double-check, not as evidence of extra difficulty.'),
+  ));
+
   container.append(section('Some passages get an easier score because they\'re familiar',
     p('A handful of passages are recited so often in davening -- twice a day, in some cases -- that most regular daveners already know them by heart: the Shema, the Aseret HaDibrot, Birkat Kohanim, and Az Yashir. Their vocabulary and gotcha scores are eased to reflect that. Length and trope are left alone, since the passage is still just as long and the special melody still has to be learned.'),
   ));

@@ -1,5 +1,7 @@
 import { el, citeRange, displayParshaName, scoreColor, scoreColorBg, scoreLabel } from '../util.js';
 import { contentTags } from '../contentTags.js';
+import { isConfigured, getCurrentUser } from '../auth.js';
+import { getMyLeiningLog, addLeiningLogEntry, removeLeiningLogEntry } from '../data.js';
 
 function contentTagChips(tags) {
   if (!tags || !tags.length) return null;
@@ -39,6 +41,71 @@ function wholeReadingTikkunLink(aliyot) {
   const url = tikkunUrl({ book: first.book, start: first.start, end: last.end });
   if (!url) return null;
   return el('a', { href: url, target: '_blank', rel: 'noopener', class: 'tikkun-link', title: 'Find the whole reading in the Tikkun' }, 'Whole reading in Tikkun ↗');
+}
+
+// A toggle that logs/un-logs a specific aliyah (or 'ALL' for the whole
+// reading) as leined, right from wherever the reading is shown -- This
+// Week, Search, or a permalink -- not just from the My Leining tab.
+// `mine` is a shared Map(aliyahKey -> log row id) for this reading, kept in
+// sync across every button on the page so the state stays consistent.
+function quickLogButton(userId, readingId, aliyahKey, mine) {
+  const btn = el('button', { type: 'button' });
+  function update() {
+    const logged = mine.has(aliyahKey);
+    btn.textContent = logged ? '✓ Leined' : 'Mark leined';
+    btn.className = `quicklog-btn${logged ? ' quicklog-btn-active' : ''}`;
+    btn.title = logged ? 'Marked as leined -- click to remove' : "Mark this as leined";
+  }
+  btn.addEventListener('click', async (e) => {
+    e.stopPropagation();
+    btn.disabled = true;
+    try {
+      if (mine.has(aliyahKey)) {
+        await removeLeiningLogEntry(mine.get(aliyahKey));
+        mine.delete(aliyahKey);
+      } else {
+        const id = await addLeiningLogEntry(userId, { parshaId: readingId, aliyahKey });
+        mine.set(aliyahKey, id);
+      }
+    } catch (err) {
+      console.error(err);
+    }
+    btn.disabled = false;
+    update();
+  });
+  update();
+  return btn;
+}
+
+// Fire-and-forget: renderParshaDetail/renderChagDetail must stay synchronous
+// (existing callers append their return value directly), so this resolves
+// the logged-in state after the fact and injects quick-log buttons in place
+// once it's known, rather than blocking the initial render on a network call.
+async function attachQuickLog(card, { readingId, aliyot, maftir }) {
+  if (!isConfigured) return;
+  let user, log;
+  try {
+    user = await getCurrentUser();
+    if (!user) return;
+    log = await getMyLeiningLog(user.id);
+  } catch (err) {
+    console.error('Quick-log unavailable:', err);
+    return;
+  }
+  const mine = new Map(log.filter((e) => e.parsha_id === readingId).map((e) => [e.aliyah_key, e.id]));
+
+  const actions = card.querySelector('.subcard-actions');
+  if (actions) actions.append(quickLogButton(user.id, readingId, 'ALL', mine));
+
+  for (const a of aliyot || []) {
+    const row = card.querySelector(`.aliyah-row[data-aliyah-key="${a.aliyah}"]`);
+    const cell = row && row.querySelector('.aliyah-note');
+    if (cell) cell.append(quickLogButton(user.id, readingId, String(a.aliyah), mine));
+  }
+  if (maftir) {
+    const line = card.querySelector('.maftir-line');
+    if (line) line.append(quickLogButton(user.id, readingId, 'M', mine));
+  }
 }
 
 function scoreBadge(score, { size = 'md' } = {}) {
@@ -205,6 +272,7 @@ export function renderAliyahTable(aliyot, { maftir, difficultyAliyot, profile, r
   for (const a of aliyot) {
     const d = byNum.get(String(a.aliyah));
     const row = el('tr', { class: d ? 'aliyah-row expandable' : 'aliyah-row' });
+    row.dataset.aliyahKey = String(a.aliyah);
     row.append(el('td', { class: 'aliyah-num' }, aliyahLabel(a.aliyah)));
     const tags = contentTags({ profile, aliyahKey: String(a.aliyah), readingId, wellKnown: d && d.wellKnown });
     row.append(el('td', {}, [citeRange(a), contentTagChips(tags)]));
@@ -321,7 +389,7 @@ export function renderParshaDetail({ parsha, haftarah, difficulty }, opts = {}) 
   }
 
   card.append(el('div', { class: 'card subcard' }, [
-    el('div', { class: 'subcard-heading-row' }, [el('h3', {}, 'Aliyot'), wholeReadingTikkunLink(parsha.aliyot)]),
+    el('div', { class: 'subcard-heading-row' }, [el('h3', {}, 'Aliyot'), el('div', { class: 'subcard-actions' }, [wholeReadingTikkunLink(parsha.aliyot)])]),
     renderAliyahTable(parsha.aliyot, { maftir: parsha.maftir, difficultyAliyot: difficulty && difficulty.aliyot, profile: difficulty && difficulty.profile, readingId: parsha.id }),
   ]));
 
@@ -330,6 +398,7 @@ export function renderParshaDetail({ parsha, haftarah, difficulty }, opts = {}) 
     nusachRow(haftarah ? haftarah.nusach : null),
   ]));
 
+  attachQuickLog(card, { readingId: parsha.id, aliyot: parsha.aliyot, maftir: parsha.maftir });
   return card;
 }
 
@@ -379,14 +448,16 @@ export function renderChagDetail(chag) {
   }
   if (chag.aliyot && chag.aliyot.length) {
     card.append(el('div', { class: 'card subcard' }, [
-      el('div', { class: 'subcard-heading-row' }, [el('h3', {}, 'Aliyot'), wholeReadingTikkunLink(chag.aliyot)]),
+      el('div', { class: 'subcard-heading-row' }, [el('h3', {}, 'Aliyot'), el('div', { class: 'subcard-actions' }, [wholeReadingTikkunLink(chag.aliyot)])]),
       renderAliyahTable(chag.aliyot, { maftir: chag.maftir, difficultyAliyot: difficulty && difficulty.aliyot, profile: difficulty && difficulty.profile, readingId: chag.id }),
     ]));
+    attachQuickLog(card, { readingId: chag.id, aliyot: chag.aliyot, maftir: chag.maftir });
   } else if (chag.maftir) {
     card.append(el('div', { class: 'card subcard' }, [
       el('h3', {}, 'Maftir only'),
       renderAliyahTable([{ aliyah: 'M', ...chag.maftir }], { difficultyAliyot: difficulty && difficulty.aliyot, profile: difficulty && difficulty.profile, readingId: chag.id }),
     ]));
+    attachQuickLog(card, { readingId: chag.id, aliyot: [{ aliyah: 'M' }], maftir: null });
   }
   card.append(el('div', { class: 'card subcard' }, [
     el('h3', {}, 'Haftarah by nusach'),

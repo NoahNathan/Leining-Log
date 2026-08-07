@@ -1,7 +1,7 @@
 import { el, displayParshaName } from '../util.js';
 import { isConfigured, signUp, signInWithPassword, signOut, onAuthChange } from '../auth.js';
 import {
-  listAllParshiotForSearch, getMyProfile, setBarMitzvahParsha,
+  listAllParshiotForSearch, clearBarMitzvahFlag,
   getMyLeiningLog, addLeiningLogEntry, removeLeiningLogEntry, computeTorahProgress,
 } from '../data.js';
 
@@ -107,8 +107,8 @@ async function renderLoggedIn(body, user) {
   body.innerHTML = '';
   body.append(el('p', { class: 'muted' }, 'Loading your progress…'));
 
-  const [profile, log, allParshiot] = await Promise.all([
-    getMyProfile(user.id), getMyLeiningLog(user.id), listAllParshiotForSearch(),
+  const [log, allParshiot] = await Promise.all([
+    getMyLeiningLog(user.id), listAllParshiotForSearch(),
   ]);
   const progress = await computeTorahProgress(log);
   const individual = allParshiot.filter((p) => !p.combinedEntry).sort((a, b) => a.parshaNum - b.parshaNum);
@@ -125,7 +125,6 @@ async function renderLoggedIn(body, user) {
   ]));
 
   body.append(renderProgressCard(progress));
-  body.append(renderBarMitzvahCard(user, profile, individual));
   body.append(renderAddEntryCard(user, individual, () => renderLoggedIn(body, user)));
   body.append(renderLogCard(log, byId, () => renderLoggedIn(body, user)));
 }
@@ -152,27 +151,6 @@ function renderProgressCard(progress) {
     ]));
   }
   return card;
-}
-
-function renderBarMitzvahCard(user, profile, individual) {
-  const select = el('select', { class: 'text-input' }, [
-    el('option', { value: '' }, '— none set —'),
-    ...individual.map((p) => el('option', { value: p.id }, displayParshaName(p.englishName || p.id))),
-  ]);
-  if (profile && profile.bar_mitzvah_parsha_id) select.value = profile.bar_mitzvah_parsha_id;
-  const status = el('span', { class: 'muted small' }, '');
-  const btn = el('button', {
-    class: 'btn-primary', type: 'button',
-    onclick: async () => {
-      await setBarMitzvahParsha(user.id, select.value || null);
-      status.textContent = 'Saved.';
-      setTimeout(() => { status.textContent = ''; }, 1500);
-    },
-  }, 'Save');
-  return el('div', { class: 'card subcard' }, [
-    el('h3', {}, 'Bar mitzvah parsha'),
-    el('div', { class: 'search-row' }, [select, btn, status]),
-  ]);
 }
 
 function renderAddEntryCard(user, individual, onSaved) {
@@ -205,6 +183,9 @@ function renderAddEntryCard(user, individual, onSaved) {
   const form = el('form', {
     onsubmit: async (e) => {
       e.preventDefault();
+      // Only one entry can be the bar mitzvah parsha -- clear any earlier
+      // one first so checking this box always replaces it, never adds a second.
+      if (barMitzvah.checked) await clearBarMitzvahFlag(user.id);
       await addLeiningLogEntry(user.id, {
         parshaId: parshaSelect.value,
         aliyahKey: aliyahSelect.value,
@@ -218,7 +199,7 @@ function renderAddEntryCard(user, individual, onSaved) {
   }, [
     el('div', { class: 'search-row' }, [parshaSelect, aliyahSelect]),
     el('div', { class: 'search-row' }, [yearHebrew, yearGregorian]),
-    el('label', { class: 'checkbox-label' }, [barMitzvah, ' This was my bar mitzvah parsha']),
+    el('label', { class: 'checkbox-label' }, [barMitzvah, ' This was my bar mitzvah parsha (replaces any previous one)']),
     el('div', { class: 'search-row' }, [el('button', { class: 'btn-primary', type: 'submit' }, 'Mark as leined'), status]),
   ]);
 

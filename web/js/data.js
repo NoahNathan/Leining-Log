@@ -202,6 +202,42 @@ export async function computeTorahProgress(logEntries) {
   };
 }
 
+// ---------- gabbai-mode: minyan-wide coverage grid ----------
+// Same "whole-parsha entry subsumes specific aliyot" logic as
+// computeTorahProgress, but as a union across every row regardless of
+// which member logged it -- "has ANYONE in the group ever read this
+// aliyah," not a per-leiner breakdown. Feeds the gabbai's coverage-gaps
+// heatmap.
+export async function computeMinyanCoverage(allMemberLogRows) {
+  const parshiot = await getParshiot();
+  const wholeParshaIds = new Set(allMemberLogRows.filter((e) => e.aliyah_key === 'ALL').map((e) => e.parsha_id));
+  const loggedAliyot = new Map(); // parshaId -> Set of aliyah_key
+  for (const e of allMemberLogRows) {
+    if (e.aliyah_key === 'ALL' || wholeParshaIds.has(e.parsha_id)) continue;
+    if (!loggedAliyot.has(e.parsha_id)) loggedAliyot.set(e.parsha_id, new Set());
+    loggedAliyot.get(e.parsha_id).add(e.aliyah_key);
+  }
+
+  return parshiot.map((p) => {
+    let coveredVerses = 0;
+    if (wholeParshaIds.has(p.id)) {
+      coveredVerses = p.totalVerses;
+    } else {
+      const keys = loggedAliyot.get(p.id);
+      if (keys) for (const a of p.aliyot) if (keys.has(String(a.aliyah))) coveredVerses += a.verses;
+    }
+    return {
+      parshaId: p.id,
+      englishName: p.englishName,
+      book: p.book,
+      parshaNum: p.parshaNum,
+      coveredVerses,
+      totalVerses: p.totalVerses,
+      percent: p.totalVerses ? Math.round((coveredVerses / p.totalVerses) * 1000) / 10 : 0,
+    };
+  }).sort((a, b) => (Array.isArray(a.parshaNum) ? a.parshaNum[0] : a.parshaNum) - (Array.isArray(b.parshaNum) ? b.parshaNum[0] : b.parshaNum));
+}
+
 let supabasePromise = null;
 async function sb() {
   if (!supabasePromise) supabasePromise = import('./supabaseClient.js').then((m) => m.getSupabase());

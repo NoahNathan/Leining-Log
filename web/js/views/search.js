@@ -74,6 +74,10 @@ export async function renderSearch(container) {
 
   function refreshForm() {
     syncToggle(modeToggle, mode === 'date' ? 'By date' : 'By parsha');
+    // Diaspora/Israel only affects which calendar date maps to which
+    // reading -- the parsha/festival browse grid is the same regardless of
+    // region, so the toggle would just be a no-op distraction there.
+    regionToggle.style.display = mode === 'date' ? '' : 'none';
     formHost.innerHTML = '';
     resultsHost.innerHTML = '';
     if (mode === 'date') {

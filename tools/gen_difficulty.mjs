@@ -177,6 +177,11 @@ function scoreReadingRaw(id, items, tags, overridesMap, familiarMap) {
       if (wd.ambiguousSpellingExamples && wd.ambiguousSpellingExamples.length) {
         entry.ambiguousSpellingExamples = wd.ambiguousSpellingExamples;
       }
+      // Informational only -- does not affect `hidden` above; see the field's
+      // own description in word-difficulty.json for why.
+      if (wd.lookAlikeWordPairs && wd.lookAlikeWordPairs.length) {
+        entry.lookAlikeWordPairs = wd.lookAlikeWordPairs;
+      }
     }
     const notes = [ov.note, fam.note].filter(Boolean);
     if (notes.length) entry.note = notes.join(' ');

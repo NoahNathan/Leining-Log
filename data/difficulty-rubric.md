@@ -372,6 +372,30 @@ granularity this part of the method can support. See each parsha's `profile`
 field and each aliyah's optional `note`/`wellKnown` fields in
 `difficulty-scores.json`.
 
+## Look-alike word pairs: informational, not scored
+
+A related but separate signal, deliberately kept **out of the numeric
+score**: `gen_word_stats.mjs` also finds pairs of *distinct* words within the
+same aliyah that differ by exactly one internal ו/י (e.g. עד/עוד, בן/בין,
+את/אות) -- close enough to be genuinely hard to tell apart without nikkud,
+which matters because the actual public reading is done from an unvocalized
+scroll. This came directly out of investigating the vocabulary-frequency
+normalization idea above: the same "strip internal ו/י" heuristic that's
+unsafe for merging word *frequencies* turns out to be exactly the right tool
+for finding word *pairs* worth flagging as a reading hazard -- the risk here
+doesn't depend on knowing whether the two forms are truly unrelated words or
+just the same root in different grammatical forms, only on the fact that
+they look nearly identical.
+
+It's kept out of the `hiddenChallenges` score because it's simply too common
+to discriminate difficulty: roughly 63% of all aliyot have at least one such
+pair, so scoring it would functionally just add a constant to most aliyot
+rather than distinguishing hard ones from easy ones. It's still genuinely
+useful to a reader, so it's surfaced as `lookAlikeWordPairs` (up to 3 pairs
+per aliyah, shortest first, since short/common words are the ones actually
+at risk of a quick misread) in `difficulty-scores.json` and shown directly
+in the app's "why" panel.
+
 ## "Known leining": familiarity lightens some passages
 
 Several Torah passages are recited so often in davening -- twice a day, in

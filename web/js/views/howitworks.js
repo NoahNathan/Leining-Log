@@ -50,9 +50,9 @@ export async function renderHowItWorks(container) {
     p('When one of these shows up in an aliyah, it adds a small bump to that aliyah\'s Gotchas score, and the specific word(s) are shown in the "why" breakdown.'),
   ));
 
-  container.append(section('Look-alike word pairs -- shown, but not scored',
-    p('The actual public reading is done from a Torah scroll with no nikkud at all, so two genuinely different words that happen to differ by just one letter (like עד "until" vs. עוד "still", or בן "son" vs. בין "between") are a real, easy way to misread. When an aliyah has any of these pairs, they\'re shown in the "why" breakdown as a heads-up.'),
-    p('This one deliberately does ', el('em', {}, 'not'), ' add to the difficulty score, unlike the gotchas above. About 63% of all aliyot have at least one such pair -- common enough that scoring it wouldn\'t tell you anything about which aliyot are actually harder than others, and there\'s no reliable way to tell from spelling alone whether a given pair is truly two different words or just the same root written two different ways. So it\'s treated as useful information to double-check, not as evidence of extra difficulty.'),
+  container.append(section('Look-alike word pairs',
+    p('The actual public reading is done from a Torah scroll with no nikkud at all, so two genuinely different words that happen to differ by just one letter (like עד "until" vs. עוד "still", or בן "son" vs. בין "between") are a real, easy way to misread. When an aliyah has any of these pairs, up to 3 are shown in the "why" breakdown as a heads-up.'),
+    p('Most aliyot have zero or one such pair, which is common enough that it doesn\'t add anything to the score -- but an aliyah with several is genuinely more of a minefield, so 2-3 pairs adds a small bump to Gotchas, 4-5 a bit more, and 6+ (about 1 in 70 aliyot) the most. There\'s still no reliable way to tell from spelling alone whether a given pair is truly two different words or just the same root written two different ways, so this measures density of near-identical spellings, not a confirmed count of real traps.'),
   ));
 
   container.append(section('Some passages get an easier score because they\'re familiar',
@@ -69,7 +69,7 @@ export async function renderHowItWorks(container) {
 
   container.append(section('Where this falls short',
     el('ul', { class: 'plain-list' }, [
-      el('li', {}, 'Trope and repetition scores mostly come from the general character of the parsha, not a line-by-line check of every aliyah. Vocabulary, and the ambiguous-spelling part of Gotchas, are measured directly from the words themselves; the rest of Gotchas is still the general character-based baseline plus specific hand-curated overrides.'),
+      el('li', {}, 'Trope and repetition scores mostly come from the general character of the parsha, not a line-by-line check of every aliyah. Vocabulary, and the ambiguous-spelling and look-alike-pair parts of Gotchas, are measured directly from the words themselves; the rest of Gotchas is still the general character-based baseline plus specific hand-curated overrides.'),
       el('li', {}, '"Difficulty" here means difficulty to prepare and read aloud -- it says nothing about how meaningful or significant a passage is.'),
       el('li', {}, 'Vocabulary rarity is measured by exact spelling, not by the underlying word -- see "Vocabulary is measured, not guessed" above.'),
     ]),

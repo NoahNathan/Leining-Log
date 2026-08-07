@@ -372,13 +372,13 @@ granularity this part of the method can support. See each parsha's `profile`
 field and each aliyah's optional `note`/`wellKnown` fields in
 `difficulty-scores.json`.
 
-## Look-alike word pairs: informational, not scored
+## Look-alike word pairs: a fifth hidden-challenge signal, count-thresholded
 
-A related but separate signal, deliberately kept **out of the numeric
-score**: `gen_word_stats.mjs` also finds pairs of *distinct* words within the
-same aliyah that differ by exactly one internal ו/י (e.g. עד/עוד, בן/בין,
-את/אות) -- close enough to be genuinely hard to tell apart without nikkud,
-which matters because the actual public reading is done from an unvocalized
+A related but separate signal from the ambiguous-spelling bump above:
+`gen_word_stats.mjs` also finds pairs of *distinct* words within the same
+aliyah that differ by exactly one internal ו/י (e.g. עד/עוד, בן/בין, את/אות)
+-- close enough to be genuinely hard to tell apart without nikkud, which
+matters because the actual public reading is done from an unvocalized
 scroll. This came directly out of investigating the vocabulary-frequency
 normalization idea above: the same "strip internal ו/י" heuristic that's
 unsafe for merging word *frequencies* turns out to be exactly the right tool
@@ -387,14 +387,39 @@ doesn't depend on knowing whether the two forms are truly unrelated words or
 just the same root in different grammatical forms, only on the fact that
 they look nearly identical.
 
-It's kept out of the `hiddenChallenges` score because it's simply too common
-to discriminate difficulty: roughly 63% of all aliyot have at least one such
-pair, so scoring it would functionally just add a constant to most aliyot
-rather than distinguishing hard ones from easy ones. It's still genuinely
-useful to a reader, so it's surfaced as `lookAlikeWordPairs` (up to 3 pairs
-per aliyah, shortest first, since short/common words are the ones actually
-at risk of a quick misread) in `difficulty-scores.json` and shown directly
-in the app's "why" panel.
+**First attempt (tried, rejected): percentile-rank the pair count, the same
+technique used for length and vocabulary.** This seemed like the obvious
+choice -- reuse the exact machinery already proven to work -- but it
+backfired badly on this specific data: the count distribution is heavily
+zero-inflated (57.6% of aliyot have zero pairs, another 20.9% have exactly
+one), so percentile rank compresses almost the *entire* non-zero corpus into
+the top half of the 1-10 scale. In practice this meant a single incidental
+pair (21% of all aliyot) landed at the same score contribution as a
+genuinely pair-dense aliyah, and anything with 3+ pairs (11% of aliyot) all
+got slammed to the same maximum bump with no further discrimination --
+worse than not scoring it at all, and it moved the average Gotchas score
+across the whole dataset up by nearly 1.5 points for no real gain in
+distinguishing hard aliyot from easy ones. Percentile-ranking is the right
+tool for continuous, well-spread measurements (word rarity, verse count);
+it's the wrong tool for a small, sparse integer count like this one.
+
+**What it actually does now:** a direct count threshold, added into
+`hiddenChallenges` alongside the ambiguous-spelling bump:
+
+| Pairs in the aliyah | Bump |
+|---|---|
+| 0-1 | +0 |
+| 2-3 | +1 |
+| 4-5 | +2 |
+| 6+ | +3 |
+
+This keeps the common case (0-1 pairs, ~78.5% of aliyot) contributing
+nothing, and reserves any score impact for the aliyot that are genuinely
+unusual in how many of these near-misses they contain -- 13 aliyot in the
+whole dataset (1.4%) hit the +3 ceiling. The capped, shortest-first
+`lookAlikeWordPairs` list (up to 3 per aliyah) is still shown directly in
+the app's "why" panel regardless of score impact, since it's useful
+information even for aliyot below the scoring threshold.
 
 ## "Known leining": familiarity lightens some passages
 

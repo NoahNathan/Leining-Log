@@ -119,6 +119,24 @@ const FAMILIAR_PASSAGE_DISCOUNTS = {
 };
 
 function clamp10(n) { return Math.max(0, Math.min(10, Math.round(n))); }
+
+// Deliberately a direct count threshold, NOT a percentile rank. Percentile-
+// ranking lookAlikePairCount was tried first and rejected: the count
+// distribution is heavily zero-inflated (0-1 pairs in ~78% of aliyot), so
+// percentile rank compresses almost the entire corpus into the top half of
+// the 1-10 scale -- a single incidental pair (21% of aliyot) landed at the
+// SAME bump as the genuinely dense tail, which is worse than not scoring it
+// at all. A flat count threshold keeps the common case (0-1 pairs) at zero
+// and only rewards aliyot that are actually unusual, in line with how many
+// pairs realistically occur (see the corpus distribution in
+// difficulty-rubric.md).
+function lookAlikeBump(wd) {
+  const n = wd ? wd.lookAlikePairCount : 0;
+  if (n >= 6) return 3;
+  if (n >= 4) return 2;
+  if (n >= 2) return 1;
+  return 0;
+}
 function blendProfile(tags) {
   const profs = tags.map(t => PROFILES[t]);
   const keys = ['trope','repetition','hidden'];
@@ -163,7 +181,7 @@ function scoreReadingRaw(id, items, tags, overridesMap, familiarMap) {
     const trope = clamp10(base.trope + (ov.trope || 0));
     const repetition = clamp10(base.repetition + (ov.repetition || 0));
     const ambiguousBump = wd && wd.ambiguousSpellingExamples && wd.ambiguousSpellingExamples.length ? 1 : 0;
-    const hidden = clamp10(base.hidden + (ov.hidden || 0) + (fam.hidden || 0) + ambiguousBump);
+    const hidden = clamp10(base.hidden + (ov.hidden || 0) + (fam.hidden || 0) + ambiguousBump + lookAlikeBump(wd));
     const length = lengthScore(item.verses);
     const rawFinal = (length*RUBRIC_WEIGHTS.length + vocab*RUBRIC_WEIGHTS.vocab + trope*RUBRIC_WEIGHTS.trope +
                        repetition*RUBRIC_WEIGHTS.repetition + hidden*RUBRIC_WEIGHTS.hidden) / TOTAL_WEIGHT;
@@ -177,8 +195,6 @@ function scoreReadingRaw(id, items, tags, overridesMap, familiarMap) {
       if (wd.ambiguousSpellingExamples && wd.ambiguousSpellingExamples.length) {
         entry.ambiguousSpellingExamples = wd.ambiguousSpellingExamples;
       }
-      // Informational only -- does not affect `hidden` above; see the field's
-      // own description in word-difficulty.json for why.
       if (wd.lookAlikeWordPairs && wd.lookAlikeWordPairs.length) {
         entry.lookAlikeWordPairs = wd.lookAlikeWordPairs;
       }

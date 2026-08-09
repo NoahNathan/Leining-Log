@@ -4,8 +4,8 @@
     2046,
     2055
   ],
-  "generatedAt": "2026-08-09T20:40:56.264Z",
-  "count": 2184,
+  "generatedAt": "2026-08-09T21:33:10.376Z",
+  "count": 2136,
   "rows": [
     {
       "date": "2046-01-06",
@@ -352,26 +352,10 @@
     {
       "date": "2046-03-21",
       "hebrewDate": "13 Adar II 5806",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Erev Purim",
-      "chagId": "Erev Purim__DIASPORA"
-    },
-    {
-      "date": "2046-03-21",
-      "hebrewDate": "13 Adar II 5806",
       "region": "israel",
       "type": "holiday",
       "name": "Ta'anit Esther",
       "chagId": "Ta'anit Esther__IL"
-    },
-    {
-      "date": "2046-03-21",
-      "hebrewDate": "13 Adar II 5806",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Erev Purim",
-      "chagId": "Erev Purim__IL"
     },
     {
       "date": "2046-03-22",
@@ -479,14 +463,6 @@
       "date": "2046-04-07",
       "hebrewDate": "1 Nisan 5806",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Rosh Chodesh Nisan",
-      "chagId": "Rosh Chodesh Nisan__DIASPORA"
-    },
-    {
-      "date": "2046-04-07",
-      "hebrewDate": "1 Nisan 5806",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Tazria",
       "combined": false,
@@ -510,14 +486,6 @@
       "type": "holiday",
       "name": "Shabbat HaChodesh",
       "chagId": "Shabbat HaChodesh__IL"
-    },
-    {
-      "date": "2046-04-07",
-      "hebrewDate": "1 Nisan 5806",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Rosh Chodesh Nisan",
-      "chagId": "Rosh Chodesh Nisan__IL"
     },
     {
       "date": "2046-04-07",
@@ -1134,25 +1102,9 @@
       "date": "2046-08-11",
       "hebrewDate": "9 Av 5806",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Erev Tish'a B'Av",
-      "chagId": "Erev Tish'a B'Av__DIASPORA"
-    },
-    {
-      "date": "2046-08-11",
-      "hebrewDate": "9 Av 5806",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Devarim",
       "combined": false
-    },
-    {
-      "date": "2046-08-11",
-      "hebrewDate": "9 Av 5806",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Erev Tish'a B'Av",
-      "chagId": "Erev Tish'a B'Av__IL"
     },
     {
       "date": "2046-08-11",
@@ -1216,7 +1168,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Rosh Chodesh Elul",
-      "chagId": "Rosh Chodesh Elul__DIASPORA"
+      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
     },
     {
       "date": "2046-09-01",
@@ -1242,7 +1194,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Rosh Chodesh Elul",
-      "chagId": "Rosh Chodesh Elul__IL"
+      "chagId": "Shabbat Rosh Chodesh__IL"
     },
     {
       "date": "2046-09-01",
@@ -1608,7 +1560,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Sukkot VI (CH''M)",
-      "chagId": "Sukkot VI (CH''M)__DIASPORA"
+      "chagId": "Sukkot Shabbat Chol ha-Moed__DIASPORA"
     },
     {
       "date": "2046-10-20",
@@ -1616,7 +1568,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Sukkot VI (CH''M)",
-      "chagId": "Sukkot VI (CH''M)__IL"
+      "chagId": "Sukkot Shabbat Chol ha-Moed__IL"
     },
     {
       "date": "2046-10-21",
@@ -2345,26 +2297,10 @@
     {
       "date": "2047-03-11",
       "hebrewDate": "13 Adar 5807",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Erev Purim",
-      "chagId": "Erev Purim__DIASPORA"
-    },
-    {
-      "date": "2047-03-11",
-      "hebrewDate": "13 Adar 5807",
       "region": "israel",
       "type": "holiday",
       "name": "Ta'anit Esther",
       "chagId": "Ta'anit Esther__IL"
-    },
-    {
-      "date": "2047-03-11",
-      "hebrewDate": "13 Adar 5807",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Erev Purim",
-      "chagId": "Erev Purim__IL"
     },
     {
       "date": "2047-03-12",
@@ -2620,7 +2556,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Pesach III (CH''M)",
-      "chagId": "Pesach III (CH''M)__DIASPORA"
+      "chagId": "Pesach Shabbat Chol ha-Moed__DIASPORA"
     },
     {
       "date": "2047-04-13",
@@ -2628,7 +2564,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Pesach III (CH''M)",
-      "chagId": "Pesach III (CH''M)__IL"
+      "chagId": "Pesach Shabbat Chol ha-Moed__IL"
     },
     {
       "date": "2047-04-14",
@@ -2740,7 +2676,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Rosh Chodesh Iyyar",
-      "chagId": "Rosh Chodesh Iyyar__DIASPORA"
+      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
     },
     {
       "date": "2047-04-27",
@@ -2766,7 +2702,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Rosh Chodesh Iyyar",
-      "chagId": "Rosh Chodesh Iyyar__IL"
+      "chagId": "Shabbat Rosh Chodesh__IL"
     },
     {
       "date": "2047-04-27",
@@ -3141,22 +3077,6 @@
       "type": "parsha",
       "parshaId": "Devarim",
       "combined": false
-    },
-    {
-      "date": "2047-07-31",
-      "hebrewDate": "8 Av 5807",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Erev Tish'a B'Av",
-      "chagId": "Erev Tish'a B'Av__DIASPORA"
-    },
-    {
-      "date": "2047-07-31",
-      "hebrewDate": "8 Av 5807",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Erev Tish'a B'Av",
-      "chagId": "Erev Tish'a B'Av__IL"
     },
     {
       "date": "2047-08-01",
@@ -4132,14 +4052,6 @@
       "date": "2048-02-15",
       "hebrewDate": "1 Adar 5808",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Rosh Chodesh Adar",
-      "chagId": "Rosh Chodesh Adar__DIASPORA"
-    },
-    {
-      "date": "2048-02-15",
-      "hebrewDate": "1 Adar 5808",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Mishpatim",
       "combined": false,
@@ -4163,14 +4075,6 @@
       "type": "holiday",
       "name": "Shabbat Shekalim",
       "chagId": "Shabbat Shekalim__IL"
-    },
-    {
-      "date": "2048-02-15",
-      "hebrewDate": "1 Adar 5808",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Rosh Chodesh Adar",
-      "chagId": "Rosh Chodesh Adar__IL"
     },
     {
       "date": "2048-02-15",
@@ -4259,26 +4163,10 @@
     {
       "date": "2048-02-27",
       "hebrewDate": "13 Adar 5808",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Erev Purim",
-      "chagId": "Erev Purim__DIASPORA"
-    },
-    {
-      "date": "2048-02-27",
-      "hebrewDate": "13 Adar 5808",
       "region": "israel",
       "type": "holiday",
       "name": "Ta'anit Esther",
       "chagId": "Ta'anit Esther__IL"
-    },
-    {
-      "date": "2048-02-27",
-      "hebrewDate": "13 Adar 5808",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Erev Purim",
-      "chagId": "Erev Purim__IL"
     },
     {
       "date": "2048-02-28",
@@ -5000,7 +4888,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Rosh Chodesh Av",
-      "chagId": "Rosh Chodesh Av__DIASPORA"
+      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
     },
     {
       "date": "2048-07-11",
@@ -5035,7 +4923,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Rosh Chodesh Av",
-      "chagId": "Rosh Chodesh Av__IL"
+      "chagId": "Shabbat Rosh Chodesh__IL"
     },
     {
       "date": "2048-07-11",
@@ -5068,25 +4956,9 @@
       "date": "2048-07-18",
       "hebrewDate": "8 Av 5808",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Erev Tish'a B'Av",
-      "chagId": "Erev Tish'a B'Av__DIASPORA"
-    },
-    {
-      "date": "2048-07-18",
-      "hebrewDate": "8 Av 5808",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Devarim",
       "combined": false
-    },
-    {
-      "date": "2048-07-18",
-      "hebrewDate": "8 Av 5808",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Erev Tish'a B'Av",
-      "chagId": "Erev Tish'a B'Av__IL"
     },
     {
       "date": "2048-07-18",
@@ -5472,7 +5344,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Sukkot V (CH''M)",
-      "chagId": "Sukkot V (CH''M)__DIASPORA"
+      "chagId": "Sukkot Shabbat Chol ha-Moed__DIASPORA"
     },
     {
       "date": "2048-09-26",
@@ -5480,7 +5352,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Sukkot V (CH''M)",
-      "chagId": "Sukkot V (CH''M)__IL"
+      "chagId": "Sukkot Shabbat Chol ha-Moed__IL"
     },
     {
       "date": "2048-09-27",
@@ -6305,26 +6177,10 @@
     {
       "date": "2049-03-17",
       "hebrewDate": "13 Adar II 5809",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Erev Purim",
-      "chagId": "Erev Purim__DIASPORA"
-    },
-    {
-      "date": "2049-03-17",
-      "hebrewDate": "13 Adar II 5809",
       "region": "israel",
       "type": "holiday",
       "name": "Ta'anit Esther",
       "chagId": "Ta'anit Esther__IL"
-    },
-    {
-      "date": "2049-03-17",
-      "hebrewDate": "13 Adar II 5809",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Erev Purim",
-      "chagId": "Erev Purim__IL"
     },
     {
       "date": "2049-03-18",
@@ -6432,14 +6288,6 @@
       "date": "2049-04-03",
       "hebrewDate": "1 Nisan 5809",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Rosh Chodesh Nisan",
-      "chagId": "Rosh Chodesh Nisan__DIASPORA"
-    },
-    {
-      "date": "2049-04-03",
-      "hebrewDate": "1 Nisan 5809",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Tazria",
       "combined": false,
@@ -6463,14 +6311,6 @@
       "type": "holiday",
       "name": "Shabbat HaChodesh",
       "chagId": "Shabbat HaChodesh__IL"
-    },
-    {
-      "date": "2049-04-03",
-      "hebrewDate": "1 Nisan 5809",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Rosh Chodesh Nisan",
-      "chagId": "Rosh Chodesh Nisan__IL"
     },
     {
       "date": "2049-04-03",
@@ -7087,25 +6927,9 @@
       "date": "2049-08-07",
       "hebrewDate": "9 Av 5809",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Erev Tish'a B'Av",
-      "chagId": "Erev Tish'a B'Av__DIASPORA"
-    },
-    {
-      "date": "2049-08-07",
-      "hebrewDate": "9 Av 5809",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Devarim",
       "combined": false
-    },
-    {
-      "date": "2049-08-07",
-      "hebrewDate": "9 Av 5809",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Erev Tish'a B'Av",
-      "chagId": "Erev Tish'a B'Av__IL"
     },
     {
       "date": "2049-08-07",
@@ -7169,7 +6993,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Rosh Chodesh Elul",
-      "chagId": "Rosh Chodesh Elul__DIASPORA"
+      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
     },
     {
       "date": "2049-08-28",
@@ -7195,7 +7019,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Rosh Chodesh Elul",
-      "chagId": "Rosh Chodesh Elul__IL"
+      "chagId": "Shabbat Rosh Chodesh__IL"
     },
     {
       "date": "2049-08-28",
@@ -7561,7 +7385,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Sukkot VI (CH''M)",
-      "chagId": "Sukkot VI (CH''M)__DIASPORA"
+      "chagId": "Sukkot Shabbat Chol ha-Moed__DIASPORA"
     },
     {
       "date": "2049-10-16",
@@ -7569,7 +7393,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Sukkot VI (CH''M)",
-      "chagId": "Sukkot VI (CH''M)__IL"
+      "chagId": "Sukkot Shabbat Chol ha-Moed__IL"
     },
     {
       "date": "2049-10-17",
@@ -8298,26 +8122,10 @@
     {
       "date": "2050-03-07",
       "hebrewDate": "13 Adar 5810",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Erev Purim",
-      "chagId": "Erev Purim__DIASPORA"
-    },
-    {
-      "date": "2050-03-07",
-      "hebrewDate": "13 Adar 5810",
       "region": "israel",
       "type": "holiday",
       "name": "Ta'anit Esther",
       "chagId": "Ta'anit Esther__IL"
-    },
-    {
-      "date": "2050-03-07",
-      "hebrewDate": "13 Adar 5810",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Erev Purim",
-      "chagId": "Erev Purim__IL"
     },
     {
       "date": "2050-03-08",
@@ -8573,7 +8381,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Pesach III (CH''M)",
-      "chagId": "Pesach III (CH''M)__DIASPORA"
+      "chagId": "Pesach Shabbat Chol ha-Moed__DIASPORA"
     },
     {
       "date": "2050-04-09",
@@ -8581,7 +8389,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Pesach III (CH''M)",
-      "chagId": "Pesach III (CH''M)__IL"
+      "chagId": "Pesach Shabbat Chol ha-Moed__IL"
     },
     {
       "date": "2050-04-10",
@@ -8693,7 +8501,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Rosh Chodesh Iyyar",
-      "chagId": "Rosh Chodesh Iyyar__DIASPORA"
+      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
     },
     {
       "date": "2050-04-23",
@@ -8719,7 +8527,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Rosh Chodesh Iyyar",
-      "chagId": "Rosh Chodesh Iyyar__IL"
+      "chagId": "Shabbat Rosh Chodesh__IL"
     },
     {
       "date": "2050-04-23",
@@ -9094,22 +8902,6 @@
       "type": "parsha",
       "parshaId": "Devarim",
       "combined": false
-    },
-    {
-      "date": "2050-07-27",
-      "hebrewDate": "8 Av 5810",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Erev Tish'a B'Av",
-      "chagId": "Erev Tish'a B'Av__DIASPORA"
-    },
-    {
-      "date": "2050-07-27",
-      "hebrewDate": "8 Av 5810",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Erev Tish'a B'Av",
-      "chagId": "Erev Tish'a B'Av__IL"
     },
     {
       "date": "2050-07-28",
@@ -10019,7 +9811,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Rosh Chodesh Sh'vat",
-      "chagId": "Rosh Chodesh Sh'vat__DIASPORA"
+      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
     },
     {
       "date": "2051-01-14",
@@ -10045,7 +9837,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Rosh Chodesh Sh'vat",
-      "chagId": "Rosh Chodesh Sh'vat__IL"
+      "chagId": "Shabbat Rosh Chodesh__IL"
     },
     {
       "date": "2051-01-14",
@@ -10243,14 +10035,6 @@
       "date": "2051-02-25",
       "hebrewDate": "13 Adar 5811",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Erev Purim",
-      "chagId": "Erev Purim__DIASPORA"
-    },
-    {
-      "date": "2051-02-25",
-      "hebrewDate": "13 Adar 5811",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Tetzaveh",
       "combined": false,
@@ -10274,14 +10058,6 @@
       "type": "holiday",
       "name": "Shabbat Zachor",
       "chagId": "Shabbat Zachor__IL"
-    },
-    {
-      "date": "2051-02-25",
-      "hebrewDate": "13 Adar 5811",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Erev Purim",
-      "chagId": "Erev Purim__IL"
     },
     {
       "date": "2051-02-25",
@@ -10589,7 +10365,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Pesach V (CH''M)",
-      "chagId": "Pesach V (CH''M)__DIASPORA"
+      "chagId": "Pesach Shabbat Chol ha-Moed__DIASPORA"
     },
     {
       "date": "2051-04-01",
@@ -10597,7 +10373,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Pesach V (CH''M)",
-      "chagId": "Pesach V (CH''M)__IL"
+      "chagId": "Pesach Shabbat Chol ha-Moed__IL"
     },
     {
       "date": "2051-04-02",
@@ -10877,7 +10653,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Rosh Chodesh Tamuz",
-      "chagId": "Rosh Chodesh Tamuz__DIASPORA"
+      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
     },
     {
       "date": "2051-06-10",
@@ -10903,7 +10679,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Rosh Chodesh Tamuz",
-      "chagId": "Rosh Chodesh Tamuz__IL"
+      "chagId": "Shabbat Rosh Chodesh__IL"
     },
     {
       "date": "2051-06-10",
@@ -11068,22 +10844,6 @@
       "type": "parsha",
       "parshaId": "Devarim",
       "combined": false
-    },
-    {
-      "date": "2051-07-17",
-      "hebrewDate": "8 Av 5811",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Erev Tish'a B'Av",
-      "chagId": "Erev Tish'a B'Av__DIASPORA"
-    },
-    {
-      "date": "2051-07-17",
-      "hebrewDate": "8 Av 5811",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Erev Tish'a B'Av",
-      "chagId": "Erev Tish'a B'Av__IL"
     },
     {
       "date": "2051-07-18",
@@ -11415,7 +11175,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Sukkot III (CH''M)",
-      "chagId": "Sukkot III (CH''M)__DIASPORA"
+      "chagId": "Sukkot Shabbat Chol ha-Moed__DIASPORA"
     },
     {
       "date": "2051-09-23",
@@ -11423,7 +11183,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Sukkot III (CH''M)",
-      "chagId": "Sukkot III (CH''M)__IL"
+      "chagId": "Sukkot Shabbat Chol ha-Moed__IL"
     },
     {
       "date": "2051-09-24",
@@ -11551,7 +11311,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Rosh Chodesh Cheshvan",
-      "chagId": "Rosh Chodesh Cheshvan__DIASPORA"
+      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
     },
     {
       "date": "2051-10-07",
@@ -11577,7 +11337,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Rosh Chodesh Cheshvan",
-      "chagId": "Rosh Chodesh Cheshvan__IL"
+      "chagId": "Shabbat Rosh Chodesh__IL"
     },
     {
       "date": "2051-10-07",
@@ -12191,14 +11951,6 @@
       "date": "2052-03-02",
       "hebrewDate": "1 Adar II 5812",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Rosh Chodesh Adar II",
-      "chagId": "Rosh Chodesh Adar II__DIASPORA"
-    },
-    {
-      "date": "2052-03-02",
-      "hebrewDate": "1 Adar II 5812",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Pekudei",
       "combined": false,
@@ -12222,14 +11974,6 @@
       "type": "holiday",
       "name": "Shabbat Shekalim",
       "chagId": "Shabbat Shekalim__IL"
-    },
-    {
-      "date": "2052-03-02",
-      "hebrewDate": "1 Adar II 5812",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Rosh Chodesh Adar II",
-      "chagId": "Rosh Chodesh Adar II__IL"
     },
     {
       "date": "2052-03-02",
@@ -12318,26 +12062,10 @@
     {
       "date": "2052-03-14",
       "hebrewDate": "13 Adar II 5812",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Erev Purim",
-      "chagId": "Erev Purim__DIASPORA"
-    },
-    {
-      "date": "2052-03-14",
-      "hebrewDate": "13 Adar II 5812",
       "region": "israel",
       "type": "holiday",
       "name": "Ta'anit Esther",
       "chagId": "Ta'anit Esther__IL"
-    },
-    {
-      "date": "2052-03-14",
-      "hebrewDate": "13 Adar II 5812",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Erev Purim",
-      "chagId": "Erev Purim__IL"
     },
     {
       "date": "2052-03-15",
@@ -13061,7 +12789,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Rosh Chodesh Av",
-      "chagId": "Rosh Chodesh Av__DIASPORA"
+      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
     },
     {
       "date": "2052-07-27",
@@ -13096,7 +12824,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Rosh Chodesh Av",
-      "chagId": "Rosh Chodesh Av__IL"
+      "chagId": "Shabbat Rosh Chodesh__IL"
     },
     {
       "date": "2052-07-27",
@@ -13129,25 +12857,9 @@
       "date": "2052-08-03",
       "hebrewDate": "8 Av 5812",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Erev Tish'a B'Av",
-      "chagId": "Erev Tish'a B'Av__DIASPORA"
-    },
-    {
-      "date": "2052-08-03",
-      "hebrewDate": "8 Av 5812",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Devarim",
       "combined": false
-    },
-    {
-      "date": "2052-08-03",
-      "hebrewDate": "8 Av 5812",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Erev Tish'a B'Av",
-      "chagId": "Erev Tish'a B'Av__IL"
     },
     {
       "date": "2052-08-03",
@@ -13533,7 +13245,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Sukkot V (CH''M)",
-      "chagId": "Sukkot V (CH''M)__DIASPORA"
+      "chagId": "Sukkot Shabbat Chol ha-Moed__DIASPORA"
     },
     {
       "date": "2052-10-12",
@@ -13541,7 +13253,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Sukkot V (CH''M)",
-      "chagId": "Sukkot V (CH''M)__IL"
+      "chagId": "Sukkot Shabbat Chol ha-Moed__IL"
     },
     {
       "date": "2052-10-13",
@@ -14270,26 +13982,10 @@
     {
       "date": "2053-03-03",
       "hebrewDate": "13 Adar 5813",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Erev Purim",
-      "chagId": "Erev Purim__DIASPORA"
-    },
-    {
-      "date": "2053-03-03",
-      "hebrewDate": "13 Adar 5813",
       "region": "israel",
       "type": "holiday",
       "name": "Ta'anit Esther",
       "chagId": "Ta'anit Esther__IL"
-    },
-    {
-      "date": "2053-03-03",
-      "hebrewDate": "13 Adar 5813",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Erev Purim",
-      "chagId": "Erev Purim__IL"
     },
     {
       "date": "2053-03-04",
@@ -14545,7 +14241,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Pesach III (CH''M)",
-      "chagId": "Pesach III (CH''M)__DIASPORA"
+      "chagId": "Pesach Shabbat Chol ha-Moed__DIASPORA"
     },
     {
       "date": "2053-04-05",
@@ -14553,7 +14249,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Pesach III (CH''M)",
-      "chagId": "Pesach III (CH''M)__IL"
+      "chagId": "Pesach Shabbat Chol ha-Moed__IL"
     },
     {
       "date": "2053-04-06",
@@ -14665,7 +14361,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Rosh Chodesh Iyyar",
-      "chagId": "Rosh Chodesh Iyyar__DIASPORA"
+      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
     },
     {
       "date": "2053-04-19",
@@ -14691,7 +14387,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Rosh Chodesh Iyyar",
-      "chagId": "Rosh Chodesh Iyyar__IL"
+      "chagId": "Shabbat Rosh Chodesh__IL"
     },
     {
       "date": "2053-04-19",
@@ -15066,22 +14762,6 @@
       "type": "parsha",
       "parshaId": "Devarim",
       "combined": false
-    },
-    {
-      "date": "2053-07-23",
-      "hebrewDate": "8 Av 5813",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Erev Tish'a B'Av",
-      "chagId": "Erev Tish'a B'Av__DIASPORA"
-    },
-    {
-      "date": "2053-07-23",
-      "hebrewDate": "8 Av 5813",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Erev Tish'a B'Av",
-      "chagId": "Erev Tish'a B'Av__IL"
     },
     {
       "date": "2053-07-24",
@@ -15991,7 +15671,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Rosh Chodesh Sh'vat",
-      "chagId": "Rosh Chodesh Sh'vat__DIASPORA"
+      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
     },
     {
       "date": "2054-01-10",
@@ -16017,7 +15697,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Rosh Chodesh Sh'vat",
-      "chagId": "Rosh Chodesh Sh'vat__IL"
+      "chagId": "Shabbat Rosh Chodesh__IL"
     },
     {
       "date": "2054-01-10",
@@ -16368,26 +16048,10 @@
     {
       "date": "2054-03-23",
       "hebrewDate": "13 Adar II 5814",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Erev Purim",
-      "chagId": "Erev Purim__DIASPORA"
-    },
-    {
-      "date": "2054-03-23",
-      "hebrewDate": "13 Adar II 5814",
       "region": "israel",
       "type": "holiday",
       "name": "Ta'anit Esther",
       "chagId": "Ta'anit Esther__IL"
-    },
-    {
-      "date": "2054-03-23",
-      "hebrewDate": "13 Adar II 5814",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Erev Purim",
-      "chagId": "Erev Purim__IL"
     },
     {
       "date": "2054-03-24",
@@ -16643,7 +16307,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Pesach III (CH''M)",
-      "chagId": "Pesach III (CH''M)__DIASPORA"
+      "chagId": "Pesach Shabbat Chol ha-Moed__DIASPORA"
     },
     {
       "date": "2054-04-25",
@@ -16651,7 +16315,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Pesach III (CH''M)",
-      "chagId": "Pesach III (CH''M)__IL"
+      "chagId": "Pesach Shabbat Chol ha-Moed__IL"
     },
     {
       "date": "2054-04-26",
@@ -16763,7 +16427,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Rosh Chodesh Iyyar",
-      "chagId": "Rosh Chodesh Iyyar__DIASPORA"
+      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
     },
     {
       "date": "2054-05-09",
@@ -16789,7 +16453,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Rosh Chodesh Iyyar",
-      "chagId": "Rosh Chodesh Iyyar__IL"
+      "chagId": "Shabbat Rosh Chodesh__IL"
     },
     {
       "date": "2054-05-09",
@@ -17164,22 +16828,6 @@
       "type": "parsha",
       "parshaId": "Devarim",
       "combined": false
-    },
-    {
-      "date": "2054-08-12",
-      "hebrewDate": "8 Av 5814",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Erev Tish'a B'Av",
-      "chagId": "Erev Tish'a B'Av__DIASPORA"
-    },
-    {
-      "date": "2054-08-12",
-      "hebrewDate": "8 Av 5814",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Erev Tish'a B'Av",
-      "chagId": "Erev Tish'a B'Av__IL"
     },
     {
       "date": "2054-08-13",
@@ -18089,7 +17737,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Rosh Chodesh Sh'vat",
-      "chagId": "Rosh Chodesh Sh'vat__DIASPORA"
+      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
     },
     {
       "date": "2055-01-30",
@@ -18115,7 +17763,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Rosh Chodesh Sh'vat",
-      "chagId": "Rosh Chodesh Sh'vat__IL"
+      "chagId": "Shabbat Rosh Chodesh__IL"
     },
     {
       "date": "2055-01-30",
@@ -18313,14 +17961,6 @@
       "date": "2055-03-13",
       "hebrewDate": "13 Adar 5815",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Erev Purim",
-      "chagId": "Erev Purim__DIASPORA"
-    },
-    {
-      "date": "2055-03-13",
-      "hebrewDate": "13 Adar 5815",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Tetzaveh",
       "combined": false,
@@ -18344,14 +17984,6 @@
       "type": "holiday",
       "name": "Shabbat Zachor",
       "chagId": "Shabbat Zachor__IL"
-    },
-    {
-      "date": "2055-03-13",
-      "hebrewDate": "13 Adar 5815",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Erev Purim",
-      "chagId": "Erev Purim__IL"
     },
     {
       "date": "2055-03-13",
@@ -18659,7 +18291,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Pesach V (CH''M)",
-      "chagId": "Pesach V (CH''M)__DIASPORA"
+      "chagId": "Pesach Shabbat Chol ha-Moed__DIASPORA"
     },
     {
       "date": "2055-04-17",
@@ -18667,7 +18299,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Pesach V (CH''M)",
-      "chagId": "Pesach V (CH''M)__IL"
+      "chagId": "Pesach Shabbat Chol ha-Moed__IL"
     },
     {
       "date": "2055-04-18",
@@ -18947,7 +18579,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Rosh Chodesh Tamuz",
-      "chagId": "Rosh Chodesh Tamuz__DIASPORA"
+      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
     },
     {
       "date": "2055-06-26",
@@ -18973,7 +18605,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Rosh Chodesh Tamuz",
-      "chagId": "Rosh Chodesh Tamuz__IL"
+      "chagId": "Shabbat Rosh Chodesh__IL"
     },
     {
       "date": "2055-06-26",
@@ -19138,22 +18770,6 @@
       "type": "parsha",
       "parshaId": "Devarim",
       "combined": false
-    },
-    {
-      "date": "2055-08-02",
-      "hebrewDate": "8 Av 5815",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Erev Tish'a B'Av",
-      "chagId": "Erev Tish'a B'Av__DIASPORA"
-    },
-    {
-      "date": "2055-08-02",
-      "hebrewDate": "8 Av 5815",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Erev Tish'a B'Av",
-      "chagId": "Erev Tish'a B'Av__IL"
     },
     {
       "date": "2055-08-03",
@@ -19485,7 +19101,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Sukkot III (CH''M)",
-      "chagId": "Sukkot III (CH''M)__DIASPORA"
+      "chagId": "Sukkot Shabbat Chol ha-Moed__DIASPORA"
     },
     {
       "date": "2055-10-09",
@@ -19493,7 +19109,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Sukkot III (CH''M)",
-      "chagId": "Sukkot III (CH''M)__IL"
+      "chagId": "Sukkot Shabbat Chol ha-Moed__IL"
     },
     {
       "date": "2055-10-10",
@@ -19621,7 +19237,7 @@
       "region": "diaspora",
       "type": "holiday",
       "name": "Rosh Chodesh Cheshvan",
-      "chagId": "Rosh Chodesh Cheshvan__DIASPORA"
+      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
     },
     {
       "date": "2055-10-23",
@@ -19647,7 +19263,7 @@
       "region": "israel",
       "type": "holiday",
       "name": "Rosh Chodesh Cheshvan",
-      "chagId": "Rosh Chodesh Cheshvan__IL"
+      "chagId": "Shabbat Rosh Chodesh__IL"
     },
     {
       "date": "2055-10-23",

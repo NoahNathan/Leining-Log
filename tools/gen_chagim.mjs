@@ -62,8 +62,60 @@ function displayNameFor(leyning, desc) {
 
 const SKIP = new Set(['Rosh Chodesh Tevet', 'Chag HaBanot']); // subsumed by Chanukah day readings / no distinct kriyah
 
+// Rosh Chodesh and Pesach/Sukkot Chol HaMoed days are ordinary WEEKDAY
+// readings (short, no maftir/haftarah for Rosh Chodesh; a handful of
+// aliyot for Chol HaMoed) most years, but when the same calendar date
+// happens to fall on Shabbat that year, Hebcal's own leyning for that
+// exact event returns an entirely different reading -- a full 7-aliyot
+// Shabbat-shaped one with its own maftir and haftarah, added onto (Rosh
+// Chodesh) or replacing (Chol HaMoed) the week's regular Torah portion.
+// A single generation window can only ever observe ONE of the two shapes
+// per desc and previously baked in whichever one came first, silently
+// wrong for every year that lands on the other side of that split.
+//
+// The Shabbat-shaped reading turns out to be identical regardless of
+// WHICH month's Rosh Chodesh or WHICH Chol HaMoed day it is (verified:
+// Numbers 28:9-15 + Isaiah 66 for any Rosh-Chodesh-on-Shabbat; Ezekiel 37
+// for any Pesach Chol-HaMoed Shabbat; Ezekiel 39 for any Sukkot one) --
+// exactly like Shabbat Shekalim/Zachor/Parah/HaChodesh are already a
+// single fixed reading regardless of which parsha carries them. So rather
+// than storing a Shabbat variant per month/day, this generator captures
+// ONE shared entry per family below, and the weekday-only entries here
+// stay reliably weekday-shaped by skipping Saturday occurrences when
+// picking each family's "first occurrence".
+const ROSH_CHODESH_FAMILY = /^Rosh Chodesh /;
+const CHOL_HAMOED_FAMILY = /^(Pesach|Sukkot) [IVX]+ \(CH''M\)$/;
+function variesByShabbat(desc) {
+  return ROSH_CHODESH_FAMILY.test(desc) || CHOL_HAMOED_FAMILY.test(desc);
+}
+function isShabbat(ev) {
+  return ev.getDate().greg().getDay() === 6;
+}
+
+function buildEntry(id, name, region, ev, leyning) {
+  return {
+    id, name, region,
+    hebrewDate: ev.getDate().toString(),
+    aliyot: aliyahList(leyning.fullkriyah),
+    maftir: maftirOf(leyning.fullkriyah),
+    summary: leyning.summary || null,
+    nusach: {
+      ashkenazi: cite(leyning.haft),
+      sefardi: leyning.seph ? cite(leyning.seph) : { sameAs: 'ashkenazi' },
+      chabad: leyning.chabad ? cite(leyning.chabad) : { sameAs: 'ashkenazi' },
+    },
+  };
+}
+// A reading with no aliyot, no maftir, and no haftarah carries nothing to
+// show -- a handful of Hebcal-flagged calendar events (Erev Purim, Erev
+// Tish'a B'Av) are like this and would otherwise render as a blank card.
+function isEmpty(entry) {
+  return entry.aliyot.length === 0 && !entry.maftir && !entry.nusach.ashkenazi;
+}
+
 const out = new Map();
 for (const il of [false, true]) {
+  const region = il ? 'israel' : 'diaspora';
   const events = HebrewCalendar.calendar({ start: new Date(2026, 0, 1), end: new Date(2034, 0, 1), il });
   for (const ev of events) {
     const f = ev.getFlags();
@@ -71,25 +123,44 @@ for (const il of [false, true]) {
     const rawDesc = ev.getDesc();
     if (SKIP.has(rawDesc)) continue;
     const desc = normalizeDesc(rawDesc);
+    if (variesByShabbat(desc) && isShabbat(ev)) continue; // captured separately below, shared across the family
+    const key = desc + '__' + (il ? 'IL' : 'DIASPORA');
+    if (out.has(key)) continue;
     let leyning;
     try { leyning = getLeyningForHoliday(ev, il); } catch (e) { continue; }
     if (!leyning) continue;
-    const key = desc + '__' + (il ? 'IL' : 'DIASPORA');
+    const entry = buildEntry(key, displayNameFor(leyning, desc), region, ev, leyning);
+    if (isEmpty(entry)) continue;
+    out.set(key, entry);
+  }
+}
+
+// Shared Shabbat-shaped entries for the two families above. Scans a wider
+// window since a specific month's/day's Shabbat coincidence can be rare,
+// but the FAMILY as a whole (any of 9 Rosh Chodesh months, any of several
+// Chol HaMoed days) lands on Shabbat almost every year.
+const SHABBAT_FAMILIES = [
+  { id: 'Shabbat Rosh Chodesh', test: (d) => ROSH_CHODESH_FAMILY.test(d) },
+  { id: 'Pesach Shabbat Chol ha-Moed', test: (d) => /^Pesach [IVX]+ \(CH''M\)$/.test(d) },
+  { id: 'Sukkot Shabbat Chol ha-Moed', test: (d) => /^Sukkot [IVX]+ \(CH''M\)$/.test(d) },
+];
+for (const il of [false, true]) {
+  const region = il ? 'israel' : 'diaspora';
+  const events = HebrewCalendar.calendar({ start: new Date(2026, 0, 1), end: new Date(2046, 0, 1), il });
+  for (const family of SHABBAT_FAMILIES) {
+    const key = family.id + '__' + (il ? 'IL' : 'DIASPORA');
     if (out.has(key)) continue;
-    out.set(key, {
-      id: key,
-      name: displayNameFor(leyning, desc),
-      region: il ? 'israel' : 'diaspora',
-      hebrewDate: ev.getDate().toString(),
-      aliyot: aliyahList(leyning.fullkriyah),
-      maftir: maftirOf(leyning.fullkriyah),
-      summary: leyning.summary || null,
-      nusach: {
-        ashkenazi: cite(leyning.haft),
-        sefardi: leyning.seph ? cite(leyning.seph) : { sameAs: 'ashkenazi' },
-        chabad: leyning.chabad ? cite(leyning.chabad) : { sameAs: 'ashkenazi' },
-      },
-    });
+    for (const ev of events) {
+      if (ev.getFlags() & 1024) continue;
+      if (!family.test(ev.getDesc()) || !isShabbat(ev)) continue;
+      let leyning;
+      try { leyning = getLeyningForHoliday(ev, il); } catch (e) { continue; }
+      if (!leyning) continue;
+      const entry = buildEntry(key, family.id, region, ev, leyning);
+      if (isEmpty(entry)) continue;
+      out.set(key, entry);
+      break;
+    }
   }
 }
 

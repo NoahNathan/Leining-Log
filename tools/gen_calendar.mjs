@@ -1,5 +1,5 @@
 import { HebrewCalendar } from '@hebcal/core';
-import { getLeyningForParshaHaShavua } from '@hebcal/leyning';
+import { getLeyningForParshaHaShavua, getLeyningForHoliday } from '@hebcal/leyning';
 import { writeFileSync, mkdirSync, readFileSync } from 'fs';
 
 mkdirSync('../data/calendar-100y', { recursive: true });
@@ -34,6 +34,41 @@ function normalizeHolidayDesc(desc) {
   return m ? 'Rosh Hashana I' : desc;
 }
 
+// Rosh Chodesh and Pesach/Sukkot Chol HaMoed read completely differently
+// when their date happens to land on Shabbat that year (see gen_chagim.mjs
+// for the full explanation and the shared "Shabbat Rosh Chodesh" / "...Chol
+// ha-Moed" entries it captures for this). On such a date:
+//  - Chol HaMoed always routes to the shared Shabbat entry -- there's no
+//    competing parsha reading that week to conflict with.
+//  - Rosh Chodesh only routes there if it's actually what gets read: when
+//    the same Shabbat is ALSO Shekalim/Zachor/Parah/HaChodesh, that takes
+//    priority and Rosh Chodesh's own maftir is superseded -- verified by
+//    comparing this event's own maftir against the parsha's actual winning
+//    one that week (from getLeyningForParshaHaShavua, which already
+//    resolves the priority correctly). If it doesn't match, this row is
+//    dropped entirely rather than showing a maftir/haftarah that isn't
+//    actually read that week.
+//
+//    Compared on MAFTIR, not haftarah: during the Three Weeks (Matot-Masei
+//    through Devarim), a Rosh-Chodesh-on-Shabbat that also falls on one of
+//    those parshiot gets a haftarah blended for that specific parsha
+//    (Hebcal's own `reason` still says "on Shabbat Rosh Chodesh") even
+//    though the maftir itself (Numbers 28:9-15) is unchanged -- comparing
+//    haftarah there would wrongly read as "superseded" and drop a row that
+//    genuinely still includes Rosh Chodesh.
+const ROSH_CHODESH_FAMILY = /^Rosh Chodesh /;
+const CHOL_HAMOED_FAMILY = /^(Pesach|Sukkot) [IVX]+ \(CH''M\)$/;
+function isShabbat(hd) { return hd.greg().getDay() === 6; }
+function sameMaftir(a, b) {
+  if (!a || !b) return false;
+  return a.k === b.k && a.b === b.b && a.e === b.e;
+}
+function sharedShabbatChagId(desc, region) {
+  if (ROSH_CHODESH_FAMILY.test(desc)) return `Shabbat Rosh Chodesh__${region}`;
+  const m = desc.match(/^(Pesach|Sukkot) [IVX]+ \(CH''M\)$/);
+  return m ? `${m[1]} Shabbat Chol ha-Moed__${region}` : null;
+}
+
 let totalRows = 0;
 const decadeSummaries = [];
 
@@ -42,12 +77,27 @@ for (let decadeStart = START_YEAR; decadeStart < END_YEAR; decadeStart += DECADE
   const rows = [];
   for (const il of [false, true]) {
     const region = il ? 'israel' : 'diaspora';
+    const regionTag = il ? 'IL' : 'DIASPORA';
     const events = HebrewCalendar.calendar({
       start: new Date(decadeStart, 0, 1),
       end: new Date(decadeEnd, 0, 1),
       il,
       sedrot: true,
     });
+
+    // Pass 1: every date's actual winning maftir, straight from the
+    // parsha's own leyning (which already resolves Rosh Chodesh vs.
+    // Shekalim/Zachor/Parah/HaChodesh priority correctly). Needed before
+    // pass 2 can tell whether a same-day Rosh Chodesh holiday event is
+    // genuinely what's read that week.
+    const parshaMaftirByDate = new Map();
+    for (const ev of events) {
+      if (!(ev.getFlags() & 1024)) continue;
+      let leyning;
+      try { leyning = getLeyningForParshaHaShavua(ev, il); } catch (e) { continue; }
+      parshaMaftirByDate.set(isoDate(ev.getDate()), leyning.fullkriyah?.M || null);
+    }
+
     for (const ev of events) {
       const f = ev.getFlags();
       const hd = ev.getDate();
@@ -85,9 +135,20 @@ for (let decadeStart = START_YEAR; decadeStart < END_YEAR; decadeStart += DECADE
         const rawDesc = ev.getDesc();
         if (SKIP_HOLIDAY_DESC.has(rawDesc)) continue;
         const desc = normalizeHolidayDesc(rawDesc);
+        let chagId = `${desc}__${regionTag}`;
+
+        if (isShabbat(hd) && (ROSH_CHODESH_FAMILY.test(desc) || CHOL_HAMOED_FAMILY.test(desc))) {
+          const dateISO = isoDate(hd);
+          if (ROSH_CHODESH_FAMILY.test(desc) && parshaMaftirByDate.has(dateISO)) {
+            let holidayLeyning;
+            try { holidayLeyning = getLeyningForHoliday(ev, il); } catch (e) { continue; }
+            if (!sameMaftir(holidayLeyning.fullkriyah?.M, parshaMaftirByDate.get(dateISO))) continue; // superseded this week
+          }
+          chagId = sharedShabbatChagId(desc, regionTag) || chagId;
+        }
+
         // Only include days that actually have a distinct Torah/haftarah reading
         // (matches the set already captured in chagim.json).
-        const chagId = `${desc}__${il ? 'IL' : 'DIASPORA'}`;
         if (!validChagIds.has(chagId)) continue;
         rows.push({
           date: isoDate(hd),

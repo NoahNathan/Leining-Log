@@ -1,6 +1,6 @@
 {
   "description": "The Five Megillot and their public reading occasions. This is NOT sourced from the Hebcal leyning API (which only covers Torah/haftarah readings) -- it is hand-authored from well-established custom, and timing in particular varies by kehillah more than the Torah-reading data above.",
-  "generatedAt": "2026-08-09T20:53:53.285Z",
+  "generatedAt": "2026-08-09T21:28:35.622Z",
   "megillot": [
     {
       "id": "Shir HaShirim",

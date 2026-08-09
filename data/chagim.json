@@ -1,8 +1,8 @@
 {
   "description": "Torah, maftir, and haftarah readings for every chag, fast day, Rosh Chodesh, and special Shabbat, for both Diaspora and Israel ('region': 'diaspora'|'israel'), sourced from the Hebcal @hebcal/leyning reference tables. Nusach (ashkenazi/sefardi/chabad) haftarah variants are included where those traditions differ; 'sameAs: ashkenazi' means no variance was found in this source. Run annotate.mjs afterwards to add hand-curated 'specialTrope' notes (well-established distinct cantillation/layout customs not covered by the Hebcal data itself); their absence on an entry does not mean 'no special customs exist', only that none are documented here yet.",
   "source": "@hebcal/leyning v10.0.0 (getLeyningForHoliday)",
-  "generatedAt": "2026-08-09T20:53:11.825Z",
-  "count": 114,
+  "generatedAt": "2026-08-09T21:28:09.287Z",
+  "count": 116,
   "chagim": [
     {
       "id": "Asara B'Tevet__DIASPORA",
@@ -705,67 +705,42 @@
       }
     },
     {
-      "id": "Erev Purim__DIASPORA",
-      "name": "Erev Purim",
+      "id": "Pesach III (CH''M)__DIASPORA",
+      "name": "Pesach Chol ha-Moed Day 1",
       "region": "diaspora",
-      "hebrewDate": "13 Adar 5786",
-      "aliyot": [],
-      "maftir": null,
-      "summary": "Esther 1:1-10:3",
-      "nusach": {
-        "ashkenazi": null,
-        "sefardi": {
-          "sameAs": "ashkenazi"
+      "hebrewDate": "17 Nisan 5788",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Exodus",
+          "start": "13:1",
+          "end": "13:4",
+          "verses": 4
         },
-        "chabad": {
-          "sameAs": "ashkenazi"
-        }
-      }
-    },
-    {
-      "id": "Erev Purim__IL",
-      "name": "Erev Purim",
-      "region": "israel",
-      "hebrewDate": "13 Adar 5786",
-      "aliyot": [],
-      "maftir": null,
-      "summary": "Esther 1:1-10:3",
-      "nusach": {
-        "ashkenazi": null,
-        "sefardi": {
-          "sameAs": "ashkenazi"
+        {
+          "aliyah": 2,
+          "book": "Exodus",
+          "start": "13:5",
+          "end": "13:10",
+          "verses": 6
         },
-        "chabad": {
-          "sameAs": "ashkenazi"
-        }
-      }
-    },
-    {
-      "id": "Erev Tish'a B'Av__DIASPORA",
-      "name": "Erev Tish'a B'Av",
-      "region": "diaspora",
-      "hebrewDate": "8 Av 5786",
-      "aliyot": [],
-      "maftir": null,
-      "summary": "Lamentations 1:1-5:22",
-      "nusach": {
-        "ashkenazi": null,
-        "sefardi": {
-          "sameAs": "ashkenazi"
+        {
+          "aliyah": 3,
+          "book": "Exodus",
+          "start": "13:11",
+          "end": "13:16",
+          "verses": 6
         },
-        "chabad": {
-          "sameAs": "ashkenazi"
+        {
+          "aliyah": 4,
+          "book": "Numbers",
+          "start": "28:19",
+          "end": "28:25",
+          "verses": 7
         }
-      }
-    },
-    {
-      "id": "Erev Tish'a B'Av__IL",
-      "name": "Erev Tish'a B'Av",
-      "region": "israel",
-      "hebrewDate": "8 Av 5786",
-      "aliyot": [],
+      ],
       "maftir": null,
-      "summary": "Lamentations 1:1-5:22",
+      "summary": "Exodus 13:1-16; Numbers 28:19-25",
       "nusach": {
         "ashkenazi": null,
         "sefardi": {
@@ -1215,6 +1190,53 @@
       }
     },
     {
+      "id": "Pesach III (CH''M)__IL",
+      "name": "Pesach III (CH''M)",
+      "region": "israel",
+      "hebrewDate": "17 Nisan 5788",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Exodus",
+          "start": "13:1",
+          "end": "13:4",
+          "verses": 4
+        },
+        {
+          "aliyah": 2,
+          "book": "Exodus",
+          "start": "13:5",
+          "end": "13:10",
+          "verses": 6
+        },
+        {
+          "aliyah": 3,
+          "book": "Exodus",
+          "start": "13:11",
+          "end": "13:16",
+          "verses": 6
+        },
+        {
+          "aliyah": 4,
+          "book": "Numbers",
+          "start": "28:19",
+          "end": "28:25",
+          "verses": 7
+        }
+      ],
+      "maftir": null,
+      "summary": "Exodus 13:1-16; Numbers 28:19-25",
+      "nusach": {
+        "ashkenazi": null,
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      }
+    },
+    {
       "id": "Pesach IV (CH''M)__IL",
       "name": "Pesach IV (CH''M)",
       "region": "israel",
@@ -1262,7 +1284,7 @@
       }
     },
     {
-      "id": "Pesach III (CH''M)__DIASPORA",
+      "id": "Pesach Shabbat Chol ha-Moed__DIASPORA",
       "name": "Pesach Shabbat Chol ha-Moed",
       "region": "diaspora",
       "hebrewDate": "17 Nisan 5786",
@@ -1340,7 +1362,7 @@
       }
     },
     {
-      "id": "Pesach III (CH''M)__IL",
+      "id": "Pesach Shabbat Chol ha-Moed__IL",
       "name": "Pesach Shabbat Chol ha-Moed",
       "region": "israel",
       "hebrewDate": "17 Nisan 5786",
@@ -3376,6 +3398,62 @@
       }
     },
     {
+      "id": "Shabbat Rosh Chodesh__DIASPORA",
+      "name": "Shabbat Rosh Chodesh",
+      "region": "diaspora",
+      "hebrewDate": "1 Iyyar 5786",
+      "aliyot": [],
+      "maftir": {
+        "book": "Numbers",
+        "start": "28:9",
+        "end": "28:15",
+        "verses": 7
+      },
+      "summary": null,
+      "nusach": {
+        "ashkenazi": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      }
+    },
+    {
+      "id": "Shabbat Rosh Chodesh__IL",
+      "name": "Shabbat Rosh Chodesh",
+      "region": "israel",
+      "hebrewDate": "1 Iyyar 5786",
+      "aliyot": [],
+      "maftir": {
+        "book": "Numbers",
+        "start": "28:9",
+        "end": "28:15",
+        "verses": 7
+      },
+      "summary": null,
+      "nusach": {
+        "ashkenazi": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      }
+    },
+    {
       "id": "Shabbat Shekalim__DIASPORA",
       "name": "Shabbat Shekalim",
       "region": "diaspora",
@@ -4808,6 +4886,162 @@
           "start": "8:2",
           "end": "8:21",
           "verses": 20
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      }
+    },
+    {
+      "id": "Sukkot Shabbat Chol ha-Moed__DIASPORA",
+      "name": "Sukkot Shabbat Chol ha-Moed",
+      "region": "diaspora",
+      "hebrewDate": "17 Tishrei 5789",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Exodus",
+          "start": "33:12",
+          "end": "33:16",
+          "verses": 5
+        },
+        {
+          "aliyah": 2,
+          "book": "Exodus",
+          "start": "33:17",
+          "end": "33:19",
+          "verses": 3
+        },
+        {
+          "aliyah": 3,
+          "book": "Exodus",
+          "start": "33:20",
+          "end": "33:23",
+          "verses": 4
+        },
+        {
+          "aliyah": 4,
+          "book": "Exodus",
+          "start": "34:1",
+          "end": "34:3",
+          "verses": 3
+        },
+        {
+          "aliyah": 5,
+          "book": "Exodus",
+          "start": "34:4",
+          "end": "34:10",
+          "verses": 7
+        },
+        {
+          "aliyah": 6,
+          "book": "Exodus",
+          "start": "34:11",
+          "end": "34:17",
+          "verses": 7
+        },
+        {
+          "aliyah": 7,
+          "book": "Exodus",
+          "start": "34:18",
+          "end": "34:26",
+          "verses": 9
+        }
+      ],
+      "maftir": {
+        "book": "Numbers",
+        "start": "29:17",
+        "end": "29:22",
+        "verses": 6
+      },
+      "summary": "Exodus 33:12-34:26; Numbers 29:17-22; Ecclesiastes 1:1-12:14",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Ezekiel",
+          "start": "38:18",
+          "end": "39:16",
+          "verses": 22
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      }
+    },
+    {
+      "id": "Sukkot Shabbat Chol ha-Moed__IL",
+      "name": "Sukkot Shabbat Chol ha-Moed",
+      "region": "israel",
+      "hebrewDate": "17 Tishrei 5789",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Exodus",
+          "start": "33:12",
+          "end": "33:16",
+          "verses": 5
+        },
+        {
+          "aliyah": 2,
+          "book": "Exodus",
+          "start": "33:17",
+          "end": "33:19",
+          "verses": 3
+        },
+        {
+          "aliyah": 3,
+          "book": "Exodus",
+          "start": "33:20",
+          "end": "33:23",
+          "verses": 4
+        },
+        {
+          "aliyah": 4,
+          "book": "Exodus",
+          "start": "34:1",
+          "end": "34:3",
+          "verses": 3
+        },
+        {
+          "aliyah": 5,
+          "book": "Exodus",
+          "start": "34:4",
+          "end": "34:10",
+          "verses": 7
+        },
+        {
+          "aliyah": 6,
+          "book": "Exodus",
+          "start": "34:11",
+          "end": "34:17",
+          "verses": 7
+        },
+        {
+          "aliyah": 7,
+          "book": "Exodus",
+          "start": "34:18",
+          "end": "34:26",
+          "verses": 9
+        }
+      ],
+      "maftir": {
+        "book": "Numbers",
+        "start": "29:20",
+        "end": "29:25",
+        "verses": 6
+      },
+      "summary": "Exodus 33:12-34:26; Numbers 29:20-25; Ecclesiastes 1:1-12:14",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Ezekiel",
+          "start": "38:18",
+          "end": "39:16",
+          "verses": 22
         },
         "sefardi": {
           "sameAs": "ashkenazi"

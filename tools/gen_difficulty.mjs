@@ -23,10 +23,26 @@ const wordDifficulty = JSON.parse(readFileSync('../data/word-difficulty.json', '
 const PROFILES = {
   NARRATIVE:  { trope: 3, repetition: 3, hidden: 2 }, // no repetition to lean on, but nothing else hidden either
   GENEALOGY:  { trope: 4, repetition: 2, hidden: 6 }, // formulaic lists (census, gift lists) -- the pattern eases it; tracking which entry you're on is the real risk
-  POETRY:     { trope: 9, repetition: 3, hidden: 8 }, // Shirah layout + rare trope combos
+  // POETRY's hidden baseline was 8 and is now 3. Measured evidence: across
+  // the 56 poetry-tagged aliyot, raw gotcha points average 2.42 versus 2.48
+  // for everything else -- statistically indistinguishable. The tag was
+  // adding difficulty that nothing in the text supports, and doing it three
+  // times over: the melody and layout are already carried by trope
+  // (tropeFloor 9), and whatever the words cost is already carried by the
+  // measured vocabulary score. The one genuine gotcha unique to a Song --
+  // losing your place in the two-column layout -- is now an explicit +2 on
+  // the Song passages themselves rather than a blanket parsha-wide 8.
+  POETRY:     { trope: 9, repetition: 3, hidden: 3 },
   LEGAL:      { trope: 4, repetition: 3, hidden: 5 }, // dense mitzvot, frequent topic shifts
   RITUAL:     { trope: 5, repetition: 3, hidden: 5 }, // technical/priestly/construction content, often formulaic itself
-  TOCHACHA:   { trope: 4, repetition: 3, hidden: 8 }, // emotionally loaded, read fast & quiet
+  // TOCHACHA's hidden baseline dropped 8 -> 5 (i.e. no special baseline) for
+  // the same reason as POETRY. The Tochacha is ONE aliyah in Bechukotai and
+  // two in Ki Tavo, but a parsha-level tag inflated all 14: Bechukotai 7 has
+  // zero measured gotcha points and was scoring 7 purely by association. The
+  // read-fast-and-quiet custom is real, so its weight moved onto the actual
+  // curse aliyot as a larger explicit override, leaving their scores where
+  // they were while the surrounding aliyot fall back to ordinary LEGAL.
+  TOCHACHA:   { trope: 4, repetition: 3, hidden: 5 },
 };
 
 // Parsha-level profile blend: [primary, secondary?]
@@ -88,12 +104,12 @@ const ALIYAH_OVERRIDES = {
   'Beshalach:4':   { trope: +3, tropeFloor: 9, hidden: +2, note: 'Shirat HaYam / Az Yashir (Ex 15:1-19) -- special brick-layout & elevated melody' },
   'Yitro:6':       { trope: +3, tropeFloor: 9, hidden: +2, note: 'Aseret HaDibrot (Ex 20:2-14) -- ta\'am elyon alternate cantillation' },
   'Vaetchanan:4':  { trope: +2, tropeFloor: 9, hidden: +1, note: 'Aseret HaDibrot repeated (Deut 5:6-18) -- ta\'am elyon in many congregations' },
-  "Ha'azinu:1":    { tropeFloor: 9, hidden: +1, note: 'Shirat Ha\'azinu (Deut 32:1-43) -- its own melody, read from a two-column layout' },
-  "Ha'azinu:2":    { tropeFloor: 9, hidden: +1, note: 'Shirat Ha\'azinu -- its own melody, read from a two-column layout' },
-  "Ha'azinu:3":    { tropeFloor: 9, hidden: +1, note: 'Shirat Ha\'azinu -- its own melody, read from a two-column layout' },
-  "Ha'azinu:4":    { tropeFloor: 9, hidden: +1, note: 'Shirat Ha\'azinu -- its own melody, read from a two-column layout' },
-  "Ha'azinu:5":    { tropeFloor: 9, hidden: +1, note: 'Shirat Ha\'azinu -- its own melody, read from a two-column layout' },
-  "Ha'azinu:6":    { tropeFloor: 9, hidden: +1, note: 'Shirat Ha\'azinu concludes (through Deut 32:43) -- its own melody, read from a two-column layout' },
+  "Ha'azinu:1":    { tropeFloor: 9, hidden: +2, note: 'Shirat Ha\'azinu (Deut 32:1-43) -- its own melody, read from a two-column layout' },
+  "Ha'azinu:2":    { tropeFloor: 9, hidden: +2, note: 'Shirat Ha\'azinu -- its own melody, read from a two-column layout' },
+  "Ha'azinu:3":    { tropeFloor: 9, hidden: +2, note: 'Shirat Ha\'azinu -- its own melody, read from a two-column layout' },
+  "Ha'azinu:4":    { tropeFloor: 9, hidden: +2, note: 'Shirat Ha\'azinu -- its own melody, read from a two-column layout' },
+  "Ha'azinu:5":    { tropeFloor: 9, hidden: +2, note: 'Shirat Ha\'azinu -- its own melody, read from a two-column layout' },
+  "Ha'azinu:6":    { tropeFloor: 9, hidden: +2, note: 'Shirat Ha\'azinu concludes (through Deut 32:43) -- its own melody, read from a two-column layout' },
   // NOTE: the four shalshelet entries that used to live here (Vayera:3,
   // Chayei Sara:3, Vayeshev:6, Tzav:6) have been REMOVED -- rare trope marks
   // are now detected directly from the cantillation in the text. The
@@ -114,10 +130,10 @@ const ALIYAH_OVERRIDES = {
   'Nasso:7':       { hidden: +1, note: 'Nesiim offerings conclude (Num 7:72-89) -- same formula, same risk of losing track of which day/nasi you\'re on' },
   'Masei:2':       { hidden: +1, note: 'Bulk of the 42 journey-stations list (Num 33:11-49) -- a long sequence of distinct place names to keep straight' },
   'Matot-Masei:4': { hidden: +1, note: 'Contains the bulk of the 42 journey-stations list (Num 33:1-49) alongside the Reuven/Gad settlement narrative -- many station names to keep straight' },
-  'Bechukotai:3':  { hidden: +3, note: 'Tochacha (curses, Lev 26:14-46) -- traditional custom to read quickly and quietly' },
-  'Behar-Bechukotai:5': { hidden: +3, note: 'Tochacha (curses, Lev 26:14-46) -- traditional custom to read quickly and quietly' },
-  'Ki Tavo:5':     { hidden: +1, note: 'The 12 curses of Har Eival (Deut 27:15-26) -- repetitive "cursed be... amen" refrain' },
-  'Ki Tavo:6':     { hidden: +3, note: 'Tochacha (curses, Deut 28:15-68) -- traditional custom to read quickly and quietly; the longest aliyah in the Torah by verse count' },
+  'Bechukotai:3':  { hidden: +5, note: 'Tochacha (curses, Lev 26:14-46) -- traditional custom to read quickly and quietly' },
+  'Behar-Bechukotai:5': { hidden: +5, note: 'Tochacha (curses, Lev 26:14-46) -- traditional custom to read quickly and quietly' },
+  'Ki Tavo:5':     { hidden: +2, note: 'The 12 curses of Har Eival (Deut 27:15-26) -- repetitive "cursed be... amen" refrain' },
+  'Ki Tavo:6':     { hidden: +5, note: 'Tochacha (curses, Deut 28:15-68) -- traditional custom to read quickly and quietly; the longest aliyah in the Torah by verse count' },
   'Chukat:6':      { trope: +1, hidden: +1, note: 'Includes the archaic poetic fragment "Az Yashir Yisrael" and a quote from the Book of the Wars of Hashem' },
   'Chukat-Balak:3':{ trope: +1, hidden: +1, note: 'Includes the archaic poetic fragment "Az Yashir Yisrael" (Num 21:17-20) and a quote from the Book of the Wars of Hashem' },
 };

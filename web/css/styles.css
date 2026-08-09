@@ -520,6 +520,7 @@ table { width: 100%; border-collapse: collapse; }
   font-weight: 700;
 }
 .content-tag-famous { background: var(--accent-soft); border-color: transparent; color: var(--accent-2); }
+.content-tag-record { background: var(--accent-soft); border-color: transparent; color: var(--accent-2); }
 
 .aliyah-row.expandable { cursor: pointer; }
 .aliyah-row.expandable:hover { background: var(--accent-soft); }

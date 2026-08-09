@@ -1,0 +1,989 @@
+{
+  "description": "Verse/word counts for every haftarah nusach variant (ashkenazi, sefardi, chabad), used only to identify the longest and shortest reading within each tradition on the site. NOT a difficulty measurement -- only the ashkenazi reading has full difficulty stats (see haftarah-difficulty.json); sefardi and chabad are not otherwise scored. Word counts are computed from the same Masoretic Nevi'im text as the difficulty pipeline. A nusach entry that is textually identical to another (e.g. most chabad readings are the same as ashkenazi) reuses that reading's counts and carries a 'sameAs' field.",
+  "generatedAt": "2026-08-09T15:14:57.925Z",
+  "lengths": {
+    "Bereshit": {
+      "ashkenazi": {
+        "verseCount": 31,
+        "wordCount": 386
+      },
+      "sefardi": {
+        "verseCount": 17,
+        "wordCount": 188
+      },
+      "chabad": {
+        "verseCount": 31,
+        "wordCount": 386,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Noach": {
+      "ashkenazi": {
+        "verseCount": 22,
+        "wordCount": 297
+      },
+      "sefardi": {
+        "verseCount": 10,
+        "wordCount": 137
+      },
+      "chabad": {
+        "verseCount": 22,
+        "wordCount": 297,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Lech-Lecha": {
+      "ashkenazi": {
+        "verseCount": 21,
+        "wordCount": 246
+      },
+      "sefardi": {
+        "verseCount": 21,
+        "wordCount": 246,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 21,
+        "wordCount": 246,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Vayera": {
+      "ashkenazi": {
+        "verseCount": 37,
+        "wordCount": 575
+      },
+      "sefardi": {
+        "verseCount": 23,
+        "wordCount": 352
+      },
+      "chabad": {
+        "verseCount": 37,
+        "wordCount": 575,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Chayei Sara": {
+      "ashkenazi": {
+        "verseCount": 31,
+        "wordCount": 462
+      },
+      "sefardi": {
+        "verseCount": 31,
+        "wordCount": 462,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 31,
+        "wordCount": 462,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Toldot": {
+      "ashkenazi": {
+        "verseCount": 21,
+        "wordCount": 341
+      },
+      "sefardi": {
+        "verseCount": 21,
+        "wordCount": 341,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 21,
+        "wordCount": 341,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Vayetzei": {
+      "ashkenazi": {
+        "verseCount": 28,
+        "wordCount": 306
+      },
+      "sefardi": {
+        "verseCount": 17,
+        "wordCount": 198
+      },
+      "chabad": {
+        "verseCount": 28,
+        "wordCount": 306,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Vayishlach": {
+      "ashkenazi": {
+        "verseCount": 21,
+        "wordCount": 293
+      },
+      "sefardi": {
+        "verseCount": 21,
+        "wordCount": 293,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 21,
+        "wordCount": 293,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Vayeshev": {
+      "ashkenazi": {
+        "verseCount": 19,
+        "wordCount": 248
+      },
+      "sefardi": {
+        "verseCount": 19,
+        "wordCount": 248,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 19,
+        "wordCount": 248,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Miketz": {
+      "ashkenazi": {
+        "verseCount": 15,
+        "wordCount": 231
+      },
+      "sefardi": {
+        "verseCount": 15,
+        "wordCount": 231,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 15,
+        "wordCount": 231,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Vayigash": {
+      "ashkenazi": {
+        "verseCount": 14,
+        "wordCount": 244
+      },
+      "sefardi": {
+        "verseCount": 14,
+        "wordCount": 244,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 14,
+        "wordCount": 244,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Vayechi": {
+      "ashkenazi": {
+        "verseCount": 12,
+        "wordCount": 207
+      },
+      "sefardi": {
+        "verseCount": 12,
+        "wordCount": 207,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 12,
+        "wordCount": 207,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Shemot": {
+      "ashkenazi": {
+        "verseCount": 23,
+        "wordCount": 324
+      },
+      "sefardi": {
+        "verseCount": 22,
+        "wordCount": 306
+      },
+      "chabad": {
+        "verseCount": 23,
+        "wordCount": 324,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Vaera": {
+      "ashkenazi": {
+        "verseCount": 23,
+        "wordCount": 392
+      },
+      "sefardi": {
+        "verseCount": 23,
+        "wordCount": 392,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 23,
+        "wordCount": 392,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Bo": {
+      "ashkenazi": {
+        "verseCount": 16,
+        "wordCount": 239
+      },
+      "sefardi": {
+        "verseCount": 16,
+        "wordCount": 239,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 16,
+        "wordCount": 239,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Beshalach": {
+      "ashkenazi": {
+        "verseCount": 52,
+        "wordCount": 744
+      },
+      "sefardi": {
+        "verseCount": 31,
+        "wordCount": 364
+      },
+      "chabad": {
+        "verseCount": 52,
+        "wordCount": 744,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Yitro": {
+      "ashkenazi": {
+        "verseCount": 21,
+        "wordCount": 338
+      },
+      "sefardi": {
+        "verseCount": 13,
+        "wordCount": 188
+      },
+      "chabad": {
+        "verseCount": 21,
+        "wordCount": 338,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Mishpatim": {
+      "ashkenazi": {
+        "verseCount": 17,
+        "wordCount": 320
+      },
+      "sefardi": {
+        "verseCount": 17,
+        "wordCount": 320,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 17,
+        "wordCount": 320,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Terumah": {
+      "ashkenazi": {
+        "verseCount": 20,
+        "wordCount": 290
+      },
+      "sefardi": {
+        "verseCount": 20,
+        "wordCount": 290,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 20,
+        "wordCount": 290,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Tetzaveh": {
+      "ashkenazi": {
+        "verseCount": 18,
+        "wordCount": 293
+      },
+      "sefardi": {
+        "verseCount": 18,
+        "wordCount": 293,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 18,
+        "wordCount": 293,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Ki Tisa": {
+      "ashkenazi": {
+        "verseCount": 39,
+        "wordCount": 633
+      },
+      "sefardi": {
+        "verseCount": 20,
+        "wordCount": 344
+      },
+      "chabad": {
+        "verseCount": 39,
+        "wordCount": 633,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Vayakhel": {
+      "ashkenazi": {
+        "verseCount": 11,
+        "wordCount": 169
+      },
+      "sefardi": {
+        "verseCount": 14,
+        "wordCount": 244
+      },
+      "chabad": {
+        "verseCount": 11,
+        "wordCount": 169,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Pekudei": {
+      "ashkenazi": {
+        "verseCount": 22,
+        "wordCount": 353
+      },
+      "sefardi": {
+        "verseCount": 11,
+        "wordCount": 169
+      },
+      "chabad": {
+        "verseCount": 22,
+        "wordCount": 353,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Vayikra": {
+      "ashkenazi": {
+        "verseCount": 31,
+        "wordCount": 407
+      },
+      "sefardi": {
+        "verseCount": 31,
+        "wordCount": 407,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 31,
+        "wordCount": 407,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Tzav": {
+      "ashkenazi": {
+        "verseCount": 19,
+        "wordCount": 338
+      },
+      "sefardi": {
+        "verseCount": 19,
+        "wordCount": 338,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 10,
+        "wordCount": 168
+      }
+    },
+    "Shmini": {
+      "ashkenazi": {
+        "verseCount": 40,
+        "wordCount": 633
+      },
+      "sefardi": {
+        "verseCount": 19,
+        "wordCount": 305
+      },
+      "chabad": {
+        "verseCount": 40,
+        "wordCount": 633,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Tazria": {
+      "ashkenazi": {
+        "verseCount": 22,
+        "wordCount": 390
+      },
+      "sefardi": {
+        "verseCount": 22,
+        "wordCount": 390,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 22,
+        "wordCount": 390,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Metzora": {
+      "ashkenazi": {
+        "verseCount": 18,
+        "wordCount": 370
+      },
+      "sefardi": {
+        "verseCount": 18,
+        "wordCount": 370,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 18,
+        "wordCount": 370,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Achrei Mot": {
+      "ashkenazi": {
+        "verseCount": 9,
+        "wordCount": 149
+      },
+      "sefardi": {
+        "verseCount": 16,
+        "wordCount": 188
+      },
+      "chabad": {
+        "verseCount": 9,
+        "wordCount": 149,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Kedoshim": {
+      "ashkenazi": {
+        "verseCount": 19,
+        "wordCount": 228
+      },
+      "sefardi": {
+        "verseCount": 19,
+        "wordCount": 293
+      },
+      "chabad": {
+        "verseCount": 19,
+        "wordCount": 228,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Emor": {
+      "ashkenazi": {
+        "verseCount": 17,
+        "wordCount": 255
+      },
+      "sefardi": {
+        "verseCount": 17,
+        "wordCount": 255,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 17,
+        "wordCount": 255,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Behar": {
+      "ashkenazi": {
+        "verseCount": 22,
+        "wordCount": 351
+      },
+      "sefardi": {
+        "verseCount": 22,
+        "wordCount": 351,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 17,
+        "wordCount": 275
+      }
+    },
+    "Bechukotai": {
+      "ashkenazi": {
+        "verseCount": 17,
+        "wordCount": 228
+      },
+      "sefardi": {
+        "verseCount": 17,
+        "wordCount": 228,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 17,
+        "wordCount": 228,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Bamidbar": {
+      "ashkenazi": {
+        "verseCount": 22,
+        "wordCount": 298
+      },
+      "sefardi": {
+        "verseCount": 22,
+        "wordCount": 298,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 22,
+        "wordCount": 298,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Nasso": {
+      "ashkenazi": {
+        "verseCount": 24,
+        "wordCount": 383
+      },
+      "sefardi": {
+        "verseCount": 24,
+        "wordCount": 383,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 24,
+        "wordCount": 383,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Beha'alotcha": {
+      "ashkenazi": {
+        "verseCount": 21,
+        "wordCount": 316
+      },
+      "sefardi": {
+        "verseCount": 21,
+        "wordCount": 316,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 21,
+        "wordCount": 316,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Sh'lach": {
+      "ashkenazi": {
+        "verseCount": 24,
+        "wordCount": 405
+      },
+      "sefardi": {
+        "verseCount": 24,
+        "wordCount": 405,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 24,
+        "wordCount": 405,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Korach": {
+      "ashkenazi": {
+        "verseCount": 24,
+        "wordCount": 425
+      },
+      "sefardi": {
+        "verseCount": 24,
+        "wordCount": 425,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 24,
+        "wordCount": 425,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Chukat": {
+      "ashkenazi": {
+        "verseCount": 33,
+        "wordCount": 533
+      },
+      "sefardi": {
+        "verseCount": 33,
+        "wordCount": 533,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 33,
+        "wordCount": 533,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Balak": {
+      "ashkenazi": {
+        "verseCount": 17,
+        "wordCount": 209
+      },
+      "sefardi": {
+        "verseCount": 17,
+        "wordCount": 209,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 17,
+        "wordCount": 209,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Pinchas": {
+      "ashkenazi": {
+        "verseCount": 22,
+        "wordCount": 386
+      },
+      "sefardi": {
+        "verseCount": 22,
+        "wordCount": 386,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 22,
+        "wordCount": 386,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Matot": {
+      "ashkenazi": {
+        "verseCount": 22,
+        "wordCount": 306
+      },
+      "sefardi": {
+        "verseCount": 22,
+        "wordCount": 306,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 22,
+        "wordCount": 306,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Masei": {
+      "ashkenazi": {
+        "verseCount": 26,
+        "wordCount": 381
+      },
+      "sefardi": {
+        "verseCount": 27,
+        "wordCount": 395
+      },
+      "chabad": {
+        "verseCount": 26,
+        "wordCount": 381,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Devarim": {
+      "ashkenazi": {
+        "verseCount": 27,
+        "wordCount": 324
+      },
+      "sefardi": {
+        "verseCount": 27,
+        "wordCount": 324,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 27,
+        "wordCount": 324,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Vaetchanan": {
+      "ashkenazi": {
+        "verseCount": 26,
+        "wordCount": 302
+      },
+      "sefardi": {
+        "verseCount": 26,
+        "wordCount": 302,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 26,
+        "wordCount": 302,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Eikev": {
+      "ashkenazi": {
+        "verseCount": 27,
+        "wordCount": 399
+      },
+      "sefardi": {
+        "verseCount": 27,
+        "wordCount": 399,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 27,
+        "wordCount": 399,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Re'eh": {
+      "ashkenazi": {
+        "verseCount": 12,
+        "wordCount": 160
+      },
+      "sefardi": {
+        "verseCount": 12,
+        "wordCount": 160,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 12,
+        "wordCount": 160,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Shoftim": {
+      "ashkenazi": {
+        "verseCount": 24,
+        "wordCount": 332
+      },
+      "sefardi": {
+        "verseCount": 24,
+        "wordCount": 332,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 24,
+        "wordCount": 332,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Ki Teitzei": {
+      "ashkenazi": {
+        "verseCount": 10,
+        "wordCount": 137
+      },
+      "sefardi": {
+        "verseCount": 10,
+        "wordCount": 137,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 10,
+        "wordCount": 137,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Ki Tavo": {
+      "ashkenazi": {
+        "verseCount": 22,
+        "wordCount": 297
+      },
+      "sefardi": {
+        "verseCount": 22,
+        "wordCount": 297,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 22,
+        "wordCount": 297,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Nitzavim": {
+      "ashkenazi": {
+        "verseCount": 23,
+        "wordCount": 331
+      },
+      "sefardi": {
+        "verseCount": 23,
+        "wordCount": 331,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 23,
+        "wordCount": 331,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Vayeilech": {
+      "ashkenazi": {
+        "verseCount": 16,
+        "wordCount": 240
+      },
+      "sefardi": {
+        "verseCount": 16,
+        "wordCount": 240,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 16,
+        "wordCount": 240,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Ha'azinu": {
+      "ashkenazi": {
+        "verseCount": 51,
+        "wordCount": 394
+      },
+      "sefardi": {
+        "verseCount": 51,
+        "wordCount": 394,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 51,
+        "wordCount": 394,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Vezot Haberakhah": {
+      "ashkenazi": {
+        "verseCount": 18,
+        "wordCount": 320
+      },
+      "sefardi": {
+        "verseCount": 9,
+        "wordCount": 159
+      },
+      "chabad": {
+        "verseCount": 18,
+        "wordCount": 320,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Vayakhel-Pekudei": {
+      "ashkenazi": {
+        "verseCount": 22,
+        "wordCount": 353
+      },
+      "sefardi": {
+        "verseCount": 11,
+        "wordCount": 169
+      },
+      "chabad": {
+        "verseCount": 22,
+        "wordCount": 353,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Tazria-Metzora": {
+      "ashkenazi": {
+        "verseCount": 18,
+        "wordCount": 370
+      },
+      "sefardi": {
+        "verseCount": 18,
+        "wordCount": 370,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 18,
+        "wordCount": 370,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Achrei Mot-Kedoshim": {
+      "ashkenazi": {
+        "verseCount": 9,
+        "wordCount": 149
+      },
+      "sefardi": {
+        "verseCount": 19,
+        "wordCount": 293
+      },
+      "chabad": {
+        "verseCount": 9,
+        "wordCount": 149,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Behar-Bechukotai": {
+      "ashkenazi": {
+        "verseCount": 17,
+        "wordCount": 228
+      },
+      "sefardi": {
+        "verseCount": 17,
+        "wordCount": 228,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 17,
+        "wordCount": 228,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Chukat-Balak": {
+      "ashkenazi": {
+        "verseCount": 17,
+        "wordCount": 209
+      },
+      "sefardi": {
+        "verseCount": 17,
+        "wordCount": 209,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 17,
+        "wordCount": 209,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Matot-Masei": {
+      "ashkenazi": {
+        "verseCount": 26,
+        "wordCount": 381
+      },
+      "sefardi": {
+        "verseCount": 27,
+        "wordCount": 395
+      },
+      "chabad": {
+        "verseCount": 26,
+        "wordCount": 381,
+        "sameAs": "ashkenazi"
+      }
+    },
+    "Nitzavim-Vayeilech": {
+      "ashkenazi": {
+        "verseCount": 23,
+        "wordCount": 331
+      },
+      "sefardi": {
+        "verseCount": 23,
+        "wordCount": 331,
+        "sameAs": "ashkenazi"
+      },
+      "chabad": {
+        "verseCount": 23,
+        "wordCount": 331,
+        "sameAs": "ashkenazi"
+      }
+    }
+  },
+  "records": {
+    "ashkenazi": {
+      "longest": [
+        "Beshalach"
+      ],
+      "shortest": [
+        "Ki Teitzei"
+      ]
+    },
+    "sefardi": {
+      "longest": [
+        "Chukat"
+      ],
+      "shortest": [
+        "Noach",
+        "Ki Teitzei"
+      ]
+    },
+    "chabad": {
+      "longest": [
+        "Beshalach"
+      ],
+      "shortest": [
+        "Ki Teitzei"
+      ]
+    }
+  }
+}

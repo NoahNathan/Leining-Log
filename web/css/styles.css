@@ -460,6 +460,8 @@ body { min-height: 100vh; display: flex; flex-direction: column; }
   max-width: 320px;
 }
 .nusach-name { display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); font-weight: 700; }
+.nusach-name.expandable { cursor: pointer; }
+.nusach-name.expandable:hover { color: var(--accent-2); }
 .nusach-cite { font-size: 0.9rem; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .nusach-note { margin: 6px 0 0; }
 

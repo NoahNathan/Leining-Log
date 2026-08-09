@@ -153,11 +153,41 @@ function clamp10(n) { return Math.max(0, Math.min(10, Math.round(n))); }
 // and only rewards aliyot that are actually unusual, in line with how many
 // pairs realistically occur (see the corpus distribution in
 // difficulty-rubric.md).
-function lookAlikeBump(wd) {
-  const n = wd ? wd.lookAlikePairCount : 0;
-  if (n >= 6) return 3;
-  if (n >= 4) return 2;
-  if (n >= 2) return 1;
+// All the text-measured gotcha signals, pooled into one weighted bump rather
+// than several independent ones that could stack unpredictably.
+//
+// The weights reflect what actually catches readers out on an unvocalised
+// scroll. Two words with identical consonants differing only in nekudot
+// (אֹתוֹ / אִתּוֹ) are the worst case -- there is nothing on the parchment to
+// tell them apart -- and formal Ketiv/Qere is the same problem by Masoretic
+// decree. A one-letter ו/י near-miss is milder: it is at least visible if
+// you look. Rare cantillation and dense runs of unfamiliar names are real
+// but secondary.
+//
+// Counts are used, not just presence. Previously any number of Ketiv/Qere
+// scored a flat +1, so an aliyah with seven of them ranked level with one
+// that had a single instance; 44 aliyot carry two or more.
+function measuredGotchaBump(wd) {
+  if (!wd) return 0;
+  const homographs = wd.homographPairCount || 0;
+  const nearMisses = wd.nearMissPairCount || 0;
+  const ambiguous = (wd.ambiguousSpellingExamples || []).length;
+  const rareTrope = (wd.rareTropeMarks || []).length;
+  const names = wd.properNames || 1; // 1-10 percentile of proper-name density
+
+  let pts = 0;
+  pts += homographs * 2.0; // identical letters, different nekudot
+  pts += ambiguous * 1.5;  // הוא/הִיא and formal Ketiv/Qere
+  pts += rareTrope * 2.0;  // shalshelet / yerach ben yomo / merkha kefula
+  pts += nearMisses * 0.5; // one internal ו/י apart
+  if (names >= 9) pts += 1.5;
+  else if (names >= 7) pts += 0.75;
+
+  if (pts >= 8) return 5;
+  if (pts >= 5.5) return 4;
+  if (pts >= 3.5) return 3;
+  if (pts >= 2) return 2;
+  if (pts >= 1) return 1;
   return 0;
 }
 function blendProfile(tags) {
@@ -229,14 +259,7 @@ function scoreReadingRaw(id, items, tags, overridesMap, familiarMap) {
     // formulaicity (1-10, higher = more repetitive) is inverted into a
     // "how much genuinely novel text" score that adds to difficulty.
     const repetition = clamp10((wd ? 11 - wd.formulaicity : base.repetition) + (ov.repetition || 0));
-    const ambiguousBump = wd && wd.ambiguousSpellingExamples && wd.ambiguousSpellingExamples.length ? 1 : 0;
-    // A shalshelet / yerach ben yomo / merkha kefula is a discrete "you may
-    // not have met this mark in years" event rather than a density, so it
-    // lands in gotchas, matching the +2 the hand-written shalshelet
-    // overrides used to apply -- now detected from the text for all three
-    // marks instead of just the four shalshelets someone remembered.
-    const rareTropeBump = wd && wd.rareTropeMarks && wd.rareTropeMarks.length ? 2 : 0;
-    const hidden = clamp10(base.hidden + (ov.hidden || 0) + (fam.hidden || 0) + ambiguousBump + rareTropeBump + lookAlikeBump(wd));
+    const hidden = clamp10(base.hidden + (ov.hidden || 0) + (fam.hidden || 0) + measuredGotchaBump(wd));
     const length = lengthScore(wd ? wd.wordCount : Math.round(item.verses * MEAN_WORDS_PER_VERSE));
     const rawFinal = (length*RUBRIC_WEIGHTS.length + vocab*RUBRIC_WEIGHTS.vocab + trope*RUBRIC_WEIGHTS.trope +
                        repetition*RUBRIC_WEIGHTS.repetition + hidden*RUBRIC_WEIGHTS.hidden) / TOTAL_WEIGHT;

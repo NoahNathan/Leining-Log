@@ -27,7 +27,7 @@ export async function renderHowItWorks(container) {
       el('li', {}, [el('strong', {}, 'Vocabulary'), ' -- how unusual the actual words are, and how tricky they are to pronounce. Measured from the real text, not guessed.']),
       el('li', {}, [el('strong', {}, 'Trope'), ' -- how many genuinely uncommon cantillation marks the passage actually contains, counted mark by mark, plus whether it uses a special melody (like the Aseret HaDibrot, Az Yashir, or Ha\'azinu).']),
       el('li', {}, [el('strong', {}, 'Repetition'), ' -- how formulaic the text actually is, measured from the words themselves. This ', el('em', {}, 'lowers'), ' difficulty: once you have the pattern down, each repeat is easier than the same amount of brand-new text.']),
-      el('li', {}, [el('strong', {}, 'Gotchas'), ' -- easy-to-fumble details the other four don\'t capture: rare trope marks, passages customarily read quietly, text only read once a year with little chance to practice, or words that look the same without nikkud but are read differently.']),
+      el('li', {}, [el('strong', {}, 'Gotchas'), ' -- easy-to-fumble details the other four don\'t capture. Mostly words that look identical without nikkud but are read differently, and formal Ketiv/Qere; then rare trope marks, dense runs of unfamiliar names, passages customarily read quietly, and text read only once a year with little chance to practice.']),
     ]),
   ));
 
@@ -59,7 +59,8 @@ export async function renderHowItWorks(container) {
       el('li', {}, [el('strong', {}, 'One letter apart'), ' -- like עד "until" vs. עוד "still", or בן "son" vs. בין "between".']),
     ]),
     p('When an aliyah has any of these pairs, up to 3 are shown in the "why" breakdown as a heads-up (identical-spelling pairs first, since they\'re the more severe kind).'),
-    p('Most aliyot have zero or one such pair, which is common enough that it doesn\'t add anything to the score -- but an aliyah with several is genuinely more of a minefield, so 2-3 pairs adds a small bump to Gotchas, 4-5 a bit more, and 6+ (about 1 in 50 aliyot) the most. For the one-letter-apart flavor, there\'s still no reliable way to tell from spelling alone whether a given pair is truly two different words or just the same root written two different ways, so that part measures density of near-identical spellings, not a confirmed count of real traps.'),
+    p('The two flavors are no longer weighted the same. An identical-letters pair counts four times as much toward Gotchas as a one-letter-apart pair, because there is genuinely nothing on the parchment to tell the first kind apart, while the second is at least visible if you look. Formal Ketiv/Qere is weighted close to the identical-letters case, and counted rather than just noted -- an aliyah with seven of them now scores well above one with a single instance, which was not true before.'),
+    p('For the one-letter-apart flavor, there\'s still no reliable way to tell from spelling alone whether a given pair is truly two different words or just the same root written two different ways, so that part measures density of near-identical spellings, not a confirmed count of real traps.'),
   ));
 
   container.append(section('Some passages get an easier score because they\'re familiar',

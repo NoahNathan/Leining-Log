@@ -237,6 +237,23 @@ function repeatedVerseOpeningShare(verses) {
   return repeated / verses.length;
 }
 
+// ---- Proper-name detection, without a hand-typed list of names ----
+// Hebrew doesn't capitalise, and no part-of-speech data ships with the text,
+// so names are found structurally: certain words reliably introduce one
+// ("ben X", "eretz X", "har X", "vayachanu be-X"). A word is treated as a
+// name if it repeatedly sits in that slot, or is uncommon and sits there at
+// least once.
+//
+// Deliberately misses מצרים and אהרן, and that is correct rather than a bug:
+// they are far too frequent to clear the ratio test, and nobody fumbles
+// "Egypt" or "Aaron". What this captures is the unfamiliar names that
+// actually cause trouble -- דפקה, אלוש, רפידם. Verified independent of the
+// existing vocabulary score (correlation with word rarity is only 0.22), so
+// it adds information rather than counting rare words twice.
+const NAME_TRIGGERS = new Set(['בן','בני','בת','בנות','ארץ','הר','מדבר','עיר','למטה','ממטה','למשפחת','משפחת','שם','ושם','ויחנו','ויסעו','נחל','מלך','אלהי','בית','אבי','אחי']);
+// Strip one inseparable prefix so "בדפקה" resolves to "דפקה".
+const nameBase = (w) => (w.length > 3 ? w.replace(/^[ובלמהכש]/, '') : w);
+
 // ---- pass 1: load every Torah verse once, tokenize, build frequency table ----
 const versesByBookChapter = {}; // { Genesis: { 1: [{verse, words:[{surface, consonantal}]}] } }
 const freq = new Map(); // consonantal form -> count
@@ -274,6 +291,32 @@ for (const [bookEn, bookHe] of Object.entries(BOOK_EN_TO_HE)) {
   }
 }
 console.log('Loaded Torah text:', totalTokens, 'word tokens,', freq.size, 'unique consonantal forms');
+
+// ---- build the proper-name lexicon (needs the whole text, so it runs here) ----
+const nameSlotHits = new Map(); // base form -> times seen right after a trigger
+const baseTotals = new Map();   // base form -> total occurrences
+for (const bookEn of Object.keys(BOOK_EN_TO_HE)) {
+  for (const chapter of Object.values(versesByBookChapter[bookEn])) {
+    for (const v of chapter) {
+      for (let i = 0; i < v.words.length; i++) {
+        const b = nameBase(v.words[i].consonantal);
+        baseTotals.set(b, (baseTotals.get(b) || 0) + 1);
+        const prev = i > 0 ? v.words[i - 1].consonantal : null;
+        if (prev && (NAME_TRIGGERS.has(prev) || NAME_TRIGGERS.has(nameBase(prev)))) {
+          nameSlotHits.set(b, (nameSlotHits.get(b) || 0) + 1);
+        }
+      }
+    }
+  }
+}
+const PROPER_NAMES = new Set();
+for (const [w, hits] of nameSlotHits) {
+  if (w.length < 3) continue;
+  const total = baseTotals.get(w) || 1;
+  if (hits >= 2 && hits / total >= 0.30) PROPER_NAMES.add(w);      // repeatedly name-positioned
+  else if (hits >= 1 && total <= 20) PROPER_NAMES.add(w);          // uncommon, seen in a name slot
+}
+console.log('Proper-name lexicon:', PROPER_NAMES.size, 'forms (structural cues, no hand-typed list)');
 
 // ---- per-word rarity: percentile rank of (rarity = 1/frequency) across ALL word tokens ----
 const allFreqs = [];
@@ -466,7 +509,18 @@ function rawAliyahStats(bookEn, startRef, endRef) {
     repeatedVerseOpeningShare(verses),
   );
 
-  return { wordCount: words.length, rawRarity, rawPron, rareExamples, hardToPronounceExamples: hardExamples, ambiguousSpellingExamples, lookAlikeWordPairs, lookAlikePairCount: lookAlikePairsRaw.length, rareTropeMarks, uncommonTropeDensity, repetitionRatio };
+  // The two look-alike flavours are counted SEPARATELY as well as pooled.
+  // Pooling them alone understated the thing that actually trips readers up:
+  // an identical-consonant pair differing only in nekudot is invisible on an
+  // unvocalised scroll, whereas a one-letter ו/י difference is at least
+  // visible if you look. The consumer weights them differently.
+  const homographPairCount = lookAlikePairsRaw.filter((p) => p.severity === 2).length;
+  const nearMissPairCount = lookAlikePairsRaw.filter((p) => p.severity === 1).length;
+
+  const properNameCount = words.filter((w) => PROPER_NAMES.has(nameBase(w.consonantal))).length;
+  const properNameDensity = properNameCount / words.length;
+
+  return { wordCount: words.length, rawRarity, rawPron, rareExamples, hardToPronounceExamples: hardExamples, ambiguousSpellingExamples, lookAlikeWordPairs, lookAlikePairCount: lookAlikePairsRaw.length, homographPairCount, nearMissPairCount, rareTropeMarks, uncommonTropeDensity, repetitionRatio, properNameCount, properNameDensity };
 }
 
 // ---- gather every aliyah (individual parshiot, combined parshiot, chagim) ----
@@ -501,6 +555,7 @@ const rawRarities = entries.map(e => e.raw.rawRarity).sort((a, b) => a - b);
 const rawPronunciations = entries.map(e => e.raw.rawPron).sort((a, b) => a - b);
 const rawTropeDensities = entries.map(e => e.raw.uncommonTropeDensity).sort((a, b) => a - b);
 const rawRepetitions = entries.map(e => e.raw.repetitionRatio).sort((a, b) => a - b);
+const rawNameDensities = entries.map(e => e.raw.properNameDensity).sort((a, b) => a - b);
 function percentileRank(sortedAsc, value) {
   let idx = sortedAsc.findIndex(v => v >= value);
   if (idx === -1) idx = sortedAsc.length - 1;
@@ -521,11 +576,14 @@ for (const e of entries) {
   // inverts it, since formulaic text is easier to prepare, not harder.
   const tropeRarity = round1(percentileRank(rawTropeDensities, e.raw.uncommonTropeDensity));
   const formulaicity = round1(percentileRank(rawRepetitions, e.raw.repetitionRatio));
+  const properNames = round1(percentileRank(rawNameDensities, e.raw.properNameDensity));
   result[e.groupId] ??= {};
   result[e.groupId][e.aliyahKey] = {
     wordCount: e.raw.wordCount,
     rarity, pronunciation, vocab,
-    tropeRarity, formulaicity,
+    tropeRarity, formulaicity, properNames,
+    homographPairCount: e.raw.homographPairCount,
+    nearMissPairCount: e.raw.nearMissPairCount,
     rareTropeMarks: e.raw.rareTropeMarks,
     rareExamples: e.raw.rareExamples,
     hardToPronounceExamples: e.raw.hardToPronounceExamples,

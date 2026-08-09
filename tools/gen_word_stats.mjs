@@ -137,6 +137,29 @@ const HOMOGRAPH_SKELETONS = new Map([
   // occurrences in the whole Torah, only 1 of which (Deut 13:3, in Re'eh)
   // is the pausal form -- a real trap for a reader used to the usual ending.
   ['ידעתם', '"you (masc. pl.) have not known" -- usual ending (תֶּם) vs. rare pausal ending (תָּם)'],
+
+  // A systematic re-scan of every aliyah (not just spot-checking one report)
+  // for this same "identical letters, colliding vowels within one aliyah"
+  // pattern, filtered to genuinely rare skeletons and hand-verified against
+  // the real verses (not guessed from the vowel pattern alone) -- see
+  // difficulty-rubric.md for the full methodology and why most of the ~500
+  // raw candidates found this way were rejected as the same "ordinary
+  // grammar" noise already ruled out earlier (construct/absolute nouns,
+  // pausal verb endings, definite-article vowel shifts). These are the ones
+  // that survived: genuinely different words, or (like ידעתם) a rare same-
+  // word pausal form.
+  ['הבל', '"Hevel/Abel" (proper name) -- usual form vs. rare pausal ending, Genesis 4'],
+  ['קין', '"Cain" (proper name) -- usual form vs. rare pausal ending, Genesis 4'],
+  ['ורבו', '"multiply!" (command) vs. "they will increase" (a promise, not a command)'],
+  ['ויעבר', '"he crossed over" vs. "he brought/led across" -- different verb stems, back-to-back in the Yabok story (Genesis 32)'],
+  ['אכלו', '"his ration/food" vs. "they ate" -- a noun vs. a verb'],
+  ['ויקרבו', '"they drew near" vs. "they brought/offered" -- different verb stems, both in the same Shemini narrative (Leviticus 9)'],
+  ['ישחט', '"he slaughters" -- usual form vs. rare pausal-type form, both in the very same verse, Leviticus 17:3'],
+  ['ועבדתם', '"you (masc. pl.) shall serve" -- usual ending vs. rare pausal ending, same pattern as ידעתם above'],
+  ['בהרת', '"bright spot" (singular) vs. "bright spots" (plural), Leviticus 13'],
+  ['מרים', '"Miriam" (proper name) vs. "bitter" vs. "one who lifts" -- three different words'],
+  ['ילד', '"he fathered/begat" (active) vs. "he was born" (passive) -- opposite grammatical voice'],
+  ['רעה', '"shepherd" vs. "evil/bad" -- about as different as two meanings get, and they appear in the very same verse, Genesis 37:2'],
 ]);
 
 // ---- pass 1: load every Torah verse once, tokenize, build frequency table ----

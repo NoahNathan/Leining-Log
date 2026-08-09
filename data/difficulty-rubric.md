@@ -755,6 +755,61 @@ claimed it was the highest in the Torah; that was wrong. It was one of twelve
 aliyot tied at the old ceiling, and under the corrected rule Vayishlach 5 is
 the genuine top on measured signal.
 
+## Category tags were leaking difficulty onto aliyot that hadn't earned it
+
+Two content-profile tags carried a high hidden-challenge baseline that
+applied to every aliyah in the parsha, whether or not the thing the tag
+described was actually present in that aliyah.
+
+**POETRY (baseline 8, now 3).** Across all 56 poetry-tagged aliyot, raw
+measured gotcha points average **2.42** -- against **2.48** for everything
+else. Statistically indistinguishable: the tag was adding difficulty that
+nothing in the text supports. Worse, it was counting the same fact three
+times. A Song is hard because of its melody and layout, which trope already
+carries via `tropeFloor: 9`, and because of its words, which the measured
+vocabulary score already carries. Ha'azinu aliyot 5 and 6 had **zero**
+measured gotcha points and were scoring 9.
+
+**TOCHACHA (baseline 8, now 5).** The Tochacha is one aliyah in Bechukotai
+and two in Ki Tavo, but the parsha-level tag inflated all 14. Bechukotai's
+7th aliyah has zero measured gotcha points and was scoring 7 purely by
+association with curses several aliyot away.
+
+In both cases the underlying risk is real but *local*, so its weight moved
+onto the specific aliyot as an explicit override: +2 for reading Shirat
+Ha'azinu from a two-column layout, +5 for the read-fast-and-quiet Tochacha
+custom. The readings that should be hard are unchanged -- Bechukotai 3 and
+Ki Tavo 6 both still score 10 -- while their neighbours fall back to the
+ordinary baseline. Ha'azinu drops from 9 to 5 on gotchas and keeps its 9 on
+trope, which is where the melody belongs.
+
+The general lesson, now applied three times in this document: a parsha-level
+tag should describe something true of *every* aliyah it touches. Where it
+describes a specific passage, it belongs in an override.
+
+## What the 1-10 scale is actually relative to
+
+Worth stating plainly, because it is not obvious from the numbers. Every
+final score is rescaled against a pool of **858 readings**, and less than
+half of those are ordinary Shabbat parsha aliyot:
+
+| Pool member | Count | Median words |
+|---|---|---|
+| Individual-parsha aliyot | 427 | 195 |
+| Chag / fast / Rosh Chodesh / special Shabbat | 431 | 65 |
+
+There are more holiday entries than parsha aliyot, and they are three times
+shorter. The 7 combined parshiot additionally re-score the same verses as
+their components, so some text is counted twice.
+
+This is deliberate -- the goal stated in `difficulty-scores.json` is that any
+two readings on the site be directly comparable, which requires one shared
+scale. But it means a "4" on a regular parsha aliyah is 4 relative to a
+population half made of short holiday readings, not 4 among comparable
+Shabbat readings. Parsha aliyot average 5.8; chag readings average 3.7. A
+reader comparing only Shabbat aliyot is effectively using the top half of the
+scale.
+
 ## Known limitations / where to improve this next
 
 - The hidden-challenge baseline is still assigned at the whole-parsha level

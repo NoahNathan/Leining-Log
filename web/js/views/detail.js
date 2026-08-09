@@ -170,7 +170,27 @@ function sefariaUrl(ref) {
   return `https://www.sefaria.org/${book}.${start}-${end}`;
 }
 
-function nusachRow(nusach, haftScore, summaries) {
+// Nusach names as displayed -- capitalized, otherwise as stored.
+function nusachLabel(name) {
+  return name[0].toUpperCase() + name.slice(1);
+}
+
+// The longest/shortest reading within a tradition, if this one holds the
+// record. Length-only (word count) -- not tied to the difficulty score, so
+// it applies to sefardi and chabad too even though only ashkenazi is scored.
+function haftarahRecordTag(name, haftarahId, lengthRecords) {
+  const rec = lengthRecords && haftarahId && lengthRecords[name];
+  if (!rec) return null;
+  if (rec.longest && rec.longest.includes(haftarahId)) {
+    return el('span', { class: 'content-tag content-tag-record' }, `Longest — ${nusachLabel(name)}`);
+  }
+  if (rec.shortest && rec.shortest.includes(haftarahId)) {
+    return el('span', { class: 'content-tag content-tag-record' }, `Shortest — ${nusachLabel(name)}`);
+  }
+  return null;
+}
+
+function nusachRow(nusach, haftScore, summaries, haftarahId, lengthRecords) {
   if (!nusach) return el('p', { class: 'muted' }, 'No haftarah data.');
   const entries = Object.entries(nusach).filter(([, v]) => v);
   const wrap = el('div', { class: 'nusach-tabs' });
@@ -189,13 +209,15 @@ function nusachRow(nusach, haftScore, summaries) {
     const isScored = name === 'ashkenazi' && haftScore;
     const caret = isScored ? el('span', { class: 'why-caret' }, ' ⌄') : null;
     const nameEl = el('span', { class: `nusach-name${isScored ? ' expandable' : ''}` }, [
-      name[0].toUpperCase() + name.slice(1),
+      nusachLabel(name),
       isScored ? scoreBadge(haftScore.finalScore, { size: 'sm' }) : null,
       caret,
     ]);
+    const recordTag = haftarahRecordTag(name, haftarahId, lengthRecords);
     const chip = el('div', { class: 'nusach-chip' }, [
       nameEl,
       el('span', { class: 'nusach-cite' }, [text, ...links]),
+      recordTag ? el('div', { class: 'content-tags' }, [recordTag]) : null,
       haftSummary ? el('p', { class: 'aliyah-summary muted small' }, haftSummary) : null,
       v.specialTrope ? el('p', { class: 'nusach-note muted small' }, `${v.specialTrope.range}: ${v.specialTrope.note}`) : null,
     ]);
@@ -417,7 +439,7 @@ function aliyahLabel(key) {
   return key === 'M' ? 'Maftir' : ordinal(Number(key));
 }
 
-export function renderParshaDetail({ parsha, haftarah, difficulty, haftarahScore, summaries }, opts = {}) {
+export function renderParshaDetail({ parsha, haftarah, difficulty, haftarahScore, summaries, haftarahLengthRecords }, opts = {}) {
   const card = el('div', { class: 'card detail-card' });
 
   const header = el('div', { class: 'detail-header' }, [
@@ -480,7 +502,7 @@ export function renderParshaDetail({ parsha, haftarah, difficulty, haftarahScore
 
   card.append(el('div', { class: 'card subcard' }, [
     el('h3', {}, 'Haftarah by nusach'),
-    nusachRow(haftarah ? haftarah.nusach : null, haftarahScore, summaries),
+    nusachRow(haftarah ? haftarah.nusach : null, haftarahScore, summaries, haftarah ? haftarah.id : null, haftarahLengthRecords),
   ]));
 
   attachQuickLog(card, { readingId: parsha.id, aliyot: parsha.aliyot, maftir: parsha.maftir });

@@ -254,3 +254,60 @@ writeFileSync('../data/haftarah-difficulty.json', JSON.stringify({
 console.log('Wrote haftarah-difficulty.json for', Object.keys(out).length, 'haftarot');
 const wc = raws.map((r) => r.wordCount).sort((a, b) => a - b);
 console.log('  word count: min', wc[0], ' median', wc[Math.floor(wc.length / 2)], ' max', wc[wc.length - 1]);
+
+// ---- Length-only stats for every nusach, used only to name the longest and
+// shortest reading within each tradition. NOT a difficulty measurement --
+// sefardi and chabad text isn't otherwise scored (see file description
+// above); this counts words and verses and nothing else.
+function lengthOf(ref) {
+  const parts = Array.isArray(ref) ? ref : [ref];
+  let verseCount = 0, wordCount = 0;
+  for (const p of parts) {
+    const vs = versesIn(p.book, p.start, p.end);
+    if (!vs || vs.length === 0) return null;
+    verseCount += vs.length;
+    wordCount += vs.reduce((s, v) => s + v.words.length, 0);
+  }
+  return { verseCount, wordCount };
+}
+
+const NUSACHIM = ['ashkenazi', 'sefardi', 'chabad'];
+const lengths = {};
+for (const h of haftarot) {
+  lengths[h.id] = {};
+  for (const key of NUSACHIM) {
+    const entry = h.nusach?.[key];
+    if (!entry) continue;
+    if (entry.sameAs) {
+      const target = lengths[h.id][entry.sameAs] || lengthOf(h.nusach[entry.sameAs]);
+      if (target) lengths[h.id][key] = { verseCount: target.verseCount, wordCount: target.wordCount, sameAs: entry.sameAs };
+      continue;
+    }
+    const l = lengthOf(entry);
+    if (l) lengths[h.id][key] = l;
+  }
+}
+
+// Longest/shortest per tradition, by word count. Ties share the record
+// rather than picking an arbitrary winner.
+const lengthRecords = {};
+for (const key of NUSACHIM) {
+  const entries = Object.entries(lengths)
+    .filter(([, v]) => v[key])
+    .map(([id, v]) => ({ id, wordCount: v[key].wordCount }));
+  if (!entries.length) continue;
+  const maxWc = Math.max(...entries.map((e) => e.wordCount));
+  const minWc = Math.min(...entries.map((e) => e.wordCount));
+  lengthRecords[key] = {
+    longest: entries.filter((e) => e.wordCount === maxWc).map((e) => e.id),
+    shortest: entries.filter((e) => e.wordCount === minWc).map((e) => e.id),
+  };
+}
+
+writeFileSync('../data/haftarah-lengths.json', JSON.stringify({
+  description: "Verse/word counts for every haftarah nusach variant (ashkenazi, sefardi, chabad), used only to identify the longest and shortest reading within each tradition on the site. NOT a difficulty measurement -- only the ashkenazi reading has full difficulty stats (see haftarah-difficulty.json); sefardi and chabad are not otherwise scored. Word counts are computed from the same Masoretic Nevi'im text as the difficulty pipeline. A nusach entry that is textually identical to another (e.g. most chabad readings are the same as ashkenazi) reuses that reading's counts and carries a 'sameAs' field.",
+  generatedAt: new Date().toISOString(),
+  lengths,
+  records: lengthRecords,
+}, null, 2));
+console.log('Wrote haftarah-lengths.json. Records:', JSON.stringify(lengthRecords));

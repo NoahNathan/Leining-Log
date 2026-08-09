@@ -66,6 +66,16 @@ export async function getHaftarahScores() {
   return d.haftarot || [];
 }
 
+// Which haftarah is longest/shortest (by word count) within each nusach
+// tradition -- ashkenazi, sefardi, chabad. Length-only, not a difficulty
+// measurement (sefardi/chabad aren't otherwise scored). Keyed by nusach,
+// each value a { longest: [haftarahId, ...], shortest: [...] } pair (arrays
+// since ties share the record).
+export async function getHaftarahLengthRecords() {
+  const d = await loadJSON(DATA + 'haftarah-lengths.json');
+  return d.records || {};
+}
+
 export async function getCalendarIndex() {
   return loadJSON(DATA + 'calendar-100y/index.json');
 }
@@ -109,7 +119,8 @@ export async function getParshaDetail(id) {
   const difficulty = idx.difficultyById.get(id) || null;
   const haftarahScore = idx.haftarahScoreById.get(id) || null;
   const summaries = await getAliyahSummaries();
-  return { parsha, haftarah, difficulty, haftarahScore, summaries };
+  const haftarahLengthRecords = await getHaftarahLengthRecords();
+  return { parsha, haftarah, difficulty, haftarahScore, summaries, haftarahLengthRecords };
 }
 
 export async function listAllParshiotForSearch() {

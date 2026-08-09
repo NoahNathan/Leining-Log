@@ -1,7 +1,7 @@
 {
   "description": "Difficulty ratings (0-10 per criterion, plus a length-weighted, then dataset-wide-rescaled final score) for every aliyah of every parsha -- including the 7 combined (double) parshiot, each scored against its own combined-reading aliyah divisions rather than averaged from its two components -- AND every chag/fast/Rosh Chodesh/special-Shabbat reading in chagim.json (see the separate 'chagim' array). Generated with a transparent rule-based methodology, NOT a survey of actual leining outcomes. Vocabulary is computed from real word-frequency + pronunciation-complexity data over the Masoretic Torah text (see word-difficulty.json); the other four criteria are a content-profile heuristic. Final scores are rescaled against the full pool of ~860 aliyot (parshiot + combined + chagim) so the hardest aliyah in the dataset is a real 10 and the easiest a real 1. See difficulty-rubric.md for the full methodology and honest caveats.",
   "methodology": "difficulty-rubric.md",
-  "generatedAt": "2026-08-07T01:24:34.579Z",
+  "generatedAt": "2026-08-09T04:12:10.740Z",
   "count": 61,
   "individualCount": 54,
   "combinedCount": 7,
@@ -54,16 +54,16 @@
           },
           "lookAlikeWordPairs": [
             {
+              "a": "אֹתוֹ",
+              "b": "אִתּוֹ"
+            },
+            {
               "a": "אֵשׁ",
               "b": "אִישׁ"
             },
             {
               "a": "נְדִיב",
               "b": "נָדַב"
-            },
-            {
-              "a": "לַֽעֲשׂת",
-              "b": "לַֽעֲשׂוֹת"
             }
           ],
           "finalScore": 8
@@ -119,12 +119,12 @@
               "b": "אַמֹּת"
             },
             {
-              "a": "לַֽעֲשׂת",
-              "b": "לַֽעֲשׂוֹת"
+              "a": "קְצוֹתָֽיו",
+              "b": "קצוותיו"
             },
             {
-              "a": "וְהָיוּ",
-              "b": "וַיִּֽהְיוּ"
+              "a": "לַֽעֲשׂת",
+              "b": "לַֽעֲשׂוֹת"
             }
           ],
           "finalScore": 10
@@ -290,8 +290,8 @@
               "b": "שְׁמֹת"
             },
             {
-              "a": "מֻֽסַבֹּת",
-              "b": "מֽוּסַבֹּת"
+              "a": "קְצוֹתָיו",
+              "b": "קצוותיו"
             }
           ],
           "finalScore": 8
@@ -646,12 +646,12 @@
               "b": "עָר"
             },
             {
-              "a": "יוֹשֵׁב",
-              "b": "ישֵׁב"
+              "a": "אוּלַי",
+              "b": "אֵלָי"
             },
             {
-              "a": "צִפּוֹר",
-              "b": "צִפֹּר"
+              "a": "יוֹשֵׁב",
+              "b": "ישֵׁב"
             }
           ],
           "finalScore": 8
@@ -697,16 +697,16 @@
           },
           "lookAlikeWordPairs": [
             {
+              "a": "לוֹ",
+              "b": "לוּ"
+            },
+            {
+              "a": "אַתֶּם",
+              "b": "אִתָּם"
+            },
+            {
               "a": "עוֹד",
               "b": "עַד"
-            },
-            {
-              "a": "הֲלֹךְ",
-              "b": "הוֹלֵךְ"
-            },
-            {
-              "a": "אֵלָֽי",
-              "b": "אוּלַי"
             }
           ],
           "finalScore": 8
@@ -719,7 +719,7 @@
             "vocabulary": 5,
             "trope": 6,
             "repetition": 3,
-            "hiddenChallenges": 5
+            "hiddenChallenges": 6
           },
           "vocabDetail": {
             "rarity": 7.8,
@@ -751,6 +751,10 @@
             ]
           },
           "lookAlikeWordPairs": [
+            {
+              "a": "אִתּוֹ",
+              "b": "אֹתוֹ"
+            },
             {
               "a": "וַיִּבֶן",
               "b": "וּבֶן"
@@ -807,8 +811,8 @@
               "b": "הוֹלֵךְ"
             },
             {
-              "a": "אֲשֶׁר",
-              "b": "אַשּׁוּר"
+              "a": "בָרוּךְ",
+              "b": "בָרֵךְ"
             }
           ],
           "finalScore": 9
@@ -819,7 +823,7 @@
         "vocabulary": 4.6,
         "trope": 6.1,
         "repetition": 3,
-        "hiddenChallenges": 6.9
+        "hiddenChallenges": 7
       },
       "parshaFinalScore": 8,
       "hardestAliyah": "3",
@@ -986,16 +990,16 @@
           },
           "lookAlikeWordPairs": [
             {
+              "a": "מוֹת",
+              "b": "מֵת"
+            },
+            {
               "a": "אִישׁ",
               "b": "אֵשׁ"
             },
             {
               "a": "בֵּין",
               "b": "בֶּן"
-            },
-            {
-              "a": "מוֹת",
-              "b": "מֵת"
             }
           ],
           "finalScore": 7
@@ -1008,7 +1012,7 @@
             "vocabulary": 4,
             "trope": 5,
             "repetition": 3,
-            "hiddenChallenges": 6
+            "hiddenChallenges": 7
           },
           "vocabDetail": {
             "rarity": 1.6,
@@ -1039,6 +1043,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֹתוֹ",
+              "b": "אִתּוֹ"
+            },
+            {
+              "a": "אֹתָהּ",
+              "b": "אָתָּה"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -1194,7 +1208,7 @@
         "vocabulary": 6.4,
         "trope": 5,
         "repetition": 3,
-        "hiddenChallenges": 7
+        "hiddenChallenges": 7.1
       },
       "parshaFinalScore": 7.7,
       "hardestAliyah": "2",
@@ -1258,8 +1272,8 @@
               "b": "אוֹתָהּ"
             },
             {
-              "a": "וְאִשָּׁה",
-              "b": "וְאִישָׁהּ"
+              "a": "נִדְרָהּ",
+              "b": "נְדָרֶיהָ"
             }
           ],
           "finalScore": 8
@@ -1305,6 +1319,10 @@
           },
           "lookAlikeWordPairs": [
             {
+              "a": "אַתֶּם",
+              "b": "אֹתָם"
+            },
+            {
               "a": "מֵאֵת",
               "b": "מֵאוֹת"
             },
@@ -1323,7 +1341,7 @@
             "vocabulary": 6,
             "trope": 4,
             "repetition": 3,
-            "hiddenChallenges": 5
+            "hiddenChallenges": 6
           },
           "vocabDetail": {
             "rarity": 5.5,
@@ -1365,6 +1383,10 @@
             }
           ],
           "lookAlikeWordPairs": [
+            {
+              "a": "אֹתָם",
+              "b": "אִתָּם"
+            },
             {
               "a": "עַד",
               "b": "עוֹד"
@@ -1418,6 +1440,10 @@
             }
           ],
           "lookAlikeWordPairs": [
+            {
+              "a": "אֶתְכֶֽם",
+              "b": "אִתְּכֶם"
+            },
             {
               "a": "יוֹם",
               "b": "יַם"
@@ -1585,7 +1611,7 @@
         "vocabulary": 5.9,
         "trope": 4,
         "repetition": 2.7,
-        "hiddenChallenges": 5.6
+        "hiddenChallenges": 5.7
       },
       "parshaFinalScore": 7.7,
       "hardestAliyah": "4",
@@ -1593,6 +1619,431 @@
       "componentParshiot": [
         "Matot",
         "Masei"
+      ]
+    },
+    {
+      "parshaId": "Achrei Mot-Kedoshim",
+      "combined": true,
+      "profile": [
+        "RITUAL",
+        "LEGAL"
+      ],
+      "aliyot": [
+        {
+          "aliyah": "1",
+          "verses": 24,
+          "scores": {
+            "length": 9,
+            "vocabulary": 4,
+            "trope": 5,
+            "repetition": 3,
+            "hiddenChallenges": 9
+          },
+          "vocabDetail": {
+            "rarity": 3.3,
+            "pronunciation": 4,
+            "rareExamples": [
+              {
+                "word": "בְּקָרְבָתָם",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "בְּפַר",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "וּבְאַבְנֵט",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "וּמִפִּשְׁעֵיהֶם"
+              },
+              {
+                "word": "וְהֶֽעֱמִיד"
+              },
+              {
+                "word": "לַֽעֲזָאזֵֽל"
+              }
+            ]
+          },
+          "ambiguousSpellingExamples": [
+            {
+              "word": "ידיו",
+              "note": "Formal Ketiv/Qere: the Torah scroll is written ידו but traditionally read aloud as ידיו."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֹתָם",
+              "b": "אִתָּם"
+            },
+            {
+              "a": "אֵשׁ",
+              "b": "אִישׁ"
+            },
+            {
+              "a": "יָדָיו",
+              "b": "ידו"
+            }
+          ],
+          "finalScore": 8
+        },
+        {
+          "aliyah": "2",
+          "verses": 17,
+          "scores": {
+            "length": 7,
+            "vocabulary": 3,
+            "trope": 5,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "vocabDetail": {
+            "rarity": 1.9,
+            "pronunciation": 4.6,
+            "rareExamples": [
+              {
+                "word": "וְהַֽמְשַׁלֵּחַ",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "וְשָֽׂרְפוּ",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "עֹֽרֹתָם",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "הַמַּֽחֲנֶֽה"
+              },
+              {
+                "word": "אַֽחֲרֵיהֶם"
+              },
+              {
+                "word": "הַמִּזְבֵּֽחָה"
+              }
+            ]
+          },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֹתָם",
+              "b": "אוֹתָֽם"
+            }
+          ],
+          "finalScore": 6
+        },
+        {
+          "aliyah": "3",
+          "verses": 30,
+          "scores": {
+            "length": 9,
+            "vocabulary": 3,
+            "trope": 5,
+            "repetition": 3,
+            "hiddenChallenges": 7
+          },
+          "vocabDetail": {
+            "rarity": 3.4,
+            "pronunciation": 2,
+            "rareExamples": [
+              {
+                "word": "וַֽאֲלֵהֶם",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "יָצוּד",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "וְשָׁפַךְ",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "וּכְמַֽעֲשֵׂה"
+              },
+              {
+                "word": "וּבְחֻקֹּֽתֵיהֶם"
+              },
+              {
+                "word": "אֲחֹתָהּ"
+              }
+            ]
+          },
+          "ambiguousSpellingExamples": [
+            {
+              "word": "הִוא",
+              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "בַת",
+              "b": "בַּיִת"
+            },
+            {
+              "a": "עֹלָה",
+              "b": "עָלֶיהָ"
+            }
+          ],
+          "finalScore": 8
+        },
+        {
+          "aliyah": "4",
+          "verses": 23,
+          "scores": {
+            "length": 8,
+            "vocabulary": 6,
+            "trope": 5,
+            "repetition": 3,
+            "hiddenChallenges": 7
+          },
+          "vocabDetail": {
+            "rarity": 4.9,
+            "pronunciation": 6.6,
+            "rareExamples": [
+              {
+                "word": "נִטְמְאוּ",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "וָֽאֶפְקֹד",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "וַתָּקִא",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "בְּטַמַּֽאֲכֶם"
+              },
+              {
+                "word": "אֱלֹֽהֵיכֶֽם"
+              },
+              {
+                "word": "הָאֱלִילִם"
+              }
+            ]
+          },
+          "ambiguousSpellingExamples": [
+            {
+              "word": "הַהִוא",
+              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אַתֶּם",
+              "b": "אֹתָם"
+            },
+            {
+              "a": "קָדוֹשׁ",
+              "b": "קֹדֶשׁ"
+            }
+          ],
+          "finalScore": 8
+        },
+        {
+          "aliyah": "5",
+          "verses": 18,
+          "scores": {
+            "length": 7,
+            "vocabulary": 6,
+            "trope": 5,
+            "repetition": 3,
+            "hiddenChallenges": 7
+          },
+          "vocabDetail": {
+            "rarity": 6.7,
+            "pronunciation": 4.3,
+            "rareExamples": [
+              {
+                "word": "בְּצֶדֶק",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "תִּשְׁפֹּט",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "רָכִיל",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "מֵּֽאֱלֹהֶיךָ"
+              },
+              {
+                "word": "הַֽחֲמִישִׁת"
+              },
+              {
+                "word": "אֱלֹֽהֵיכֶֽם"
+              }
+            ]
+          },
+          "ambiguousSpellingExamples": [
+            {
+              "word": "וְהִוא",
+              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֶל",
+              "b": "אֵיל"
+            },
+            {
+              "a": "עָוֶל",
+              "b": "עַל"
+            },
+            {
+              "a": "תִקֹּם",
+              "b": "תָּקוּם"
+            }
+          ],
+          "finalScore": 7
+        },
+        {
+          "aliyah": "6",
+          "verses": 12,
+          "scores": {
+            "length": 4,
+            "vocabulary": 4,
+            "trope": 5,
+            "repetition": 3,
+            "hiddenChallenges": 7
+          },
+          "vocabDetail": {
+            "rarity": 4.3,
+            "pronunciation": 4.6,
+            "rareExamples": [
+              {
+                "word": "בַּמִּדָּה",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "וּבַמְּשׂוּרָֽה",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "מֹאזְנֵי",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "אַֽחֲרֵיהֶם"
+              },
+              {
+                "word": "אֱלֹֽהֵיכֶֽם"
+              },
+              {
+                "word": "אֱלֹֽהֵיכֶם"
+              }
+            ]
+          },
+          "ambiguousSpellingExamples": [
+            {
+              "word": "הַהִוא",
+              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אִתְּכֶם",
+              "b": "אֶתְכֶם"
+            },
+            {
+              "a": "לִזְנוֹת",
+              "b": "לִזְנֹת"
+            }
+          ],
+          "finalScore": 5
+        },
+        {
+          "aliyah": "7",
+          "verses": 20,
+          "scores": {
+            "length": 8,
+            "vocabulary": 5,
+            "trope": 5,
+            "repetition": 3,
+            "hiddenChallenges": 7
+          },
+          "vocabDetail": {
+            "rarity": 5,
+            "pronunciation": 4.7,
+            "rareExamples": [
+              {
+                "word": "קִלֵּל",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "דָּמָיו",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "הַנֹּאֵף",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "הָֽאֲדָמָה"
+              },
+              {
+                "word": "הֶֽעֱרָה"
+              },
+              {
+                "word": "אֱלֹֽהֵיכֶם"
+              }
+            ]
+          },
+          "ambiguousSpellingExamples": [
+            {
+              "word": "הִוא",
+              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            },
+            {
+              "word": "וְהִוא",
+              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֹתָם",
+              "b": "אַתֶּם"
+            },
+            {
+              "a": "יֽוּמְתוּ",
+              "b": "יָמֻֽתוּ"
+            }
+          ],
+          "finalScore": 8
+        }
+      ],
+      "parshaScores": {
+        "length": 7.4,
+        "vocabulary": 4.4,
+        "trope": 5,
+        "repetition": 3,
+        "hiddenChallenges": 7
+      },
+      "parshaFinalScore": 7.1,
+      "hardestAliyah": "1",
+      "easiestAliyah": "6",
+      "componentParshiot": [
+        "Achrei Mot",
+        "Kedoshim"
       ]
     },
     {
@@ -1902,16 +2353,16 @@
           ],
           "lookAlikeWordPairs": [
             {
+              "a": "אֹתָם",
+              "b": "אוֹתָם"
+            },
+            {
               "a": "יָשׁוּב",
               "b": "יֵשֵׁב"
             },
             {
               "a": "הִטּֽוֹחַ",
               "b": "הִטֹּחַ"
-            },
-            {
-              "a": "אֹתָם",
-              "b": "אוֹתָם"
             }
           ],
           "finalScore": 9
@@ -1991,419 +2442,6 @@
       "componentParshiot": [
         "Tazria",
         "Metzora"
-      ]
-    },
-    {
-      "parshaId": "Achrei Mot-Kedoshim",
-      "combined": true,
-      "profile": [
-        "RITUAL",
-        "LEGAL"
-      ],
-      "aliyot": [
-        {
-          "aliyah": "1",
-          "verses": 24,
-          "scores": {
-            "length": 9,
-            "vocabulary": 4,
-            "trope": 5,
-            "repetition": 3,
-            "hiddenChallenges": 8
-          },
-          "vocabDetail": {
-            "rarity": 3.3,
-            "pronunciation": 4,
-            "rareExamples": [
-              {
-                "word": "בְּקָרְבָתָם",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "בְּפַר",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "וּבְאַבְנֵט",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "וּמִפִּשְׁעֵיהֶם"
-              },
-              {
-                "word": "וְהֶֽעֱמִיד"
-              },
-              {
-                "word": "לַֽעֲזָאזֵֽל"
-              }
-            ]
-          },
-          "ambiguousSpellingExamples": [
-            {
-              "word": "ידיו",
-              "note": "Formal Ketiv/Qere: the Torah scroll is written ידו but traditionally read aloud as ידיו."
-            }
-          ],
-          "lookAlikeWordPairs": [
-            {
-              "a": "בַּד",
-              "b": "בְּיַד"
-            },
-            {
-              "a": "אֵשׁ",
-              "b": "אִישׁ"
-            },
-            {
-              "a": "וְאַל",
-              "b": "וְאַיִל"
-            }
-          ],
-          "finalScore": 8
-        },
-        {
-          "aliyah": "2",
-          "verses": 17,
-          "scores": {
-            "length": 7,
-            "vocabulary": 3,
-            "trope": 5,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "vocabDetail": {
-            "rarity": 1.9,
-            "pronunciation": 4.6,
-            "rareExamples": [
-              {
-                "word": "וְהַֽמְשַׁלֵּחַ",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "וְשָֽׂרְפוּ",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "עֹֽרֹתָם",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "הַמַּֽחֲנֶֽה"
-              },
-              {
-                "word": "אַֽחֲרֵיהֶם"
-              },
-              {
-                "word": "הַמִּזְבֵּֽחָה"
-              }
-            ]
-          },
-          "lookAlikeWordPairs": [
-            {
-              "a": "אֹתָם",
-              "b": "אוֹתָֽם"
-            }
-          ],
-          "finalScore": 6
-        },
-        {
-          "aliyah": "3",
-          "verses": 30,
-          "scores": {
-            "length": 9,
-            "vocabulary": 3,
-            "trope": 5,
-            "repetition": 3,
-            "hiddenChallenges": 7
-          },
-          "vocabDetail": {
-            "rarity": 3.4,
-            "pronunciation": 2,
-            "rareExamples": [
-              {
-                "word": "וַֽאֲלֵהֶם",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "יָצוּד",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "וְשָׁפַךְ",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "וּכְמַֽעֲשֵׂה"
-              },
-              {
-                "word": "וּבְחֻקֹּֽתֵיהֶם"
-              },
-              {
-                "word": "אֲחֹתָהּ"
-              }
-            ]
-          },
-          "ambiguousSpellingExamples": [
-            {
-              "word": "הִוא",
-              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
-            }
-          ],
-          "lookAlikeWordPairs": [
-            {
-              "a": "בַת",
-              "b": "בַּיִת"
-            },
-            {
-              "a": "עֹלָה",
-              "b": "עָלֶיהָ"
-            }
-          ],
-          "finalScore": 8
-        },
-        {
-          "aliyah": "4",
-          "verses": 23,
-          "scores": {
-            "length": 8,
-            "vocabulary": 6,
-            "trope": 5,
-            "repetition": 3,
-            "hiddenChallenges": 6
-          },
-          "vocabDetail": {
-            "rarity": 4.9,
-            "pronunciation": 6.6,
-            "rareExamples": [
-              {
-                "word": "נִטְמְאוּ",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "וָֽאֶפְקֹד",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "וַתָּקִא",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "בְּטַמַּֽאֲכֶם"
-              },
-              {
-                "word": "אֱלֹֽהֵיכֶֽם"
-              },
-              {
-                "word": "הָאֱלִילִם"
-              }
-            ]
-          },
-          "ambiguousSpellingExamples": [
-            {
-              "word": "הַהִוא",
-              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
-            }
-          ],
-          "lookAlikeWordPairs": [
-            {
-              "a": "קָדוֹשׁ",
-              "b": "קֹדֶשׁ"
-            }
-          ],
-          "finalScore": 8
-        },
-        {
-          "aliyah": "5",
-          "verses": 18,
-          "scores": {
-            "length": 7,
-            "vocabulary": 6,
-            "trope": 5,
-            "repetition": 3,
-            "hiddenChallenges": 7
-          },
-          "vocabDetail": {
-            "rarity": 6.7,
-            "pronunciation": 4.3,
-            "rareExamples": [
-              {
-                "word": "בְּצֶדֶק",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "תִּשְׁפֹּט",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "רָכִיל",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "מֵּֽאֱלֹהֶיךָ"
-              },
-              {
-                "word": "הַֽחֲמִישִׁת"
-              },
-              {
-                "word": "אֱלֹֽהֵיכֶֽם"
-              }
-            ]
-          },
-          "ambiguousSpellingExamples": [
-            {
-              "word": "וְהִוא",
-              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
-            }
-          ],
-          "lookAlikeWordPairs": [
-            {
-              "a": "עָוֶל",
-              "b": "עַל"
-            },
-            {
-              "a": "אֶל",
-              "b": "אֵיל"
-            },
-            {
-              "a": "תִקֹּם",
-              "b": "תָּקוּם"
-            }
-          ],
-          "finalScore": 7
-        },
-        {
-          "aliyah": "6",
-          "verses": 12,
-          "scores": {
-            "length": 4,
-            "vocabulary": 4,
-            "trope": 5,
-            "repetition": 3,
-            "hiddenChallenges": 6
-          },
-          "vocabDetail": {
-            "rarity": 4.3,
-            "pronunciation": 4.6,
-            "rareExamples": [
-              {
-                "word": "בַּמִּדָּה",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "וּבַמְּשׂוּרָֽה",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "מֹאזְנֵי",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "אַֽחֲרֵיהֶם"
-              },
-              {
-                "word": "אֱלֹֽהֵיכֶֽם"
-              },
-              {
-                "word": "אֱלֹֽהֵיכֶם"
-              }
-            ]
-          },
-          "ambiguousSpellingExamples": [
-            {
-              "word": "הַהִוא",
-              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
-            }
-          ],
-          "lookAlikeWordPairs": [
-            {
-              "a": "לִזְנוֹת",
-              "b": "לִזְנֹת"
-            }
-          ],
-          "finalScore": 4
-        },
-        {
-          "aliyah": "7",
-          "verses": 20,
-          "scores": {
-            "length": 8,
-            "vocabulary": 5,
-            "trope": 5,
-            "repetition": 3,
-            "hiddenChallenges": 6
-          },
-          "vocabDetail": {
-            "rarity": 5,
-            "pronunciation": 4.7,
-            "rareExamples": [
-              {
-                "word": "קִלֵּל",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "דָּמָיו",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "הַנֹּאֵף",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "הָֽאֲדָמָה"
-              },
-              {
-                "word": "הֶֽעֱרָה"
-              },
-              {
-                "word": "אֱלֹֽהֵיכֶם"
-              }
-            ]
-          },
-          "ambiguousSpellingExamples": [
-            {
-              "word": "הִוא",
-              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
-            },
-            {
-              "word": "וְהִוא",
-              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
-            }
-          ],
-          "lookAlikeWordPairs": [
-            {
-              "a": "יֽוּמְתוּ",
-              "b": "יָמֻֽתוּ"
-            }
-          ],
-          "finalScore": 7
-        }
-      ],
-      "parshaScores": {
-        "length": 7.4,
-        "vocabulary": 4.4,
-        "trope": 5,
-        "repetition": 3,
-        "hiddenChallenges": 6.4
-      },
-      "parshaFinalScore": 6.9,
-      "hardestAliyah": "1",
-      "easiestAliyah": "6",
-      "componentParshiot": [
-        "Achrei Mot",
-        "Kedoshim"
       ]
     },
     {
@@ -2693,12 +2731,12 @@
           },
           "lookAlikeWordPairs": [
             {
-              "a": "בְּכֹר",
-              "b": "בְּכוֹר"
-            },
-            {
               "a": "מֵאֵת",
               "b": "מֵאוֹת"
+            },
+            {
+              "a": "בְּכֹר",
+              "b": "בְּכוֹר"
             }
           ],
           "finalScore": 4
@@ -2771,7 +2809,7 @@
             "vocabulary": 6,
             "trope": 4,
             "repetition": 3,
-            "hiddenChallenges": 5
+            "hiddenChallenges": 6
           },
           "vocabDetail": {
             "rarity": 2.7,
@@ -2802,6 +2840,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אַתֶּם",
+              "b": "אֹתָם"
+            },
+            {
+              "a": "אַתָּה",
+              "b": "אֹתָהּ"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -2844,6 +2892,10 @@
             ]
           },
           "lookAlikeWordPairs": [
+            {
+              "a": "אֶתְכֶם",
+              "b": "אִתְּכֶֽם"
+            },
             {
               "a": "אֵת",
               "b": "אַוַּת"
@@ -2902,16 +2954,16 @@
           ],
           "lookAlikeWordPairs": [
             {
+              "a": "אַתָּה",
+              "b": "אֹתָהּ"
+            },
+            {
               "a": "אֶת",
               "b": "אוֹת"
             },
             {
               "a": "אוֹתָם",
               "b": "אֹתָם"
-            },
-            {
-              "a": "חֹלֵם",
-              "b": "חֲלוֹם"
             }
           ],
           "finalScore": 8
@@ -2955,6 +3007,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אַתָּה",
+              "b": "אֹתָהּ"
+            }
+          ],
           "finalScore": 7
         },
         {
@@ -3116,7 +3174,7 @@
         "vocabulary": 5.3,
         "trope": 4,
         "repetition": 3,
-        "hiddenChallenges": 6.1
+        "hiddenChallenges": 6.3
       },
       "parshaFinalScore": 6.7,
       "hardestAliyah": "3",
@@ -3322,6 +3380,10 @@
           },
           "lookAlikeWordPairs": [
             {
+              "a": "אֶתְכֶם",
+              "b": "אִתְּכֶֽם"
+            },
+            {
               "a": "עַד",
               "b": "עוֹד"
             },
@@ -3373,16 +3435,16 @@
           },
           "lookAlikeWordPairs": [
             {
+              "a": "אֹתָם",
+              "b": "אִתָּם"
+            },
+            {
               "a": "עָלֶיהָ",
               "b": "עָלֶה"
             },
             {
               "a": "עֻלְּכֶם",
               "b": "עֲלֵיכֶם"
-            },
-            {
-              "a": "וַֽהֲשִׁמּוֹתִי",
-              "b": "וַֽהֲשִׁמֹּתִי"
             }
           ],
           "note": "Tochacha (curses, Lev 26:14-46) -- traditional custom to read quickly and quietly",
@@ -3528,7 +3590,7 @@
             "vocabulary": 7,
             "trope": 4,
             "repetition": 3,
-            "hiddenChallenges": 4
+            "hiddenChallenges": 5
           },
           "vocabDetail": {
             "rarity": 7,
@@ -3559,6 +3621,16 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אִם",
+              "b": "אֵם"
+            },
+            {
+              "a": "אִתּוֹ",
+              "b": "אֹתוֹ"
+            }
+          ],
           "finalScore": 4
         },
         {
@@ -3773,12 +3845,12 @@
           ],
           "lookAlikeWordPairs": [
             {
-              "a": "בַּת",
-              "b": "בֵּית"
+              "a": "אִתָּם",
+              "b": "אֹתָם"
             },
             {
-              "a": "לִי",
-              "b": "לֵוִי"
+              "a": "אִתּֽוֹ",
+              "b": "אֹתֽוֹ"
             },
             {
               "a": "עַד",
@@ -3842,12 +3914,16 @@
           ],
           "lookAlikeWordPairs": [
             {
-              "a": "בֵּֽית",
-              "b": "בַּת"
+              "a": "אִתּוֹ",
+              "b": "אֹתוֹ"
             },
             {
               "a": "עוֹד",
               "b": "עַד"
+            },
+            {
+              "a": "בֵּֽית",
+              "b": "בַּת"
             }
           ],
           "finalScore": 9
@@ -3905,7 +3981,7 @@
         "vocabulary": 6,
         "trope": 4,
         "repetition": 3,
-        "hiddenChallenges": 5.1
+        "hiddenChallenges": 5.3
       },
       "parshaFinalScore": 6.6,
       "hardestAliyah": "5",
@@ -4115,16 +4191,16 @@
           ],
           "lookAlikeWordPairs": [
             {
-              "a": "אִישָׁהּ",
-              "b": "אִשָּׁה"
+              "a": "נָזִיר",
+              "b": "נֵזֶר"
+            },
+            {
+              "a": "יָבֹֽא",
+              "b": "יָבִיא"
             },
             {
               "a": "הָאִישׁ",
               "b": "הָאֵשׁ"
-            },
-            {
-              "a": "אֹתָךְ",
-              "b": "אוֹתָךְ"
             }
           ],
           "note": "Ends with Birkat Kohanim (Num 6:24-26), recited daily by kohanim and heard weekly by the whole congregation during duchening -- familiar, though it is only the tail of a long aliyah otherwise dominated by the (unfamiliar) sotah and nazir laws.",
@@ -4270,6 +4346,10 @@
           },
           "lookAlikeWordPairs": [
             {
+              "a": "אֹתֽוֹ",
+              "b": "אִתּוֹ"
+            },
+            {
               "a": "אַיִל",
               "b": "אֶל"
             },
@@ -4291,6 +4371,805 @@
       },
       "parshaFinalScore": 6.6,
       "hardestAliyah": "4",
+      "easiestAliyah": "3"
+    },
+    {
+      "parshaId": "Bereshit",
+      "combined": false,
+      "profile": [
+        "NARRATIVE",
+        "GENEALOGY"
+      ],
+      "aliyot": [
+        {
+          "aliyah": "1",
+          "verses": 34,
+          "scores": {
+            "length": 10,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 6
+          },
+          "vocabDetail": {
+            "rarity": 3.8,
+            "pronunciation": 5.4,
+            "rareExamples": [
+              {
+                "word": "בְּרֵאשִׁית",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "תֹהוּ",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "וָבֹהוּ",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "וּלְמוֹעֲדִים"
+              },
+              {
+                "word": "וּֽלֲהַבְדִּיל"
+              },
+              {
+                "word": "הָֽאֲדָמָה"
+              }
+            ]
+          },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וְכָל",
+              "b": "וַיְכַל"
+            },
+            {
+              "a": "הַיּוֹם",
+              "b": "הַיָּם"
+            },
+            {
+              "a": "רֶמֶשׂ",
+              "b": "רוֹמֵשׂ"
+            }
+          ],
+          "finalScore": 9
+        },
+        {
+          "aliyah": "2",
+          "verses": 16,
+          "scores": {
+            "length": 6,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 7
+          },
+          "vocabDetail": {
+            "rarity": 6.1,
+            "pronunciation": 5.9,
+            "rareExamples": [
+              {
+                "word": "תֽוֹלְדוֹת",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "בְּהִבָּֽרְאָם",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "וְשָׁמָֽיִם",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "הַֽחֲוִילָה"
+              },
+              {
+                "word": "הָֽאֲדָמָֽה"
+              },
+              {
+                "word": "הָאֲדָמָה"
+              }
+            ]
+          },
+          "ambiguousSpellingExamples": [
+            {
+              "word": "הַהִוא",
+              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֲשֶׁר",
+              "b": "אַשּׁוּר"
+            },
+            {
+              "a": "וַיָּשֶׂם",
+              "b": "וְשֵֽׁם"
+            },
+            {
+              "a": "וַיִּיצֶר",
+              "b": "וַיִּצֶר"
+            }
+          ],
+          "finalScore": 6
+        },
+        {
+          "aliyah": "3",
+          "verses": 27,
+          "scores": {
+            "length": 9,
+            "vocabulary": 8,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 7
+          },
+          "vocabDetail": {
+            "rarity": 7.6,
+            "pronunciation": 7.9,
+            "rareExamples": [
+              {
+                "word": "וּלְעוֹף",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "תַּרְדֵּמָה",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "מִצַּלְעֹתָיו",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "תֹּֽאכֲלֶנָּה"
+              },
+              {
+                "word": "הָֽאֲדָמָה"
+              },
+              {
+                "word": "הָאֲדָמָה"
+              }
+            ]
+          },
+          "ambiguousSpellingExamples": [
+            {
+              "word": "הִוא",
+              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אָתָּה",
+              "b": "אַתָּה"
+            },
+            {
+              "a": "וְהָיוּ",
+              "b": "וַיִּֽהְיוּ"
+            },
+            {
+              "a": "לְאִשָּׁה",
+              "b": "לְאִישָׁהּ"
+            }
+          ],
+          "finalScore": 9
+        },
+        {
+          "aliyah": "4",
+          "verses": 21,
+          "scores": {
+            "length": 8,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "vocabDetail": {
+            "rarity": 7.6,
+            "pronunciation": 1.7,
+            "rareExamples": [
+              {
+                "word": "מֵעֵץ",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "לְגַן",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "לַהַט",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "הָאֲדָמָה"
+              },
+              {
+                "word": "הָֽאֲדָמָה"
+              },
+              {
+                "word": "הָֽאֲדָמָֽה"
+              }
+            ]
+          },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֶת",
+              "b": "אוֹת"
+            }
+          ],
+          "finalScore": 7
+        },
+        {
+          "aliyah": "5",
+          "verses": 4,
+          "scores": {
+            "length": 1,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "vocabDetail": {
+            "rarity": 9,
+            "pronunciation": 1.1,
+            "rareExamples": [
+              {
+                "word": "צִלָּֽה",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "יָבָל",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "תֹּפֵשׂ",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "וַֽאֲחוֹת"
+              },
+              {
+                "word": "נַֽעֲמָֽה"
+              },
+              {
+                "word": "הָֽאַחַת"
+              }
+            ]
+          },
+          "ambiguousSpellingExamples": [
+            {
+              "word": "הִוא",
+              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "יָבָל",
+              "b": "יוּבָל"
+            }
+          ],
+          "finalScore": 2
+        },
+        {
+          "aliyah": "6",
+          "verses": 28,
+          "scores": {
+            "length": 9,
+            "vocabulary": 3,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "vocabDetail": {
+            "rarity": 4.8,
+            "pronunciation": 1.4,
+            "rareExamples": [
+              {
+                "word": "לְנָשָׁיו",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "שְׁמַעַן",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "הַֽאֲזֵנָּה",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "הַֽאֲזֵנָּה"
+              },
+              {
+                "word": "הָֽאֱלֹהִים"
+              },
+              {
+                "word": "מַֽהֲלַלְאֵֽל"
+              }
+            ]
+          },
+          "lookAlikeWordPairs": [
+            {
+              "a": "מֵאֹת",
+              "b": "מֵאוֹת"
+            },
+            {
+              "a": "וְיֶלֶד",
+              "b": "וַיּוֹלֶד"
+            }
+          ],
+          "finalScore": 7
+        },
+        {
+          "aliyah": "7",
+          "verses": 16,
+          "scores": {
+            "length": 6,
+            "vocabulary": 2,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "vocabDetail": {
+            "rarity": 3.2,
+            "pronunciation": 1.7,
+            "rareExamples": [
+              {
+                "word": "וּשְׁמוֹנִים",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "יְנַֽחֲמֵנוּ",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "מִמַּֽעֲשֵׂנוּ",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "הָֽאֱלֹהִים"
+              },
+              {
+                "word": "הָאֲדָמָה"
+              },
+              {
+                "word": "הָֽאֲדָמָה"
+              }
+            ]
+          },
+          "lookAlikeWordPairs": [
+            {
+              "a": "מֵאוֹת",
+              "b": "מֵאֹת"
+            },
+            {
+              "a": "וַיִּֽהְיוּ",
+              "b": "וְהָיוּ"
+            },
+            {
+              "a": "וּשְׁמֹנִים",
+              "b": "וּשְׁמוֹנִים"
+            }
+          ],
+          "finalScore": 5
+        }
+      ],
+      "parshaScores": {
+        "length": 7,
+        "vocabulary": 4.9,
+        "trope": 4,
+        "repetition": 3,
+        "hiddenChallenges": 5.6
+      },
+      "parshaFinalScore": 6.4,
+      "hardestAliyah": "1",
+      "easiestAliyah": "5"
+    },
+    {
+      "parshaId": "Miketz",
+      "combined": false,
+      "profile": [
+        "NARRATIVE"
+      ],
+      "aliyot": [
+        {
+          "aliyah": "1",
+          "verses": 14,
+          "scores": {
+            "length": 5,
+            "vocabulary": 9,
+            "trope": 3,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "vocabDetail": {
+            "rarity": 9.3,
+            "pronunciation": 7.9,
+            "rareExamples": [
+              {
+                "word": "יְפוֹת",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "וּבְרִיאֹת",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "וְדַקּוֹת",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "אַֽחֲרֵיהֶן"
+              },
+              {
+                "word": "וַתַּֽעֲמֹדְנָה"
+              },
+              {
+                "word": "אַֽחֲרֵיהֶֽן"
+              }
+            ]
+          },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֹלֹת",
+              "b": "עֹלוֹת"
+            },
+            {
+              "a": "יְפוֹת",
+              "b": "יְפֹת"
+            },
+            {
+              "a": "חֹלֵם",
+              "b": "חֲלֽוֹם"
+            }
+          ],
+          "finalScore": 5
+        },
+        {
+          "aliyah": "2",
+          "verses": 24,
+          "scores": {
+            "length": 9,
+            "vocabulary": 8,
+            "trope": 3,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "vocabDetail": {
+            "rarity": 7.1,
+            "pronunciation": 8.2,
+            "rareExamples": [
+              {
+                "word": "לִפְתֹּר",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "דַּלּוֹת",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "וְרָעוֹת",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "אַֽחֲרֵיהֶן"
+              },
+              {
+                "word": "אַֽחֲרֵיהֶֽם"
+              },
+              {
+                "word": "הָֽאֱלֹהִים"
+              }
+            ]
+          },
+          "lookAlikeWordPairs": [
+            {
+              "a": "עֹלֹת",
+              "b": "עֹלוֹת"
+            },
+            {
+              "a": "פָּרוֹת",
+              "b": "פָּרֹת"
+            },
+            {
+              "a": "וַיֹּאמֶר",
+              "b": "וָֽאֹמַר"
+            }
+          ],
+          "finalScore": 8
+        },
+        {
+          "aliyah": "3",
+          "verses": 14,
+          "scores": {
+            "length": 5,
+            "vocabulary": 2,
+            "trope": 3,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "vocabDetail": {
+            "rarity": 3.1,
+            "pronunciation": 1.1,
+            "rareExamples": [
+              {
+                "word": "הוֹדִיעַ",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "יִשַּׁק",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "הַכִּסֵּא",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "אֱלֹהִים"
+              },
+              {
+                "word": "אַֽחֲרֵי"
+              },
+              {
+                "word": "וַיַּֽעֲבֹר"
+              }
+            ]
+          },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אַתָּה",
+              "b": "אֹתָהּ"
+            },
+            {
+              "a": "אֵֽין",
+              "b": "אֹן"
+            },
+            {
+              "a": "אֹן",
+              "b": "אֽוֹן"
+            }
+          ],
+          "finalScore": 4
+        },
+        {
+          "aliyah": "4",
+          "verses": 23,
+          "scores": {
+            "length": 8,
+            "vocabulary": 4,
+            "trope": 3,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "vocabDetail": {
+            "rarity": 2.5,
+            "pronunciation": 5.8,
+            "rareExamples": [
+              {
+                "word": "וַתִּכְלֶינָה",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "וַתְּחִלֶּינָה",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "הָאֲרָצוֹת",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "הָֽאֱלֹהִים"
+              },
+              {
+                "word": "וַיִּשְׁתַּֽחֲווּ"
+              },
+              {
+                "word": "וַתְּחִלֶּינָה"
+              }
+            ]
+          },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אִתָּם",
+              "b": "אֹתָם"
+            },
+            {
+              "a": "אַתֶּֽם",
+              "b": "אֹתָם"
+            },
+            {
+              "a": "אִתָּם",
+              "b": "אַתֶּֽם"
+            }
+          ],
+          "finalScore": 7
+        },
+        {
+          "aliyah": "5",
+          "verses": 35,
+          "scores": {
+            "length": 10,
+            "vocabulary": 7,
+            "trope": 3,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "vocabDetail": {
+            "rarity": 7.4,
+            "pronunciation": 6.5,
+            "rareExamples": [
+              {
+                "word": "יֵֽאָסֵר",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "מִשְׁמַרְכֶם",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "וְיֵאָֽמְנוּ",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "אֲבִיאֶנּוּ"
+              },
+              {
+                "word": "הִתְמַהְמָהְנוּ"
+              },
+              {
+                "word": "הֲבִֽיאֹתִיו"
+              }
+            ]
+          },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אַתֶּם",
+              "b": "אֹתָם"
+            },
+            {
+              "a": "אִתִּי",
+              "b": "אֹתִי"
+            },
+            {
+              "a": "אֵלַי",
+              "b": "אוּלַי"
+            }
+          ],
+          "finalScore": 9
+        },
+        {
+          "aliyah": "6",
+          "verses": 14,
+          "scores": {
+            "length": 5,
+            "vocabulary": 8,
+            "trope": 3,
+            "repetition": 3,
+            "hiddenChallenges": 3
+          },
+          "vocabDetail": {
+            "rarity": 7,
+            "pronunciation": 8.9,
+            "rareExamples": [
+              {
+                "word": "וּטְבֹחַ",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "הֽוּבְאוּ",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "מֽוּבָאִים",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "בְּאַמְתְּחֹתֵינוּ"
+              },
+              {
+                "word": "בְּאַמְתְּחֹתֵֽינוּ"
+              },
+              {
+                "word": "בְּאַמְתְּחֹתֵיכֶם"
+              }
+            ]
+          },
+          "lookAlikeWordPairs": [
+            {
+              "a": "בָּא",
+              "b": "בּוֹא"
+            },
+            {
+              "a": "אֲלֵהֶם",
+              "b": "אֱלֹהִים"
+            },
+            {
+              "a": "וַיִּשְׁתַּֽחֲווּ",
+              "b": "וישתחו"
+            }
+          ],
+          "finalScore": 5
+        },
+        {
+          "aliyah": "7",
+          "verses": 22,
+          "scores": {
+            "length": 8,
+            "vocabulary": 9,
+            "trope": 3,
+            "repetition": 3,
+            "hiddenChallenges": 3
+          },
+          "vocabDetail": {
+            "rarity": 8.9,
+            "pronunciation": 8.9,
+            "rareExamples": [
+              {
+                "word": "נִכְמְרוּ",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "רַֽחֲמָיו",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "לִבְכּוֹת",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "הַמַּֽעֲשֶׂה"
+              },
+              {
+                "word": "הָֽאֱלֹהִים"
+              },
+              {
+                "word": "וְהָֽאֲנָשִׁים"
+              }
+            ]
+          },
+          "ambiguousSpellingExamples": [
+            {
+              "word": "הִוא",
+              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "finalScore": 7
+        }
+      ],
+      "parshaScores": {
+        "length": 7.1,
+        "vocabulary": 6.7,
+        "trope": 3,
+        "repetition": 3,
+        "hiddenChallenges": 3.9
+      },
+      "parshaFinalScore": 6.4,
+      "hardestAliyah": "5",
       "easiestAliyah": "3"
     },
     {
@@ -4381,6 +5260,10 @@
             ]
           },
           "lookAlikeWordPairs": [
+            {
+              "a": "אֹתוֹ",
+              "b": "אִתּוֹ"
+            },
             {
               "a": "נְדִיב",
               "b": "נָדַב"
@@ -4533,12 +5416,12 @@
           ],
           "lookAlikeWordPairs": [
             {
-              "a": "וְהָיוּ",
-              "b": "וַיִּֽהְיוּ"
-            },
-            {
               "a": "קְצוֹתָֽיו",
               "b": "קצוותיו"
+            },
+            {
+              "a": "וְהָיוּ",
+              "b": "וַיִּֽהְיוּ"
             }
           ],
           "finalScore": 9
@@ -4961,8 +5844,8 @@
               "b": "הַיָּם"
             },
             {
-              "a": "עֲלֵיהֶם",
-              "b": "עֲלֵהֶם"
+              "a": "יוֹמָיִם",
+              "b": "יָמִים"
             }
           ],
           "finalScore": 8
@@ -5018,12 +5901,12 @@
           ],
           "lookAlikeWordPairs": [
             {
-              "a": "הַיָּם",
-              "b": "הַיּוֹם"
-            },
-            {
               "a": "עָנָיו",
               "b": "ענו"
+            },
+            {
+              "a": "הַיָּם",
+              "b": "הַיּוֹם"
             },
             {
               "a": "הַשְּׂלָיו",
@@ -5043,409 +5926,6 @@
       "parshaFinalScore": 6.4,
       "hardestAliyah": "5",
       "easiestAliyah": "2"
-    },
-    {
-      "parshaId": "Bereshit",
-      "combined": false,
-      "profile": [
-        "NARRATIVE",
-        "GENEALOGY"
-      ],
-      "aliyot": [
-        {
-          "aliyah": "1",
-          "verses": 34,
-          "scores": {
-            "length": 10,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 6
-          },
-          "vocabDetail": {
-            "rarity": 3.8,
-            "pronunciation": 5.4,
-            "rareExamples": [
-              {
-                "word": "בְּרֵאשִׁית",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "תֹהוּ",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "וָבֹהוּ",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "וּלְמוֹעֲדִים"
-              },
-              {
-                "word": "וּֽלֲהַבְדִּיל"
-              },
-              {
-                "word": "הָֽאֲדָמָה"
-              }
-            ]
-          },
-          "lookAlikeWordPairs": [
-            {
-              "a": "הַיּוֹם",
-              "b": "הַיָּם"
-            },
-            {
-              "a": "רֶמֶשׂ",
-              "b": "רוֹמֵשׂ"
-            },
-            {
-              "a": "וְכָל",
-              "b": "וַיְכַל"
-            }
-          ],
-          "finalScore": 9
-        },
-        {
-          "aliyah": "2",
-          "verses": 16,
-          "scores": {
-            "length": 6,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 7
-          },
-          "vocabDetail": {
-            "rarity": 6.1,
-            "pronunciation": 5.9,
-            "rareExamples": [
-              {
-                "word": "תֽוֹלְדוֹת",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "בְּהִבָּֽרְאָם",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "וְשָׁמָֽיִם",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "הַֽחֲוִילָה"
-              },
-              {
-                "word": "הָֽאֲדָמָֽה"
-              },
-              {
-                "word": "הָאֲדָמָה"
-              }
-            ]
-          },
-          "ambiguousSpellingExamples": [
-            {
-              "word": "הַהִוא",
-              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
-            }
-          ],
-          "lookAlikeWordPairs": [
-            {
-              "a": "וַיָּשֶׂם",
-              "b": "וְשֵֽׁם"
-            },
-            {
-              "a": "אֲשֶׁר",
-              "b": "אַשּׁוּר"
-            },
-            {
-              "a": "וַיִּיצֶר",
-              "b": "וַיִּצֶר"
-            }
-          ],
-          "finalScore": 6
-        },
-        {
-          "aliyah": "3",
-          "verses": 27,
-          "scores": {
-            "length": 9,
-            "vocabulary": 8,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 6
-          },
-          "vocabDetail": {
-            "rarity": 7.6,
-            "pronunciation": 7.9,
-            "rareExamples": [
-              {
-                "word": "וּלְעוֹף",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "תַּרְדֵּמָה",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "מִצַּלְעֹתָיו",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "תֹּֽאכֲלֶנָּה"
-              },
-              {
-                "word": "הָֽאֲדָמָה"
-              },
-              {
-                "word": "הָאֲדָמָה"
-              }
-            ]
-          },
-          "ambiguousSpellingExamples": [
-            {
-              "word": "הִוא",
-              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
-            }
-          ],
-          "lookAlikeWordPairs": [
-            {
-              "a": "לְאִשָּׁה",
-              "b": "לְאִישָׁהּ"
-            },
-            {
-              "a": "וְהָיוּ",
-              "b": "וַיִּֽהְיוּ"
-            },
-            {
-              "a": "וַיֹּאכַֽל",
-              "b": "וָֽאֹכֵֽל"
-            }
-          ],
-          "finalScore": 8
-        },
-        {
-          "aliyah": "4",
-          "verses": 21,
-          "scores": {
-            "length": 8,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 4
-          },
-          "vocabDetail": {
-            "rarity": 7.6,
-            "pronunciation": 1.7,
-            "rareExamples": [
-              {
-                "word": "מֵעֵץ",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "לְגַן",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "לַהַט",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "הָאֲדָמָה"
-              },
-              {
-                "word": "הָֽאֲדָמָה"
-              },
-              {
-                "word": "הָֽאֲדָמָֽה"
-              }
-            ]
-          },
-          "lookAlikeWordPairs": [
-            {
-              "a": "אֶת",
-              "b": "אוֹת"
-            }
-          ],
-          "finalScore": 7
-        },
-        {
-          "aliyah": "5",
-          "verses": 4,
-          "scores": {
-            "length": 1,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "vocabDetail": {
-            "rarity": 9,
-            "pronunciation": 1.1,
-            "rareExamples": [
-              {
-                "word": "צִלָּֽה",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "יָבָל",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "תֹּפֵשׂ",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "וַֽאֲחוֹת"
-              },
-              {
-                "word": "נַֽעֲמָֽה"
-              },
-              {
-                "word": "הָֽאַחַת"
-              }
-            ]
-          },
-          "ambiguousSpellingExamples": [
-            {
-              "word": "הִוא",
-              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
-            }
-          ],
-          "lookAlikeWordPairs": [
-            {
-              "a": "יָבָל",
-              "b": "יוּבָל"
-            }
-          ],
-          "finalScore": 2
-        },
-        {
-          "aliyah": "6",
-          "verses": 28,
-          "scores": {
-            "length": 9,
-            "vocabulary": 3,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "vocabDetail": {
-            "rarity": 4.8,
-            "pronunciation": 1.4,
-            "rareExamples": [
-              {
-                "word": "לְנָשָׁיו",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "שְׁמַעַן",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "הַֽאֲזֵנָּה",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "הַֽאֲזֵנָּה"
-              },
-              {
-                "word": "הָֽאֱלֹהִים"
-              },
-              {
-                "word": "מַֽהֲלַלְאֵֽל"
-              }
-            ]
-          },
-          "lookAlikeWordPairs": [
-            {
-              "a": "מֵאֹת",
-              "b": "מֵאוֹת"
-            },
-            {
-              "a": "וְיֶלֶד",
-              "b": "וַיּוֹלֶד"
-            }
-          ],
-          "finalScore": 7
-        },
-        {
-          "aliyah": "7",
-          "verses": 16,
-          "scores": {
-            "length": 6,
-            "vocabulary": 2,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "vocabDetail": {
-            "rarity": 3.2,
-            "pronunciation": 1.7,
-            "rareExamples": [
-              {
-                "word": "וּשְׁמוֹנִים",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "יְנַֽחֲמֵנוּ",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "מִמַּֽעֲשֵׂנוּ",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "הָֽאֱלֹהִים"
-              },
-              {
-                "word": "הָאֲדָמָה"
-              },
-              {
-                "word": "הָֽאֲדָמָה"
-              }
-            ]
-          },
-          "lookAlikeWordPairs": [
-            {
-              "a": "מֵאוֹת",
-              "b": "מֵאֹת"
-            },
-            {
-              "a": "וַיִּֽהְיוּ",
-              "b": "וְהָיוּ"
-            },
-            {
-              "a": "וּשְׁמֹנִים",
-              "b": "וּשְׁמוֹנִים"
-            }
-          ],
-          "finalScore": 5
-        }
-      ],
-      "parshaScores": {
-        "length": 7,
-        "vocabulary": 4.9,
-        "trope": 4,
-        "repetition": 3,
-        "hiddenChallenges": 5.4
-      },
-      "parshaFinalScore": 6.3,
-      "hardestAliyah": "1",
-      "easiestAliyah": "5"
     },
     {
       "parshaId": "Vayera",
@@ -5655,12 +6135,12 @@
           ],
           "lookAlikeWordPairs": [
             {
-              "a": "בֵּן",
-              "b": "בֵּין"
-            },
-            {
               "a": "מֵת",
               "b": "מוֹת"
+            },
+            {
+              "a": "בֵּן",
+              "b": "בֵּין"
             },
             {
               "a": "וְעַל",
@@ -5804,12 +6284,12 @@
           ],
           "lookAlikeWordPairs": [
             {
-              "a": "אֶל",
-              "b": "אַיִל"
+              "a": "אִתּוֹ",
+              "b": "אֹתוֹ"
             },
             {
-              "a": "וְלֶךְ",
-              "b": "וַיֵּלֶךְ"
+              "a": "אֶל",
+              "b": "אַיִל"
             },
             {
               "a": "הַיּוֹם",
@@ -5829,394 +6309,6 @@
       "parshaFinalScore": 6.3,
       "hardestAliyah": "3",
       "easiestAliyah": "6"
-    },
-    {
-      "parshaId": "Miketz",
-      "combined": false,
-      "profile": [
-        "NARRATIVE"
-      ],
-      "aliyot": [
-        {
-          "aliyah": "1",
-          "verses": 14,
-          "scores": {
-            "length": 5,
-            "vocabulary": 9,
-            "trope": 3,
-            "repetition": 3,
-            "hiddenChallenges": 4
-          },
-          "vocabDetail": {
-            "rarity": 9.3,
-            "pronunciation": 7.9,
-            "rareExamples": [
-              {
-                "word": "יְפוֹת",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "וּבְרִיאֹת",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "וְדַקּוֹת",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "אַֽחֲרֵיהֶן"
-              },
-              {
-                "word": "וַתַּֽעֲמֹדְנָה"
-              },
-              {
-                "word": "אַֽחֲרֵיהֶֽן"
-              }
-            ]
-          },
-          "lookAlikeWordPairs": [
-            {
-              "a": "חֹלֵם",
-              "b": "חֲלֽוֹם"
-            },
-            {
-              "a": "עֹלֹת",
-              "b": "עֹלוֹת"
-            },
-            {
-              "a": "יְפוֹת",
-              "b": "יְפֹת"
-            }
-          ],
-          "finalScore": 5
-        },
-        {
-          "aliyah": "2",
-          "verses": 24,
-          "scores": {
-            "length": 9,
-            "vocabulary": 8,
-            "trope": 3,
-            "repetition": 3,
-            "hiddenChallenges": 4
-          },
-          "vocabDetail": {
-            "rarity": 7.1,
-            "pronunciation": 8.2,
-            "rareExamples": [
-              {
-                "word": "לִפְתֹּר",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "דַּלּוֹת",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "וְרָעוֹת",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "אַֽחֲרֵיהֶן"
-              },
-              {
-                "word": "אַֽחֲרֵיהֶֽם"
-              },
-              {
-                "word": "הָֽאֱלֹהִים"
-              }
-            ]
-          },
-          "lookAlikeWordPairs": [
-            {
-              "a": "עֹלֹת",
-              "b": "עֹלוֹת"
-            },
-            {
-              "a": "פָּרוֹת",
-              "b": "פָּרֹת"
-            },
-            {
-              "a": "וַיֹּאמֶר",
-              "b": "וָֽאֹמַר"
-            }
-          ],
-          "finalScore": 8
-        },
-        {
-          "aliyah": "3",
-          "verses": 14,
-          "scores": {
-            "length": 5,
-            "vocabulary": 2,
-            "trope": 3,
-            "repetition": 3,
-            "hiddenChallenges": 4
-          },
-          "vocabDetail": {
-            "rarity": 3.1,
-            "pronunciation": 1.1,
-            "rareExamples": [
-              {
-                "word": "הוֹדִיעַ",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "יִשַּׁק",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "הַכִּסֵּא",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "אֱלֹהִים"
-              },
-              {
-                "word": "אַֽחֲרֵי"
-              },
-              {
-                "word": "וַיַּֽעֲבֹר"
-              }
-            ]
-          },
-          "lookAlikeWordPairs": [
-            {
-              "a": "אֵֽין",
-              "b": "אֹן"
-            },
-            {
-              "a": "בַּת",
-              "b": "בֵּית"
-            },
-            {
-              "a": "אֹן",
-              "b": "אֽוֹן"
-            }
-          ],
-          "finalScore": 4
-        },
-        {
-          "aliyah": "4",
-          "verses": 23,
-          "scores": {
-            "length": 8,
-            "vocabulary": 4,
-            "trope": 3,
-            "repetition": 3,
-            "hiddenChallenges": 2
-          },
-          "vocabDetail": {
-            "rarity": 2.5,
-            "pronunciation": 5.8,
-            "rareExamples": [
-              {
-                "word": "וַתִּכְלֶינָה",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "וַתְּחִלֶּינָה",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "הָאֲרָצוֹת",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "הָֽאֱלֹהִים"
-              },
-              {
-                "word": "וַיִּשְׁתַּֽחֲווּ"
-              },
-              {
-                "word": "וַתְּחִלֶּינָה"
-              }
-            ]
-          },
-          "lookAlikeWordPairs": [
-            {
-              "a": "אֲלֵיהֶם",
-              "b": "אֲלֵהֶם"
-            }
-          ],
-          "finalScore": 6
-        },
-        {
-          "aliyah": "5",
-          "verses": 35,
-          "scores": {
-            "length": 10,
-            "vocabulary": 7,
-            "trope": 3,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "vocabDetail": {
-            "rarity": 7.4,
-            "pronunciation": 6.5,
-            "rareExamples": [
-              {
-                "word": "יֵֽאָסֵר",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "מִשְׁמַרְכֶם",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "וְיֵאָֽמְנוּ",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "אֲבִיאֶנּוּ"
-              },
-              {
-                "word": "הִתְמַהְמָהְנוּ"
-              },
-              {
-                "word": "הֲבִֽיאֹתִיו"
-              }
-            ]
-          },
-          "lookAlikeWordPairs": [
-            {
-              "a": "אֵלַי",
-              "b": "אוּלַי"
-            },
-            {
-              "a": "שֻׁבוּ",
-              "b": "שׁוּבוּ"
-            },
-            {
-              "a": "הָעֵד",
-              "b": "הַעוֹד"
-            }
-          ],
-          "finalScore": 9
-        },
-        {
-          "aliyah": "6",
-          "verses": 14,
-          "scores": {
-            "length": 5,
-            "vocabulary": 8,
-            "trope": 3,
-            "repetition": 3,
-            "hiddenChallenges": 3
-          },
-          "vocabDetail": {
-            "rarity": 7,
-            "pronunciation": 8.9,
-            "rareExamples": [
-              {
-                "word": "וּטְבֹחַ",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "הֽוּבְאוּ",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "מֽוּבָאִים",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "בְּאַמְתְּחֹתֵינוּ"
-              },
-              {
-                "word": "בְּאַמְתְּחֹתֵֽינוּ"
-              },
-              {
-                "word": "בְּאַמְתְּחֹתֵיכֶם"
-              }
-            ]
-          },
-          "lookAlikeWordPairs": [
-            {
-              "a": "בָּא",
-              "b": "בּוֹא"
-            },
-            {
-              "a": "אֲלֵהֶם",
-              "b": "אֱלֹהִים"
-            },
-            {
-              "a": "וַיִּשְׁתַּֽחֲווּ",
-              "b": "וישתחו"
-            }
-          ],
-          "finalScore": 5
-        },
-        {
-          "aliyah": "7",
-          "verses": 22,
-          "scores": {
-            "length": 8,
-            "vocabulary": 9,
-            "trope": 3,
-            "repetition": 3,
-            "hiddenChallenges": 3
-          },
-          "vocabDetail": {
-            "rarity": 8.9,
-            "pronunciation": 8.9,
-            "rareExamples": [
-              {
-                "word": "נִכְמְרוּ",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "רַֽחֲמָיו",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "לִבְכּוֹת",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "הַמַּֽעֲשֶׂה"
-              },
-              {
-                "word": "הָֽאֱלֹהִים"
-              },
-              {
-                "word": "וְהָֽאֲנָשִׁים"
-              }
-            ]
-          },
-          "ambiguousSpellingExamples": [
-            {
-              "word": "הִוא",
-              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
-            }
-          ],
-          "finalScore": 7
-        }
-      ],
-      "parshaScores": {
-        "length": 7.1,
-        "vocabulary": 6.7,
-        "trope": 3,
-        "repetition": 3,
-        "hiddenChallenges": 3.6
-      },
-      "parshaFinalScore": 6.3,
-      "hardestAliyah": "5",
-      "easiestAliyah": "3"
     },
     {
       "parshaId": "Emor",
@@ -7064,6 +7156,10 @@
           ],
           "lookAlikeWordPairs": [
             {
+              "a": "אַתֶּם",
+              "b": "אֹתָם"
+            },
+            {
               "a": "עַד",
               "b": "עוֹד"
             },
@@ -7321,6 +7417,10 @@
           ],
           "lookAlikeWordPairs": [
             {
+              "a": "אֹתָם",
+              "b": "אַתֶּם"
+            },
+            {
               "a": "מִצְוֹתָיו",
               "b": "מצותו"
             },
@@ -7359,7 +7459,7 @@
             "vocabulary": 6,
             "trope": 4,
             "repetition": 3,
-            "hiddenChallenges": 4
+            "hiddenChallenges": 5
           },
           "vocabDetail": {
             "rarity": 5.7,
@@ -7391,6 +7491,10 @@
             ]
           },
           "lookAlikeWordPairs": [
+            {
+              "a": "אֹתָהּ",
+              "b": "אַתָּה"
+            },
             {
               "a": "לְהַֽחֲיֹת",
               "b": "לְהַֽחֲיֽוֹת"
@@ -7441,6 +7545,12 @@
             {
               "word": "הִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אִתּוֹ",
+              "b": "אֹתוֹ"
             }
           ],
           "finalScore": 5
@@ -7667,8 +7777,8 @@
               "b": "גִּבּוֹר"
             },
             {
-              "a": "מִשְׁפְּחוֹת",
-              "b": "מִשְׁפְּחֹת"
+              "a": "וּצְבוֹיִם",
+              "b": "וּצְבֹיִם"
             }
           ],
           "finalScore": 9
@@ -7681,7 +7791,7 @@
             "vocabulary": 3,
             "trope": 4,
             "repetition": 3,
-            "hiddenChallenges": 4
+            "hiddenChallenges": 5
           },
           "vocabDetail": {
             "rarity": 5.5,
@@ -7714,6 +7824,10 @@
           },
           "lookAlikeWordPairs": [
             {
+              "a": "אֹתָם",
+              "b": "אִתָּם"
+            },
+            {
               "a": "מְאַת",
               "b": "מֵאוֹת"
             }
@@ -7726,7 +7840,7 @@
         "vocabulary": 4.4,
         "trope": 4,
         "repetition": 3,
-        "hiddenChallenges": 5
+        "hiddenChallenges": 5.3
       },
       "parshaFinalScore": 6,
       "hardestAliyah": "6",
@@ -7778,6 +7892,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אַתָּה",
+              "b": "אֹתָהּ"
+            }
+          ],
           "finalScore": 4
         },
         {
@@ -7826,6 +7946,10 @@
             }
           ],
           "lookAlikeWordPairs": [
+            {
+              "a": "אָתָּה",
+              "b": "אַתָּה"
+            },
             {
               "a": "עוֹד",
               "b": "עַד"
@@ -7986,16 +8110,16 @@
           },
           "lookAlikeWordPairs": [
             {
+              "a": "לוּ",
+              "b": "לוֹ"
+            },
+            {
               "a": "וַיָּשֶׂם",
               "b": "וְשָׂם"
             },
             {
               "a": "וַיֹּאמַר",
               "b": "וָֽאֹמַר"
-            },
-            {
-              "a": "כִּתְמוֹל",
-              "b": "כִּתְמֹל"
             }
           ],
           "finalScore": 8
@@ -8163,16 +8287,16 @@
           },
           "lookAlikeWordPairs": [
             {
+              "a": "אֶתְכֶם",
+              "b": "אִתְּכֶֽם"
+            },
+            {
               "a": "הַיָּם",
               "b": "הֵם"
             },
             {
               "a": "וְשָׁבוּ",
               "b": "וְיָשֻׁבוּ"
-            },
-            {
-              "a": "הַשְׁבֵּעַ",
-              "b": "הִשְׁבִּיעַ"
             }
           ],
           "finalScore": 6
@@ -8320,12 +8444,12 @@
               "b": "הֵם"
             },
             {
-              "a": "יָֽדְךָ",
-              "b": "יָדֶֽיךָ"
+              "a": "אֵלִי",
+              "b": "אֵילֵי"
             },
             {
-              "a": "בַּיָּם",
-              "b": "בַּיּוֹם"
+              "a": "יָֽדְךָ",
+              "b": "יָדֶֽיךָ"
             }
           ],
           "note": "Shirat HaYam / Az Yashir (Ex 15:1-19) -- special brick-layout & elevated melody Az Yashir is recited daily in Pesukei D'Zimra -- most daveners know the words well, though that familiarity doesn't fully prepare a reader to lead its special trope solo.",
@@ -8391,7 +8515,7 @@
             "vocabulary": 4,
             "trope": 6,
             "repetition": 3,
-            "hiddenChallenges": 6
+            "hiddenChallenges": 7
           },
           "vocabDetail": {
             "rarity": 3.1,
@@ -8424,16 +8548,16 @@
           },
           "lookAlikeWordPairs": [
             {
-              "a": "הֶעְדִּיף",
-              "b": "הָעֹדֵף"
+              "a": "מָן",
+              "b": "מִן"
             },
             {
               "a": "יָמִים",
               "b": "יוֹמָיִם"
             },
             {
-              "a": "הַשְּׁבִיעִי",
-              "b": "הַשְּׁבִעִֽי"
+              "a": "הֶעְדִּיף",
+              "b": "הָעֹדֵף"
             }
           ],
           "finalScore": 8
@@ -8499,7 +8623,7 @@
         "vocabulary": 4.1,
         "trope": 6.4,
         "repetition": 3,
-        "hiddenChallenges": 6.3
+        "hiddenChallenges": 6.4
       },
       "parshaFinalScore": 5.9,
       "hardestAliyah": "4",
@@ -8610,12 +8734,12 @@
               "b": "בֹּר"
             },
             {
-              "a": "מִתְּמֹל",
-              "b": "מִתְּמוֹל"
+              "a": "וְהֵמִית",
+              "b": "וְהַמֵּת"
             },
             {
-              "a": "שִׁלְשֹׁם",
-              "b": "שְׁלשִׁים"
+              "a": "מִתְּמֹל",
+              "b": "מִתְּמוֹל"
             }
           ],
           "finalScore": 7
@@ -8675,12 +8799,12 @@
           ],
           "lookAlikeWordPairs": [
             {
-              "a": "אִישׁ",
-              "b": "אֵשׁ"
-            },
-            {
               "a": "מֵת",
               "b": "מוֹת"
+            },
+            {
+              "a": "אִישׁ",
+              "b": "אֵשׁ"
             }
           ],
           "finalScore": 7
@@ -8956,16 +9080,16 @@
           },
           "lookAlikeWordPairs": [
             {
+              "a": "אֹתָהּ",
+              "b": "אַתָּה"
+            },
+            {
               "a": "אִתְּךָ",
               "b": "אֽוֹתְךָ"
             },
             {
               "a": "תַּֽעֲשֶׂה",
               "b": "תֵּֽיעָשֶׂה"
-            },
-            {
-              "a": "מִצִּדֶּיהָ",
-              "b": "מִצִּדָּהּ"
             }
           ],
           "finalScore": 9
@@ -9329,16 +9453,16 @@
           ],
           "lookAlikeWordPairs": [
             {
+              "a": "לוֹ",
+              "b": "לוּ"
+            },
+            {
               "a": "יְלִידֵי",
               "b": "יְלִדֵי"
             },
             {
               "a": "אֶשְׁכֹּל",
               "b": "אֶשְׁכּוֹל"
-            },
-            {
-              "a": "וַיָּשֻׁבוּ",
-              "b": "וַיָּשִׁיבוּ"
             }
           ],
           "finalScore": 7
@@ -9390,12 +9514,12 @@
           ],
           "lookAlikeWordPairs": [
             {
-              "a": "וַיֹּֽאמְרוּ",
-              "b": "וְאָֽמְרוּ"
-            },
-            {
               "a": "וּבְעַמֻּד",
               "b": "וּבְעַמּוּד"
+            },
+            {
+              "a": "וַיֹּֽאמְרוּ",
+              "b": "וְאָֽמְרוּ"
             }
           ],
           "finalScore": 7
@@ -9447,6 +9571,12 @@
             {
               "word": "וילינו",
               "note": "Formal Ketiv/Qere: the Torah scroll is written וילונו but traditionally read aloud as וילינו."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אַתֶּם",
+              "b": "אֹתָם"
             }
           ],
           "finalScore": 8
@@ -9588,6 +9718,12 @@
             {
               "word": "הַהִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֹתָם",
+              "b": "אַתֶּם"
             }
           ],
           "note": "Ends with the third paragraph of the Shema / the tzitzit passage (Num 15:37-41), recited twice daily -- widely known by heart, though it is only the tail of this aliyah.",
@@ -9966,6 +10102,10 @@
           },
           "lookAlikeWordPairs": [
             {
+              "a": "אֹתָם",
+              "b": "אַתֶּם"
+            },
+            {
               "a": "עֲלֵיהֶם",
               "b": "עֲלֵהֶם"
             },
@@ -10004,7 +10144,7 @@
             "vocabulary": 3,
             "trope": 4,
             "repetition": 3,
-            "hiddenChallenges": 4
+            "hiddenChallenges": 5
           },
           "vocabDetail": {
             "rarity": 1.2,
@@ -10036,6 +10176,10 @@
             ]
           },
           "lookAlikeWordPairs": [
+            {
+              "a": "אִתָּם",
+              "b": "אֹתָם"
+            },
             {
               "a": "סִבְלֹת",
               "b": "סִבְלוֹת"
@@ -10172,16 +10316,16 @@
           },
           "lookAlikeWordPairs": [
             {
+              "a": "וְעָלוּ",
+              "b": "וַיַּֽעֲלוּ"
+            },
+            {
               "a": "וּבָאַשׁ",
               "b": "וַיִּבְאַשׁ"
             },
             {
               "a": "לִשְׁתּוֹת",
               "b": "לִשְׁתֹּת"
-            },
-            {
-              "a": "וְעָלוּ",
-              "b": "וַיַּֽעֲלוּ"
             }
           ],
           "finalScore": 8
@@ -10288,12 +10432,12 @@
           },
           "lookAlikeWordPairs": [
             {
-              "a": "וְסָר",
-              "b": "וַיָּסַר"
-            },
-            {
               "a": "הוֹיָה",
               "b": "הָיָה"
+            },
+            {
+              "a": "וְסָר",
+              "b": "וַיָּסַר"
             }
           ],
           "finalScore": 8
@@ -10339,12 +10483,12 @@
           },
           "lookAlikeWordPairs": [
             {
-              "a": "וַיַּמְטֵר",
-              "b": "וּמָטָר"
-            },
-            {
               "a": "אֲלֵהֶם",
               "b": "אֱלֹהִים"
+            },
+            {
+              "a": "וַיַּמְטֵר",
+              "b": "וּמָטָר"
             }
           ],
           "finalScore": 6
@@ -10355,7 +10499,7 @@
         "vocabulary": 4.4,
         "trope": 4,
         "repetition": 3,
-        "hiddenChallenges": 4.9
+        "hiddenChallenges": 5
       },
       "parshaFinalScore": 5.7,
       "hardestAliyah": "4",
@@ -10658,12 +10802,12 @@
               "b": "לוֹא"
             },
             {
-              "a": "תִּגַּע",
-              "b": "תַגִּיעַ"
-            },
-            {
               "a": "עָלֶֽיהָ",
               "b": "עֹלָה"
+            },
+            {
+              "a": "תִּגַּע",
+              "b": "תַגִּיעַ"
             }
           ],
           "finalScore": 7
@@ -10708,6 +10852,10 @@
             ]
           },
           "lookAlikeWordPairs": [
+            {
+              "a": "אֹתוֹ",
+              "b": "אִתּוֹ"
+            },
             {
               "a": "אֶל",
               "b": "אַיִל"
@@ -10780,12 +10928,12 @@
           },
           "lookAlikeWordPairs": [
             {
-              "a": "צִפּוֹר",
-              "b": "צִפֹּר"
-            },
-            {
               "a": "אוּלַי",
               "b": "אֵלָי"
+            },
+            {
+              "a": "צִפּוֹר",
+              "b": "צִפֹּר"
             }
           ],
           "finalScore": 4
@@ -10829,6 +10977,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אַתֶּם",
+              "b": "אִתָּם"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -10839,7 +10993,7 @@
             "vocabulary": 5,
             "trope": 6,
             "repetition": 3,
-            "hiddenChallenges": 7
+            "hiddenChallenges": 8
           },
           "vocabDetail": {
             "rarity": 6.5,
@@ -10872,8 +11026,8 @@
           },
           "lookAlikeWordPairs": [
             {
-              "a": "שָׁלשׁ",
-              "b": "שָׁלוֹשׁ"
+              "a": "לוֹ",
+              "b": "לוּ"
             },
             {
               "a": "הֲלוֹא",
@@ -10925,6 +11079,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אִתּֽוֹ",
+              "b": "אֹתוֹ"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -10935,7 +11095,7 @@
             "vocabulary": 4,
             "trope": 6,
             "repetition": 3,
-            "hiddenChallenges": 5
+            "hiddenChallenges": 6
           },
           "vocabDetail": {
             "rarity": 7,
@@ -10967,6 +11127,10 @@
             ]
           },
           "lookAlikeWordPairs": [
+            {
+              "a": "אִתּוֹ",
+              "b": "אֹתוֹ"
+            },
             {
               "a": "וַיִּבֶן",
               "b": "וּבֶן"
@@ -11070,12 +11234,12 @@
               "b": "הָלַךְ"
             },
             {
-              "a": "אֲשֶׁר",
-              "b": "אַשּׁוּר"
-            },
-            {
               "a": "וְקָם",
               "b": "וַיָּקָם"
+            },
+            {
+              "a": "אֲשֶׁר",
+              "b": "אַשּׁוּר"
             }
           ],
           "finalScore": 8
@@ -11086,7 +11250,7 @@
         "vocabulary": 4.4,
         "trope": 6,
         "repetition": 3,
-        "hiddenChallenges": 5.7
+        "hiddenChallenges": 6
       },
       "parshaFinalScore": 5.7,
       "hardestAliyah": "7",
@@ -11145,12 +11309,12 @@
               "b": "אוֹתָהּ"
             },
             {
-              "a": "וְאִשָּׁה",
-              "b": "וְאִישָׁהּ"
-            },
-            {
               "a": "נִדְרָהּ",
               "b": "נְדָרֶיהָ"
+            },
+            {
+              "a": "אָֽסְרָה",
+              "b": "אֱסָרֶיהָ"
             }
           ],
           "finalScore": 6
@@ -11339,7 +11503,7 @@
             "vocabulary": 6,
             "trope": 4,
             "repetition": 3,
-            "hiddenChallenges": 5
+            "hiddenChallenges": 6
           },
           "vocabDetail": {
             "rarity": 5.5,
@@ -11382,6 +11546,10 @@
           ],
           "lookAlikeWordPairs": [
             {
+              "a": "אֹתָם",
+              "b": "אִתָּם"
+            },
+            {
               "a": "עַד",
               "b": "עוֹד"
             }
@@ -11396,7 +11564,7 @@
             "vocabulary": 5,
             "trope": 4,
             "repetition": 3,
-            "hiddenChallenges": 4
+            "hiddenChallenges": 5
           },
           "vocabDetail": {
             "rarity": 4.9,
@@ -11429,6 +11597,10 @@
           },
           "lookAlikeWordPairs": [
             {
+              "a": "אֶתְכֶֽם",
+              "b": "אִתְּכֶם"
+            },
+            {
               "a": "אֲלֵיהֶם",
               "b": "אֲלֵהֶם"
             }
@@ -11441,7 +11613,7 @@
         "vocabulary": 5.1,
         "trope": 4,
         "repetition": 3,
-        "hiddenChallenges": 4.6
+        "hiddenChallenges": 4.9
       },
       "parshaFinalScore": 5.7,
       "hardestAliyah": "4",
@@ -11462,7 +11634,7 @@
             "vocabulary": 5,
             "trope": 5,
             "repetition": 3,
-            "hiddenChallenges": 5
+            "hiddenChallenges": 6
           },
           "vocabDetail": {
             "rarity": 6.5,
@@ -11494,6 +11666,10 @@
             ]
           },
           "lookAlikeWordPairs": [
+            {
+              "a": "אֹתוֹ",
+              "b": "אִתּוֹ"
+            },
             {
               "a": "שְׁמוֹת",
               "b": "שְׁמֹת"
@@ -11601,6 +11777,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֹתוֹ",
+              "b": "אִתּוֹ"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -11662,7 +11844,7 @@
             "vocabulary": 5,
             "trope": 5,
             "repetition": 3,
-            "hiddenChallenges": 5
+            "hiddenChallenges": 6
           },
           "vocabDetail": {
             "rarity": 4.3,
@@ -11694,6 +11876,10 @@
             ]
           },
           "lookAlikeWordPairs": [
+            {
+              "a": "אִתּֽוֹ",
+              "b": "אֹתוֹ"
+            },
             {
               "a": "אֵיל",
               "b": "אֶל"
@@ -11789,7 +11975,7 @@
         "vocabulary": 5,
         "trope": 5,
         "repetition": 3,
-        "hiddenChallenges": 5.7
+        "hiddenChallenges": 6
       },
       "parshaFinalScore": 5.6,
       "hardestAliyah": "2",
@@ -12039,6 +12225,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אִתִּי",
+              "b": "אֹתִֽי"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -12082,8 +12274,8 @@
           },
           "lookAlikeWordPairs": [
             {
-              "a": "אִֽישׁ",
-              "b": "אֵשׁ"
+              "a": "אֹתָהּ",
+              "b": "אַתָּה"
             },
             {
               "a": "עַד",
@@ -12104,7 +12296,7 @@
             "vocabulary": 4,
             "trope": 3,
             "repetition": 3,
-            "hiddenChallenges": 5
+            "hiddenChallenges": 6
           },
           "vocabDetail": {
             "rarity": 6.3,
@@ -12143,16 +12335,16 @@
           ],
           "lookAlikeWordPairs": [
             {
+              "a": "אַתָּה",
+              "b": "אֹתָהּ"
+            },
+            {
+              "a": "אִתּֽוֹ",
+              "b": "אֹתוֹ"
+            },
+            {
               "a": "וּבֵין",
               "b": "וּבֶן"
-            },
-            {
-              "a": "וַיְכַל",
-              "b": "וְכָל"
-            },
-            {
-              "a": "יְלִיד",
-              "b": "יוֹלִיד"
             }
           ],
           "finalScore": 7
@@ -12163,7 +12355,7 @@
         "vocabulary": 4.9,
         "trope": 3,
         "repetition": 3,
-        "hiddenChallenges": 3.1
+        "hiddenChallenges": 3.3
       },
       "parshaFinalScore": 5.3,
       "hardestAliyah": "6",
@@ -12184,7 +12376,7 @@
             "vocabulary": 3,
             "trope": 3,
             "repetition": 3,
-            "hiddenChallenges": 4
+            "hiddenChallenges": 5
           },
           "vocabDetail": {
             "rarity": 5.7,
@@ -12223,16 +12415,16 @@
           ],
           "lookAlikeWordPairs": [
             {
-              "a": "בְּנֵי",
-              "b": "בֵּינִי"
+              "a": "לֽוֹ",
+              "b": "לוּ"
             },
             {
               "a": "מֵאֹת",
               "b": "מֵאוֹת"
             },
             {
-              "a": "שְׁמָעוּנִי",
-              "b": "שְׁמָעֵנִי"
+              "a": "בְּנֵי",
+              "b": "בֵּינִי"
             }
           ],
           "finalScore": 5
@@ -12411,16 +12603,16 @@
           ],
           "lookAlikeWordPairs": [
             {
+              "a": "אַתָּה",
+              "b": "אֹתָהּ"
+            },
+            {
               "a": "בֵּית",
               "b": "בַּת"
             },
             {
               "a": "בָּרוּךְ",
               "b": "בֵּרַךְ"
-            },
-            {
-              "a": "וַיֹּאמֶר",
-              "b": "וָֽאֹמַר"
             }
           ],
           "finalScore": 8
@@ -12588,390 +12780,11 @@
         "vocabulary": 5.9,
         "trope": 3,
         "repetition": 3,
-        "hiddenChallenges": 4
+        "hiddenChallenges": 4.1
       },
       "parshaFinalScore": 5.3,
       "hardestAliyah": "4",
       "easiestAliyah": "7"
-    },
-    {
-      "parshaId": "Vayigash",
-      "combined": false,
-      "profile": [
-        "NARRATIVE",
-        "GENEALOGY"
-      ],
-      "aliyot": [
-        {
-          "aliyah": "1",
-          "verses": 13,
-          "scores": {
-            "length": 5,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "vocabDetail": {
-            "rarity": 7.7,
-            "pronunciation": 2.3,
-            "rareExamples": [
-              {
-                "word": "בְּעַבְדֶּךָ",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "כְּפַרְעֹֽה",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "קָטָן",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "אֲחִיכֶם"
-              },
-              {
-                "word": "אֲהֵבֽוֹ"
-              },
-              {
-                "word": "הֽוֹרִדֻהוּ"
-              }
-            ]
-          },
-          "lookAlikeWordPairs": [
-            {
-              "a": "וַיֹּאמֶר",
-              "b": "וָֽאֹמַר"
-            },
-            {
-              "a": "עַבְדְּךָ",
-              "b": "עֲבָדֶיךָ"
-            }
-          ],
-          "finalScore": 5
-        },
-        {
-          "aliyah": "2",
-          "verses": 11,
-          "scores": {
-            "length": 4,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 4
-          },
-          "vocabDetail": {
-            "rarity": 5.6,
-            "pronunciation": 4,
-            "rareExamples": [
-              {
-                "word": "כִּרְאוֹתוֹ",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "שֵׂיבַת",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "יַעַל",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "אֲבִיאֶנּוּ"
-              },
-              {
-                "word": "וּלְהַֽחֲיוֹת"
-              },
-              {
-                "word": "אֶֽעֱלֶה"
-              }
-            ]
-          },
-          "lookAlikeWordPairs": [
-            {
-              "a": "עֲבָדֶיךָ",
-              "b": "עַבְדְּךָ"
-            }
-          ],
-          "finalScore": 4
-        },
-        {
-          "aliyah": "3",
-          "verses": 11,
-          "scores": {
-            "length": 4,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "vocabDetail": {
-            "rarity": 5.5,
-            "pronunciation": 3.7,
-            "rareExamples": [
-              {
-                "word": "שְׁלַחְתֶּם",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "וַיְשִׂימֵנִי",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "וּלְאָדוֹן",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "הָֽאֱלֹהִים"
-              },
-              {
-                "word": "וַֽאֲמַרְתֶּם"
-              },
-              {
-                "word": "אֱלֹהִים"
-              }
-            ]
-          },
-          "lookAlikeWordPairs": [
-            {
-              "a": "בִּנְךָ",
-              "b": "בָנֶיךָ"
-            },
-            {
-              "a": "בִנְיָמִין",
-              "b": "בִנְיָֽמִן"
-            }
-          ],
-          "finalScore": 4
-        },
-        {
-          "aliyah": "4",
-          "verses": 9,
-          "scores": {
-            "length": 3,
-            "vocabulary": 4,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 4
-          },
-          "vocabDetail": {
-            "rarity": 5.7,
-            "pronunciation": 2.4,
-            "rareExamples": [
-              {
-                "word": "צֻוֵּיתָה",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "וְלִנְשֵׁיכֶם",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "וּנְשָׂאתֶם",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "הָעֲגָלוֹת"
-              },
-              {
-                "word": "וַיַּֽעֲשׂוּ"
-              },
-              {
-                "word": "וַיַּֽעֲלוּ"
-              }
-            ]
-          },
-          "lookAlikeWordPairs": [
-            {
-              "a": "חֲלִפוֹת",
-              "b": "חֲלִפֹת"
-            }
-          ],
-          "finalScore": 3
-        },
-        {
-          "aliyah": "5",
-          "verses": 28,
-          "scores": {
-            "length": 9,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 4
-          },
-          "vocabDetail": {
-            "rarity": 8,
-            "pronunciation": 3.1,
-            "rareExamples": [
-              {
-                "word": "וְאֶרְאֶנּוּ",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "לֵֽאלֹהֵי",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "מֵֽרְדָה",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "הַכְּנַֽעֲנִֽית"
-              },
-              {
-                "word": "וְאֶרְאֶנּוּ"
-              },
-              {
-                "word": "אֱלֹהִים"
-              }
-            ]
-          },
-          "finalScore": 8
-        },
-        {
-          "aliyah": "6",
-          "verses": 17,
-          "scores": {
-            "length": 7,
-            "vocabulary": 4,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 6
-          },
-          "vocabDetail": {
-            "rarity": 3.5,
-            "pronunciation": 5.3,
-            "rareExamples": [
-              {
-                "word": "מֶרְכַּבְתּוֹ",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "אָמוּתָה",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "רְאוֹתִי",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "וַיַּֽעֲמִדֵהוּ"
-              },
-              {
-                "word": "וְהָֽאֲנָשִׁים"
-              },
-              {
-                "word": "אֶֽעֱלֶה"
-              }
-            ]
-          },
-          "ambiguousSpellingExamples": [
-            {
-              "word": "הִוא",
-              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
-            }
-          ],
-          "lookAlikeWordPairs": [
-            {
-              "a": "חָֽי",
-              "b": "חַיַּי"
-            },
-            {
-              "a": "וַיֹּאמֶר",
-              "b": "וְאָמַר"
-            },
-            {
-              "a": "אֲבֹתֵינוּ",
-              "b": "אֲבוֹתֵֽינוּ"
-            }
-          ],
-          "finalScore": 6
-        },
-        {
-          "aliyah": "7",
-          "verses": 17,
-          "scores": {
-            "length": 7,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 7
-          },
-          "vocabDetail": {
-            "rarity": 6.5,
-            "pronunciation": 5,
-            "rareExamples": [
-              {
-                "word": "וַיְכַלְכֵּל",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "וַיְלַקֵּט",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "בַּשֶּׁבֶר",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "וְהָֽאֲדָמָה"
-              },
-              {
-                "word": "וַיֵּאָֽחֲזוּ"
-              },
-              {
-                "word": "אֲחֻזָּה"
-              }
-            ]
-          },
-          "ambiguousSpellingExamples": [
-            {
-              "word": "הַהִוא",
-              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
-            }
-          ],
-          "lookAlikeWordPairs": [
-            {
-              "a": "וַיִּתֵּן",
-              "b": "וְתֶן"
-            },
-            {
-              "a": "וַיּוֹשֵׁב",
-              "b": "וַיֵּשֶׁב"
-            },
-            {
-              "a": "וַיָּבֹאוּ",
-              "b": "וַיָּבִיאוּ"
-            }
-          ],
-          "finalScore": 7
-        }
-      ],
-      "parshaScores": {
-        "length": 5.6,
-        "vocabulary": 5,
-        "trope": 4,
-        "repetition": 3,
-        "hiddenChallenges": 5
-      },
-      "parshaFinalScore": 5.3,
-      "hardestAliyah": "5",
-      "easiestAliyah": "4"
     },
     {
       "parshaId": "Vayeshev",
@@ -13239,6 +13052,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אִתּוֹ",
+              "b": "אֹתוֹ"
+            }
+          ],
           "finalScore": 2
         },
         {
@@ -13249,7 +13068,7 @@
             "vocabulary": 7,
             "trope": 3,
             "repetition": 3,
-            "hiddenChallenges": 4
+            "hiddenChallenges": 5
           },
           "vocabDetail": {
             "rarity": 7.4,
@@ -13282,12 +13101,16 @@
           },
           "lookAlikeWordPairs": [
             {
+              "a": "אֹתוֹ",
+              "b": "אִתּוֹ"
+            },
+            {
               "a": "בָּא",
               "b": "בּוֹא"
             }
           ],
           "note": "Contains a shalshelet (Gen 39:8, Yosef refuses)",
-          "finalScore": 6
+          "finalScore": 7
         },
         {
           "aliyah": "7",
@@ -13297,7 +13120,7 @@
             "vocabulary": 5,
             "trope": 3,
             "repetition": 3,
-            "hiddenChallenges": 4
+            "hiddenChallenges": 5
           },
           "vocabDetail": {
             "rarity": 7.4,
@@ -13336,16 +13159,16 @@
           ],
           "lookAlikeWordPairs": [
             {
-              "a": "אִתְּךָ",
-              "b": "אֽוֹתְךָ"
+              "a": "אֹתָם",
+              "b": "אִתָּם"
+            },
+            {
+              "a": "אִתּוֹ",
+              "b": "אֹתוֹ"
             },
             {
               "a": "אֲלֵיהֶם",
               "b": "אֲלֵהֶם"
-            },
-            {
-              "a": "הָֽאוֹפִֽים",
-              "b": "הָֽאֹפִים"
             }
           ],
           "finalScore": 7
@@ -13356,11 +13179,404 @@
         "vocabulary": 6,
         "trope": 3,
         "repetition": 3,
-        "hiddenChallenges": 3.3
+        "hiddenChallenges": 3.6
       },
-      "parshaFinalScore": 5.1,
+      "parshaFinalScore": 5.3,
       "hardestAliyah": "4",
       "easiestAliyah": "5"
+    },
+    {
+      "parshaId": "Vayigash",
+      "combined": false,
+      "profile": [
+        "NARRATIVE",
+        "GENEALOGY"
+      ],
+      "aliyot": [
+        {
+          "aliyah": "1",
+          "verses": 13,
+          "scores": {
+            "length": 5,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "vocabDetail": {
+            "rarity": 7.7,
+            "pronunciation": 2.3,
+            "rareExamples": [
+              {
+                "word": "בְּעַבְדֶּךָ",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "כְּפַרְעֹֽה",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "קָטָן",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "אֲחִיכֶם"
+              },
+              {
+                "word": "אֲהֵבֽוֹ"
+              },
+              {
+                "word": "הֽוֹרִדֻהוּ"
+              }
+            ]
+          },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיֹּאמֶר",
+              "b": "וָֽאֹמַר"
+            },
+            {
+              "a": "עַבְדְּךָ",
+              "b": "עֲבָדֶיךָ"
+            }
+          ],
+          "finalScore": 5
+        },
+        {
+          "aliyah": "2",
+          "verses": 11,
+          "scores": {
+            "length": 4,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "vocabDetail": {
+            "rarity": 5.6,
+            "pronunciation": 4,
+            "rareExamples": [
+              {
+                "word": "כִּרְאוֹתוֹ",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "שֵׂיבַת",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "יַעַל",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "אֲבִיאֶנּוּ"
+              },
+              {
+                "word": "וּלְהַֽחֲיוֹת"
+              },
+              {
+                "word": "אֶֽעֱלֶה"
+              }
+            ]
+          },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אִתִּי",
+              "b": "אֹתִי"
+            },
+            {
+              "a": "אִתּוֹ",
+              "b": "אֹתוֹ"
+            },
+            {
+              "a": "עֲבָדֶיךָ",
+              "b": "עַבְדְּךָ"
+            }
+          ],
+          "finalScore": 4
+        },
+        {
+          "aliyah": "3",
+          "verses": 11,
+          "scores": {
+            "length": 4,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "vocabDetail": {
+            "rarity": 5.5,
+            "pronunciation": 3.7,
+            "rareExamples": [
+              {
+                "word": "שְׁלַחְתֶּם",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "וַיְשִׂימֵנִי",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "וּלְאָדוֹן",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "הָֽאֱלֹהִים"
+              },
+              {
+                "word": "וַֽאֲמַרְתֶּם"
+              },
+              {
+                "word": "אֱלֹהִים"
+              }
+            ]
+          },
+          "lookAlikeWordPairs": [
+            {
+              "a": "בִּנְךָ",
+              "b": "בָנֶיךָ"
+            },
+            {
+              "a": "בִנְיָמִין",
+              "b": "בִנְיָֽמִן"
+            }
+          ],
+          "finalScore": 4
+        },
+        {
+          "aliyah": "4",
+          "verses": 9,
+          "scores": {
+            "length": 3,
+            "vocabulary": 4,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "vocabDetail": {
+            "rarity": 5.7,
+            "pronunciation": 2.4,
+            "rareExamples": [
+              {
+                "word": "צֻוֵּיתָה",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "וְלִנְשֵׁיכֶם",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "וּנְשָׂאתֶם",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "הָעֲגָלוֹת"
+              },
+              {
+                "word": "וַיַּֽעֲשׂוּ"
+              },
+              {
+                "word": "וַיַּֽעֲלוּ"
+              }
+            ]
+          },
+          "lookAlikeWordPairs": [
+            {
+              "a": "חֲלִפוֹת",
+              "b": "חֲלִפֹת"
+            }
+          ],
+          "finalScore": 3
+        },
+        {
+          "aliyah": "5",
+          "verses": 28,
+          "scores": {
+            "length": 9,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "vocabDetail": {
+            "rarity": 8,
+            "pronunciation": 3.1,
+            "rareExamples": [
+              {
+                "word": "וְאֶרְאֶנּוּ",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "לֵֽאלֹהֵי",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "מֵֽרְדָה",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "הַכְּנַֽעֲנִֽית"
+              },
+              {
+                "word": "וְאֶרְאֶנּוּ"
+              },
+              {
+                "word": "אֱלֹהִים"
+              }
+            ]
+          },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֹתֽוֹ",
+              "b": "אִתּוֹ"
+            }
+          ],
+          "finalScore": 8
+        },
+        {
+          "aliyah": "6",
+          "verses": 17,
+          "scores": {
+            "length": 7,
+            "vocabulary": 4,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 6
+          },
+          "vocabDetail": {
+            "rarity": 3.5,
+            "pronunciation": 5.3,
+            "rareExamples": [
+              {
+                "word": "מֶרְכַּבְתּוֹ",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "אָמוּתָה",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "רְאוֹתִי",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "וַיַּֽעֲמִדֵהוּ"
+              },
+              {
+                "word": "וְהָֽאֲנָשִׁים"
+              },
+              {
+                "word": "אֶֽעֱלֶה"
+              }
+            ]
+          },
+          "ambiguousSpellingExamples": [
+            {
+              "word": "הִוא",
+              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "חָֽי",
+              "b": "חַיַּי"
+            },
+            {
+              "a": "וַיֹּאמֶר",
+              "b": "וְאָמַר"
+            },
+            {
+              "a": "אֲבֹתֵינוּ",
+              "b": "אֲבוֹתֵֽינוּ"
+            }
+          ],
+          "finalScore": 6
+        },
+        {
+          "aliyah": "7",
+          "verses": 17,
+          "scores": {
+            "length": 7,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 7
+          },
+          "vocabDetail": {
+            "rarity": 6.5,
+            "pronunciation": 5,
+            "rareExamples": [
+              {
+                "word": "וַיְכַלְכֵּל",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "וַיְלַקֵּט",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "בַּשֶּׁבֶר",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "וְהָֽאֲדָמָה"
+              },
+              {
+                "word": "וַיֵּאָֽחֲזוּ"
+              },
+              {
+                "word": "אֲחֻזָּה"
+              }
+            ]
+          },
+          "ambiguousSpellingExamples": [
+            {
+              "word": "הַהִוא",
+              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "וַיִּתֵּן",
+              "b": "וְתֶן"
+            },
+            {
+              "a": "וַיּוֹשֵׁב",
+              "b": "וַיֵּשֶׁב"
+            },
+            {
+              "a": "מִקְנֵיהֶם",
+              "b": "מִקְנֵהֶם"
+            }
+          ],
+          "finalScore": 7
+        }
+      ],
+      "parshaScores": {
+        "length": 5.6,
+        "vocabulary": 5,
+        "trope": 4,
+        "repetition": 3,
+        "hiddenChallenges": 5.1
+      },
+      "parshaFinalScore": 5.3,
+      "hardestAliyah": "5",
+      "easiestAliyah": "4"
     },
     {
       "parshaId": "Tzav",
@@ -13461,12 +13677,12 @@
               "b": "קָדוֹשׁ"
             },
             {
-              "a": "הִמָּשַׁח",
-              "b": "הַמָּשִׁיחַ"
-            },
-            {
               "a": "הַקֶּֽרֶב",
               "b": "הִקְרִיב"
+            },
+            {
+              "a": "הִמָּשַׁח",
+              "b": "הַמָּשִׁיחַ"
             }
           ],
           "finalScore": 8
@@ -13563,6 +13779,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אִתּוֹ",
+              "b": "אֹתוֹ"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -13693,6 +13915,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אִתּֽוֹ",
+              "b": "אֹתוֹ"
+            }
+          ],
           "finalScore": 3
         }
       ],
@@ -13761,12 +13989,12 @@
           ],
           "lookAlikeWordPairs": [
             {
-              "a": "עֵֽינְךָ",
-              "b": "עֵינֶיךָ"
-            },
-            {
               "a": "מִצְוֹתָיו",
               "b": "מצותו"
+            },
+            {
+              "a": "עֵֽינְךָ",
+              "b": "עֵינֶיךָ"
             }
           ],
           "finalScore": 8
@@ -13853,16 +14081,16 @@
           },
           "lookAlikeWordPairs": [
             {
+              "a": "אַתָּה",
+              "b": "אָֽתָּה"
+            },
+            {
               "a": "אֹתָם",
               "b": "אוֹתָם"
             },
             {
               "a": "לוּחֹת",
               "b": "לֻחֹת"
-            },
-            {
-              "a": "לֻחֹת",
-              "b": "לֻחוֹת"
             }
           ],
           "finalScore": 8
@@ -13979,7 +14207,7 @@
             "vocabulary": 5,
             "trope": 3,
             "repetition": 3,
-            "hiddenChallenges": 0
+            "hiddenChallenges": 1
           },
           "vocabDetail": {
             "rarity": 7.5,
@@ -14014,6 +14242,16 @@
             {
               "word": "הִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אַתֶּם",
+              "b": "אֹתָם"
+            },
+            {
+              "a": "אַתָּה",
+              "b": "אֹתָהּ"
             }
           ],
           "note": "Contains the second paragraph of the Shema (Deut 11:13-21), recited twice daily -- widely known by heart.",
@@ -14067,7 +14305,7 @@
         "vocabulary": 5.9,
         "trope": 3,
         "repetition": 3,
-        "hiddenChallenges": 2.6
+        "hiddenChallenges": 2.7
       },
       "parshaFinalScore": 5.1,
       "hardestAliyah": "1",
@@ -14736,12 +14974,12 @@
               "b": "עוֹד"
             },
             {
-              "a": "אֹֽיְבֶיךָ",
-              "b": "אֹֽיְבֶֽךָ"
-            },
-            {
               "a": "וְרָאוּ",
               "b": "וְיָֽרְאוּ"
+            },
+            {
+              "a": "רַגְלָהּ",
+              "b": "רַגְלֶיהָ"
             }
           ],
           "note": "Tochacha (curses, Deut 28:15-68) -- traditional custom to read quickly and quietly; the longest aliyah in the Torah by verse count",
@@ -14786,6 +15024,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אַתֶּם",
+              "b": "אֹתָם"
+            }
+          ],
           "finalScore": 4
         }
       ],
@@ -14816,7 +15060,7 @@
             "vocabulary": 4,
             "trope": 4,
             "repetition": 3,
-            "hiddenChallenges": 5
+            "hiddenChallenges": 6
           },
           "vocabDetail": {
             "rarity": 2.9,
@@ -14849,12 +15093,16 @@
           },
           "lookAlikeWordPairs": [
             {
-              "a": "עֲבָדָיו",
-              "b": "עִבְדוּ"
+              "a": "אַתֶּם",
+              "b": "אֹתָם"
             },
             {
-              "a": "וְיַֽעַבְדוּ",
-              "b": "וְעִבְדוּ"
+              "a": "אַתָּה",
+              "b": "אֹתָהּ"
+            },
+            {
+              "a": "עֲבָדָיו",
+              "b": "עִבְדוּ"
             }
           ],
           "finalScore": 4
@@ -15057,7 +15305,7 @@
             "vocabulary": 3,
             "trope": 4,
             "repetition": 3,
-            "hiddenChallenges": 4
+            "hiddenChallenges": 5
           },
           "vocabDetail": {
             "rarity": 3.5,
@@ -15089,6 +15337,10 @@
             ]
           },
           "lookAlikeWordPairs": [
+            {
+              "a": "אַתֶּם",
+              "b": "אִתָּם"
+            },
             {
               "a": "עֲבָדָיו",
               "b": "עִבְדוּ"
@@ -15153,7 +15405,7 @@
         "vocabulary": 3.3,
         "trope": 4,
         "repetition": 3,
-        "hiddenChallenges": 4.7
+        "hiddenChallenges": 5
       },
       "parshaFinalScore": 5,
       "hardestAliyah": "4",
@@ -15218,16 +15470,16 @@
           ],
           "lookAlikeWordPairs": [
             {
+              "a": "אֹתוֹ",
+              "b": "אִתּוֹ"
+            },
+            {
               "a": "אֶת",
               "b": "אוֹת"
             },
             {
               "a": "בֵּֽין",
               "b": "בֶּן"
-            },
-            {
-              "a": "בְּנֵֽי",
-              "b": "בֵּינִי"
             }
           ],
           "finalScore": 9
@@ -15273,16 +15525,16 @@
           },
           "lookAlikeWordPairs": [
             {
+              "a": "אִתּוֹ",
+              "b": "אֹתוֹ"
+            },
+            {
+              "a": "אֹתָם",
+              "b": "אַתֶּם"
+            },
+            {
               "a": "לִּי",
               "b": "לֵוִֽי"
-            },
-            {
-              "a": "אֵלָֽי",
-              "b": "אוּלַי"
-            },
-            {
-              "a": "וַיֵּשֶׁב",
-              "b": "וְשָׁב"
             }
           ],
           "finalScore": 9
@@ -15629,8 +15881,8 @@
               "b": "שְׁמֹת"
             },
             {
-              "a": "מֻֽסַבֹּת",
-              "b": "מֽוּסַבֹּת"
+              "a": "קְצוֹתָיו",
+              "b": "קצוותיו"
             }
           ],
           "finalScore": 8
@@ -16386,6 +16638,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֹתָֽהּ",
+              "b": "אַתָּה"
+            }
+          ],
           "finalScore": 6
         },
         {
@@ -16476,16 +16734,16 @@
           ],
           "lookAlikeWordPairs": [
             {
+              "a": "עֵשָׂו",
+              "b": "עָֽשׂוּ"
+            },
+            {
               "a": "קֻמוּ",
               "b": "קוּמוּ"
             },
             {
               "a": "סִיחֹן",
               "b": "סִיחוֹן"
-            },
-            {
-              "a": "וְהַמֹּאָבִים",
-              "b": "וְהַמּוֹאָבִים"
             }
           ],
           "finalScore": 8
@@ -17262,16 +17520,16 @@
           },
           "lookAlikeWordPairs": [
             {
+              "a": "לוֹ",
+              "b": "לוּ"
+            },
+            {
+              "a": "אֹתֽוֹ",
+              "b": "אִתּוֹ"
+            },
+            {
               "a": "אוֹתָם",
               "b": "אֹתָֽם"
-            },
-            {
-              "a": "וַיְכַל",
-              "b": "וְכֹל"
-            },
-            {
-              "a": "עַמָּֽיו",
-              "b": "עִמּוֹ"
             }
           ],
           "finalScore": 8
@@ -17443,7 +17701,7 @@
             "vocabulary": 5,
             "trope": 4,
             "repetition": 3,
-            "hiddenChallenges": 4
+            "hiddenChallenges": 5
           },
           "vocabDetail": {
             "rarity": 3,
@@ -17475,6 +17733,10 @@
             ]
           },
           "lookAlikeWordPairs": [
+            {
+              "a": "אֹתָם",
+              "b": "אַתֶּם"
+            },
             {
               "a": "הָאִישׁ",
               "b": "הָאֵשׁ"
@@ -17696,7 +17958,7 @@
         "vocabulary": 4,
         "trope": 4,
         "repetition": 3,
-        "hiddenChallenges": 4.9
+        "hiddenChallenges": 5
       },
       "parshaFinalScore": 4.9,
       "hardestAliyah": "3",
@@ -18211,12 +18473,12 @@
           ],
           "lookAlikeWordPairs": [
             {
-              "a": "אֱלוֹהַּ",
-              "b": "אֱלֹהַּ"
-            },
-            {
               "a": "בָּמֳתֵי",
               "b": "במותי"
+            },
+            {
+              "a": "אֱלוֹהַּ",
+              "b": "אֱלֹהַּ"
             },
             {
               "a": "וְשֶׁמֶן",
@@ -18612,7 +18874,7 @@
             "vocabulary": 5,
             "trope": 3,
             "repetition": 3,
-            "hiddenChallenges": 5
+            "hiddenChallenges": 6
           },
           "vocabDetail": {
             "rarity": 6.2,
@@ -18651,16 +18913,16 @@
           ],
           "lookAlikeWordPairs": [
             {
-              "a": "וַיִּקַּח",
-              "b": "וְקַח"
+              "a": "אֹתָהּ",
+              "b": "אַתָּה"
             },
             {
-              "a": "וַיֵּלֶךְ",
-              "b": "וְלֵךְ"
+              "a": "אֹתָהּ",
+              "b": "אִתָּהּ"
             },
             {
-              "a": "אוּלַי",
-              "b": "אֵלָי"
+              "a": "אִתָּהּ",
+              "b": "אַתָּה"
             }
           ],
           "finalScore": 8
@@ -18779,7 +19041,7 @@
         "vocabulary": 5.9,
         "trope": 3,
         "repetition": 3,
-        "hiddenChallenges": 3
+        "hiddenChallenges": 3.1
       },
       "parshaFinalScore": 4.6,
       "hardestAliyah": "5",
@@ -18801,7 +19063,7 @@
             "vocabulary": 4,
             "trope": 5,
             "repetition": 3,
-            "hiddenChallenges": 5
+            "hiddenChallenges": 6
           },
           "vocabDetail": {
             "rarity": 3.7,
@@ -18834,11 +19096,15 @@
           },
           "lookAlikeWordPairs": [
             {
+              "a": "אֹתָם",
+              "b": "אִתָּם"
+            },
+            {
               "a": "וְאַל",
               "b": "וְאַיִל"
             }
           ],
-          "finalScore": 6
+          "finalScore": 7
         },
         {
           "aliyah": "2",
@@ -19122,11 +19388,402 @@
         "vocabulary": 3.7,
         "trope": 5,
         "repetition": 3,
-        "hiddenChallenges": 5.4
+        "hiddenChallenges": 5.6
       },
-      "parshaFinalScore": 4.4,
+      "parshaFinalScore": 4.6,
       "hardestAliyah": "1",
       "easiestAliyah": "2"
+    },
+    {
+      "parshaId": "Shmini",
+      "combined": false,
+      "profile": [
+        "NARRATIVE",
+        "RITUAL"
+      ],
+      "aliyot": [
+        {
+          "aliyah": "1",
+          "verses": 16,
+          "scores": {
+            "length": 6,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "vocabDetail": {
+            "rarity": 1.6,
+            "pronunciation": 7.7,
+            "rareExamples": [
+              {
+                "word": "וּלְזִקְנֵי",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "וְעֵגֶל",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "וָכֶבֶשׂ",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "וַיְחַטְּאֵהוּ"
+              },
+              {
+                "word": "הַמִּזְבֵּחָה"
+              },
+              {
+                "word": "הַמִּזְבֵּֽחָה"
+              }
+            ]
+          },
+          "lookAlikeWordPairs": [
+            {
+              "a": "וְאַיִל",
+              "b": "וְאֶל"
+            },
+            {
+              "a": "וַֽעֲשֵׂה",
+              "b": "וַיַּֽעֲשֶׂהָ"
+            }
+          ],
+          "finalScore": 6
+        },
+        {
+          "aliyah": "2",
+          "verses": 7,
+          "scores": {
+            "length": 2,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "vocabDetail": {
+            "rarity": 3.2,
+            "pronunciation": 8.4,
+            "rareExamples": [
+              {
+                "word": "וְהַֽמְכַסֶּה",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "וְהַכְּלָיֹת",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "וְיֹתֶרֶת",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "הַמִּזְבֵּֽחָה"
+              },
+              {
+                "word": "הַֽחֲלָבִים"
+              },
+              {
+                "word": "הַמִּנְחָה"
+              }
+            ]
+          },
+          "ambiguousSpellingExamples": [
+            {
+              "word": "אתידיו",
+              "note": "Formal Ketiv/Qere: the Torah scroll is written את־ידו but traditionally read aloud as אתידיו."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "יָדָיו",
+              "b": "ידו"
+            }
+          ],
+          "finalScore": 3
+        },
+        {
+          "aliyah": "3",
+          "verses": 12,
+          "scores": {
+            "length": 4,
+            "vocabulary": 4,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 6
+          },
+          "vocabDetail": {
+            "rarity": 2.2,
+            "pronunciation": 5.6,
+            "rareExamples": [
+              {
+                "word": "וַיָּרֹנּוּ",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "אֶכָּבֵד",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "וַיִּדֹּם",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "וַֽאֲבִיהוּא"
+              },
+              {
+                "word": "וּֽלֲהַבְדִּיל"
+              },
+              {
+                "word": "הַֽחֲלָבִים"
+              }
+            ]
+          },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֵשׁ",
+              "b": "אִישׁ"
+            },
+            {
+              "a": "אֹתָֽם",
+              "b": "אוֹתָם"
+            },
+            {
+              "a": "אֲלֵהֶם",
+              "b": "אֲלֵיהֶם"
+            }
+          ],
+          "finalScore": 4
+        },
+        {
+          "aliyah": "4",
+          "verses": 4,
+          "scores": {
+            "length": 1,
+            "vocabulary": 6,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 6
+          },
+          "vocabDetail": {
+            "rarity": 5.9,
+            "pronunciation": 6.4,
+            "rareExamples": [
+              {
+                "word": "וְאִכְלוּהָ",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "וַֽחֲזֵה",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "הַנּֽוֹתָרִים",
+                "occurrencesInTorah": 2
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "הַֽחֲלָבִים"
+              },
+              {
+                "word": "הַמִּנְחָה"
+              },
+              {
+                "word": "וַֽאֲכַלְתֶּם"
+              }
+            ]
+          },
+          "ambiguousSpellingExamples": [
+            {
+              "word": "הִוא",
+              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֹתָהּ",
+              "b": "אַתָּה"
+            },
+            {
+              "a": "קֹדֶשׁ",
+              "b": "קָדוֹשׁ"
+            }
+          ],
+          "finalScore": 3
+        },
+        {
+          "aliyah": "5",
+          "verses": 5,
+          "scores": {
+            "length": 1,
+            "vocabulary": 5,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 5
+          },
+          "vocabDetail": {
+            "rarity": 2.7,
+            "pronunciation": 6.9,
+            "rareExamples": [
+              {
+                "word": "הַנּֽוֹתָרִם",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "פְּנִימָה",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "עֹֽלָתָם",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "הַֽחַטָּאת"
+              },
+              {
+                "word": "עֲלֵיהֶם"
+              },
+              {
+                "word": "וַתִּקְרֶאנָה"
+              }
+            ]
+          },
+          "ambiguousSpellingExamples": [
+            {
+              "word": "הִוא",
+              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "finalScore": 2
+        },
+        {
+          "aliyah": "6",
+          "verses": 32,
+          "scores": {
+            "length": 9,
+            "vocabulary": 4,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 6
+          },
+          "vocabDetail": {
+            "rarity": 4.8,
+            "pronunciation": 3.6,
+            "rareExamples": [
+              {
+                "word": "פְּרָסֹת",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "וּמִמַּפְרִסֵי",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "יַפְרִיס",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "הַיַּֽעֲנָה"
+              },
+              {
+                "word": "הַֽחֲסִידָה"
+              },
+              {
+                "word": "וְהָֽאֲנָקָה"
+              }
+            ]
+          },
+          "ambiguousSpellingExamples": [
+            {
+              "word": "הִוא",
+              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            },
+            {
+              "word": "אשרלו",
+              "note": "Formal Ketiv/Qere: the Torah scroll is written אשׁר־לא but traditionally read aloud as אשרלו."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "הַפַּרְסָה",
+              "b": "הִפְרִיסָה"
+            },
+            {
+              "a": "בַּמָּיִם",
+              "b": "בַּיַּמִּים"
+            }
+          ],
+          "finalScore": 8
+        },
+        {
+          "aliyah": "7",
+          "verses": 15,
+          "scores": {
+            "length": 6,
+            "vocabulary": 3,
+            "trope": 4,
+            "repetition": 3,
+            "hiddenChallenges": 4
+          },
+          "vocabDetail": {
+            "rarity": 4.5,
+            "pronunciation": 1.5,
+            "rareExamples": [
+              {
+                "word": "תּוֹכוֹ",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "וְכִירַיִם",
+                "occurrencesInTorah": 1
+              },
+              {
+                "word": "יֻתָּץ",
+                "occurrencesInTorah": 1
+              }
+            ],
+            "hardToPronounceExamples": [
+              {
+                "word": "הַמַּֽעֲלֶה"
+              },
+              {
+                "word": "הַנֶּֽאֱכֶלֶת"
+              },
+              {
+                "word": "אֱלֹֽהֵיכֶם"
+              }
+            ]
+          },
+          "lookAlikeWordPairs": [
+            {
+              "a": "זֶרַע",
+              "b": "זֵרוּעַ"
+            }
+          ],
+          "finalScore": 5
+        }
+      ],
+      "parshaScores": {
+        "length": 4.1,
+        "vocabulary": 4.7,
+        "trope": 4,
+        "repetition": 3,
+        "hiddenChallenges": 5.3
+      },
+      "parshaFinalScore": 4.4,
+      "hardestAliyah": "6",
+      "easiestAliyah": "5"
     },
     {
       "parshaId": "Bechukotai",
@@ -19216,6 +19873,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אֶתְכֶם",
+              "b": "אִתְּכֶֽם"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -19259,16 +19922,16 @@
           },
           "lookAlikeWordPairs": [
             {
+              "a": "אֹתָם",
+              "b": "אִתָּם"
+            },
+            {
               "a": "עָלֶיהָ",
               "b": "עָלֶה"
             },
             {
               "a": "עֻלְּכֶם",
               "b": "עֲלֵיכֶם"
-            },
-            {
-              "a": "וַֽהֲשִׁמּוֹתִי",
-              "b": "וַֽהֲשִׁמֹּתִי"
             }
           ],
           "note": "Tochacha (curses, Lev 26:14-46) -- traditional custom to read quickly and quietly",
@@ -19473,393 +20136,6 @@
       "parshaFinalScore": 4.4,
       "hardestAliyah": "3",
       "easiestAliyah": "1"
-    },
-    {
-      "parshaId": "Shmini",
-      "combined": false,
-      "profile": [
-        "NARRATIVE",
-        "RITUAL"
-      ],
-      "aliyot": [
-        {
-          "aliyah": "1",
-          "verses": 16,
-          "scores": {
-            "length": 6,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "vocabDetail": {
-            "rarity": 1.6,
-            "pronunciation": 7.7,
-            "rareExamples": [
-              {
-                "word": "וּלְזִקְנֵי",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "וְעֵגֶל",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "וָכֶבֶשׂ",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "וַיְחַטְּאֵהוּ"
-              },
-              {
-                "word": "הַמִּזְבֵּחָה"
-              },
-              {
-                "word": "הַמִּזְבֵּֽחָה"
-              }
-            ]
-          },
-          "lookAlikeWordPairs": [
-            {
-              "a": "וְאַיִל",
-              "b": "וְאֶל"
-            },
-            {
-              "a": "וַֽעֲשֵׂה",
-              "b": "וַיַּֽעֲשֶׂהָ"
-            }
-          ],
-          "finalScore": 6
-        },
-        {
-          "aliyah": "2",
-          "verses": 7,
-          "scores": {
-            "length": 2,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "vocabDetail": {
-            "rarity": 3.2,
-            "pronunciation": 8.4,
-            "rareExamples": [
-              {
-                "word": "וְהַֽמְכַסֶּה",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "וְהַכְּלָיֹת",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "וְיֹתֶרֶת",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "הַמִּזְבֵּֽחָה"
-              },
-              {
-                "word": "הַֽחֲלָבִים"
-              },
-              {
-                "word": "הַמִּנְחָה"
-              }
-            ]
-          },
-          "ambiguousSpellingExamples": [
-            {
-              "word": "אתידיו",
-              "note": "Formal Ketiv/Qere: the Torah scroll is written את־ידו but traditionally read aloud as אתידיו."
-            }
-          ],
-          "lookAlikeWordPairs": [
-            {
-              "a": "יָדָיו",
-              "b": "ידו"
-            }
-          ],
-          "finalScore": 3
-        },
-        {
-          "aliyah": "3",
-          "verses": 12,
-          "scores": {
-            "length": 4,
-            "vocabulary": 4,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 6
-          },
-          "vocabDetail": {
-            "rarity": 2.2,
-            "pronunciation": 5.6,
-            "rareExamples": [
-              {
-                "word": "וַיָּרֹנּוּ",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "אֶכָּבֵד",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "וַיִּדֹּם",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "וַֽאֲבִיהוּא"
-              },
-              {
-                "word": "וּֽלֲהַבְדִּיל"
-              },
-              {
-                "word": "הַֽחֲלָבִים"
-              }
-            ]
-          },
-          "lookAlikeWordPairs": [
-            {
-              "a": "אֵשׁ",
-              "b": "אִישׁ"
-            },
-            {
-              "a": "אֹתָֽם",
-              "b": "אוֹתָם"
-            },
-            {
-              "a": "אֲלֵהֶם",
-              "b": "אֲלֵיהֶם"
-            }
-          ],
-          "finalScore": 4
-        },
-        {
-          "aliyah": "4",
-          "verses": 4,
-          "scores": {
-            "length": 1,
-            "vocabulary": 6,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "vocabDetail": {
-            "rarity": 5.9,
-            "pronunciation": 6.4,
-            "rareExamples": [
-              {
-                "word": "וְאִכְלוּהָ",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "וַֽחֲזֵה",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "הַנּֽוֹתָרִים",
-                "occurrencesInTorah": 2
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "הַֽחֲלָבִים"
-              },
-              {
-                "word": "הַמִּנְחָה"
-              },
-              {
-                "word": "וַֽאֲכַלְתֶּם"
-              }
-            ]
-          },
-          "ambiguousSpellingExamples": [
-            {
-              "word": "הִוא",
-              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
-            }
-          ],
-          "lookAlikeWordPairs": [
-            {
-              "a": "קֹדֶשׁ",
-              "b": "קָדוֹשׁ"
-            }
-          ],
-          "finalScore": 2
-        },
-        {
-          "aliyah": "5",
-          "verses": 5,
-          "scores": {
-            "length": 1,
-            "vocabulary": 5,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 5
-          },
-          "vocabDetail": {
-            "rarity": 2.7,
-            "pronunciation": 6.9,
-            "rareExamples": [
-              {
-                "word": "הַנּֽוֹתָרִם",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "פְּנִימָה",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "עֹֽלָתָם",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "הַֽחַטָּאת"
-              },
-              {
-                "word": "עֲלֵיהֶם"
-              },
-              {
-                "word": "וַתִּקְרֶאנָה"
-              }
-            ]
-          },
-          "ambiguousSpellingExamples": [
-            {
-              "word": "הִוא",
-              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
-            }
-          ],
-          "finalScore": 2
-        },
-        {
-          "aliyah": "6",
-          "verses": 32,
-          "scores": {
-            "length": 9,
-            "vocabulary": 4,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 6
-          },
-          "vocabDetail": {
-            "rarity": 4.8,
-            "pronunciation": 3.6,
-            "rareExamples": [
-              {
-                "word": "פְּרָסֹת",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "וּמִמַּפְרִסֵי",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "יַפְרִיס",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "הַיַּֽעֲנָה"
-              },
-              {
-                "word": "הַֽחֲסִידָה"
-              },
-              {
-                "word": "וְהָֽאֲנָקָה"
-              }
-            ]
-          },
-          "ambiguousSpellingExamples": [
-            {
-              "word": "הִוא",
-              "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
-            },
-            {
-              "word": "אשרלו",
-              "note": "Formal Ketiv/Qere: the Torah scroll is written אשׁר־לא but traditionally read aloud as אשרלו."
-            }
-          ],
-          "lookAlikeWordPairs": [
-            {
-              "a": "בַּמָּיִם",
-              "b": "בַּיַּמִּים"
-            },
-            {
-              "a": "הַפַּרְסָה",
-              "b": "הִפְרִיסָה"
-            }
-          ],
-          "finalScore": 8
-        },
-        {
-          "aliyah": "7",
-          "verses": 15,
-          "scores": {
-            "length": 6,
-            "vocabulary": 3,
-            "trope": 4,
-            "repetition": 3,
-            "hiddenChallenges": 4
-          },
-          "vocabDetail": {
-            "rarity": 4.5,
-            "pronunciation": 1.5,
-            "rareExamples": [
-              {
-                "word": "תּוֹכוֹ",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "וְכִירַיִם",
-                "occurrencesInTorah": 1
-              },
-              {
-                "word": "יֻתָּץ",
-                "occurrencesInTorah": 1
-              }
-            ],
-            "hardToPronounceExamples": [
-              {
-                "word": "הַמַּֽעֲלֶה"
-              },
-              {
-                "word": "הַנֶּֽאֱכֶלֶת"
-              },
-              {
-                "word": "אֱלֹֽהֵיכֶם"
-              }
-            ]
-          },
-          "lookAlikeWordPairs": [
-            {
-              "a": "זֶרַע",
-              "b": "זֵרוּעַ"
-            }
-          ],
-          "finalScore": 5
-        }
-      ],
-      "parshaScores": {
-        "length": 4.1,
-        "vocabulary": 4.7,
-        "trope": 4,
-        "repetition": 3,
-        "hiddenChallenges": 5.1
-      },
-      "parshaFinalScore": 4.3,
-      "hardestAliyah": "6",
-      "easiestAliyah": "4"
     },
     {
       "parshaId": "Tazria",
@@ -20653,12 +20929,12 @@
           ],
           "lookAlikeWordPairs": [
             {
-              "a": "עָוֶל",
-              "b": "עַל"
-            },
-            {
               "a": "אֶל",
               "b": "אֵיל"
+            },
+            {
+              "a": "עָוֶל",
+              "b": "עַל"
             }
           ],
           "finalScore": 4
@@ -20743,6 +21019,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אִתְּכֶם",
+              "b": "אֶתְכֶם"
+            }
+          ],
           "finalScore": 2
         },
         {
@@ -20894,6 +21176,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "אַתֶּם",
+              "b": "אֹתָם"
+            }
+          ],
           "finalScore": 2
         }
       ],
@@ -20962,6 +21250,12 @@
             {
               "word": "וצבוים",
               "note": "Formal Ketiv/Qere: the Torah scroll is written וצביים but traditionally read aloud as וצבוים."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אַתֶּם",
+              "b": "אֹתָם"
             }
           ],
           "finalScore": 7
@@ -22051,6 +22345,12 @@
               "note": "Formal Ketiv/Qere: the Torah scroll is written וצביים but traditionally read aloud as וצבוים."
             }
           ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "אַתֶּם",
+              "b": "אֹתָם"
+            }
+          ],
           "finalScore": 5
         },
         {
@@ -22622,16 +22922,16 @@
           ],
           "lookAlikeWordPairs": [
             {
+              "a": "אֹתֽוֹ",
+              "b": "אִתּוֹ"
+            },
+            {
               "a": "אַיִל",
               "b": "אֶל"
             },
             {
               "a": "מֵאֵת",
               "b": "מֵאוֹת"
-            },
-            {
-              "a": "הַנֵּרֹת",
-              "b": "הַנֵּרֽוֹת"
             }
           ],
           "finalScore": 9
@@ -22704,16 +23004,16 @@
           ],
           "lookAlikeWordPairs": [
             {
+              "a": "אֹתֽוֹ",
+              "b": "אִתּוֹ"
+            },
+            {
               "a": "אַיִל",
               "b": "אֶל"
             },
             {
               "a": "מֵאֵת",
               "b": "מֵאוֹת"
-            },
-            {
-              "a": "הַנֵּרֹת",
-              "b": "הַנֵּרֽוֹת"
             }
           ],
           "finalScore": 9
@@ -23355,12 +23655,12 @@
               "b": "אוֹתָם"
             },
             {
-              "a": "שַׁבָּתוֹת",
-              "b": "שַׁבְּתֹת"
-            },
-            {
               "a": "מֽוֹעֲדֵי",
               "b": "מֹֽעֲדֵי"
+            },
+            {
+              "a": "שַׁבָּתוֹת",
+              "b": "שַׁבְּתֹת"
             }
           ],
           "finalScore": 9
@@ -23441,7 +23741,7 @@
             "vocabulary": 6,
             "trope": 6,
             "repetition": 3,
-            "hiddenChallenges": 5
+            "hiddenChallenges": 6
           },
           "vocabDetail": {
             "rarity": 6.6,
@@ -23474,11 +23774,15 @@
           },
           "lookAlikeWordPairs": [
             {
+              "a": "אֶתְכֶם",
+              "b": "אִתְּכֶֽם"
+            },
+            {
               "a": "הַשְׁבֵּעַ",
               "b": "הִשְׁבִּיעַ"
             }
           ],
-          "finalScore": 3
+          "finalScore": 4
         },
         {
           "aliyah": "2",
@@ -23674,12 +23978,12 @@
               "b": "הֵם"
             },
             {
-              "a": "יָֽדְךָ",
-              "b": "יָדֶֽיךָ"
+              "a": "אֵלִי",
+              "b": "אֵילֵי"
             },
             {
-              "a": "בַּיָּם",
-              "b": "בַּיּוֹם"
+              "a": "יָֽדְךָ",
+              "b": "יָדֶֽיךָ"
             }
           ],
           "note": "Shirat HaYam / Az Yashir (Ex 14:26-15:26) -- special brick-layout & elevated melody Az Yashir is recited daily in Pesukei D'Zimra -- most daveners know the words well, though that familiarity doesn't fully prepare a reader to lead its special trope solo.",
@@ -23739,11 +24043,11 @@
         "vocabulary": 4.8,
         "trope": 6.5,
         "repetition": 3,
-        "hiddenChallenges": 5.8
+        "hiddenChallenges": 6
       },
-      "finalScore": 4.7,
+      "finalScore": 4.8,
       "hardestAliyah": "5",
-      "easiestAliyah": "1"
+      "easiestAliyah": "3"
     },
     {
       "chagId": "Pesach VII__IL",
@@ -23762,7 +24066,7 @@
             "vocabulary": 6,
             "trope": 6,
             "repetition": 3,
-            "hiddenChallenges": 5
+            "hiddenChallenges": 6
           },
           "vocabDetail": {
             "rarity": 6.6,
@@ -23795,11 +24099,15 @@
           },
           "lookAlikeWordPairs": [
             {
+              "a": "אֶתְכֶם",
+              "b": "אִתְּכֶֽם"
+            },
+            {
               "a": "הַשְׁבֵּעַ",
               "b": "הִשְׁבִּיעַ"
             }
           ],
-          "finalScore": 3
+          "finalScore": 4
         },
         {
           "aliyah": "2",
@@ -23995,12 +24303,12 @@
               "b": "הֵם"
             },
             {
-              "a": "יָֽדְךָ",
-              "b": "יָדֶֽיךָ"
+              "a": "אֵלִי",
+              "b": "אֵילֵי"
             },
             {
-              "a": "בַּיָּם",
-              "b": "בַּיּוֹם"
+              "a": "יָֽדְךָ",
+              "b": "יָדֶֽיךָ"
             }
           ],
           "note": "Shirat HaYam / Az Yashir (Ex 14:26-15:26) -- special brick-layout & elevated melody Az Yashir is recited daily in Pesukei D'Zimra -- most daveners know the words well, though that familiarity doesn't fully prepare a reader to lead its special trope solo.",
@@ -24060,11 +24368,11 @@
         "vocabulary": 4.8,
         "trope": 6.5,
         "repetition": 3,
-        "hiddenChallenges": 5.8
+        "hiddenChallenges": 6
       },
-      "finalScore": 4.7,
+      "finalScore": 4.8,
       "hardestAliyah": "5",
-      "easiestAliyah": "1"
+      "easiestAliyah": "3"
     },
     {
       "chagId": "Pesach II__DIASPORA",
@@ -24694,16 +25002,16 @@
           },
           "lookAlikeWordPairs": [
             {
+              "a": "וְכָל",
+              "b": "וַיְכַל"
+            },
+            {
               "a": "הַיּוֹם",
               "b": "הַיָּם"
             },
             {
               "a": "רֶמֶשׂ",
               "b": "רוֹמֵשׂ"
-            },
-            {
-              "a": "וְכָל",
-              "b": "וַיְכַל"
             }
           ],
           "finalScore": 9

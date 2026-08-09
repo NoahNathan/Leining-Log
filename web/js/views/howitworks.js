@@ -51,8 +51,13 @@ export async function renderHowItWorks(container) {
   ));
 
   container.append(section('Look-alike word pairs count toward the score',
-    p('The actual public reading is done from a Torah scroll with no nikkud at all, so two genuinely different words that happen to differ by just one letter (like עד "until" vs. עוד "still", or בן "son" vs. בין "between") are a real, easy way to misread. When an aliyah has any of these pairs, up to 3 are shown in the "why" breakdown as a heads-up.'),
-    p('Most aliyot have zero or one such pair, which is common enough that it doesn\'t add anything to the score -- but an aliyah with several is genuinely more of a minefield, so 2-3 pairs adds a small bump to Gotchas, 4-5 a bit more, and 6+ (about 1 in 70 aliyot) the most. There\'s still no reliable way to tell from spelling alone whether a given pair is truly two different words or just the same root written two different ways, so this measures density of near-identical spellings, not a confirmed count of real traps.'),
+    p('The actual public reading is done from a Torah scroll with no nikkud at all, so two genuinely different words that look identical or nearly identical without nikkud are a real, easy way to misread. Two flavors, worse to less bad:'),
+    el('ul', { class: 'plain-list' }, [
+      el('li', {}, [el('strong', {}, 'Identical letters, different vowels only'), ' -- like אֹתוֹ "him" vs. אִתּוֹ "with him", or לוֹ "to him" vs. לוּ "if only". These are 100% indistinguishable on the actual scroll. Restricted to a short, hand-checked list of real word pairs rather than auto-detected -- an automatic version was tested and came back over 90% false positives (ordinary grammar, like a dagesh appearing or not, not real ambiguity).']),
+      el('li', {}, [el('strong', {}, 'One letter apart'), ' -- like עד "until" vs. עוד "still", or בן "son" vs. בין "between".']),
+    ]),
+    p('When an aliyah has any of these pairs, up to 3 are shown in the "why" breakdown as a heads-up (identical-spelling pairs first, since they\'re the more severe kind).'),
+    p('Most aliyot have zero or one such pair, which is common enough that it doesn\'t add anything to the score -- but an aliyah with several is genuinely more of a minefield, so 2-3 pairs adds a small bump to Gotchas, 4-5 a bit more, and 6+ (about 1 in 50 aliyot) the most. For the one-letter-apart flavor, there\'s still no reliable way to tell from spelling alone whether a given pair is truly two different words or just the same root written two different ways, so that part measures density of near-identical spellings, not a confirmed count of real traps.'),
   ));
 
   container.append(section('Some passages get an easier score because they\'re familiar',

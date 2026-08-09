@@ -262,7 +262,7 @@ function buildWhyPanel(d, a) {
   }
   if (d.lookAlikeWordPairs && d.lookAlikeWordPairs.length) {
     wrap.append(wordChipRow('Watch for these look-alikes in this aliyah', d.lookAlikeWordPairs.map((pr) => `${pr.a} / ${pr.b}`)));
-    wrap.append(el('p', { class: 'why-note' }, 'These pairs differ by just one letter (ו/י) without nikkud -- worth double-checking you\'re reading the right one, whether or not they turn out to share a root.'));
+    wrap.append(el('p', { class: 'why-note' }, 'Without nikkud, these pairs are either spelled 100% identically (same letters, different vowels only) or differ by just one letter (ו/י) -- worth double-checking you\'re reading the right one.'));
   }
   return wrap;
 }

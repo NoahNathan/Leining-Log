@@ -1,12 +1,12 @@
 {
-  "description": "Per-aliyah vocabulary-difficulty statistics computed directly from the Masoretic Torah text (via @shafeh/tanach), not guessed from a content-profile category. Covers every individual parsha, every combined (double) parsha, and every chag/fast/Rosh Chodesh/special-Shabbat reading in chagim.json. For each aliyah: raw word-frequency rarity and pronunciation-complexity are averaged across its actual words, then percentile-ranked against every OTHER aliyah in this same dataset (mirroring how the 'length' criterion is scored) so the full 1-10 range is meaningfully used rather than clustering in a narrow band. 'vocab' is the rounded average of 'rarity' and 'pronunciation', and feeds directly into difficulty-scores.json's vocabulary criterion. 'ambiguousSpellingExamples' flags two distinct, text-grounded 'written one way, read another' gotchas -- not a guessed or hand-typed list: (1) the archaic הוא/הִיא feminine-pronoun spelling, detected from the niqqud in the vocalized text itself; (2) every formal Ketiv/Qere in the Chumash (the Torah scroll's written letters vs. what's traditionally read aloud), read directly out of @shafeh/tanach's own ketiv/qere markup. It feeds into difficulty-scores.json's hiddenChallenges criterion. 'lookAlikeWordPairs' (up to 3, for display) and 'lookAlikePairCount' (the true total) flag pairs of distinct words within the same aliyah that differ by exactly one internal ו/י, so they look nearly identical without nikkud -- a real misreading risk when reading from an unvocalized scroll. 'lookAlikePairCount' feeds a small, threshold-based (not percentile-ranked -- see difficulty-rubric.md for why percentile-ranking this specific count backfired) bump into difficulty-scores.json's hiddenChallenges, so the ~58% of aliyot with 0-1 pairs (the common case) get no bump, and only the genuinely pair-dense tail scores higher. There's still no reliable way to tell from spelling alone whether a given pair is genuinely two different words or just the same root in different grammatical forms (see difficulty-rubric.md for a related normalization attempt that was tried and rejected for the same reason) -- the score reflects density of near-identical spellings, not a confirmed count of true word-confusion traps.",
+  "description": "Per-aliyah vocabulary-difficulty statistics computed directly from the Masoretic Torah text (via @shafeh/tanach), not guessed from a content-profile category. Covers every individual parsha, every combined (double) parsha, and every chag/fast/Rosh Chodesh/special-Shabbat reading in chagim.json. For each aliyah: raw word-frequency rarity and pronunciation-complexity are averaged across its actual words, then percentile-ranked against every OTHER aliyah in this same dataset (mirroring how the 'length' criterion is scored) so the full 1-10 range is meaningfully used rather than clustering in a narrow band. 'vocab' is the rounded average of 'rarity' and 'pronunciation', and feeds directly into difficulty-scores.json's vocabulary criterion. 'ambiguousSpellingExamples' flags two distinct, text-grounded 'written one way, read another' gotchas -- not a guessed or hand-typed list: (1) the archaic הוא/הִיא feminine-pronoun spelling, detected from the niqqud in the vocalized text itself; (2) every formal Ketiv/Qere in the Chumash (the Torah scroll's written letters vs. what's traditionally read aloud), read directly out of @shafeh/tanach's own ketiv/qere markup. It feeds into difficulty-scores.json's hiddenChallenges criterion. 'lookAlikeWordPairs' (up to 3, for display) and 'lookAlikePairCount' (the true total) flag pairs of distinct words within the same aliyah that a reader could genuinely conflate without nikkud, in two flavors, most to least severe: (1) identical consonants, different vowels -- restricted to a short, hand-verified allowlist (HOMOGRAPH_SKELETONS in gen_word_stats.mjs) rather than auto-detected, since both a whole-Torah scan and a same-aliyah co-occurrence scan came back ~95% saturated with ordinary grammatical vowel variance (dagesh presence, construct-state shifts) that no fluent reader would actually confuse -- see difficulty-rubric.md; (2) one internal ו/י apart. 'lookAlikePairCount' feeds a small, threshold-based (not percentile-ranked -- see difficulty-rubric.md for why percentile-ranking this specific count backfired) bump into difficulty-scores.json's hiddenChallenges, so the ~58% of aliyot with 0-1 pairs (the common case) get no bump, and only the genuinely pair-dense tail scores higher. There's still no reliable way to tell from spelling alone whether an unlisted one-letter-apart pair is genuinely two different words or just the same root in different grammatical forms (see difficulty-rubric.md for a related normalization attempt that was tried and rejected for the same reason) -- that flavor measures density of near-identical spellings, not a confirmed count of true word-confusion traps.",
   "corpus": {
     "totalWordTokens": 80147,
     "uniqueConsonantalForms": 12856,
     "aliyotScored": 918
   },
   "methodology": "difficulty-rubric.md",
-  "generatedAt": "2026-08-07T01:24:11.590Z",
+  "generatedAt": "2026-08-09T04:11:45.169Z",
   "aliyot": {
     "Bereshit": {
       "1": {
@@ -42,16 +42,16 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "וְכָל",
+            "b": "וַיְכַל"
+          },
+          {
             "a": "הַיּוֹם",
             "b": "הַיָּם"
           },
           {
             "a": "רֶמֶשׂ",
             "b": "רוֹמֵשׂ"
-          },
-          {
-            "a": "וְכָל",
-            "b": "וַיְכַל"
           }
         ],
         "lookAlikePairCount": 4
@@ -94,12 +94,12 @@
         ],
         "lookAlikeWordPairs": [
           {
-            "a": "וַיָּשֶׂם",
-            "b": "וְשֵֽׁם"
-          },
-          {
             "a": "אֲשֶׁר",
             "b": "אַשּׁוּר"
+          },
+          {
+            "a": "וַיָּשֶׂם",
+            "b": "וְשֵֽׁם"
           },
           {
             "a": "וַיִּיצֶר",
@@ -146,19 +146,19 @@
         ],
         "lookAlikeWordPairs": [
           {
-            "a": "לְאִשָּׁה",
-            "b": "לְאִישָׁהּ"
+            "a": "אָתָּה",
+            "b": "אַתָּה"
           },
           {
             "a": "וְהָיוּ",
             "b": "וַיִּֽהְיוּ"
           },
           {
-            "a": "וַיֹּאכַֽל",
-            "b": "וָֽאֹכֵֽל"
+            "a": "לְאִשָּׁה",
+            "b": "לְאִישָׁהּ"
           }
         ],
-        "lookAlikePairCount": 3
+        "lookAlikePairCount": 4
       },
       "4": {
         "wordCount": 285,
@@ -402,11 +402,15 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אֹתָהּ",
+            "b": "אַתָּה"
+          },
+          {
             "a": "לְהַֽחֲיֹת",
             "b": "לְהַֽחֲיֽוֹת"
           }
         ],
-        "lookAlikePairCount": 1
+        "lookAlikePairCount": 2
       },
       "2": {
         "wordCount": 227,
@@ -444,8 +448,13 @@
             "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
           }
         ],
-        "lookAlikeWordPairs": [],
-        "lookAlikePairCount": 0
+        "lookAlikeWordPairs": [
+          {
+            "a": "אִתּוֹ",
+            "b": "אֹתוֹ"
+          }
+        ],
+        "lookAlikePairCount": 1
       },
       "3": {
         "wordCount": 297,
@@ -635,8 +644,8 @@
             "b": "גִּבּוֹר"
           },
           {
-            "a": "מִשְׁפְּחוֹת",
-            "b": "מִשְׁפְּחֹת"
+            "a": "וּצְבוֹיִם",
+            "b": "וּצְבֹיִם"
           }
         ],
         "lookAlikePairCount": 4
@@ -674,11 +683,15 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אֹתָם",
+            "b": "אִתָּם"
+          },
+          {
             "a": "מְאַת",
             "b": "מֵאוֹת"
           }
         ],
-        "lookAlikePairCount": 1
+        "lookAlikePairCount": 2
       },
       "M": {
         "wordCount": 64,
@@ -912,8 +925,13 @@
           }
         ],
         "ambiguousSpellingExamples": [],
-        "lookAlikeWordPairs": [],
-        "lookAlikePairCount": 0
+        "lookAlikeWordPairs": [
+          {
+            "a": "אִתִּי",
+            "b": "אֹתִֽי"
+          }
+        ],
+        "lookAlikePairCount": 1
       },
       "6": {
         "wordCount": 463,
@@ -948,8 +966,8 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
-            "a": "אִֽישׁ",
-            "b": "אֵשׁ"
+            "a": "אֹתָהּ",
+            "b": "אַתָּה"
           },
           {
             "a": "עַד",
@@ -960,7 +978,7 @@
             "b": "בֵּן"
           }
         ],
-        "lookAlikePairCount": 6
+        "lookAlikePairCount": 7
       },
       "7": {
         "wordCount": 288,
@@ -1000,19 +1018,19 @@
         ],
         "lookAlikeWordPairs": [
           {
+            "a": "אַתָּה",
+            "b": "אֹתָהּ"
+          },
+          {
+            "a": "אִתּֽוֹ",
+            "b": "אֹתוֹ"
+          },
+          {
             "a": "וּבֵין",
             "b": "וּבֶן"
-          },
-          {
-            "a": "וַיְכַל",
-            "b": "וְכָל"
-          },
-          {
-            "a": "יְלִיד",
-            "b": "יוֹלִיד"
           }
         ],
-        "lookAlikePairCount": 4
+        "lookAlikePairCount": 6
       },
       "M": {
         "wordCount": 37,
@@ -1217,12 +1235,12 @@
         ],
         "lookAlikeWordPairs": [
           {
-            "a": "בֵּן",
-            "b": "בֵּין"
-          },
-          {
             "a": "מֵת",
             "b": "מוֹת"
+          },
+          {
+            "a": "בֵּן",
+            "b": "בֵּין"
           },
           {
             "a": "וְעַל",
@@ -1342,19 +1360,19 @@
         ],
         "lookAlikeWordPairs": [
           {
-            "a": "אֶל",
-            "b": "אַיִל"
+            "a": "אִתּוֹ",
+            "b": "אֹתוֹ"
           },
           {
-            "a": "וְלֶךְ",
-            "b": "וַיֵּלֶךְ"
+            "a": "אֶל",
+            "b": "אַיִל"
           },
           {
             "a": "הַיּוֹם",
             "b": "הַיָּם"
           }
         ],
-        "lookAlikePairCount": 4
+        "lookAlikePairCount": 5
       },
       "M": {
         "wordCount": 60,
@@ -1435,19 +1453,19 @@
         ],
         "lookAlikeWordPairs": [
           {
-            "a": "בְּנֵי",
-            "b": "בֵּינִי"
+            "a": "לֽוֹ",
+            "b": "לוּ"
           },
           {
             "a": "מֵאֹת",
             "b": "מֵאוֹת"
           },
           {
-            "a": "שְׁמָעוּנִי",
-            "b": "שְׁמָעֵנִי"
+            "a": "בְּנֵי",
+            "b": "בֵּינִי"
           }
         ],
-        "lookAlikePairCount": 3
+        "lookAlikePairCount": 4
       },
       "2": {
         "wordCount": 197,
@@ -1595,19 +1613,19 @@
         ],
         "lookAlikeWordPairs": [
           {
+            "a": "אַתָּה",
+            "b": "אֹתָהּ"
+          },
+          {
             "a": "בֵּית",
             "b": "בַּת"
           },
           {
             "a": "בָּרוּךְ",
             "b": "בֵּרַךְ"
-          },
-          {
-            "a": "וַיֹּאמֶר",
-            "b": "וָֽאֹמַר"
           }
         ],
-        "lookAlikePairCount": 4
+        "lookAlikePairCount": 5
       },
       "5": {
         "wordCount": 179,
@@ -1975,19 +1993,19 @@
         ],
         "lookAlikeWordPairs": [
           {
-            "a": "וַיִּקַּח",
-            "b": "וְקַח"
+            "a": "אֹתָהּ",
+            "b": "אַתָּה"
           },
           {
-            "a": "וַיֵּלֶךְ",
-            "b": "וְלֵךְ"
+            "a": "אֹתָהּ",
+            "b": "אִתָּהּ"
           },
           {
-            "a": "אוּלַי",
-            "b": "אֵלָי"
+            "a": "אִתָּהּ",
+            "b": "אַתָּה"
           }
         ],
-        "lookAlikePairCount": 5
+        "lookAlikePairCount": 8
       },
       "6": {
         "wordCount": 360,
@@ -2147,8 +2165,13 @@
           }
         ],
         "ambiguousSpellingExamples": [],
-        "lookAlikeWordPairs": [],
-        "lookAlikePairCount": 0
+        "lookAlikeWordPairs": [
+          {
+            "a": "אַתָּה",
+            "b": "אֹתָהּ"
+          }
+        ],
+        "lookAlikePairCount": 1
       },
       "2": {
         "wordCount": 234,
@@ -2188,6 +2211,10 @@
         ],
         "lookAlikeWordPairs": [
           {
+            "a": "אָתָּה",
+            "b": "אַתָּה"
+          },
+          {
             "a": "עוֹד",
             "b": "עַד"
           },
@@ -2196,7 +2223,7 @@
             "b": "בֵּיתוֹ"
           }
         ],
-        "lookAlikePairCount": 2
+        "lookAlikePairCount": 3
       },
       "3": {
         "wordCount": 378,
@@ -2322,19 +2349,19 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "לוּ",
+            "b": "לוֹ"
+          },
+          {
             "a": "וַיָּשֶׂם",
             "b": "וְשָׂם"
           },
           {
             "a": "וַיֹּאמַר",
             "b": "וָֽאֹמַר"
-          },
-          {
-            "a": "כִּתְמוֹל",
-            "b": "כִּתְמֹל"
           }
         ],
-        "lookAlikePairCount": 4
+        "lookAlikePairCount": 5
       },
       "6": {
         "wordCount": 383,
@@ -2489,8 +2516,17 @@
           }
         ],
         "ambiguousSpellingExamples": [],
-        "lookAlikeWordPairs": [],
-        "lookAlikePairCount": 0
+        "lookAlikeWordPairs": [
+          {
+            "a": "אִם",
+            "b": "אֵם"
+          },
+          {
+            "a": "אִתּוֹ",
+            "b": "אֹתוֹ"
+          }
+        ],
+        "lookAlikePairCount": 2
       },
       "2": {
         "wordCount": 223,
@@ -2669,19 +2705,19 @@
         ],
         "lookAlikeWordPairs": [
           {
-            "a": "בַּת",
-            "b": "בֵּית"
+            "a": "אִתָּם",
+            "b": "אֹתָם"
           },
           {
-            "a": "לִי",
-            "b": "לֵוִי"
+            "a": "אִתּֽוֹ",
+            "b": "אֹתֽוֹ"
           },
           {
             "a": "עַד",
             "b": "עוֹד"
           }
         ],
-        "lookAlikePairCount": 9
+        "lookAlikePairCount": 11
       },
       "6": {
         "wordCount": 466,
@@ -2729,15 +2765,19 @@
         ],
         "lookAlikeWordPairs": [
           {
-            "a": "בֵּֽית",
-            "b": "בַּת"
+            "a": "אִתּוֹ",
+            "b": "אֹתוֹ"
           },
           {
             "a": "עוֹד",
             "b": "עַד"
+          },
+          {
+            "a": "בֵּֽית",
+            "b": "בַּת"
           }
         ],
-        "lookAlikePairCount": 2
+        "lookAlikePairCount": 3
       },
       "7": {
         "wordCount": 229,
@@ -3031,8 +3071,13 @@
           }
         ],
         "ambiguousSpellingExamples": [],
-        "lookAlikeWordPairs": [],
-        "lookAlikePairCount": 0
+        "lookAlikeWordPairs": [
+          {
+            "a": "אִתּוֹ",
+            "b": "אֹתוֹ"
+          }
+        ],
+        "lookAlikePairCount": 1
       },
       "6": {
         "wordCount": 248,
@@ -3067,11 +3112,15 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אֹתוֹ",
+            "b": "אִתּוֹ"
+          },
+          {
             "a": "בָּא",
             "b": "בּוֹא"
           }
         ],
-        "lookAlikePairCount": 1
+        "lookAlikePairCount": 2
       },
       "7": {
         "wordCount": 312,
@@ -3111,19 +3160,19 @@
         ],
         "lookAlikeWordPairs": [
           {
-            "a": "אִתְּךָ",
-            "b": "אֽוֹתְךָ"
+            "a": "אֹתָם",
+            "b": "אִתָּם"
+          },
+          {
+            "a": "אִתּוֹ",
+            "b": "אֹתוֹ"
           },
           {
             "a": "אֲלֵיהֶם",
             "b": "אֲלֵהֶם"
-          },
-          {
-            "a": "הָֽאוֹפִֽים",
-            "b": "הָֽאֹפִים"
           }
         ],
-        "lookAlikePairCount": 3
+        "lookAlikePairCount": 5
       },
       "M": {
         "wordCount": 48,
@@ -3194,16 +3243,16 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
-            "a": "חֹלֵם",
-            "b": "חֲלֽוֹם"
-          },
-          {
             "a": "עֹלֹת",
             "b": "עֹלוֹת"
           },
           {
             "a": "יְפוֹת",
             "b": "יְפֹת"
+          },
+          {
+            "a": "חֹלֵם",
+            "b": "חֲלֽוֹם"
           }
         ],
         "lookAlikePairCount": 5
@@ -3288,19 +3337,19 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
-            "a": "אֵֽין",
-            "b": "אֹן"
+            "a": "אַתָּה",
+            "b": "אֹתָהּ"
           },
           {
-            "a": "בַּת",
-            "b": "בֵּית"
+            "a": "אֵֽין",
+            "b": "אֹן"
           },
           {
             "a": "אֹן",
             "b": "אֽוֹן"
           }
         ],
-        "lookAlikePairCount": 4
+        "lookAlikePairCount": 5
       },
       "4": {
         "wordCount": 297,
@@ -3335,11 +3384,19 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
-            "a": "אֲלֵיהֶם",
-            "b": "אֲלֵהֶם"
+            "a": "אִתָּם",
+            "b": "אֹתָם"
+          },
+          {
+            "a": "אַתֶּֽם",
+            "b": "אֹתָם"
+          },
+          {
+            "a": "אִתָּם",
+            "b": "אַתֶּֽם"
           }
         ],
-        "lookAlikePairCount": 1
+        "lookAlikePairCount": 4
       },
       "5": {
         "wordCount": 523,
@@ -3374,19 +3431,19 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אַתֶּם",
+            "b": "אֹתָם"
+          },
+          {
+            "a": "אִתִּי",
+            "b": "אֹתִי"
+          },
+          {
             "a": "אֵלַי",
             "b": "אוּלַי"
-          },
-          {
-            "a": "שֻׁבוּ",
-            "b": "שׁוּבוּ"
-          },
-          {
-            "a": "הָעֵד",
-            "b": "הַעוֹד"
           }
         ],
-        "lookAlikePairCount": 9
+        "lookAlikePairCount": 11
       },
       "6": {
         "wordCount": 203,
@@ -3586,11 +3643,19 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אִתִּי",
+            "b": "אֹתִי"
+          },
+          {
+            "a": "אִתּוֹ",
+            "b": "אֹתוֹ"
+          },
+          {
             "a": "עֲבָדֶיךָ",
             "b": "עַבְדְּךָ"
           }
         ],
-        "lookAlikePairCount": 1
+        "lookAlikePairCount": 3
       },
       "3": {
         "wordCount": 158,
@@ -3705,8 +3770,13 @@
           }
         ],
         "ambiguousSpellingExamples": [],
-        "lookAlikeWordPairs": [],
-        "lookAlikePairCount": 0
+        "lookAlikeWordPairs": [
+          {
+            "a": "אֹתֽוֹ",
+            "b": "אִתּוֹ"
+          }
+        ],
+        "lookAlikePairCount": 1
       },
       "6": {
         "wordCount": 257,
@@ -3806,8 +3876,8 @@
             "b": "וַיֵּשֶׁב"
           },
           {
-            "a": "וַיָּבֹאוּ",
-            "b": "וַיָּבִיאוּ"
+            "a": "מִקְנֵיהֶם",
+            "b": "מִקְנֵהֶם"
           }
         ],
         "lookAlikePairCount": 4
@@ -4088,19 +4158,19 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "לוֹ",
+            "b": "לוּ"
+          },
+          {
+            "a": "אֹתֽוֹ",
+            "b": "אִתּוֹ"
+          },
+          {
             "a": "אוֹתָם",
             "b": "אֹתָֽם"
-          },
-          {
-            "a": "וַיְכַל",
-            "b": "וְכֹל"
-          },
-          {
-            "a": "עַמָּֽיו",
-            "b": "עִמּוֹ"
           }
         ],
-        "lookAlikePairCount": 6
+        "lookAlikePairCount": 8
       },
       "7": {
         "wordCount": 85,
@@ -4466,6 +4536,10 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אֹתָם",
+            "b": "אַתֶּם"
+          },
+          {
             "a": "עֲלֵיהֶם",
             "b": "עֲלֵהֶם"
           },
@@ -4474,7 +4548,7 @@
             "b": "עֲבָדָיו"
           }
         ],
-        "lookAlikePairCount": 2
+        "lookAlikePairCount": 3
       },
       "M": {
         "wordCount": 44,
@@ -4545,11 +4619,15 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אִתָּם",
+            "b": "אֹתָם"
+          },
+          {
             "a": "סִבְלֹת",
             "b": "סִבְלוֹת"
           }
         ],
-        "lookAlikePairCount": 1
+        "lookAlikePairCount": 2
       },
       "2": {
         "wordCount": 182,
@@ -4657,16 +4735,16 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "וְעָלוּ",
+            "b": "וַיַּֽעֲלוּ"
+          },
+          {
             "a": "וּבָאַשׁ",
             "b": "וַיִּבְאַשׁ"
           },
           {
             "a": "לִשְׁתּוֹת",
             "b": "לִשְׁתֹּת"
-          },
-          {
-            "a": "וְעָלוּ",
-            "b": "וַיַּֽעֲלוּ"
           }
         ],
         "lookAlikePairCount": 3
@@ -4756,12 +4834,12 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
-            "a": "וְסָר",
-            "b": "וַיָּסַר"
-          },
-          {
             "a": "הוֹיָה",
             "b": "הָיָה"
+          },
+          {
+            "a": "וְסָר",
+            "b": "וַיָּסַר"
           }
         ],
         "lookAlikePairCount": 2
@@ -4799,12 +4877,12 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
-            "a": "וַיַּמְטֵר",
-            "b": "וּמָטָר"
-          },
-          {
             "a": "אֲלֵהֶם",
             "b": "אֱלֹהִים"
+          },
+          {
+            "a": "וַיַּמְטֵר",
+            "b": "וּמָטָר"
           }
         ],
         "lookAlikePairCount": 2
@@ -4878,15 +4956,19 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
-            "a": "עֲבָדָיו",
-            "b": "עִבְדוּ"
+            "a": "אַתֶּם",
+            "b": "אֹתָם"
           },
           {
-            "a": "וְיַֽעַבְדוּ",
-            "b": "וְעִבְדוּ"
+            "a": "אַתָּה",
+            "b": "אֹתָהּ"
+          },
+          {
+            "a": "עֲבָדָיו",
+            "b": "עִבְדוּ"
           }
         ],
-        "lookAlikePairCount": 2
+        "lookAlikePairCount": 4
       },
       "2": {
         "wordCount": 205,
@@ -5080,11 +5162,15 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אַתֶּם",
+            "b": "אִתָּם"
+          },
+          {
             "a": "עֲבָדָיו",
             "b": "עִבְדוּ"
           }
         ],
-        "lookAlikePairCount": 1
+        "lookAlikePairCount": 2
       },
       "7": {
         "wordCount": 233,
@@ -5198,19 +5284,19 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אֶתְכֶם",
+            "b": "אִתְּכֶֽם"
+          },
+          {
             "a": "הַיָּם",
             "b": "הֵם"
           },
           {
             "a": "וְשָׁבוּ",
             "b": "וְיָשֻׁבוּ"
-          },
-          {
-            "a": "הַשְׁבֵּעַ",
-            "b": "הִשְׁבִּיעַ"
           }
         ],
-        "lookAlikePairCount": 4
+        "lookAlikePairCount": 5
       },
       "2": {
         "wordCount": 107,
@@ -5331,12 +5417,12 @@
             "b": "הֵם"
           },
           {
-            "a": "יָֽדְךָ",
-            "b": "יָדֶֽיךָ"
+            "a": "אֵלִי",
+            "b": "אֵילֵי"
           },
           {
-            "a": "בַּיָּם",
-            "b": "בַּיּוֹם"
+            "a": "יָֽדְךָ",
+            "b": "יָדֶֽיךָ"
           }
         ],
         "lookAlikePairCount": 5
@@ -5417,19 +5503,19 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
-            "a": "הֶעְדִּיף",
-            "b": "הָעֹדֵף"
+            "a": "מָן",
+            "b": "מִן"
           },
           {
             "a": "יָמִים",
             "b": "יוֹמָיִם"
           },
           {
-            "a": "הַשְּׁבִיעִי",
-            "b": "הַשְּׁבִעִֽי"
+            "a": "הֶעְדִּיף",
+            "b": "הָעֹדֵף"
           }
         ],
-        "lookAlikePairCount": 3
+        "lookAlikePairCount": 4
       },
       "7": {
         "wordCount": 246,
@@ -5891,12 +5977,12 @@
             "b": "בֹּר"
           },
           {
-            "a": "מִתְּמֹל",
-            "b": "מִתְּמוֹל"
+            "a": "וְהֵמִית",
+            "b": "וְהַמֵּת"
           },
           {
-            "a": "שִׁלְשֹׁם",
-            "b": "שְׁלשִׁים"
+            "a": "מִתְּמֹל",
+            "b": "מִתְּמוֹל"
           }
         ],
         "lookAlikePairCount": 4
@@ -5947,12 +6033,12 @@
         ],
         "lookAlikeWordPairs": [
           {
-            "a": "אִישׁ",
-            "b": "אֵשׁ"
-          },
-          {
             "a": "מֵת",
             "b": "מוֹת"
+          },
+          {
+            "a": "אִישׁ",
+            "b": "אֵשׁ"
           }
         ],
         "lookAlikePairCount": 2
@@ -6201,19 +6287,19 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אֹתָהּ",
+            "b": "אַתָּה"
+          },
+          {
             "a": "אִתְּךָ",
             "b": "אֽוֹתְךָ"
           },
           {
             "a": "תַּֽעֲשֶׂה",
             "b": "תֵּֽיעָשֶׂה"
-          },
-          {
-            "a": "מִצִּדֶּיהָ",
-            "b": "מִצִּדָּהּ"
           }
         ],
-        "lookAlikePairCount": 4
+        "lookAlikePairCount": 5
       },
       "3": {
         "wordCount": 201,
@@ -6483,11 +6569,15 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אֹתוֹ",
+            "b": "אִתּוֹ"
+          },
+          {
             "a": "שְׁמוֹת",
             "b": "שְׁמֹת"
           }
         ],
-        "lookAlikePairCount": 1
+        "lookAlikePairCount": 2
       },
       "2": {
         "wordCount": 241,
@@ -6572,8 +6662,13 @@
           }
         ],
         "ambiguousSpellingExamples": [],
-        "lookAlikeWordPairs": [],
-        "lookAlikePairCount": 0
+        "lookAlikeWordPairs": [
+          {
+            "a": "אֹתוֹ",
+            "b": "אִתּוֹ"
+          }
+        ],
+        "lookAlikePairCount": 1
       },
       "4": {
         "wordCount": 234,
@@ -6651,11 +6746,15 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אִתּֽוֹ",
+            "b": "אֹתוֹ"
+          },
+          {
             "a": "אֵיל",
             "b": "אֶל"
           }
         ],
-        "lookAlikePairCount": 1
+        "lookAlikePairCount": 2
       },
       "6": {
         "wordCount": 106,
@@ -6803,19 +6902,19 @@
         ],
         "lookAlikeWordPairs": [
           {
+            "a": "אֹתוֹ",
+            "b": "אִתּוֹ"
+          },
+          {
             "a": "אֶת",
             "b": "אוֹת"
           },
           {
             "a": "בֵּֽין",
             "b": "בֶּן"
-          },
-          {
-            "a": "בְּנֵֽי",
-            "b": "בֵּינִי"
           }
         ],
-        "lookAlikePairCount": 6
+        "lookAlikePairCount": 7
       },
       "2": {
         "wordCount": 752,
@@ -6850,19 +6949,19 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אִתּוֹ",
+            "b": "אֹתוֹ"
+          },
+          {
+            "a": "אֹתָם",
+            "b": "אַתֶּם"
+          },
+          {
             "a": "לִּי",
             "b": "לֵוִֽי"
-          },
-          {
-            "a": "אֵלָֽי",
-            "b": "אוּלַי"
-          },
-          {
-            "a": "וַיֵּשֶׁב",
-            "b": "וְשָׁב"
           }
         ],
-        "lookAlikePairCount": 10
+        "lookAlikePairCount": 12
       },
       "3": {
         "wordCount": 82,
@@ -7151,6 +7250,10 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אֹתוֹ",
+            "b": "אִתּוֹ"
+          },
+          {
             "a": "נְדִיב",
             "b": "נָדַב"
           },
@@ -7159,7 +7262,7 @@
             "b": "וַיָּבִיאוּ"
           }
         ],
-        "lookAlikePairCount": 2
+        "lookAlikePairCount": 3
       },
       "3": {
         "wordCount": 195,
@@ -7277,12 +7380,12 @@
         ],
         "lookAlikeWordPairs": [
           {
-            "a": "וְהָיוּ",
-            "b": "וַיִּֽהְיוּ"
-          },
-          {
             "a": "קְצוֹתָֽיו",
             "b": "קצוותיו"
+          },
+          {
+            "a": "וְהָיוּ",
+            "b": "וַיִּֽהְיוּ"
           }
         ],
         "lookAlikePairCount": 2
@@ -7498,8 +7601,8 @@
             "b": "שְׁמֹת"
           },
           {
-            "a": "מֻֽסַבֹּת",
-            "b": "מֽוּסַבֹּת"
+            "a": "קְצוֹתָיו",
+            "b": "קצוותיו"
           }
         ],
         "lookAlikePairCount": 4
@@ -7977,12 +8080,12 @@
             "b": "לוֹא"
           },
           {
-            "a": "תִּגַּע",
-            "b": "תַגִּיעַ"
-          },
-          {
             "a": "עָלֶֽיהָ",
             "b": "עֹלָה"
+          },
+          {
+            "a": "תִּגַּע",
+            "b": "תַגִּיעַ"
           }
         ],
         "lookAlikePairCount": 3
@@ -8020,6 +8123,10 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אֹתוֹ",
+            "b": "אִתּוֹ"
+          },
+          {
             "a": "אֶל",
             "b": "אַיִל"
           },
@@ -8028,7 +8135,7 @@
             "b": "יֹסֵף"
           }
         ],
-        "lookAlikePairCount": 2
+        "lookAlikePairCount": 3
       },
       "M": {
         "wordCount": 44,
@@ -8147,12 +8254,12 @@
             "b": "קָדוֹשׁ"
           },
           {
-            "a": "הִמָּשַׁח",
-            "b": "הַמָּשִׁיחַ"
-          },
-          {
             "a": "הַקֶּֽרֶב",
             "b": "הִקְרִיב"
+          },
+          {
+            "a": "הִמָּשַׁח",
+            "b": "הַמָּשִׁיחַ"
           }
         ],
         "lookAlikePairCount": 3
@@ -8232,8 +8339,13 @@
           }
         ],
         "ambiguousSpellingExamples": [],
-        "lookAlikeWordPairs": [],
-        "lookAlikePairCount": 0
+        "lookAlikeWordPairs": [
+          {
+            "a": "אִתּוֹ",
+            "b": "אֹתוֹ"
+          }
+        ],
+        "lookAlikePairCount": 1
       },
       "5": {
         "wordCount": 127,
@@ -8339,8 +8451,13 @@
           }
         ],
         "ambiguousSpellingExamples": [],
-        "lookAlikeWordPairs": [],
-        "lookAlikePairCount": 0
+        "lookAlikeWordPairs": [
+          {
+            "a": "אִתּֽוֹ",
+            "b": "אֹתוֹ"
+          }
+        ],
+        "lookAlikePairCount": 1
       },
       "M": {
         "wordCount": 55,
@@ -8550,11 +8667,15 @@
         ],
         "lookAlikeWordPairs": [
           {
+            "a": "אֹתָהּ",
+            "b": "אַתָּה"
+          },
+          {
             "a": "קֹדֶשׁ",
             "b": "קָדוֹשׁ"
           }
         ],
-        "lookAlikePairCount": 1
+        "lookAlikePairCount": 2
       },
       "5": {
         "wordCount": 79,
@@ -8637,12 +8758,12 @@
         ],
         "lookAlikeWordPairs": [
           {
-            "a": "בַּמָּיִם",
-            "b": "בַּיַּמִּים"
-          },
-          {
             "a": "הַפַּרְסָה",
             "b": "הִפְרִיסָה"
+          },
+          {
+            "a": "בַּמָּיִם",
+            "b": "בַּיַּמִּים"
           }
         ],
         "lookAlikePairCount": 2
@@ -9394,11 +9515,15 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אֹתָם",
+            "b": "אִתָּם"
+          },
+          {
             "a": "וְאַל",
             "b": "וְאַיִל"
           }
         ],
-        "lookAlikePairCount": 1
+        "lookAlikePairCount": 2
       },
       "2": {
         "wordCount": 125,
@@ -9747,12 +9872,12 @@
         ],
         "lookAlikeWordPairs": [
           {
-            "a": "עָוֶל",
-            "b": "עַל"
-          },
-          {
             "a": "אֶל",
             "b": "אֵיל"
+          },
+          {
+            "a": "עָוֶל",
+            "b": "עַל"
           }
         ],
         "lookAlikePairCount": 2
@@ -9822,8 +9947,13 @@
           }
         ],
         "ambiguousSpellingExamples": [],
-        "lookAlikeWordPairs": [],
-        "lookAlikePairCount": 0
+        "lookAlikeWordPairs": [
+          {
+            "a": "אִתְּכֶם",
+            "b": "אֶתְכֶם"
+          }
+        ],
+        "lookAlikePairCount": 1
       },
       "5": {
         "wordCount": 108,
@@ -9948,8 +10078,13 @@
           }
         ],
         "ambiguousSpellingExamples": [],
-        "lookAlikeWordPairs": [],
-        "lookAlikePairCount": 0
+        "lookAlikeWordPairs": [
+          {
+            "a": "אַתֶּם",
+            "b": "אֹתָם"
+          }
+        ],
+        "lookAlikePairCount": 1
       },
       "M": {
         "wordCount": 52,
@@ -10703,8 +10838,13 @@
           }
         ],
         "ambiguousSpellingExamples": [],
-        "lookAlikeWordPairs": [],
-        "lookAlikePairCount": 0
+        "lookAlikeWordPairs": [
+          {
+            "a": "אֶתְכֶם",
+            "b": "אִתְּכֶֽם"
+          }
+        ],
+        "lookAlikePairCount": 1
       },
       "3": {
         "wordCount": 479,
@@ -10739,19 +10879,19 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אֹתָם",
+            "b": "אִתָּם"
+          },
+          {
             "a": "עָלֶיהָ",
             "b": "עָלֶה"
           },
           {
             "a": "עֻלְּכֶם",
             "b": "עֲלֵיכֶם"
-          },
-          {
-            "a": "וַֽהֲשִׁמּוֹתִי",
-            "b": "וַֽהֲשִׁמֹּתִי"
           }
         ],
-        "lookAlikePairCount": 3
+        "lookAlikePairCount": 4
       },
       "4": {
         "wordCount": 207,
@@ -11177,12 +11317,12 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
-            "a": "בְּכֹר",
-            "b": "בְּכוֹר"
-          },
-          {
             "a": "מֵאֵת",
             "b": "מֵאוֹת"
+          },
+          {
+            "a": "בְּכֹר",
+            "b": "בְּכוֹר"
           }
         ],
         "lookAlikePairCount": 2
@@ -11420,16 +11560,16 @@
         ],
         "lookAlikeWordPairs": [
           {
-            "a": "אִישָׁהּ",
-            "b": "אִשָּׁה"
+            "a": "נָזִיר",
+            "b": "נֵזֶר"
+          },
+          {
+            "a": "יָבֹֽא",
+            "b": "יָבִיא"
           },
           {
             "a": "הָאִישׁ",
             "b": "הָאֵשׁ"
-          },
-          {
-            "a": "אֹתָךְ",
-            "b": "אוֹתָךְ"
           }
         ],
         "lookAlikePairCount": 6
@@ -11548,6 +11688,10 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אֹתֽוֹ",
+            "b": "אִתּוֹ"
+          },
+          {
             "a": "אַיִל",
             "b": "אֶל"
           },
@@ -11556,7 +11700,7 @@
             "b": "מֵאוֹת"
           }
         ],
-        "lookAlikePairCount": 2
+        "lookAlikePairCount": 3
       },
       "M": {
         "wordCount": 64,
@@ -11589,8 +11733,13 @@
           }
         ],
         "ambiguousSpellingExamples": [],
-        "lookAlikeWordPairs": [],
-        "lookAlikePairCount": 0
+        "lookAlikeWordPairs": [
+          {
+            "a": "אֹתֽוֹ",
+            "b": "אִתּוֹ"
+          }
+        ],
+        "lookAlikePairCount": 1
       }
     },
     "Beha'alotcha": {
@@ -11838,8 +11987,8 @@
             "b": "הַיָּם"
           },
           {
-            "a": "עֲלֵיהֶם",
-            "b": "עֲלֵהֶם"
+            "a": "יוֹמָיִם",
+            "b": "יָמִים"
           }
         ],
         "lookAlikePairCount": 4
@@ -11886,12 +12035,12 @@
         ],
         "lookAlikeWordPairs": [
           {
-            "a": "הַיָּם",
-            "b": "הַיּוֹם"
-          },
-          {
             "a": "עָנָיו",
             "b": "ענו"
+          },
+          {
+            "a": "הַיָּם",
+            "b": "הַיּוֹם"
           },
           {
             "a": "הַשְּׂלָיו",
@@ -12018,19 +12167,19 @@
         ],
         "lookAlikeWordPairs": [
           {
+            "a": "לוֹ",
+            "b": "לוּ"
+          },
+          {
             "a": "יְלִידֵי",
             "b": "יְלִדֵי"
           },
           {
             "a": "אֶשְׁכֹּל",
             "b": "אֶשְׁכּוֹל"
-          },
-          {
-            "a": "וַיָּשֻׁבוּ",
-            "b": "וַיָּשִׁיבוּ"
           }
         ],
-        "lookAlikePairCount": 4
+        "lookAlikePairCount": 5
       },
       "3": {
         "wordCount": 265,
@@ -12070,12 +12219,12 @@
         ],
         "lookAlikeWordPairs": [
           {
-            "a": "וַיֹּֽאמְרוּ",
-            "b": "וְאָֽמְרוּ"
-          },
-          {
             "a": "וּבְעַמֻּד",
             "b": "וּבְעַמּוּד"
+          },
+          {
+            "a": "וַיֹּֽאמְרוּ",
+            "b": "וְאָֽמְרוּ"
           }
         ],
         "lookAlikePairCount": 2
@@ -12120,8 +12269,13 @@
             "note": "Formal Ketiv/Qere: the Torah scroll is written וילונו but traditionally read aloud as וילינו."
           }
         ],
-        "lookAlikeWordPairs": [],
-        "lookAlikePairCount": 0
+        "lookAlikeWordPairs": [
+          {
+            "a": "אַתֶּם",
+            "b": "אֹתָם"
+          }
+        ],
+        "lookAlikePairCount": 1
       },
       "5": {
         "wordCount": 103,
@@ -12237,8 +12391,13 @@
             "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
           }
         ],
-        "lookAlikeWordPairs": [],
-        "lookAlikePairCount": 0
+        "lookAlikeWordPairs": [
+          {
+            "a": "אֹתָם",
+            "b": "אַתֶּם"
+          }
+        ],
+        "lookAlikePairCount": 1
       },
       "M": {
         "wordCount": 69,
@@ -12271,8 +12430,13 @@
           }
         ],
         "ambiguousSpellingExamples": [],
-        "lookAlikeWordPairs": [],
-        "lookAlikePairCount": 0
+        "lookAlikeWordPairs": [
+          {
+            "a": "אֹתָם",
+            "b": "אַתֶּם"
+          }
+        ],
+        "lookAlikePairCount": 1
       }
     },
     "Korach": {
@@ -12391,11 +12555,15 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אֹתָם",
+            "b": "אַתֶּם"
+          },
+          {
             "a": "הָאִישׁ",
             "b": "הָאֵשׁ"
           }
         ],
-        "lookAlikePairCount": 1
+        "lookAlikePairCount": 2
       },
       "4": {
         "wordCount": 91,
@@ -12972,12 +13140,12 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
-            "a": "צִפּוֹר",
-            "b": "צִפֹּר"
-          },
-          {
             "a": "אוּלַי",
             "b": "אֵלָי"
+          },
+          {
+            "a": "צִפּוֹר",
+            "b": "צִפֹּר"
           }
         ],
         "lookAlikePairCount": 2
@@ -13013,8 +13181,13 @@
           }
         ],
         "ambiguousSpellingExamples": [],
-        "lookAlikeWordPairs": [],
-        "lookAlikePairCount": 0
+        "lookAlikeWordPairs": [
+          {
+            "a": "אַתֶּם",
+            "b": "אִתָּם"
+          }
+        ],
+        "lookAlikePairCount": 1
       },
       "3": {
         "wordCount": 302,
@@ -13049,8 +13222,8 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
-            "a": "שָׁלשׁ",
-            "b": "שָׁלוֹשׁ"
+            "a": "לוֹ",
+            "b": "לוּ"
           },
           {
             "a": "הֲלוֹא",
@@ -13061,7 +13234,7 @@
             "b": "אֵלָי"
           }
         ],
-        "lookAlikePairCount": 5
+        "lookAlikePairCount": 6
       },
       "4": {
         "wordCount": 189,
@@ -13094,8 +13267,13 @@
           }
         ],
         "ambiguousSpellingExamples": [],
-        "lookAlikeWordPairs": [],
-        "lookAlikePairCount": 0
+        "lookAlikeWordPairs": [
+          {
+            "a": "אִתּֽוֹ",
+            "b": "אֹתוֹ"
+          }
+        ],
+        "lookAlikePairCount": 1
       },
       "5": {
         "wordCount": 177,
@@ -13130,11 +13308,15 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אִתּוֹ",
+            "b": "אֹתוֹ"
+          },
+          {
             "a": "וַיִּבֶן",
             "b": "וּבֶן"
           }
         ],
-        "lookAlikePairCount": 1
+        "lookAlikePairCount": 2
       },
       "6": {
         "wordCount": 227,
@@ -13216,12 +13398,12 @@
             "b": "הָלַךְ"
           },
           {
-            "a": "אֲשֶׁר",
-            "b": "אַשּׁוּר"
-          },
-          {
             "a": "וְקָם",
             "b": "וַיָּקָם"
+          },
+          {
+            "a": "אֲשֶׁר",
+            "b": "אַשּׁוּר"
           }
         ],
         "lookAlikePairCount": 3
@@ -13386,16 +13568,16 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "מוֹת",
+            "b": "מֵת"
+          },
+          {
             "a": "אִישׁ",
             "b": "אֵשׁ"
           },
           {
             "a": "בֵּין",
             "b": "בֶּן"
-          },
-          {
-            "a": "מוֹת",
-            "b": "מֵת"
           }
         ],
         "lookAlikePairCount": 4
@@ -13431,8 +13613,17 @@
           }
         ],
         "ambiguousSpellingExamples": [],
-        "lookAlikeWordPairs": [],
-        "lookAlikePairCount": 0
+        "lookAlikeWordPairs": [
+          {
+            "a": "אֹתוֹ",
+            "b": "אִתּוֹ"
+          },
+          {
+            "a": "אֹתָהּ",
+            "b": "אָתָּה"
+          }
+        ],
+        "lookAlikePairCount": 2
       },
       "5": {
         "wordCount": 183,
@@ -13636,12 +13827,12 @@
             "b": "אוֹתָהּ"
           },
           {
-            "a": "וְאִשָּׁה",
-            "b": "וְאִישָׁהּ"
-          },
-          {
             "a": "נִדְרָהּ",
             "b": "נְדָרֶיהָ"
+          },
+          {
+            "a": "אָֽסְרָה",
+            "b": "אֱסָרֶיהָ"
           }
         ],
         "lookAlikePairCount": 6
@@ -13834,11 +14025,15 @@
         ],
         "lookAlikeWordPairs": [
           {
+            "a": "אֹתָם",
+            "b": "אִתָּם"
+          },
+          {
             "a": "עַד",
             "b": "עוֹד"
           }
         ],
-        "lookAlikePairCount": 1
+        "lookAlikePairCount": 2
       },
       "7": {
         "wordCount": 295,
@@ -13873,11 +14068,15 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אֶתְכֶֽם",
+            "b": "אִתְּכֶם"
+          },
+          {
             "a": "אֲלֵיהֶם",
             "b": "אֲלֵהֶם"
           }
         ],
-        "lookAlikePairCount": 1
+        "lookAlikePairCount": 2
       },
       "M": {
         "wordCount": 43,
@@ -14332,8 +14531,13 @@
           }
         ],
         "ambiguousSpellingExamples": [],
-        "lookAlikeWordPairs": [],
-        "lookAlikePairCount": 0
+        "lookAlikeWordPairs": [
+          {
+            "a": "אֹתָֽהּ",
+            "b": "אַתָּה"
+          }
+        ],
+        "lookAlikePairCount": 1
       },
       "4": {
         "wordCount": 125,
@@ -14407,19 +14611,19 @@
         ],
         "lookAlikeWordPairs": [
           {
+            "a": "עֵשָׂו",
+            "b": "עָֽשׂוּ"
+          },
+          {
             "a": "קֻמוּ",
             "b": "קוּמוּ"
           },
           {
             "a": "סִיחֹן",
             "b": "סִיחוֹן"
-          },
-          {
-            "a": "וְהַמֹּאָבִים",
-            "b": "וְהַמּוֹאָבִים"
           }
         ],
-        "lookAlikePairCount": 4
+        "lookAlikePairCount": 5
       },
       "6": {
         "wordCount": 337,
@@ -14638,6 +14842,10 @@
         ],
         "lookAlikeWordPairs": [
           {
+            "a": "אַתֶּם",
+            "b": "אֹתָם"
+          },
+          {
             "a": "עַד",
             "b": "עוֹד"
           },
@@ -14646,7 +14854,7 @@
             "b": "הַגָּדֹל"
           }
         ],
-        "lookAlikePairCount": 2
+        "lookAlikePairCount": 3
       },
       "3": {
         "wordCount": 123,
@@ -14850,6 +15058,10 @@
         ],
         "lookAlikeWordPairs": [
           {
+            "a": "אֹתָם",
+            "b": "אַתֶּם"
+          },
+          {
             "a": "מִצְוֹתָיו",
             "b": "מצותו"
           },
@@ -14858,7 +15070,7 @@
             "b": "לְשׂנְאוֹ"
           }
         ],
-        "lookAlikePairCount": 2
+        "lookAlikePairCount": 3
       },
       "M": {
         "wordCount": 42,
@@ -14948,12 +15160,12 @@
         ],
         "lookAlikeWordPairs": [
           {
-            "a": "עֵֽינְךָ",
-            "b": "עֵינֶיךָ"
-          },
-          {
             "a": "מִצְוֹתָיו",
             "b": "מצותו"
+          },
+          {
+            "a": "עֵֽינְךָ",
+            "b": "עֵינֶיךָ"
           }
         ],
         "lookAlikePairCount": 2
@@ -15025,19 +15237,19 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אַתָּה",
+            "b": "אָֽתָּה"
+          },
+          {
             "a": "אֹתָם",
             "b": "אוֹתָם"
           },
           {
             "a": "לוּחֹת",
             "b": "לֻחֹת"
-          },
-          {
-            "a": "לֻחֹת",
-            "b": "לֻחוֹת"
           }
         ],
-        "lookAlikePairCount": 4
+        "lookAlikePairCount": 5
       },
       "4": {
         "wordCount": 180,
@@ -15162,8 +15374,17 @@
             "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
           }
         ],
-        "lookAlikeWordPairs": [],
-        "lookAlikePairCount": 0
+        "lookAlikeWordPairs": [
+          {
+            "a": "אַתֶּם",
+            "b": "אֹתָם"
+          },
+          {
+            "a": "אַתָּה",
+            "b": "אֹתָהּ"
+          }
+        ],
+        "lookAlikePairCount": 2
       },
       "7": {
         "wordCount": 74,
@@ -15266,8 +15487,17 @@
           }
         ],
         "ambiguousSpellingExamples": [],
-        "lookAlikeWordPairs": [],
-        "lookAlikePairCount": 0
+        "lookAlikeWordPairs": [
+          {
+            "a": "אַתֶּם",
+            "b": "אֹתָם"
+          },
+          {
+            "a": "אַתָּה",
+            "b": "אֹתָהּ"
+          }
+        ],
+        "lookAlikePairCount": 2
       },
       "2": {
         "wordCount": 301,
@@ -15302,6 +15532,10 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אֶתְכֶם",
+            "b": "אִתְּכֶֽם"
+          },
+          {
             "a": "אֵת",
             "b": "אַוַּת"
           },
@@ -15310,7 +15544,7 @@
             "b": "וּתְרוּמַת"
           }
         ],
-        "lookAlikePairCount": 2
+        "lookAlikePairCount": 3
       },
       "3": {
         "wordCount": 389,
@@ -15350,19 +15584,19 @@
         ],
         "lookAlikeWordPairs": [
           {
+            "a": "אַתָּה",
+            "b": "אֹתָהּ"
+          },
+          {
             "a": "אֶת",
             "b": "אוֹת"
           },
           {
             "a": "אוֹתָם",
             "b": "אֹתָם"
-          },
-          {
-            "a": "חֹלֵם",
-            "b": "חֲלוֹם"
           }
         ],
-        "lookAlikePairCount": 4
+        "lookAlikePairCount": 5
       },
       "4": {
         "wordCount": 211,
@@ -15395,8 +15629,13 @@
           }
         ],
         "ambiguousSpellingExamples": [],
-        "lookAlikeWordPairs": [],
-        "lookAlikePairCount": 0
+        "lookAlikeWordPairs": [
+          {
+            "a": "אַתָּה",
+            "b": "אֹתָהּ"
+          }
+        ],
+        "lookAlikePairCount": 1
       },
       "5": {
         "wordCount": 140,
@@ -16463,12 +16702,12 @@
             "b": "עוֹד"
           },
           {
-            "a": "אֹֽיְבֶיךָ",
-            "b": "אֹֽיְבֶֽךָ"
-          },
-          {
             "a": "וְרָאוּ",
             "b": "וְיָֽרְאוּ"
+          },
+          {
+            "a": "רַגְלָהּ",
+            "b": "רַגְלֶיהָ"
           }
         ],
         "lookAlikePairCount": 6
@@ -16504,8 +16743,13 @@
           }
         ],
         "ambiguousSpellingExamples": [],
-        "lookAlikeWordPairs": [],
-        "lookAlikePairCount": 0
+        "lookAlikeWordPairs": [
+          {
+            "a": "אַתֶּם",
+            "b": "אֹתָם"
+          }
+        ],
+        "lookAlikePairCount": 1
       },
       "M": {
         "wordCount": 37,
@@ -16651,8 +16895,13 @@
             "note": "Formal Ketiv/Qere: the Torah scroll is written וצביים but traditionally read aloud as וצבוים."
           }
         ],
-        "lookAlikeWordPairs": [],
-        "lookAlikePairCount": 0
+        "lookAlikeWordPairs": [
+          {
+            "a": "אַתֶּם",
+            "b": "אֹתָם"
+          }
+        ],
+        "lookAlikePairCount": 1
       },
       "4": {
         "wordCount": 95,
@@ -17230,12 +17479,12 @@
         ],
         "lookAlikeWordPairs": [
           {
-            "a": "אֱלוֹהַּ",
-            "b": "אֱלֹהַּ"
-          },
-          {
             "a": "בָּמֳתֵי",
             "b": "במותי"
+          },
+          {
+            "a": "אֱלוֹהַּ",
+            "b": "אֱלֹהַּ"
           },
           {
             "a": "וְשֶׁמֶן",
@@ -17708,19 +17957,19 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אֹתוֹ",
+            "b": "אִתּוֹ"
+          },
+          {
             "a": "אֵשׁ",
             "b": "אִישׁ"
           },
           {
             "a": "נְדִיב",
             "b": "נָדַב"
-          },
-          {
-            "a": "לַֽעֲשׂת",
-            "b": "לַֽעֲשׂוֹת"
           }
         ],
-        "lookAlikePairCount": 4
+        "lookAlikePairCount": 5
       },
       "2": {
         "wordCount": 783,
@@ -17764,12 +18013,12 @@
             "b": "אַמֹּת"
           },
           {
-            "a": "לַֽעֲשׂת",
-            "b": "לַֽעֲשׂוֹת"
+            "a": "קְצוֹתָֽיו",
+            "b": "קצוותיו"
           },
           {
-            "a": "וְהָיוּ",
-            "b": "וַיִּֽהְיוּ"
+            "a": "לַֽעֲשׂת",
+            "b": "לַֽעֲשׂוֹת"
           }
         ],
         "lookAlikePairCount": 5
@@ -17910,8 +18159,8 @@
             "b": "שְׁמֹת"
           },
           {
-            "a": "מֻֽסַבֹּת",
-            "b": "מֽוּסַבֹּת"
+            "a": "קְצוֹתָיו",
+            "b": "קצוותיו"
           }
         ],
         "lookAlikePairCount": 4
@@ -18289,16 +18538,16 @@
         ],
         "lookAlikeWordPairs": [
           {
+            "a": "אֹתָם",
+            "b": "אוֹתָם"
+          },
+          {
             "a": "יָשׁוּב",
             "b": "יֵשֵׁב"
           },
           {
             "a": "הִטּֽוֹחַ",
             "b": "הִטֹּחַ"
-          },
-          {
-            "a": "אֹתָם",
-            "b": "אוֹתָם"
           }
         ],
         "lookAlikePairCount": 4
@@ -18429,19 +18678,19 @@
         ],
         "lookAlikeWordPairs": [
           {
-            "a": "בַּד",
-            "b": "בְּיַד"
+            "a": "אֹתָם",
+            "b": "אִתָּם"
           },
           {
             "a": "אֵשׁ",
             "b": "אִישׁ"
           },
           {
-            "a": "וְאַל",
-            "b": "וְאַיִל"
+            "a": "יָדָיו",
+            "b": "ידו"
           }
         ],
-        "lookAlikePairCount": 5
+        "lookAlikePairCount": 6
       },
       "2": {
         "wordCount": 270,
@@ -18568,11 +18817,15 @@
         ],
         "lookAlikeWordPairs": [
           {
+            "a": "אַתֶּם",
+            "b": "אֹתָם"
+          },
+          {
             "a": "קָדוֹשׁ",
             "b": "קֹדֶשׁ"
           }
         ],
-        "lookAlikePairCount": 1
+        "lookAlikePairCount": 2
       },
       "5": {
         "wordCount": 228,
@@ -18612,12 +18865,12 @@
         ],
         "lookAlikeWordPairs": [
           {
-            "a": "עָוֶל",
-            "b": "עַל"
-          },
-          {
             "a": "אֶל",
             "b": "אֵיל"
+          },
+          {
+            "a": "עָוֶל",
+            "b": "עַל"
           },
           {
             "a": "תִקֹּם",
@@ -18664,11 +18917,15 @@
         ],
         "lookAlikeWordPairs": [
           {
+            "a": "אִתְּכֶם",
+            "b": "אֶתְכֶם"
+          },
+          {
             "a": "לִזְנוֹת",
             "b": "לִזְנֹת"
           }
         ],
-        "lookAlikePairCount": 1
+        "lookAlikePairCount": 2
       },
       "7": {
         "wordCount": 320,
@@ -18712,11 +18969,15 @@
         ],
         "lookAlikeWordPairs": [
           {
+            "a": "אֹתָם",
+            "b": "אַתֶּם"
+          },
+          {
             "a": "יֽוּמְתוּ",
             "b": "יָמֻֽתוּ"
           }
         ],
-        "lookAlikePairCount": 1
+        "lookAlikePairCount": 2
       },
       "M": {
         "wordCount": 52,
@@ -18913,6 +19174,10 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אֶתְכֶם",
+            "b": "אִתְּכֶֽם"
+          },
+          {
             "a": "עַד",
             "b": "עוֹד"
           },
@@ -18921,7 +19186,7 @@
             "b": "אוֹתָם"
           }
         ],
-        "lookAlikePairCount": 2
+        "lookAlikePairCount": 3
       },
       "5": {
         "wordCount": 479,
@@ -18956,19 +19221,19 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אֹתָם",
+            "b": "אִתָּם"
+          },
+          {
             "a": "עָלֶיהָ",
             "b": "עָלֶה"
           },
           {
             "a": "עֻלְּכֶם",
             "b": "עֲלֵיכֶם"
-          },
-          {
-            "a": "וַֽהֲשִׁמּוֹתִי",
-            "b": "וַֽהֲשִׁמֹּתִי"
           }
         ],
-        "lookAlikePairCount": 3
+        "lookAlikePairCount": 4
       },
       "6": {
         "wordCount": 207,
@@ -19282,12 +19547,12 @@
             "b": "עָר"
           },
           {
-            "a": "יוֹשֵׁב",
-            "b": "ישֵׁב"
+            "a": "אוּלַי",
+            "b": "אֵלָי"
           },
           {
-            "a": "צִפּוֹר",
-            "b": "צִפֹּר"
+            "a": "יוֹשֵׁב",
+            "b": "ישֵׁב"
           }
         ],
         "lookAlikePairCount": 5
@@ -19325,19 +19590,19 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "לוֹ",
+            "b": "לוּ"
+          },
+          {
+            "a": "אַתֶּם",
+            "b": "אִתָּם"
+          },
+          {
             "a": "עוֹד",
             "b": "עַד"
-          },
-          {
-            "a": "הֲלֹךְ",
-            "b": "הוֹלֵךְ"
-          },
-          {
-            "a": "אֵלָֽי",
-            "b": "אוּלַי"
           }
         ],
-        "lookAlikePairCount": 7
+        "lookAlikePairCount": 9
       },
       "6": {
         "wordCount": 366,
@@ -19372,11 +19637,15 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אִתּוֹ",
+            "b": "אֹתוֹ"
+          },
+          {
             "a": "וַיִּבֶן",
             "b": "וּבֶן"
           }
         ],
-        "lookAlikePairCount": 1
+        "lookAlikePairCount": 2
       },
       "7": {
         "wordCount": 475,
@@ -19419,8 +19688,8 @@
             "b": "הוֹלֵךְ"
           },
           {
-            "a": "אֲשֶׁר",
-            "b": "אַשּׁוּר"
+            "a": "בָרוּךְ",
+            "b": "בָרֵךְ"
           }
         ],
         "lookAlikePairCount": 5
@@ -19502,8 +19771,8 @@
             "b": "אוֹתָהּ"
           },
           {
-            "a": "וְאִשָּׁה",
-            "b": "וְאִישָׁהּ"
+            "a": "נִדְרָהּ",
+            "b": "נְדָרֶיהָ"
           }
         ],
         "lookAlikePairCount": 7
@@ -19541,6 +19810,10 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אַתֶּם",
+            "b": "אֹתָם"
+          },
+          {
             "a": "מֵאֵת",
             "b": "מֵאוֹת"
           },
@@ -19549,7 +19822,7 @@
             "b": "וּמִמַּֽחֲצִית"
           }
         ],
-        "lookAlikePairCount": 2
+        "lookAlikePairCount": 3
       },
       "3": {
         "wordCount": 262,
@@ -19593,11 +19866,15 @@
         ],
         "lookAlikeWordPairs": [
           {
+            "a": "אֹתָם",
+            "b": "אִתָּם"
+          },
+          {
             "a": "עַד",
             "b": "עוֹד"
           }
         ],
-        "lookAlikePairCount": 1
+        "lookAlikePairCount": 2
       },
       "4": {
         "wordCount": 650,
@@ -19637,6 +19914,10 @@
         ],
         "lookAlikeWordPairs": [
           {
+            "a": "אֶתְכֶֽם",
+            "b": "אִתְּכֶם"
+          },
+          {
             "a": "יוֹם",
             "b": "יַם"
           },
@@ -19645,7 +19926,7 @@
             "b": "אֲלֵהֶם"
           }
         ],
-        "lookAlikePairCount": 2
+        "lookAlikePairCount": 3
       },
       "5": {
         "wordCount": 307,
@@ -19848,8 +20129,13 @@
             "note": "Formal Ketiv/Qere: the Torah scroll is written וצביים but traditionally read aloud as וצבוים."
           }
         ],
-        "lookAlikeWordPairs": [],
-        "lookAlikePairCount": 0
+        "lookAlikeWordPairs": [
+          {
+            "a": "אַתֶּם",
+            "b": "אֹתָם"
+          }
+        ],
+        "lookAlikePairCount": 1
       },
       "2": {
         "wordCount": 95,
@@ -21719,19 +22005,19 @@
         ],
         "lookAlikeWordPairs": [
           {
+            "a": "אֹתֽוֹ",
+            "b": "אִתּוֹ"
+          },
+          {
             "a": "אַיִל",
             "b": "אֶל"
           },
           {
             "a": "מֵאֵת",
             "b": "מֵאוֹת"
-          },
-          {
-            "a": "הַנֵּרֹת",
-            "b": "הַנֵּרֽוֹת"
           }
         ],
-        "lookAlikePairCount": 4
+        "lookAlikePairCount": 5
       }
     },
     "Chanukah: 8th Day__IL": {
@@ -21773,19 +22059,19 @@
         ],
         "lookAlikeWordPairs": [
           {
+            "a": "אֹתֽוֹ",
+            "b": "אִתּוֹ"
+          },
+          {
             "a": "אַיִל",
             "b": "אֶל"
           },
           {
             "a": "מֵאֵת",
             "b": "מֵאוֹת"
-          },
-          {
-            "a": "הַנֵּרֹת",
-            "b": "הַנֵּרֽוֹת"
           }
         ],
-        "lookAlikePairCount": 4
+        "lookAlikePairCount": 5
       }
     },
     "Pesach I__DIASPORA": {
@@ -22594,12 +22880,12 @@
             "b": "אוֹתָם"
           },
           {
-            "a": "שַׁבָּתוֹת",
-            "b": "שַׁבְּתֹת"
-          },
-          {
             "a": "מֽוֹעֲדֵי",
             "b": "מֹֽעֲדֵי"
+          },
+          {
+            "a": "שַׁבָּתוֹת",
+            "b": "שַׁבְּתֹת"
           }
         ],
         "lookAlikePairCount": 5
@@ -24152,11 +24438,15 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אֶתְכֶם",
+            "b": "אִתְּכֶֽם"
+          },
+          {
             "a": "הַשְׁבֵּעַ",
             "b": "הִשְׁבִּיעַ"
           }
         ],
-        "lookAlikePairCount": 1
+        "lookAlikePairCount": 2
       },
       "2": {
         "wordCount": 107,
@@ -24320,12 +24610,12 @@
             "b": "הֵם"
           },
           {
-            "a": "יָֽדְךָ",
-            "b": "יָדֶֽיךָ"
+            "a": "אֵלִי",
+            "b": "אֵילֵי"
           },
           {
-            "a": "בַּיָּם",
-            "b": "בַּיּוֹם"
+            "a": "יָֽדְךָ",
+            "b": "יָדֶֽיךָ"
           }
         ],
         "lookAlikePairCount": 5
@@ -24404,11 +24694,15 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "אֶתְכֶם",
+            "b": "אִתְּכֶֽם"
+          },
+          {
             "a": "הַשְׁבֵּעַ",
             "b": "הִשְׁבִּיעַ"
           }
         ],
-        "lookAlikePairCount": 1
+        "lookAlikePairCount": 2
       },
       "2": {
         "wordCount": 107,
@@ -24572,12 +24866,12 @@
             "b": "הֵם"
           },
           {
-            "a": "יָֽדְךָ",
-            "b": "יָדֶֽיךָ"
+            "a": "אֵלִי",
+            "b": "אֵילֵי"
           },
           {
-            "a": "בַּיָּם",
-            "b": "בַּיּוֹם"
+            "a": "יָֽדְךָ",
+            "b": "יָדֶֽיךָ"
           }
         ],
         "lookAlikePairCount": 5
@@ -31438,16 +31732,16 @@
         "ambiguousSpellingExamples": [],
         "lookAlikeWordPairs": [
           {
+            "a": "וְכָל",
+            "b": "וַיְכַל"
+          },
+          {
             "a": "הַיּוֹם",
             "b": "הַיָּם"
           },
           {
             "a": "רֶמֶשׂ",
             "b": "רוֹמֵשׂ"
-          },
-          {
-            "a": "וְכָל",
-            "b": "וַיְכַל"
           }
         ],
         "lookAlikePairCount": 4

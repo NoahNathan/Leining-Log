@@ -27,6 +27,7 @@ const BOOK_EN_TO_HE = {
 
 const TROPE = /[֑-֯]/g;
 const NIQQUD = /[ְ-ׇּׁׂ]/g;
+const METEG = /ֽ/g; // secondary-stress mark, not a real vowel -- see stripMeteg below
 const DAGESH = /ּ/g;
 const CHATAF = /[ֱֲֳ]/;
 const HEBREW_LETTER = /[א-ת]/;
@@ -46,6 +47,14 @@ function tokenizeVerse(text) {
 }
 const stripTrope = (w) => w.replace(TROPE, '');
 const stripNiqqud = (w) => w.replace(NIQQUD, '');
+const stripMeteg = (w) => w.replace(METEG, '');
+// Dagesh is two unrelated things wearing the same mark: gemination (a letter
+// doubling, purely orthographic -- e.g. the lamed in לּוֹ "to him" vs לוֹ,
+// same word) vs. part of the vowel itself when it lands on a vav (shuruk,
+// לוּ, vs. cholam-vav, לוֹ -- genuinely different sound). Distinguishable by
+// which letter carries it: only strip the gemination kind.
+const stripGeminationDagesh = (w) => w.replace(/(?<!ו)ּ/g, '');
+const vowelSignature = (w) => stripGeminationDagesh(stripMeteg(w));
 
 // A narrow, text-grounded "gotcha": the Torah spells the 3rd-person feminine
 // pronoun "hi" (she) the same as the masculine "hu" (he) -- both ה-ו-א --
@@ -91,6 +100,37 @@ function isOneLetterApart(a, b) {
   }
   return false;
 }
+
+// A strictly worse case than isOneLetterApart above: distinct words that
+// share the EXACT same consonantal skeleton (zero letters apart -- 100%
+// visually identical on a real, unvocalized Torah scroll) and differ only
+// in nikkud. Tried detecting this generically before settling on an
+// allowlist: a whole-Torah scan found 2,149 skeletons with 2+ distinct
+// vocalizations, and even restricting to two such vocalizations actually
+// co-occurring in the SAME aliyah still hit ~95% of aliyot -- almost all of
+// it ordinary grammatical vowel variance (a dagesh appearing or not,
+// construct-vs-absolute noun forms, meteg) that no fluent reader would
+// actually confuse, not real word-confusion traps. This list is the
+// signal left after manually verifying real occurrences and discarding
+// that noise -- the same reasoning as the hand-picked הוא/הִיא case above,
+// just covering more than one pattern. See difficulty-rubric.md.
+const HOMOGRAPH_SKELETONS = new Map([
+  // Bare 'את' deliberately excluded: it's overwhelmingly the direct-object
+  // marker alternating between its two ordinary vowel forms (אֶת/אֵת, a
+  // pausal-form grammar rule -- not a different word) rather than the much
+  // rarer "you" (fem., אַתְּ) contrast -- tested and found ~96% noise, common
+  // enough (the object marker is one of the most frequent words in the
+  // Torah) that it would have flooded nearly every aliyah.
+  ['אתי', '"me" (direct object) vs. "with me"'],
+  ['אתו', '"him" (direct object) vs. "with him"'],
+  ['אתה', '"you" (masc.) vs. "her" (direct object)'],
+  ['אתם', '"them" (direct object) vs. "with them" vs. "you all" (masc.)'],
+  ['אתכם', '"you all" (direct object) vs. "with you all"'],
+  ['לו', '"to him" vs. "if only"'],
+  ['מן', '"from" vs. "manna"'],
+  ['עשו', '"Esau" vs. "they made/did"'],
+  ['אם', '"if" vs. "mother"'],
+]);
 
 // ---- pass 1: load every Torah verse once, tokenize, build frequency table ----
 const versesByBookChapter = {}; // { Genesis: { 1: [{verse, words:[{surface, consonantal}]}] } }
@@ -245,23 +285,45 @@ function rawAliyahStats(bookEn, startRef, endRef) {
   }
 
   // Count is folded into the Gotchas score (percentile-ranked below, like
-  // rarity/pronunciation); the capped list below is just for display. See
-  // comment on isOneLetterApart for what counts as a pair. Shortest pairs
-  // first -- short, common words are the ones actually at risk of a quick
-  // misread.
+  // rarity/pronunciation); the capped list below is just for display.
+  // Two flavors, most to least severe -- see comments on HOMOGRAPH_SKELETONS
+  // and isOneLetterApart above for what counts as each:
+  //   1. identical consonants, different vowels (allowlisted skeletons only)
+  //   2. one internal ו/י apart
   const distinctForms = new Map(); // consonantal -> first surface seen
   for (const w of words) if (!distinctForms.has(w.consonantal)) distinctForms.set(w.consonantal, w.surface);
   const consList = [...distinctForms.keys()];
-  const lookAlikePairsRaw = [];
-  for (let i = 0; i < consList.length; i++) {
-    for (let j = i + 1; j < consList.length; j++) {
-      if (isOneLetterApart(consList[i], consList[j])) lookAlikePairsRaw.push([consList[i], consList[j]]);
+  const lookAlikePairsRaw = []; // [{ a, b, severity }]
+
+  const byHomographVowel = new Map(); // consonantal -> Map(vowelSig -> surface)
+  for (const w of words) {
+    if (!HOMOGRAPH_SKELETONS.has(w.consonantal)) continue;
+    const vowelSig = vowelSignature(w.surface);
+    if (!byHomographVowel.has(w.consonantal)) byHomographVowel.set(w.consonantal, new Map());
+    byHomographVowel.get(w.consonantal).set(vowelSig, w.surface);
+  }
+  for (const vowelMap of byHomographVowel.values()) {
+    if (vowelMap.size < 2) continue;
+    const forms = [...vowelMap.values()];
+    for (let i = 0; i < forms.length; i++) {
+      for (let j = i + 1; j < forms.length; j++) {
+        lookAlikePairsRaw.push({ a: forms[i], b: forms[j], severity: 2 });
+      }
     }
   }
-  lookAlikePairsRaw.sort((a, b) => (a[0].length + a[1].length) - (b[0].length + b[1].length));
-  const lookAlikeWordPairs = lookAlikePairsRaw.slice(0, 3).map(([c1, c2]) => ({
-    a: distinctForms.get(c1), b: distinctForms.get(c2),
-  }));
+
+  for (let i = 0; i < consList.length; i++) {
+    for (let j = i + 1; j < consList.length; j++) {
+      if (isOneLetterApart(consList[i], consList[j])) {
+        lookAlikePairsRaw.push({ a: distinctForms.get(consList[i]), b: distinctForms.get(consList[j]), severity: 1 });
+      }
+    }
+  }
+
+  // Most severe first, then shortest -- short, common words are the ones
+  // actually at risk of a quick misread.
+  lookAlikePairsRaw.sort((x, y) => y.severity - x.severity || (x.a.length + x.b.length) - (y.a.length + y.b.length));
+  const lookAlikeWordPairs = lookAlikePairsRaw.slice(0, 3).map(({ a, b }) => ({ a, b }));
 
   return { wordCount: words.length, rawRarity, rawPron, rareExamples, hardToPronounceExamples: hardExamples, ambiguousSpellingExamples, lookAlikeWordPairs, lookAlikePairCount: lookAlikePairsRaw.length };
 }
@@ -321,7 +383,7 @@ for (const e of entries) {
 }
 
 writeFileSync('../data/word-difficulty.json', JSON.stringify({
-  description: "Per-aliyah vocabulary-difficulty statistics computed directly from the Masoretic Torah text (via @shafeh/tanach), not guessed from a content-profile category. Covers every individual parsha, every combined (double) parsha, and every chag/fast/Rosh Chodesh/special-Shabbat reading in chagim.json. For each aliyah: raw word-frequency rarity and pronunciation-complexity are averaged across its actual words, then percentile-ranked against every OTHER aliyah in this same dataset (mirroring how the 'length' criterion is scored) so the full 1-10 range is meaningfully used rather than clustering in a narrow band. 'vocab' is the rounded average of 'rarity' and 'pronunciation', and feeds directly into difficulty-scores.json's vocabulary criterion. 'ambiguousSpellingExamples' flags two distinct, text-grounded 'written one way, read another' gotchas -- not a guessed or hand-typed list: (1) the archaic הוא/הִיא feminine-pronoun spelling, detected from the niqqud in the vocalized text itself; (2) every formal Ketiv/Qere in the Chumash (the Torah scroll's written letters vs. what's traditionally read aloud), read directly out of @shafeh/tanach's own ketiv/qere markup. It feeds into difficulty-scores.json's hiddenChallenges criterion. 'lookAlikeWordPairs' (up to 3, for display) and 'lookAlikePairCount' (the true total) flag pairs of distinct words within the same aliyah that differ by exactly one internal ו/י, so they look nearly identical without nikkud -- a real misreading risk when reading from an unvocalized scroll. 'lookAlikePairCount' feeds a small, threshold-based (not percentile-ranked -- see difficulty-rubric.md for why percentile-ranking this specific count backfired) bump into difficulty-scores.json's hiddenChallenges, so the ~58% of aliyot with 0-1 pairs (the common case) get no bump, and only the genuinely pair-dense tail scores higher. There's still no reliable way to tell from spelling alone whether a given pair is genuinely two different words or just the same root in different grammatical forms (see difficulty-rubric.md for a related normalization attempt that was tried and rejected for the same reason) -- the score reflects density of near-identical spellings, not a confirmed count of true word-confusion traps.",
+  description: "Per-aliyah vocabulary-difficulty statistics computed directly from the Masoretic Torah text (via @shafeh/tanach), not guessed from a content-profile category. Covers every individual parsha, every combined (double) parsha, and every chag/fast/Rosh Chodesh/special-Shabbat reading in chagim.json. For each aliyah: raw word-frequency rarity and pronunciation-complexity are averaged across its actual words, then percentile-ranked against every OTHER aliyah in this same dataset (mirroring how the 'length' criterion is scored) so the full 1-10 range is meaningfully used rather than clustering in a narrow band. 'vocab' is the rounded average of 'rarity' and 'pronunciation', and feeds directly into difficulty-scores.json's vocabulary criterion. 'ambiguousSpellingExamples' flags two distinct, text-grounded 'written one way, read another' gotchas -- not a guessed or hand-typed list: (1) the archaic הוא/הִיא feminine-pronoun spelling, detected from the niqqud in the vocalized text itself; (2) every formal Ketiv/Qere in the Chumash (the Torah scroll's written letters vs. what's traditionally read aloud), read directly out of @shafeh/tanach's own ketiv/qere markup. It feeds into difficulty-scores.json's hiddenChallenges criterion. 'lookAlikeWordPairs' (up to 3, for display) and 'lookAlikePairCount' (the true total) flag pairs of distinct words within the same aliyah that a reader could genuinely conflate without nikkud, in two flavors, most to least severe: (1) identical consonants, different vowels -- restricted to a short, hand-verified allowlist (HOMOGRAPH_SKELETONS in gen_word_stats.mjs) rather than auto-detected, since both a whole-Torah scan and a same-aliyah co-occurrence scan came back ~95% saturated with ordinary grammatical vowel variance (dagesh presence, construct-state shifts) that no fluent reader would actually confuse -- see difficulty-rubric.md; (2) one internal ו/י apart. 'lookAlikePairCount' feeds a small, threshold-based (not percentile-ranked -- see difficulty-rubric.md for why percentile-ranking this specific count backfired) bump into difficulty-scores.json's hiddenChallenges, so the ~58% of aliyot with 0-1 pairs (the common case) get no bump, and only the genuinely pair-dense tail scores higher. There's still no reliable way to tell from spelling alone whether an unlisted one-letter-apart pair is genuinely two different words or just the same root in different grammatical forms (see difficulty-rubric.md for a related normalization attempt that was tried and rejected for the same reason) -- that flavor measures density of near-identical spellings, not a confirmed count of true word-confusion traps.",
   corpus: { totalWordTokens: totalTokens, uniqueConsonantalForms: freq.size, aliyotScored: entries.length },
   methodology: "difficulty-rubric.md",
   generatedAt: new Date().toISOString(),

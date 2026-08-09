@@ -421,6 +421,75 @@ whole dataset (1.4%) hit the +3 ceiling. The capped, shortest-first
 the app's "why" panel regardless of score impact, since it's useful
 information even for aliyot below the scoring threshold.
 
+## Look-alike pairs, take two: identical consonants, not just one letter apart
+
+The one-letter-apart check above catches words that are *close* without
+nikkud. A user pointed out the actually-worse case it was missing: two
+distinct words that are *100% identical* without nikkud -- same letters, no
+insertion needed, differing only in which vowels they carry. On a real
+Torah scroll (no nikkud at all) these are indistinguishable until you
+already know which word it is. This is the same category as the הוא/הִיא
+gotcha above, just not limited to that one hand-picked pair.
+
+**First attempt (tried, rejected): auto-detect it Torah-wide.** For every
+consonantal skeleton, count how many distinct vocalized forms it takes
+anywhere in the text. Result: 2,149 of the Torah's 12,856 unique skeletons
+(17%) have 2+ vocalizations -- but nearly all of that is ordinary grammar,
+not real ambiguity: a dagesh appearing or not (בֵּן/בֶן), construct-vs-absolute
+noun forms (דָּבָר/דְּבַר), the Divine Name's traditional vocalization
+variants. Auto-flagging all of it would be noise, not signal.
+
+**Second attempt (tried, rejected): restrict to same-aliyah co-occurrence.**
+Reasoning that requiring *both* vocalizations to actually appear together in
+one aliyah (mirroring how the one-letter-apart check already works) would
+filter out the Torah-wide noise. It didn't: 95.3% of aliyot still hit at
+least one such collision, for the same reason -- ordinary grammatical vowel
+variance is common enough that two forms of the same mundane word landing
+in the same aliyah is the norm, not the exception.
+
+**What actually works: a short, hand-verified allowlist**, the same
+approach as הוא/הִיא, just covering more than one pattern
+(`HOMOGRAPH_SKELETONS` in `gen_word_stats.mjs`). Real candidates were pulled
+from the co-occurrence scan above and checked by hand against what they
+actually mean, keeping only skeletons where the collision is a genuinely
+different word, not a grammatical variant of the same one:
+
+| Skeleton | Real distinct words hiding in it |
+|---|---|
+| אתי | "me" (direct object) vs. "with me" |
+| אתו | "him" (direct object) vs. "with him" |
+| אתה | "you" (masc.) vs. "her" (direct object) |
+| אתם | "them" (direct object) vs. "with them" vs. "you all" (masc.) |
+| אתכם | "you all" (direct object) vs. "with you all" |
+| לו | "to him" vs. "if only" |
+| מן | "from" vs. "manna" |
+| עשו | "Esau" vs. "they made/did" |
+| אם | "if" vs. "mother" |
+
+Bare **את** (the direct-object marker) was tested and specifically
+*excluded*: it's one of the most common words in the Torah, and 96% of its
+apparent "collisions" turned out to be its own ordinary tzere/segol pausal
+alternation (אֵת/אֶת, same word) rather than the much rarer "you" (fem.,
+אַתְּ) contrast. Including it would have flagged nearly every aliyah in the
+Torah for no real signal.
+
+**One more real bug found along the way:** the naive vowel-signature
+comparison also flagged לוֹ/לּוֹ ("to him," with vs. without an ordinary
+gemination dagesh on the lamed) as if it were the genuine לוֹ/לוּ contrast
+("to him" vs. "if only," where the dagesh instead lands on the vav and forms
+the shuruk vowel). Same mark, two unrelated jobs. Fixed by only stripping
+the dagesh when it's *not* immediately after a vav (`stripGeminationDagesh`
+in `gen_word_stats.mjs`) -- gemination gets ignored, the vav's own vowel
+does not.
+
+These pairs feed into the exact same `lookAlikeWordPairs` /
+`lookAlikePairCount` fields as the one-letter-apart pairs above (sorted
+identical-consonant-first, since they're strictly more severe), and the same
+count-threshold bump table -- no separate scoring mechanism needed. Combined
+distribution across all 918 aliyot: 75.7% still land at 0-1 pairs (no bump),
+1.9% hit 6+ (the max bump), and the dataset-wide `hiddenChallenges` mean
+moved from 5.26 to 5.05.
+
 ## "Known leining": familiarity lightens some passages
 
 Several Torah passages are recited so often in davening -- twice a day, in

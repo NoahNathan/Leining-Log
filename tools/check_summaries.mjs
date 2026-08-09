@@ -41,6 +41,31 @@ const NAMES = {
   Tamar: ['תמר'], Peretz: ['פרץ'], Zerach: ['זרח'], Potifar: ['פוטיפר'],
   Menashe: ['מנשה'], Efraim: ['אפרים'], Goshen: ['גשן', 'גשנה'], Dan: ['דן'],
   Gad: ['גד'], Philistines: ['פלשתים'],
+  // Shemot / Vayikra
+  Moshe: ['משה'], Aharon: ['אהרן'], Yitro: ['יתרו'], Tzipora: ['צפרה'], Midian: ['מדין'],
+  Sinai: ['סיני'], Amalek: ['עמלק'], Betzalel: ['בצלאל'], Oholiav: ['אהליאב'],
+  Nadav: ['נדב'], Avihu: ['אביהוא'], Elim: ['אילם'], Marah: ['מרה'],
+  Massah: ['מסה'], Merivah: ['מריבה'], Azazel: ['עזאזל'], Molech: ['מלך'],
+  // Bamidbar / Devarim
+  Kehat: ['קהת'], Gershon: ['גרשון'], Merari: ['מררי'], Miriam: ['מרים'],
+  Yehoshua: ['יהושע', 'יהושוע'], Kalev: ['כלב'], Korach: ['קרח'], Datan: ['דתן'], Aviram: ['אבירם'],
+  Edom: ['אדום', 'אדם'], Moav: ['מואב'], Ammon: ['עמון'], Sichon: ['סיחן', 'סיחון'], Og: ['עוג'],
+  Balak: ['בלק'], Bilaam: ['בלעם'], Peor: ['פעור'], Pinchas: ['פינחס'],
+  Tzelofchad: ['צלפחד'], Machir: ['מכיר'], Yair: ['יאיר'], Novach: ['נבח'], Gilad: ['גלעד'],
+  Rameses: ['רעמסס'], Jordan: ['ירדן'], Gerizim: ['גרזים'], Eival: ['עיבל'],
+  Yeshurun: ['ישרון'], Zevulun: ['זבולן', 'זבולון'], Yissachar: ['יששכר'],
+  Naftali: ['נפתלי'], Asher: ['אשר'], Menashe: ['מנשה'],
+  // chag readings and Nevi'im
+  Nachshon: ['נחשון'], Netanel: ['נתנאל'], Eliav: ['אליאב'], Elitzur: ['אליצור'],
+  Shelumiel: ['שלמיאל'], Elyasaf: ['אליסף'], Elishama: ['אלישמע'], Aviv: ['אביב'],
+  Chorev: ['חרב'], Elisha: ['אלישע'], Shunamite: ['שונמית'], David: ['דוד'],
+  Adoniyahu: ['אדניה'], Batsheva: ['בת שבע', 'בתשבע'], Shlomo: ['שלמה'], Ephraim: ['אפרים'],
+  Devorah: ['דבורה'], Barak: ['ברק'], Sisera: ['סיסרא'], Yael: ['יעל'],
+  Nevuchadnetzar: ['נבוכדראצר', 'נבוכדנאצר'], Chiram: ['חירם'], Eliyahu: ['אליהו'],
+  Carmel: ['כרמל'], Baal: ['בעל'], Uzzah: ['עזה'], Jerusalem: ['ירושלם', 'ירושלים'],
+  Naaman: ['נעמן'], Anatot: ['ענתות'], Manoach: ['מנוח'], Shimshon: ['שמשון'],
+  Rachav: ['רחב'], Jericho: ['יריחו'], Shmuel: ['שמואל'], Yiftach: ['יפתח'],
+  Yirmiyahu: ['ירמיהו', 'ירמיה'], Yeshayahu: ['ישעיהו', 'ישעיה'], Zion: ['ציון'],
 };
 
 // Yaakov is renamed at Gen 32:29 and the text uses both names from then on,
@@ -56,7 +81,27 @@ const UNNAMED_BUT_PRESENT = {
   'Genesis 21:5-21:21': { Yishmael: 'called "the boy" and "the son of Hagar", never named here' },
   'Genesis 44:18-44:30': { Binyamin: 'called "the lad" and "the youngest" throughout Yehuda\'s plea' },
   'Genesis 44:31-45:7': { Yehuda: 'still speaking from the previous aliyah; not named again in this span' },
+  'Exodus 18:13-18:23': { Yitro: 'called "Moshe\'s father-in-law" (choten Moshe) throughout, never by name here' },
+  'Numbers 14:8-14:25': { Yehoshua: 'named at 14:6, in the previous aliyah; his speech carries into this one' },
+  'Numbers 16:14-16:19': {
+    Datan: 'named at 16:12, in the previous aliyah; only the tail of their reply falls here',
+    Aviram: 'named at 16:12, in the previous aliyah; only the tail of their reply falls here',
+  },
+  'Numbers 21:34-22:1': { Og: 'named at 21:33, in the previous aliyah; here he is only "him"' },
+  // Devarim is Moshe's own farewell address, delivered in the first person,
+  // so he narrates page after page without ever being named.
+  'Deuteronomy 1:22-1:38': { Moshe: 'first-person narration; Moshe is "I" throughout' },
+  'Deuteronomy 3:23-4:4': { Moshe: 'first-person narration; Moshe is "I" throughout' },
+  'Deuteronomy 5:19-6:3': { Moshe: 'first-person narration; Moshe is "I" throughout' },
+  'Exodus 33:20-33:23': { Moshe: 'God is speaking directly to him; he is "you", never named here' },
+  'Genesis 21:18-21:21': { Yishmael: 'called "the boy" throughout; not named until later' },
 };
+
+// Hebrew final forms (ך ם ן ף ץ) are the same letters as their medial forms,
+// but a name inside a longer word uses the medial one -- "לראובני" contains
+// ראובנ, not ראובן. Normalising both sides stops that reading as a miss.
+const FINALS = { 'ך': 'כ', 'ם': 'מ', 'ן': 'נ', 'ף': 'פ', 'ץ': 'צ' };
+const normFinals = (t) => t.replace(/[ךםןףץ]/g, (c) => FINALS[c]);
 
 const TROPE = /[֑-֯]/g, NIQQUD = /[ְ-ׇּׁׂ]/g, HEB = /[א-ת]/, NON = /[^א-תְ-ׇּׁׂ֑-֯]/g;
 const cache = {};
@@ -112,7 +157,7 @@ for (const [key, text] of Object.entries(summaries)) {
     if (UNNAMED_BUT_PRESENT[key] && UNNAMED_BUT_PRESENT[key][english]) { exempt++; continue; }
     nameChecks++;
     const candidates = [...forms, ...(ALIASES[english] || [])];
-    const hit = candidates.some((f) => hebrew.includes(f));
+    const hit = candidates.some((f) => normFinals(hebrew).includes(normFinals(f)));
     if (!hit) problems.push(`${key}: mentions "${english}" but no form of it (${candidates.join('/')}) appears in the Hebrew`);
   }
 }

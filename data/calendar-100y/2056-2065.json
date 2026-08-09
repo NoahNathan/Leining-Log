@@ -1,11 +1,11 @@
 {
-  "description": "Shabbat parsha readings and chag/fast/Rosh Chodesh readings, 2056-2065, for both diaspora and israel regions. 'parshaId' references parshiot.json/parshiot-combined.json; 'chagId' references chagim.json. Only holiday-type rows correspond to an entry that actually carries a distinct Torah reading (see gen_calendar.mjs SKIP_HOLIDAY_DESC for the two exclusions).",
+  "description": "Shabbat parsha readings and chag/fast/Rosh Chodesh readings, 2056-2065, for both diaspora and israel regions. 'parshaId' references parshiot.json/parshiot-combined.json; 'chagId' references chagim.json. A parsha row's 'specialReading' (when present) fully describes what's actually read that week -- including any Rosh Chodesh/Shekalim/Zachor/Parah/HaChodesh/HaGadol/Shuva/Chanukah-on-Shabbat contribution via aliyah7Ref/maftirRef/haftaraRef -- so holiday-type rows are never emitted for a date that also has a parsha (verified: Rosh Chodesh and the special-Shabbat labels always coincide with a parsha date; only Chol HaMoed and independent festivals -- Pesach, Sukkot, Rosh Hashana, Yom Kippur, Shavuot -- ever stand alone, and those still get their own row here). See gen_calendar.mjs SKIP_HOLIDAY_DESC for the two content-free exclusions.",
   "yearRange": [
     2056,
     2065
   ],
-  "generatedAt": "2026-08-09T21:33:10.603Z",
-  "count": 2137,
+  "generatedAt": "2026-08-09T22:05:37.135Z",
+  "count": 1949,
   "rows": [
     {
       "date": "2056-01-01",
@@ -123,14 +123,6 @@
       "date": "2056-02-12",
       "hebrewDate": "25 Sh'vat 5816",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Shekalim",
-      "chagId": "Shabbat Shekalim__DIASPORA"
-    },
-    {
-      "date": "2056-02-12",
-      "hebrewDate": "25 Sh'vat 5816",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Mishpatim",
       "combined": false,
@@ -138,11 +130,25 @@
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
         "M": "Shabbat Shekalim",
+        "label": "Shabbat Shekalim",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "30:11",
+          "end": "30:16",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "II Kings",
           "start": "12:1",
           "end": "12:17",
           "verses": 17
+        },
+        "haftaraRefSefardi": {
+          "book": "II Kings",
+          "start": "11:17",
+          "end": "12:17",
+          "verses": 21
         }
       }
     },
@@ -150,14 +156,6 @@
       "date": "2056-02-12",
       "hebrewDate": "25 Sh'vat 5816",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Shekalim",
-      "chagId": "Shabbat Shekalim__IL"
-    },
-    {
-      "date": "2056-02-12",
-      "hebrewDate": "25 Sh'vat 5816",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Mishpatim",
       "combined": false,
@@ -165,11 +163,25 @@
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
         "M": "Shabbat Shekalim",
+        "label": "Shabbat Shekalim",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "30:11",
+          "end": "30:16",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "II Kings",
           "start": "12:1",
           "end": "12:17",
           "verses": 17
+        },
+        "haftaraRefSefardi": {
+          "book": "II Kings",
+          "start": "11:17",
+          "end": "12:17",
+          "verses": 21
         }
       }
     },
@@ -220,14 +232,6 @@
       "type": "parsha",
       "parshaId": "Terumah",
       "combined": false
-    },
-    {
-      "date": "2056-02-26",
-      "hebrewDate": "9 Adar 5816",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Zachor",
-      "chagId": "Shabbat Zachor__DIASPORA"
     },
     {
       "date": "2056-02-26",
@@ -241,7 +245,27 @@
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
         "M": "Shabbat Zachor",
+        "label": "Shabbat Zachor",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Deuteronomy",
+          "start": "25:17",
+          "end": "25:19",
+          "verses": 3
+        },
         "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        },
+        "haftaraRefSefardi": {
+          "book": "I Samuel",
+          "start": "15:1",
+          "end": "15:34",
+          "verses": 34
+        },
+        "haftaraRefChabad": {
           "book": "I Samuel",
           "start": "15:2",
           "end": "15:34",
@@ -253,14 +277,6 @@
       "date": "2056-02-26",
       "hebrewDate": "9 Adar 5816",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Zachor",
-      "chagId": "Shabbat Zachor__IL"
-    },
-    {
-      "date": "2056-02-26",
-      "hebrewDate": "9 Adar 5816",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Tetzaveh",
       "combined": false,
@@ -269,7 +285,27 @@
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
         "M": "Shabbat Zachor",
+        "label": "Shabbat Zachor",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Deuteronomy",
+          "start": "25:17",
+          "end": "25:19",
+          "verses": 3
+        },
         "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        },
+        "haftaraRefSefardi": {
+          "book": "I Samuel",
+          "start": "15:1",
+          "end": "15:34",
+          "verses": 34
+        },
+        "haftaraRefChabad": {
           "book": "I Samuel",
           "start": "15:2",
           "end": "15:34",
@@ -337,14 +373,6 @@
       "date": "2056-03-11",
       "hebrewDate": "23 Adar 5816",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Parah",
-      "chagId": "Shabbat Parah__DIASPORA"
-    },
-    {
-      "date": "2056-03-11",
-      "hebrewDate": "23 Adar 5816",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Vayakhel-Pekudei",
       "combined": true,
@@ -352,21 +380,27 @@
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
         "M": "Shabbat Parah",
+        "label": "Shabbat Parah",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "19:1",
+          "end": "19:22",
+          "verses": 22
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "36:16",
           "end": "36:38",
           "verses": 23
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:36",
+          "verses": 21
         }
       }
-    },
-    {
-      "date": "2056-03-11",
-      "hebrewDate": "23 Adar 5816",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Parah",
-      "chagId": "Shabbat Parah__IL"
     },
     {
       "date": "2056-03-11",
@@ -379,21 +413,27 @@
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
         "M": "Shabbat Parah",
+        "label": "Shabbat Parah",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "19:1",
+          "end": "19:22",
+          "verses": 22
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "36:16",
           "end": "36:38",
           "verses": 23
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:36",
+          "verses": 21
         }
       }
-    },
-    {
-      "date": "2056-03-18",
-      "hebrewDate": "1 Nisan 5816",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat HaChodesh",
-      "chagId": "Shabbat HaChodesh__DIASPORA"
     },
     {
       "date": "2056-03-18",
@@ -407,21 +447,77 @@
         "haftara": "Shabbat HaChodesh (on Rosh Chodesh)",
         "sephardic": "Shabbat HaChodesh (on Rosh Chodesh)",
         "M": "Shabbat HaChodesh (on Rosh Chodesh)",
+        "label": "Shabbat HaChodesh",
+        "scrollCount": 3,
+        "aliyah7Ref": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
+        "aliyot": {
+          "1": {
+            "book": "Leviticus",
+            "start": "1:1",
+            "end": "1:13",
+            "verses": 13
+          },
+          "2": {
+            "book": "Leviticus",
+            "start": "1:14",
+            "end": "2:6",
+            "verses": 10
+          },
+          "3": {
+            "book": "Leviticus",
+            "start": "2:7",
+            "end": "2:16",
+            "verses": 10
+          },
+          "4": {
+            "book": "Leviticus",
+            "start": "3:1",
+            "end": "3:17",
+            "verses": 17
+          },
+          "5": {
+            "book": "Leviticus",
+            "start": "4:1",
+            "end": "4:26",
+            "verses": 26
+          },
+          "6": {
+            "book": "Leviticus",
+            "start": "4:27",
+            "end": "5:26",
+            "verses": 35
+          },
+          "7": {
+            "book": "Numbers",
+            "start": "28:9",
+            "end": "28:15",
+            "verses": 7
+          }
+        },
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "12:1",
+          "end": "12:20",
+          "verses": 20
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "45:16",
           "end": "46:18",
           "verses": 28
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:15",
+          "verses": 23
         }
       }
-    },
-    {
-      "date": "2056-03-18",
-      "hebrewDate": "1 Nisan 5816",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat HaChodesh",
-      "chagId": "Shabbat HaChodesh__IL"
     },
     {
       "date": "2056-03-18",
@@ -435,21 +531,77 @@
         "haftara": "Shabbat HaChodesh (on Rosh Chodesh)",
         "sephardic": "Shabbat HaChodesh (on Rosh Chodesh)",
         "M": "Shabbat HaChodesh (on Rosh Chodesh)",
+        "label": "Shabbat HaChodesh",
+        "scrollCount": 3,
+        "aliyah7Ref": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
+        "aliyot": {
+          "1": {
+            "book": "Leviticus",
+            "start": "1:1",
+            "end": "1:13",
+            "verses": 13
+          },
+          "2": {
+            "book": "Leviticus",
+            "start": "1:14",
+            "end": "2:6",
+            "verses": 10
+          },
+          "3": {
+            "book": "Leviticus",
+            "start": "2:7",
+            "end": "2:16",
+            "verses": 10
+          },
+          "4": {
+            "book": "Leviticus",
+            "start": "3:1",
+            "end": "3:17",
+            "verses": 17
+          },
+          "5": {
+            "book": "Leviticus",
+            "start": "4:1",
+            "end": "4:26",
+            "verses": 26
+          },
+          "6": {
+            "book": "Leviticus",
+            "start": "4:27",
+            "end": "5:26",
+            "verses": 35
+          },
+          "7": {
+            "book": "Numbers",
+            "start": "28:9",
+            "end": "28:15",
+            "verses": 7
+          }
+        },
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "12:1",
+          "end": "12:20",
+          "verses": 20
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "45:16",
           "end": "46:18",
           "verses": 28
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:15",
+          "verses": 23
         }
       }
-    },
-    {
-      "date": "2056-03-25",
-      "hebrewDate": "8 Nisan 5816",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat HaGadol",
-      "chagId": "Shabbat HaGadol__DIASPORA"
     },
     {
       "date": "2056-03-25",
@@ -460,6 +612,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat HaGadol",
+        "label": "Shabbat HaGadol",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Malachi",
           "start": "3:4",
@@ -472,19 +626,13 @@
       "date": "2056-03-25",
       "hebrewDate": "8 Nisan 5816",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat HaGadol",
-      "chagId": "Shabbat HaGadol__IL"
-    },
-    {
-      "date": "2056-03-25",
-      "hebrewDate": "8 Nisan 5816",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Tzav",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat HaGadol",
+        "label": "Shabbat HaGadol",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Malachi",
           "start": "3:4",
@@ -630,6 +778,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -647,6 +797,8 @@
       "combined": true,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -976,6 +1128,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Pinchas occurring after 17 Tammuz",
+        "label": "Pinchas occurring after 17 Tammuz",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Jeremiah",
           "start": "1:1",
@@ -993,6 +1147,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Pinchas occurring after 17 Tammuz",
+        "label": "Pinchas occurring after 17 Tammuz",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Jeremiah",
           "start": "1:1",
@@ -1101,20 +1257,20 @@
       "date": "2056-08-12",
       "hebrewDate": "30 Av 5816",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Rosh Chodesh Elul",
-      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
-    },
-    {
-      "date": "2056-08-12",
-      "hebrewDate": "30 Av 5816",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Re'eh",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -1127,20 +1283,20 @@
       "date": "2056-08-12",
       "hebrewDate": "30 Av 5816",
       "region": "israel",
-      "type": "holiday",
-      "name": "Rosh Chodesh Elul",
-      "chagId": "Shabbat Rosh Chodesh__IL"
-    },
-    {
-      "date": "2056-08-12",
-      "hebrewDate": "30 Av 5816",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Re'eh",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -1190,6 +1346,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Ki Teitzei with 3rd Haftarah of Consolation",
+        "label": "Ki Teitzei with 3rd Haftarah of Consolation",
+        "scrollCount": 1,
         "haftaraRef": [
           {
             "book": "Isaiah",
@@ -1215,6 +1373,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Ki Teitzei with 3rd Haftarah of Consolation",
+        "label": "Ki Teitzei with 3rd Haftarah of Consolation",
+        "scrollCount": 1,
         "haftaraRef": [
           {
             "book": "Isaiah",
@@ -1315,19 +1475,13 @@
       "date": "2056-09-16",
       "hebrewDate": "6 Tishrei 5817",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Shuva",
-      "chagId": "Shabbat Shuva__DIASPORA"
-    },
-    {
-      "date": "2056-09-16",
-      "hebrewDate": "6 Tishrei 5817",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Vayeilech",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Vayeilech)",
+        "label": "Shabbat Shuva (with Vayeilech)",
+        "scrollCount": 1,
         "haftaraRef": [
           {
             "book": "Hosea",
@@ -1348,19 +1502,13 @@
       "date": "2056-09-16",
       "hebrewDate": "6 Tishrei 5817",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Shuva",
-      "chagId": "Shabbat Shuva__IL"
-    },
-    {
-      "date": "2056-09-16",
-      "hebrewDate": "6 Tishrei 5817",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Vayeilech",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Vayeilech)",
+        "label": "Shabbat Shuva (with Vayeilech)",
+        "scrollCount": 1,
         "haftaraRef": [
           {
             "book": "Hosea",
@@ -1837,20 +1985,20 @@
       "date": "2056-12-09",
       "hebrewDate": "2 Tevet 5817",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Chanukah: 8 Candles",
-      "chagId": "Chanukah: 8 Candles__DIASPORA"
-    },
-    {
-      "date": "2056-12-09",
-      "hebrewDate": "2 Tevet 5817",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Miketz",
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 7 (on Shabbat)",
         "M": "Chanukah Day 7 (on Shabbat)",
+        "label": "Chanukah Day 7",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "7:48",
+          "end": "7:53",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "Zechariah",
           "start": "2:14",
@@ -1863,20 +2011,20 @@
       "date": "2056-12-09",
       "hebrewDate": "2 Tevet 5817",
       "region": "israel",
-      "type": "holiday",
-      "name": "Chanukah: 8 Candles",
-      "chagId": "Chanukah: 8 Candles__IL"
-    },
-    {
-      "date": "2056-12-09",
-      "hebrewDate": "2 Tevet 5817",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Miketz",
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 7 (on Shabbat)",
         "M": "Chanukah Day 7 (on Shabbat)",
+        "label": "Chanukah Day 7",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "7:48",
+          "end": "7:53",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "Zechariah",
           "start": "2:14",
@@ -1969,20 +2117,20 @@
       "date": "2057-01-06",
       "hebrewDate": "1 Sh'vat 5817",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Rosh Chodesh Sh'vat",
-      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
-    },
-    {
-      "date": "2057-01-06",
-      "hebrewDate": "1 Sh'vat 5817",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Vaera",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -1995,20 +2143,20 @@
       "date": "2057-01-06",
       "hebrewDate": "1 Sh'vat 5817",
       "region": "israel",
-      "type": "holiday",
-      "name": "Rosh Chodesh Sh'vat",
-      "chagId": "Shabbat Rosh Chodesh__IL"
-    },
-    {
-      "date": "2057-01-06",
-      "hebrewDate": "1 Sh'vat 5817",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Vaera",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -2074,6 +2222,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -2091,6 +2241,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -2183,14 +2335,6 @@
       "date": "2057-03-03",
       "hebrewDate": "27 Adar I 5817",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Shekalim",
-      "chagId": "Shabbat Shekalim__DIASPORA"
-    },
-    {
-      "date": "2057-03-03",
-      "hebrewDate": "27 Adar I 5817",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Vayakhel",
       "combined": false,
@@ -2198,11 +2342,25 @@
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
         "M": "Shabbat Shekalim",
+        "label": "Shabbat Shekalim",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "30:11",
+          "end": "30:16",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "II Kings",
           "start": "12:1",
           "end": "12:17",
           "verses": 17
+        },
+        "haftaraRefSefardi": {
+          "book": "II Kings",
+          "start": "11:17",
+          "end": "12:17",
+          "verses": 21
         }
       }
     },
@@ -2210,14 +2368,6 @@
       "date": "2057-03-03",
       "hebrewDate": "27 Adar I 5817",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Shekalim",
-      "chagId": "Shabbat Shekalim__IL"
-    },
-    {
-      "date": "2057-03-03",
-      "hebrewDate": "27 Adar I 5817",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Vayakhel",
       "combined": false,
@@ -2225,11 +2375,25 @@
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
         "M": "Shabbat Shekalim",
+        "label": "Shabbat Shekalim",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "30:11",
+          "end": "30:16",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "II Kings",
           "start": "12:1",
           "end": "12:17",
           "verses": 17
+        },
+        "haftaraRefSefardi": {
+          "book": "II Kings",
+          "start": "11:17",
+          "end": "12:17",
+          "verses": 21
         }
       }
     },
@@ -2280,14 +2444,6 @@
       "type": "parsha",
       "parshaId": "Pekudei",
       "combined": false
-    },
-    {
-      "date": "2057-03-17",
-      "hebrewDate": "11 Adar II 5817",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Zachor",
-      "chagId": "Shabbat Zachor__DIASPORA"
     },
     {
       "date": "2057-03-17",
@@ -2301,7 +2457,27 @@
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
         "M": "Shabbat Zachor",
+        "label": "Shabbat Zachor",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Deuteronomy",
+          "start": "25:17",
+          "end": "25:19",
+          "verses": 3
+        },
         "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        },
+        "haftaraRefSefardi": {
+          "book": "I Samuel",
+          "start": "15:1",
+          "end": "15:34",
+          "verses": 34
+        },
+        "haftaraRefChabad": {
           "book": "I Samuel",
           "start": "15:2",
           "end": "15:34",
@@ -2313,14 +2489,6 @@
       "date": "2057-03-17",
       "hebrewDate": "11 Adar II 5817",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Zachor",
-      "chagId": "Shabbat Zachor__IL"
-    },
-    {
-      "date": "2057-03-17",
-      "hebrewDate": "11 Adar II 5817",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Vayikra",
       "combined": false,
@@ -2329,7 +2497,27 @@
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
         "M": "Shabbat Zachor",
+        "label": "Shabbat Zachor",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Deuteronomy",
+          "start": "25:17",
+          "end": "25:19",
+          "verses": 3
+        },
         "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        },
+        "haftaraRefSefardi": {
+          "book": "I Samuel",
+          "start": "15:1",
+          "end": "15:34",
+          "verses": 34
+        },
+        "haftaraRefChabad": {
           "book": "I Samuel",
           "start": "15:2",
           "end": "15:34",
@@ -2381,14 +2569,6 @@
       "date": "2057-03-24",
       "hebrewDate": "18 Adar II 5817",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Parah",
-      "chagId": "Shabbat Parah__DIASPORA"
-    },
-    {
-      "date": "2057-03-24",
-      "hebrewDate": "18 Adar II 5817",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Tzav",
       "combined": false,
@@ -2396,21 +2576,27 @@
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
         "M": "Shabbat Parah",
+        "label": "Shabbat Parah",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "19:1",
+          "end": "19:22",
+          "verses": 22
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "36:16",
           "end": "36:38",
           "verses": 23
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:36",
+          "verses": 21
         }
       }
-    },
-    {
-      "date": "2057-03-24",
-      "hebrewDate": "18 Adar II 5817",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Parah",
-      "chagId": "Shabbat Parah__IL"
     },
     {
       "date": "2057-03-24",
@@ -2423,21 +2609,27 @@
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
         "M": "Shabbat Parah",
+        "label": "Shabbat Parah",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "19:1",
+          "end": "19:22",
+          "verses": 22
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "36:16",
           "end": "36:38",
           "verses": 23
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:36",
+          "verses": 21
         }
       }
-    },
-    {
-      "date": "2057-03-31",
-      "hebrewDate": "25 Adar II 5817",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat HaChodesh",
-      "chagId": "Shabbat HaChodesh__DIASPORA"
     },
     {
       "date": "2057-03-31",
@@ -2451,21 +2643,33 @@
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
         "M": "Shabbat HaChodesh",
+        "label": "Shabbat HaChodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "12:1",
+          "end": "12:20",
+          "verses": 20
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "45:16",
           "end": "46:18",
           "verses": 28
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:15",
+          "verses": 23
+        },
+        "haftaraRefChabad": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:16",
+          "verses": 24
         }
       }
-    },
-    {
-      "date": "2057-03-31",
-      "hebrewDate": "25 Adar II 5817",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat HaChodesh",
-      "chagId": "Shabbat HaChodesh__IL"
     },
     {
       "date": "2057-03-31",
@@ -2479,11 +2683,31 @@
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
         "M": "Shabbat HaChodesh",
+        "label": "Shabbat HaChodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "12:1",
+          "end": "12:20",
+          "verses": 20
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "45:16",
           "end": "46:18",
           "verses": 28
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:15",
+          "verses": 23
+        },
+        "haftaraRefChabad": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:16",
+          "verses": 24
         }
       }
     },
@@ -2523,19 +2747,13 @@
       "date": "2057-04-14",
       "hebrewDate": "10 Nisan 5817",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat HaGadol",
-      "chagId": "Shabbat HaGadol__DIASPORA"
-    },
-    {
-      "date": "2057-04-14",
-      "hebrewDate": "10 Nisan 5817",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Metzora",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat HaGadol",
+        "label": "Shabbat HaGadol",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Malachi",
           "start": "3:4",
@@ -2548,19 +2766,13 @@
       "date": "2057-04-14",
       "hebrewDate": "10 Nisan 5817",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat HaGadol",
-      "chagId": "Shabbat HaGadol__IL"
-    },
-    {
-      "date": "2057-04-14",
-      "hebrewDate": "10 Nisan 5817",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Metzora",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat HaGadol",
+        "label": "Shabbat HaGadol",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Malachi",
           "start": "3:4",
@@ -2725,20 +2937,20 @@
       "date": "2057-05-05",
       "hebrewDate": "1 Iyyar 5817",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Rosh Chodesh Iyyar",
-      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
-    },
-    {
-      "date": "2057-05-05",
-      "hebrewDate": "1 Iyyar 5817",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Kedoshim",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -2751,20 +2963,20 @@
       "date": "2057-05-05",
       "hebrewDate": "1 Iyyar 5817",
       "region": "israel",
-      "type": "holiday",
-      "name": "Rosh Chodesh Iyyar",
-      "chagId": "Shabbat Rosh Chodesh__IL"
-    },
-    {
-      "date": "2057-05-05",
-      "hebrewDate": "1 Iyyar 5817",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Kedoshim",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -2846,6 +3058,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -2863,6 +3077,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -3056,6 +3272,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Pinchas occurring after 17 Tammuz",
+        "label": "Pinchas occurring after 17 Tammuz",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Jeremiah",
           "start": "1:1",
@@ -3073,6 +3291,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Pinchas occurring after 17 Tammuz",
+        "label": "Pinchas occurring after 17 Tammuz",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Jeremiah",
           "start": "1:1",
@@ -3341,20 +3561,14 @@
       "date": "2057-10-06",
       "hebrewDate": "8 Tishrei 5818",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Shuva",
-      "chagId": "Shabbat Shuva__DIASPORA"
-    },
-    {
-      "date": "2057-10-06",
-      "hebrewDate": "8 Tishrei 5818",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Ha'azinu",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
         "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "label": "Shabbat Shuva (with Ha'azinu)",
+        "scrollCount": 1,
         "haftaraRef": [
           {
             "book": "Hosea",
@@ -3368,16 +3582,22 @@
             "end": "2:27",
             "verses": 13
           }
+        ],
+        "haftaraRefSefardi": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Micah",
+            "start": "7:18",
+            "end": "7:20",
+            "verses": 3
+          }
         ]
       }
-    },
-    {
-      "date": "2057-10-06",
-      "hebrewDate": "8 Tishrei 5818",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Shuva",
-      "chagId": "Shabbat Shuva__IL"
     },
     {
       "date": "2057-10-06",
@@ -3389,6 +3609,8 @@
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
         "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "label": "Shabbat Shuva (with Ha'azinu)",
+        "scrollCount": 1,
         "haftaraRef": [
           {
             "book": "Hosea",
@@ -3401,6 +3623,20 @@
             "start": "2:15",
             "end": "2:27",
             "verses": 13
+          }
+        ],
+        "haftaraRefSefardi": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Micah",
+            "start": "7:18",
+            "end": "7:20",
+            "verses": 3
           }
         ]
       }
@@ -3566,6 +3802,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -3583,6 +3821,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -3771,20 +4011,20 @@
       "date": "2057-12-22",
       "hebrewDate": "25 Kislev 5818",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Chanukah: 2 Candles",
-      "chagId": "Chanukah: 2 Candles__DIASPORA"
-    },
-    {
-      "date": "2057-12-22",
-      "hebrewDate": "25 Kislev 5818",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Vayeshev",
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 1 (on Shabbat)",
         "M": "Chanukah Day 1 (on Shabbat)",
+        "label": "Chanukah Day 1",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "7:1",
+          "end": "7:17",
+          "verses": 17
+        },
         "haftaraRef": {
           "book": "Zechariah",
           "start": "2:14",
@@ -3797,20 +4037,20 @@
       "date": "2057-12-22",
       "hebrewDate": "25 Kislev 5818",
       "region": "israel",
-      "type": "holiday",
-      "name": "Chanukah: 2 Candles",
-      "chagId": "Chanukah: 2 Candles__IL"
-    },
-    {
-      "date": "2057-12-22",
-      "hebrewDate": "25 Kislev 5818",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Vayeshev",
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 1 (on Shabbat)",
         "M": "Chanukah Day 1 (on Shabbat)",
+        "label": "Chanukah Day 1",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "7:1",
+          "end": "7:17",
+          "verses": 17
+        },
         "haftaraRef": {
           "book": "Zechariah",
           "start": "2:14",
@@ -3919,20 +4159,20 @@
       "date": "2057-12-29",
       "hebrewDate": "2 Tevet 5818",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Chanukah: 8th Day",
-      "chagId": "Chanukah: 8th Day__DIASPORA"
-    },
-    {
-      "date": "2057-12-29",
-      "hebrewDate": "2 Tevet 5818",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Miketz",
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 8 (on Shabbat)",
         "M": "Chanukah Day 8 (on Shabbat)",
+        "label": "Chanukah Day 8",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "7:54",
+          "end": "8:4",
+          "verses": 40
+        },
         "haftaraRef": {
           "book": "I Kings",
           "start": "7:40",
@@ -3945,20 +4185,20 @@
       "date": "2057-12-29",
       "hebrewDate": "2 Tevet 5818",
       "region": "israel",
-      "type": "holiday",
-      "name": "Chanukah: 8th Day",
-      "chagId": "Chanukah: 8th Day__IL"
-    },
-    {
-      "date": "2057-12-29",
-      "hebrewDate": "2 Tevet 5818",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Miketz",
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 8 (on Shabbat)",
         "M": "Chanukah Day 8 (on Shabbat)",
+        "label": "Chanukah Day 8",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "7:54",
+          "end": "8:4",
+          "verses": 40
+        },
         "haftaraRef": {
           "book": "I Kings",
           "start": "7:40",
@@ -4035,20 +4275,20 @@
       "date": "2058-01-26",
       "hebrewDate": "1 Sh'vat 5818",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Rosh Chodesh Sh'vat",
-      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
-    },
-    {
-      "date": "2058-01-26",
-      "hebrewDate": "1 Sh'vat 5818",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Vaera",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -4061,20 +4301,20 @@
       "date": "2058-01-26",
       "hebrewDate": "1 Sh'vat 5818",
       "region": "israel",
-      "type": "holiday",
-      "name": "Rosh Chodesh Sh'vat",
-      "chagId": "Shabbat Rosh Chodesh__IL"
-    },
-    {
-      "date": "2058-01-26",
-      "hebrewDate": "1 Sh'vat 5818",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Vaera",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -4135,14 +4375,6 @@
       "date": "2058-02-23",
       "hebrewDate": "29 Sh'vat 5818",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Shekalim",
-      "chagId": "Shabbat Shekalim__DIASPORA"
-    },
-    {
-      "date": "2058-02-23",
-      "hebrewDate": "29 Sh'vat 5818",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Mishpatim",
       "combined": false,
@@ -4150,11 +4382,25 @@
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
         "M": "Shabbat Shekalim",
+        "label": "Shabbat Shekalim",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "30:11",
+          "end": "30:16",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "II Kings",
           "start": "12:1",
           "end": "12:17",
           "verses": 17
+        },
+        "haftaraRefSefardi": {
+          "book": "II Kings",
+          "start": "11:17",
+          "end": "12:17",
+          "verses": 21
         }
       }
     },
@@ -4162,14 +4408,6 @@
       "date": "2058-02-23",
       "hebrewDate": "29 Sh'vat 5818",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Shekalim",
-      "chagId": "Shabbat Shekalim__IL"
-    },
-    {
-      "date": "2058-02-23",
-      "hebrewDate": "29 Sh'vat 5818",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Mishpatim",
       "combined": false,
@@ -4177,11 +4415,25 @@
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
         "M": "Shabbat Shekalim",
+        "label": "Shabbat Shekalim",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "30:11",
+          "end": "30:16",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "II Kings",
           "start": "12:1",
           "end": "12:17",
           "verses": 17
+        },
+        "haftaraRefSefardi": {
+          "book": "II Kings",
+          "start": "11:17",
+          "end": "12:17",
+          "verses": 21
         }
       }
     },
@@ -4253,14 +4505,6 @@
       "date": "2058-03-09",
       "hebrewDate": "13 Adar 5818",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Zachor",
-      "chagId": "Shabbat Zachor__DIASPORA"
-    },
-    {
-      "date": "2058-03-09",
-      "hebrewDate": "13 Adar 5818",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Tetzaveh",
       "combined": false,
@@ -4269,7 +4513,27 @@
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
         "M": "Shabbat Zachor",
+        "label": "Shabbat Zachor",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Deuteronomy",
+          "start": "25:17",
+          "end": "25:19",
+          "verses": 3
+        },
         "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        },
+        "haftaraRefSefardi": {
+          "book": "I Samuel",
+          "start": "15:1",
+          "end": "15:34",
+          "verses": 34
+        },
+        "haftaraRefChabad": {
           "book": "I Samuel",
           "start": "15:2",
           "end": "15:34",
@@ -4281,14 +4545,6 @@
       "date": "2058-03-09",
       "hebrewDate": "13 Adar 5818",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Zachor",
-      "chagId": "Shabbat Zachor__IL"
-    },
-    {
-      "date": "2058-03-09",
-      "hebrewDate": "13 Adar 5818",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Tetzaveh",
       "combined": false,
@@ -4297,7 +4553,27 @@
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
         "M": "Shabbat Zachor",
+        "label": "Shabbat Zachor",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Deuteronomy",
+          "start": "25:17",
+          "end": "25:19",
+          "verses": 3
+        },
         "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        },
+        "haftaraRefSefardi": {
+          "book": "I Samuel",
+          "start": "15:1",
+          "end": "15:34",
+          "verses": 34
+        },
+        "haftaraRefChabad": {
           "book": "I Samuel",
           "start": "15:2",
           "end": "15:34",
@@ -4333,14 +4609,6 @@
       "date": "2058-03-16",
       "hebrewDate": "20 Adar 5818",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Parah",
-      "chagId": "Shabbat Parah__DIASPORA"
-    },
-    {
-      "date": "2058-03-16",
-      "hebrewDate": "20 Adar 5818",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Ki Tisa",
       "combined": false,
@@ -4348,21 +4616,27 @@
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
         "M": "Shabbat Parah",
+        "label": "Shabbat Parah",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "19:1",
+          "end": "19:22",
+          "verses": 22
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "36:16",
           "end": "36:38",
           "verses": 23
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:36",
+          "verses": 21
         }
       }
-    },
-    {
-      "date": "2058-03-16",
-      "hebrewDate": "20 Adar 5818",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Parah",
-      "chagId": "Shabbat Parah__IL"
     },
     {
       "date": "2058-03-16",
@@ -4375,21 +4649,27 @@
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
         "M": "Shabbat Parah",
+        "label": "Shabbat Parah",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "19:1",
+          "end": "19:22",
+          "verses": 22
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "36:16",
           "end": "36:38",
           "verses": 23
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:36",
+          "verses": 21
         }
       }
-    },
-    {
-      "date": "2058-03-23",
-      "hebrewDate": "27 Adar 5818",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat HaChodesh",
-      "chagId": "Shabbat HaChodesh__DIASPORA"
     },
     {
       "date": "2058-03-23",
@@ -4403,21 +4683,33 @@
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
         "M": "Shabbat HaChodesh",
+        "label": "Shabbat HaChodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "12:1",
+          "end": "12:20",
+          "verses": 20
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "45:16",
           "end": "46:18",
           "verses": 28
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:15",
+          "verses": 23
+        },
+        "haftaraRefChabad": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:16",
+          "verses": 24
         }
       }
-    },
-    {
-      "date": "2058-03-23",
-      "hebrewDate": "27 Adar 5818",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat HaChodesh",
-      "chagId": "Shabbat HaChodesh__IL"
     },
     {
       "date": "2058-03-23",
@@ -4431,11 +4723,31 @@
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
         "M": "Shabbat HaChodesh",
+        "label": "Shabbat HaChodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "12:1",
+          "end": "12:20",
+          "verses": 20
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "45:16",
           "end": "46:18",
           "verses": 28
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:15",
+          "verses": 23
+        },
+        "haftaraRefChabad": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:16",
+          "verses": 24
         }
       }
     },
@@ -4475,19 +4787,13 @@
       "date": "2058-04-06",
       "hebrewDate": "12 Nisan 5818",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat HaGadol",
-      "chagId": "Shabbat HaGadol__DIASPORA"
-    },
-    {
-      "date": "2058-04-06",
-      "hebrewDate": "12 Nisan 5818",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Tzav",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat HaGadol",
+        "label": "Shabbat HaGadol",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Malachi",
           "start": "3:4",
@@ -4500,19 +4806,13 @@
       "date": "2058-04-06",
       "hebrewDate": "12 Nisan 5818",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat HaGadol",
-      "chagId": "Shabbat HaGadol__IL"
-    },
-    {
-      "date": "2058-04-06",
-      "hebrewDate": "12 Nisan 5818",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Tzav",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat HaGadol",
+        "label": "Shabbat HaGadol",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Malachi",
           "start": "3:4",
@@ -4877,20 +5177,20 @@
       "date": "2058-06-22",
       "hebrewDate": "30 Sivan 5818",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Rosh Chodesh Tamuz",
-      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
-    },
-    {
-      "date": "2058-06-22",
-      "hebrewDate": "30 Sivan 5818",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Korach",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -4903,20 +5203,20 @@
       "date": "2058-06-22",
       "hebrewDate": "30 Sivan 5818",
       "region": "israel",
-      "type": "holiday",
-      "name": "Rosh Chodesh Tamuz",
-      "chagId": "Shabbat Rosh Chodesh__IL"
-    },
-    {
-      "date": "2058-06-22",
-      "hebrewDate": "30 Sivan 5818",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Korach",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -4998,6 +5298,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Pinchas occurring after 17 Tammuz",
+        "label": "Pinchas occurring after 17 Tammuz",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Jeremiah",
           "start": "1:1",
@@ -5015,6 +5317,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Pinchas occurring after 17 Tammuz",
+        "label": "Pinchas occurring after 17 Tammuz",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Jeremiah",
           "start": "1:1",
@@ -5267,20 +5571,14 @@
       "date": "2058-09-21",
       "hebrewDate": "3 Tishrei 5819",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Shuva",
-      "chagId": "Shabbat Shuva__DIASPORA"
-    },
-    {
-      "date": "2058-09-21",
-      "hebrewDate": "3 Tishrei 5819",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Ha'azinu",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
         "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "label": "Shabbat Shuva (with Ha'azinu)",
+        "scrollCount": 1,
         "haftaraRef": [
           {
             "book": "Hosea",
@@ -5294,16 +5592,22 @@
             "end": "2:27",
             "verses": 13
           }
+        ],
+        "haftaraRefSefardi": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Micah",
+            "start": "7:18",
+            "end": "7:20",
+            "verses": 3
+          }
         ]
       }
-    },
-    {
-      "date": "2058-09-21",
-      "hebrewDate": "3 Tishrei 5819",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Shuva",
-      "chagId": "Shabbat Shuva__IL"
     },
     {
       "date": "2058-09-21",
@@ -5315,6 +5619,8 @@
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
         "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "label": "Shabbat Shuva (with Ha'azinu)",
+        "scrollCount": 1,
         "haftaraRef": [
           {
             "book": "Hosea",
@@ -5327,6 +5633,20 @@
             "start": "2:15",
             "end": "2:27",
             "verses": 13
+          }
+        ],
+        "haftaraRefSefardi": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Micah",
+            "start": "7:18",
+            "end": "7:20",
+            "verses": 3
           }
         ]
       }
@@ -5535,20 +5855,20 @@
       "date": "2058-10-19",
       "hebrewDate": "1 Cheshvan 5819",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Rosh Chodesh Cheshvan",
-      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
-    },
-    {
-      "date": "2058-10-19",
-      "hebrewDate": "1 Cheshvan 5819",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Noach",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -5561,20 +5881,20 @@
       "date": "2058-10-19",
       "hebrewDate": "1 Cheshvan 5819",
       "region": "israel",
-      "type": "holiday",
-      "name": "Rosh Chodesh Cheshvan",
-      "chagId": "Shabbat Rosh Chodesh__IL"
-    },
-    {
-      "date": "2058-10-19",
-      "hebrewDate": "1 Cheshvan 5819",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Noach",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -5640,6 +5960,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -5657,6 +5979,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -5781,20 +6105,20 @@
       "date": "2058-12-14",
       "hebrewDate": "28 Kislev 5819",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Chanukah: 5 Candles",
-      "chagId": "Chanukah: 5 Candles__DIASPORA"
-    },
-    {
-      "date": "2058-12-14",
-      "hebrewDate": "28 Kislev 5819",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Miketz",
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 4 (on Shabbat)",
         "M": "Chanukah Day 4 (on Shabbat)",
+        "label": "Chanukah Day 4",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "7:30",
+          "end": "7:35",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "Zechariah",
           "start": "2:14",
@@ -5807,20 +6131,20 @@
       "date": "2058-12-14",
       "hebrewDate": "28 Kislev 5819",
       "region": "israel",
-      "type": "holiday",
-      "name": "Chanukah: 5 Candles",
-      "chagId": "Chanukah: 5 Candles__IL"
-    },
-    {
-      "date": "2058-12-14",
-      "hebrewDate": "28 Kislev 5819",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Miketz",
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 4 (on Shabbat)",
         "M": "Chanukah Day 4 (on Shabbat)",
+        "label": "Chanukah Day 4",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "7:30",
+          "end": "7:35",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "Zechariah",
           "start": "2:14",
@@ -6041,14 +6365,6 @@
       "date": "2059-02-08",
       "hebrewDate": "25 Sh'vat 5819",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Shekalim",
-      "chagId": "Shabbat Shekalim__DIASPORA"
-    },
-    {
-      "date": "2059-02-08",
-      "hebrewDate": "25 Sh'vat 5819",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Mishpatim",
       "combined": false,
@@ -6056,11 +6372,25 @@
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
         "M": "Shabbat Shekalim",
+        "label": "Shabbat Shekalim",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "30:11",
+          "end": "30:16",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "II Kings",
           "start": "12:1",
           "end": "12:17",
           "verses": 17
+        },
+        "haftaraRefSefardi": {
+          "book": "II Kings",
+          "start": "11:17",
+          "end": "12:17",
+          "verses": 21
         }
       }
     },
@@ -6068,14 +6398,6 @@
       "date": "2059-02-08",
       "hebrewDate": "25 Sh'vat 5819",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Shekalim",
-      "chagId": "Shabbat Shekalim__IL"
-    },
-    {
-      "date": "2059-02-08",
-      "hebrewDate": "25 Sh'vat 5819",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Mishpatim",
       "combined": false,
@@ -6083,11 +6405,25 @@
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
         "M": "Shabbat Shekalim",
+        "label": "Shabbat Shekalim",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "30:11",
+          "end": "30:16",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "II Kings",
           "start": "12:1",
           "end": "12:17",
           "verses": 17
+        },
+        "haftaraRefSefardi": {
+          "book": "II Kings",
+          "start": "11:17",
+          "end": "12:17",
+          "verses": 21
         }
       }
     },
@@ -6138,14 +6474,6 @@
       "type": "parsha",
       "parshaId": "Terumah",
       "combined": false
-    },
-    {
-      "date": "2059-02-22",
-      "hebrewDate": "9 Adar 5819",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Zachor",
-      "chagId": "Shabbat Zachor__DIASPORA"
     },
     {
       "date": "2059-02-22",
@@ -6159,7 +6487,27 @@
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
         "M": "Shabbat Zachor",
+        "label": "Shabbat Zachor",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Deuteronomy",
+          "start": "25:17",
+          "end": "25:19",
+          "verses": 3
+        },
         "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        },
+        "haftaraRefSefardi": {
+          "book": "I Samuel",
+          "start": "15:1",
+          "end": "15:34",
+          "verses": 34
+        },
+        "haftaraRefChabad": {
           "book": "I Samuel",
           "start": "15:2",
           "end": "15:34",
@@ -6171,14 +6519,6 @@
       "date": "2059-02-22",
       "hebrewDate": "9 Adar 5819",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Zachor",
-      "chagId": "Shabbat Zachor__IL"
-    },
-    {
-      "date": "2059-02-22",
-      "hebrewDate": "9 Adar 5819",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Tetzaveh",
       "combined": false,
@@ -6187,7 +6527,27 @@
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
         "M": "Shabbat Zachor",
+        "label": "Shabbat Zachor",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Deuteronomy",
+          "start": "25:17",
+          "end": "25:19",
+          "verses": 3
+        },
         "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        },
+        "haftaraRefSefardi": {
+          "book": "I Samuel",
+          "start": "15:1",
+          "end": "15:34",
+          "verses": 34
+        },
+        "haftaraRefChabad": {
           "book": "I Samuel",
           "start": "15:2",
           "end": "15:34",
@@ -6255,14 +6615,6 @@
       "date": "2059-03-08",
       "hebrewDate": "23 Adar 5819",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Parah",
-      "chagId": "Shabbat Parah__DIASPORA"
-    },
-    {
-      "date": "2059-03-08",
-      "hebrewDate": "23 Adar 5819",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Vayakhel-Pekudei",
       "combined": true,
@@ -6270,21 +6622,27 @@
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
         "M": "Shabbat Parah",
+        "label": "Shabbat Parah",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "19:1",
+          "end": "19:22",
+          "verses": 22
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "36:16",
           "end": "36:38",
           "verses": 23
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:36",
+          "verses": 21
         }
       }
-    },
-    {
-      "date": "2059-03-08",
-      "hebrewDate": "23 Adar 5819",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Parah",
-      "chagId": "Shabbat Parah__IL"
     },
     {
       "date": "2059-03-08",
@@ -6297,21 +6655,27 @@
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
         "M": "Shabbat Parah",
+        "label": "Shabbat Parah",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "19:1",
+          "end": "19:22",
+          "verses": 22
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "36:16",
           "end": "36:38",
           "verses": 23
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:36",
+          "verses": 21
         }
       }
-    },
-    {
-      "date": "2059-03-15",
-      "hebrewDate": "1 Nisan 5819",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat HaChodesh",
-      "chagId": "Shabbat HaChodesh__DIASPORA"
     },
     {
       "date": "2059-03-15",
@@ -6325,21 +6689,77 @@
         "haftara": "Shabbat HaChodesh (on Rosh Chodesh)",
         "sephardic": "Shabbat HaChodesh (on Rosh Chodesh)",
         "M": "Shabbat HaChodesh (on Rosh Chodesh)",
+        "label": "Shabbat HaChodesh",
+        "scrollCount": 3,
+        "aliyah7Ref": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
+        "aliyot": {
+          "1": {
+            "book": "Leviticus",
+            "start": "1:1",
+            "end": "1:13",
+            "verses": 13
+          },
+          "2": {
+            "book": "Leviticus",
+            "start": "1:14",
+            "end": "2:6",
+            "verses": 10
+          },
+          "3": {
+            "book": "Leviticus",
+            "start": "2:7",
+            "end": "2:16",
+            "verses": 10
+          },
+          "4": {
+            "book": "Leviticus",
+            "start": "3:1",
+            "end": "3:17",
+            "verses": 17
+          },
+          "5": {
+            "book": "Leviticus",
+            "start": "4:1",
+            "end": "4:26",
+            "verses": 26
+          },
+          "6": {
+            "book": "Leviticus",
+            "start": "4:27",
+            "end": "5:26",
+            "verses": 35
+          },
+          "7": {
+            "book": "Numbers",
+            "start": "28:9",
+            "end": "28:15",
+            "verses": 7
+          }
+        },
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "12:1",
+          "end": "12:20",
+          "verses": 20
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "45:16",
           "end": "46:18",
           "verses": 28
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:15",
+          "verses": 23
         }
       }
-    },
-    {
-      "date": "2059-03-15",
-      "hebrewDate": "1 Nisan 5819",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat HaChodesh",
-      "chagId": "Shabbat HaChodesh__IL"
     },
     {
       "date": "2059-03-15",
@@ -6353,21 +6773,77 @@
         "haftara": "Shabbat HaChodesh (on Rosh Chodesh)",
         "sephardic": "Shabbat HaChodesh (on Rosh Chodesh)",
         "M": "Shabbat HaChodesh (on Rosh Chodesh)",
+        "label": "Shabbat HaChodesh",
+        "scrollCount": 3,
+        "aliyah7Ref": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
+        "aliyot": {
+          "1": {
+            "book": "Leviticus",
+            "start": "1:1",
+            "end": "1:13",
+            "verses": 13
+          },
+          "2": {
+            "book": "Leviticus",
+            "start": "1:14",
+            "end": "2:6",
+            "verses": 10
+          },
+          "3": {
+            "book": "Leviticus",
+            "start": "2:7",
+            "end": "2:16",
+            "verses": 10
+          },
+          "4": {
+            "book": "Leviticus",
+            "start": "3:1",
+            "end": "3:17",
+            "verses": 17
+          },
+          "5": {
+            "book": "Leviticus",
+            "start": "4:1",
+            "end": "4:26",
+            "verses": 26
+          },
+          "6": {
+            "book": "Leviticus",
+            "start": "4:27",
+            "end": "5:26",
+            "verses": 35
+          },
+          "7": {
+            "book": "Numbers",
+            "start": "28:9",
+            "end": "28:15",
+            "verses": 7
+          }
+        },
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "12:1",
+          "end": "12:20",
+          "verses": 20
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "45:16",
           "end": "46:18",
           "verses": 28
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:15",
+          "verses": 23
         }
       }
-    },
-    {
-      "date": "2059-03-22",
-      "hebrewDate": "8 Nisan 5819",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat HaGadol",
-      "chagId": "Shabbat HaGadol__DIASPORA"
     },
     {
       "date": "2059-03-22",
@@ -6378,6 +6854,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat HaGadol",
+        "label": "Shabbat HaGadol",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Malachi",
           "start": "3:4",
@@ -6390,19 +6868,13 @@
       "date": "2059-03-22",
       "hebrewDate": "8 Nisan 5819",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat HaGadol",
-      "chagId": "Shabbat HaGadol__IL"
-    },
-    {
-      "date": "2059-03-22",
-      "hebrewDate": "8 Nisan 5819",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Tzav",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat HaGadol",
+        "label": "Shabbat HaGadol",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Malachi",
           "start": "3:4",
@@ -6548,6 +7020,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -6565,6 +7039,8 @@
       "combined": true,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -6894,6 +7370,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Pinchas occurring after 17 Tammuz",
+        "label": "Pinchas occurring after 17 Tammuz",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Jeremiah",
           "start": "1:1",
@@ -6911,6 +7389,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Pinchas occurring after 17 Tammuz",
+        "label": "Pinchas occurring after 17 Tammuz",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Jeremiah",
           "start": "1:1",
@@ -7019,20 +7499,20 @@
       "date": "2059-08-09",
       "hebrewDate": "30 Av 5819",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Rosh Chodesh Elul",
-      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
-    },
-    {
-      "date": "2059-08-09",
-      "hebrewDate": "30 Av 5819",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Re'eh",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -7045,20 +7525,20 @@
       "date": "2059-08-09",
       "hebrewDate": "30 Av 5819",
       "region": "israel",
-      "type": "holiday",
-      "name": "Rosh Chodesh Elul",
-      "chagId": "Shabbat Rosh Chodesh__IL"
-    },
-    {
-      "date": "2059-08-09",
-      "hebrewDate": "30 Av 5819",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Re'eh",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -7108,6 +7588,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Ki Teitzei with 3rd Haftarah of Consolation",
+        "label": "Ki Teitzei with 3rd Haftarah of Consolation",
+        "scrollCount": 1,
         "haftaraRef": [
           {
             "book": "Isaiah",
@@ -7133,6 +7615,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Ki Teitzei with 3rd Haftarah of Consolation",
+        "label": "Ki Teitzei with 3rd Haftarah of Consolation",
+        "scrollCount": 1,
         "haftaraRef": [
           {
             "book": "Isaiah",
@@ -7233,19 +7717,13 @@
       "date": "2059-09-13",
       "hebrewDate": "6 Tishrei 5820",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Shuva",
-      "chagId": "Shabbat Shuva__DIASPORA"
-    },
-    {
-      "date": "2059-09-13",
-      "hebrewDate": "6 Tishrei 5820",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Vayeilech",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Vayeilech)",
+        "label": "Shabbat Shuva (with Vayeilech)",
+        "scrollCount": 1,
         "haftaraRef": [
           {
             "book": "Hosea",
@@ -7266,19 +7744,13 @@
       "date": "2059-09-13",
       "hebrewDate": "6 Tishrei 5820",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Shuva",
-      "chagId": "Shabbat Shuva__IL"
-    },
-    {
-      "date": "2059-09-13",
-      "hebrewDate": "6 Tishrei 5820",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Vayeilech",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Vayeilech)",
+        "label": "Shabbat Shuva (with Vayeilech)",
+        "scrollCount": 1,
         "haftaraRef": [
           {
             "book": "Hosea",
@@ -7755,20 +8227,20 @@
       "date": "2059-12-06",
       "hebrewDate": "2 Tevet 5820",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Chanukah: 8 Candles",
-      "chagId": "Chanukah: 8 Candles__DIASPORA"
-    },
-    {
-      "date": "2059-12-06",
-      "hebrewDate": "2 Tevet 5820",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Miketz",
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 7 (on Shabbat)",
         "M": "Chanukah Day 7 (on Shabbat)",
+        "label": "Chanukah Day 7",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "7:48",
+          "end": "7:53",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "Zechariah",
           "start": "2:14",
@@ -7781,20 +8253,20 @@
       "date": "2059-12-06",
       "hebrewDate": "2 Tevet 5820",
       "region": "israel",
-      "type": "holiday",
-      "name": "Chanukah: 8 Candles",
-      "chagId": "Chanukah: 8 Candles__IL"
-    },
-    {
-      "date": "2059-12-06",
-      "hebrewDate": "2 Tevet 5820",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Miketz",
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 7 (on Shabbat)",
         "M": "Chanukah Day 7 (on Shabbat)",
+        "label": "Chanukah Day 7",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "7:48",
+          "end": "7:53",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "Zechariah",
           "start": "2:14",
@@ -7887,20 +8359,20 @@
       "date": "2060-01-03",
       "hebrewDate": "1 Sh'vat 5820",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Rosh Chodesh Sh'vat",
-      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
-    },
-    {
-      "date": "2060-01-03",
-      "hebrewDate": "1 Sh'vat 5820",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Vaera",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -7913,20 +8385,20 @@
       "date": "2060-01-03",
       "hebrewDate": "1 Sh'vat 5820",
       "region": "israel",
-      "type": "holiday",
-      "name": "Rosh Chodesh Sh'vat",
-      "chagId": "Shabbat Rosh Chodesh__IL"
-    },
-    {
-      "date": "2060-01-03",
-      "hebrewDate": "1 Sh'vat 5820",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Vaera",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -7992,6 +8464,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -8009,6 +8483,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -8101,14 +8577,6 @@
       "date": "2060-02-28",
       "hebrewDate": "27 Adar I 5820",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Shekalim",
-      "chagId": "Shabbat Shekalim__DIASPORA"
-    },
-    {
-      "date": "2060-02-28",
-      "hebrewDate": "27 Adar I 5820",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Vayakhel",
       "combined": false,
@@ -8116,11 +8584,25 @@
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
         "M": "Shabbat Shekalim",
+        "label": "Shabbat Shekalim",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "30:11",
+          "end": "30:16",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "II Kings",
           "start": "12:1",
           "end": "12:17",
           "verses": 17
+        },
+        "haftaraRefSefardi": {
+          "book": "II Kings",
+          "start": "11:17",
+          "end": "12:17",
+          "verses": 21
         }
       }
     },
@@ -8128,14 +8610,6 @@
       "date": "2060-02-28",
       "hebrewDate": "27 Adar I 5820",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Shekalim",
-      "chagId": "Shabbat Shekalim__IL"
-    },
-    {
-      "date": "2060-02-28",
-      "hebrewDate": "27 Adar I 5820",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Vayakhel",
       "combined": false,
@@ -8143,11 +8617,25 @@
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
         "M": "Shabbat Shekalim",
+        "label": "Shabbat Shekalim",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "30:11",
+          "end": "30:16",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "II Kings",
           "start": "12:1",
           "end": "12:17",
           "verses": 17
+        },
+        "haftaraRefSefardi": {
+          "book": "II Kings",
+          "start": "11:17",
+          "end": "12:17",
+          "verses": 21
         }
       }
     },
@@ -8198,14 +8686,6 @@
       "type": "parsha",
       "parshaId": "Pekudei",
       "combined": false
-    },
-    {
-      "date": "2060-03-13",
-      "hebrewDate": "11 Adar II 5820",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Zachor",
-      "chagId": "Shabbat Zachor__DIASPORA"
     },
     {
       "date": "2060-03-13",
@@ -8219,7 +8699,27 @@
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
         "M": "Shabbat Zachor",
+        "label": "Shabbat Zachor",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Deuteronomy",
+          "start": "25:17",
+          "end": "25:19",
+          "verses": 3
+        },
         "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        },
+        "haftaraRefSefardi": {
+          "book": "I Samuel",
+          "start": "15:1",
+          "end": "15:34",
+          "verses": 34
+        },
+        "haftaraRefChabad": {
           "book": "I Samuel",
           "start": "15:2",
           "end": "15:34",
@@ -8231,14 +8731,6 @@
       "date": "2060-03-13",
       "hebrewDate": "11 Adar II 5820",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Zachor",
-      "chagId": "Shabbat Zachor__IL"
-    },
-    {
-      "date": "2060-03-13",
-      "hebrewDate": "11 Adar II 5820",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Vayikra",
       "combined": false,
@@ -8247,7 +8739,27 @@
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
         "M": "Shabbat Zachor",
+        "label": "Shabbat Zachor",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Deuteronomy",
+          "start": "25:17",
+          "end": "25:19",
+          "verses": 3
+        },
         "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        },
+        "haftaraRefSefardi": {
+          "book": "I Samuel",
+          "start": "15:1",
+          "end": "15:34",
+          "verses": 34
+        },
+        "haftaraRefChabad": {
           "book": "I Samuel",
           "start": "15:2",
           "end": "15:34",
@@ -8299,14 +8811,6 @@
       "date": "2060-03-20",
       "hebrewDate": "18 Adar II 5820",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Parah",
-      "chagId": "Shabbat Parah__DIASPORA"
-    },
-    {
-      "date": "2060-03-20",
-      "hebrewDate": "18 Adar II 5820",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Tzav",
       "combined": false,
@@ -8314,21 +8818,27 @@
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
         "M": "Shabbat Parah",
+        "label": "Shabbat Parah",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "19:1",
+          "end": "19:22",
+          "verses": 22
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "36:16",
           "end": "36:38",
           "verses": 23
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:36",
+          "verses": 21
         }
       }
-    },
-    {
-      "date": "2060-03-20",
-      "hebrewDate": "18 Adar II 5820",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Parah",
-      "chagId": "Shabbat Parah__IL"
     },
     {
       "date": "2060-03-20",
@@ -8341,21 +8851,27 @@
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
         "M": "Shabbat Parah",
+        "label": "Shabbat Parah",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "19:1",
+          "end": "19:22",
+          "verses": 22
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "36:16",
           "end": "36:38",
           "verses": 23
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:36",
+          "verses": 21
         }
       }
-    },
-    {
-      "date": "2060-03-27",
-      "hebrewDate": "25 Adar II 5820",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat HaChodesh",
-      "chagId": "Shabbat HaChodesh__DIASPORA"
     },
     {
       "date": "2060-03-27",
@@ -8369,21 +8885,33 @@
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
         "M": "Shabbat HaChodesh",
+        "label": "Shabbat HaChodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "12:1",
+          "end": "12:20",
+          "verses": 20
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "45:16",
           "end": "46:18",
           "verses": 28
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:15",
+          "verses": 23
+        },
+        "haftaraRefChabad": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:16",
+          "verses": 24
         }
       }
-    },
-    {
-      "date": "2060-03-27",
-      "hebrewDate": "25 Adar II 5820",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat HaChodesh",
-      "chagId": "Shabbat HaChodesh__IL"
     },
     {
       "date": "2060-03-27",
@@ -8397,11 +8925,31 @@
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
         "M": "Shabbat HaChodesh",
+        "label": "Shabbat HaChodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "12:1",
+          "end": "12:20",
+          "verses": 20
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "45:16",
           "end": "46:18",
           "verses": 28
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:15",
+          "verses": 23
+        },
+        "haftaraRefChabad": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:16",
+          "verses": 24
         }
       }
     },
@@ -8441,19 +8989,13 @@
       "date": "2060-04-10",
       "hebrewDate": "10 Nisan 5820",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat HaGadol",
-      "chagId": "Shabbat HaGadol__DIASPORA"
-    },
-    {
-      "date": "2060-04-10",
-      "hebrewDate": "10 Nisan 5820",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Metzora",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat HaGadol",
+        "label": "Shabbat HaGadol",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Malachi",
           "start": "3:4",
@@ -8466,19 +9008,13 @@
       "date": "2060-04-10",
       "hebrewDate": "10 Nisan 5820",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat HaGadol",
-      "chagId": "Shabbat HaGadol__IL"
-    },
-    {
-      "date": "2060-04-10",
-      "hebrewDate": "10 Nisan 5820",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Metzora",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat HaGadol",
+        "label": "Shabbat HaGadol",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Malachi",
           "start": "3:4",
@@ -8643,20 +9179,20 @@
       "date": "2060-05-01",
       "hebrewDate": "1 Iyyar 5820",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Rosh Chodesh Iyyar",
-      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
-    },
-    {
-      "date": "2060-05-01",
-      "hebrewDate": "1 Iyyar 5820",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Kedoshim",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -8669,20 +9205,20 @@
       "date": "2060-05-01",
       "hebrewDate": "1 Iyyar 5820",
       "region": "israel",
-      "type": "holiday",
-      "name": "Rosh Chodesh Iyyar",
-      "chagId": "Shabbat Rosh Chodesh__IL"
-    },
-    {
-      "date": "2060-05-01",
-      "hebrewDate": "1 Iyyar 5820",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Kedoshim",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -8764,6 +9300,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -8781,6 +9319,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -8974,6 +9514,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Pinchas occurring after 17 Tammuz",
+        "label": "Pinchas occurring after 17 Tammuz",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Jeremiah",
           "start": "1:1",
@@ -8991,6 +9533,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Pinchas occurring after 17 Tammuz",
+        "label": "Pinchas occurring after 17 Tammuz",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Jeremiah",
           "start": "1:1",
@@ -9259,20 +9803,14 @@
       "date": "2060-10-02",
       "hebrewDate": "8 Tishrei 5821",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Shuva",
-      "chagId": "Shabbat Shuva__DIASPORA"
-    },
-    {
-      "date": "2060-10-02",
-      "hebrewDate": "8 Tishrei 5821",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Ha'azinu",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
         "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "label": "Shabbat Shuva (with Ha'azinu)",
+        "scrollCount": 1,
         "haftaraRef": [
           {
             "book": "Hosea",
@@ -9286,16 +9824,22 @@
             "end": "2:27",
             "verses": 13
           }
+        ],
+        "haftaraRefSefardi": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Micah",
+            "start": "7:18",
+            "end": "7:20",
+            "verses": 3
+          }
         ]
       }
-    },
-    {
-      "date": "2060-10-02",
-      "hebrewDate": "8 Tishrei 5821",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Shuva",
-      "chagId": "Shabbat Shuva__IL"
     },
     {
       "date": "2060-10-02",
@@ -9307,6 +9851,8 @@
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
         "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "label": "Shabbat Shuva (with Ha'azinu)",
+        "scrollCount": 1,
         "haftaraRef": [
           {
             "book": "Hosea",
@@ -9319,6 +9865,20 @@
             "start": "2:15",
             "end": "2:27",
             "verses": 13
+          }
+        ],
+        "haftaraRefSefardi": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Micah",
+            "start": "7:18",
+            "end": "7:20",
+            "verses": 3
           }
         ]
       }
@@ -9484,6 +10044,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -9501,6 +10063,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -9689,20 +10253,20 @@
       "date": "2060-12-18",
       "hebrewDate": "25 Kislev 5821",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Chanukah: 2 Candles",
-      "chagId": "Chanukah: 2 Candles__DIASPORA"
-    },
-    {
-      "date": "2060-12-18",
-      "hebrewDate": "25 Kislev 5821",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Vayeshev",
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 1 (on Shabbat)",
         "M": "Chanukah Day 1 (on Shabbat)",
+        "label": "Chanukah Day 1",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "7:1",
+          "end": "7:17",
+          "verses": 17
+        },
         "haftaraRef": {
           "book": "Zechariah",
           "start": "2:14",
@@ -9715,20 +10279,20 @@
       "date": "2060-12-18",
       "hebrewDate": "25 Kislev 5821",
       "region": "israel",
-      "type": "holiday",
-      "name": "Chanukah: 2 Candles",
-      "chagId": "Chanukah: 2 Candles__IL"
-    },
-    {
-      "date": "2060-12-18",
-      "hebrewDate": "25 Kislev 5821",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Vayeshev",
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 1 (on Shabbat)",
         "M": "Chanukah Day 1 (on Shabbat)",
+        "label": "Chanukah Day 1",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "7:1",
+          "end": "7:17",
+          "verses": 17
+        },
         "haftaraRef": {
           "book": "Zechariah",
           "start": "2:14",
@@ -9837,20 +10401,20 @@
       "date": "2060-12-25",
       "hebrewDate": "2 Tevet 5821",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Chanukah: 8th Day",
-      "chagId": "Chanukah: 8th Day__DIASPORA"
-    },
-    {
-      "date": "2060-12-25",
-      "hebrewDate": "2 Tevet 5821",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Miketz",
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 8 (on Shabbat)",
         "M": "Chanukah Day 8 (on Shabbat)",
+        "label": "Chanukah Day 8",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "7:54",
+          "end": "8:4",
+          "verses": 40
+        },
         "haftaraRef": {
           "book": "I Kings",
           "start": "7:40",
@@ -9863,20 +10427,20 @@
       "date": "2060-12-25",
       "hebrewDate": "2 Tevet 5821",
       "region": "israel",
-      "type": "holiday",
-      "name": "Chanukah: 8th Day",
-      "chagId": "Chanukah: 8th Day__IL"
-    },
-    {
-      "date": "2060-12-25",
-      "hebrewDate": "2 Tevet 5821",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Miketz",
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 8 (on Shabbat)",
         "M": "Chanukah Day 8 (on Shabbat)",
+        "label": "Chanukah Day 8",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "7:54",
+          "end": "8:4",
+          "verses": 40
+        },
         "haftaraRef": {
           "book": "I Kings",
           "start": "7:40",
@@ -9953,20 +10517,20 @@
       "date": "2061-01-22",
       "hebrewDate": "1 Sh'vat 5821",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Rosh Chodesh Sh'vat",
-      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
-    },
-    {
-      "date": "2061-01-22",
-      "hebrewDate": "1 Sh'vat 5821",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Vaera",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -9979,20 +10543,20 @@
       "date": "2061-01-22",
       "hebrewDate": "1 Sh'vat 5821",
       "region": "israel",
-      "type": "holiday",
-      "name": "Rosh Chodesh Sh'vat",
-      "chagId": "Shabbat Rosh Chodesh__IL"
-    },
-    {
-      "date": "2061-01-22",
-      "hebrewDate": "1 Sh'vat 5821",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Vaera",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -10053,14 +10617,6 @@
       "date": "2061-02-19",
       "hebrewDate": "29 Sh'vat 5821",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Shekalim",
-      "chagId": "Shabbat Shekalim__DIASPORA"
-    },
-    {
-      "date": "2061-02-19",
-      "hebrewDate": "29 Sh'vat 5821",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Mishpatim",
       "combined": false,
@@ -10068,11 +10624,25 @@
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
         "M": "Shabbat Shekalim",
+        "label": "Shabbat Shekalim",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "30:11",
+          "end": "30:16",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "II Kings",
           "start": "12:1",
           "end": "12:17",
           "verses": 17
+        },
+        "haftaraRefSefardi": {
+          "book": "II Kings",
+          "start": "11:17",
+          "end": "12:17",
+          "verses": 21
         }
       }
     },
@@ -10080,14 +10650,6 @@
       "date": "2061-02-19",
       "hebrewDate": "29 Sh'vat 5821",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Shekalim",
-      "chagId": "Shabbat Shekalim__IL"
-    },
-    {
-      "date": "2061-02-19",
-      "hebrewDate": "29 Sh'vat 5821",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Mishpatim",
       "combined": false,
@@ -10095,11 +10657,25 @@
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
         "M": "Shabbat Shekalim",
+        "label": "Shabbat Shekalim",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "30:11",
+          "end": "30:16",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "II Kings",
           "start": "12:1",
           "end": "12:17",
           "verses": 17
+        },
+        "haftaraRefSefardi": {
+          "book": "II Kings",
+          "start": "11:17",
+          "end": "12:17",
+          "verses": 21
         }
       }
     },
@@ -10171,14 +10747,6 @@
       "date": "2061-03-05",
       "hebrewDate": "13 Adar 5821",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Zachor",
-      "chagId": "Shabbat Zachor__DIASPORA"
-    },
-    {
-      "date": "2061-03-05",
-      "hebrewDate": "13 Adar 5821",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Tetzaveh",
       "combined": false,
@@ -10187,7 +10755,27 @@
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
         "M": "Shabbat Zachor",
+        "label": "Shabbat Zachor",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Deuteronomy",
+          "start": "25:17",
+          "end": "25:19",
+          "verses": 3
+        },
         "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        },
+        "haftaraRefSefardi": {
+          "book": "I Samuel",
+          "start": "15:1",
+          "end": "15:34",
+          "verses": 34
+        },
+        "haftaraRefChabad": {
           "book": "I Samuel",
           "start": "15:2",
           "end": "15:34",
@@ -10199,14 +10787,6 @@
       "date": "2061-03-05",
       "hebrewDate": "13 Adar 5821",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Zachor",
-      "chagId": "Shabbat Zachor__IL"
-    },
-    {
-      "date": "2061-03-05",
-      "hebrewDate": "13 Adar 5821",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Tetzaveh",
       "combined": false,
@@ -10215,7 +10795,27 @@
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
         "M": "Shabbat Zachor",
+        "label": "Shabbat Zachor",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Deuteronomy",
+          "start": "25:17",
+          "end": "25:19",
+          "verses": 3
+        },
         "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        },
+        "haftaraRefSefardi": {
+          "book": "I Samuel",
+          "start": "15:1",
+          "end": "15:34",
+          "verses": 34
+        },
+        "haftaraRefChabad": {
           "book": "I Samuel",
           "start": "15:2",
           "end": "15:34",
@@ -10251,14 +10851,6 @@
       "date": "2061-03-12",
       "hebrewDate": "20 Adar 5821",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Parah",
-      "chagId": "Shabbat Parah__DIASPORA"
-    },
-    {
-      "date": "2061-03-12",
-      "hebrewDate": "20 Adar 5821",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Ki Tisa",
       "combined": false,
@@ -10266,21 +10858,27 @@
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
         "M": "Shabbat Parah",
+        "label": "Shabbat Parah",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "19:1",
+          "end": "19:22",
+          "verses": 22
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "36:16",
           "end": "36:38",
           "verses": 23
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:36",
+          "verses": 21
         }
       }
-    },
-    {
-      "date": "2061-03-12",
-      "hebrewDate": "20 Adar 5821",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Parah",
-      "chagId": "Shabbat Parah__IL"
     },
     {
       "date": "2061-03-12",
@@ -10293,21 +10891,27 @@
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
         "M": "Shabbat Parah",
+        "label": "Shabbat Parah",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "19:1",
+          "end": "19:22",
+          "verses": 22
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "36:16",
           "end": "36:38",
           "verses": 23
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:36",
+          "verses": 21
         }
       }
-    },
-    {
-      "date": "2061-03-19",
-      "hebrewDate": "27 Adar 5821",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat HaChodesh",
-      "chagId": "Shabbat HaChodesh__DIASPORA"
     },
     {
       "date": "2061-03-19",
@@ -10321,21 +10925,33 @@
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
         "M": "Shabbat HaChodesh",
+        "label": "Shabbat HaChodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "12:1",
+          "end": "12:20",
+          "verses": 20
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "45:16",
           "end": "46:18",
           "verses": 28
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:15",
+          "verses": 23
+        },
+        "haftaraRefChabad": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:16",
+          "verses": 24
         }
       }
-    },
-    {
-      "date": "2061-03-19",
-      "hebrewDate": "27 Adar 5821",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat HaChodesh",
-      "chagId": "Shabbat HaChodesh__IL"
     },
     {
       "date": "2061-03-19",
@@ -10349,11 +10965,31 @@
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
         "M": "Shabbat HaChodesh",
+        "label": "Shabbat HaChodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "12:1",
+          "end": "12:20",
+          "verses": 20
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "45:16",
           "end": "46:18",
           "verses": 28
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:15",
+          "verses": 23
+        },
+        "haftaraRefChabad": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:16",
+          "verses": 24
         }
       }
     },
@@ -10393,19 +11029,13 @@
       "date": "2061-04-02",
       "hebrewDate": "12 Nisan 5821",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat HaGadol",
-      "chagId": "Shabbat HaGadol__DIASPORA"
-    },
-    {
-      "date": "2061-04-02",
-      "hebrewDate": "12 Nisan 5821",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Tzav",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat HaGadol",
+        "label": "Shabbat HaGadol",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Malachi",
           "start": "3:4",
@@ -10418,19 +11048,13 @@
       "date": "2061-04-02",
       "hebrewDate": "12 Nisan 5821",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat HaGadol",
-      "chagId": "Shabbat HaGadol__IL"
-    },
-    {
-      "date": "2061-04-02",
-      "hebrewDate": "12 Nisan 5821",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Tzav",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat HaGadol",
+        "label": "Shabbat HaGadol",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Malachi",
           "start": "3:4",
@@ -10795,20 +11419,20 @@
       "date": "2061-06-18",
       "hebrewDate": "30 Sivan 5821",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Rosh Chodesh Tamuz",
-      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
-    },
-    {
-      "date": "2061-06-18",
-      "hebrewDate": "30 Sivan 5821",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Korach",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -10821,20 +11445,20 @@
       "date": "2061-06-18",
       "hebrewDate": "30 Sivan 5821",
       "region": "israel",
-      "type": "holiday",
-      "name": "Rosh Chodesh Tamuz",
-      "chagId": "Shabbat Rosh Chodesh__IL"
-    },
-    {
-      "date": "2061-06-18",
-      "hebrewDate": "30 Sivan 5821",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Korach",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -10916,6 +11540,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Pinchas occurring after 17 Tammuz",
+        "label": "Pinchas occurring after 17 Tammuz",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Jeremiah",
           "start": "1:1",
@@ -10933,6 +11559,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Pinchas occurring after 17 Tammuz",
+        "label": "Pinchas occurring after 17 Tammuz",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Jeremiah",
           "start": "1:1",
@@ -11185,20 +11813,14 @@
       "date": "2061-09-17",
       "hebrewDate": "3 Tishrei 5822",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Shuva",
-      "chagId": "Shabbat Shuva__DIASPORA"
-    },
-    {
-      "date": "2061-09-17",
-      "hebrewDate": "3 Tishrei 5822",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Ha'azinu",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
         "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "label": "Shabbat Shuva (with Ha'azinu)",
+        "scrollCount": 1,
         "haftaraRef": [
           {
             "book": "Hosea",
@@ -11212,16 +11834,22 @@
             "end": "2:27",
             "verses": 13
           }
+        ],
+        "haftaraRefSefardi": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Micah",
+            "start": "7:18",
+            "end": "7:20",
+            "verses": 3
+          }
         ]
       }
-    },
-    {
-      "date": "2061-09-17",
-      "hebrewDate": "3 Tishrei 5822",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Shuva",
-      "chagId": "Shabbat Shuva__IL"
     },
     {
       "date": "2061-09-17",
@@ -11233,6 +11861,8 @@
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
         "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "label": "Shabbat Shuva (with Ha'azinu)",
+        "scrollCount": 1,
         "haftaraRef": [
           {
             "book": "Hosea",
@@ -11245,6 +11875,20 @@
             "start": "2:15",
             "end": "2:27",
             "verses": 13
+          }
+        ],
+        "haftaraRefSefardi": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Micah",
+            "start": "7:18",
+            "end": "7:20",
+            "verses": 3
           }
         ]
       }
@@ -11453,20 +12097,20 @@
       "date": "2061-10-15",
       "hebrewDate": "1 Cheshvan 5822",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Rosh Chodesh Cheshvan",
-      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
-    },
-    {
-      "date": "2061-10-15",
-      "hebrewDate": "1 Cheshvan 5822",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Noach",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -11479,20 +12123,20 @@
       "date": "2061-10-15",
       "hebrewDate": "1 Cheshvan 5822",
       "region": "israel",
-      "type": "holiday",
-      "name": "Rosh Chodesh Cheshvan",
-      "chagId": "Shabbat Rosh Chodesh__IL"
-    },
-    {
-      "date": "2061-10-15",
-      "hebrewDate": "1 Cheshvan 5822",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Noach",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -11558,6 +12202,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -11575,6 +12221,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -11699,20 +12347,20 @@
       "date": "2061-12-10",
       "hebrewDate": "27 Kislev 5822",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Chanukah: 4 Candles",
-      "chagId": "Chanukah: 4 Candles__DIASPORA"
-    },
-    {
-      "date": "2061-12-10",
-      "hebrewDate": "27 Kislev 5822",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Miketz",
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 3 (on Shabbat)",
         "M": "Chanukah Day 3 (on Shabbat)",
+        "label": "Chanukah Day 3",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "7:24",
+          "end": "7:29",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "Zechariah",
           "start": "2:14",
@@ -11725,20 +12373,20 @@
       "date": "2061-12-10",
       "hebrewDate": "27 Kislev 5822",
       "region": "israel",
-      "type": "holiday",
-      "name": "Chanukah: 4 Candles",
-      "chagId": "Chanukah: 4 Candles__IL"
-    },
-    {
-      "date": "2061-12-10",
-      "hebrewDate": "27 Kislev 5822",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Miketz",
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 3 (on Shabbat)",
         "M": "Chanukah Day 3 (on Shabbat)",
+        "label": "Chanukah Day 3",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "7:24",
+          "end": "7:29",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "Zechariah",
           "start": "2:14",
@@ -12007,20 +12655,20 @@
       "date": "2062-02-11",
       "hebrewDate": "1 Adar I 5822",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Rosh Chodesh Adar I",
-      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
-    },
-    {
-      "date": "2062-02-11",
-      "hebrewDate": "1 Adar I 5822",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Terumah",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -12033,20 +12681,20 @@
       "date": "2062-02-11",
       "hebrewDate": "1 Adar I 5822",
       "region": "israel",
-      "type": "holiday",
-      "name": "Rosh Chodesh Adar I",
-      "chagId": "Shabbat Rosh Chodesh__IL"
-    },
-    {
-      "date": "2062-02-11",
-      "hebrewDate": "1 Adar I 5822",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Terumah",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -12107,14 +12755,6 @@
       "date": "2062-03-11",
       "hebrewDate": "29 Adar I 5822",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Shekalim",
-      "chagId": "Shabbat Shekalim__DIASPORA"
-    },
-    {
-      "date": "2062-03-11",
-      "hebrewDate": "29 Adar I 5822",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Pekudei",
       "combined": false,
@@ -12122,11 +12762,25 @@
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
         "M": "Shabbat Shekalim",
+        "label": "Shabbat Shekalim",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "30:11",
+          "end": "30:16",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "II Kings",
           "start": "12:1",
           "end": "12:17",
           "verses": 17
+        },
+        "haftaraRefSefardi": {
+          "book": "II Kings",
+          "start": "11:17",
+          "end": "12:17",
+          "verses": 21
         }
       }
     },
@@ -12134,14 +12788,6 @@
       "date": "2062-03-11",
       "hebrewDate": "29 Adar I 5822",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Shekalim",
-      "chagId": "Shabbat Shekalim__IL"
-    },
-    {
-      "date": "2062-03-11",
-      "hebrewDate": "29 Adar I 5822",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Pekudei",
       "combined": false,
@@ -12149,11 +12795,25 @@
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
         "M": "Shabbat Shekalim",
+        "label": "Shabbat Shekalim",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "30:11",
+          "end": "30:16",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "II Kings",
           "start": "12:1",
           "end": "12:17",
           "verses": 17
+        },
+        "haftaraRefSefardi": {
+          "book": "II Kings",
+          "start": "11:17",
+          "end": "12:17",
+          "verses": 21
         }
       }
     },
@@ -12225,14 +12885,6 @@
       "date": "2062-03-25",
       "hebrewDate": "13 Adar II 5822",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Zachor",
-      "chagId": "Shabbat Zachor__DIASPORA"
-    },
-    {
-      "date": "2062-03-25",
-      "hebrewDate": "13 Adar II 5822",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Tzav",
       "combined": false,
@@ -12241,7 +12893,27 @@
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
         "M": "Shabbat Zachor",
+        "label": "Shabbat Zachor",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Deuteronomy",
+          "start": "25:17",
+          "end": "25:19",
+          "verses": 3
+        },
         "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        },
+        "haftaraRefSefardi": {
+          "book": "I Samuel",
+          "start": "15:1",
+          "end": "15:34",
+          "verses": 34
+        },
+        "haftaraRefChabad": {
           "book": "I Samuel",
           "start": "15:2",
           "end": "15:34",
@@ -12253,14 +12925,6 @@
       "date": "2062-03-25",
       "hebrewDate": "13 Adar II 5822",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Zachor",
-      "chagId": "Shabbat Zachor__IL"
-    },
-    {
-      "date": "2062-03-25",
-      "hebrewDate": "13 Adar II 5822",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Tzav",
       "combined": false,
@@ -12269,7 +12933,27 @@
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
         "M": "Shabbat Zachor",
+        "label": "Shabbat Zachor",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Deuteronomy",
+          "start": "25:17",
+          "end": "25:19",
+          "verses": 3
+        },
         "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        },
+        "haftaraRefSefardi": {
+          "book": "I Samuel",
+          "start": "15:1",
+          "end": "15:34",
+          "verses": 34
+        },
+        "haftaraRefChabad": {
           "book": "I Samuel",
           "start": "15:2",
           "end": "15:34",
@@ -12305,14 +12989,6 @@
       "date": "2062-04-01",
       "hebrewDate": "20 Adar II 5822",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Parah",
-      "chagId": "Shabbat Parah__DIASPORA"
-    },
-    {
-      "date": "2062-04-01",
-      "hebrewDate": "20 Adar II 5822",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Shmini",
       "combined": false,
@@ -12320,21 +12996,27 @@
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
         "M": "Shabbat Parah",
+        "label": "Shabbat Parah",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "19:1",
+          "end": "19:22",
+          "verses": 22
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "36:16",
           "end": "36:38",
           "verses": 23
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:36",
+          "verses": 21
         }
       }
-    },
-    {
-      "date": "2062-04-01",
-      "hebrewDate": "20 Adar II 5822",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Parah",
-      "chagId": "Shabbat Parah__IL"
     },
     {
       "date": "2062-04-01",
@@ -12347,21 +13029,27 @@
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
         "M": "Shabbat Parah",
+        "label": "Shabbat Parah",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "19:1",
+          "end": "19:22",
+          "verses": 22
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "36:16",
           "end": "36:38",
           "verses": 23
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:36",
+          "verses": 21
         }
       }
-    },
-    {
-      "date": "2062-04-08",
-      "hebrewDate": "27 Adar II 5822",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat HaChodesh",
-      "chagId": "Shabbat HaChodesh__DIASPORA"
     },
     {
       "date": "2062-04-08",
@@ -12375,21 +13063,33 @@
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
         "M": "Shabbat HaChodesh",
+        "label": "Shabbat HaChodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "12:1",
+          "end": "12:20",
+          "verses": 20
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "45:16",
           "end": "46:18",
           "verses": 28
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:15",
+          "verses": 23
+        },
+        "haftaraRefChabad": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:16",
+          "verses": 24
         }
       }
-    },
-    {
-      "date": "2062-04-08",
-      "hebrewDate": "27 Adar II 5822",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat HaChodesh",
-      "chagId": "Shabbat HaChodesh__IL"
     },
     {
       "date": "2062-04-08",
@@ -12403,11 +13103,31 @@
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
         "M": "Shabbat HaChodesh",
+        "label": "Shabbat HaChodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "12:1",
+          "end": "12:20",
+          "verses": 20
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "45:16",
           "end": "46:18",
           "verses": 28
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:15",
+          "verses": 23
+        },
+        "haftaraRefChabad": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:16",
+          "verses": 24
         }
       }
     },
@@ -12447,19 +13167,13 @@
       "date": "2062-04-22",
       "hebrewDate": "12 Nisan 5822",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat HaGadol",
-      "chagId": "Shabbat HaGadol__DIASPORA"
-    },
-    {
-      "date": "2062-04-22",
-      "hebrewDate": "12 Nisan 5822",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Achrei Mot",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat HaGadol",
+        "label": "Shabbat HaGadol",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Malachi",
           "start": "3:4",
@@ -12472,19 +13186,13 @@
       "date": "2062-04-22",
       "hebrewDate": "12 Nisan 5822",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat HaGadol",
-      "chagId": "Shabbat HaGadol__IL"
-    },
-    {
-      "date": "2062-04-22",
-      "hebrewDate": "12 Nisan 5822",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Achrei Mot",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat HaGadol",
+        "label": "Shabbat HaGadol",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Malachi",
           "start": "3:4",
@@ -12623,11 +13331,19 @@
       "specialReading": {
         "haftara": "Kedoshim following Special Shabbat",
         "sephardic": "Kedoshim following Special Shabbat",
+        "label": "Kedoshim following Special Shabbat",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Amos",
           "start": "9:7",
           "end": "9:15",
           "verses": 9
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "20:2",
+          "end": "20:20",
+          "verses": 19
         }
       }
     },
@@ -12641,11 +13357,19 @@
       "specialReading": {
         "haftara": "Kedoshim following Special Shabbat",
         "sephardic": "Kedoshim following Special Shabbat",
+        "label": "Kedoshim following Special Shabbat",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Amos",
           "start": "9:7",
           "end": "9:15",
           "verses": 9
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "20:2",
+          "end": "20:20",
+          "verses": 19
         }
       }
     },
@@ -12869,20 +13593,20 @@
       "date": "2062-07-08",
       "hebrewDate": "30 Sivan 5822",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Rosh Chodesh Tamuz",
-      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
-    },
-    {
-      "date": "2062-07-08",
-      "hebrewDate": "30 Sivan 5822",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Chukat",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -12895,20 +13619,20 @@
       "date": "2062-07-08",
       "hebrewDate": "30 Sivan 5822",
       "region": "israel",
-      "type": "holiday",
-      "name": "Rosh Chodesh Tamuz",
-      "chagId": "Shabbat Rosh Chodesh__IL"
-    },
-    {
-      "date": "2062-07-08",
-      "hebrewDate": "30 Sivan 5822",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Chukat",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -13241,20 +13965,14 @@
       "date": "2062-10-07",
       "hebrewDate": "3 Tishrei 5823",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Shuva",
-      "chagId": "Shabbat Shuva__DIASPORA"
-    },
-    {
-      "date": "2062-10-07",
-      "hebrewDate": "3 Tishrei 5823",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Ha'azinu",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
         "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "label": "Shabbat Shuva (with Ha'azinu)",
+        "scrollCount": 1,
         "haftaraRef": [
           {
             "book": "Hosea",
@@ -13268,16 +13986,22 @@
             "end": "2:27",
             "verses": 13
           }
+        ],
+        "haftaraRefSefardi": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Micah",
+            "start": "7:18",
+            "end": "7:20",
+            "verses": 3
+          }
         ]
       }
-    },
-    {
-      "date": "2062-10-07",
-      "hebrewDate": "3 Tishrei 5823",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Shuva",
-      "chagId": "Shabbat Shuva__IL"
     },
     {
       "date": "2062-10-07",
@@ -13289,6 +14013,8 @@
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
         "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "label": "Shabbat Shuva (with Ha'azinu)",
+        "scrollCount": 1,
         "haftaraRef": [
           {
             "book": "Hosea",
@@ -13301,6 +14027,20 @@
             "start": "2:15",
             "end": "2:27",
             "verses": 13
+          }
+        ],
+        "haftaraRefSefardi": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Micah",
+            "start": "7:18",
+            "end": "7:20",
+            "verses": 3
           }
         ]
       }
@@ -13509,20 +14249,20 @@
       "date": "2062-11-04",
       "hebrewDate": "1 Cheshvan 5823",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Rosh Chodesh Cheshvan",
-      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
-    },
-    {
-      "date": "2062-11-04",
-      "hebrewDate": "1 Cheshvan 5823",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Noach",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -13535,20 +14275,20 @@
       "date": "2062-11-04",
       "hebrewDate": "1 Cheshvan 5823",
       "region": "israel",
-      "type": "holiday",
-      "name": "Rosh Chodesh Cheshvan",
-      "chagId": "Shabbat Rosh Chodesh__IL"
-    },
-    {
-      "date": "2062-11-04",
-      "hebrewDate": "1 Cheshvan 5823",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Noach",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -13614,6 +14354,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -13631,6 +14373,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -13755,20 +14499,20 @@
       "date": "2062-12-30",
       "hebrewDate": "28 Kislev 5823",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Chanukah: 5 Candles",
-      "chagId": "Chanukah: 5 Candles__DIASPORA"
-    },
-    {
-      "date": "2062-12-30",
-      "hebrewDate": "28 Kislev 5823",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Miketz",
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 4 (on Shabbat)",
         "M": "Chanukah Day 4 (on Shabbat)",
+        "label": "Chanukah Day 4",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "7:30",
+          "end": "7:35",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "Zechariah",
           "start": "2:14",
@@ -13781,20 +14525,20 @@
       "date": "2062-12-30",
       "hebrewDate": "28 Kislev 5823",
       "region": "israel",
-      "type": "holiday",
-      "name": "Chanukah: 5 Candles",
-      "chagId": "Chanukah: 5 Candles__IL"
-    },
-    {
-      "date": "2062-12-30",
-      "hebrewDate": "28 Kislev 5823",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Miketz",
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 4 (on Shabbat)",
         "M": "Chanukah Day 4 (on Shabbat)",
+        "label": "Chanukah Day 4",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "7:30",
+          "end": "7:35",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "Zechariah",
           "start": "2:14",
@@ -14015,14 +14759,6 @@
       "date": "2063-02-24",
       "hebrewDate": "25 Sh'vat 5823",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Shekalim",
-      "chagId": "Shabbat Shekalim__DIASPORA"
-    },
-    {
-      "date": "2063-02-24",
-      "hebrewDate": "25 Sh'vat 5823",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Mishpatim",
       "combined": false,
@@ -14030,11 +14766,25 @@
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
         "M": "Shabbat Shekalim",
+        "label": "Shabbat Shekalim",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "30:11",
+          "end": "30:16",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "II Kings",
           "start": "12:1",
           "end": "12:17",
           "verses": 17
+        },
+        "haftaraRefSefardi": {
+          "book": "II Kings",
+          "start": "11:17",
+          "end": "12:17",
+          "verses": 21
         }
       }
     },
@@ -14042,14 +14792,6 @@
       "date": "2063-02-24",
       "hebrewDate": "25 Sh'vat 5823",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Shekalim",
-      "chagId": "Shabbat Shekalim__IL"
-    },
-    {
-      "date": "2063-02-24",
-      "hebrewDate": "25 Sh'vat 5823",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Mishpatim",
       "combined": false,
@@ -14057,11 +14799,25 @@
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
         "M": "Shabbat Shekalim",
+        "label": "Shabbat Shekalim",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "30:11",
+          "end": "30:16",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "II Kings",
           "start": "12:1",
           "end": "12:17",
           "verses": 17
+        },
+        "haftaraRefSefardi": {
+          "book": "II Kings",
+          "start": "11:17",
+          "end": "12:17",
+          "verses": 21
         }
       }
     },
@@ -14112,14 +14868,6 @@
       "type": "parsha",
       "parshaId": "Terumah",
       "combined": false
-    },
-    {
-      "date": "2063-03-10",
-      "hebrewDate": "9 Adar 5823",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Zachor",
-      "chagId": "Shabbat Zachor__DIASPORA"
     },
     {
       "date": "2063-03-10",
@@ -14133,7 +14881,27 @@
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
         "M": "Shabbat Zachor",
+        "label": "Shabbat Zachor",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Deuteronomy",
+          "start": "25:17",
+          "end": "25:19",
+          "verses": 3
+        },
         "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        },
+        "haftaraRefSefardi": {
+          "book": "I Samuel",
+          "start": "15:1",
+          "end": "15:34",
+          "verses": 34
+        },
+        "haftaraRefChabad": {
           "book": "I Samuel",
           "start": "15:2",
           "end": "15:34",
@@ -14145,14 +14913,6 @@
       "date": "2063-03-10",
       "hebrewDate": "9 Adar 5823",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Zachor",
-      "chagId": "Shabbat Zachor__IL"
-    },
-    {
-      "date": "2063-03-10",
-      "hebrewDate": "9 Adar 5823",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Tetzaveh",
       "combined": false,
@@ -14161,7 +14921,27 @@
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
         "M": "Shabbat Zachor",
+        "label": "Shabbat Zachor",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Deuteronomy",
+          "start": "25:17",
+          "end": "25:19",
+          "verses": 3
+        },
         "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        },
+        "haftaraRefSefardi": {
+          "book": "I Samuel",
+          "start": "15:1",
+          "end": "15:34",
+          "verses": 34
+        },
+        "haftaraRefChabad": {
           "book": "I Samuel",
           "start": "15:2",
           "end": "15:34",
@@ -14229,14 +15009,6 @@
       "date": "2063-03-24",
       "hebrewDate": "23 Adar 5823",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Parah",
-      "chagId": "Shabbat Parah__DIASPORA"
-    },
-    {
-      "date": "2063-03-24",
-      "hebrewDate": "23 Adar 5823",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Vayakhel-Pekudei",
       "combined": true,
@@ -14244,21 +15016,27 @@
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
         "M": "Shabbat Parah",
+        "label": "Shabbat Parah",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "19:1",
+          "end": "19:22",
+          "verses": 22
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "36:16",
           "end": "36:38",
           "verses": 23
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:36",
+          "verses": 21
         }
       }
-    },
-    {
-      "date": "2063-03-24",
-      "hebrewDate": "23 Adar 5823",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Parah",
-      "chagId": "Shabbat Parah__IL"
     },
     {
       "date": "2063-03-24",
@@ -14271,21 +15049,27 @@
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
         "M": "Shabbat Parah",
+        "label": "Shabbat Parah",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "19:1",
+          "end": "19:22",
+          "verses": 22
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "36:16",
           "end": "36:38",
           "verses": 23
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:36",
+          "verses": 21
         }
       }
-    },
-    {
-      "date": "2063-03-31",
-      "hebrewDate": "1 Nisan 5823",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat HaChodesh",
-      "chagId": "Shabbat HaChodesh__DIASPORA"
     },
     {
       "date": "2063-03-31",
@@ -14299,21 +15083,77 @@
         "haftara": "Shabbat HaChodesh (on Rosh Chodesh)",
         "sephardic": "Shabbat HaChodesh (on Rosh Chodesh)",
         "M": "Shabbat HaChodesh (on Rosh Chodesh)",
+        "label": "Shabbat HaChodesh",
+        "scrollCount": 3,
+        "aliyah7Ref": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
+        "aliyot": {
+          "1": {
+            "book": "Leviticus",
+            "start": "1:1",
+            "end": "1:13",
+            "verses": 13
+          },
+          "2": {
+            "book": "Leviticus",
+            "start": "1:14",
+            "end": "2:6",
+            "verses": 10
+          },
+          "3": {
+            "book": "Leviticus",
+            "start": "2:7",
+            "end": "2:16",
+            "verses": 10
+          },
+          "4": {
+            "book": "Leviticus",
+            "start": "3:1",
+            "end": "3:17",
+            "verses": 17
+          },
+          "5": {
+            "book": "Leviticus",
+            "start": "4:1",
+            "end": "4:26",
+            "verses": 26
+          },
+          "6": {
+            "book": "Leviticus",
+            "start": "4:27",
+            "end": "5:26",
+            "verses": 35
+          },
+          "7": {
+            "book": "Numbers",
+            "start": "28:9",
+            "end": "28:15",
+            "verses": 7
+          }
+        },
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "12:1",
+          "end": "12:20",
+          "verses": 20
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "45:16",
           "end": "46:18",
           "verses": 28
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:15",
+          "verses": 23
         }
       }
-    },
-    {
-      "date": "2063-03-31",
-      "hebrewDate": "1 Nisan 5823",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat HaChodesh",
-      "chagId": "Shabbat HaChodesh__IL"
     },
     {
       "date": "2063-03-31",
@@ -14327,21 +15167,77 @@
         "haftara": "Shabbat HaChodesh (on Rosh Chodesh)",
         "sephardic": "Shabbat HaChodesh (on Rosh Chodesh)",
         "M": "Shabbat HaChodesh (on Rosh Chodesh)",
+        "label": "Shabbat HaChodesh",
+        "scrollCount": 3,
+        "aliyah7Ref": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
+        "aliyot": {
+          "1": {
+            "book": "Leviticus",
+            "start": "1:1",
+            "end": "1:13",
+            "verses": 13
+          },
+          "2": {
+            "book": "Leviticus",
+            "start": "1:14",
+            "end": "2:6",
+            "verses": 10
+          },
+          "3": {
+            "book": "Leviticus",
+            "start": "2:7",
+            "end": "2:16",
+            "verses": 10
+          },
+          "4": {
+            "book": "Leviticus",
+            "start": "3:1",
+            "end": "3:17",
+            "verses": 17
+          },
+          "5": {
+            "book": "Leviticus",
+            "start": "4:1",
+            "end": "4:26",
+            "verses": 26
+          },
+          "6": {
+            "book": "Leviticus",
+            "start": "4:27",
+            "end": "5:26",
+            "verses": 35
+          },
+          "7": {
+            "book": "Numbers",
+            "start": "28:9",
+            "end": "28:15",
+            "verses": 7
+          }
+        },
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "12:1",
+          "end": "12:20",
+          "verses": 20
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "45:16",
           "end": "46:18",
           "verses": 28
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:15",
+          "verses": 23
         }
       }
-    },
-    {
-      "date": "2063-04-07",
-      "hebrewDate": "8 Nisan 5823",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat HaGadol",
-      "chagId": "Shabbat HaGadol__DIASPORA"
     },
     {
       "date": "2063-04-07",
@@ -14352,6 +15248,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat HaGadol",
+        "label": "Shabbat HaGadol",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Malachi",
           "start": "3:4",
@@ -14364,19 +15262,13 @@
       "date": "2063-04-07",
       "hebrewDate": "8 Nisan 5823",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat HaGadol",
-      "chagId": "Shabbat HaGadol__IL"
-    },
-    {
-      "date": "2063-04-07",
-      "hebrewDate": "8 Nisan 5823",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Tzav",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat HaGadol",
+        "label": "Shabbat HaGadol",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Malachi",
           "start": "3:4",
@@ -14522,6 +15414,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -14539,6 +15433,8 @@
       "combined": true,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -14868,6 +15764,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Pinchas occurring after 17 Tammuz",
+        "label": "Pinchas occurring after 17 Tammuz",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Jeremiah",
           "start": "1:1",
@@ -14885,6 +15783,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Pinchas occurring after 17 Tammuz",
+        "label": "Pinchas occurring after 17 Tammuz",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Jeremiah",
           "start": "1:1",
@@ -14993,20 +15893,20 @@
       "date": "2063-08-25",
       "hebrewDate": "30 Av 5823",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Rosh Chodesh Elul",
-      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
-    },
-    {
-      "date": "2063-08-25",
-      "hebrewDate": "30 Av 5823",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Re'eh",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -15019,20 +15919,20 @@
       "date": "2063-08-25",
       "hebrewDate": "30 Av 5823",
       "region": "israel",
-      "type": "holiday",
-      "name": "Rosh Chodesh Elul",
-      "chagId": "Shabbat Rosh Chodesh__IL"
-    },
-    {
-      "date": "2063-08-25",
-      "hebrewDate": "30 Av 5823",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Re'eh",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -15082,6 +15982,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Ki Teitzei with 3rd Haftarah of Consolation",
+        "label": "Ki Teitzei with 3rd Haftarah of Consolation",
+        "scrollCount": 1,
         "haftaraRef": [
           {
             "book": "Isaiah",
@@ -15107,6 +16009,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Ki Teitzei with 3rd Haftarah of Consolation",
+        "label": "Ki Teitzei with 3rd Haftarah of Consolation",
+        "scrollCount": 1,
         "haftaraRef": [
           {
             "book": "Isaiah",
@@ -15207,19 +16111,13 @@
       "date": "2063-09-29",
       "hebrewDate": "6 Tishrei 5824",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Shuva",
-      "chagId": "Shabbat Shuva__DIASPORA"
-    },
-    {
-      "date": "2063-09-29",
-      "hebrewDate": "6 Tishrei 5824",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Vayeilech",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Vayeilech)",
+        "label": "Shabbat Shuva (with Vayeilech)",
+        "scrollCount": 1,
         "haftaraRef": [
           {
             "book": "Hosea",
@@ -15240,19 +16138,13 @@
       "date": "2063-09-29",
       "hebrewDate": "6 Tishrei 5824",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Shuva",
-      "chagId": "Shabbat Shuva__IL"
-    },
-    {
-      "date": "2063-09-29",
-      "hebrewDate": "6 Tishrei 5824",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Vayeilech",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Vayeilech)",
+        "label": "Shabbat Shuva (with Vayeilech)",
+        "scrollCount": 1,
         "haftaraRef": [
           {
             "book": "Hosea",
@@ -15729,20 +16621,20 @@
       "date": "2063-12-22",
       "hebrewDate": "2 Tevet 5824",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Chanukah: 8 Candles",
-      "chagId": "Chanukah: 8 Candles__DIASPORA"
-    },
-    {
-      "date": "2063-12-22",
-      "hebrewDate": "2 Tevet 5824",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Miketz",
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 7 (on Shabbat)",
         "M": "Chanukah Day 7 (on Shabbat)",
+        "label": "Chanukah Day 7",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "7:48",
+          "end": "7:53",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "Zechariah",
           "start": "2:14",
@@ -15755,20 +16647,20 @@
       "date": "2063-12-22",
       "hebrewDate": "2 Tevet 5824",
       "region": "israel",
-      "type": "holiday",
-      "name": "Chanukah: 8 Candles",
-      "chagId": "Chanukah: 8 Candles__IL"
-    },
-    {
-      "date": "2063-12-22",
-      "hebrewDate": "2 Tevet 5824",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Miketz",
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 7 (on Shabbat)",
         "M": "Chanukah Day 7 (on Shabbat)",
+        "label": "Chanukah Day 7",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "7:48",
+          "end": "7:53",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "Zechariah",
           "start": "2:14",
@@ -15861,20 +16753,20 @@
       "date": "2064-01-19",
       "hebrewDate": "1 Sh'vat 5824",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Rosh Chodesh Sh'vat",
-      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
-    },
-    {
-      "date": "2064-01-19",
-      "hebrewDate": "1 Sh'vat 5824",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Vaera",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -15887,20 +16779,20 @@
       "date": "2064-01-19",
       "hebrewDate": "1 Sh'vat 5824",
       "region": "israel",
-      "type": "holiday",
-      "name": "Rosh Chodesh Sh'vat",
-      "chagId": "Shabbat Rosh Chodesh__IL"
-    },
-    {
-      "date": "2064-01-19",
-      "hebrewDate": "1 Sh'vat 5824",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Vaera",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -15961,14 +16853,6 @@
       "date": "2064-02-16",
       "hebrewDate": "29 Sh'vat 5824",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Shekalim",
-      "chagId": "Shabbat Shekalim__DIASPORA"
-    },
-    {
-      "date": "2064-02-16",
-      "hebrewDate": "29 Sh'vat 5824",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Mishpatim",
       "combined": false,
@@ -15976,11 +16860,25 @@
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
         "M": "Shabbat Shekalim",
+        "label": "Shabbat Shekalim",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "30:11",
+          "end": "30:16",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "II Kings",
           "start": "12:1",
           "end": "12:17",
           "verses": 17
+        },
+        "haftaraRefSefardi": {
+          "book": "II Kings",
+          "start": "11:17",
+          "end": "12:17",
+          "verses": 21
         }
       }
     },
@@ -15988,14 +16886,6 @@
       "date": "2064-02-16",
       "hebrewDate": "29 Sh'vat 5824",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Shekalim",
-      "chagId": "Shabbat Shekalim__IL"
-    },
-    {
-      "date": "2064-02-16",
-      "hebrewDate": "29 Sh'vat 5824",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Mishpatim",
       "combined": false,
@@ -16003,11 +16893,25 @@
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
         "M": "Shabbat Shekalim",
+        "label": "Shabbat Shekalim",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "30:11",
+          "end": "30:16",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "II Kings",
           "start": "12:1",
           "end": "12:17",
           "verses": 17
+        },
+        "haftaraRefSefardi": {
+          "book": "II Kings",
+          "start": "11:17",
+          "end": "12:17",
+          "verses": 21
         }
       }
     },
@@ -16079,14 +16983,6 @@
       "date": "2064-03-01",
       "hebrewDate": "13 Adar 5824",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Zachor",
-      "chagId": "Shabbat Zachor__DIASPORA"
-    },
-    {
-      "date": "2064-03-01",
-      "hebrewDate": "13 Adar 5824",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Tetzaveh",
       "combined": false,
@@ -16095,7 +16991,27 @@
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
         "M": "Shabbat Zachor",
+        "label": "Shabbat Zachor",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Deuteronomy",
+          "start": "25:17",
+          "end": "25:19",
+          "verses": 3
+        },
         "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        },
+        "haftaraRefSefardi": {
+          "book": "I Samuel",
+          "start": "15:1",
+          "end": "15:34",
+          "verses": 34
+        },
+        "haftaraRefChabad": {
           "book": "I Samuel",
           "start": "15:2",
           "end": "15:34",
@@ -16107,14 +17023,6 @@
       "date": "2064-03-01",
       "hebrewDate": "13 Adar 5824",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Zachor",
-      "chagId": "Shabbat Zachor__IL"
-    },
-    {
-      "date": "2064-03-01",
-      "hebrewDate": "13 Adar 5824",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Tetzaveh",
       "combined": false,
@@ -16123,7 +17031,27 @@
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
         "M": "Shabbat Zachor",
+        "label": "Shabbat Zachor",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Deuteronomy",
+          "start": "25:17",
+          "end": "25:19",
+          "verses": 3
+        },
         "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        },
+        "haftaraRefSefardi": {
+          "book": "I Samuel",
+          "start": "15:1",
+          "end": "15:34",
+          "verses": 34
+        },
+        "haftaraRefChabad": {
           "book": "I Samuel",
           "start": "15:2",
           "end": "15:34",
@@ -16159,14 +17087,6 @@
       "date": "2064-03-08",
       "hebrewDate": "20 Adar 5824",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Parah",
-      "chagId": "Shabbat Parah__DIASPORA"
-    },
-    {
-      "date": "2064-03-08",
-      "hebrewDate": "20 Adar 5824",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Ki Tisa",
       "combined": false,
@@ -16174,21 +17094,27 @@
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
         "M": "Shabbat Parah",
+        "label": "Shabbat Parah",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "19:1",
+          "end": "19:22",
+          "verses": 22
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "36:16",
           "end": "36:38",
           "verses": 23
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:36",
+          "verses": 21
         }
       }
-    },
-    {
-      "date": "2064-03-08",
-      "hebrewDate": "20 Adar 5824",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Parah",
-      "chagId": "Shabbat Parah__IL"
     },
     {
       "date": "2064-03-08",
@@ -16201,21 +17127,27 @@
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
         "M": "Shabbat Parah",
+        "label": "Shabbat Parah",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "19:1",
+          "end": "19:22",
+          "verses": 22
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "36:16",
           "end": "36:38",
           "verses": 23
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:36",
+          "verses": 21
         }
       }
-    },
-    {
-      "date": "2064-03-15",
-      "hebrewDate": "27 Adar 5824",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat HaChodesh",
-      "chagId": "Shabbat HaChodesh__DIASPORA"
     },
     {
       "date": "2064-03-15",
@@ -16229,21 +17161,33 @@
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
         "M": "Shabbat HaChodesh",
+        "label": "Shabbat HaChodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "12:1",
+          "end": "12:20",
+          "verses": 20
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "45:16",
           "end": "46:18",
           "verses": 28
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:15",
+          "verses": 23
+        },
+        "haftaraRefChabad": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:16",
+          "verses": 24
         }
       }
-    },
-    {
-      "date": "2064-03-15",
-      "hebrewDate": "27 Adar 5824",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat HaChodesh",
-      "chagId": "Shabbat HaChodesh__IL"
     },
     {
       "date": "2064-03-15",
@@ -16257,11 +17201,31 @@
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
         "M": "Shabbat HaChodesh",
+        "label": "Shabbat HaChodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "12:1",
+          "end": "12:20",
+          "verses": 20
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "45:16",
           "end": "46:18",
           "verses": 28
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:15",
+          "verses": 23
+        },
+        "haftaraRefChabad": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:16",
+          "verses": 24
         }
       }
     },
@@ -16301,19 +17265,13 @@
       "date": "2064-03-29",
       "hebrewDate": "12 Nisan 5824",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat HaGadol",
-      "chagId": "Shabbat HaGadol__DIASPORA"
-    },
-    {
-      "date": "2064-03-29",
-      "hebrewDate": "12 Nisan 5824",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Tzav",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat HaGadol",
+        "label": "Shabbat HaGadol",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Malachi",
           "start": "3:4",
@@ -16326,19 +17284,13 @@
       "date": "2064-03-29",
       "hebrewDate": "12 Nisan 5824",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat HaGadol",
-      "chagId": "Shabbat HaGadol__IL"
-    },
-    {
-      "date": "2064-03-29",
-      "hebrewDate": "12 Nisan 5824",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Tzav",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat HaGadol",
+        "label": "Shabbat HaGadol",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Malachi",
           "start": "3:4",
@@ -16703,20 +17655,20 @@
       "date": "2064-06-14",
       "hebrewDate": "30 Sivan 5824",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Rosh Chodesh Tamuz",
-      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
-    },
-    {
-      "date": "2064-06-14",
-      "hebrewDate": "30 Sivan 5824",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Korach",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -16729,20 +17681,20 @@
       "date": "2064-06-14",
       "hebrewDate": "30 Sivan 5824",
       "region": "israel",
-      "type": "holiday",
-      "name": "Rosh Chodesh Tamuz",
-      "chagId": "Shabbat Rosh Chodesh__IL"
-    },
-    {
-      "date": "2064-06-14",
-      "hebrewDate": "30 Sivan 5824",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Korach",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -16824,6 +17776,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Pinchas occurring after 17 Tammuz",
+        "label": "Pinchas occurring after 17 Tammuz",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Jeremiah",
           "start": "1:1",
@@ -16841,6 +17795,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Pinchas occurring after 17 Tammuz",
+        "label": "Pinchas occurring after 17 Tammuz",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Jeremiah",
           "start": "1:1",
@@ -17093,20 +18049,14 @@
       "date": "2064-09-13",
       "hebrewDate": "3 Tishrei 5825",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Shuva",
-      "chagId": "Shabbat Shuva__DIASPORA"
-    },
-    {
-      "date": "2064-09-13",
-      "hebrewDate": "3 Tishrei 5825",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Ha'azinu",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
         "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "label": "Shabbat Shuva (with Ha'azinu)",
+        "scrollCount": 1,
         "haftaraRef": [
           {
             "book": "Hosea",
@@ -17120,16 +18070,22 @@
             "end": "2:27",
             "verses": 13
           }
+        ],
+        "haftaraRefSefardi": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Micah",
+            "start": "7:18",
+            "end": "7:20",
+            "verses": 3
+          }
         ]
       }
-    },
-    {
-      "date": "2064-09-13",
-      "hebrewDate": "3 Tishrei 5825",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Shuva",
-      "chagId": "Shabbat Shuva__IL"
     },
     {
       "date": "2064-09-13",
@@ -17141,6 +18097,8 @@
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
         "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "label": "Shabbat Shuva (with Ha'azinu)",
+        "scrollCount": 1,
         "haftaraRef": [
           {
             "book": "Hosea",
@@ -17153,6 +18111,20 @@
             "start": "2:15",
             "end": "2:27",
             "verses": 13
+          }
+        ],
+        "haftaraRefSefardi": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Micah",
+            "start": "7:18",
+            "end": "7:20",
+            "verses": 3
           }
         ]
       }
@@ -17361,20 +18333,20 @@
       "date": "2064-10-11",
       "hebrewDate": "1 Cheshvan 5825",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Rosh Chodesh Cheshvan",
-      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
-    },
-    {
-      "date": "2064-10-11",
-      "hebrewDate": "1 Cheshvan 5825",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Noach",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -17387,20 +18359,20 @@
       "date": "2064-10-11",
       "hebrewDate": "1 Cheshvan 5825",
       "region": "israel",
-      "type": "holiday",
-      "name": "Rosh Chodesh Cheshvan",
-      "chagId": "Shabbat Rosh Chodesh__IL"
-    },
-    {
-      "date": "2064-10-11",
-      "hebrewDate": "1 Cheshvan 5825",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Noach",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -17466,6 +18438,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -17483,6 +18457,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -17607,20 +18583,20 @@
       "date": "2064-12-06",
       "hebrewDate": "27 Kislev 5825",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Chanukah: 4 Candles",
-      "chagId": "Chanukah: 4 Candles__DIASPORA"
-    },
-    {
-      "date": "2064-12-06",
-      "hebrewDate": "27 Kislev 5825",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Miketz",
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 3 (on Shabbat)",
         "M": "Chanukah Day 3 (on Shabbat)",
+        "label": "Chanukah Day 3",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "7:24",
+          "end": "7:29",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "Zechariah",
           "start": "2:14",
@@ -17633,20 +18609,20 @@
       "date": "2064-12-06",
       "hebrewDate": "27 Kislev 5825",
       "region": "israel",
-      "type": "holiday",
-      "name": "Chanukah: 4 Candles",
-      "chagId": "Chanukah: 4 Candles__IL"
-    },
-    {
-      "date": "2064-12-06",
-      "hebrewDate": "27 Kislev 5825",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Miketz",
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 3 (on Shabbat)",
         "M": "Chanukah Day 3 (on Shabbat)",
+        "label": "Chanukah Day 3",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "7:24",
+          "end": "7:29",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "Zechariah",
           "start": "2:14",
@@ -17915,20 +18891,20 @@
       "date": "2065-02-07",
       "hebrewDate": "1 Adar I 5825",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Rosh Chodesh Adar I",
-      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
-    },
-    {
-      "date": "2065-02-07",
-      "hebrewDate": "1 Adar I 5825",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Terumah",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -17941,20 +18917,20 @@
       "date": "2065-02-07",
       "hebrewDate": "1 Adar I 5825",
       "region": "israel",
-      "type": "holiday",
-      "name": "Rosh Chodesh Adar I",
-      "chagId": "Shabbat Rosh Chodesh__IL"
-    },
-    {
-      "date": "2065-02-07",
-      "hebrewDate": "1 Adar I 5825",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Terumah",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -18015,14 +18991,6 @@
       "date": "2065-03-07",
       "hebrewDate": "29 Adar I 5825",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Shekalim",
-      "chagId": "Shabbat Shekalim__DIASPORA"
-    },
-    {
-      "date": "2065-03-07",
-      "hebrewDate": "29 Adar I 5825",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Pekudei",
       "combined": false,
@@ -18030,11 +18998,25 @@
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
         "M": "Shabbat Shekalim",
+        "label": "Shabbat Shekalim",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "30:11",
+          "end": "30:16",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "II Kings",
           "start": "12:1",
           "end": "12:17",
           "verses": 17
+        },
+        "haftaraRefSefardi": {
+          "book": "II Kings",
+          "start": "11:17",
+          "end": "12:17",
+          "verses": 21
         }
       }
     },
@@ -18042,14 +19024,6 @@
       "date": "2065-03-07",
       "hebrewDate": "29 Adar I 5825",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Shekalim",
-      "chagId": "Shabbat Shekalim__IL"
-    },
-    {
-      "date": "2065-03-07",
-      "hebrewDate": "29 Adar I 5825",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Pekudei",
       "combined": false,
@@ -18057,11 +19031,25 @@
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
         "M": "Shabbat Shekalim",
+        "label": "Shabbat Shekalim",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "30:11",
+          "end": "30:16",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "II Kings",
           "start": "12:1",
           "end": "12:17",
           "verses": 17
+        },
+        "haftaraRefSefardi": {
+          "book": "II Kings",
+          "start": "11:17",
+          "end": "12:17",
+          "verses": 21
         }
       }
     },
@@ -18133,14 +19121,6 @@
       "date": "2065-03-21",
       "hebrewDate": "13 Adar II 5825",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Zachor",
-      "chagId": "Shabbat Zachor__DIASPORA"
-    },
-    {
-      "date": "2065-03-21",
-      "hebrewDate": "13 Adar II 5825",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Tzav",
       "combined": false,
@@ -18149,7 +19129,27 @@
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
         "M": "Shabbat Zachor",
+        "label": "Shabbat Zachor",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Deuteronomy",
+          "start": "25:17",
+          "end": "25:19",
+          "verses": 3
+        },
         "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        },
+        "haftaraRefSefardi": {
+          "book": "I Samuel",
+          "start": "15:1",
+          "end": "15:34",
+          "verses": 34
+        },
+        "haftaraRefChabad": {
           "book": "I Samuel",
           "start": "15:2",
           "end": "15:34",
@@ -18161,14 +19161,6 @@
       "date": "2065-03-21",
       "hebrewDate": "13 Adar II 5825",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Zachor",
-      "chagId": "Shabbat Zachor__IL"
-    },
-    {
-      "date": "2065-03-21",
-      "hebrewDate": "13 Adar II 5825",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Tzav",
       "combined": false,
@@ -18177,7 +19169,27 @@
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
         "M": "Shabbat Zachor",
+        "label": "Shabbat Zachor",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Deuteronomy",
+          "start": "25:17",
+          "end": "25:19",
+          "verses": 3
+        },
         "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        },
+        "haftaraRefSefardi": {
+          "book": "I Samuel",
+          "start": "15:1",
+          "end": "15:34",
+          "verses": 34
+        },
+        "haftaraRefChabad": {
           "book": "I Samuel",
           "start": "15:2",
           "end": "15:34",
@@ -18213,14 +19225,6 @@
       "date": "2065-03-28",
       "hebrewDate": "20 Adar II 5825",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Parah",
-      "chagId": "Shabbat Parah__DIASPORA"
-    },
-    {
-      "date": "2065-03-28",
-      "hebrewDate": "20 Adar II 5825",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Shmini",
       "combined": false,
@@ -18228,21 +19232,27 @@
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
         "M": "Shabbat Parah",
+        "label": "Shabbat Parah",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "19:1",
+          "end": "19:22",
+          "verses": 22
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "36:16",
           "end": "36:38",
           "verses": 23
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:36",
+          "verses": 21
         }
       }
-    },
-    {
-      "date": "2065-03-28",
-      "hebrewDate": "20 Adar II 5825",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Parah",
-      "chagId": "Shabbat Parah__IL"
     },
     {
       "date": "2065-03-28",
@@ -18255,21 +19265,27 @@
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
         "M": "Shabbat Parah",
+        "label": "Shabbat Parah",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "19:1",
+          "end": "19:22",
+          "verses": 22
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "36:16",
           "end": "36:38",
           "verses": 23
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:36",
+          "verses": 21
         }
       }
-    },
-    {
-      "date": "2065-04-04",
-      "hebrewDate": "27 Adar II 5825",
-      "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat HaChodesh",
-      "chagId": "Shabbat HaChodesh__DIASPORA"
     },
     {
       "date": "2065-04-04",
@@ -18283,21 +19299,33 @@
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
         "M": "Shabbat HaChodesh",
+        "label": "Shabbat HaChodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "12:1",
+          "end": "12:20",
+          "verses": 20
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "45:16",
           "end": "46:18",
           "verses": 28
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:15",
+          "verses": 23
+        },
+        "haftaraRefChabad": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:16",
+          "verses": 24
         }
       }
-    },
-    {
-      "date": "2065-04-04",
-      "hebrewDate": "27 Adar II 5825",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat HaChodesh",
-      "chagId": "Shabbat HaChodesh__IL"
     },
     {
       "date": "2065-04-04",
@@ -18311,11 +19339,31 @@
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
         "M": "Shabbat HaChodesh",
+        "label": "Shabbat HaChodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Exodus",
+          "start": "12:1",
+          "end": "12:20",
+          "verses": 20
+        },
         "haftaraRef": {
           "book": "Ezekiel",
           "start": "45:16",
           "end": "46:18",
           "verses": 28
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:15",
+          "verses": 23
+        },
+        "haftaraRefChabad": {
+          "book": "Ezekiel",
+          "start": "45:18",
+          "end": "46:16",
+          "verses": 24
         }
       }
     },
@@ -18355,19 +19403,13 @@
       "date": "2065-04-18",
       "hebrewDate": "12 Nisan 5825",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat HaGadol",
-      "chagId": "Shabbat HaGadol__DIASPORA"
-    },
-    {
-      "date": "2065-04-18",
-      "hebrewDate": "12 Nisan 5825",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Achrei Mot",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat HaGadol",
+        "label": "Shabbat HaGadol",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Malachi",
           "start": "3:4",
@@ -18380,19 +19422,13 @@
       "date": "2065-04-18",
       "hebrewDate": "12 Nisan 5825",
       "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat HaGadol",
-      "chagId": "Shabbat HaGadol__IL"
-    },
-    {
-      "date": "2065-04-18",
-      "hebrewDate": "12 Nisan 5825",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Achrei Mot",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat HaGadol",
+        "label": "Shabbat HaGadol",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Malachi",
           "start": "3:4",
@@ -18531,11 +19567,19 @@
       "specialReading": {
         "haftara": "Kedoshim following Special Shabbat",
         "sephardic": "Kedoshim following Special Shabbat",
+        "label": "Kedoshim following Special Shabbat",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Amos",
           "start": "9:7",
           "end": "9:15",
           "verses": 9
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "20:2",
+          "end": "20:20",
+          "verses": 19
         }
       }
     },
@@ -18549,11 +19593,19 @@
       "specialReading": {
         "haftara": "Kedoshim following Special Shabbat",
         "sephardic": "Kedoshim following Special Shabbat",
+        "label": "Kedoshim following Special Shabbat",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "Amos",
           "start": "9:7",
           "end": "9:15",
           "verses": 9
+        },
+        "haftaraRefSefardi": {
+          "book": "Ezekiel",
+          "start": "20:2",
+          "end": "20:20",
+          "verses": 19
         }
       }
     },
@@ -18777,20 +19829,20 @@
       "date": "2065-07-04",
       "hebrewDate": "30 Sivan 5825",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Rosh Chodesh Tamuz",
-      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
-    },
-    {
-      "date": "2065-07-04",
-      "hebrewDate": "30 Sivan 5825",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Chukat",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -18803,20 +19855,20 @@
       "date": "2065-07-04",
       "hebrewDate": "30 Sivan 5825",
       "region": "israel",
-      "type": "holiday",
-      "name": "Rosh Chodesh Tamuz",
-      "chagId": "Shabbat Rosh Chodesh__IL"
-    },
-    {
-      "date": "2065-07-04",
-      "hebrewDate": "30 Sivan 5825",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Chukat",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -19149,20 +20201,14 @@
       "date": "2065-10-03",
       "hebrewDate": "3 Tishrei 5826",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Shabbat Shuva",
-      "chagId": "Shabbat Shuva__DIASPORA"
-    },
-    {
-      "date": "2065-10-03",
-      "hebrewDate": "3 Tishrei 5826",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Ha'azinu",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
         "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "label": "Shabbat Shuva (with Ha'azinu)",
+        "scrollCount": 1,
         "haftaraRef": [
           {
             "book": "Hosea",
@@ -19176,16 +20222,22 @@
             "end": "2:27",
             "verses": 13
           }
+        ],
+        "haftaraRefSefardi": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Micah",
+            "start": "7:18",
+            "end": "7:20",
+            "verses": 3
+          }
         ]
       }
-    },
-    {
-      "date": "2065-10-03",
-      "hebrewDate": "3 Tishrei 5826",
-      "region": "israel",
-      "type": "holiday",
-      "name": "Shabbat Shuva",
-      "chagId": "Shabbat Shuva__IL"
     },
     {
       "date": "2065-10-03",
@@ -19197,6 +20249,8 @@
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
         "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "label": "Shabbat Shuva (with Ha'azinu)",
+        "scrollCount": 1,
         "haftaraRef": [
           {
             "book": "Hosea",
@@ -19209,6 +20263,20 @@
             "start": "2:15",
             "end": "2:27",
             "verses": 13
+          }
+        ],
+        "haftaraRefSefardi": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Micah",
+            "start": "7:18",
+            "end": "7:20",
+            "verses": 3
           }
         ]
       }
@@ -19417,20 +20485,20 @@
       "date": "2065-10-31",
       "hebrewDate": "1 Cheshvan 5826",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Rosh Chodesh Cheshvan",
-      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
-    },
-    {
-      "date": "2065-10-31",
-      "hebrewDate": "1 Cheshvan 5826",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Noach",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -19443,20 +20511,20 @@
       "date": "2065-10-31",
       "hebrewDate": "1 Cheshvan 5826",
       "region": "israel",
-      "type": "holiday",
-      "name": "Rosh Chodesh Cheshvan",
-      "chagId": "Shabbat Rosh Chodesh__IL"
-    },
-    {
-      "date": "2065-10-31",
-      "hebrewDate": "1 Cheshvan 5826",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Noach",
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
         "M": "Shabbat Rosh Chodesh",
+        "label": "Shabbat Rosh Chodesh",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "28:9",
+          "end": "28:15",
+          "verses": 7
+        },
         "haftaraRef": {
           "book": "Isaiah",
           "start": "66:1",
@@ -19522,6 +20590,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -19539,6 +20609,8 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Machar Chodesh",
+        "label": "Shabbat Machar Chodesh",
+        "scrollCount": 1,
         "haftaraRef": {
           "book": "I Samuel",
           "start": "20:18",
@@ -19663,20 +20735,20 @@
       "date": "2065-12-26",
       "hebrewDate": "28 Kislev 5826",
       "region": "diaspora",
-      "type": "holiday",
-      "name": "Chanukah: 5 Candles",
-      "chagId": "Chanukah: 5 Candles__DIASPORA"
-    },
-    {
-      "date": "2065-12-26",
-      "hebrewDate": "28 Kislev 5826",
-      "region": "diaspora",
       "type": "parsha",
       "parshaId": "Miketz",
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 4 (on Shabbat)",
         "M": "Chanukah Day 4 (on Shabbat)",
+        "label": "Chanukah Day 4",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "7:30",
+          "end": "7:35",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "Zechariah",
           "start": "2:14",
@@ -19689,20 +20761,20 @@
       "date": "2065-12-26",
       "hebrewDate": "28 Kislev 5826",
       "region": "israel",
-      "type": "holiday",
-      "name": "Chanukah: 5 Candles",
-      "chagId": "Chanukah: 5 Candles__IL"
-    },
-    {
-      "date": "2065-12-26",
-      "hebrewDate": "28 Kislev 5826",
-      "region": "israel",
       "type": "parsha",
       "parshaId": "Miketz",
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 4 (on Shabbat)",
         "M": "Chanukah Day 4 (on Shabbat)",
+        "label": "Chanukah Day 4",
+        "scrollCount": 2,
+        "maftirRef": {
+          "book": "Numbers",
+          "start": "7:30",
+          "end": "7:35",
+          "verses": 6
+        },
         "haftaraRef": {
           "book": "Zechariah",
           "start": "2:14",

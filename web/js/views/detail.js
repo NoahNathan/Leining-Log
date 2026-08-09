@@ -438,8 +438,79 @@ function aliyahLabel(key) {
   return key === 'M' ? 'Maftir' : ordinal(Number(key));
 }
 
+// A special-Shabbat week (Shekalim/Zachor/Parah/HaChodesh/HaGadol/Shuva,
+// Rosh Chodesh, Chanukah-on-Shabbat) doesn't add a second reading alongside
+// the week's regular parsha -- it REPLACES part of it. gen_calendar.mjs
+// captures exactly which part on the calendar row's specialReading:
+// aliyah7Ref (only on a triple-coincidence, e.g. Shekalim also landing on
+// Rosh Chodesh -- always Rosh Chodesh's own portion), maftirRef, and the
+// haftarah refs. Swap them into the parsha's own data before rendering,
+// rather than showing a second card with content that isn't fully what's
+// read that week.
+function applySpecialReading(parsha, difficulty, sr) {
+  let aliyot = parsha.aliyot;
+  let maftir = parsha.maftir;
+  let difficultyAliyot = difficulty && difficulty.aliyot;
+  if (!sr) return { aliyot, maftir, difficultyAliyot };
+  if (sr.aliyot) {
+    // sr.aliyot carries every aliyah Hebcal actually placed a number on for
+    // this specific date -- diff each one against this parsha's own static
+    // range rather than assuming only aliyah 7 moved, since reassigning
+    // aliyah 7 to Rosh Chodesh also RESHAPES aliyah 6 (it absorbs what would
+    // normally be aliyah 7's opening verses, e.g. Terumah's aliyah 6 grows
+    // from Ex 27:1-8 to 27:1-19) -- diffing generically catches that too.
+    const changedNums = new Set();
+    aliyot = aliyot.map((a) => {
+      const override = sr.aliyot[String(a.aliyah)];
+      if (!override) return a;
+      const same = override.book === a.book && override.start === a.start && override.end === a.end;
+      if (same) return a;
+      changedNums.add(String(a.aliyah));
+      const note = String(a.aliyah) === '7'
+        ? `Read from the Rosh Chodesh scroll, not ${displayParshaName(parsha.englishName || parsha.id)}'s own text.`
+        : `Extends to cover what would normally be the next aliyah too, since that one moves to the Rosh Chodesh scroll.`;
+      return { ...a, ...override, specialTrope: note };
+    });
+    if (difficultyAliyot) difficultyAliyot = difficultyAliyot.filter((a) => !changedNums.has(String(a.aliyah)));
+  }
+  if (sr.maftirRef) {
+    maftir = { ...sr.maftirRef, reason: sr.label };
+    if (difficultyAliyot) difficultyAliyot = difficultyAliyot.filter((a) => String(a.aliyah) !== 'M');
+  }
+  return { aliyot, maftir, difficultyAliyot };
+}
+
+// Lays out, in order, exactly which Torah scroll each part of this week's
+// reading comes from -- the whole point being that a reader can tell at a
+// glance "my aliyah is from the regular parsha" vs. "aliyah 7 is Rosh
+// Chodesh's portion, not [parsha]'s own text".
+function buildScrollNotice(parshaName, sr) {
+  if (!sr) return null;
+  const lines = [];
+  if (sr.scrollCount >= 2) {
+    const lastRegular = sr.aliyah7Ref ? '6th' : '7th';
+    lines.push(`1st–${lastRegular} aliyah: ${parshaName} (this parsha's own reading)`);
+    if (sr.aliyah7Ref) lines.push(`7th aliyah: Rosh Chodesh — ${citeRange(sr.aliyah7Ref)}`);
+    if (sr.maftirRef) lines.push(`Maftir: ${sr.label} — ${citeRange(sr.maftirRef)}`);
+  } else if (sr.haftaraRef) {
+    lines.push(`Torah reading: ${parshaName}, unchanged`);
+  }
+  if (sr.haftaraRef) lines.push(`Haftarah: ${sr.label} — ${citeRange(sr.haftaraRef)}`);
+  if (!lines.length) return null;
+  const title = sr.scrollCount >= 2
+    ? `This week: ${sr.label} — ${sr.scrollCount} Torah scrolls`
+    : `This week's haftarah is different: ${sr.label}`;
+  return el('div', { class: 'card subcard notes-card' }, [
+    el('h3', {}, title),
+    ...lines.map((l) => el('p', { class: 'note-line' }, l)),
+  ]);
+}
+
 export function renderParshaDetail({ parsha, haftarah, difficulty, haftarahScore, summaries, haftarahLengthRecords }, opts = {}) {
   const card = el('div', { class: 'card detail-card' });
+  const sr = opts.specialReading || null;
+  const parshaName = displayParshaName(parsha.englishName || parsha.id);
+  const { aliyot, maftir, difficultyAliyot } = applySpecialReading(parsha, difficulty, sr);
 
   const header = el('div', { class: 'detail-header' }, [
     el('div', {}, [
@@ -447,7 +518,7 @@ export function renderParshaDetail({ parsha, haftarah, difficulty, haftarahScore
         el('div', { class: 'eyebrow' }, opts.eyebrow || 'Parashat HaShavua'),
         shareButton(`parsha/${encodeURIComponent(parsha.id)}`),
       ]),
-      el('h2', {}, displayParshaName(parsha.englishName || parsha.id)),
+      el('h2', {}, parshaName),
       el('div', { class: 'hebrew-name' }, parsha.hebrewName || ''),
       el('div', { class: 'torah-range' }, parsha.torahRange),
     ]),
@@ -461,6 +532,9 @@ export function renderParshaDetail({ parsha, haftarah, difficulty, haftarahScore
   if (parsha.combined) {
     card.append(el('div', { class: 'notice' }, `Combined reading (${parsha.componentParshiot ? parsha.componentParshiot.join(' + ') : 'double parsha'}). Aliyot below reflect the divisions used when read together.`));
   }
+
+  const scrollNotice = buildScrollNotice(parshaName, sr);
+  if (scrollNotice) card.append(scrollNotice);
 
   const stats = el('div', { class: 'stat-grid' }, [
     stat('Aliyot', parsha.aliyot.length),
@@ -496,12 +570,16 @@ export function renderParshaDetail({ parsha, haftarah, difficulty, haftarahScore
 
   card.append(el('div', { class: 'card subcard' }, [
     el('div', { class: 'subcard-heading-row' }, [el('h3', {}, 'Aliyot'), el('div', { class: 'subcard-actions' }, [wholeReadingTikkunLink(parsha.aliyot)])]),
-    renderAliyahTable(parsha.aliyot, { maftir: parsha.maftir, difficultyAliyot: difficulty && difficulty.aliyot, profile: difficulty && difficulty.profile, readingId: parsha.id, summaries }),
+    renderAliyahTable(aliyot, { maftir, difficultyAliyot, profile: difficulty && difficulty.profile, readingId: parsha.id, summaries }),
   ]));
 
+  const haftarahOverridden = !!(sr && sr.haftaraRef);
+  const nusachToShow = haftarahOverridden
+    ? { ashkenazi: sr.haftaraRef, sefardi: sr.haftaraRefSefardi || { sameAs: 'ashkenazi' }, chabad: sr.haftaraRefChabad || { sameAs: 'ashkenazi' } }
+    : (haftarah ? haftarah.nusach : null);
   card.append(el('div', { class: 'card subcard' }, [
     el('h3', {}, 'Haftarah by nusach'),
-    nusachRow(haftarah ? haftarah.nusach : null, haftarahScore, summaries, haftarah ? haftarah.id : null, haftarahLengthRecords),
+    nusachRow(nusachToShow, haftarahOverridden ? null : haftarahScore, summaries, haftarahOverridden ? null : (haftarah ? haftarah.id : null), haftarahLengthRecords),
   ]));
 
   attachQuickLog(card, { readingId: parsha.id, aliyot: parsha.aliyot, maftir: parsha.maftir });
@@ -572,58 +650,27 @@ export function renderChagDetail(chag, { summaries } = {}) {
   return card;
 }
 
-// A few special-Shabbat labels (Machar Chodesh, Pinchas occurring after 17
-// Tammuz, Ki Teitzei's 3rd Haftarah of Consolation, Kedoshim following a
-// special Shabbat) are haftarah-only swaps with no separate maftir aliyah --
-// unlike Shekalim/Zachor/Parah/HaChodesh/etc., Hebcal never flags them as
-// their own calendar event, so there's no chagim.json entry to show as a
-// second card. gen_calendar.mjs captures the real substitute haftarah
-// reference directly on the parsha's own calendar row
-// (specialReading.haftaraRef); this renders that as its own small card so
-// the actual reading shows up instead of a name with nothing behind it.
-function renderHaftarahOverrideCard(specialReading, parshaName) {
-  const ref = specialReading.haftaraRef;
-  if (!ref) return null;
-  const url = sefariaUrl(ref);
-  const urls = Array.isArray(url) ? url : (url ? [url] : []);
-  const links = urls.map((u, i) => el('a', {
-    href: u, target: '_blank', rel: 'noopener', class: 'tikkun-link', title: 'Read this on Sefaria',
-  }, urls.length > 1 ? `Text ${i + 1} ↗` : 'Text ↗'));
-  const card = el('div', { class: 'card detail-card' });
-  card.append(el('div', { class: 'detail-header' }, [
-    el('div', {}, [
-      el('div', { class: 'eyebrow' }, "This week's haftarah is different"),
-      el('h2', {}, specialReading.haftara),
-    ]),
-  ]));
-  card.append(el('p', { class: 'nusach-cite' }, [citeRange(ref), ...links]));
-  card.append(el('p', { class: 'muted small' }, `Replaces ${parshaName}'s usual haftarah this week -- the Torah reading itself is unchanged. This substitution isn't difficulty-scored yet.`));
-  return card;
-}
-
-// Renders every calendar row for one date as detail cards, in calendar
-// order -- a special-Shabbat date can carry a 'holiday' row (the special
-// maftir/haftarah that actually supersedes the parsha's own reading this
-// week) ahead of the underlying 'parsha' row. The parsha row's
-// specialReading tag/override is shown directly with its own card, since it
-// describes what's different about THIS week's version of that parsha.
+// Renders every calendar row for one date as detail cards. A special-
+// Shabbat date (Shekalim/Zachor/Parah/HaChodesh/HaGadol/Shuva, Rosh
+// Chodesh, Chanukah-on-Shabbat) never carries a second 'holiday' row --
+// gen_calendar.mjs folds that week's actual reading directly into the
+// parsha row's specialReading, and renderParshaDetail applies it -- so
+// there's exactly one card per date except for Chol HaMoed Shabbat and
+// genuinely independent festivals (Pesach/Sukkot/Rosh Hashana/Yom Kippur/
+// Shavuot), which still stand alone as their own 'holiday' row/card since
+// no parsha competes with them that week.
 export async function renderDateCards(rows, { parshaEyebrow = 'Parashat HaShavua', showDate = false, extraBanner = [] } = {}) {
   const summaries = await getAliyahSummaries();
-  const hasHolidaySibling = rows.some((r) => r.type === 'holiday');
   const nodes = [];
   for (const row of rows) {
     if (row.type === 'parsha') {
       const detail = await getParshaDetail(row.parshaId);
       if (!detail) continue;
-      if (row.specialReading && row.specialReading.haftaraRef && !hasHolidaySibling) {
-        nodes.push(renderHaftarahOverrideCard(row.specialReading, displayParshaName(detail.parsha.englishName || detail.parsha.id)));
-      }
       const bannerParts = [];
       if (showDate) bannerParts.push(el('span', { class: 'date-banner-date' }, formatDateLong(row.date)));
       bannerParts.push(...extraBanner);
-      if (row.specialReading) bannerParts.push(el('span', { class: 'tag' }, Object.values(row.specialReading).find((v) => typeof v === 'string')));
       if (bannerParts.length) nodes.push(el('div', { class: 'date-banner' }, bannerParts));
-      nodes.push(renderParshaDetail(detail, { eyebrow: parshaEyebrow }));
+      nodes.push(renderParshaDetail(detail, { eyebrow: parshaEyebrow, specialReading: row.specialReading }));
     } else {
       const chag = await getChagById(row.chagId);
       if (chag) nodes.push(renderChagDetail(chag, { summaries }));

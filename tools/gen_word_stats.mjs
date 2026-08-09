@@ -27,6 +27,40 @@ const BOOK_EN_TO_HE = {
 
 const TROPE = /[֑-֯]/g;
 const NIQQUD = /[ְ-ׇּׁׂ]/g;
+
+// ---- Cantillation (trope) marks, by how often they actually occur ----
+// Counted directly across all 5,846 Torah verses rather than assumed. The
+// two tiers below are cut by measured frequency, not by reputation:
+//
+//   Tier A -- 4 or fewer occurrences in the ENTIRE Torah. A reader may go
+//   years without meeting one. Verified counts: yerach ben yomo 1x
+//   (Num 35:5 -- the single rarest mark in the Torah), shalshelet 4x,
+//   merkha kefula 4x. Karnei parah is listed for completeness but does not
+//   appear as its own codepoint in this source text.
+//
+//   Tier B -- uncommon but not exotic: present in roughly 2-9% of verses.
+//   Density of these is what makes one aliyah's cantillation genuinely
+//   busier than another's.
+//
+// Everything else (tipcha, munach, merkha, etnachta, zaqef qatan, pashta,
+// qadma, mahpach, tevir, revia, geresh, darga) appears in 17-99% of verses
+// -- ordinary furniture, deliberately not scored.
+const TROPE_TIER_A = new Map([
+  ['֪', 'yerach ben yomo'],
+  ['֓', 'shalshelet'],
+  ['֦', 'merkha kefula'],
+  ['֟', 'karnei parah'],
+]);
+const TROPE_TIER_B = new Map([
+  ['֡', 'pazer'],
+  ['֠', 'telisha gedola'],
+  ['֩', 'telisha qetana'],
+  ['֚', 'yetiv'],
+  ['֘', 'zarqa'],
+  ['֒', 'segol'],
+  ['֞', 'gershayim'],
+  ['֕', 'zaqef gadol'],
+]);
 const METEG = /ֽ/g; // secondary-stress mark, not a real vowel -- see stripMeteg below
 const DAGESH = /ּ/g;
 const CHATAF = /[ֱֲֳ]/;
@@ -162,6 +196,47 @@ const HOMOGRAPH_SKELETONS = new Map([
   ['רעה', '"shepherd" vs. "evil/bad" -- about as different as two meanings get, and they appear in the very same verse, Genesis 37:2'],
 ]);
 
+// How formulaic an aliyah is -- measured, not inferred from the parsha's
+// general character. Formulaic text is EASIER to prepare (once you have the
+// template, each repeat costs less than equivalent novel text), so this
+// feeds difficulty negatively; see difficulty-rubric.md.
+//
+// Two different shapes of repetition need catching, and one measure alone
+// misses half of them:
+//
+//   1. Verbatim block repetition -- the Nesiim offerings (Num 7) repeat
+//      whole paragraphs near-identically. Recurring word 4-grams catch this.
+//   2. Template repetition -- the 42 journey stations (Num 33) repeat the
+//      frame "traveled from X, camped at Y" while every content word
+//      changes. 4-grams score this a flat 0%; repeated verse-openings catch
+//      it at 90%. Genealogies and the daily-offering lists behave the same.
+//
+// Taking the max of the two means an aliyah counts as formulaic if EITHER
+// kind of pattern is present, which is what a reader actually experiences.
+function recurringNgramShare(words, n = 4) {
+  if (words.length < n * 2) return 0;
+  const seen = new Map();
+  for (let i = 0; i + n <= words.length; i++) {
+    const g = words.slice(i, i + n).join(' ');
+    seen.set(g, (seen.get(g) || 0) + 1);
+  }
+  let dup = 0, total = 0;
+  for (const c of seen.values()) { total += c; if (c > 1) dup += c; }
+  return total === 0 ? 0 : dup / total;
+}
+function repeatedVerseOpeningShare(verses) {
+  if (verses.length < 3) return 0; // too few verses for "a pattern" to mean anything
+  const opens = new Map();
+  for (const v of verses) {
+    const first = v.words[0]?.consonantal;
+    if (!first) continue;
+    opens.set(first, (opens.get(first) || 0) + 1);
+  }
+  let repeated = 0;
+  for (const c of opens.values()) if (c > 1) repeated += c;
+  return repeated / verses.length;
+}
+
 // ---- pass 1: load every Torah verse once, tokenize, build frequency table ----
 const versesByBookChapter = {}; // { Genesis: { 1: [{verse, words:[{surface, consonantal}]}] } }
 const freq = new Map(); // consonantal form -> count
@@ -179,9 +254,21 @@ for (const [bookEn, bookHe] of Object.entries(BOOK_EN_TO_HE)) {
         const cons = stripNiqqud(surface); // consonants only -- used for frequency
         freq.set(cons, (freq.get(cons) || 0) + 1);
         totalTokens++;
-        return { surface, consonantal: cons };
+        return { surface, consonantal: cons, withTrope: surfaceTrope };
       });
-      return { verse: v.verse, words, ketivQere: extractKetivQere(v.text) };
+      // Cantillation actually present in this verse, kept alongside the
+      // stripped forms so trope can be measured per-aliyah from the real
+      // text instead of inferred from the parsha's general character.
+      const tierA = [];
+      let tierB = 0;
+      for (const w of words) {
+        for (const chr of w.withTrope) {
+          const a = TROPE_TIER_A.get(chr);
+          if (a) tierA.push({ mark: a, word: stripTrope(w.withTrope) });
+          else if (TROPE_TIER_B.has(chr)) tierB++;
+        }
+      }
+      return { verse: v.verse, words, ketivQere: extractKetivQere(v.text), tierA, tierB };
     });
     ch++;
   }
@@ -355,7 +442,31 @@ function rawAliyahStats(bookEn, startRef, endRef) {
   lookAlikePairsRaw.sort((x, y) => y.severity - x.severity || (x.a.length + x.b.length) - (y.a.length + y.b.length));
   const lookAlikeWordPairs = lookAlikePairsRaw.slice(0, 3).map(({ a, b }) => ({ a, b }));
 
-  return { wordCount: words.length, rawRarity, rawPron, rareExamples, hardToPronounceExamples: hardExamples, ambiguousSpellingExamples, lookAlikeWordPairs, lookAlikePairCount: lookAlikePairsRaw.length };
+  // ---- measured cantillation (see TROPE_TIER_A/B above) ----
+  // Tier A marks are surfaced individually: a shalshelet or a yerach ben
+  // yomo is a discrete "you will meet this once in years" event, not a
+  // density. Tier B is a density -- how busy this aliyah's trope is
+  // relative to its length.
+  const rareTropeMarks = [];
+  const seenMark = new Set();
+  let uncommonTropeCount = 0;
+  for (const v of verses) {
+    for (const t of v.tierA) {
+      const key = `${t.mark}@${v.verse}`;
+      if (seenMark.has(key)) continue;
+      seenMark.add(key);
+      rareTropeMarks.push({ mark: t.mark, word: t.word, verse: v.verse });
+    }
+    uncommonTropeCount += v.tierB;
+  }
+  const uncommonTropeDensity = uncommonTropeCount / words.length;
+
+  const repetitionRatio = Math.max(
+    recurringNgramShare(words.map(w => w.consonantal), 4),
+    repeatedVerseOpeningShare(verses),
+  );
+
+  return { wordCount: words.length, rawRarity, rawPron, rareExamples, hardToPronounceExamples: hardExamples, ambiguousSpellingExamples, lookAlikeWordPairs, lookAlikePairCount: lookAlikePairsRaw.length, rareTropeMarks, uncommonTropeDensity, repetitionRatio };
 }
 
 // ---- gather every aliyah (individual parshiot, combined parshiot, chagim) ----
@@ -388,6 +499,8 @@ for (const c of chagim) {
 // ---- percentile-rank each aliyah's raw stats against all other aliyot ----
 const rawRarities = entries.map(e => e.raw.rawRarity).sort((a, b) => a - b);
 const rawPronunciations = entries.map(e => e.raw.rawPron).sort((a, b) => a - b);
+const rawTropeDensities = entries.map(e => e.raw.uncommonTropeDensity).sort((a, b) => a - b);
+const rawRepetitions = entries.map(e => e.raw.repetitionRatio).sort((a, b) => a - b);
 function percentileRank(sortedAsc, value) {
   let idx = sortedAsc.findIndex(v => v >= value);
   if (idx === -1) idx = sortedAsc.length - 1;
@@ -400,10 +513,20 @@ for (const e of entries) {
   const rarity = round1(percentileRank(rawRarities, e.raw.rawRarity));
   const pronunciation = round1(percentileRank(rawPronunciations, e.raw.rawPron));
   const vocab = clamp(Math.round((rarity + pronunciation) / 2));
+  // Both percentile-ranked against every other aliyah, the same way rarity
+  // and pronunciation already are -- these are continuous, well-spread
+  // measurements, which is exactly the case percentile-ranking suits (unlike
+  // the zero-inflated lookAlikePairCount; see difficulty-rubric.md).
+  // 'formulaicity' is oriented so HIGHER = more repetitive; the consumer
+  // inverts it, since formulaic text is easier to prepare, not harder.
+  const tropeRarity = round1(percentileRank(rawTropeDensities, e.raw.uncommonTropeDensity));
+  const formulaicity = round1(percentileRank(rawRepetitions, e.raw.repetitionRatio));
   result[e.groupId] ??= {};
   result[e.groupId][e.aliyahKey] = {
     wordCount: e.raw.wordCount,
     rarity, pronunciation, vocab,
+    tropeRarity, formulaicity,
+    rareTropeMarks: e.raw.rareTropeMarks,
     rareExamples: e.raw.rareExamples,
     hardToPronounceExamples: e.raw.hardToPronounceExamples,
     ambiguousSpellingExamples: e.raw.ambiguousSpellingExamples,

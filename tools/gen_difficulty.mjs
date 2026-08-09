@@ -68,29 +68,52 @@ const PARSHA_PROFILE = {
 // against this parsha's actual verse ranges in parshiot.json /
 // parshiot-combined.json, not assumed.
 //
-// Note on repetition overrides below: formulaic repeated passages (Nesiim,
-// journey-stations) get a NEGATIVE repetition adjustment (easier once
-// you've got the template) plus a small hidden-challenge bump (the real
-// risk is losing track of which repetition you're on, not the repetition
-// itself). Eisav's genealogy (Gen 36) has no such override anymore -- it's
-// not a repeated formula, just many distinct rare names in a row, which
-// the real word-frequency vocabulary score already captures accurately
-// (see word-difficulty.json) without double-counting it here too.
+// What belongs here now: only the things the text itself cannot reveal.
+// Trope density, rare cantillation marks and formulaicity are all measured
+// per-aliyah from the real text (see gen_word_stats.mjs), so overrides for
+// those have been deleted rather than left to drift out of sync. What
+// remains is special melodies and scroll layouts (`tropeFloor`), reading
+// customs like the Tochacha, and the risk of losing your place inside a
+// repeated formula -- none of which are visible in the words or the marks.
 const ALIYAH_OVERRIDES = {
-  'Beshalach:4':   { trope: +3, hidden: +2, note: 'Shirat HaYam / Az Yashir (Ex 15:1-19) -- special brick-layout & elevated melody' },
-  'Yitro:6':       { trope: +3, hidden: +2, note: 'Aseret HaDibrot (Ex 20:2-14) -- ta\'am elyon alternate cantillation' },
-  'Vaetchanan:4':  { trope: +2, hidden: +1, note: 'Aseret HaDibrot repeated (Deut 5:6-18) -- ta\'am elyon in many congregations' },
-  "Ha'azinu:1":    { trope: +1, hidden: +1, note: 'Opening of Shirat Ha\'azinu -- poetic column layout' },
-  'Vayera:3':      { hidden: +2, note: 'Contains a shalshelet (Gen 19:16, Lot lingers) -- a trope mark used only 4x in the whole Torah' },
-  'Chayei Sara:3': { hidden: +2, note: 'Contains a shalshelet (Gen 24:12, Eliezer prays)' },
-  'Vayeshev:6':    { hidden: +2, note: 'Contains a shalshelet (Gen 39:8, Yosef refuses)' },
-  'Tzav:6':        { hidden: +2, note: 'Contains a shalshelet (Lev 8:23, miluim blood on Aharon\'s ear)' },
-  'Nasso:5':       { repetition: -3, hidden: +1, note: 'Start of the 12 nearly-identical Nesiim offerings (Num 7:1-41) -- the repeated formula is easier once learned, but it\'s easy to grab the wrong nasi\'s paragraph' },
-  'Nasso:6':       { repetition: -3, hidden: +1, note: 'Nesiim offerings continue (Num 7:42-71) -- same formula, same risk of losing track of which day/nasi you\'re on' },
-  'Nasso:7':       { repetition: -3, hidden: +1, note: 'Nesiim offerings conclude (Num 7:72-89) -- same formula, same risk of losing track of which day/nasi you\'re on' },
-  'Masei:1':       { repetition: -1, note: 'Journey-stations list begins (Num 33:1-10)' },
-  'Masei:2':       { repetition: -3, hidden: +1, note: 'Bulk of the 42 journey-stations list (Num 33:11-49) -- the repeated "traveled from...camped at..." formula is easier once learned, but it\'s a long sequence of distinct place names to keep straight' },
-  'Matot-Masei:4': { repetition: -2, hidden: +1, note: 'Contains the bulk of the 42 journey-stations list (Num 33:1-49) alongside the Reuven/Gad settlement narrative -- the list\'s repeated formula eases it, but it\'s a long, 72-verse aliyah with many station names to keep straight' },
+  // `tropeFloor` sets a MINIMUM trope score, applied after the measured
+  // mark-density. It exists because a handful of passages are hard to chant
+  // for a reason the marks themselves cannot show: the reader has to learn a
+  // separate melody or read from an unusual scroll layout. Shirat Ha'azinu
+  // is the clearest case -- it is chanted to its own tune from a two-column
+  // layout, yet its cantillation marks are entirely ordinary, so pure
+  // density scores it near the bottom. Floors, not bumps, because the
+  // difficulty is "there is a whole other melody to learn," which doesn't
+  // scale with how busy the marks happen to be.
+  'Beshalach:4':   { trope: +3, tropeFloor: 9, hidden: +2, note: 'Shirat HaYam / Az Yashir (Ex 15:1-19) -- special brick-layout & elevated melody' },
+  'Yitro:6':       { trope: +3, tropeFloor: 9, hidden: +2, note: 'Aseret HaDibrot (Ex 20:2-14) -- ta\'am elyon alternate cantillation' },
+  'Vaetchanan:4':  { trope: +2, tropeFloor: 9, hidden: +1, note: 'Aseret HaDibrot repeated (Deut 5:6-18) -- ta\'am elyon in many congregations' },
+  "Ha'azinu:1":    { tropeFloor: 9, hidden: +1, note: 'Shirat Ha\'azinu (Deut 32:1-43) -- its own melody, read from a two-column layout' },
+  "Ha'azinu:2":    { tropeFloor: 9, hidden: +1, note: 'Shirat Ha\'azinu -- its own melody, read from a two-column layout' },
+  "Ha'azinu:3":    { tropeFloor: 9, hidden: +1, note: 'Shirat Ha\'azinu -- its own melody, read from a two-column layout' },
+  "Ha'azinu:4":    { tropeFloor: 9, hidden: +1, note: 'Shirat Ha\'azinu -- its own melody, read from a two-column layout' },
+  "Ha'azinu:5":    { tropeFloor: 9, hidden: +1, note: 'Shirat Ha\'azinu -- its own melody, read from a two-column layout' },
+  "Ha'azinu:6":    { tropeFloor: 9, hidden: +1, note: 'Shirat Ha\'azinu concludes (through Deut 32:43) -- its own melody, read from a two-column layout' },
+  // NOTE: the four shalshelet entries that used to live here (Vayera:3,
+  // Chayei Sara:3, Vayeshev:6, Tzav:6) have been REMOVED -- rare trope marks
+  // are now detected directly from the cantillation in the text. The
+  // auto-detection reproduces all four exactly, and additionally catches the
+  // four merkha kefula and the single yerach ben yomo (Num 35:5, the rarest
+  // mark in the Torah) that hand-curation had missed.
+  //
+  // Likewise, the `repetition:` adjustments that used to sit on Nasso:5-7,
+  // Masei:1-2, Matot-Masei:4 and the Sukkot chol-hamoed readings are gone:
+  // formulaicity is measured per-aliyah now. That also silently fixed a
+  // mis-targeting -- the Sukkot repetition override sat on aliyah 1, which
+  // measures 0% internal repetition, while the actually-formulaic reading is
+  // aliyah 4. What remains below is only the part text can't see: the risk of
+  // losing your place inside a formula and reading the wrong day's or
+  // nasi's paragraph.
+  'Nasso:5':       { hidden: +1, note: 'Start of the 12 nearly-identical Nesiim offerings (Num 7:1-41) -- easy to grab the wrong nasi\'s paragraph' },
+  'Nasso:6':       { hidden: +1, note: 'Nesiim offerings continue (Num 7:42-71) -- same formula, same risk of losing track of which day/nasi you\'re on' },
+  'Nasso:7':       { hidden: +1, note: 'Nesiim offerings conclude (Num 7:72-89) -- same formula, same risk of losing track of which day/nasi you\'re on' },
+  'Masei:2':       { hidden: +1, note: 'Bulk of the 42 journey-stations list (Num 33:11-49) -- a long sequence of distinct place names to keep straight' },
+  'Matot-Masei:4': { hidden: +1, note: 'Contains the bulk of the 42 journey-stations list (Num 33:1-49) alongside the Reuven/Gad settlement narrative -- many station names to keep straight' },
   'Bechukotai:3':  { hidden: +3, note: 'Tochacha (curses, Lev 26:14-46) -- traditional custom to read quickly and quietly' },
   'Behar-Bechukotai:5': { hidden: +3, note: 'Tochacha (curses, Lev 26:14-46) -- traditional custom to read quickly and quietly' },
   'Ki Tavo:5':     { hidden: +1, note: 'The 12 curses of Har Eival (Deut 27:15-26) -- repetitive "cursed be... amen" refrain' },
@@ -145,15 +168,29 @@ function blendProfile(tags) {
   return out;
 }
 
-// ---- length score: percentile rank of verse count across ALL individual-parsha aliyot ----
+// ---- length score: percentile rank of WORD count across ALL individual-parsha aliyot ----
 // (Combined parshiot and chagim are scored against this same fixed scale --
-// not re-based on their own population -- so a 20-verse aliyah always means
+// not re-based on their own population -- so a 200-word aliyah always means
 // the same length score everywhere in the dataset.)
+//
+// Word count, not verse count. Verses are not equal units: across the
+// dataset they run from 6.1 to 21.0 words each, a 3.4x spread. Ranking by
+// verses instead of words moves some aliyot by more than 200 places out of
+// 858 -- e.g. Tazria 7 is 5 verses but 102 words (20.4 w/v), while the
+// Sukkot chol-hamoed 4th aliyot are 6 verses but only 54 words (9.0 w/v),
+// so the "shorter" reading is nearly twice the text. Since length carries
+// half the final score, that error dominated everything else in the rubric.
+const MEAN_WORDS_PER_VERSE = 13.57; // dataset mean, only used if word data is missing
 const allCounts = [];
-for (const p of parshiot) for (const a of p.aliyot) allCounts.push(a.verses);
+for (const p of parshiot) {
+  for (const a of p.aliyot) {
+    const wc = wordDifficulty[p.id]?.[String(a.aliyah)]?.wordCount;
+    if (wc) allCounts.push(wc);
+  }
+}
 allCounts.sort((a,b)=>a-b);
-function lengthScore(verses) {
-  let idx = allCounts.findIndex(v => v >= verses);
+function lengthScore(wordCount) {
+  let idx = allCounts.findIndex(v => v >= wordCount);
   if (idx === -1) idx = allCounts.length - 1;
   const pct = idx / (allCounts.length - 1); // 0..1
   return clamp10(1 + pct * 9); // 1..10
@@ -179,11 +216,28 @@ function scoreReadingRaw(id, items, tags, overridesMap, familiarMap) {
     const wd = wordDifficulty[id]?.[item.key];
     const vocabBase = wd ? wd.vocab : 5; // fallback should never actually trigger
     const vocab = clamp10(vocabBase + (fam.vocab || 0));
-    const trope = clamp10(base.trope + (ov.trope || 0));
-    const repetition = clamp10(base.repetition + (ov.repetition || 0));
+    // Trope is now measured per-aliyah from the actual cantillation in the
+    // text (density of genuinely uncommon marks -- see TROPE_TIER_B in
+    // gen_word_stats.mjs), not inferred from the parsha's general character.
+    // The hand overrides that remain are the ones text can't show: special
+    // melodies (Az Yashir, ta'am elyon) that a reader must learn separately.
+    const trope = Math.max(
+      clamp10((wd ? wd.tropeRarity : base.trope) + (ov.trope || 0)),
+      ov.tropeFloor || 0,
+    );
+    // Formulaic text is EASIER once the template is learned, so the measured
+    // formulaicity (1-10, higher = more repetitive) is inverted into a
+    // "how much genuinely novel text" score that adds to difficulty.
+    const repetition = clamp10((wd ? 11 - wd.formulaicity : base.repetition) + (ov.repetition || 0));
     const ambiguousBump = wd && wd.ambiguousSpellingExamples && wd.ambiguousSpellingExamples.length ? 1 : 0;
-    const hidden = clamp10(base.hidden + (ov.hidden || 0) + (fam.hidden || 0) + ambiguousBump + lookAlikeBump(wd));
-    const length = lengthScore(item.verses);
+    // A shalshelet / yerach ben yomo / merkha kefula is a discrete "you may
+    // not have met this mark in years" event rather than a density, so it
+    // lands in gotchas, matching the +2 the hand-written shalshelet
+    // overrides used to apply -- now detected from the text for all three
+    // marks instead of just the four shalshelets someone remembered.
+    const rareTropeBump = wd && wd.rareTropeMarks && wd.rareTropeMarks.length ? 2 : 0;
+    const hidden = clamp10(base.hidden + (ov.hidden || 0) + (fam.hidden || 0) + ambiguousBump + rareTropeBump + lookAlikeBump(wd));
+    const length = lengthScore(wd ? wd.wordCount : Math.round(item.verses * MEAN_WORDS_PER_VERSE));
     const rawFinal = (length*RUBRIC_WEIGHTS.length + vocab*RUBRIC_WEIGHTS.vocab + trope*RUBRIC_WEIGHTS.trope +
                        repetition*RUBRIC_WEIGHTS.repetition + hidden*RUBRIC_WEIGHTS.hidden) / TOTAL_WEIGHT;
     const entry = {
@@ -192,12 +246,16 @@ function scoreReadingRaw(id, items, tags, overridesMap, familiarMap) {
       rawFinal,
     };
     if (wd) {
+      entry.wordCount = wd.wordCount; // length is scored on words, so show them
       entry.vocabDetail = { rarity: wd.rarity, pronunciation: wd.pronunciation, rareExamples: wd.rareExamples, hardToPronounceExamples: wd.hardToPronounceExamples };
       if (wd.ambiguousSpellingExamples && wd.ambiguousSpellingExamples.length) {
         entry.ambiguousSpellingExamples = wd.ambiguousSpellingExamples;
       }
       if (wd.lookAlikeWordPairs && wd.lookAlikeWordPairs.length) {
         entry.lookAlikeWordPairs = wd.lookAlikeWordPairs;
+      }
+      if (wd.rareTropeMarks && wd.rareTropeMarks.length) {
+        entry.rareTropeMarks = wd.rareTropeMarks;
       }
     }
     const notes = [ov.note, fam.note].filter(Boolean);
@@ -250,14 +308,18 @@ function chagProfile(name) {
 const CHAG_OVERRIDES = {};
 for (const region of ['DIASPORA', 'IL']) {
   Object.assign(CHAG_OVERRIDES, {
-    [`Shavuot I__${region}:4`]: { trope: +3, hidden: +2, note: 'Aseret HaDibrot (Ex 20:2-14) -- ta\'am elyon alternate cantillation' },
-    [`Shavuot__${region}:4`]:   { trope: +3, hidden: +2, note: 'Aseret HaDibrot (Ex 20:2-14) -- ta\'am elyon alternate cantillation' },
-    [`Pesach VII__${region}:5`]:{ trope: +3, hidden: +2, note: 'Shirat HaYam / Az Yashir (Ex 14:26-15:26) -- special brick-layout & elevated melody' },
-    [`Sukkot III (CH''M)__${region}:1`]: { repetition: -2, hidden: +1, note: 'Start of the daily-decreasing bull count (Num 29) -- the repeated offering formula is easy once learned, but each day\'s bull count is one lower than the day before, so it\'s easy to default to the wrong number' },
-    [`Sukkot IV (CH''M)__${region}:1`]:  { repetition: -2, hidden: +1, note: 'Daily-decreasing bull count continues (Num 29) -- same formula, same risk of defaulting to the wrong day\'s number' },
-    [`Sukkot V (CH''M)__${region}:1`]:   { repetition: -2, hidden: +1, note: 'Daily-decreasing bull count continues (Num 29) -- same formula, same risk of defaulting to the wrong day\'s number' },
-    [`Sukkot VI (CH''M)__${region}:1`]:  { repetition: -2, hidden: +1, note: 'Daily-decreasing bull count continues (Num 29) -- same formula, same risk of defaulting to the wrong day\'s number' },
-    [`Sukkot VII (Hoshana Raba)__${region}:1`]: { repetition: -2, hidden: +1, note: 'Daily-decreasing bull count concludes (Num 29) -- same formula, same risk of defaulting to the wrong day\'s number' },
+    [`Shavuot I__${region}:4`]: { trope: +3, tropeFloor: 9, hidden: +2, note: 'Aseret HaDibrot (Ex 20:2-14) -- ta\'am elyon alternate cantillation' },
+    [`Shavuot__${region}:4`]:   { trope: +3, tropeFloor: 9, hidden: +2, note: 'Aseret HaDibrot (Ex 20:2-14) -- ta\'am elyon alternate cantillation' },
+    [`Pesach VII__${region}:5`]:{ trope: +3, tropeFloor: 9, hidden: +2, note: 'Shirat HaYam / Az Yashir (Ex 14:26-15:26) -- special brick-layout & elevated melody' },
+    // Repetition adjustments removed here too -- measured per-aliyah now,
+    // which also corrects these: the formulaic reading on these days is
+    // aliyah 4 (which re-covers two days' paragraphs), not aliyah 1. What
+    // stays is the genuine hidden risk these notes describe.
+    [`Sukkot III (CH''M)__${region}:1`]: { hidden: +1, note: 'Start of the daily-decreasing bull count (Num 29) -- each day\'s bull count is one lower than the day before, so it\'s easy to default to the wrong number' },
+    [`Sukkot IV (CH''M)__${region}:1`]:  { hidden: +1, note: 'Daily-decreasing bull count continues (Num 29) -- same risk of defaulting to the wrong day\'s number' },
+    [`Sukkot V (CH''M)__${region}:1`]:   { hidden: +1, note: 'Daily-decreasing bull count continues (Num 29) -- same risk of defaulting to the wrong day\'s number' },
+    [`Sukkot VI (CH''M)__${region}:1`]:  { hidden: +1, note: 'Daily-decreasing bull count continues (Num 29) -- same risk of defaulting to the wrong day\'s number' },
+    [`Sukkot VII (Hoshana Raba)__${region}:1`]: { hidden: +1, note: 'Daily-decreasing bull count concludes (Num 29) -- same risk of defaulting to the wrong day\'s number' },
   });
 }
 const CHAG_FAMILIAR = {};

@@ -714,13 +714,46 @@ clear the ratio test, and nobody fumbles "Egypt" or "Aaron." Correlation
 with the existing word-rarity score is only 0.22, so it adds genuinely new
 information rather than re-counting rare words.
 
-**Result.** Measured signals now supply 28% of the average gotchas score
-rather than 20%, and the share of aliyot with no measured signal at all fell
-from 39% to 25%. The bump spreads properly across its range (0 through 5)
-instead of clustering. Re'eh's 3rd aliyah -- the reading that prompted this
-whole line of work, with two nekudot homographs plus a Ketiv/Qere -- now
-scores the highest gotchas in the Torah, which is the outcome the change was
-meant to produce.
+**Then a ranking failure showed up, and the combination rule had to change.**
+Adding a capped bump to the category baseline looked reasonable but produced
+an order nobody would defend. Raw measured points run from 0 to 15.25 while
+the bump was capped at 5, so everything above 8 points collapsed together and
+the baseline -- a 6-point swing driven purely by parsha category -- decided
+the ranking:
+
+| Aliyah | Measured points | Old gotchas |
+|---|---|---|
+| Vayishlach 5 | **15.25** | 9 |
+| Toldot 5 | 12.00 | **7** |
+| Ha'azinu 3 | **4.50** | **10** |
+
+Ha'azinu 3 has barely a third of Vayishlach 5's measured signal and outscored
+it, because POETRY carries a baseline of 8 and NARRATIVE carries 2.
+
+The fix is to take the **maximum** of the two rather than their sum. Gotchas
+has two genuinely independent sources -- textual traps we can measure, and
+contextual risks we cannot (the Tochacha read-quiet custom, a two-column
+poetic layout, a reading that comes round once a year). An aliyah is risky if
+*either* is high, so the score should follow whichever dominates rather than
+accumulating unrelated things. Hand overrides still add on top, since those
+encode a risk additional to both. Raw points are mapped to 0-10 by a fixed
+ladder, deliberately not percentile-ranked: at 34% zeros they would hit the
+same zero-inflation trap documented for pair counts above.
+
+**Result.** Gotchas now tracks the measured signal monotonically at the top
+(15.25 pts -> 10, 12.25 -> 9, 12.00 -> 9, 10.00 -> 8), and its correlation
+with measured points rose from 0.39 to 0.57. Ceiling saturation fell from 12
+aliyot pinned at 10 to 4. The share of aliyot with no measured signal at all
+fell from 39% to 25%. Gotchas' own spread narrowed (sd 1.80 to 1.37) because
+the max rule stops unrelated signals stacking, but the final score's spread
+is essentially unchanged (1.89 to 1.86) -- the ordering got better without
+costing any discriminating power overall.
+
+Re'eh's 3rd aliyah -- the reading that prompted this line of work -- lands at
+gotchas 8 with 8.25 measured points. An earlier draft of this document
+claimed it was the highest in the Torah; that was wrong. It was one of twelve
+aliyot tied at the old ceiling, and under the corrected rule Vayishlach 5 is
+the genuine top on measured signal.
 
 ## Known limitations / where to improve this next
 

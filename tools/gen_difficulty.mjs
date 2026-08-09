@@ -167,7 +167,7 @@ function clamp10(n) { return Math.max(0, Math.min(10, Math.round(n))); }
 // Counts are used, not just presence. Previously any number of Ketiv/Qere
 // scored a flat +1, so an aliyah with seven of them ranked level with one
 // that had a single instance; 44 aliyot carry two or more.
-function measuredGotchaBump(wd) {
+function measuredGotchaPoints(wd) {
   if (!wd) return 0;
   const homographs = wd.homographPairCount || 0;
   const nearMisses = wd.nearMissPairCount || 0;
@@ -182,12 +182,23 @@ function measuredGotchaBump(wd) {
   pts += nearMisses * 0.5; // one internal ו/י apart
   if (names >= 9) pts += 1.5;
   else if (names >= 7) pts += 0.75;
+  return pts;
+}
 
-  if (pts >= 8) return 5;
-  if (pts >= 5.5) return 4;
-  if (pts >= 3.5) return 3;
-  if (pts >= 2) return 2;
-  if (pts >= 1) return 1;
+// Raw points run 0 to 15.25 and are 34% zero, so they are NOT percentile-
+// ranked -- that is the same zero-inflation trap documented for pair counts
+// earlier in difficulty-rubric.md. A fixed ladder keeps the top end
+// distinguishable instead of collapsing everything above 8 points together.
+function measuredGotchaScore(pts) {
+  if (pts >= 14) return 10;
+  if (pts >= 11) return 9;
+  if (pts >= 8) return 8;
+  if (pts >= 6) return 7;
+  if (pts >= 4.5) return 6;
+  if (pts >= 3) return 5;
+  if (pts >= 2) return 4;
+  if (pts >= 1) return 3;
+  if (pts > 0) return 2;
   return 0;
 }
 function blendProfile(tags) {
@@ -259,7 +270,19 @@ function scoreReadingRaw(id, items, tags, overridesMap, familiarMap) {
     // formulaicity (1-10, higher = more repetitive) is inverted into a
     // "how much genuinely novel text" score that adds to difficulty.
     const repetition = clamp10((wd ? 11 - wd.formulaicity : base.repetition) + (ov.repetition || 0));
-    const hidden = clamp10(base.hidden + (ov.hidden || 0) + (fam.hidden || 0) + measuredGotchaBump(wd));
+    // MAX, not sum. Gotchas has two independent sources: textual traps we can
+    // measure (nekudot homographs, Ketiv/Qere, rare marks, name runs) and
+    // contextual risks we can't (the Tochacha read-quiet custom, a two-column
+    // poetic layout, a reading that comes round once a year). An aliyah is
+    // risky if EITHER is high, so the score takes whichever dominates.
+    //
+    // Summing them was wrong and produced a visible ranking failure:
+    // Ha'azinu 3, with barely a third of the measured signal of Vayishlach 5,
+    // outscored it 10 to 9 purely because POETRY carries a base of 8 while
+    // NARRATIVE carries 2. Hand overrides still add on top, since those
+    // encode a risk genuinely additional to both.
+    const measured = measuredGotchaScore(measuredGotchaPoints(wd));
+    const hidden = clamp10(Math.max(base.hidden, measured) + (ov.hidden || 0) + (fam.hidden || 0));
     const length = lengthScore(wd ? wd.wordCount : Math.round(item.verses * MEAN_WORDS_PER_VERSE));
     const rawFinal = (length*RUBRIC_WEIGHTS.length + vocab*RUBRIC_WEIGHTS.vocab + trope*RUBRIC_WEIGHTS.trope +
                        repetition*RUBRIC_WEIGHTS.repetition + hidden*RUBRIC_WEIGHTS.hidden) / TOTAL_WEIGHT;

@@ -67,12 +67,19 @@ export async function renderHowItWorks(container) {
     p('A handful of passages are recited so often in davening -- twice a day, in some cases -- that most regular daveners already know them by heart: the Shema, the Aseret HaDibrot, Birkat Kohanim, and Az Yashir. Their vocabulary and gotcha scores are eased to reflect that. Length and trope are left alone, since the passage is still just as long and the special melody still has to be learned.'),
   ));
 
+  container.append(section('Haftarot are scored too, out of 7 rather than 10',
+    p('A haftarah is chanted from a printed, vocalized text -- the nekudot and the trope marks are both already on the page. That removes the single biggest source of Torah-reading risk: guessing which vowels an unpointed word takes, look-alike pairs, and Ketiv/Qere. The whole Gotchas criterion simply doesn\'t apply, so it isn\'t counted.'),
+    p('What\'s left is scored the same way: length in words (40%), vocabulary (30% -- weighted higher here, since unfamiliar words are most of what remains to trip over), trope (20%) and repetition (10%). Word rarity is judged against the Torah plus Nevi\'im together, because judging prophetic vocabulary against the Chumash alone would make ordinary Nevi\'im words look far rarer than they really are to someone who reads haftarot.'),
+    p('Haftarot are banded 1-7 rather than 1-10. They\'re genuinely easier than the equivalent Torah reading, but not trivial -- haftarah trope is a separate melody you have to learn, and they aren\'t short (the median is 324 words, against 195 for a typical aliyah; Shirat Devorah runs to 744). Only the Ashkenazi reading is scored so far.'),
+  ));
+
   container.append(section('Double parshiot and holidays are scored for real',
     p('The 7 "double" parshiot (like Vayakhel-Pekudei) are scored against their actual combined-reading aliyah divisions, not averaged from the two separate parshiot. Every holiday, fast day, Rosh Chodesh, and special Shabbat with its own Torah reading is scored the same way, on the same scale, so any two readings on this site can be fairly compared.'),
   ));
 
   container.append(section('Scores use the full range',
-    p('Once every aliyah has a raw score, the whole set is stretched so the single hardest reading on the site becomes a real 10 and the single easiest becomes a real 1. That keeps the 1-10 scale meaningful instead of everything bunching up in the middle.'),
+    p('Once every aliyah has a raw score, the whole set is stretched so the hardest becomes a real 10 and the easiest a real 1. That keeps the scale meaningful instead of everything bunching up in the middle.'),
+    p('The scale is anchored on ordinary Shabbat parsha aliyot only. Holiday readings, double parshiot and maftir are all still scored -- they\'re just measured against that scale rather than helping to set it. Otherwise the short holiday readings, of which there are more than there are parsha aliyot, would drag the whole scale down to meet them and a "5" would mean something different depending on what you were looking at.'),
   ));
 
   container.append(section('Where this falls short',

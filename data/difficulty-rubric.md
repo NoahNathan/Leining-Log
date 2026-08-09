@@ -473,6 +473,18 @@ alternation (אֵת/אֶת, same word) rather than the much rarer "you" (fem.,
 אַתְּ) contrast. Including it would have flagged nearly every aliyah in the
 Torah for no real signal.
 
+**A second, narrower pausal case was added anyway: ידעתם.** This is the
+exact example that originally prompted this whole feature (a user's real
+aliyah in Re'eh) -- and it's the *same kind* of thing as bare את above (one
+word, same meaning, a pausal-position vowel shift at the end of a clause:
+the usual יְדַעְתֶּם vs. the rarer יְדַעְתָּם), not a case of two genuinely
+different words. את was excluded purely because of *volume*, not because
+pausal shifts are categorically out of scope -- and ידעתם doesn't have that
+problem: it occurs only 7 times in the entire Torah, and only 1 of those
+(Deuteronomy 13:3, inside Re'eh's 3rd aliyah) is the rare pausal form. It's
+included as a legitimate, low-noise "usual form vs. pausal form" trap for a
+reader used to seeing the common ending.
+
 **One more real bug found along the way:** the naive vowel-signature
 comparison also flagged לוֹ/לּוֹ ("to him," with vs. without an ordinary
 gemination dagesh on the lamed) as if it were the genuine לוֹ/לוּ contrast

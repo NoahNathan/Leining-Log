@@ -6,7 +6,7 @@
     "aliyotScored": 918
   },
   "methodology": "difficulty-rubric.md",
-  "generatedAt": "2026-08-09T04:11:45.169Z",
+  "generatedAt": "2026-08-09T04:47:55.916Z",
   "aliyot": {
     "Bereshit": {
       "1": {
@@ -15588,15 +15588,15 @@
             "b": "אֹתָהּ"
           },
           {
-            "a": "אֶת",
-            "b": "אוֹת"
+            "a": "יְדַעְתָּם",
+            "b": "יְדַעְתֶּֽם"
           },
           {
-            "a": "אוֹתָם",
-            "b": "אֹתָם"
+            "a": "אֶת",
+            "b": "אוֹת"
           }
         ],
-        "lookAlikePairCount": 5
+        "lookAlikePairCount": 6
       },
       "4": {
         "wordCount": 211,

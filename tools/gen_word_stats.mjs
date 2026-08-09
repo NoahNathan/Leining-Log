@@ -130,6 +130,13 @@ const HOMOGRAPH_SKELETONS = new Map([
   ['מן', '"from" vs. "manna"'],
   ['עשו', '"Esau" vs. "they made/did"'],
   ['אם', '"if" vs. "mother"'],
+  // Unlike bare את above, this ISN'T two different words -- it's the same
+  // word (2mp perfect "you have not known") with a rare pausal-position
+  // vowel shift (תָּם) instead of the usual ending (תֶּם). Included anyway
+  // because, unlike את, it's genuinely rare enough not to be noise: 7 total
+  // occurrences in the whole Torah, only 1 of which (Deut 13:3, in Re'eh)
+  // is the pausal form -- a real trap for a reader used to the usual ending.
+  ['ידעתם', '"you (masc. pl.) have not known" -- usual ending (תֶּם) vs. rare pausal ending (תָּם)'],
 ]);
 
 // ---- pass 1: load every Torah verse once, tokenize, build frequency table ----

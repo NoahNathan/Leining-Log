@@ -667,6 +667,61 @@ fell from 0.953 to 0.905 while its correlation with trope rose from 0.15 to
 genuinely move the answer instead of decorating a length ranking. Mean
 absolute change was 0.86 points; 289 of 858 aliyot did not move at all.
 
+## Reworking gotchas around what actually trips readers up
+
+The measurement pass above left gotchas as the weakest criterion: 80% of the
+average score came from the parsha-category baseline, only 20% from anything
+found in the aliyah's own text. Two specific flaws showed up on inspection.
+
+**Ketiv/Qere was scored as presence, not count.** Any number of formal
+Ketiv/Qere instances produced a flat +1, so Ki Teitzei's 3rd aliyah -- which
+has **seven** -- ranked level with an aliyah that has one. 44 aliyot carry
+two or more.
+
+**The two look-alike flavours were pooled.** A one-letter ו/י near-miss
+counted exactly as much as a same-letters-different-nekudot pair, even
+though the second is the strictly worse case: on an unvocalised scroll there
+is nothing at all to tell those two words apart, whereas a ו/י difference is
+visible if you look.
+
+Both are now fixed by pooling every measured signal into one weighted bump
+instead of several independent ones, using counts rather than presence:
+
+| Signal | Weight each |
+|---|---|
+| Identical consonants, different nekudot | 2.0 |
+| Rare cantillation mark (shalshelet / yerach ben yomo / merkha kefula) | 2.0 |
+| הוא/הִיא and formal Ketiv/Qere | 1.5 |
+| One internal ו/י apart | 0.5 |
+| Dense run of unfamiliar proper names | up to 1.5 |
+
+**Numbers were considered and rejected.** Census figures and offering counts
+look like an obvious fumble source, but 15 of the 20 most number-dense
+aliyot already score 8+ on measured formulaicity -- the number-heavy
+passages simply *are* the repeated lists. Number words themselves (שלשה,
+מאות, אלף) are common and easy to read; the real risk is losing your place
+in the formula, which the Nasso and Sukkot hidden-challenge notes already
+cover. Adding a numbers signal would have double-counted formulaicity.
+
+**Proper names were added.** Hebrew doesn't capitalise and no
+part-of-speech data ships with the text, so names are found structurally:
+words that repeatedly sit right after a trigger like בן, ארץ, הר or ויחנו.
+The lexicon comes to 595 forms and ranks Masei 2 (the 42 journey stations)
+first, then Pinchas 2 (the tribal census) and Vayishlach 7 (Eisav's
+genealogy) -- while Kedoshim 2 and Mishpatim 2 sit near the bottom, as they
+should. It deliberately misses מצרים and אהרן: both are far too frequent to
+clear the ratio test, and nobody fumbles "Egypt" or "Aaron." Correlation
+with the existing word-rarity score is only 0.22, so it adds genuinely new
+information rather than re-counting rare words.
+
+**Result.** Measured signals now supply 28% of the average gotchas score
+rather than 20%, and the share of aliyot with no measured signal at all fell
+from 39% to 25%. The bump spreads properly across its range (0 through 5)
+instead of clustering. Re'eh's 3rd aliyah -- the reading that prompted this
+whole line of work, with two nekudot homographs plus a Ketiv/Qere -- now
+scores the highest gotchas in the Torah, which is the outcome the change was
+meant to produce.
+
 ## Known limitations / where to improve this next
 
 - The hidden-challenge baseline is still assigned at the whole-parsha level

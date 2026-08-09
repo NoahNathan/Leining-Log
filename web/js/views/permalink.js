@@ -1,5 +1,5 @@
 import { el, todayISO, formatDateLong } from '../util.js';
-import { getParshaDetail, getChagById, findUpcomingOccurrences } from '../data.js';
+import { getParshaDetail, getChagById, findUpcomingOccurrences, getAliyahSummaries } from '../data.js';
 import { renderParshaDetail, renderChagDetail } from './detail.js';
 
 function backLink() {
@@ -36,5 +36,5 @@ export async function renderChagPermalink(container, id) {
     container.append(el('p', {}, `Couldn't find that reading.`));
     return;
   }
-  container.append(renderChagDetail(chag));
+  container.append(renderChagDetail(chag, { summaries: await getAliyahSummaries() }));
 }

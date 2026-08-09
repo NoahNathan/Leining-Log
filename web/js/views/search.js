@@ -1,5 +1,5 @@
 import { el, todayISO, formatDateLong, displayParshaName } from '../util.js';
-import { findByDate, getParshaDetail, getChagById, getChagim, listAllParshiotForSearch } from '../data.js';
+import { findByDate, getParshaDetail, getChagById, getChagim, listAllParshiotForSearch, getAliyahSummaries } from '../data.js';
 import { renderParshaDetail, renderChagDetail } from './detail.js';
 
 let mode = 'parsha';
@@ -114,7 +114,7 @@ export async function renderSearch(container) {
         }
       } else {
         const chag = await getChagById(row.chagId);
-        if (chag) resultsHost.append(renderChagDetail(chag));
+        if (chag) resultsHost.append(renderChagDetail(chag, { summaries: await getAliyahSummaries() }));
       }
     }
   }

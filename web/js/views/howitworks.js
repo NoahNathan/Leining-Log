@@ -23,16 +23,17 @@ export async function renderHowItWorks(container) {
   container.append(section('The five ingredients',
     p('Every aliyah gets a score from 1-10 on each of five things, which then blend into one overall difficulty score:'),
     el('ul', { class: 'plain-list' }, [
-      el('li', {}, [el('strong', {}, 'Length'), ' -- how many verses. The longest aliyah in the Torah scores a 10; the shortest scores about a 1.']),
+      el('li', {}, [el('strong', {}, 'Length'), ' -- how many ', el('em', {}, 'words'), ', not verses. The longest aliyah in the Torah scores a 10; the shortest scores about a 1.']),
       el('li', {}, [el('strong', {}, 'Vocabulary'), ' -- how unusual the actual words are, and how tricky they are to pronounce. Measured from the real text, not guessed.']),
-      el('li', {}, [el('strong', {}, 'Trope'), ' -- how often unusual cantillation shows up, and whether the passage uses a special melody (like the Aseret HaDibrot or Az Yashir).']),
-      el('li', {}, [el('strong', {}, 'Repetition'), ' -- how formulaic the text is. This actually ', el('em', {}, 'lowers'), ' difficulty: once you have the pattern down, each repeat is easier than the same amount of brand-new text.']),
+      el('li', {}, [el('strong', {}, 'Trope'), ' -- how many genuinely uncommon cantillation marks the passage actually contains, counted mark by mark, plus whether it uses a special melody (like the Aseret HaDibrot, Az Yashir, or Ha\'azinu).']),
+      el('li', {}, [el('strong', {}, 'Repetition'), ' -- how formulaic the text actually is, measured from the words themselves. This ', el('em', {}, 'lowers'), ' difficulty: once you have the pattern down, each repeat is easier than the same amount of brand-new text.']),
       el('li', {}, [el('strong', {}, 'Gotchas'), ' -- easy-to-fumble details the other four don\'t capture: rare trope marks, passages customarily read quietly, text only read once a year with little chance to practice, or words that look the same without nikkud but are read differently.']),
     ]),
   ));
 
   container.append(section('Length matters most',
     p('Length alone counts for as much as the other four factors put together: 50% of the score. A long, plain-vocabulary aliyah is still a bigger undertaking than a short, tricky one -- and how long something is remains the single most reliable way to judge how much work it takes to prepare.'),
+    p('Length is counted in ', el('strong', {}, 'words, not verses'), ', because verses are not equal units. Across the Torah they run from about 6 to 21 words each -- a three-fold spread. The journey-stations list in Masei, for instance, is 39 verses but only 239 words, while some 5-verse aliyot carry over 100. Counting verses would call the Masei list one of the longest readings in the Torah when by actual text it is middling.'),
     p('Of the remaining 50%, Gotchas gets a bigger share than the rest: 20% of the total score, twice as much as Vocabulary, Trope, or Repetition individually (10% each). Gotchas is weighted higher because it\'s tied to specific, avoidable reading mistakes -- ambiguous spellings and look-alike word pairs -- rather than general unfamiliarity.'),
   ));
 
@@ -75,7 +76,8 @@ export async function renderHowItWorks(container) {
 
   container.append(section('Where this falls short',
     el('ul', { class: 'plain-list' }, [
-      el('li', {}, 'Trope and repetition scores mostly come from the general character of the parsha, not a line-by-line check of every aliyah. Vocabulary, and the ambiguous-spelling and look-alike-pair parts of Gotchas, are measured directly from the words themselves; the rest of Gotchas is still the general character-based baseline plus specific hand-curated overrides.'),
+      el('li', {}, 'Gotchas is the criterion still leaning most on judgement. Its ambiguous-spelling, look-alike-pair and rare-trope-mark parts are measured directly from the text, but the baseline underneath them still comes from the general character of the parsha, adjusted by hand for things like the Tochacha reading custom.'),
+      el('li', {}, 'Length, vocabulary, trope and repetition are now all measured from the actual text of each aliyah rather than inferred from the parsha it sits in. The exception is special melodies -- Az Yashir, the Aseret HaDibrot, Ha\'azinu -- which are set by hand, because a separate tune and an unusual scroll layout leave no trace in the cantillation marks themselves.'),
       el('li', {}, '"Difficulty" here means difficulty to prepare and read aloud -- it says nothing about how meaningful or significant a passage is.'),
       el('li', {}, 'Vocabulary rarity is measured by exact spelling, not by the underlying word -- see "Vocabulary is measured, not guessed" above.'),
     ]),

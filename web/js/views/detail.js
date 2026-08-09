@@ -116,7 +116,7 @@ function scoreBadge(score, { size = 'md' } = {}) {
 }
 
 const CRITERION_TOOLTIPS = {
-  Length: 'How many verses — the single biggest factor in the score.',
+  Length: 'How many words — the single biggest factor in the score. Counted in words rather than verses, since verses range from about 6 to 21 words each.',
   Vocabulary: 'How rare and hard-to-pronounce the words are, based on real word-frequency data from the Torah.',
   Trope: 'How complex or unusual the cantillation (trop) is.',
   Repetition: 'Repeated, formulaic phrasing — this actually makes an aliyah easier, so a low score here helps.',
@@ -245,7 +245,7 @@ function buildWhyPanel(d, a) {
     list.append(el('div', { class: 'why-criterion' }, [
       el('span', { class: 'why-criterion-label' }, c.label),
       el('span', { class: 'why-criterion-score', style: `color:${scoreColor(c.score)}` }, `${c.score}/10`),
-      el('span', { class: 'why-criterion-note muted' }, c.label === 'Length' ? `${a.verses} verses — ${qualify(c.label, c.score)}` : qualify(c.label, c.score)),
+      el('span', { class: 'why-criterion-note muted' }, c.label === 'Length' ? `${a.verses} verses, ${d.wordCount ?? '?'} words — ${qualify(c.label, c.score)}` : qualify(c.label, c.score)),
     ]));
   }
   wrap.append(list);
@@ -263,6 +263,10 @@ function buildWhyPanel(d, a) {
   if (d.lookAlikeWordPairs && d.lookAlikeWordPairs.length) {
     wrap.append(wordChipRow('Watch for these look-alikes in this aliyah', d.lookAlikeWordPairs.map((pr) => `${pr.a} / ${pr.b}`)));
     wrap.append(el('p', { class: 'why-note' }, 'Without nikkud, these pairs are either spelled 100% identically (same letters, different vowels only) or differ by just one letter (ו/י) -- worth double-checking you\'re reading the right one.'));
+  }
+  if (d.rareTropeMarks && d.rareTropeMarks.length) {
+    wrap.append(wordChipRow('Rare trope mark in this aliyah', d.rareTropeMarks.map((t) => `${t.mark} -- ${t.word}`)));
+    wrap.append(el('p', { class: 'why-note' }, 'This aliyah contains one of the three rarest cantillation marks in the Torah -- each appears at most four times in the entire Chumash (yerach ben yomo appears exactly once), so most readers have never chanted one. Worth looking up the tune before you go up.'));
   }
   return wrap;
 }

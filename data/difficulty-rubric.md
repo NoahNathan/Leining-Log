@@ -39,6 +39,12 @@ blending that feedback in.
 
 ## The five criteria (each scored 0-10 per aliyah)
 
+> **Later revision (measurement pass):** length switched from verse count to
+> word count, and trope and repetition switched from parsha-level category
+> guesses to per-aliyah measurements taken from the actual text. See
+> "The measurement pass" near the end of this document for what was wrong,
+> what the evidence was, and what changed.
+
 1. **Length** -- computed algorithmically from the aliyah's verse count,
    scaled to a 1-10 percentile rank against every aliyah in the Torah (the
    single shortest aliyah scores ~1, the single longest scores 10). **Dominates
@@ -592,13 +598,89 @@ culturally even if not liturgically recited), or a tunable per-community
 list (a congregation that does public Torah study of a given parsha every
 year might reasonably mark more of it "familiar").
 
+## The measurement pass: replacing three guesses with three measurements
+
+An audit of the finished rubric against the actual text found that three of
+the five criteria were not measuring what they claimed to. Each problem was
+confirmed numerically across all 858 scored aliyot before anything changed.
+
+**1. Repetition was inert.** 97% of aliyot scored exactly 3, standard
+deviation 0.32. The cause was structural: five of the six content profiles
+carried `repetition: 3`, so outside genealogies and a dozen hand overrides
+the criterion was a constant. It consumed 10% of the score while
+distinguishing almost nothing.
+
+**2. Length counted verses, and verses are not equal units.** Across the
+dataset they run from 6.1 to 21.0 words each -- a 3.4x spread. Verse count
+and word count correlate at 0.97, which conceals the tails: re-ranking by
+words moves individual aliyot by up to 218 places out of 858. Tazria 7 is
+5 verses but 102 words; the Sukkot chol-hamoed 4th aliyot are 6 verses but
+54 words, so the nominally longer reading is barely half the text. With
+length carrying half the final score, this was the single largest source of
+error in the rubric.
+
+**3. Trope was a parsha-level category guess** -- 89% of aliyot sat in
+{3,4,5} -- even though the cantillation is right there in the source text.
+Counting every mark across all 5,846 verses gives clean, measured tiers:
+
+| Tier | Marks | Frequency |
+|---|---|---|
+| Ultra-rare | yerach ben yomo (**1x in the whole Torah**, Num 35:5), shalshelet (4x), merkha kefula (4x) | a reader may never meet one |
+| Uncommon | pazer, telisha gedola/qetana, yetiv, zarqa, segol, gershayim, zaqef gadol | 2-9% of verses |
+| Ordinary | tipcha, etnachta, munach, merkha, zaqef qatan, pashta, qadma, mahpach, tevir, revia, geresh, darga | 17-99% of verses -- not scored |
+
+**What changed.** Length now ranks by word count. Trope is the measured
+density of uncommon marks. Repetition is measured formulaicity, inverted
+(formulaic text is easier). Ultra-rare marks feed gotchas as a discrete +2,
+since meeting a shalshelet is an event rather than a density.
+
+**Measuring repetition needed two metrics, not one.** Recurring word
+4-grams catch verbatim block repetition -- the Nesiim offerings (Num 7)
+rank first. But they score the 42 journey stations (Num 33) at a flat 0%,
+because "traveled from *X*, camped at *Y*" changes every content word.
+Repeated verse-openings catch that at 90%. Taking the max of the two is
+what a reader actually experiences: either kind of pattern makes the text
+easier once learned.
+
+**Auto-detection validated against the hand-curation it replaced.** The
+rare-mark scan reproduces all four hand-coded shalshelet aliyot exactly
+(Vayera 3, Chayei Sara 3, Vayeshev 6, Tzav 6) -- and additionally finds four
+merkha kefula and the single yerach ben yomo in Masei that hand-curation had
+missed. Measured formulaicity likewise corrected a mis-targeted override:
+the Sukkot chol-hamoed repetition adjustment sat on aliyah 1, which measures
+0% internal repetition, while the genuinely formulaic reading is aliyah 4.
+
+**One thing measurement got wrong, and how it's handled.** Shirat Ha'azinu
+collapsed from trope 9 to trope 1-3, because the Song is chanted to its own
+melody from a two-column layout while its cantillation marks are entirely
+ordinary. Mark-density cannot see a melody. Special melodies are therefore
+kept as hand-set `tropeFloor` minimums -- Az Yashir, the Aseret HaDibrot
+(ta'am elyon), and Ha'azinu 1-6. A floor rather than a bump, because the
+difficulty is "there is another tune to learn," which doesn't scale with how
+busy the marks are. This is strictly better than the old flat POETRY
+baseline, which also gave Ha'azinu's *prose* 7th aliyah a 9.
+
+**Result.** Trope's spread rose from sd 1.08 to 2.66, repetition's from 0.32
+to 3.21. More tellingly, the final score's correlation with length alone
+fell from 0.953 to 0.905 while its correlation with trope rose from 0.15 to
+0.33 and with repetition from -0.09 to -0.34: the other criteria now
+genuinely move the answer instead of decorating a length ranking. Mean
+absolute change was 0.86 points; 289 of 858 aliyot did not move at all.
+
 ## Known limitations / where to improve this next
 
-- The content-profile tags (trope/repetition/hidden) are assigned at the
-  whole-parsha level, then blended; they are **not** independently verified
-  against the exact verse ranges of every aliyah the way vocabulary and the
-  specific overrides are, so a profile tag can be slightly off at an aliyah
-  boundary.
+- The hidden-challenge baseline is still assigned at the whole-parsha level
+  and blended, so it is **not** independently verified against the exact
+  verse ranges of every aliyah, and can be slightly off at an aliyah
+  boundary. Length, vocabulary, trope and repetition no longer have this
+  problem -- they are measured per-aliyah from the text.
+- Special melodies and scroll layouts (Az Yashir, ta'am elyon, Ha'azinu)
+  are inherently invisible to text measurement and remain hand-maintained.
+  The list is short and stable, but it is a list someone has to remember to
+  update.
+- Karnei parah, traditionally taught alongside yerach ben yomo at Num 35:5,
+  does not appear as its own codepoint in this source text, so it is listed
+  in the tier table but never actually matches.
 - Only ~24 specific override rules and 7 familiarity discounts are encoded.
   There are certainly more well-known hard *and* well-known-by-heart
   passages that aren't flagged yet.

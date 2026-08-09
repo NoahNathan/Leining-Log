@@ -117,6 +117,32 @@ function extractKetivQere(rawText) {
   return out;
 }
 
+// A third look-alike flavour: two words of the SAME length differing in
+// exactly one position, where those two letters are genuinely hard to tell
+// apart in STA"M scroll script. Distinct from the ו/י check below, which is
+// about a vowel-letter being present or absent rather than two letters
+// looking similar.
+//
+// ה/ת is deliberately EXCLUDED despite looking alike. Testing showed its
+// hits are overwhelmingly the ordinary absolute-vs-construct noun ending
+// (מִנְחָה/מִנְחַת, שִׁבְעָה/שִׁבְעַת, אִשָּׁה/אֵשֶׁת) -- a grammar rule every reader
+// knows, not a trap. That is the same noise already rejected for the nekudot
+// work. What remains catches real pairs: לָהֶם/לֶחֶם, תּוֹרַת/תּוֹדַת, וַיְהִי/וַיְחִי.
+const CONFUSABLE_LETTERS = [['ד','ר'], ['ב','כ'], ['ה','ח'], ['ו','ז'], ['ם','ס'], ['ג','נ'], ['פ','ף'], ['ן','ו']];
+const CONFUSABLE_SET = new Set();
+for (const [a, b] of CONFUSABLE_LETTERS) { CONFUSABLE_SET.add(a + b); CONFUSABLE_SET.add(b + a); }
+function confusableLetterDiff(a, b) {
+  if (a.length !== b.length || a.length < 3) return null;
+  let at = -1;
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] === b[i]) continue;
+    if (at >= 0) return null; // more than one position differs
+    at = i;
+  }
+  if (at < 0) return null;
+  return CONFUSABLE_SET.has(a[at] + b[at]) ? `${a[at]}/${b[at]}` : null;
+}
+
 // Two distinct words within the SAME aliyah that differ by exactly one
 // internal ו/י (i.e. one is the other with a single vowel-letter inserted)
 // look nearly identical without nikkud -- a real misreading risk when
@@ -432,7 +458,7 @@ function rawAliyahStats(bookEn, startRef, endRef) {
   for (const w of words) {
     if (!isArchaicFeminineHu(w.surface) || seenA.has(w.surface)) continue;
     seenA.add(w.surface);
-    ambiguousSpellingExamples.push({ word: w.surface, note: 'Spelled the same as הוּא ("hu", he) but read here as "hi" (she) -- an archaic Torah spelling.' });
+    ambiguousSpellingExamples.push({ word: w.surface, kind: 'archaic-hu', note: 'Spelled the same as הוּא ("hu", he) but read here as "hi" (she) -- an archaic Torah spelling.' });
   }
   const seenK = new Set();
   for (const v of verses) {
@@ -440,7 +466,7 @@ function rawAliyahStats(bookEn, startRef, endRef) {
       const key = `${kq.ketiv}>${kq.qere}`;
       if (seenK.has(key)) continue;
       seenK.add(key);
-      ambiguousSpellingExamples.push({ word: kq.qere, note: `Formal Ketiv/Qere: the Torah scroll is written ${kq.ketiv} but traditionally read aloud as ${kq.qere}.` });
+      ambiguousSpellingExamples.push({ word: kq.qere, kind: 'ketiv-qere', note: `Formal Ketiv/Qere: the Torah scroll is written ${kq.ketiv} but traditionally read aloud as ${kq.qere}.` });
     }
   }
 
@@ -469,6 +495,14 @@ function rawAliyahStats(bookEn, startRef, endRef) {
       for (let j = i + 1; j < forms.length; j++) {
         lookAlikePairsRaw.push({ a: forms[i], b: forms[j], severity: 2 });
       }
+    }
+  }
+
+  const confusableLetterPairs = [];
+  for (let i = 0; i < consList.length; i++) {
+    for (let j = i + 1; j < consList.length; j++) {
+      const cl = confusableLetterDiff(consList[i], consList[j]);
+      if (cl) confusableLetterPairs.push({ a: distinctForms.get(consList[i]), b: distinctForms.get(consList[j]), letters: cl });
     }
   }
 
@@ -517,10 +551,13 @@ function rawAliyahStats(bookEn, startRef, endRef) {
   const homographPairCount = lookAlikePairsRaw.filter((p) => p.severity === 2).length;
   const nearMissPairCount = lookAlikePairsRaw.filter((p) => p.severity === 1).length;
 
+  const archaicHuCount = ambiguousSpellingExamples.filter((e) => e.kind === 'archaic-hu').length;
+  const ketivQereCount = ambiguousSpellingExamples.filter((e) => e.kind === 'ketiv-qere').length;
+
   const properNameCount = words.filter((w) => PROPER_NAMES.has(nameBase(w.consonantal))).length;
   const properNameDensity = properNameCount / words.length;
 
-  return { wordCount: words.length, rawRarity, rawPron, rareExamples, hardToPronounceExamples: hardExamples, ambiguousSpellingExamples, lookAlikeWordPairs, lookAlikePairCount: lookAlikePairsRaw.length, homographPairCount, nearMissPairCount, rareTropeMarks, uncommonTropeDensity, repetitionRatio, properNameCount, properNameDensity };
+  return { wordCount: words.length, rawRarity, rawPron, rareExamples, hardToPronounceExamples: hardExamples, ambiguousSpellingExamples, lookAlikeWordPairs, lookAlikePairCount: lookAlikePairsRaw.length, homographPairCount, nearMissPairCount, archaicHuCount, ketivQereCount, confusableLetterPairs: confusableLetterPairs.slice(0, 3), confusableLetterPairCount: confusableLetterPairs.length, rareTropeMarks, uncommonTropeDensity, repetitionRatio, properNameCount, properNameDensity };
 }
 
 // ---- gather every aliyah (individual parshiot, combined parshiot, chagim) ----
@@ -584,6 +621,10 @@ for (const e of entries) {
     tropeRarity, formulaicity, properNames,
     homographPairCount: e.raw.homographPairCount,
     nearMissPairCount: e.raw.nearMissPairCount,
+    archaicHuCount: e.raw.archaicHuCount,
+    ketivQereCount: e.raw.ketivQereCount,
+    confusableLetterPairs: e.raw.confusableLetterPairs,
+    confusableLetterPairCount: e.raw.confusableLetterPairCount,
     rareTropeMarks: e.raw.rareTropeMarks,
     rareExamples: e.raw.rareExamples,
     hardToPronounceExamples: e.raw.hardToPronounceExamples,

@@ -170,7 +170,7 @@ function sefariaUrl(ref) {
   return `https://www.sefaria.org/${book}.${start}-${end}`;
 }
 
-function nusachRow(nusach) {
+function nusachRow(nusach, haftScore) {
   if (!nusach) return el('p', { class: 'muted' }, 'No haftarah data.');
   const entries = Object.entries(nusach).filter(([, v]) => v);
   const wrap = el('div', { class: 'nusach-tabs' });
@@ -182,8 +182,14 @@ function nusachRow(nusach) {
       href: u, target: '_blank', rel: 'noopener', class: 'tikkun-link', title: 'Read this on Sefaria',
     }, urls.length > 1 ? `Text ${i + 1} ↗` : 'Text ↗'));
     wrap.append(el('div', { class: 'nusach-chip' }, [
-      el('span', { class: 'nusach-name' }, name[0].toUpperCase() + name.slice(1)),
+      el('span', { class: 'nusach-name' }, [
+        name[0].toUpperCase() + name.slice(1),
+        // Only the ashkenazi reading is scored so far, so only it carries a badge.
+        (name === 'ashkenazi' && haftScore) ? scoreBadge(haftScore.finalScore, { size: 'sm' }) : null,
+      ]),
       el('span', { class: 'nusach-cite' }, [text, ...links]),
+      (name === 'ashkenazi' && haftScore) ? el('p', { class: 'nusach-note muted small' },
+        `${haftScore.wordCount} words · scored out of 7, not 10 — a haftarah is chanted from a printed text with the nekudot and trope already on the page, so the misreading traps that drive Torah-reading difficulty don't apply.`) : null,
       v.specialTrope ? el('p', { class: 'nusach-note muted small' }, `${v.specialTrope.range}: ${v.specialTrope.note}`) : null,
     ]));
   }
@@ -343,7 +349,7 @@ function aliyahLabel(key) {
   return key === 'M' ? 'Maftir' : ordinal(Number(key));
 }
 
-export function renderParshaDetail({ parsha, haftarah, difficulty }, opts = {}) {
+export function renderParshaDetail({ parsha, haftarah, difficulty, haftarahScore }, opts = {}) {
   const card = el('div', { class: 'card detail-card' });
 
   const header = el('div', { class: 'detail-header' }, [
@@ -406,7 +412,7 @@ export function renderParshaDetail({ parsha, haftarah, difficulty }, opts = {}) 
 
   card.append(el('div', { class: 'card subcard' }, [
     el('h3', {}, 'Haftarah by nusach'),
-    nusachRow(haftarah ? haftarah.nusach : null),
+    nusachRow(haftarah ? haftarah.nusach : null, haftarahScore),
   ]));
 
   attachQuickLog(card, { readingId: parsha.id, aliyot: parsha.aliyot, maftir: parsha.maftir });

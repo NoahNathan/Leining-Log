@@ -45,17 +45,17 @@ blending that feedback in.
 > "The measurement pass" near the end of this document for what was wrong,
 > what the evidence was, and what changed.
 
-1. **Length** -- computed algorithmically from the aliyah's verse count,
-   scaled to a 1-10 percentile rank against every aliyah in the Torah (the
-   single shortest aliyah scores ~1, the single longest scores 10). **Dominates
-   the final score by design** -- see "Weighting" below.
+1. **Length** -- computed algorithmically from the aliyah's **word count**
+   (not verse count -- see "The measurement pass" below), scaled to a 1-10
+   percentile rank against every ordinary parsha aliyah. **Dominates the
+   final score by design** -- see "Weighting" below.
 2. **Vocabulary** -- computed from the actual Hebrew words in the aliyah:
    how rarely they occur elsewhere in the Torah, and how complex they are to
    pronounce. See "Vocabulary" below -- this is no longer a category guess.
-3. **Trope (cantillation)** -- how often unusual or rare te'amim
-   combinations show up, and whether the passage uses a non-default
-   cantillation system at all (e.g. the "ta'am elyon" used for the Aseret
-   HaDibrot, or the elevated Shirah melody for Az Yashir/Ha'azinu).
+3. **Trope (cantillation)** -- the measured density of genuinely uncommon
+   te'amim in that aliyah's actual text, plus a floor for passages using a
+   non-default cantillation system (the "ta'am elyon" of the Aseret
+   HaDibrot, the elevated Shirah melody of Az Yashir and Ha'azinu).
 4. **Repetition** -- how formulaic/predictable the text is, and it **lowers**
    the difficulty score: once a reader has the template (the 12 near-identical
    Nesiim offerings in Nasso, the 42-station journey list in Masei), each
@@ -787,6 +787,49 @@ The general lesson, now applied three times in this document: a parsha-level
 tag should describe something true of *every* aliyah it touches. Where it
 describes a specific passage, it belongs in an override.
 
+## Haftarot are scored, on a 1-7 band
+
+Haftarot get the same treatment as Torah readings with one structural
+difference: **a haftarah is chanted from a printed, vocalized text.** The
+nekudot and the trope marks are both on the page. That removes at a stroke
+the single largest source of leining risk -- guessing the vowels on an
+unpointed scroll, same-letters-different-nekudot pairs, unmarked
+Ketiv/Qere -- so the entire gotchas criterion, 20% of the Torah score, simply
+does not apply and is not computed. Errors are also less halachically
+fraught, and it is one continuous passage read by one person.
+
+What still varies, and is measured from the real text of Nevi'im:
+
+| Criterion | Weight |
+|---|---|
+| Length (words) | 40% |
+| Vocabulary (rarity + pronunciation) | 30% |
+| Trope (uncommon-mark density) | 20% |
+| Repetition | 10% |
+
+Vocabulary carries more weight here than in Torah reading (30% against 10%):
+with the pointing supplied, what is actually left to trip over is unfamiliar
+and hard-to-pronounce words.
+
+**Rarity is measured against a Torah + Nevi'im corpus** (223,091 tokens, 26
+books), not the Torah alone. Judging prophetic vocabulary against the Chumash
+by itself would make perfectly ordinary Nevi'im words look far rarer than
+they functionally are to someone who reads haftarot.
+
+**Why the ceiling is 7 and not lower.** Haftarah trope is a genuinely
+separate melody that has to be learned on its own; Nevi'im vocabulary is
+harder than Chumash; and haftarot are not short -- median 324 words against
+195 for a parsha aliyah, with Shirat Devorah (Beshalach) running to 744. A
+hard haftarah is a real undertaking, just not a 10. The band is applied by
+rescaling into 1-7 rather than clamping at 7, which keeps full discrimination
+between haftarot instead of piling the top third against a ceiling.
+
+Result: 61 haftarot, ashkenazi reading, distributed 1:2 2:2 3:7 4:14 5:17
+6:13 7:6, mean 4.72 against 5.28 for ordinary parsha aliyot. The hardest are
+Beshalach (Shirat Devorah, 52 verses), Bereshit, Tetzaveh and Metzora; the
+easiest are Ki Teitzei (10 verses) and Vayakhel (11). Sefardi and Chabad
+variants are stored in `haftarot.json` but not yet scored.
+
 ## What the 1-10 scale is actually relative to
 
 Worth stating plainly, because it is not obvious from the numbers. Every
@@ -802,13 +845,26 @@ There are more holiday entries than parsha aliyot, and they are three times
 shorter. The 7 combined parshiot additionally re-score the same verses as
 their components, so some text is counted twice.
 
-This is deliberate -- the goal stated in `difficulty-scores.json` is that any
-two readings on the site be directly comparable, which requires one shared
-scale. But it means a "4" on a regular parsha aliyah is 4 relative to a
-population half made of short holiday readings, not 4 among comparable
-Shabbat readings. Parsha aliyot average 5.8; chag readings average 3.7. A
-reader comparing only Shabbat aliyot is effectively using the top half of the
-scale.
+**This has now been changed.** The anchor is the **427 numbered aliyot of the
+54 ordinary parshiot** and nothing else. Combined parshiot, chagim and maftir
+are all still scored -- they are simply measured against the ordinary-Shabbat
+scale rather than helping to set it. A short special reading now correctly
+lands low instead of dragging the floor of the scale down to meet it, and a
+"5" means the same thing wherever it appears.
+
+Ordinary parsha aliyot now span a true 1-10 (mean 5.28). Chag and special
+readings land at mean 3.11, and parsha maftir -- which on an ordinary Shabbat
+re-reads the last few verses of aliyah 7 -- at mean 2.40. Maftir is excluded
+from the anchor for that reason, but is now scored and displayed, which it
+previously was not: all 53 parsha maftir readings were computed in
+`word-difficulty.json` and then silently dropped before scoring, so ordinary
+maftirs were missing from the app while special ones (Shekalim, Zachor,
+Parah, HaChodesh, Rosh Chodesh, Chanukah) were present as chag entries.
+
+One consequence worth noting: because the anchor no longer spans the shortest
+readings in the dataset, a reading can fall below the anchor floor. Those are
+clamped to 1 rather than allowed to go lower -- the scale is 1-10 by
+definition.
 
 ## Known limitations / where to improve this next
 

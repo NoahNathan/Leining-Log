@@ -4,6 +4,7 @@ const { parshiot } = JSON.parse(readFileSync('../data/parshiot.json', 'utf8'));
 const { combinedParshiot } = JSON.parse(readFileSync('../data/parshiot-combined.json', 'utf8'));
 const { chagim } = JSON.parse(readFileSync('../data/chagim.json', 'utf8'));
 const wordDifficulty = JSON.parse(readFileSync('../data/word-difficulty.json', 'utf8')).aliyot;
+const haftarahStats = JSON.parse(readFileSync('../data/haftarah-difficulty.json', 'utf8')).haftarot;
 
 // ---- Content-profile tags -> baseline sub-scores (0-10) for trope/repetition/hidden ----
 // Vocabulary is NOT driven by these anymore -- see word-difficulty.json (real
@@ -187,14 +188,19 @@ function measuredGotchaPoints(wd) {
   if (!wd) return 0;
   const homographs = wd.homographPairCount || 0;
   const nearMisses = wd.nearMissPairCount || 0;
-  const ambiguous = (wd.ambiguousSpellingExamples || []).length;
+  const ketivQere = wd.ketivQereCount || 0;
+  const archaicHu = wd.archaicHuCount || 0;
+  const confusable = wd.confusableLetterPairCount || 0;
   const rareTrope = (wd.rareTropeMarks || []).length;
   const names = wd.properNames || 1; // 1-10 percentile of proper-name density
 
   let pts = 0;
   pts += homographs * 2.0; // identical letters, different nekudot
-  pts += ambiguous * 1.5;  // הוא/הִיא and formal Ketiv/Qere
+  pts += ketivQere * 2.0;  // formal Ketiv/Qere -- rare (7% of aliyot) and genuinely obscure
   pts += rareTrope * 2.0;  // shalshelet / yerach ben yomo / merkha kefula
+  pts += archaicHu * 1.0;  // הוא/הִיא -- 2.2x more common than Ketiv/Qere, and most
+                           // regular readers handle it automatically, so it scores lower
+  pts += confusable * 0.75; // letters that look alike in scroll script (ד/ר, ה/ח, ב/כ ...)
   pts += nearMisses * 0.5; // one internal ו/י apart
   if (names >= 9) pts += 1.5;
   else if (names >= 7) pts += 0.75;
@@ -329,7 +335,15 @@ function scoreReadingRaw(id, items, tags, overridesMap, familiarMap) {
 }
 
 function readingItemsForParsha(p) {
-  return p.aliyot.map(a => ({ key: String(a.aliyah), verses: a.verses }));
+  return [
+    ...p.aliyot.map(a => ({ key: String(a.aliyah), verses: a.verses })),
+    // Maftir was previously omitted here, so all 53 parsha maftir readings
+    // were computed in word-difficulty.json and then never scored. Chagim
+    // already included theirs, which is why special maftirs (Shekalim,
+    // Zachor, Parah, HaChodesh, Rosh Chodesh, Chanukah) were present while
+    // ordinary ones were missing.
+    ...(p.maftir ? [{ key: 'M', verses: p.maftir.verses }] : []),
+  ];
 }
 function readingItemsForChag(c) {
   return [
@@ -419,12 +433,27 @@ const rawChagim = chagim
 // short of both ends (see difficulty-rubric.md for the full explanation --
 // this replaces the earlier version's "that's just how weighted averages
 // work" answer with an actual fix).
-const allRaw = [...rawParshiot, ...rawCombined, ...rawChagim]
-  .flatMap(r => r.raw.aliyot.map(a => a.rawFinal));
+// Anchored on the numbered aliyot of the 54 ordinary parshiot ONLY.
+// Previously the pool also held 431 chag/special readings (median 65 words
+// against 195 for a parsha aliyah) and the 7 combined parshiot, which
+// re-score the same verses as their components. Half the population defining
+// "a 10" was therefore short holiday text and duplicates. Combined parshiot
+// and chagim are still scored -- they are simply measured against the
+// ordinary-Shabbat scale rather than helping to set it, so a short special
+// reading now correctly lands low instead of dragging the scale down to meet
+// it. Maftir is excluded from the anchor too, since on an ordinary Shabbat it
+// re-reads the end of aliyah 7.
+const allRaw = rawParshiot
+  .flatMap(r => r.raw.aliyot.filter(a => a.aliyah !== 'M').map(a => a.rawFinal));
 const rawMin = Math.min(...allRaw);
 const rawMax = Math.max(...allRaw);
 function rescaleFinal(rawFinal) {
-  const pct = (rawFinal - rawMin) / (rawMax - rawMin);
+  // pct is clamped to 0..1 because the anchor now covers ordinary parsha
+  // aliyot only: a chag reading or a short maftir can sit below the shortest
+  // parsha aliyah, which would otherwise produce a score under 1 (and, via
+  // clamp10's zero floor, a meaningless 0). The scale is 1-10 by definition,
+  // so anything at or below the anchor floor is simply a 1.
+  const pct = Math.max(0, Math.min(1, (rawFinal - rawMin) / (rawMax - rawMin)));
   return clamp10(1 + pct * 9);
 }
 
@@ -481,6 +510,57 @@ const chagResults = rawChagim.map(({ c, raw }) => {
   };
 }).sort((a,b) => b.finalScore - a.finalScore);
 
+
+// ---- Haftarot ----------------------------------------------------------
+// Scored on the SAME length scale and the same 1-10 anchor as Torah reading,
+// so the two are directly comparable, then mapped into a 1-7 band.
+//
+// Why a lower ceiling. A haftarah is chanted from a printed, vocalized text:
+// nekudot and trope marks are both on the page. That removes the single
+// largest source of leining risk -- guessing the vowels on an unpointed
+// scroll, same-letters-different-nekudot pairs, unmarked Ketiv/Qere -- so the
+// entire gotchas criterion, 20% of the Torah score, simply does not apply.
+// Errors are also less halachically fraught, and it is one continuous passage
+// read by one person.
+//
+// Why the ceiling is 7 rather than lower. Haftarah trope is a genuinely
+// separate melody that has to be learned on its own, Nevi'im vocabulary is
+// harder than Chumash, and haftarot are not short -- median 324 words against
+// 195 for a parsha aliyah. A hard haftarah is a real undertaking, just not a
+// 10. Banding rather than clamping keeps full discrimination between haftarot
+// instead of piling them all against a ceiling.
+const HAFTARAH_CEILING = 7;
+// Vocabulary carries more weight here than in Torah reading and gotchas is
+// gone entirely: with the pointing supplied, what is actually left to trip
+// over is unfamiliar and hard-to-pronounce words.
+const HAFTARAH_WEIGHTS = { length: 4, vocab: 3, trope: 2, repetition: 1 };
+const HAFTARAH_TOTAL = Object.values(HAFTARAH_WEIGHTS).reduce((s, w) => s + w, 0);
+
+const rawHaftarot = Object.entries(haftarahStats).map(([id, h]) => {
+  const length = lengthScore(h.wordCount);
+  const vocab = clamp10(h.vocab);
+  const trope = clamp10(h.tropeRarity);
+  const repetition = clamp10(11 - h.formulaicity);
+  const rawFinal = (length * HAFTARAH_WEIGHTS.length + vocab * HAFTARAH_WEIGHTS.vocab
+    + trope * HAFTARAH_WEIGHTS.trope + repetition * HAFTARAH_WEIGHTS.repetition) / HAFTARAH_TOTAL;
+  return { id, h, length, vocab, trope, repetition, rawFinal };
+});
+const haftRawMin = Math.min(...rawHaftarot.map((r) => r.rawFinal));
+const haftRawMax = Math.max(...rawHaftarot.map((r) => r.rawFinal));
+const haftarahResults = rawHaftarot.map((r) => {
+  const pct = haftRawMax === haftRawMin ? 0.5 : (r.rawFinal - haftRawMin) / (haftRawMax - haftRawMin);
+  const finalScore = Math.max(1, Math.min(HAFTARAH_CEILING, Math.round(1 + pct * (HAFTARAH_CEILING - 1))));
+  const e = {
+    haftarahId: r.id, parsha: r.h.parsha, nusach: 'ashkenazi', ref: r.h.ref,
+    verses: r.h.verseCount, wordCount: r.h.wordCount,
+    scores: { length: r.length, vocabulary: r.vocab, trope: r.trope, repetition: r.repetition },
+    vocabDetail: { rarity: r.h.rarity, pronunciation: r.h.pronunciation, rareExamples: r.h.rareExamples, hardToPronounceExamples: r.h.hardToPronounceExamples },
+    finalScore,
+  };
+  if (r.h.rareTropeMarks && r.h.rareTropeMarks.length) e.rareTropeMarks = r.h.rareTropeMarks;
+  return e;
+}).sort((a, b) => b.finalScore - a.finalScore);
+
 writeFileSync('../data/difficulty-scores.json', JSON.stringify({
   description: "Difficulty ratings (0-10 per criterion, plus a length-weighted, then dataset-wide-rescaled final score) for every aliyah of every parsha -- including the 7 combined (double) parshiot, each scored against its own combined-reading aliyah divisions rather than averaged from its two components -- AND every chag/fast/Rosh Chodesh/special-Shabbat reading in chagim.json (see the separate 'chagim' array). Generated with a transparent rule-based methodology, NOT a survey of actual leining outcomes. Vocabulary is computed from real word-frequency + pronunciation-complexity data over the Masoretic Torah text (see word-difficulty.json); the other four criteria are a content-profile heuristic. Final scores are rescaled against the full pool of ~860 aliyot (parshiot + combined + chagim) so the hardest aliyah in the dataset is a real 10 and the easiest a real 1. See difficulty-rubric.md for the full methodology and honest caveats.",
   methodology: "difficulty-rubric.md",
@@ -491,6 +571,8 @@ writeFileSync('../data/difficulty-scores.json', JSON.stringify({
   parshiot: allResults,
   chagimCount: chagResults.length,
   chagim: chagResults,
+  haftarotCount: haftarahResults.length,
+  haftarot: haftarahResults,
 }, null, 2));
 
 console.log('Wrote difficulty-scores.json:', results.length, 'individual +', combinedResults.length, 'combined parshiot,', chagResults.length, 'chagim entries');
@@ -498,3 +580,6 @@ console.log('Top 5 hardest parshiot:', allResults.slice(0,5).map(r=>`${r.parshaI
 console.log('Top 5 easiest parshiot:', allResults.slice(-5).map(r=>`${r.parshaId} (${r.parshaFinalScore})${r.combined?' [combined]':''}`));
 console.log('Top 5 hardest chagim:', chagResults.slice(0,5).map(r=>`${r.chagId} (${r.finalScore})`));
 console.log('Top 5 easiest chagim:', chagResults.slice(-5).map(r=>`${r.chagId} (${r.finalScore})`));
+console.log('Haftarot scored:', haftarahResults.length, '(ashkenazi, banded 1-' + HAFTARAH_CEILING + ')');
+console.log('  hardest:', haftarahResults.slice(0,4).map(r=>`${r.parsha} (${r.finalScore})`).join(', '));
+console.log('  easiest:', haftarahResults.slice(-4).map(r=>`${r.parsha} (${r.finalScore})`).join(', '));

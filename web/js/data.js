@@ -49,6 +49,14 @@ export async function getChagDifficulty() {
   return d.chagim;
 }
 
+// Haftarah difficulty, ashkenazi only for now. Scored on a 1-7 band rather
+// than 1-10 -- see difficulty-rubric.md for why a haftarah is categorically
+// easier than the equivalent Torah reading.
+export async function getHaftarahScores() {
+  const d = await loadJSON(DATA + 'difficulty-scores.json');
+  return d.haftarot || [];
+}
+
 export async function getCalendarIndex() {
   return loadJSON(DATA + 'calendar-100y/index.json');
 }
@@ -76,7 +84,8 @@ async function getParshaIndex() {
   for (const p of combined) byId.set(p.id, { ...p, combinedEntry: true });
   const haftarahById = new Map(haftarot.map((h) => [h.id, h]));
   const difficultyById = new Map(difficulty.map((d) => [d.parshaId, d]));
-  parshaIndex = { byId, haftarahById, difficultyById, individualIds: individual.map((p) => p.id) };
+  const haftarahScoreById = new Map((await getHaftarahScores()).map((h) => [h.haftarahId, h]));
+  parshaIndex = { byId, haftarahById, difficultyById, haftarahScoreById, individualIds: individual.map((p) => p.id) };
   return parshaIndex;
 }
 
@@ -89,7 +98,8 @@ export async function getParshaDetail(id) {
   if (!parsha) return null;
   const haftarah = idx.haftarahById.get(id) || null;
   const difficulty = idx.difficultyById.get(id) || null;
-  return { parsha, haftarah, difficulty };
+  const haftarahScore = idx.haftarahScoreById.get(id) || null;
+  return { parsha, haftarah, difficulty, haftarahScore };
 }
 
 export async function listAllParshiotForSearch() {

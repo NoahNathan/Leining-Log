@@ -265,7 +265,6 @@ function buildHaftarahWhyPanel(hs) {
   if (hs.rareTropeMarks && hs.rareTropeMarks.length) {
     wrap.append(wordChipRow('Rare trope mark', hs.rareTropeMarks.map((t) => `${t.mark} -- ${t.word}`)));
   }
-  wrap.append(el('p', { class: 'why-note' }, 'No Gotchas criterion here -- the nekudot and trope are already on the printed page, so the ambiguous-spelling and look-alike-word traps that apply to Torah reading don\'t apply to a haftarah. Word rarity is judged against the Torah + Nevi\'im together, not the Torah alone.'));
   return wrap;
 }
 

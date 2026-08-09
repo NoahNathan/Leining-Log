@@ -32,7 +32,8 @@ export async function renderHowItWorks(container) {
   ));
 
   container.append(section('Length matters most',
-    p('Length alone counts for as much as the other four factors put together. A long, plain-vocabulary aliyah is still a bigger undertaking than a short, tricky one -- and how long something is remains the single most reliable way to judge how much work it takes to prepare.'),
+    p('Length alone counts for as much as the other four factors put together: 50% of the score. A long, plain-vocabulary aliyah is still a bigger undertaking than a short, tricky one -- and how long something is remains the single most reliable way to judge how much work it takes to prepare.'),
+    p('Of the remaining 50%, Gotchas gets a bigger share than the rest: 20% of the total score, twice as much as Vocabulary, Trope, or Repetition individually (10% each). Gotchas is weighted higher because it\'s tied to specific, avoidable reading mistakes -- ambiguous spellings and look-alike word pairs -- rather than general unfamiliarity.'),
   ));
 
   container.append(section('Vocabulary is measured, not guessed',

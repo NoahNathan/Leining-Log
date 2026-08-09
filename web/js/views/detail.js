@@ -185,19 +185,67 @@ function nusachRow(nusach, haftScore, summaries) {
     const links = urls.map((u, i) => el('a', {
       href: u, target: '_blank', rel: 'noopener', class: 'tikkun-link', title: 'Read this on Sefaria',
     }, urls.length > 1 ? `Text ${i + 1} ↗` : 'Text ↗'));
-    wrap.append(el('div', { class: 'nusach-chip' }, [
-      el('span', { class: 'nusach-name' }, [
-        name[0].toUpperCase() + name.slice(1),
-        // Only the ashkenazi reading is scored so far, so only it carries a badge.
-        (name === 'ashkenazi' && haftScore) ? scoreBadge(haftScore.finalScore, { size: 'sm' }) : null,
-      ]),
+    // Only the ashkenazi reading is scored so far, so only it carries a badge.
+    const isScored = name === 'ashkenazi' && haftScore;
+    const caret = isScored ? el('span', { class: 'why-caret' }, ' ⌄') : null;
+    const nameEl = el('span', { class: `nusach-name${isScored ? ' expandable' : ''}` }, [
+      name[0].toUpperCase() + name.slice(1),
+      isScored ? scoreBadge(haftScore.finalScore, { size: 'sm' }) : null,
+      caret,
+    ]);
+    const chip = el('div', { class: 'nusach-chip' }, [
+      nameEl,
       el('span', { class: 'nusach-cite' }, [text, ...links]),
       haftSummary ? el('p', { class: 'aliyah-summary muted small' }, haftSummary) : null,
-      (name === 'ashkenazi' && haftScore) ? el('p', { class: 'nusach-note muted small' },
+      isScored ? el('p', { class: 'nusach-note muted small' },
         `${haftScore.wordCount} words · scored out of 7, not 10 — a haftarah is chanted from a printed text with the nekudot and trope already on the page, so the misreading traps that drive Torah-reading difficulty don't apply.`) : null,
       v.specialTrope ? el('p', { class: 'nusach-note muted small' }, `${v.specialTrope.range}: ${v.specialTrope.note}`) : null,
+    ]);
+    if (isScored) {
+      nameEl.addEventListener('click', () => {
+        const existing = chip.querySelector('.why-panel');
+        if (existing) {
+          existing.remove();
+          caret.textContent = ' ⌄';
+          return;
+        }
+        caret.textContent = ' ⌃';
+        chip.append(buildHaftarahWhyPanel(haftScore));
+      });
+    }
+    wrap.append(chip);
+  }
+  return wrap;
+}
+
+function buildHaftarahWhyPanel(hs) {
+  const wrap = el('div', { class: 'why-panel' });
+  const criteria = [
+    { label: 'Length', score: hs.scores.length },
+    { label: 'Vocabulary', score: hs.scores.vocabulary },
+    { label: 'Trope', score: hs.scores.trope },
+    { label: 'Repetition', score: hs.scores.repetition },
+  ];
+  const list = el('div', { class: 'why-criteria' });
+  for (const c of criteria) {
+    list.append(el('div', { class: 'why-criterion' }, [
+      el('span', { class: 'why-criterion-label' }, c.label),
+      el('span', { class: 'why-criterion-score', style: `color:${scoreColor(c.score)}` }, `${c.score}/10`),
+      el('span', { class: 'why-criterion-note muted' }, c.label === 'Length' ? `${hs.verses} verses, ${hs.wordCount} words — ${qualify(c.label, c.score)}` : qualify(c.label, c.score)),
     ]));
   }
+  wrap.append(list);
+  const vd = hs.vocabDetail;
+  if (vd && vd.rareExamples && vd.rareExamples.length) {
+    wrap.append(wordChipRow('Rare words (this exact form appears only a few times across Torah + Nevi\'im)', vd.rareExamples.map((w) => w.occurrencesInCorpus === 1 ? `${w.word} — 1×` : `${w.word} — ${w.occurrencesInCorpus}×`)));
+  }
+  if (vd && vd.hardToPronounceExamples && vd.hardToPronounceExamples.length) {
+    wrap.append(wordChipRow('Tricky to pronounce', vd.hardToPronounceExamples.map((w) => w.word)));
+  }
+  if (hs.rareTropeMarks && hs.rareTropeMarks.length) {
+    wrap.append(wordChipRow('Rare trope mark', hs.rareTropeMarks.map((t) => `${t.mark} -- ${t.word}`)));
+  }
+  wrap.append(el('p', { class: 'why-note' }, 'No Gotchas criterion here -- the nekudot and trope are already on the printed page, so the ambiguous-spelling and look-alike-word traps that apply to Torah reading don\'t apply to a haftarah. Word rarity is judged against the Torah + Nevi\'im together, not the Torah alone.'));
   return wrap;
 }
 

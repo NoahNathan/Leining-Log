@@ -787,7 +787,7 @@ The general lesson, now applied three times in this document: a parsha-level
 tag should describe something true of *every* aliyah it touches. Where it
 describes a specific passage, it belongs in an override.
 
-## Haftarot are scored, on a 1-7 band
+## Haftarot are scored, weighted down 30% rather than banded onto their own scale
 
 Haftarot get the same treatment as Torah readings with one structural
 difference: **a haftarah is chanted from a printed, vocalized text.** The
@@ -811,23 +811,34 @@ Vocabulary carries more weight here than in Torah reading (30% against 10%):
 with the pointing supplied, what is actually left to trip over is unfamiliar
 and hard-to-pronounce words.
 
+**Length is ranked against other haftarot, not Torah aliyot.** Haftarot run
+far longer on average -- median 324 words against 195 for a parsha aliyah --
+so ranking a haftarah's word count against the Torah aliyot pool made nearly
+every haftarah come back as "one of the longest in the leining" regardless of
+how it actually compares to other haftarot. The Length sub-score is
+percentile-ranked against the 61 haftarot themselves.
+
 **Rarity is measured against a Torah + Nevi'im corpus** (223,091 tokens, 26
 books), not the Torah alone. Judging prophetic vocabulary against the Chumash
 by itself would make perfectly ordinary Nevi'im words look far rarer than
 they functionally are to someone who reads haftarot.
 
-**Why the ceiling is 7 and not lower.** Haftarah trope is a genuinely
-separate melody that has to be learned on its own; Nevi'im vocabulary is
-harder than Chumash; and haftarot are not short -- median 324 words against
-195 for a parsha aliyah, with Shirat Devorah (Beshalach) running to 744. A
-hard haftarah is a real undertaking, just not a 10. The band is applied by
-rescaling into 1-7 rather than clamping at 7, which keeps full discrimination
-between haftarot instead of piling the top third against a ceiling.
+**Not a separate 1-7 scale.** The final score is computed on the exact same
+1-10 anchor as every Torah reading (the ordinary-parsha-aliyot raw range --
+see "What the 1-10 scale is actually relative to", below), then weighted down
+by a flat 30%. There is no separate ceiling constant and no "out of 7"
+caveat anywhere on the page -- the badge, its color and its label are
+produced by the same code path as a Torah score, so a haftarah score is
+directly comparable at a glance rather than needing translation. The 30%
+discount reflects that haftarah trope is a genuinely separate melody that has
+to be learned on its own, Nevi'im vocabulary is harder than Chumash, and
+haftarot are not short (Shirat Devorah, in Beshalach, runs to 744 words) --
+so a hard haftarah is a real undertaking, just capped short of the hardest
+Torah reading in the dataset.
 
-Result: 61 haftarot, ashkenazi reading, distributed 1:2 2:2 3:7 4:14 5:17
-6:13 7:6, mean 4.72 against 5.28 for ordinary parsha aliyot. The hardest are
-Beshalach (Shirat Devorah, 52 verses), Bereshit, Tetzaveh and Metzora; the
-easiest are Ki Teitzei (10 verses) and Vayakhel (11). Sefardi and Chabad
+Result: 61 haftarot, ashkenazi reading, ranging from 1.3 (Vayakhel, Balak,
+Chukat-Balak) to 6.1 (Beshalach / Shirat Devorah, 52 verses), mean 3.6.
+Bereshit, Sh'lach and Behar round out the hardest four. Sefardi and Chabad
 variants are stored in `haftarot.json` but not yet scored.
 
 ## What the 1-10 scale is actually relative to
@@ -865,6 +876,11 @@ One consequence worth noting: because the anchor no longer spans the shortest
 readings in the dataset, a reading can fall below the anchor floor. Those are
 clamped to 1 rather than allowed to go lower -- the scale is 1-10 by
 definition.
+
+Haftarot are measured against this same anchor too (see "Haftarot are scored,
+weighted down 30%", above), then discounted 30% -- so they never help set the
+scale, and a haftarah's raw position on it is what gets weighted down, not a
+score computed on some other basis.
 
 ## Known limitations / where to improve this next
 

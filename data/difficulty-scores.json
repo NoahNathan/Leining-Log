@@ -1,7 +1,7 @@
 {
   "description": "Difficulty ratings (0-10 per criterion, plus a length-weighted, then dataset-wide-rescaled final score) for every aliyah of every parsha -- including the 7 combined (double) parshiot, each scored against its own combined-reading aliyah divisions rather than averaged from its two components -- AND every chag/fast/Rosh Chodesh/special-Shabbat reading in chagim.json (see the separate 'chagim' array). Generated with a transparent rule-based methodology, NOT a survey of actual leining outcomes. Vocabulary is computed from real word-frequency + pronunciation-complexity data over the Masoretic Torah text (see word-difficulty.json); the other four criteria are a content-profile heuristic. Final scores are rescaled against the full pool of ~860 aliyot (parshiot + combined + chagim) so the hardest aliyah in the dataset is a real 10 and the easiest a real 1. See difficulty-rubric.md for the full methodology and honest caveats.",
   "methodology": "difficulty-rubric.md",
-  "generatedAt": "2026-08-09T09:19:59.353Z",
+  "generatedAt": "2026-08-09T14:49:44.732Z",
   "count": 61,
   "individualCount": 54,
   "combinedCount": 7,
@@ -47311,57 +47311,6 @@
   "haftarotCount": 61,
   "haftarot": [
     {
-      "haftarahId": "Bereshit",
-      "parsha": "Bereshit",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "Isaiah",
-          "start": "42:5",
-          "end": "43:10",
-          "verses": 31
-        }
-      ],
-      "verses": 31,
-      "wordCount": 386,
-      "scores": {
-        "length": 9,
-        "vocabulary": 9,
-        "trope": 7,
-        "repetition": 4
-      },
-      "vocabDetail": {
-        "rarity": 9.1,
-        "pronunciation": 9,
-        "rareExamples": [
-          {
-            "word": "וְנוֹטֵיהֶם",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "וְצֶֽאֱצָאֶיהָ",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "לַהֹֽלְכִים",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "וְצֶֽאֱצָאֶיהָ"
-          },
-          {
-            "word": "וַתְּלַֽהֲטֵהוּ"
-          },
-          {
-            "word": "וּמַֽעֲקַשִּׁים"
-          }
-        ]
-      },
-      "finalScore": 7
-    },
-    {
       "haftarahId": "Beshalach",
       "parsha": "Beshalach",
       "nusach": "ashkenazi",
@@ -47410,574 +47359,58 @@
           }
         ]
       },
-      "finalScore": 7
+      "finalScore": 6.1
     },
     {
-      "haftarahId": "Tetzaveh",
-      "parsha": "Tetzaveh",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "Ezekiel",
-          "start": "43:10",
-          "end": "43:27",
-          "verses": 18
-        }
-      ],
-      "verses": 18,
-      "wordCount": 293,
-      "scores": {
-        "length": 8,
-        "vocabulary": 8,
-        "trope": 9,
-        "repetition": 7
-      },
-      "vocabDetail": {
-        "rarity": 6,
-        "pronunciation": 9.9,
-        "rareExamples": [
-          {
-            "word": "מֵֽעֲוֹנֽוֹתֵיהֶם",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "צוּרַת",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "וּתְכֽוּנָתוֹ",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "וּמֵהָֽאֲרִיאֵל"
-          },
-          {
-            "word": "וּמֵהָֽאֲרִאֵיל"
-          },
-          {
-            "word": "וּמֵהָֽעֲזָרָה"
-          }
-        ]
-      },
-      "finalScore": 7
-    },
-    {
-      "haftarahId": "Metzora",
-      "parsha": "Metzora",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "II Kings",
-          "start": "7:3",
-          "end": "7:20",
-          "verses": 18
-        }
-      ],
-      "verses": 18,
-      "wordCount": 370,
-      "scores": {
-        "length": 9,
-        "vocabulary": 7,
-        "trope": 9,
-        "repetition": 3
-      },
-      "vocabDetail": {
-        "rarity": 3.6,
-        "pronunciation": 9.5,
-        "rareExamples": [
-          {
-            "word": "מְצֹרָעִים",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "אָמַרְנוּ",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "יְחַיֻּנוּ",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "אָהֳלֵיהֶם"
-          },
-          {
-            "word": "הַֽמַּחֲנֶה"
-          },
-          {
-            "word": "אַחֲרֵיהֶם"
-          }
-        ]
-      },
-      "finalScore": 7
-    },
-    {
-      "haftarahId": "Behar",
-      "parsha": "Behar",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "Jeremiah",
-          "start": "32:6",
-          "end": "32:27",
-          "verses": 22
-        }
-      ],
-      "verses": 22,
-      "wordCount": 351,
-      "scores": {
-        "length": 9,
-        "vocabulary": 6,
-        "trope": 9,
-        "repetition": 9
-      },
-      "vocabDetail": {
-        "rarity": 3.1,
-        "pronunciation": 9.1,
-        "rareExamples": [
-          {
-            "word": "דֹּֽדְךָ",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "הַֽיְרֻשָּׁה",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "וָֽאֶשְׁקֲלָה",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "הָֽעֲלִֽילִיָּה"
-          },
-          {
-            "word": "אַֽחֲרֵיהֶם"
-          },
-          {
-            "word": "הַגְּאֻלָּה"
-          }
-        ]
-      },
-      "finalScore": 7
-    },
-    {
-      "haftarahId": "Tazria-Metzora",
-      "parsha": "Tazria-Metzora",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "II Kings",
-          "start": "7:3",
-          "end": "7:20",
-          "verses": 18
-        }
-      ],
-      "verses": 18,
-      "wordCount": 370,
-      "scores": {
-        "length": 9,
-        "vocabulary": 7,
-        "trope": 9,
-        "repetition": 3
-      },
-      "vocabDetail": {
-        "rarity": 3.6,
-        "pronunciation": 9.5,
-        "rareExamples": [
-          {
-            "word": "מְצֹרָעִים",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "אָמַרְנוּ",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "יְחַיֻּנוּ",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "אָהֳלֵיהֶם"
-          },
-          {
-            "word": "הַֽמַּחֲנֶה"
-          },
-          {
-            "word": "אַחֲרֵיהֶם"
-          }
-        ]
-      },
-      "finalScore": 7
-    },
-    {
-      "haftarahId": "Chayei Sara",
-      "parsha": "Chayei Sara",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "I Kings",
-          "start": "1:1",
-          "end": "1:31",
-          "verses": 31
-        }
-      ],
-      "verses": 31,
-      "wordCount": 462,
-      "scores": {
-        "length": 10,
-        "vocabulary": 5,
-        "trope": 8,
-        "repetition": 5
-      },
-      "vocabDetail": {
-        "rarity": 2.5,
-        "pronunciation": 7.2,
-        "rareExamples": [
-          {
-            "word": "בַּבְּגָדִים",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "וְעָֽמְדָה",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "וְשָׁכְבָה",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "וְהַֽנַּעֲרָה"
-          },
-          {
-            "word": "אֲדֹנִיָּֽהוּ"
-          },
-          {
-            "word": "אֲדֹנִיָּהוּ"
-          }
-        ]
-      },
-      "finalScore": 6
-    },
-    {
-      "haftarahId": "Toldot",
-      "parsha": "Toldot",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "Malachi",
-          "start": "1:1",
-          "end": "2:7",
-          "verses": 21
-        }
-      ],
-      "verses": 21,
-      "wordCount": 341,
-      "scores": {
-        "length": 9,
-        "vocabulary": 5,
-        "trope": 7,
-        "repetition": 7
-      },
-      "vocabDetail": {
-        "rarity": 5.5,
-        "pronunciation": 5.4,
-        "rareExamples": [
-          {
-            "word": "אֲהַבְתָּנוּ",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "רֻשַּׁשְׁנוּ",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "וְנָשׁוּב",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "אֲהַבְתָּנוּ"
-          },
-          {
-            "word": "הַכֹּֽהֲנִים"
-          },
-          {
-            "word": "הַכֹּֽהֲנִֽים"
-          }
-        ]
-      },
-      "finalScore": 6
-    },
-    {
-      "haftarahId": "Vayikra",
-      "parsha": "Vayikra",
+      "haftarahId": "Bereshit",
+      "parsha": "Bereshit",
       "nusach": "ashkenazi",
       "ref": [
         {
           "book": "Isaiah",
-          "start": "43:21",
-          "end": "44:23",
+          "start": "42:5",
+          "end": "43:10",
           "verses": 31
         }
       ],
       "verses": 31,
-      "wordCount": 407,
-      "scores": {
-        "length": 9,
-        "vocabulary": 6,
-        "trope": 6,
-        "repetition": 6
-      },
-      "vocabDetail": {
-        "rarity": 8.8,
-        "pronunciation": 4,
-        "rareExamples": [
-          {
-            "word": "הֵבֵיאתָ",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "וּזְבָחֶיךָ",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "כִבַּדְתָּנִי",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "וַֽחֲמֽוּדֵיהֶם"
-          },
-          {
-            "word": "הֶעֱבַדְתִּיךָ"
-          },
-          {
-            "word": "הֶֽעֱבַדְתַּנִי"
-          }
-        ]
-      },
-      "finalScore": 6
-    },
-    {
-      "haftarahId": "Tzav",
-      "parsha": "Tzav",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "Jeremiah",
-          "start": "7:21",
-          "end": "8:3",
-          "verses": 17
-        },
-        {
-          "book": "Jeremiah",
-          "start": "9:22",
-          "end": "9:23",
-          "verses": 2
-        }
-      ],
-      "verses": 19,
-      "wordCount": 338,
-      "scores": {
-        "length": 9,
-        "vocabulary": 6,
-        "trope": 6,
-        "repetition": 5
-      },
-      "vocabDetail": {
-        "rarity": 4.5,
-        "pronunciation": 8.4,
-        "rareExamples": [
-          {
-            "word": "בְּמֹעֵצוֹת",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "יַֽעֲנֽוּכָה",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "הָֽאֱמוּנָה",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "הָֽאֱמוּנָה"
-          },
-          {
-            "word": "אַֽחֲרֵיהֶם"
-          },
-          {
-            "word": "הִֽשְׁתַּֽחֲווּ"
-          }
-        ]
-      },
-      "finalScore": 6
-    },
-    {
-      "haftarahId": "Tazria",
-      "parsha": "Tazria",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "II Kings",
-          "start": "4:42",
-          "end": "5:19",
-          "verses": 22
-        }
-      ],
-      "verses": 22,
-      "wordCount": 390,
-      "scores": {
-        "length": 9,
-        "vocabulary": 5,
-        "trope": 9,
-        "repetition": 2
-      },
-      "vocabDetail": {
-        "rarity": 3.9,
-        "pronunciation": 6.9,
-        "rareExamples": [
-          {
-            "word": "בְּצִקְלֹנוֹ",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "אַחֲלֵי",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "כִּכְּרֵי",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "בְּהִשְׁתַּחֲוָיָתִי"
-          },
-          {
-            "word": "וְהִשְׁתַּחֲוֵיתִי"
-          },
-          {
-            "word": "הָאֱלֹהִים"
-          }
-        ]
-      },
-      "finalScore": 6
-    },
-    {
-      "haftarahId": "Bamidbar",
-      "parsha": "Bamidbar",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "Hosea",
-          "start": "2:1",
-          "end": "2:22",
-          "verses": 22
-        }
-      ],
-      "verses": 22,
-      "wordCount": 298,
+      "wordCount": 386,
       "scores": {
         "length": 8,
-        "vocabulary": 8,
+        "vocabulary": 9,
         "trope": 7,
-        "repetition": 5
+        "repetition": 4
       },
       "vocabDetail": {
-        "rarity": 7.6,
-        "pronunciation": 9.3,
+        "rarity": 9.1,
+        "pronunciation": 9,
         "rareExamples": [
           {
-            "word": "וְלַֽאֲחֽוֹתֵיכֶם",
+            "word": "וְנוֹטֵיהֶם",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "בְאִמְּכֶם",
+            "word": "וְצֶֽאֱצָאֶיהָ",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "זְנוּנֶיהָ",
+            "word": "לַהֹֽלְכִים",
             "occurrencesInCorpus": 1
           }
         ],
         "hardToPronounceExamples": [
           {
-            "word": "וְלַֽאֲחֽוֹתֵיכֶם"
+            "word": "וְצֶֽאֱצָאֶיהָ"
           },
           {
-            "word": "וְנַֽאֲפוּפֶיהָ"
+            "word": "וַתְּלַֽהֲטֵהוּ"
           },
           {
-            "word": "מְאַֽהֲבֶיהָ"
+            "word": "וּמַֽעֲקַשִּׁים"
           }
         ]
       },
-      "finalScore": 6
-    },
-    {
-      "haftarahId": "Beha'alotcha",
-      "parsha": "Beha'alotcha",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "Zechariah",
-          "start": "2:14",
-          "end": "4:7",
-          "verses": 21
-        }
-      ],
-      "verses": 21,
-      "wordCount": 316,
-      "scores": {
-        "length": 9,
-        "vocabulary": 5,
-        "trope": 8,
-        "repetition": 7
-      },
-      "vocabDetail": {
-        "rarity": 3.3,
-        "pronunciation": 5.8,
-        "rareExamples": [
-          {
-            "word": "וְנָחַל",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "נֵעוֹר",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "וְהַשָּׂטָן",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "הֶֽעֱבַרְתִּי"
-          },
-          {
-            "word": "הַהוּא"
-          },
-          {
-            "word": "הֲלוֹא"
-          }
-        ]
-      },
-      "finalScore": 6
+      "finalScore": 5.9
     },
     {
       "haftarahId": "Sh'lach",
@@ -48028,7 +47461,58 @@
           }
         ]
       },
-      "finalScore": 6
+      "finalScore": 5.7
+    },
+    {
+      "haftarahId": "Behar",
+      "parsha": "Behar",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Jeremiah",
+          "start": "32:6",
+          "end": "32:27",
+          "verses": 22
+        }
+      ],
+      "verses": 22,
+      "wordCount": 351,
+      "scores": {
+        "length": 7,
+        "vocabulary": 6,
+        "trope": 9,
+        "repetition": 9
+      },
+      "vocabDetail": {
+        "rarity": 3.1,
+        "pronunciation": 9.1,
+        "rareExamples": [
+          {
+            "word": "דֹּֽדְךָ",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "הַֽיְרֻשָּׁה",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "וָֽאֶשְׁקֲלָה",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "הָֽעֲלִֽילִיָּה"
+          },
+          {
+            "word": "אַֽחֲרֵיהֶם"
+          },
+          {
+            "word": "הַגְּאֻלָּה"
+          }
+        ]
+      },
+      "finalScore": 5.5
     },
     {
       "haftarahId": "Pinchas",
@@ -48045,7 +47529,7 @@
       "verses": 22,
       "wordCount": 386,
       "scores": {
-        "length": 9,
+        "length": 8,
         "vocabulary": 5,
         "trope": 10,
         "repetition": 6
@@ -48079,645 +47563,258 @@
           }
         ]
       },
-      "finalScore": 6
+      "finalScore": 5.5
     },
     {
-      "haftarahId": "Masei",
-      "parsha": "Masei",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "Jeremiah",
-          "start": "2:4",
-          "end": "2:28",
-          "verses": 25
-        },
-        {
-          "book": "Jeremiah",
-          "start": "3:4",
-          "end": "3:4",
-          "verses": 1
-        }
-      ],
-      "verses": 26,
-      "wordCount": 381,
-      "scores": {
-        "length": 9,
-        "vocabulary": 7,
-        "trope": 4,
-        "repetition": 7
-      },
-      "vocabDetail": {
-        "rarity": 6.9,
-        "pronunciation": 6.4,
-        "rareExamples": [
-          {
-            "word": "הַמּוֹלִיךְ",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "וְשׁוּחָה",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "וְצַלְמָוֶת",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "וְאַֽחֲרֵיהֶם"
-          },
-          {
-            "word": "הַמַּֽעֲלֶה"
-          },
-          {
-            "word": "הַכֹּֽהֲנִים"
-          }
-        ]
-      },
-      "finalScore": 6
-    },
-    {
-      "haftarahId": "Nitzavim",
-      "parsha": "Nitzavim",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "Isaiah",
-          "start": "61:10",
-          "end": "63:9",
-          "verses": 23
-        }
-      ],
-      "verses": 23,
-      "wordCount": 331,
-      "scores": {
-        "length": 9,
-        "vocabulary": 7,
-        "trope": 6,
-        "repetition": 8
-      },
-      "vocabDetail": {
-        "rarity": 8.2,
-        "pronunciation": 4.8,
-        "rareExamples": [
-          {
-            "word": "שׂוֹשׂ",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "אָשִׂישׂ",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "הִלְבִּישַׁנִי",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "בְּאַֽהֲבָתוֹ"
-          },
-          {
-            "word": "אֶֽחֱשֶׁה"
-          },
-          {
-            "word": "וִישֽׁוּעָתָהּ"
-          }
-        ]
-      },
-      "finalScore": 6
-    },
-    {
-      "haftarahId": "Matot-Masei",
-      "parsha": "Matot-Masei",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "Jeremiah",
-          "start": "2:4",
-          "end": "2:28",
-          "verses": 25
-        },
-        {
-          "book": "Jeremiah",
-          "start": "3:4",
-          "end": "3:4",
-          "verses": 1
-        }
-      ],
-      "verses": 26,
-      "wordCount": 381,
-      "scores": {
-        "length": 9,
-        "vocabulary": 7,
-        "trope": 4,
-        "repetition": 7
-      },
-      "vocabDetail": {
-        "rarity": 6.9,
-        "pronunciation": 6.4,
-        "rareExamples": [
-          {
-            "word": "הַמּוֹלִיךְ",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "וְשׁוּחָה",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "וְצַלְמָוֶת",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "וְאַֽחֲרֵיהֶם"
-          },
-          {
-            "word": "הַמַּֽעֲלֶה"
-          },
-          {
-            "word": "הַכֹּֽהֲנִים"
-          }
-        ]
-      },
-      "finalScore": 6
-    },
-    {
-      "haftarahId": "Nitzavim-Vayeilech",
-      "parsha": "Nitzavim-Vayeilech",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "Isaiah",
-          "start": "61:10",
-          "end": "63:9",
-          "verses": 23
-        }
-      ],
-      "verses": 23,
-      "wordCount": 331,
-      "scores": {
-        "length": 9,
-        "vocabulary": 7,
-        "trope": 6,
-        "repetition": 8
-      },
-      "vocabDetail": {
-        "rarity": 8.2,
-        "pronunciation": 4.8,
-        "rareExamples": [
-          {
-            "word": "שׂוֹשׂ",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "אָשִׂישׂ",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "הִלְבִּישַׁנִי",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "בְּאַֽהֲבָתוֹ"
-          },
-          {
-            "word": "אֶֽחֱשֶׁה"
-          },
-          {
-            "word": "וִישֽׁוּעָתָהּ"
-          }
-        ]
-      },
-      "finalScore": 6
-    },
-    {
-      "haftarahId": "Lech-Lecha",
-      "parsha": "Lech-Lecha",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "Isaiah",
-          "start": "40:27",
-          "end": "41:16",
-          "verses": 21
-        }
-      ],
-      "verses": 21,
-      "wordCount": 246,
-      "scores": {
-        "length": 7,
-        "vocabulary": 9,
-        "trope": 3,
-        "repetition": 8
-      },
-      "vocabDetail": {
-        "rarity": 8.6,
-        "pronunciation": 9.4,
-        "rareExamples": [
-          {
-            "word": "נִסְתְּרָה",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "וּמֵֽאֱלֹהַי",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "יִיעַף",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "וּמֵֽאֲצִילֶיהָ"
-          },
-          {
-            "word": "הֶֽחֱזַקְתִּיךָ"
-          },
-          {
-            "word": "וּמֵֽאֱלֹהַי"
-          }
-        ]
-      },
-      "finalScore": 5
-    },
-    {
-      "haftarahId": "Vayetzei",
-      "parsha": "Vayetzei",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "Hosea",
-          "start": "12:13",
-          "end": "14:10",
-          "verses": 28
-        }
-      ],
-      "verses": 28,
-      "wordCount": 306,
-      "scores": {
-        "length": 8,
-        "vocabulary": 8,
-        "trope": 2,
-        "repetition": 10
-      },
-      "vocabDetail": {
-        "rarity": 9.5,
-        "pronunciation": 6.1,
-        "rareExamples": [
-          {
-            "word": "בְּאִשָּׁה",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "וּבְאִשָּׁה",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "וְדָמָיו",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "אֱלֹהֵינוּ"
-          },
-          {
-            "word": "וַֽאֲשׁוּרֶנּוּ"
-          },
-          {
-            "word": "הֶֽעֱלָה"
-          }
-        ]
-      },
-      "finalScore": 5
-    },
-    {
-      "haftarahId": "Vayigash",
-      "parsha": "Vayigash",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "Ezekiel",
-          "start": "37:15",
-          "end": "37:28",
-          "verses": 14
-        }
-      ],
-      "verses": 14,
-      "wordCount": 244,
-      "scores": {
-        "length": 7,
-        "vocabulary": 4,
-        "trope": 9,
-        "repetition": 9
-      },
-      "vocabDetail": {
-        "rarity": 1.9,
-        "pronunciation": 7,
-        "rareExamples": [
-          {
-            "word": "לַֽאֲחָדִים",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "וְשִׁבְטֵי",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "יֵחָצוּ",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "לַֽאֲחָדִים"
-          },
-          {
-            "word": "וּבְשִׁקּוּצֵיהֶם"
-          },
-          {
-            "word": "עֲלֵיהֶם"
-          }
-        ]
-      },
-      "finalScore": 5
-    },
-    {
-      "haftarahId": "Shemot",
-      "parsha": "Shemot",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "Isaiah",
-          "start": "27:6",
-          "end": "28:13",
-          "verses": 21
-        },
-        {
-          "book": "Isaiah",
-          "start": "29:22",
-          "end": "29:23",
-          "verses": 2
-        }
-      ],
-      "verses": 23,
-      "wordCount": 324,
-      "scores": {
-        "length": 9,
-        "vocabulary": 6,
-        "trope": 4,
-        "repetition": 3
-      },
-      "vocabDetail": {
-        "rarity": 9,
-        "pronunciation": 3.6,
-        "rareExamples": [
-          {
-            "word": "יַשְׁרֵשׁ",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "יָצִיץ",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "תְּנוּבָֽה",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "וְהִשְׁתַּֽחֲווּ"
-          },
-          {
-            "word": "בְּסַאסְּאָה"
-          },
-          {
-            "word": "הַמְּנוּחָה"
-          }
-        ]
-      },
-      "finalScore": 5
-    },
-    {
-      "haftarahId": "Vaera",
-      "parsha": "Vaera",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "Ezekiel",
-          "start": "28:25",
-          "end": "29:21",
-          "verses": 23
-        }
-      ],
-      "verses": 23,
-      "wordCount": 392,
-      "scores": {
-        "length": 9,
-        "vocabulary": 3,
-        "trope": 7,
-        "repetition": 6
-      },
-      "vocabDetail": {
-        "rarity": 3,
-        "pronunciation": 3.1,
-        "rareExamples": [
-          {
-            "word": "בְּקַבְּצִי",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "מִסְּבִיבֹתָם",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "הַתַּנִּים",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "וּבְהִשָּֽׁעֲנָם"
-          },
-          {
-            "word": "אֱלֹֽהֵיהֶֽם"
-          },
-          {
-            "word": "וְהַֽעֲלִיתִיךָ"
-          }
-        ]
-      },
-      "finalScore": 5
-    },
-    {
-      "haftarahId": "Yitro",
-      "parsha": "Yitro",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "Isaiah",
-          "start": "6:1",
-          "end": "7:6",
-          "verses": 19
-        },
-        {
-          "book": "Isaiah",
-          "start": "9:5",
-          "end": "9:6",
-          "verses": 2
-        }
-      ],
-      "verses": 21,
-      "wordCount": 338,
-      "scores": {
-        "length": 9,
-        "vocabulary": 4,
-        "trope": 5,
-        "repetition": 8
-      },
-      "vocabDetail": {
-        "rarity": 5.8,
-        "pronunciation": 1.8,
-        "rareExamples": [
-          {
-            "word": "וְשׁוּלָיו",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "נִדְמֵיתִי",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "בְּמֶלְקָחַיִם",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "הָֽעֲזוּבָה"
-          },
-          {
-            "word": "וְהָֽאֲדָמָה"
-          },
-          {
-            "word": "וּֽלְסַֽעֲדָהּ"
-          }
-        ]
-      },
-      "finalScore": 5
-    },
-    {
-      "haftarahId": "Mishpatim",
-      "parsha": "Mishpatim",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "Jeremiah",
-          "start": "34:8",
-          "end": "34:22",
-          "verses": 15
-        },
-        {
-          "book": "Jeremiah",
-          "start": "33:25",
-          "end": "33:26",
-          "verses": 2
-        }
-      ],
-      "verses": 17,
-      "wordCount": 320,
-      "scores": {
-        "length": 9,
-        "vocabulary": 4,
-        "trope": 8,
-        "repetition": 5
-      },
-      "vocabDetail": {
-        "rarity": 2.8,
-        "pronunciation": 6,
-        "rareExamples": [
-          {
-            "word": "וְהָֽעִבְרִיָּה",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "בִּיהוּדִי",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "וַיִּכְבְּשׁוּם",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "וְהַכֹּֽהֲנִים"
-          },
-          {
-            "word": "וְהָֽעִבְרִיָּה"
-          },
-          {
-            "word": "הָֽעֲבָדִים"
-          }
-        ]
-      },
-      "finalScore": 5
-    },
-    {
-      "haftarahId": "Terumah",
-      "parsha": "Terumah",
+      "haftarahId": "Chayei Sara",
+      "parsha": "Chayei Sara",
       "nusach": "ashkenazi",
       "ref": [
         {
           "book": "I Kings",
-          "start": "5:26",
-          "end": "6:13",
-          "verses": 20
+          "start": "1:1",
+          "end": "1:31",
+          "verses": 31
         }
       ],
-      "verses": 20,
-      "wordCount": 290,
+      "verses": 31,
+      "wordCount": 462,
       "scores": {
-        "length": 8,
-        "vocabulary": 6,
-        "trope": 6,
-        "repetition": 3
+        "length": 9,
+        "vocabulary": 5,
+        "trope": 8,
+        "repetition": 5
       },
       "vocabDetail": {
-        "rarity": 5.4,
-        "pronunciation": 7.5,
+        "rarity": 2.5,
+        "pronunciation": 7.2,
         "rareExamples": [
           {
-            "word": "מַס",
+            "word": "בַּבְּגָדִים",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "לְבָנוֹנָה",
+            "word": "וְעָֽמְדָה",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "מִשָּׂרֵי",
+            "word": "וְשָׁכְבָה",
             "occurrencesInCorpus": 1
           }
         ],
         "hardToPronounceExamples": [
           {
-            "word": "וְהָאֲבָנִים"
+            "word": "וְהַֽנַּעֲרָה"
           },
           {
-            "word": "הַתַּחְתֹּנָה"
+            "word": "אֲדֹנִיָּֽהוּ"
           },
           {
-            "word": "הַמְּלָאכָה"
+            "word": "אֲדֹנִיָּהוּ"
+          }
+        ]
+      },
+      "finalScore": 5.4
+    },
+    {
+      "haftarahId": "Vayikra",
+      "parsha": "Vayikra",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Isaiah",
+          "start": "43:21",
+          "end": "44:23",
+          "verses": 31
+        }
+      ],
+      "verses": 31,
+      "wordCount": 407,
+      "scores": {
+        "length": 9,
+        "vocabulary": 6,
+        "trope": 6,
+        "repetition": 6
+      },
+      "vocabDetail": {
+        "rarity": 8.8,
+        "pronunciation": 4,
+        "rareExamples": [
+          {
+            "word": "הֵבֵיאתָ",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "וּזְבָחֶיךָ",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "כִבַּדְתָּנִי",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "וַֽחֲמֽוּדֵיהֶם"
+          },
+          {
+            "word": "הֶעֱבַדְתִּיךָ"
+          },
+          {
+            "word": "הֶֽעֱבַדְתַּנִי"
+          }
+        ]
+      },
+      "finalScore": 5.4
+    },
+    {
+      "haftarahId": "Metzora",
+      "parsha": "Metzora",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "II Kings",
+          "start": "7:3",
+          "end": "7:20",
+          "verses": 18
+        }
+      ],
+      "verses": 18,
+      "wordCount": 370,
+      "scores": {
+        "length": 7,
+        "vocabulary": 7,
+        "trope": 9,
+        "repetition": 3
+      },
+      "vocabDetail": {
+        "rarity": 3.6,
+        "pronunciation": 9.5,
+        "rareExamples": [
+          {
+            "word": "מְצֹרָעִים",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "אָמַרְנוּ",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "יְחַיֻּנוּ",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "אָהֳלֵיהֶם"
+          },
+          {
+            "word": "הַֽמַּחֲנֶה"
+          },
+          {
+            "word": "אַחֲרֵיהֶם"
+          }
+        ]
+      },
+      "finalScore": 5.3
+    },
+    {
+      "haftarahId": "Tazria-Metzora",
+      "parsha": "Tazria-Metzora",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "II Kings",
+          "start": "7:3",
+          "end": "7:20",
+          "verses": 18
+        }
+      ],
+      "verses": 18,
+      "wordCount": 370,
+      "scores": {
+        "length": 7,
+        "vocabulary": 7,
+        "trope": 9,
+        "repetition": 3
+      },
+      "vocabDetail": {
+        "rarity": 3.6,
+        "pronunciation": 9.5,
+        "rareExamples": [
+          {
+            "word": "מְצֹרָעִים",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "אָמַרְנוּ",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "יְחַיֻּנוּ",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "אָהֳלֵיהֶם"
+          },
+          {
+            "word": "הַֽמַּחֲנֶה"
+          },
+          {
+            "word": "אַחֲרֵיהֶם"
+          }
+        ]
+      },
+      "finalScore": 5.3
+    },
+    {
+      "haftarahId": "Tazria",
+      "parsha": "Tazria",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "II Kings",
+          "start": "4:42",
+          "end": "5:19",
+          "verses": 22
+        }
+      ],
+      "verses": 22,
+      "wordCount": 390,
+      "scores": {
+        "length": 8,
+        "vocabulary": 5,
+        "trope": 9,
+        "repetition": 2
+      },
+      "vocabDetail": {
+        "rarity": 3.9,
+        "pronunciation": 6.9,
+        "rareExamples": [
+          {
+            "word": "בְּצִקְלֹנוֹ",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "אַחֲלֵי",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "כִּכְּרֵי",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "בְּהִשְׁתַּחֲוָיָתִי"
+          },
+          {
+            "word": "וְהִשְׁתַּחֲוֵיתִי"
+          },
+          {
+            "word": "הָאֱלֹהִים"
           }
         ]
       },
@@ -48772,160 +47869,58 @@
           }
         ]
       },
-      "finalScore": 5
+      "finalScore": 4.9
     },
     {
-      "haftarahId": "Emor",
-      "parsha": "Emor",
+      "haftarahId": "Tetzaveh",
+      "parsha": "Tetzaveh",
       "nusach": "ashkenazi",
       "ref": [
         {
           "book": "Ezekiel",
-          "start": "44:15",
-          "end": "44:31",
-          "verses": 17
+          "start": "43:10",
+          "end": "43:27",
+          "verses": 18
         }
       ],
-      "verses": 17,
-      "wordCount": 255,
+      "verses": 18,
+      "wordCount": 293,
       "scores": {
-        "length": 7,
+        "length": 4,
         "vocabulary": 8,
-        "trope": 3,
-        "repetition": 10
+        "trope": 9,
+        "repetition": 7
       },
       "vocabDetail": {
-        "rarity": 6.3,
-        "pronunciation": 8.8,
+        "rarity": 6,
+        "pronunciation": 9.9,
         "rareExamples": [
           {
-            "word": "בְּשָֽׁרְתָם",
+            "word": "מֵֽעֲוֹנֽוֹתֵיהֶם",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "מָתְנֵיהֶם",
+            "word": "צוּרַת",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "יַחְגְּרוּ",
+            "word": "וּתְכֽוּנָתוֹ",
             "occurrencesInCorpus": 1
           }
         ],
         "hardToPronounceExamples": [
           {
-            "word": "וְהַכֹּֽהֲנִים"
+            "word": "וּמֵהָֽאֲרִיאֵל"
           },
           {
-            "word": "וַֽאֲחֻזָּה"
+            "word": "וּמֵהָֽאֲרִאֵיל"
           },
           {
-            "word": "עֲרִיסֽוֹתֵיכֶם"
+            "word": "וּמֵהָֽעֲזָרָה"
           }
         ]
       },
-      "finalScore": 5
-    },
-    {
-      "haftarahId": "Korach",
-      "parsha": "Korach",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "I Samuel",
-          "start": "11:14",
-          "end": "12:22",
-          "verses": 24
-        }
-      ],
-      "verses": 24,
-      "wordCount": 425,
-      "scores": {
-        "length": 10,
-        "vocabulary": 5,
-        "trope": 4,
-        "repetition": 3
-      },
-      "vocabDetail": {
-        "rarity": 1.3,
-        "pronunciation": 7.8,
-        "rareExamples": [
-          {
-            "word": "וּנְחַדֵּשׁ",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "וָאַמְלִיךְ",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "עָשַׁקְתִּי",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "אֱלֹהֵיהֶם"
-          },
-          {
-            "word": "וּבַאֲבֹתֵיכֶֽם"
-          },
-          {
-            "word": "הִתְהַלַּכְתִּי"
-          }
-        ]
-      },
-      "finalScore": 5
-    },
-    {
-      "haftarahId": "Devarim",
-      "parsha": "Devarim",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "Isaiah",
-          "start": "1:1",
-          "end": "1:27",
-          "verses": 27
-        }
-      ],
-      "verses": 27,
-      "wordCount": 324,
-      "scores": {
-        "length": 9,
-        "vocabulary": 7,
-        "trope": 1,
-        "repetition": 9
-      },
-      "vocabDetail": {
-        "rarity": 9.9,
-        "pronunciation": 4.5,
-        "rareExamples": [
-          {
-            "word": "וְהַֽאֲזִינִי",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "וְרוֹמַמְתִּי",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "אֵבוּס",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "וְהַֽאֲזִינִי"
-          },
-          {
-            "word": "הַֽאֲזִינוּ"
-          },
-          {
-            "word": "אֱלֹהֵינוּ"
-          }
-        ]
-      },
-      "finalScore": 5
+      "finalScore": 4.8
     },
     {
       "haftarahId": "Eikev",
@@ -48976,109 +47971,58 @@
           }
         ]
       },
-      "finalScore": 5
+      "finalScore": 4.8
     },
     {
-      "haftarahId": "Shoftim",
-      "parsha": "Shoftim",
+      "haftarahId": "Nitzavim",
+      "parsha": "Nitzavim",
       "nusach": "ashkenazi",
       "ref": [
         {
           "book": "Isaiah",
-          "start": "51:12",
-          "end": "52:12",
-          "verses": 24
+          "start": "61:10",
+          "end": "63:9",
+          "verses": 23
         }
       ],
-      "verses": 24,
-      "wordCount": 332,
+      "verses": 23,
+      "wordCount": 331,
       "scores": {
-        "length": 9,
-        "vocabulary": 5,
-        "trope": 3,
+        "length": 6,
+        "vocabulary": 7,
+        "trope": 6,
         "repetition": 8
       },
       "vocabDetail": {
-        "rarity": 7.2,
-        "pronunciation": 2.3,
+        "rarity": 8.2,
+        "pronunciation": 4.8,
         "rareExamples": [
           {
-            "word": "מְנַֽחֶמְכֶם",
+            "word": "שׂוֹשׂ",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "וַתְּפַחֵד",
+            "word": "אָשִׂישׂ",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "כּוֹנֵן",
+            "word": "הִלְבִּישַׁנִי",
             "occurrencesInCorpus": 1
           }
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהֵֽינוּ"
+            "word": "בְּאַֽהֲבָתוֹ"
           },
           {
-            "word": "הַתַּרְעֵלָה"
+            "word": "אֶֽחֱשֶׁה"
           },
           {
-            "word": "וְנַֽעֲבֹרָה"
+            "word": "וִישֽׁוּעָתָהּ"
           }
         ]
       },
-      "finalScore": 5
-    },
-    {
-      "haftarahId": "Ki Tavo",
-      "parsha": "Ki Tavo",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "Isaiah",
-          "start": "60:1",
-          "end": "60:22",
-          "verses": 22
-        }
-      ],
-      "verses": 22,
-      "wordCount": 297,
-      "scores": {
-        "length": 8,
-        "vocabulary": 8,
-        "trope": 6,
-        "repetition": 2
-      },
-      "vocabDetail": {
-        "rarity": 9.4,
-        "pronunciation": 7.3,
-        "rareExamples": [
-          {
-            "word": "וְעָלַיִךְ",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "לְאוֹרֵךְ",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "זַרְחֵֽךְ",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "וְהִֽשְׁתַּֽחֲווּ"
-          },
-          {
-            "word": "אֲחִישֶֽׁנָּה"
-          },
-          {
-            "word": "אֲרֻבֹּֽתֵיהֶֽם"
-          }
-        ]
-      },
-      "finalScore": 5
+      "finalScore": 4.8
     },
     {
       "haftarahId": "Ha'azinu",
@@ -49129,109 +48073,223 @@
           }
         ]
       },
-      "finalScore": 5
+      "finalScore": 4.8
     },
     {
-      "haftarahId": "Vezot Haberakhah",
-      "parsha": "Vezot Haberakhah",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "Joshua",
-          "start": "1:1",
-          "end": "1:18",
-          "verses": 18
-        }
-      ],
-      "verses": 18,
-      "wordCount": 320,
-      "scores": {
-        "length": 9,
-        "vocabulary": 2,
-        "trope": 10,
-        "repetition": 7
-      },
-      "vocabDetail": {
-        "rarity": 1.5,
-        "pronunciation": 2.7,
-        "rareExamples": [
-          {
-            "word": "גְּבֽוּלְכֶֽם",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "אַרְפְּךָ",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "תַּנְחִיל",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "הַמַּֽחֲנֶה"
-          },
-          {
-            "word": "אֱלֹֽהֵיכֶם"
-          },
-          {
-            "word": "אֱלֹהֵיכֶם"
-          }
-        ]
-      },
-      "finalScore": 5
-    },
-    {
-      "haftarahId": "Noach",
-      "parsha": "Noach",
+      "haftarahId": "Nitzavim-Vayeilech",
+      "parsha": "Nitzavim-Vayeilech",
       "nusach": "ashkenazi",
       "ref": [
         {
           "book": "Isaiah",
-          "start": "54:1",
-          "end": "55:5",
-          "verses": 22
+          "start": "61:10",
+          "end": "63:9",
+          "verses": 23
         }
       ],
-      "verses": 22,
-      "wordCount": 297,
+      "verses": 23,
+      "wordCount": 331,
       "scores": {
-        "length": 8,
-        "vocabulary": 6,
-        "trope": 4,
-        "repetition": 4
+        "length": 6,
+        "vocabulary": 7,
+        "trope": 6,
+        "repetition": 8
       },
       "vocabDetail": {
-        "rarity": 8.5,
-        "pronunciation": 2.8,
+        "rarity": 8.2,
+        "pronunciation": 4.8,
         "rareExamples": [
           {
-            "word": "פִּצְחִי",
+            "word": "שׂוֹשׂ",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "וְצַֽהֲלִי",
+            "word": "אָשִׂישׂ",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "שֽׁוֹמֵמָה",
+            "word": "הִלְבִּישַׁנִי",
             "occurrencesInCorpus": 1
           }
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הַנֶּאֱמָנִֽים"
+            "word": "בְּאַֽהֲבָתוֹ"
           },
           {
-            "word": "לְמַֽעֲשֵׂהוּ"
+            "word": "אֶֽחֱשֶׁה"
           },
           {
-            "word": "הַֽאֲרִיכִי"
+            "word": "וִישֽׁוּעָתָהּ"
           }
         ]
       },
-      "finalScore": 4
+      "finalScore": 4.8
+    },
+    {
+      "haftarahId": "Toldot",
+      "parsha": "Toldot",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Malachi",
+          "start": "1:1",
+          "end": "2:7",
+          "verses": 21
+        }
+      ],
+      "verses": 21,
+      "wordCount": 341,
+      "scores": {
+        "length": 7,
+        "vocabulary": 5,
+        "trope": 7,
+        "repetition": 7
+      },
+      "vocabDetail": {
+        "rarity": 5.5,
+        "pronunciation": 5.4,
+        "rareExamples": [
+          {
+            "word": "אֲהַבְתָּנוּ",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "רֻשַּׁשְׁנוּ",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "וְנָשׁוּב",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "אֲהַבְתָּנוּ"
+          },
+          {
+            "word": "הַכֹּֽהֲנִים"
+          },
+          {
+            "word": "הַכֹּֽהֲנִֽים"
+          }
+        ]
+      },
+      "finalScore": 4.7
+    },
+    {
+      "haftarahId": "Masei",
+      "parsha": "Masei",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Jeremiah",
+          "start": "2:4",
+          "end": "2:28",
+          "verses": 25
+        },
+        {
+          "book": "Jeremiah",
+          "start": "3:4",
+          "end": "3:4",
+          "verses": 1
+        }
+      ],
+      "verses": 26,
+      "wordCount": 381,
+      "scores": {
+        "length": 7,
+        "vocabulary": 7,
+        "trope": 4,
+        "repetition": 7
+      },
+      "vocabDetail": {
+        "rarity": 6.9,
+        "pronunciation": 6.4,
+        "rareExamples": [
+          {
+            "word": "הַמּוֹלִיךְ",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "וְשׁוּחָה",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "וְצַלְמָוֶת",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "וְאַֽחֲרֵיהֶם"
+          },
+          {
+            "word": "הַמַּֽעֲלֶה"
+          },
+          {
+            "word": "הַכֹּֽהֲנִים"
+          }
+        ]
+      },
+      "finalScore": 4.7
+    },
+    {
+      "haftarahId": "Matot-Masei",
+      "parsha": "Matot-Masei",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Jeremiah",
+          "start": "2:4",
+          "end": "2:28",
+          "verses": 25
+        },
+        {
+          "book": "Jeremiah",
+          "start": "3:4",
+          "end": "3:4",
+          "verses": 1
+        }
+      ],
+      "verses": 26,
+      "wordCount": 381,
+      "scores": {
+        "length": 7,
+        "vocabulary": 7,
+        "trope": 4,
+        "repetition": 7
+      },
+      "vocabDetail": {
+        "rarity": 6.9,
+        "pronunciation": 6.4,
+        "rareExamples": [
+          {
+            "word": "הַמּוֹלִיךְ",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "וְשׁוּחָה",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "וְצַלְמָוֶת",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "וְאַֽחֲרֵיהֶם"
+          },
+          {
+            "word": "הַמַּֽעֲלֶה"
+          },
+          {
+            "word": "הַכֹּֽהֲנִים"
+          }
+        ]
+      },
+      "finalScore": 4.7
     },
     {
       "haftarahId": "Vayera",
@@ -49282,109 +48340,7 @@
           }
         ]
       },
-      "finalScore": 4
-    },
-    {
-      "haftarahId": "Vayeshev",
-      "parsha": "Vayeshev",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "Amos",
-          "start": "2:6",
-          "end": "3:8",
-          "verses": 19
-        }
-      ],
-      "verses": 19,
-      "wordCount": 248,
-      "scores": {
-        "length": 7,
-        "vocabulary": 5,
-        "trope": 5,
-        "repetition": 9
-      },
-      "vocabDetail": {
-        "rarity": 5.2,
-        "pronunciation": 5.2,
-        "rareExamples": [
-          {
-            "word": "עֲנוּשִׁים",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "הִשְׁמַדְתִּי",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "כְּגֹבַהּ",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "הַֽנַּֽעֲרָה"
-          },
-          {
-            "word": "אֱלֹֽהֵיהֶֽם"
-          },
-          {
-            "word": "הַשֹּֽׁאֲפִים"
-          }
-        ]
-      },
-      "finalScore": 4
-    },
-    {
-      "haftarahId": "Vayechi",
-      "parsha": "Vayechi",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "I Kings",
-          "start": "2:1",
-          "end": "2:12",
-          "verses": 12
-        }
-      ],
-      "verses": 12,
-      "wordCount": 207,
-      "scores": {
-        "length": 6,
-        "vocabulary": 2,
-        "trope": 10,
-        "repetition": 10
-      },
-      "vocabDetail": {
-        "rarity": 3.4,
-        "pronunciation": 1,
-        "rareExamples": [
-          {
-            "word": "וְחָזַקְתָּ",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "וְעֵדְוֹתָיו",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "בַּחֲגֹֽרָתוֹ",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "וְלַעֲמָשָֹא"
-          },
-          {
-            "word": "אֱלֹהֶיךָ"
-          },
-          {
-            "word": "תַּֽעֲשֶֹה"
-          }
-        ]
-      },
-      "finalScore": 4
+      "finalScore": 4.5
     },
     {
       "haftarahId": "Shmini",
@@ -49435,109 +48391,109 @@
           }
         ]
       },
-      "finalScore": 4
+      "finalScore": 4.5
     },
     {
-      "haftarahId": "Achrei Mot",
-      "parsha": "Achrei Mot",
+      "haftarahId": "Korach",
+      "parsha": "Korach",
       "nusach": "ashkenazi",
       "ref": [
         {
-          "book": "Amos",
-          "start": "9:7",
-          "end": "9:15",
-          "verses": 9
+          "book": "I Samuel",
+          "start": "11:14",
+          "end": "12:22",
+          "verses": 24
         }
       ],
-      "verses": 9,
-      "wordCount": 149,
+      "verses": 24,
+      "wordCount": 425,
       "scores": {
-        "length": 4,
-        "vocabulary": 7,
-        "trope": 8,
-        "repetition": 7
+        "length": 9,
+        "vocabulary": 5,
+        "trope": 4,
+        "repetition": 3
       },
       "vocabDetail": {
-        "rarity": 4.9,
-        "pronunciation": 8.5,
+        "rarity": 1.3,
+        "pronunciation": 7.8,
         "rareExamples": [
           {
-            "word": "כִבְנֵי",
+            "word": "וּנְחַדֵּשׁ",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "כֻשִׁיִּים",
+            "word": "וָאַמְלִיךְ",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "וּפְלִשְׁתִּיִּים",
+            "word": "עָשַׁקְתִּי",
             "occurrencesInCorpus": 1
           }
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הַֽחַטָּאָה"
+            "word": "אֱלֹהֵיהֶם"
           },
           {
-            "word": "הָֽאֲדָמָה"
+            "word": "וּבַאֲבֹתֵיכֶֽם"
           },
           {
-            "word": "וַֽהֲנִעוֹתִי"
+            "word": "הִתְהַלַּכְתִּי"
           }
         ]
       },
-      "finalScore": 4
+      "finalScore": 4.5
     },
     {
-      "haftarahId": "Bechukotai",
-      "parsha": "Bechukotai",
+      "haftarahId": "Vaera",
+      "parsha": "Vaera",
       "nusach": "ashkenazi",
       "ref": [
         {
-          "book": "Jeremiah",
-          "start": "16:19",
-          "end": "17:14",
-          "verses": 17
+          "book": "Ezekiel",
+          "start": "28:25",
+          "end": "29:21",
+          "verses": 23
         }
       ],
-      "verses": 17,
-      "wordCount": 228,
+      "verses": 23,
+      "wordCount": 392,
       "scores": {
-        "length": 7,
-        "vocabulary": 6,
-        "trope": 2,
-        "repetition": 9
+        "length": 8,
+        "vocabulary": 3,
+        "trope": 7,
+        "repetition": 6
       },
       "vocabDetail": {
-        "rarity": 7.3,
-        "pronunciation": 3.7,
+        "rarity": 3,
+        "pronunciation": 3.1,
         "rareExamples": [
           {
-            "word": "וּמָֽעֻזִּי",
+            "word": "בְּקַבְּצִי",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "מֵֽאַפְסֵי",
+            "word": "מִסְּבִיבֹתָם",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "מוֹעִֽיל",
+            "word": "הַתַּנִּים",
             "occurrencesInCorpus": 1
           }
         ],
         "hardToPronounceExamples": [
           {
-            "word": "וְהַֽעֲבַדְתִּיךָ"
+            "word": "וּבְהִשָּֽׁעֲנָם"
           },
           {
-            "word": "וּבְאַֽחֲרִיתוֹ"
+            "word": "אֱלֹֽהֵיהֶֽם"
           },
           {
-            "word": "הֲיַֽעֲשֶׂה"
+            "word": "וְהַֽעֲלִיתִיךָ"
           }
         ]
       },
-      "finalScore": 4
+      "finalScore": 4.4
     },
     {
       "haftarahId": "Nasso",
@@ -49554,7 +48510,7 @@
       "verses": 24,
       "wordCount": 383,
       "scores": {
-        "length": 9,
+        "length": 8,
         "vocabulary": 5,
         "trope": 5,
         "repetition": 3
@@ -49588,7 +48544,217 @@
           }
         ]
       },
-      "finalScore": 4
+      "finalScore": 4.3
+    },
+    {
+      "haftarahId": "Tzav",
+      "parsha": "Tzav",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Jeremiah",
+          "start": "7:21",
+          "end": "8:3",
+          "verses": 17
+        },
+        {
+          "book": "Jeremiah",
+          "start": "9:22",
+          "end": "9:23",
+          "verses": 2
+        }
+      ],
+      "verses": 19,
+      "wordCount": 338,
+      "scores": {
+        "length": 6,
+        "vocabulary": 6,
+        "trope": 6,
+        "repetition": 5
+      },
+      "vocabDetail": {
+        "rarity": 4.5,
+        "pronunciation": 8.4,
+        "rareExamples": [
+          {
+            "word": "בְּמֹעֵצוֹת",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "יַֽעֲנֽוּכָה",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "הָֽאֱמוּנָה",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "הָֽאֱמוּנָה"
+          },
+          {
+            "word": "אַֽחֲרֵיהֶם"
+          },
+          {
+            "word": "הִֽשְׁתַּֽחֲווּ"
+          }
+        ]
+      },
+      "finalScore": 4.2
+    },
+    {
+      "haftarahId": "Bamidbar",
+      "parsha": "Bamidbar",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Hosea",
+          "start": "2:1",
+          "end": "2:22",
+          "verses": 22
+        }
+      ],
+      "verses": 22,
+      "wordCount": 298,
+      "scores": {
+        "length": 4,
+        "vocabulary": 8,
+        "trope": 7,
+        "repetition": 5
+      },
+      "vocabDetail": {
+        "rarity": 7.6,
+        "pronunciation": 9.3,
+        "rareExamples": [
+          {
+            "word": "וְלַֽאֲחֽוֹתֵיכֶם",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "בְאִמְּכֶם",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "זְנוּנֶיהָ",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "וְלַֽאֲחֽוֹתֵיכֶם"
+          },
+          {
+            "word": "וְנַֽאֲפוּפֶיהָ"
+          },
+          {
+            "word": "מְאַֽהֲבֶיהָ"
+          }
+        ]
+      },
+      "finalScore": 4.2
+    },
+    {
+      "haftarahId": "Vayetzei",
+      "parsha": "Vayetzei",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Hosea",
+          "start": "12:13",
+          "end": "14:10",
+          "verses": 28
+        }
+      ],
+      "verses": 28,
+      "wordCount": 306,
+      "scores": {
+        "length": 5,
+        "vocabulary": 8,
+        "trope": 2,
+        "repetition": 10
+      },
+      "vocabDetail": {
+        "rarity": 9.5,
+        "pronunciation": 6.1,
+        "rareExamples": [
+          {
+            "word": "בְּאִשָּׁה",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "וּבְאִשָּׁה",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "וְדָמָיו",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "אֱלֹהֵינוּ"
+          },
+          {
+            "word": "וַֽאֲשׁוּרֶנּוּ"
+          },
+          {
+            "word": "הֶֽעֱלָה"
+          }
+        ]
+      },
+      "finalScore": 4.1
+    },
+    {
+      "haftarahId": "Beha'alotcha",
+      "parsha": "Beha'alotcha",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Zechariah",
+          "start": "2:14",
+          "end": "4:7",
+          "verses": 21
+        }
+      ],
+      "verses": 21,
+      "wordCount": 316,
+      "scores": {
+        "length": 5,
+        "vocabulary": 5,
+        "trope": 8,
+        "repetition": 7
+      },
+      "vocabDetail": {
+        "rarity": 3.3,
+        "pronunciation": 5.8,
+        "rareExamples": [
+          {
+            "word": "וְנָחַל",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "נֵעוֹר",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "וְהַשָּׂטָן",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "הֶֽעֱבַרְתִּי"
+          },
+          {
+            "word": "הַהוּא"
+          },
+          {
+            "word": "הֲלוֹא"
+          }
+        ]
+      },
+      "finalScore": 4.1
     },
     {
       "haftarahId": "Chukat",
@@ -49605,7 +48771,7 @@
       "verses": 33,
       "wordCount": 533,
       "scores": {
-        "length": 10,
+        "length": 9,
         "vocabulary": 3,
         "trope": 5,
         "repetition": 2
@@ -49642,6 +48808,534 @@
       "finalScore": 4
     },
     {
+      "haftarahId": "Emor",
+      "parsha": "Emor",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Ezekiel",
+          "start": "44:15",
+          "end": "44:31",
+          "verses": 17
+        }
+      ],
+      "verses": 17,
+      "wordCount": 255,
+      "scores": {
+        "length": 4,
+        "vocabulary": 8,
+        "trope": 3,
+        "repetition": 10
+      },
+      "vocabDetail": {
+        "rarity": 6.3,
+        "pronunciation": 8.8,
+        "rareExamples": [
+          {
+            "word": "בְּשָֽׁרְתָם",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "מָתְנֵיהֶם",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "יַחְגְּרוּ",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "וְהַכֹּֽהֲנִים"
+          },
+          {
+            "word": "וַֽאֲחֻזָּה"
+          },
+          {
+            "word": "עֲרִיסֽוֹתֵיכֶם"
+          }
+        ]
+      },
+      "finalScore": 3.9
+    },
+    {
+      "haftarahId": "Devarim",
+      "parsha": "Devarim",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Isaiah",
+          "start": "1:1",
+          "end": "1:27",
+          "verses": 27
+        }
+      ],
+      "verses": 27,
+      "wordCount": 324,
+      "scores": {
+        "length": 6,
+        "vocabulary": 7,
+        "trope": 1,
+        "repetition": 9
+      },
+      "vocabDetail": {
+        "rarity": 9.9,
+        "pronunciation": 4.5,
+        "rareExamples": [
+          {
+            "word": "וְהַֽאֲזִינִי",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "וְרוֹמַמְתִּי",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "אֵבוּס",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "וְהַֽאֲזִינִי"
+          },
+          {
+            "word": "הַֽאֲזִינוּ"
+          },
+          {
+            "word": "אֱלֹהֵינוּ"
+          }
+        ]
+      },
+      "finalScore": 3.9
+    },
+    {
+      "haftarahId": "Yitro",
+      "parsha": "Yitro",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Isaiah",
+          "start": "6:1",
+          "end": "7:6",
+          "verses": 19
+        },
+        {
+          "book": "Isaiah",
+          "start": "9:5",
+          "end": "9:6",
+          "verses": 2
+        }
+      ],
+      "verses": 21,
+      "wordCount": 338,
+      "scores": {
+        "length": 6,
+        "vocabulary": 4,
+        "trope": 5,
+        "repetition": 8
+      },
+      "vocabDetail": {
+        "rarity": 5.8,
+        "pronunciation": 1.8,
+        "rareExamples": [
+          {
+            "word": "וְשׁוּלָיו",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "נִדְמֵיתִי",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "בְּמֶלְקָחַיִם",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "הָֽעֲזוּבָה"
+          },
+          {
+            "word": "וְהָֽאֲדָמָה"
+          },
+          {
+            "word": "וּֽלְסַֽעֲדָהּ"
+          }
+        ]
+      },
+      "finalScore": 3.7
+    },
+    {
+      "haftarahId": "Ki Tavo",
+      "parsha": "Ki Tavo",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Isaiah",
+          "start": "60:1",
+          "end": "60:22",
+          "verses": 22
+        }
+      ],
+      "verses": 22,
+      "wordCount": 297,
+      "scores": {
+        "length": 4,
+        "vocabulary": 8,
+        "trope": 6,
+        "repetition": 2
+      },
+      "vocabDetail": {
+        "rarity": 9.4,
+        "pronunciation": 7.3,
+        "rareExamples": [
+          {
+            "word": "וְעָלַיִךְ",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "לְאוֹרֵךְ",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "זַרְחֵֽךְ",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "וְהִֽשְׁתַּֽחֲווּ"
+          },
+          {
+            "word": "אֲחִישֶֽׁנָּה"
+          },
+          {
+            "word": "אֲרֻבֹּֽתֵיהֶֽם"
+          }
+        ]
+      },
+      "finalScore": 3.7
+    },
+    {
+      "haftarahId": "Lech-Lecha",
+      "parsha": "Lech-Lecha",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Isaiah",
+          "start": "40:27",
+          "end": "41:16",
+          "verses": 21
+        }
+      ],
+      "verses": 21,
+      "wordCount": 246,
+      "scores": {
+        "length": 3,
+        "vocabulary": 9,
+        "trope": 3,
+        "repetition": 8
+      },
+      "vocabDetail": {
+        "rarity": 8.6,
+        "pronunciation": 9.4,
+        "rareExamples": [
+          {
+            "word": "נִסְתְּרָה",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "וּמֵֽאֱלֹהַי",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "יִיעַף",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "וּמֵֽאֲצִילֶיהָ"
+          },
+          {
+            "word": "הֶֽחֱזַקְתִּיךָ"
+          },
+          {
+            "word": "וּמֵֽאֱלֹהַי"
+          }
+        ]
+      },
+      "finalScore": 3.6
+    },
+    {
+      "haftarahId": "Shemot",
+      "parsha": "Shemot",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Isaiah",
+          "start": "27:6",
+          "end": "28:13",
+          "verses": 21
+        },
+        {
+          "book": "Isaiah",
+          "start": "29:22",
+          "end": "29:23",
+          "verses": 2
+        }
+      ],
+      "verses": 23,
+      "wordCount": 324,
+      "scores": {
+        "length": 6,
+        "vocabulary": 6,
+        "trope": 4,
+        "repetition": 3
+      },
+      "vocabDetail": {
+        "rarity": 9,
+        "pronunciation": 3.6,
+        "rareExamples": [
+          {
+            "word": "יַשְׁרֵשׁ",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "יָצִיץ",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "תְּנוּבָֽה",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "וְהִשְׁתַּֽחֲווּ"
+          },
+          {
+            "word": "בְּסַאסְּאָה"
+          },
+          {
+            "word": "הַמְּנוּחָה"
+          }
+        ]
+      },
+      "finalScore": 3.6
+    },
+    {
+      "haftarahId": "Mishpatim",
+      "parsha": "Mishpatim",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Jeremiah",
+          "start": "34:8",
+          "end": "34:22",
+          "verses": 15
+        },
+        {
+          "book": "Jeremiah",
+          "start": "33:25",
+          "end": "33:26",
+          "verses": 2
+        }
+      ],
+      "verses": 17,
+      "wordCount": 320,
+      "scores": {
+        "length": 5,
+        "vocabulary": 4,
+        "trope": 8,
+        "repetition": 5
+      },
+      "vocabDetail": {
+        "rarity": 2.8,
+        "pronunciation": 6,
+        "rareExamples": [
+          {
+            "word": "וְהָֽעִבְרִיָּה",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "בִּיהוּדִי",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "וַיִּכְבְּשׁוּם",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "וְהַכֹּֽהֲנִים"
+          },
+          {
+            "word": "וְהָֽעִבְרִיָּה"
+          },
+          {
+            "word": "הָֽעֲבָדִים"
+          }
+        ]
+      },
+      "finalScore": 3.6
+    },
+    {
+      "haftarahId": "Shoftim",
+      "parsha": "Shoftim",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Isaiah",
+          "start": "51:12",
+          "end": "52:12",
+          "verses": 24
+        }
+      ],
+      "verses": 24,
+      "wordCount": 332,
+      "scores": {
+        "length": 6,
+        "vocabulary": 5,
+        "trope": 3,
+        "repetition": 8
+      },
+      "vocabDetail": {
+        "rarity": 7.2,
+        "pronunciation": 2.3,
+        "rareExamples": [
+          {
+            "word": "מְנַֽחֶמְכֶם",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "וַתְּפַחֵד",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "כּוֹנֵן",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "אֱלֹהֵֽינוּ"
+          },
+          {
+            "word": "הַתַּרְעֵלָה"
+          },
+          {
+            "word": "וְנַֽעֲבֹרָה"
+          }
+        ]
+      },
+      "finalScore": 3.6
+    },
+    {
+      "haftarahId": "Vezot Haberakhah",
+      "parsha": "Vezot Haberakhah",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Joshua",
+          "start": "1:1",
+          "end": "1:18",
+          "verses": 18
+        }
+      ],
+      "verses": 18,
+      "wordCount": 320,
+      "scores": {
+        "length": 5,
+        "vocabulary": 2,
+        "trope": 10,
+        "repetition": 7
+      },
+      "vocabDetail": {
+        "rarity": 1.5,
+        "pronunciation": 2.7,
+        "rareExamples": [
+          {
+            "word": "גְּבֽוּלְכֶֽם",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "אַרְפְּךָ",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "תַּנְחִיל",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "הַמַּֽחֲנֶה"
+          },
+          {
+            "word": "אֱלֹֽהֵיכֶם"
+          },
+          {
+            "word": "אֱלֹהֵיכֶם"
+          }
+        ]
+      },
+      "finalScore": 3.6
+    },
+    {
+      "haftarahId": "Vayigash",
+      "parsha": "Vayigash",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Ezekiel",
+          "start": "37:15",
+          "end": "37:28",
+          "verses": 14
+        }
+      ],
+      "verses": 14,
+      "wordCount": 244,
+      "scores": {
+        "length": 3,
+        "vocabulary": 4,
+        "trope": 9,
+        "repetition": 9
+      },
+      "vocabDetail": {
+        "rarity": 1.9,
+        "pronunciation": 7,
+        "rareExamples": [
+          {
+            "word": "לַֽאֲחָדִים",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "וְשִׁבְטֵי",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "יֵחָצוּ",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "לַֽאֲחָדִים"
+          },
+          {
+            "word": "וּבְשִׁקּוּצֵיהֶם"
+          },
+          {
+            "word": "עֲלֵיהֶם"
+          }
+        ]
+      },
+      "finalScore": 3.4
+    },
+    {
       "haftarahId": "Matot",
       "parsha": "Matot",
       "nusach": "ashkenazi",
@@ -49656,7 +49350,7 @@
       "verses": 22,
       "wordCount": 306,
       "scores": {
-        "length": 8,
+        "length": 5,
         "vocabulary": 5,
         "trope": 6,
         "repetition": 4
@@ -49690,7 +49384,7 @@
           }
         ]
       },
-      "finalScore": 4
+      "finalScore": 3.4
     },
     {
       "haftarahId": "Vaetchanan",
@@ -49707,7 +49401,7 @@
       "verses": 26,
       "wordCount": 302,
       "scores": {
-        "length": 8,
+        "length": 5,
         "vocabulary": 6,
         "trope": 4,
         "repetition": 4
@@ -49741,62 +49435,164 @@
           }
         ]
       },
-      "finalScore": 4
+      "finalScore": 3.3
     },
     {
-      "haftarahId": "Vayeilech",
-      "parsha": "Vayeilech",
+      "haftarahId": "Terumah",
+      "parsha": "Terumah",
       "nusach": "ashkenazi",
       "ref": [
         {
-          "book": "Isaiah",
-          "start": "55:6",
-          "end": "56:8",
-          "verses": 16
+          "book": "I Kings",
+          "start": "5:26",
+          "end": "6:13",
+          "verses": 20
         }
       ],
-      "verses": 16,
-      "wordCount": 240,
+      "verses": 20,
+      "wordCount": 290,
       "scores": {
-        "length": 7,
-        "vocabulary": 5,
-        "trope": 8,
-        "repetition": 5
+        "length": 4,
+        "vocabulary": 6,
+        "trope": 6,
+        "repetition": 3
       },
       "vocabDetail": {
-        "rarity": 5.7,
-        "pronunciation": 5.1,
+        "rarity": 5.4,
+        "pronunciation": 7.5,
         "rareExamples": [
           {
-            "word": "בְּהִמָּצְאוֹ",
+            "word": "מַס",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "קְרָאֻהוּ",
+            "word": "לְבָנוֹנָה",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "מַחְשְׁבֹתָיו",
+            "word": "מִשָּׂרֵי",
             "occurrencesInCorpus": 1
           }
         ],
         "hardToPronounceExamples": [
           {
-            "word": "וּלְאַֽהֲבָה"
+            "word": "וְהָאֲבָנִים"
           },
           {
-            "word": "וַֽהֲבִֽיאוֹתִים"
+            "word": "הַתַּחְתֹּנָה"
           },
           {
-            "word": "וִירַֽחֲמֵהוּ"
+            "word": "הַמְּלָאכָה"
           }
         ]
       },
-      "finalScore": 4
+      "finalScore": 3.2
     },
     {
-      "haftarahId": "Achrei Mot-Kedoshim",
-      "parsha": "Achrei Mot-Kedoshim",
+      "haftarahId": "Pekudei",
+      "parsha": "Pekudei",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "I Kings",
+          "start": "7:51",
+          "end": "8:21",
+          "verses": 22
+        }
+      ],
+      "verses": 22,
+      "wordCount": 353,
+      "scores": {
+        "length": 7,
+        "vocabulary": 1,
+        "trope": 7,
+        "repetition": 4
+      },
+      "vocabDetail": {
+        "rarity": 1,
+        "pronunciation": 1.5,
+        "rareExamples": [
+          {
+            "word": "וַתִּשְׁלַם",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "יַקְהֵל",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "הָאֵֽתָנִים",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "הַכֹּהֲנִים"
+          },
+          {
+            "word": "הַמְּלָאכָה"
+          },
+          {
+            "word": "לְֽהַעֲלוֹת"
+          }
+        ]
+      },
+      "finalScore": 3.2
+    },
+    {
+      "haftarahId": "Vayakhel-Pekudei",
+      "parsha": "Vayakhel-Pekudei",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "I Kings",
+          "start": "7:51",
+          "end": "8:21",
+          "verses": 22
+        }
+      ],
+      "verses": 22,
+      "wordCount": 353,
+      "scores": {
+        "length": 7,
+        "vocabulary": 1,
+        "trope": 7,
+        "repetition": 4
+      },
+      "vocabDetail": {
+        "rarity": 1,
+        "pronunciation": 1.5,
+        "rareExamples": [
+          {
+            "word": "וַתִּשְׁלַם",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "יַקְהֵל",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "הָאֵֽתָנִים",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "הַכֹּהֲנִים"
+          },
+          {
+            "word": "הַמְּלָאכָה"
+          },
+          {
+            "word": "לְֽהַעֲלוֹת"
+          }
+        ]
+      },
+      "finalScore": 3.2
+    },
+    {
+      "haftarahId": "Achrei Mot",
+      "parsha": "Achrei Mot",
       "nusach": "ashkenazi",
       "ref": [
         {
@@ -49809,7 +49605,7 @@
       "verses": 9,
       "wordCount": 149,
       "scores": {
-        "length": 4,
+        "length": 1,
         "vocabulary": 7,
         "trope": 8,
         "repetition": 7
@@ -49843,313 +49639,262 @@
           }
         ]
       },
-      "finalScore": 4
+      "finalScore": 3.1
     },
     {
-      "haftarahId": "Behar-Bechukotai",
-      "parsha": "Behar-Bechukotai",
+      "haftarahId": "Vayeilech",
+      "parsha": "Vayeilech",
       "nusach": "ashkenazi",
       "ref": [
         {
-          "book": "Jeremiah",
-          "start": "16:19",
-          "end": "17:14",
-          "verses": 17
-        }
-      ],
-      "verses": 17,
-      "wordCount": 228,
-      "scores": {
-        "length": 7,
-        "vocabulary": 6,
-        "trope": 2,
-        "repetition": 9
-      },
-      "vocabDetail": {
-        "rarity": 7.3,
-        "pronunciation": 3.7,
-        "rareExamples": [
-          {
-            "word": "וּמָֽעֻזִּי",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "מֵֽאַפְסֵי",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "מוֹעִֽיל",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "וְהַֽעֲבַדְתִּיךָ"
-          },
-          {
-            "word": "וּבְאַֽחֲרִיתוֹ"
-          },
-          {
-            "word": "הֲיַֽעֲשֶׂה"
-          }
-        ]
-      },
-      "finalScore": 4
-    },
-    {
-      "haftarahId": "Vayishlach",
-      "parsha": "Vayishlach",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "Obadiah",
-          "start": "1:1",
-          "end": "1:21",
-          "verses": 21
-        }
-      ],
-      "verses": 21,
-      "wordCount": 293,
-      "scores": {
-        "length": 8,
-        "vocabulary": 4,
-        "trope": 3,
-        "repetition": 6
-      },
-      "vocabDetail": {
-        "rarity": 6.4,
-        "pronunciation": 1.2,
-        "rareExamples": [
-          {
-            "word": "עֹֽבַדְיָה",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "הִשִּׁיאֶךָ",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "יֽוֹרִידֵנִי",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "וְהַֽאֲבַדְתִּי"
-          },
-          {
-            "word": "הִשִּׁיאוּךָ"
-          },
-          {
-            "word": "וַֽאֲכָלוּם"
-          }
-        ]
-      },
-      "finalScore": 3
-    },
-    {
-      "haftarahId": "Miketz",
-      "parsha": "Miketz",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "I Kings",
-          "start": "3:15",
-          "end": "4:1",
-          "verses": 15
-        }
-      ],
-      "verses": 15,
-      "wordCount": 231,
-      "scores": {
-        "length": 7,
-        "vocabulary": 5,
-        "trope": 3,
-        "repetition": 2
-      },
-      "vocabDetail": {
-        "rarity": 2.7,
-        "pronunciation": 6.7,
-        "rareExamples": [
-          {
-            "word": "וָאֵלֵד",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "לְלִדְתִּי",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "מֵֽאֶצְלִי",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "וַֽתַּעֲמֹדְנָה"
-          },
-          {
-            "word": "וַאֲנַחְנוּ"
-          },
-          {
-            "word": "אֲנַחְנוּ"
-          }
-        ]
-      },
-      "finalScore": 3
-    },
-    {
-      "haftarahId": "Bo",
-      "parsha": "Bo",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "Jeremiah",
-          "start": "46:13",
-          "end": "46:28",
+          "book": "Isaiah",
+          "start": "55:6",
+          "end": "56:8",
           "verses": 16
         }
       ],
       "verses": 16,
-      "wordCount": 239,
+      "wordCount": 240,
       "scores": {
-        "length": 7,
-        "vocabulary": 3,
-        "trope": 5,
-        "repetition": 10
+        "length": 3,
+        "vocabulary": 5,
+        "trope": 8,
+        "repetition": 5
       },
       "vocabDetail": {
-        "rarity": 4.6,
-        "pronunciation": 2.2,
+        "rarity": 5.7,
+        "pronunciation": 5.1,
         "rareExamples": [
           {
-            "word": "בְמִגְדּוֹל",
+            "word": "בְּהִמָּצְאוֹ",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "בְנֹף",
+            "word": "קְרָאֻהוּ",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "נִסְחַף",
+            "word": "מַחְשְׁבֹתָיו",
             "occurrencesInCorpus": 1
           }
         ],
         "hardToPronounceExamples": [
           {
-            "word": "וּבְתַחְפַּנְחֵס"
+            "word": "וּלְאַֽהֲבָה"
           },
           {
-            "word": "אֱלֹהֶיהָ"
+            "word": "וַֽהֲבִֽיאוֹתִים"
           },
           {
-            "word": "נְבֽוּכַדְרֶאצַּר"
+            "word": "וִירַֽחֲמֵהוּ"
           }
         ]
       },
-      "finalScore": 3
+      "finalScore": 3.1
     },
     {
-      "haftarahId": "Pekudei",
-      "parsha": "Pekudei",
+      "haftarahId": "Achrei Mot-Kedoshim",
+      "parsha": "Achrei Mot-Kedoshim",
       "nusach": "ashkenazi",
       "ref": [
         {
-          "book": "I Kings",
-          "start": "7:51",
-          "end": "8:21",
+          "book": "Amos",
+          "start": "9:7",
+          "end": "9:15",
+          "verses": 9
+        }
+      ],
+      "verses": 9,
+      "wordCount": 149,
+      "scores": {
+        "length": 1,
+        "vocabulary": 7,
+        "trope": 8,
+        "repetition": 7
+      },
+      "vocabDetail": {
+        "rarity": 4.9,
+        "pronunciation": 8.5,
+        "rareExamples": [
+          {
+            "word": "כִבְנֵי",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "כֻשִׁיִּים",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "וּפְלִשְׁתִּיִּים",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "הַֽחַטָּאָה"
+          },
+          {
+            "word": "הָֽאֲדָמָה"
+          },
+          {
+            "word": "וַֽהֲנִעוֹתִי"
+          }
+        ]
+      },
+      "finalScore": 3.1
+    },
+    {
+      "haftarahId": "Noach",
+      "parsha": "Noach",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Isaiah",
+          "start": "54:1",
+          "end": "55:5",
           "verses": 22
         }
       ],
       "verses": 22,
-      "wordCount": 353,
+      "wordCount": 297,
       "scores": {
-        "length": 9,
-        "vocabulary": 1,
-        "trope": 7,
+        "length": 4,
+        "vocabulary": 6,
+        "trope": 4,
         "repetition": 4
       },
       "vocabDetail": {
-        "rarity": 1,
-        "pronunciation": 1.5,
+        "rarity": 8.5,
+        "pronunciation": 2.8,
         "rareExamples": [
           {
-            "word": "וַתִּשְׁלַם",
+            "word": "פִּצְחִי",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "יַקְהֵל",
+            "word": "וְצַֽהֲלִי",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "הָאֵֽתָנִים",
+            "word": "שֽׁוֹמֵמָה",
             "occurrencesInCorpus": 1
           }
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הַכֹּהֲנִים"
+            "word": "הַנֶּאֱמָנִֽים"
           },
           {
-            "word": "הַמְּלָאכָה"
+            "word": "לְמַֽעֲשֵׂהוּ"
           },
           {
-            "word": "לְֽהַעֲלוֹת"
+            "word": "הַֽאֲרִיכִי"
           }
         ]
       },
-      "finalScore": 3
+      "finalScore": 2.9
     },
     {
-      "haftarahId": "Kedoshim",
-      "parsha": "Kedoshim",
+      "haftarahId": "Vayeshev",
+      "parsha": "Vayeshev",
       "nusach": "ashkenazi",
       "ref": [
         {
-          "book": "Ezekiel",
-          "start": "22:1",
-          "end": "22:19",
+          "book": "Amos",
+          "start": "2:6",
+          "end": "3:8",
           "verses": 19
         }
       ],
       "verses": 19,
-      "wordCount": 228,
+      "wordCount": 248,
       "scores": {
-        "length": 7,
-        "vocabulary": 4,
-        "trope": 2,
+        "length": 3,
+        "vocabulary": 5,
+        "trope": 5,
         "repetition": 9
       },
       "vocabDetail": {
-        "rarity": 6.1,
-        "pronunciation": 1.9,
+        "rarity": 5.2,
+        "pronunciation": 5.2,
         "rareExamples": [
           {
-            "word": "וְהוֹדַעְתָּהּ",
+            "word": "עֲנוּשִׁים",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "אָשַׁמְתְּ",
+            "word": "הִשְׁמַדְתִּי",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "וּבְגִלּוּלַיִךְ",
+            "word": "כְּגֹבַהּ",
             "occurrencesInCorpus": 1
           }
         ],
         "hardToPronounceExamples": [
           {
-            "word": "וְהוֹדַעְתָּהּ"
+            "word": "הַֽנַּֽעֲרָה"
           },
           {
-            "word": "תּֽוֹעֲבֹתֶֽיהָ"
+            "word": "אֱלֹֽהֵיהֶֽם"
           },
           {
-            "word": "הַמְּהוּמָֽה"
+            "word": "הַשֹּֽׁאֲפִים"
           }
         ]
       },
-      "finalScore": 3
+      "finalScore": 2.9
+    },
+    {
+      "haftarahId": "Vayechi",
+      "parsha": "Vayechi",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "I Kings",
+          "start": "2:1",
+          "end": "2:12",
+          "verses": 12
+        }
+      ],
+      "verses": 12,
+      "wordCount": 207,
+      "scores": {
+        "length": 2,
+        "vocabulary": 2,
+        "trope": 10,
+        "repetition": 10
+      },
+      "vocabDetail": {
+        "rarity": 3.4,
+        "pronunciation": 1,
+        "rareExamples": [
+          {
+            "word": "וְחָזַקְתָּ",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "וְעֵדְוֹתָיו",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "בַּחֲגֹֽרָתוֹ",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "וְלַעֲמָשָֹא"
+          },
+          {
+            "word": "אֱלֹהֶיךָ"
+          },
+          {
+            "word": "תַּֽעֲשֶֹה"
+          }
+        ]
+      },
+      "finalScore": 2.7
     },
     {
       "haftarahId": "Re'eh",
@@ -50166,7 +49911,7 @@
       "verses": 12,
       "wordCount": 160,
       "scores": {
-        "length": 4,
+        "length": 1,
         "vocabulary": 5,
         "trope": 9,
         "repetition": 6
@@ -50200,211 +49945,313 @@
           }
         ]
       },
-      "finalScore": 3
+      "finalScore": 2.6
     },
     {
-      "haftarahId": "Vayakhel-Pekudei",
-      "parsha": "Vayakhel-Pekudei",
+      "haftarahId": "Bo",
+      "parsha": "Bo",
       "nusach": "ashkenazi",
       "ref": [
         {
-          "book": "I Kings",
-          "start": "7:51",
-          "end": "8:21",
-          "verses": 22
+          "book": "Jeremiah",
+          "start": "46:13",
+          "end": "46:28",
+          "verses": 16
         }
       ],
-      "verses": 22,
-      "wordCount": 353,
+      "verses": 16,
+      "wordCount": 239,
       "scores": {
-        "length": 9,
-        "vocabulary": 1,
-        "trope": 7,
-        "repetition": 4
+        "length": 3,
+        "vocabulary": 3,
+        "trope": 5,
+        "repetition": 10
       },
       "vocabDetail": {
-        "rarity": 1,
-        "pronunciation": 1.5,
+        "rarity": 4.6,
+        "pronunciation": 2.2,
         "rareExamples": [
           {
-            "word": "וַתִּשְׁלַם",
+            "word": "בְמִגְדּוֹל",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "יַקְהֵל",
+            "word": "בְנֹף",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "הָאֵֽתָנִים",
+            "word": "נִסְחַף",
             "occurrencesInCorpus": 1
           }
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הַכֹּהֲנִים"
+            "word": "וּבְתַחְפַּנְחֵס"
           },
           {
-            "word": "הַמְּלָאכָה"
+            "word": "אֱלֹהֶיהָ"
           },
           {
-            "word": "לְֽהַעֲלוֹת"
+            "word": "נְבֽוּכַדְרֶאצַּר"
           }
         ]
       },
-      "finalScore": 3
+      "finalScore": 2.4
     },
     {
-      "haftarahId": "Balak",
-      "parsha": "Balak",
+      "haftarahId": "Vayishlach",
+      "parsha": "Vayishlach",
       "nusach": "ashkenazi",
       "ref": [
         {
-          "book": "Micah",
-          "start": "5:6",
-          "end": "6:8",
-          "verses": 17
+          "book": "Obadiah",
+          "start": "1:1",
+          "end": "1:21",
+          "verses": 21
         }
       ],
-      "verses": 17,
-      "wordCount": 209,
+      "verses": 21,
+      "wordCount": 293,
       "scores": {
-        "length": 6,
-        "vocabulary": 5,
-        "trope": 2,
-        "repetition": 2
+        "length": 4,
+        "vocabulary": 4,
+        "trope": 3,
+        "repetition": 6
       },
       "vocabDetail": {
-        "rarity": 6.6,
-        "pronunciation": 4.2,
+        "rarity": 6.4,
+        "pronunciation": 1.2,
         "rareExamples": [
           {
-            "word": "כִּרְבִיבִים",
+            "word": "עֹֽבַדְיָה",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "יְקַוֶּה",
+            "word": "הִשִּׁיאֶךָ",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "יְיַחֵל",
+            "word": "יֽוֹרִידֵנִי",
             "occurrencesInCorpus": 1
           }
         ],
         "hardToPronounceExamples": [
-          {
-            "word": "הַֽאֲקַדְּמֶנּוּ"
-          },
           {
             "word": "וְהַֽאֲבַדְתִּי"
           },
           {
-            "word": "תִשְׁתַּֽחֲוֶה"
+            "word": "הִשִּׁיאוּךָ"
+          },
+          {
+            "word": "וַֽאֲכָלוּם"
           }
         ]
       },
-      "finalScore": 2
+      "finalScore": 2.3
     },
     {
-      "haftarahId": "Chukat-Balak",
-      "parsha": "Chukat-Balak",
+      "haftarahId": "Bechukotai",
+      "parsha": "Bechukotai",
       "nusach": "ashkenazi",
       "ref": [
         {
-          "book": "Micah",
-          "start": "5:6",
-          "end": "6:8",
+          "book": "Jeremiah",
+          "start": "16:19",
+          "end": "17:14",
           "verses": 17
         }
       ],
       "verses": 17,
-      "wordCount": 209,
+      "wordCount": 228,
       "scores": {
-        "length": 6,
-        "vocabulary": 5,
-        "trope": 2,
-        "repetition": 2
-      },
-      "vocabDetail": {
-        "rarity": 6.6,
-        "pronunciation": 4.2,
-        "rareExamples": [
-          {
-            "word": "כִּרְבִיבִים",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "יְקַוֶּה",
-            "occurrencesInCorpus": 1
-          },
-          {
-            "word": "יְיַחֵל",
-            "occurrencesInCorpus": 1
-          }
-        ],
-        "hardToPronounceExamples": [
-          {
-            "word": "הַֽאֲקַדְּמֶנּוּ"
-          },
-          {
-            "word": "וְהַֽאֲבַדְתִּי"
-          },
-          {
-            "word": "תִשְׁתַּֽחֲוֶה"
-          }
-        ]
-      },
-      "finalScore": 2
-    },
-    {
-      "haftarahId": "Vayakhel",
-      "parsha": "Vayakhel",
-      "nusach": "ashkenazi",
-      "ref": [
-        {
-          "book": "I Kings",
-          "start": "7:40",
-          "end": "7:50",
-          "verses": 11
-        }
-      ],
-      "verses": 11,
-      "wordCount": 169,
-      "scores": {
-        "length": 5,
+        "length": 2,
         "vocabulary": 6,
-        "trope": 1,
-        "repetition": 1
+        "trope": 2,
+        "repetition": 9
       },
       "vocabDetail": {
-        "rarity": 4.8,
-        "pronunciation": 8.1,
+        "rarity": 7.3,
+        "pronunciation": 3.7,
         "rareExamples": [
           {
-            "word": "הַכִּיֹּרוֹת",
+            "word": "וּמָֽעֻזִּי",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "וְהַשְּׂבָכוֹת",
+            "word": "מֵֽאַפְסֵי",
             "occurrencesInCorpus": 1
           },
           {
-            "word": "הַשְּׂבָכוֹת",
+            "word": "מוֹעִֽיל",
             "occurrencesInCorpus": 1
           }
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָאֲדָמָה"
+            "word": "וְהַֽעֲבַדְתִּיךָ"
           },
           {
-            "word": "הַמְּלָאכָה"
+            "word": "וּבְאַֽחֲרִיתוֹ"
           },
           {
-            "word": "הָעַמּוּדִֽים"
+            "word": "הֲיַֽעֲשֶׂה"
           }
         ]
       },
-      "finalScore": 1
+      "finalScore": 2.3
+    },
+    {
+      "haftarahId": "Behar-Bechukotai",
+      "parsha": "Behar-Bechukotai",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Jeremiah",
+          "start": "16:19",
+          "end": "17:14",
+          "verses": 17
+        }
+      ],
+      "verses": 17,
+      "wordCount": 228,
+      "scores": {
+        "length": 2,
+        "vocabulary": 6,
+        "trope": 2,
+        "repetition": 9
+      },
+      "vocabDetail": {
+        "rarity": 7.3,
+        "pronunciation": 3.7,
+        "rareExamples": [
+          {
+            "word": "וּמָֽעֻזִּי",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "מֵֽאַפְסֵי",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "מוֹעִֽיל",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "וְהַֽעֲבַדְתִּיךָ"
+          },
+          {
+            "word": "וּבְאַֽחֲרִיתוֹ"
+          },
+          {
+            "word": "הֲיַֽעֲשֶׂה"
+          }
+        ]
+      },
+      "finalScore": 2.3
+    },
+    {
+      "haftarahId": "Miketz",
+      "parsha": "Miketz",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "I Kings",
+          "start": "3:15",
+          "end": "4:1",
+          "verses": 15
+        }
+      ],
+      "verses": 15,
+      "wordCount": 231,
+      "scores": {
+        "length": 3,
+        "vocabulary": 5,
+        "trope": 3,
+        "repetition": 2
+      },
+      "vocabDetail": {
+        "rarity": 2.7,
+        "pronunciation": 6.7,
+        "rareExamples": [
+          {
+            "word": "וָאֵלֵד",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "לְלִדְתִּי",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "מֵֽאֶצְלִי",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "וַֽתַּעֲמֹדְנָה"
+          },
+          {
+            "word": "וַאֲנַחְנוּ"
+          },
+          {
+            "word": "אֲנַחְנוּ"
+          }
+        ]
+      },
+      "finalScore": 1.9
+    },
+    {
+      "haftarahId": "Kedoshim",
+      "parsha": "Kedoshim",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Ezekiel",
+          "start": "22:1",
+          "end": "22:19",
+          "verses": 19
+        }
+      ],
+      "verses": 19,
+      "wordCount": 228,
+      "scores": {
+        "length": 2,
+        "vocabulary": 4,
+        "trope": 2,
+        "repetition": 9
+      },
+      "vocabDetail": {
+        "rarity": 6.1,
+        "pronunciation": 1.9,
+        "rareExamples": [
+          {
+            "word": "וְהוֹדַעְתָּהּ",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "אָשַׁמְתְּ",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "וּבְגִלּוּלַיִךְ",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "וְהוֹדַעְתָּהּ"
+          },
+          {
+            "word": "תּֽוֹעֲבֹתֶֽיהָ"
+          },
+          {
+            "word": "הַמְּהוּמָֽה"
+          }
+        ]
+      },
+      "finalScore": 1.7
     },
     {
       "haftarahId": "Ki Teitzei",
@@ -50421,7 +50268,7 @@
       "verses": 10,
       "wordCount": 137,
       "scores": {
-        "length": 4,
+        "length": 1,
         "vocabulary": 7,
         "trope": 2,
         "repetition": 2
@@ -50455,7 +50302,160 @@
           }
         ]
       },
-      "finalScore": 1
+      "finalScore": 1.5
+    },
+    {
+      "haftarahId": "Vayakhel",
+      "parsha": "Vayakhel",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "I Kings",
+          "start": "7:40",
+          "end": "7:50",
+          "verses": 11
+        }
+      ],
+      "verses": 11,
+      "wordCount": 169,
+      "scores": {
+        "length": 2,
+        "vocabulary": 6,
+        "trope": 1,
+        "repetition": 1
+      },
+      "vocabDetail": {
+        "rarity": 4.8,
+        "pronunciation": 8.1,
+        "rareExamples": [
+          {
+            "word": "הַכִּיֹּרוֹת",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "וְהַשְּׂבָכוֹת",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "הַשְּׂבָכוֹת",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "הָאֲדָמָה"
+          },
+          {
+            "word": "הַמְּלָאכָה"
+          },
+          {
+            "word": "הָעַמּוּדִֽים"
+          }
+        ]
+      },
+      "finalScore": 1.3
+    },
+    {
+      "haftarahId": "Balak",
+      "parsha": "Balak",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Micah",
+          "start": "5:6",
+          "end": "6:8",
+          "verses": 17
+        }
+      ],
+      "verses": 17,
+      "wordCount": 209,
+      "scores": {
+        "length": 2,
+        "vocabulary": 5,
+        "trope": 2,
+        "repetition": 2
+      },
+      "vocabDetail": {
+        "rarity": 6.6,
+        "pronunciation": 4.2,
+        "rareExamples": [
+          {
+            "word": "כִּרְבִיבִים",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "יְקַוֶּה",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "יְיַחֵל",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "הַֽאֲקַדְּמֶנּוּ"
+          },
+          {
+            "word": "וְהַֽאֲבַדְתִּי"
+          },
+          {
+            "word": "תִשְׁתַּֽחֲוֶה"
+          }
+        ]
+      },
+      "finalScore": 1.3
+    },
+    {
+      "haftarahId": "Chukat-Balak",
+      "parsha": "Chukat-Balak",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Micah",
+          "start": "5:6",
+          "end": "6:8",
+          "verses": 17
+        }
+      ],
+      "verses": 17,
+      "wordCount": 209,
+      "scores": {
+        "length": 2,
+        "vocabulary": 5,
+        "trope": 2,
+        "repetition": 2
+      },
+      "vocabDetail": {
+        "rarity": 6.6,
+        "pronunciation": 4.2,
+        "rareExamples": [
+          {
+            "word": "כִּרְבִיבִים",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "יְקַוֶּה",
+            "occurrencesInCorpus": 1
+          },
+          {
+            "word": "יְיַחֵל",
+            "occurrencesInCorpus": 1
+          }
+        ],
+        "hardToPronounceExamples": [
+          {
+            "word": "הַֽאֲקַדְּמֶנּוּ"
+          },
+          {
+            "word": "וְהַֽאֲבַדְתִּי"
+          },
+          {
+            "word": "תִשְׁתַּֽחֲוֶה"
+          }
+        ]
+      },
+      "finalScore": 1.3
     }
   ]
 }

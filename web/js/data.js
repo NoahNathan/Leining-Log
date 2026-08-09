@@ -49,9 +49,6 @@ export async function getChagDifficulty() {
   return d.chagim;
 }
 
-// Haftarah difficulty, ashkenazi only for now. Scored on a 1-7 band rather
-// than 1-10 -- see difficulty-rubric.md for why a haftarah is categorically
-// easier than the equivalent Torah reading.
 // One-line "what happens here" summaries, keyed by verse range so a passage
 // shared between a parsha, its double form, a maftir and a chag resolves to
 // the same entry. Coverage is partial; missing entries simply render nothing.
@@ -60,6 +57,10 @@ export async function getAliyahSummaries() {
   return d.summaries || {};
 }
 
+// Haftarah difficulty, ashkenazi only for now. On the same 1-10 scale as
+// every Torah reading, then weighted down 30% -- see difficulty-rubric.md
+// for why a haftarah is categorically easier than the equivalent Torah
+// reading.
 export async function getHaftarahScores() {
   const d = await loadJSON(DATA + 'difficulty-scores.json');
   return d.haftarot || [];

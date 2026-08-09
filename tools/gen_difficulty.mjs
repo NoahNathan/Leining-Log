@@ -512,32 +512,46 @@ const chagResults = rawChagim.map(({ c, raw }) => {
 
 
 // ---- Haftarot ----------------------------------------------------------
-// Scored on the SAME length scale and the same 1-10 anchor as Torah reading,
-// so the two are directly comparable, then mapped into a 1-7 band.
+// A haftarah is chanted from a printed, vocalized text: nekudot and trope
+// marks are both on the page. That removes the single largest source of
+// leining risk -- guessing the vowels on an unpointed scroll,
+// same-letters-different-nekudot pairs, unmarked Ketiv/Qere -- so the entire
+// gotchas criterion, 20% of the Torah score, simply does not apply. Errors
+// are also less halachically fraught, and it is one continuous passage read
+// by one person.
 //
-// Why a lower ceiling. A haftarah is chanted from a printed, vocalized text:
-// nekudot and trope marks are both on the page. That removes the single
-// largest source of leining risk -- guessing the vowels on an unpointed
-// scroll, same-letters-different-nekudot pairs, unmarked Ketiv/Qere -- so the
-// entire gotchas criterion, 20% of the Torah score, simply does not apply.
-// Errors are also less halachically fraught, and it is one continuous passage
-// read by one person.
-//
-// Why the ceiling is 7 rather than lower. Haftarah trope is a genuinely
-// separate melody that has to be learned on its own, Nevi'im vocabulary is
-// harder than Chumash, and haftarot are not short -- median 324 words against
-// 195 for a parsha aliyah. A hard haftarah is a real undertaking, just not a
-// 10. Banding rather than clamping keeps full discrimination between haftarot
-// instead of piling them all against a ceiling.
-const HAFTARAH_CEILING = 7;
+// Not a separate 1-7 scale. The final score is computed on the exact same
+// 1-10 anchor as every Torah reading (rescaleFinal, below), then weighted
+// down by a flat 70% -- haftarah trope is a genuinely separate melody that
+// has to be learned on its own, Nevi'im vocabulary is harder than Chumash,
+// and haftarot are not short (median 324 words against 195 for a parsha
+// aliyah), so a hard haftarah is a real undertaking, just capped short of
+// the hardest Torah reading. The result is displayed exactly like any other
+// score (out of 10, same badge, same color/label logic) -- there is
+// deliberately no "out of 7" caveat on the page itself; see
+// difficulty-rubric.md / How It Works for the reasoning.
+const HAFTARAH_WEIGHT_FACTOR = 0.7;
 // Vocabulary carries more weight here than in Torah reading and gotchas is
 // gone entirely: with the pointing supplied, what is actually left to trip
 // over is unfamiliar and hard-to-pronounce words.
 const HAFTARAH_WEIGHTS = { length: 4, vocab: 3, trope: 2, repetition: 1 };
 const HAFTARAH_TOTAL = Object.values(HAFTARAH_WEIGHTS).reduce((s, w) => s + w, 0);
 
+// Length is ranked against OTHER HAFTAROT, not Torah aliyot -- haftarot run
+// far longer on average (median 324 words vs. 195), so ranking them against
+// the Torah aliyot pool made nearly every haftarah read as "one of the
+// longest in the leining" regardless of how it actually compares to other
+// haftarot.
+const haftarahWordCounts = Object.values(haftarahStats).map((h) => h.wordCount).sort((a, b) => a - b);
+function haftarahLengthScore(wordCount) {
+  let idx = haftarahWordCounts.findIndex((v) => v >= wordCount);
+  if (idx === -1) idx = haftarahWordCounts.length - 1;
+  const pct = idx / (haftarahWordCounts.length - 1);
+  return clamp10(1 + pct * 9);
+}
+
 const rawHaftarot = Object.entries(haftarahStats).map(([id, h]) => {
-  const length = lengthScore(h.wordCount);
+  const length = haftarahLengthScore(h.wordCount);
   const vocab = clamp10(h.vocab);
   const trope = clamp10(h.tropeRarity);
   const repetition = clamp10(11 - h.formulaicity);
@@ -545,11 +559,12 @@ const rawHaftarot = Object.entries(haftarahStats).map(([id, h]) => {
     + trope * HAFTARAH_WEIGHTS.trope + repetition * HAFTARAH_WEIGHTS.repetition) / HAFTARAH_TOTAL;
   return { id, h, length, vocab, trope, repetition, rawFinal };
 });
-const haftRawMin = Math.min(...rawHaftarot.map((r) => r.rawFinal));
-const haftRawMax = Math.max(...rawHaftarot.map((r) => r.rawFinal));
 const haftarahResults = rawHaftarot.map((r) => {
-  const pct = haftRawMax === haftRawMin ? 0.5 : (r.rawFinal - haftRawMin) / (haftRawMax - haftRawMin);
-  const finalScore = Math.max(1, Math.min(HAFTARAH_CEILING, Math.round(1 + pct * (HAFTARAH_CEILING - 1))));
+  // Same anchor (ordinary parsha aliyot raw range) as every other reading in
+  // the dataset, unrounded, then weighted down -- see comment above.
+  const pct = Math.max(0, Math.min(1, (r.rawFinal - rawMin) / (rawMax - rawMin)));
+  const full10 = 1 + pct * 9;
+  const finalScore = Math.round(full10 * HAFTARAH_WEIGHT_FACTOR * 10) / 10;
   const e = {
     haftarahId: r.id, parsha: r.h.parsha, nusach: 'ashkenazi', ref: r.h.ref,
     verses: r.h.verseCount, wordCount: r.h.wordCount,
@@ -580,6 +595,6 @@ console.log('Top 5 hardest parshiot:', allResults.slice(0,5).map(r=>`${r.parshaI
 console.log('Top 5 easiest parshiot:', allResults.slice(-5).map(r=>`${r.parshaId} (${r.parshaFinalScore})${r.combined?' [combined]':''}`));
 console.log('Top 5 hardest chagim:', chagResults.slice(0,5).map(r=>`${r.chagId} (${r.finalScore})`));
 console.log('Top 5 easiest chagim:', chagResults.slice(-5).map(r=>`${r.chagId} (${r.finalScore})`));
-console.log('Haftarot scored:', haftarahResults.length, '(ashkenazi, banded 1-' + HAFTARAH_CEILING + ')');
+console.log('Haftarot scored:', haftarahResults.length, '(ashkenazi, same 1-10 scale as Torah readings, weighted down ' + Math.round((1 - HAFTARAH_WEIGHT_FACTOR) * 100) + '%)');
 console.log('  hardest:', haftarahResults.slice(0,4).map(r=>`${r.parsha} (${r.finalScore})`).join(', '));
 console.log('  easiest:', haftarahResults.slice(-4).map(r=>`${r.parsha} (${r.finalScore})`).join(', '));

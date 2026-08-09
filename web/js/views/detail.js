@@ -197,8 +197,6 @@ function nusachRow(nusach, haftScore, summaries) {
       nameEl,
       el('span', { class: 'nusach-cite' }, [text, ...links]),
       haftSummary ? el('p', { class: 'aliyah-summary muted small' }, haftSummary) : null,
-      isScored ? el('p', { class: 'nusach-note muted small' },
-        `${haftScore.wordCount} words · scored out of 7, not 10 — a haftarah is chanted from a printed text with the nekudot and trope already on the page, so the misreading traps that drive Torah-reading difficulty don't apply.`) : null,
       v.specialTrope ? el('p', { class: 'nusach-note muted small' }, `${v.specialTrope.range}: ${v.specialTrope.note}`) : null,
     ]);
     if (isScored) {
@@ -231,7 +229,7 @@ function buildHaftarahWhyPanel(hs) {
     list.append(el('div', { class: 'why-criterion' }, [
       el('span', { class: 'why-criterion-label' }, c.label),
       el('span', { class: 'why-criterion-score', style: `color:${scoreColor(c.score)}` }, `${c.score}/10`),
-      el('span', { class: 'why-criterion-note muted' }, c.label === 'Length' ? `${hs.verses} verses, ${hs.wordCount} words — ${qualify(c.label, c.score)}` : qualify(c.label, c.score)),
+      el('span', { class: 'why-criterion-note muted' }, c.label === 'Length' ? `${hs.verses} verses, ${hs.wordCount} words — ${qualifyHaftarahLength(c.score)}` : qualify(c.label, c.score)),
     ]));
   }
   wrap.append(list);
@@ -247,6 +245,16 @@ function buildHaftarahWhyPanel(hs) {
   }
   wrap.append(el('p', { class: 'why-note' }, 'No Gotchas criterion here -- the nekudot and trope are already on the printed page, so the ambiguous-spelling and look-alike-word traps that apply to Torah reading don\'t apply to a haftarah. Word rarity is judged against the Torah + Nevi\'im together, not the Torah alone.'));
   return wrap;
+}
+
+// Length is judged against other haftarot, not Torah aliyot -- haftarot run
+// far longer on average (median 324 words vs. 195 for an aliyah), so the
+// comparison that actually means something is haftarah-to-haftarah.
+function qualifyHaftarahLength(score) {
+  if (score >= 8) return 'one of the longest haftarot';
+  if (score >= 6) return 'longer than most haftarot';
+  if (score >= 4) return 'about average length for a haftarah';
+  return 'a short haftarah';
 }
 
 function qualify(label, score) {

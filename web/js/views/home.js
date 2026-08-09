@@ -28,10 +28,11 @@ export async function renderHome(container) {
       body.append(el('p', {}, 'Could not find an upcoming parsha in the stored calendar range.'));
       return;
     }
-    // A special-Shabbat date can carry a second (holiday-type) calendar row
-    // alongside the parsha itself -- e.g. Shabbat Shekalim's own maftir and
-    // haftarah, which supersede Mishpatim's regular ones that week. Fetch
-    // every row on this date, not just the parsha, so it actually shows.
+    // findUpcomingParsha only returns the parsha row; fetch every row on
+    // this date (findByDate) so renderDateCards can also pick up a Chol
+    // HaMoed / independent-festival row on weeks where one applies -- a
+    // special-Shabbat week like Shekalim has no second row at all, its
+    // override lives directly on the parsha row's specialReading.
     const rows = await findByDate(row.date, region);
     const cards = await renderDateCards(rows, {
       parshaEyebrow: 'Upcoming Parashat HaShavua',

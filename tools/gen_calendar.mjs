@@ -1,5 +1,5 @@
 import { HebrewCalendar } from '@hebcal/core';
-import { getLeyningForParshaHaShavua, getLeyningForHoliday } from '@hebcal/leyning';
+import { getLeyningForParshaHaShavua } from '@hebcal/leyning';
 import { writeFileSync, mkdirSync, readFileSync } from 'fs';
 
 mkdirSync('../data/calendar-100y', { recursive: true });
@@ -34,39 +34,28 @@ function normalizeHolidayDesc(desc) {
   return m ? 'Rosh Hashana I' : desc;
 }
 
-// Rosh Chodesh and Pesach/Sukkot Chol HaMoed read completely differently
-// when their date happens to land on Shabbat that year (see gen_chagim.mjs
-// for the full explanation and the shared "Shabbat Rosh Chodesh" / "...Chol
-// ha-Moed" entries it captures for this). On such a date:
-//  - Chol HaMoed always routes to the shared Shabbat entry -- there's no
-//    competing parsha reading that week to conflict with.
-//  - Rosh Chodesh only routes there if it's actually what gets read: when
-//    the same Shabbat is ALSO Shekalim/Zachor/Parah/HaChodesh, that takes
-//    priority and Rosh Chodesh's own maftir is superseded -- verified by
-//    comparing this event's own maftir against the parsha's actual winning
-//    one that week (from getLeyningForParshaHaShavua, which already
-//    resolves the priority correctly). If it doesn't match, this row is
-//    dropped entirely rather than showing a maftir/haftarah that isn't
-//    actually read that week.
-//
-//    Compared on MAFTIR, not haftarah: during the Three Weeks (Matot-Masei
-//    through Devarim), a Rosh-Chodesh-on-Shabbat that also falls on one of
-//    those parshiot gets a haftarah blended for that specific parsha
-//    (Hebcal's own `reason` still says "on Shabbat Rosh Chodesh") even
-//    though the maftir itself (Numbers 28:9-15) is unchanged -- comparing
-//    haftarah there would wrongly read as "superseded" and drop a row that
-//    genuinely still includes Rosh Chodesh.
-const ROSH_CHODESH_FAMILY = /^Rosh Chodesh /;
-const CHOL_HAMOED_FAMILY = /^(Pesach|Sukkot) [IVX]+ \(CH''M\)$/;
 function isShabbat(hd) { return hd.greg().getDay() === 6; }
-function sameMaftir(a, b) {
-  if (!a || !b) return false;
-  return a.k === b.k && a.b === b.b && a.e === b.e;
-}
+const CHOL_HAMOED_FAMILY = /^(Pesach|Sukkot) [IVX]+ \(CH''M\)$/;
 function sharedShabbatChagId(desc, region) {
-  if (ROSH_CHODESH_FAMILY.test(desc)) return `Shabbat Rosh Chodesh__${region}`;
-  const m = desc.match(/^(Pesach|Sukkot) [IVX]+ \(CH''M\)$/);
+  const m = desc.match(CHOL_HAMOED_FAMILY);
   return m ? `${m[1]} Shabbat Chol ha-Moed__${region}` : null;
+}
+
+// Hebcal's own reason string can carry a "this specific occurrence"
+// qualifier (" (on Rosh Chodesh)", " (on Shabbat)") describing what ELSE is
+// going on that week, distinct from the reading itself -- e.g. the maftir
+// reason "Shabbat Shekalim (on Rosh Chodesh)" describes Shekalim's own
+// maftir, with the Rosh Chodesh coincidence noted separately (and handled
+// separately below, via aliyah 7). Stripped for a clean per-section label.
+function stripQualifier(s) {
+  return s
+    .replace(/\s*\(on (Shabbat|Rosh Chodesh)\)$/, '')
+    .replace(/\s+on (Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)$/, '');
+}
+function toRef(h) {
+  if (!h) return null;
+  if (Array.isArray(h)) return h.map(toRef);
+  return { book: h.k, start: h.b, end: h.e, verses: h.v };
 }
 
 let totalRows = 0;
@@ -85,17 +74,19 @@ for (let decadeStart = START_YEAR; decadeStart < END_YEAR; decadeStart += DECADE
       sedrot: true,
     });
 
-    // Pass 1: every date's actual winning maftir, straight from the
-    // parsha's own leyning (which already resolves Rosh Chodesh vs.
-    // Shekalim/Zachor/Parah/HaChodesh priority correctly). Needed before
-    // pass 2 can tell whether a same-day Rosh Chodesh holiday event is
-    // genuinely what's read that week.
-    const parshaMaftirByDate = new Map();
+    // Pass 1: which dates have a parsha reading at all. A holiday-flagged
+    // event on one of these dates (Rosh Chodesh, Shekalim/Zachor/Parah/
+    // HaChodesh/HaGadol/Shuva, Chanukah-on-Shabbat -- verified empirically
+    // across the full 100-year range: every one of these ALWAYS coincides
+    // with a parsha date, never stands alone) is folded into that parsha's
+    // own reading below instead of shown as a second row/card. Chol HaMoed
+    // and genuine independent festivals (Pesach, Sukkot, Rosh Hashana, Yom
+    // Kippur, Shavuot) never coincide with a parsha date at all -- Hebcal
+    // suspends the weekly cycle for those weeks -- so they're unaffected
+    // and still get their own standalone row further down.
+    const parshaDates = new Set();
     for (const ev of events) {
-      if (!(ev.getFlags() & 1024)) continue;
-      let leyning;
-      try { leyning = getLeyningForParshaHaShavua(ev, il); } catch (e) { continue; }
-      parshaMaftirByDate.set(isoDate(ev.getDate()), leyning.fullkriyah?.M || null);
+      if (ev.getFlags() & 1024) parshaDates.add(isoDate(ev.getDate()));
     }
 
     for (const ev of events) {
@@ -114,44 +105,73 @@ for (let decadeStart = START_YEAR; decadeStart < END_YEAR; decadeStart += DECADE
           combined: leyning.parsha.length === 2,
         };
         if (leyning.reason) {
-          row.specialReading = leyning.reason;
+          const r = leyning.reason;
+          row.specialReading = { ...r };
+          // A clean label for the week, and how many Torah scrolls it
+          // takes: 3 when aliyah 7 is ALSO reassigned (always to Rosh
+          // Chodesh's own portion -- Numbers 28:9-15 -- when this happens;
+          // verified across every combination Hebcal produces) --
+          // 1 regular scroll (aliyot 1-6) + Rosh Chodesh (aliyah 7) + the
+          // special day itself (maftir). 2 when only the maftir (and
+          // usually haftarah) changes -- 1 regular scroll (aliyot 1-7) +
+          // the special day (maftir). Haftarah-only substitutions (Machar
+          // Chodesh, etc., no chagim.json entry of their own -- see below)
+          // don't touch the Torah reading at all, so they don't count as a
+          // second scroll.
+          row.specialReading.label = stripQualifier(r.haftara || r.M || r['7']);
+          row.specialReading.scrollCount = r['7'] ? 3 : (r.M ? 2 : 1);
+          if (r['7']) {
+            row.specialReading.aliyah7Ref = toRef(leyning.fullkriyah?.['7']);
+            // Reassigning aliyah 7 to Rosh Chodesh doesn't just replace it --
+            // it also RESHAPES aliyah 6, which absorbs what would normally
+            // be aliyah 7's opening verses so nothing silently goes unread
+            // (verified: Terumah's regular aliyah 6 is Ex 27:1-8, but on a
+            // Shekalim+Rosh-Chodesh Shabbat aliyah 6 is Ex 27:1-19 -- the
+            // combined range). Capture every aliyah Hebcal actually placed a
+            // number on here, so the app can render exactly what's read
+            // instead of assuming only aliyah 7 moved.
+            row.specialReading.aliyot = Object.fromEntries(
+              ['1','2','3','4','5','6','7']
+                .filter((n) => leyning.fullkriyah?.[n])
+                .map((n) => [n, toRef(leyning.fullkriyah[n])])
+            );
+          }
+          if (r.M) row.specialReading.maftirRef = toRef(leyning.fullkriyah?.M);
           // A handful of special-Shabbat labels (Machar Chodesh, Pinchas
           // after 17 Tammuz, Ki Teitzei's 3rd Haftarah of Consolation,
           // Kedoshim following a special Shabbat) are haftarah-only swaps
           // with no separate maftir aliyah -- Hebcal never flags them as
-          // their own calendar event, so they get no companion 'holiday'
-          // row and no chagim.json entry (unlike Shekalim/Zachor/etc.,
-          // which do). leyning.haft carries the actual substitute haftarah
-          // reference; capture it here so the app can show real content
-          // instead of just the label.
-          if (leyning.haft) {
-            const toRef = (h) => ({ book: h.k, start: h.b, end: h.e, verses: h.v });
-            row.specialReading.haftaraRef = Array.isArray(leyning.haft)
-              ? leyning.haft.map(toRef) : toRef(leyning.haft);
-          }
+          // their own calendar event, so they get no companion chagim.json
+          // entry (unlike Shekalim/Zachor/etc., which do). leyning.haft
+          // carries the actual substitute haftarah reference either way.
+          if (r.haftara && leyning.haft) row.specialReading.haftaraRef = toRef(leyning.haft);
+          if (r.sephardic && leyning.seph) row.specialReading.haftaraRefSefardi = toRef(leyning.seph);
+          if (r.chabad && leyning.chabad) row.specialReading.haftaraRefChabad = toRef(leyning.chabad);
         }
         rows.push(row);
       } else {
         const rawDesc = ev.getDesc();
         if (SKIP_HOLIDAY_DESC.has(rawDesc)) continue;
         const desc = normalizeHolidayDesc(rawDesc);
-        let chagId = `${desc}__${regionTag}`;
+        const dateISO = isoDate(hd);
 
-        if (isShabbat(hd) && (ROSH_CHODESH_FAMILY.test(desc) || CHOL_HAMOED_FAMILY.test(desc))) {
-          const dateISO = isoDate(hd);
-          if (ROSH_CHODESH_FAMILY.test(desc) && parshaMaftirByDate.has(dateISO)) {
-            let holidayLeyning;
-            try { holidayLeyning = getLeyningForHoliday(ev, il); } catch (e) { continue; }
-            if (!sameMaftir(holidayLeyning.fullkriyah?.M, parshaMaftirByDate.get(dateISO))) continue; // superseded this week
-          }
-          chagId = sharedShabbatChagId(desc, regionTag) || chagId;
-        }
+        // This week's actual reading is already fully captured on the
+        // parsha row above (including this holiday's own contribution, via
+        // specialReading) -- showing it again as a second card would at
+        // best duplicate it, and on a triple-coincidence Shabbat (e.g.
+        // Shabbat Shekalim ALSO on Rosh Chodesh) would show a "Rosh
+        // Chodesh" card whose own maftir/haftarah aren't fully what's read
+        // that week (only its aliyah-7 portion is).
+        if (isShabbat(hd) && parshaDates.has(dateISO)) continue;
+
+        let chagId = `${desc}__${regionTag}`;
+        if (isShabbat(hd)) chagId = sharedShabbatChagId(desc, regionTag) || chagId;
 
         // Only include days that actually have a distinct Torah/haftarah reading
         // (matches the set already captured in chagim.json).
         if (!validChagIds.has(chagId)) continue;
         rows.push({
-          date: isoDate(hd),
+          date: dateISO,
           hebrewDate: hd.toString(),
           region,
           type: 'holiday',
@@ -164,7 +184,7 @@ for (let decadeStart = START_YEAR; decadeStart < END_YEAR; decadeStart += DECADE
   rows.sort((a, b) => a.date.localeCompare(b.date) || a.region.localeCompare(b.region));
   const fname = `../data/calendar-100y/${decadeStart}-${decadeEnd - 1}.json`;
   writeFileSync(fname, JSON.stringify({
-    description: `Shabbat parsha readings and chag/fast/Rosh Chodesh readings, ${decadeStart}-${decadeEnd - 1}, for both diaspora and israel regions. 'parshaId' references parshiot.json/parshiot-combined.json; 'chagId' references chagim.json. Only holiday-type rows correspond to an entry that actually carries a distinct Torah reading (see gen_calendar.mjs SKIP_HOLIDAY_DESC for the two exclusions).`,
+    description: `Shabbat parsha readings and chag/fast/Rosh Chodesh readings, ${decadeStart}-${decadeEnd - 1}, for both diaspora and israel regions. 'parshaId' references parshiot.json/parshiot-combined.json; 'chagId' references chagim.json. A parsha row's 'specialReading' (when present) fully describes what's actually read that week -- including any Rosh Chodesh/Shekalim/Zachor/Parah/HaChodesh/HaGadol/Shuva/Chanukah-on-Shabbat contribution via aliyah7Ref/maftirRef/haftaraRef -- so holiday-type rows are never emitted for a date that also has a parsha (verified: Rosh Chodesh and the special-Shabbat labels always coincide with a parsha date; only Chol HaMoed and independent festivals -- Pesach, Sukkot, Rosh Hashana, Yom Kippur, Shavuot -- ever stand alone, and those still get their own row here). See gen_calendar.mjs SKIP_HOLIDAY_DESC for the two content-free exclusions.`,
     yearRange: [decadeStart, decadeEnd - 1],
     generatedAt: new Date().toISOString(),
     count: rows.length,

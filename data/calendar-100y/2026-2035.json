@@ -4,7 +4,7 @@
     2026,
     2035
   ],
-  "generatedAt": "2026-08-06T01:03:31.176Z",
+  "generatedAt": "2026-08-09T20:40:56.092Z",
   "count": 2176,
   "rows": [
     {
@@ -137,7 +137,13 @@
       "specialReading": {
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
-        "M": "Shabbat Shekalim"
+        "M": "Shabbat Shekalim",
+        "haftaraRef": {
+          "book": "II Kings",
+          "start": "12:1",
+          "end": "12:17",
+          "verses": 17
+        }
       }
     },
     {
@@ -158,7 +164,13 @@
       "specialReading": {
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
-        "M": "Shabbat Shekalim"
+        "M": "Shabbat Shekalim",
+        "haftaraRef": {
+          "book": "II Kings",
+          "start": "12:1",
+          "end": "12:17",
+          "verses": 17
+        }
       }
     },
     {
@@ -228,7 +240,13 @@
         "haftara": "Shabbat Zachor",
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
-        "M": "Shabbat Zachor"
+        "M": "Shabbat Zachor",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        }
       }
     },
     {
@@ -250,7 +268,13 @@
         "haftara": "Shabbat Zachor",
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
-        "M": "Shabbat Zachor"
+        "M": "Shabbat Zachor",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        }
       }
     },
     {
@@ -327,7 +351,13 @@
       "specialReading": {
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
-        "M": "Shabbat Parah"
+        "M": "Shabbat Parah",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:38",
+          "verses": 23
+        }
       }
     },
     {
@@ -348,7 +378,13 @@
       "specialReading": {
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
-        "M": "Shabbat Parah"
+        "M": "Shabbat Parah",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:38",
+          "verses": 23
+        }
       }
     },
     {
@@ -370,7 +406,13 @@
         "haftara": "Shabbat HaChodesh",
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
-        "M": "Shabbat HaChodesh"
+        "M": "Shabbat HaChodesh",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "45:16",
+          "end": "46:18",
+          "verses": 28
+        }
       }
     },
     {
@@ -392,7 +434,13 @@
         "haftara": "Shabbat HaChodesh",
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
-        "M": "Shabbat HaChodesh"
+        "M": "Shabbat HaChodesh",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "45:16",
+          "end": "46:18",
+          "verses": 28
+        }
       }
     },
     {
@@ -443,7 +491,13 @@
       "parshaId": "Tzav",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat HaGadol"
+        "haftara": "Shabbat HaGadol",
+        "haftaraRef": {
+          "book": "Malachi",
+          "start": "3:4",
+          "end": "3:24",
+          "verses": 21
+        }
       }
     },
     {
@@ -462,7 +516,13 @@
       "parshaId": "Tzav",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat HaGadol"
+        "haftara": "Shabbat HaGadol",
+        "haftaraRef": {
+          "book": "Malachi",
+          "start": "3:4",
+          "end": "3:24",
+          "verses": 21
+        }
       }
     },
     {
@@ -634,7 +694,13 @@
       "combined": true,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -654,7 +720,13 @@
       "combined": true,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -729,7 +801,13 @@
       "parshaId": "Bamidbar",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -740,7 +818,13 @@
       "parshaId": "Bamidbar",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -927,7 +1011,13 @@
       "parshaId": "Pinchas",
       "combined": false,
       "specialReading": {
-        "haftara": "Pinchas occurring after 17 Tammuz"
+        "haftara": "Pinchas occurring after 17 Tammuz",
+        "haftaraRef": {
+          "book": "Jeremiah",
+          "start": "1:1",
+          "end": "2:3",
+          "verses": 22
+        }
       }
     },
     {
@@ -938,7 +1028,13 @@
       "parshaId": "Pinchas",
       "combined": false,
       "specialReading": {
-        "haftara": "Pinchas occurring after 17 Tammuz"
+        "haftara": "Pinchas occurring after 17 Tammuz",
+        "haftaraRef": {
+          "book": "Jeremiah",
+          "start": "1:1",
+          "end": "2:3",
+          "verses": 22
+        }
       }
     },
     {
@@ -1230,7 +1326,21 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
-        "sephardic": "Shabbat Shuva (with Ha'azinu)"
+        "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "haftaraRef": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Joel",
+            "start": "2:15",
+            "end": "2:27",
+            "verses": 13
+          }
+        ]
       }
     },
     {
@@ -1250,7 +1360,21 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
-        "sephardic": "Shabbat Shuva (with Ha'azinu)"
+        "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "haftaraRef": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Joel",
+            "start": "2:15",
+            "end": "2:27",
+            "verses": 13
+          }
+        ]
       }
     },
     {
@@ -1413,7 +1537,13 @@
       "parshaId": "Bereshit",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -1424,7 +1554,13 @@
       "parshaId": "Bereshit",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -1620,7 +1756,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 1 (on Shabbat)",
-        "M": "Chanukah Day 1 (on Shabbat)"
+        "M": "Chanukah Day 1 (on Shabbat)",
+        "haftaraRef": {
+          "book": "Zechariah",
+          "start": "2:14",
+          "end": "4:7",
+          "verses": 21
+        }
       }
     },
     {
@@ -1640,7 +1782,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 1 (on Shabbat)",
-        "M": "Chanukah Day 1 (on Shabbat)"
+        "M": "Chanukah Day 1 (on Shabbat)",
+        "haftaraRef": {
+          "book": "Zechariah",
+          "start": "2:14",
+          "end": "4:7",
+          "verses": 21
+        }
       }
     },
     {
@@ -1756,7 +1904,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 8 (on Shabbat)",
-        "M": "Chanukah Day 8 (on Shabbat)"
+        "M": "Chanukah Day 8 (on Shabbat)",
+        "haftaraRef": {
+          "book": "I Kings",
+          "start": "7:40",
+          "end": "7:50",
+          "verses": 11
+        }
       }
     },
     {
@@ -1776,7 +1930,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 8 (on Shabbat)",
-        "M": "Chanukah Day 8 (on Shabbat)"
+        "M": "Chanukah Day 8 (on Shabbat)",
+        "haftaraRef": {
+          "book": "I Kings",
+          "start": "7:40",
+          "end": "7:50",
+          "verses": 11
+        }
       }
     },
     {
@@ -1860,7 +2020,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -1880,7 +2046,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -1939,7 +2111,13 @@
       "parshaId": "Mishpatim",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -1950,7 +2128,13 @@
       "parshaId": "Mishpatim",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -2051,7 +2235,13 @@
       "specialReading": {
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
-        "M": "Shabbat Shekalim"
+        "M": "Shabbat Shekalim",
+        "haftaraRef": {
+          "book": "II Kings",
+          "start": "12:1",
+          "end": "12:17",
+          "verses": 17
+        }
       }
     },
     {
@@ -2072,7 +2262,13 @@
       "specialReading": {
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
-        "M": "Shabbat Shekalim"
+        "M": "Shabbat Shekalim",
+        "haftaraRef": {
+          "book": "II Kings",
+          "start": "12:1",
+          "end": "12:17",
+          "verses": 17
+        }
       }
     },
     {
@@ -2142,7 +2338,13 @@
         "haftara": "Shabbat Zachor",
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
-        "M": "Shabbat Zachor"
+        "M": "Shabbat Zachor",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        }
       }
     },
     {
@@ -2164,7 +2366,13 @@
         "haftara": "Shabbat Zachor",
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
-        "M": "Shabbat Zachor"
+        "M": "Shabbat Zachor",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        }
       }
     },
     {
@@ -2241,7 +2449,13 @@
       "specialReading": {
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
-        "M": "Shabbat Parah"
+        "M": "Shabbat Parah",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:38",
+          "verses": 23
+        }
       }
     },
     {
@@ -2262,7 +2476,13 @@
       "specialReading": {
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
-        "M": "Shabbat Parah"
+        "M": "Shabbat Parah",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:38",
+          "verses": 23
+        }
       }
     },
     {
@@ -2284,7 +2504,13 @@
         "haftara": "Shabbat HaChodesh",
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
-        "M": "Shabbat HaChodesh"
+        "M": "Shabbat HaChodesh",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "45:16",
+          "end": "46:18",
+          "verses": 28
+        }
       }
     },
     {
@@ -2306,7 +2532,13 @@
         "haftara": "Shabbat HaChodesh",
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
-        "M": "Shabbat HaChodesh"
+        "M": "Shabbat HaChodesh",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "45:16",
+          "end": "46:18",
+          "verses": 28
+        }
       }
     },
     {
@@ -2357,7 +2589,13 @@
       "parshaId": "Metzora",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat HaGadol"
+        "haftara": "Shabbat HaGadol",
+        "haftaraRef": {
+          "book": "Malachi",
+          "start": "3:4",
+          "end": "3:24",
+          "verses": 21
+        }
       }
     },
     {
@@ -2376,7 +2614,13 @@
       "parshaId": "Metzora",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat HaGadol"
+        "haftara": "Shabbat HaGadol",
+        "haftaraRef": {
+          "book": "Malachi",
+          "start": "3:4",
+          "end": "3:24",
+          "verses": 21
+        }
       }
     },
     {
@@ -2548,7 +2792,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -2568,7 +2818,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -2643,7 +2899,13 @@
       "parshaId": "Bamidbar",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -2654,7 +2916,13 @@
       "parshaId": "Bamidbar",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -2841,7 +3109,13 @@
       "parshaId": "Pinchas",
       "combined": false,
       "specialReading": {
-        "haftara": "Pinchas occurring after 17 Tammuz"
+        "haftara": "Pinchas occurring after 17 Tammuz",
+        "haftaraRef": {
+          "book": "Jeremiah",
+          "start": "1:1",
+          "end": "2:3",
+          "verses": 22
+        }
       }
     },
     {
@@ -2852,7 +3126,13 @@
       "parshaId": "Pinchas",
       "combined": false,
       "specialReading": {
-        "haftara": "Pinchas occurring after 17 Tammuz"
+        "haftara": "Pinchas occurring after 17 Tammuz",
+        "haftaraRef": {
+          "book": "Jeremiah",
+          "start": "1:1",
+          "end": "2:3",
+          "verses": 22
+        }
       }
     },
     {
@@ -3144,7 +3424,21 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
-        "sephardic": "Shabbat Shuva (with Ha'azinu)"
+        "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "haftaraRef": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Joel",
+            "start": "2:15",
+            "end": "2:27",
+            "verses": 13
+          }
+        ]
       }
     },
     {
@@ -3164,7 +3458,21 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
-        "sephardic": "Shabbat Shuva (with Ha'azinu)"
+        "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "haftaraRef": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Joel",
+            "start": "2:15",
+            "end": "2:27",
+            "verses": 13
+          }
+        ]
       }
     },
     {
@@ -3327,7 +3635,13 @@
       "parshaId": "Bereshit",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -3338,7 +3652,13 @@
       "parshaId": "Bereshit",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -3534,7 +3854,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 1 (on Shabbat)",
-        "M": "Chanukah Day 1 (on Shabbat)"
+        "M": "Chanukah Day 1 (on Shabbat)",
+        "haftaraRef": {
+          "book": "Zechariah",
+          "start": "2:14",
+          "end": "4:7",
+          "verses": 21
+        }
       }
     },
     {
@@ -3554,7 +3880,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 1 (on Shabbat)",
-        "M": "Chanukah Day 1 (on Shabbat)"
+        "M": "Chanukah Day 1 (on Shabbat)",
+        "haftaraRef": {
+          "book": "Zechariah",
+          "start": "2:14",
+          "end": "4:7",
+          "verses": 21
+        }
       }
     },
     {
@@ -3670,7 +4002,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 8 (on Shabbat)",
-        "M": "Chanukah Day 8 (on Shabbat)"
+        "M": "Chanukah Day 8 (on Shabbat)",
+        "haftaraRef": {
+          "book": "I Kings",
+          "start": "7:40",
+          "end": "7:50",
+          "verses": 11
+        }
       }
     },
     {
@@ -3690,7 +4028,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 8 (on Shabbat)",
-        "M": "Chanukah Day 8 (on Shabbat)"
+        "M": "Chanukah Day 8 (on Shabbat)",
+        "haftaraRef": {
+          "book": "I Kings",
+          "start": "7:40",
+          "end": "7:50",
+          "verses": 11
+        }
       }
     },
     {
@@ -3774,7 +4118,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -3794,7 +4144,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -3863,7 +4219,13 @@
       "specialReading": {
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
-        "M": "Shabbat Shekalim"
+        "M": "Shabbat Shekalim",
+        "haftaraRef": {
+          "book": "II Kings",
+          "start": "12:1",
+          "end": "12:17",
+          "verses": 17
+        }
       }
     },
     {
@@ -3884,7 +4246,13 @@
       "specialReading": {
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
-        "M": "Shabbat Shekalim"
+        "M": "Shabbat Shekalim",
+        "haftaraRef": {
+          "book": "II Kings",
+          "start": "12:1",
+          "end": "12:17",
+          "verses": 17
+        }
       }
     },
     {
@@ -3978,7 +4346,13 @@
         "haftara": "Shabbat Zachor",
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
-        "M": "Shabbat Zachor"
+        "M": "Shabbat Zachor",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        }
       }
     },
     {
@@ -4008,7 +4382,13 @@
         "haftara": "Shabbat Zachor",
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
-        "M": "Shabbat Zachor"
+        "M": "Shabbat Zachor",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        }
       }
     },
     {
@@ -4053,7 +4433,13 @@
       "specialReading": {
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
-        "M": "Shabbat Parah"
+        "M": "Shabbat Parah",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:38",
+          "verses": 23
+        }
       }
     },
     {
@@ -4074,7 +4460,13 @@
       "specialReading": {
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
-        "M": "Shabbat Parah"
+        "M": "Shabbat Parah",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:38",
+          "verses": 23
+        }
       }
     },
     {
@@ -4096,7 +4488,13 @@
         "haftara": "Shabbat HaChodesh",
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
-        "M": "Shabbat HaChodesh"
+        "M": "Shabbat HaChodesh",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "45:16",
+          "end": "46:18",
+          "verses": 28
+        }
       }
     },
     {
@@ -4118,7 +4516,13 @@
         "haftara": "Shabbat HaChodesh",
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
-        "M": "Shabbat HaChodesh"
+        "M": "Shabbat HaChodesh",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "45:16",
+          "end": "46:18",
+          "verses": 28
+        }
       }
     },
     {
@@ -4169,7 +4573,13 @@
       "parshaId": "Tzav",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat HaGadol"
+        "haftara": "Shabbat HaGadol",
+        "haftaraRef": {
+          "book": "Malachi",
+          "start": "3:4",
+          "end": "3:24",
+          "verses": 21
+        }
       }
     },
     {
@@ -4188,7 +4598,13 @@
       "parshaId": "Tzav",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat HaGadol"
+        "haftara": "Shabbat HaGadol",
+        "haftaraRef": {
+          "book": "Malachi",
+          "start": "3:4",
+          "end": "3:24",
+          "verses": 21
+        }
       }
     },
     {
@@ -4560,7 +4976,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -4580,7 +5002,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -4655,7 +5083,13 @@
       "parshaId": "Pinchas",
       "combined": false,
       "specialReading": {
-        "haftara": "Pinchas occurring after 17 Tammuz"
+        "haftara": "Pinchas occurring after 17 Tammuz",
+        "haftaraRef": {
+          "book": "Jeremiah",
+          "start": "1:1",
+          "end": "2:3",
+          "verses": 22
+        }
       }
     },
     {
@@ -4666,7 +5100,13 @@
       "parshaId": "Pinchas",
       "combined": false,
       "specialReading": {
-        "haftara": "Pinchas occurring after 17 Tammuz"
+        "haftara": "Pinchas occurring after 17 Tammuz",
+        "haftaraRef": {
+          "book": "Jeremiah",
+          "start": "1:1",
+          "end": "2:3",
+          "verses": 22
+        }
       }
     },
     {
@@ -4942,7 +5382,21 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
-        "sephardic": "Shabbat Shuva (with Ha'azinu)"
+        "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "haftaraRef": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Joel",
+            "start": "2:15",
+            "end": "2:27",
+            "verses": 13
+          }
+        ]
       }
     },
     {
@@ -4962,7 +5416,21 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
-        "sephardic": "Shabbat Shuva (with Ha'azinu)"
+        "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "haftaraRef": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Joel",
+            "start": "2:15",
+            "end": "2:27",
+            "verses": 13
+          }
+        ]
       }
     },
     {
@@ -5182,7 +5650,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -5202,7 +5676,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -5261,7 +5741,13 @@
       "parshaId": "Toldot",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -5272,7 +5758,13 @@
       "parshaId": "Toldot",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -5404,7 +5896,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 4 (on Shabbat)",
-        "M": "Chanukah Day 4 (on Shabbat)"
+        "M": "Chanukah Day 4 (on Shabbat)",
+        "haftaraRef": {
+          "book": "Zechariah",
+          "start": "2:14",
+          "end": "4:7",
+          "verses": 21
+        }
       }
     },
     {
@@ -5424,7 +5922,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 4 (on Shabbat)",
-        "M": "Chanukah Day 4 (on Shabbat)"
+        "M": "Chanukah Day 4 (on Shabbat)",
+        "haftaraRef": {
+          "book": "Zechariah",
+          "start": "2:14",
+          "end": "4:7",
+          "verses": 21
+        }
       }
     },
     {
@@ -5653,7 +6157,13 @@
       "specialReading": {
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
-        "M": "Shabbat Shekalim"
+        "M": "Shabbat Shekalim",
+        "haftaraRef": {
+          "book": "II Kings",
+          "start": "12:1",
+          "end": "12:17",
+          "verses": 17
+        }
       }
     },
     {
@@ -5674,7 +6184,13 @@
       "specialReading": {
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
-        "M": "Shabbat Shekalim"
+        "M": "Shabbat Shekalim",
+        "haftaraRef": {
+          "book": "II Kings",
+          "start": "12:1",
+          "end": "12:17",
+          "verses": 17
+        }
       }
     },
     {
@@ -5744,7 +6260,13 @@
         "haftara": "Shabbat Zachor",
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
-        "M": "Shabbat Zachor"
+        "M": "Shabbat Zachor",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        }
       }
     },
     {
@@ -5766,7 +6288,13 @@
         "haftara": "Shabbat Zachor",
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
-        "M": "Shabbat Zachor"
+        "M": "Shabbat Zachor",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        }
       }
     },
     {
@@ -5859,7 +6387,13 @@
       "specialReading": {
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
-        "M": "Shabbat Parah"
+        "M": "Shabbat Parah",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:38",
+          "verses": 23
+        }
       }
     },
     {
@@ -5880,7 +6414,13 @@
       "specialReading": {
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
-        "M": "Shabbat Parah"
+        "M": "Shabbat Parah",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:38",
+          "verses": 23
+        }
       }
     },
     {
@@ -5910,7 +6450,13 @@
         "7": "Shabbat HaChodesh (on Rosh Chodesh)",
         "haftara": "Shabbat HaChodesh (on Rosh Chodesh)",
         "sephardic": "Shabbat HaChodesh (on Rosh Chodesh)",
-        "M": "Shabbat HaChodesh (on Rosh Chodesh)"
+        "M": "Shabbat HaChodesh (on Rosh Chodesh)",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "45:16",
+          "end": "46:18",
+          "verses": 28
+        }
       }
     },
     {
@@ -5940,7 +6486,13 @@
         "7": "Shabbat HaChodesh (on Rosh Chodesh)",
         "haftara": "Shabbat HaChodesh (on Rosh Chodesh)",
         "sephardic": "Shabbat HaChodesh (on Rosh Chodesh)",
-        "M": "Shabbat HaChodesh (on Rosh Chodesh)"
+        "M": "Shabbat HaChodesh (on Rosh Chodesh)",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "45:16",
+          "end": "46:18",
+          "verses": 28
+        }
       }
     },
     {
@@ -5959,7 +6511,13 @@
       "parshaId": "Tzav",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat HaGadol"
+        "haftara": "Shabbat HaGadol",
+        "haftaraRef": {
+          "book": "Malachi",
+          "start": "3:4",
+          "end": "3:24",
+          "verses": 21
+        }
       }
     },
     {
@@ -5978,7 +6536,13 @@
       "parshaId": "Tzav",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat HaGadol"
+        "haftara": "Shabbat HaGadol",
+        "haftaraRef": {
+          "book": "Malachi",
+          "start": "3:4",
+          "end": "3:24",
+          "verses": 21
+        }
       }
     },
     {
@@ -6117,7 +6681,13 @@
       "parshaId": "Shmini",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -6128,7 +6698,13 @@
       "parshaId": "Tazria-Metzora",
       "combined": true,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -6451,7 +7027,13 @@
       "parshaId": "Pinchas",
       "combined": false,
       "specialReading": {
-        "haftara": "Pinchas occurring after 17 Tammuz"
+        "haftara": "Pinchas occurring after 17 Tammuz",
+        "haftaraRef": {
+          "book": "Jeremiah",
+          "start": "1:1",
+          "end": "2:3",
+          "verses": 22
+        }
       }
     },
     {
@@ -6462,7 +7044,13 @@
       "parshaId": "Pinchas",
       "combined": false,
       "specialReading": {
-        "haftara": "Pinchas occurring after 17 Tammuz"
+        "haftara": "Pinchas occurring after 17 Tammuz",
+        "haftaraRef": {
+          "book": "Jeremiah",
+          "start": "1:1",
+          "end": "2:3",
+          "verses": 22
+        }
       }
     },
     {
@@ -6594,7 +7182,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -6614,7 +7208,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -6657,7 +7257,21 @@
       "parshaId": "Ki Teitzei",
       "combined": false,
       "specialReading": {
-        "haftara": "Ki Teitzei with 3rd Haftarah of Consolation"
+        "haftara": "Ki Teitzei with 3rd Haftarah of Consolation",
+        "haftaraRef": [
+          {
+            "book": "Isaiah",
+            "start": "54:1",
+            "end": "54:10",
+            "verses": 10
+          },
+          {
+            "book": "Isaiah",
+            "start": "54:11",
+            "end": "55:5",
+            "verses": 12
+          }
+        ]
       }
     },
     {
@@ -6668,7 +7282,21 @@
       "parshaId": "Ki Teitzei",
       "combined": false,
       "specialReading": {
-        "haftara": "Ki Teitzei with 3rd Haftarah of Consolation"
+        "haftara": "Ki Teitzei with 3rd Haftarah of Consolation",
+        "haftaraRef": [
+          {
+            "book": "Isaiah",
+            "start": "54:1",
+            "end": "54:10",
+            "verses": 10
+          },
+          {
+            "book": "Isaiah",
+            "start": "54:11",
+            "end": "55:5",
+            "verses": 12
+          }
+        ]
       }
     },
     {
@@ -6767,7 +7395,21 @@
       "parshaId": "Vayeilech",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Shuva (with Vayeilech)"
+        "haftara": "Shabbat Shuva (with Vayeilech)",
+        "haftaraRef": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Micah",
+            "start": "7:18",
+            "end": "7:20",
+            "verses": 3
+          }
+        ]
       }
     },
     {
@@ -6786,7 +7428,21 @@
       "parshaId": "Vayeilech",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Shuva (with Vayeilech)"
+        "haftara": "Shabbat Shuva (with Vayeilech)",
+        "haftaraRef": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Micah",
+            "start": "7:18",
+            "end": "7:20",
+            "verses": 3
+          }
+        ]
       }
     },
     {
@@ -7262,7 +7918,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 7 (on Shabbat)",
-        "M": "Chanukah Day 7 (on Shabbat)"
+        "M": "Chanukah Day 7 (on Shabbat)",
+        "haftaraRef": {
+          "book": "Zechariah",
+          "start": "2:14",
+          "end": "4:7",
+          "verses": 21
+        }
       }
     },
     {
@@ -7282,7 +7944,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 7 (on Shabbat)",
-        "M": "Chanukah Day 7 (on Shabbat)"
+        "M": "Chanukah Day 7 (on Shabbat)",
+        "haftaraRef": {
+          "book": "Zechariah",
+          "start": "2:14",
+          "end": "4:7",
+          "verses": 21
+        }
       }
     },
     {
@@ -7382,7 +8050,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -7402,7 +8076,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -7461,7 +8141,13 @@
       "parshaId": "Mishpatim",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -7472,7 +8158,13 @@
       "parshaId": "Mishpatim",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -7573,7 +8265,13 @@
       "specialReading": {
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
-        "M": "Shabbat Shekalim"
+        "M": "Shabbat Shekalim",
+        "haftaraRef": {
+          "book": "II Kings",
+          "start": "12:1",
+          "end": "12:17",
+          "verses": 17
+        }
       }
     },
     {
@@ -7594,7 +8292,13 @@
       "specialReading": {
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
-        "M": "Shabbat Shekalim"
+        "M": "Shabbat Shekalim",
+        "haftaraRef": {
+          "book": "II Kings",
+          "start": "12:1",
+          "end": "12:17",
+          "verses": 17
+        }
       }
     },
     {
@@ -7664,7 +8368,13 @@
         "haftara": "Shabbat Zachor",
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
-        "M": "Shabbat Zachor"
+        "M": "Shabbat Zachor",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        }
       }
     },
     {
@@ -7686,7 +8396,13 @@
         "haftara": "Shabbat Zachor",
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
-        "M": "Shabbat Zachor"
+        "M": "Shabbat Zachor",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        }
       }
     },
     {
@@ -7763,7 +8479,13 @@
       "specialReading": {
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
-        "M": "Shabbat Parah"
+        "M": "Shabbat Parah",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:38",
+          "verses": 23
+        }
       }
     },
     {
@@ -7784,7 +8506,13 @@
       "specialReading": {
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
-        "M": "Shabbat Parah"
+        "M": "Shabbat Parah",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:38",
+          "verses": 23
+        }
       }
     },
     {
@@ -7806,7 +8534,13 @@
         "haftara": "Shabbat HaChodesh",
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
-        "M": "Shabbat HaChodesh"
+        "M": "Shabbat HaChodesh",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "45:16",
+          "end": "46:18",
+          "verses": 28
+        }
       }
     },
     {
@@ -7828,7 +8562,13 @@
         "haftara": "Shabbat HaChodesh",
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
-        "M": "Shabbat HaChodesh"
+        "M": "Shabbat HaChodesh",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "45:16",
+          "end": "46:18",
+          "verses": 28
+        }
       }
     },
     {
@@ -7879,7 +8619,13 @@
       "parshaId": "Metzora",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat HaGadol"
+        "haftara": "Shabbat HaGadol",
+        "haftaraRef": {
+          "book": "Malachi",
+          "start": "3:4",
+          "end": "3:24",
+          "verses": 21
+        }
       }
     },
     {
@@ -7898,7 +8644,13 @@
       "parshaId": "Metzora",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat HaGadol"
+        "haftara": "Shabbat HaGadol",
+        "haftaraRef": {
+          "book": "Malachi",
+          "start": "3:4",
+          "end": "3:24",
+          "verses": 21
+        }
       }
     },
     {
@@ -8070,7 +8822,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -8090,7 +8848,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -8165,7 +8929,13 @@
       "parshaId": "Bamidbar",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -8176,7 +8946,13 @@
       "parshaId": "Bamidbar",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -8363,7 +9139,13 @@
       "parshaId": "Pinchas",
       "combined": false,
       "specialReading": {
-        "haftara": "Pinchas occurring after 17 Tammuz"
+        "haftara": "Pinchas occurring after 17 Tammuz",
+        "haftaraRef": {
+          "book": "Jeremiah",
+          "start": "1:1",
+          "end": "2:3",
+          "verses": 22
+        }
       }
     },
     {
@@ -8374,7 +9156,13 @@
       "parshaId": "Pinchas",
       "combined": false,
       "specialReading": {
-        "haftara": "Pinchas occurring after 17 Tammuz"
+        "haftara": "Pinchas occurring after 17 Tammuz",
+        "haftaraRef": {
+          "book": "Jeremiah",
+          "start": "1:1",
+          "end": "2:3",
+          "verses": 22
+        }
       }
     },
     {
@@ -8666,7 +9454,21 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
-        "sephardic": "Shabbat Shuva (with Ha'azinu)"
+        "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "haftaraRef": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Joel",
+            "start": "2:15",
+            "end": "2:27",
+            "verses": 13
+          }
+        ]
       }
     },
     {
@@ -8686,7 +9488,21 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
-        "sephardic": "Shabbat Shuva (with Ha'azinu)"
+        "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "haftaraRef": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Joel",
+            "start": "2:15",
+            "end": "2:27",
+            "verses": 13
+          }
+        ]
       }
     },
     {
@@ -8849,7 +9665,13 @@
       "parshaId": "Bereshit",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -8860,7 +9682,13 @@
       "parshaId": "Bereshit",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -9056,7 +9884,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 1 (on Shabbat)",
-        "M": "Chanukah Day 1 (on Shabbat)"
+        "M": "Chanukah Day 1 (on Shabbat)",
+        "haftaraRef": {
+          "book": "Zechariah",
+          "start": "2:14",
+          "end": "4:7",
+          "verses": 21
+        }
       }
     },
     {
@@ -9076,7 +9910,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 1 (on Shabbat)",
-        "M": "Chanukah Day 1 (on Shabbat)"
+        "M": "Chanukah Day 1 (on Shabbat)",
+        "haftaraRef": {
+          "book": "Zechariah",
+          "start": "2:14",
+          "end": "4:7",
+          "verses": 21
+        }
       }
     },
     {
@@ -9192,7 +10032,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 8 (on Shabbat)",
-        "M": "Chanukah Day 8 (on Shabbat)"
+        "M": "Chanukah Day 8 (on Shabbat)",
+        "haftaraRef": {
+          "book": "I Kings",
+          "start": "7:40",
+          "end": "7:50",
+          "verses": 11
+        }
       }
     },
     {
@@ -9212,7 +10058,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 8 (on Shabbat)",
-        "M": "Chanukah Day 8 (on Shabbat)"
+        "M": "Chanukah Day 8 (on Shabbat)",
+        "haftaraRef": {
+          "book": "I Kings",
+          "start": "7:40",
+          "end": "7:50",
+          "verses": 11
+        }
       }
     },
     {
@@ -9296,7 +10148,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -9316,7 +10174,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -9385,7 +10249,13 @@
       "specialReading": {
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
-        "M": "Shabbat Shekalim"
+        "M": "Shabbat Shekalim",
+        "haftaraRef": {
+          "book": "II Kings",
+          "start": "12:1",
+          "end": "12:17",
+          "verses": 17
+        }
       }
     },
     {
@@ -9406,7 +10276,13 @@
       "specialReading": {
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
-        "M": "Shabbat Shekalim"
+        "M": "Shabbat Shekalim",
+        "haftaraRef": {
+          "book": "II Kings",
+          "start": "12:1",
+          "end": "12:17",
+          "verses": 17
+        }
       }
     },
     {
@@ -9500,7 +10376,13 @@
         "haftara": "Shabbat Zachor",
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
-        "M": "Shabbat Zachor"
+        "M": "Shabbat Zachor",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        }
       }
     },
     {
@@ -9530,7 +10412,13 @@
         "haftara": "Shabbat Zachor",
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
-        "M": "Shabbat Zachor"
+        "M": "Shabbat Zachor",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        }
       }
     },
     {
@@ -9575,7 +10463,13 @@
       "specialReading": {
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
-        "M": "Shabbat Parah"
+        "M": "Shabbat Parah",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:38",
+          "verses": 23
+        }
       }
     },
     {
@@ -9596,7 +10490,13 @@
       "specialReading": {
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
-        "M": "Shabbat Parah"
+        "M": "Shabbat Parah",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:38",
+          "verses": 23
+        }
       }
     },
     {
@@ -9618,7 +10518,13 @@
         "haftara": "Shabbat HaChodesh",
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
-        "M": "Shabbat HaChodesh"
+        "M": "Shabbat HaChodesh",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "45:16",
+          "end": "46:18",
+          "verses": 28
+        }
       }
     },
     {
@@ -9640,7 +10546,13 @@
         "haftara": "Shabbat HaChodesh",
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
-        "M": "Shabbat HaChodesh"
+        "M": "Shabbat HaChodesh",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "45:16",
+          "end": "46:18",
+          "verses": 28
+        }
       }
     },
     {
@@ -9691,7 +10603,13 @@
       "parshaId": "Tzav",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat HaGadol"
+        "haftara": "Shabbat HaGadol",
+        "haftaraRef": {
+          "book": "Malachi",
+          "start": "3:4",
+          "end": "3:24",
+          "verses": 21
+        }
       }
     },
     {
@@ -9710,7 +10628,13 @@
       "parshaId": "Tzav",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat HaGadol"
+        "haftara": "Shabbat HaGadol",
+        "haftaraRef": {
+          "book": "Malachi",
+          "start": "3:4",
+          "end": "3:24",
+          "verses": 21
+        }
       }
     },
     {
@@ -10082,7 +11006,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -10102,7 +11032,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -10177,7 +11113,13 @@
       "parshaId": "Pinchas",
       "combined": false,
       "specialReading": {
-        "haftara": "Pinchas occurring after 17 Tammuz"
+        "haftara": "Pinchas occurring after 17 Tammuz",
+        "haftaraRef": {
+          "book": "Jeremiah",
+          "start": "1:1",
+          "end": "2:3",
+          "verses": 22
+        }
       }
     },
     {
@@ -10188,7 +11130,13 @@
       "parshaId": "Pinchas",
       "combined": false,
       "specialReading": {
-        "haftara": "Pinchas occurring after 17 Tammuz"
+        "haftara": "Pinchas occurring after 17 Tammuz",
+        "haftaraRef": {
+          "book": "Jeremiah",
+          "start": "1:1",
+          "end": "2:3",
+          "verses": 22
+        }
       }
     },
     {
@@ -10464,7 +11412,21 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
-        "sephardic": "Shabbat Shuva (with Ha'azinu)"
+        "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "haftaraRef": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Joel",
+            "start": "2:15",
+            "end": "2:27",
+            "verses": 13
+          }
+        ]
       }
     },
     {
@@ -10484,7 +11446,21 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
-        "sephardic": "Shabbat Shuva (with Ha'azinu)"
+        "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "haftaraRef": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Joel",
+            "start": "2:15",
+            "end": "2:27",
+            "verses": 13
+          }
+        ]
       }
     },
     {
@@ -10704,7 +11680,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -10724,7 +11706,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -10783,7 +11771,13 @@
       "parshaId": "Toldot",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -10794,7 +11788,13 @@
       "parshaId": "Toldot",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -10926,7 +11926,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 4 (on Shabbat)",
-        "M": "Chanukah Day 4 (on Shabbat)"
+        "M": "Chanukah Day 4 (on Shabbat)",
+        "haftaraRef": {
+          "book": "Zechariah",
+          "start": "2:14",
+          "end": "4:7",
+          "verses": 21
+        }
       }
     },
     {
@@ -10946,7 +11952,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 4 (on Shabbat)",
-        "M": "Chanukah Day 4 (on Shabbat)"
+        "M": "Chanukah Day 4 (on Shabbat)",
+        "haftaraRef": {
+          "book": "Zechariah",
+          "start": "2:14",
+          "end": "4:7",
+          "verses": 21
+        }
       }
     },
     {
@@ -11175,7 +12187,13 @@
       "specialReading": {
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
-        "M": "Shabbat Shekalim"
+        "M": "Shabbat Shekalim",
+        "haftaraRef": {
+          "book": "II Kings",
+          "start": "12:1",
+          "end": "12:17",
+          "verses": 17
+        }
       }
     },
     {
@@ -11196,7 +12214,13 @@
       "specialReading": {
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
-        "M": "Shabbat Shekalim"
+        "M": "Shabbat Shekalim",
+        "haftaraRef": {
+          "book": "II Kings",
+          "start": "12:1",
+          "end": "12:17",
+          "verses": 17
+        }
       }
     },
     {
@@ -11266,7 +12290,13 @@
         "haftara": "Shabbat Zachor",
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
-        "M": "Shabbat Zachor"
+        "M": "Shabbat Zachor",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        }
       }
     },
     {
@@ -11288,7 +12318,13 @@
         "haftara": "Shabbat Zachor",
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
-        "M": "Shabbat Zachor"
+        "M": "Shabbat Zachor",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        }
       }
     },
     {
@@ -11381,7 +12417,13 @@
       "specialReading": {
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
-        "M": "Shabbat Parah"
+        "M": "Shabbat Parah",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:38",
+          "verses": 23
+        }
       }
     },
     {
@@ -11402,7 +12444,13 @@
       "specialReading": {
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
-        "M": "Shabbat Parah"
+        "M": "Shabbat Parah",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:38",
+          "verses": 23
+        }
       }
     },
     {
@@ -11432,7 +12480,13 @@
         "7": "Shabbat HaChodesh (on Rosh Chodesh)",
         "haftara": "Shabbat HaChodesh (on Rosh Chodesh)",
         "sephardic": "Shabbat HaChodesh (on Rosh Chodesh)",
-        "M": "Shabbat HaChodesh (on Rosh Chodesh)"
+        "M": "Shabbat HaChodesh (on Rosh Chodesh)",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "45:16",
+          "end": "46:18",
+          "verses": 28
+        }
       }
     },
     {
@@ -11462,7 +12516,13 @@
         "7": "Shabbat HaChodesh (on Rosh Chodesh)",
         "haftara": "Shabbat HaChodesh (on Rosh Chodesh)",
         "sephardic": "Shabbat HaChodesh (on Rosh Chodesh)",
-        "M": "Shabbat HaChodesh (on Rosh Chodesh)"
+        "M": "Shabbat HaChodesh (on Rosh Chodesh)",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "45:16",
+          "end": "46:18",
+          "verses": 28
+        }
       }
     },
     {
@@ -11481,7 +12541,13 @@
       "parshaId": "Tzav",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat HaGadol"
+        "haftara": "Shabbat HaGadol",
+        "haftaraRef": {
+          "book": "Malachi",
+          "start": "3:4",
+          "end": "3:24",
+          "verses": 21
+        }
       }
     },
     {
@@ -11500,7 +12566,13 @@
       "parshaId": "Tzav",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat HaGadol"
+        "haftara": "Shabbat HaGadol",
+        "haftaraRef": {
+          "book": "Malachi",
+          "start": "3:4",
+          "end": "3:24",
+          "verses": 21
+        }
       }
     },
     {
@@ -11639,7 +12711,13 @@
       "parshaId": "Shmini",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -11650,7 +12728,13 @@
       "parshaId": "Tazria-Metzora",
       "combined": true,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -11973,7 +13057,13 @@
       "parshaId": "Pinchas",
       "combined": false,
       "specialReading": {
-        "haftara": "Pinchas occurring after 17 Tammuz"
+        "haftara": "Pinchas occurring after 17 Tammuz",
+        "haftaraRef": {
+          "book": "Jeremiah",
+          "start": "1:1",
+          "end": "2:3",
+          "verses": 22
+        }
       }
     },
     {
@@ -11984,7 +13074,13 @@
       "parshaId": "Pinchas",
       "combined": false,
       "specialReading": {
-        "haftara": "Pinchas occurring after 17 Tammuz"
+        "haftara": "Pinchas occurring after 17 Tammuz",
+        "haftaraRef": {
+          "book": "Jeremiah",
+          "start": "1:1",
+          "end": "2:3",
+          "verses": 22
+        }
       }
     },
     {
@@ -12116,7 +13212,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -12136,7 +13238,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -12179,7 +13287,21 @@
       "parshaId": "Ki Teitzei",
       "combined": false,
       "specialReading": {
-        "haftara": "Ki Teitzei with 3rd Haftarah of Consolation"
+        "haftara": "Ki Teitzei with 3rd Haftarah of Consolation",
+        "haftaraRef": [
+          {
+            "book": "Isaiah",
+            "start": "54:1",
+            "end": "54:10",
+            "verses": 10
+          },
+          {
+            "book": "Isaiah",
+            "start": "54:11",
+            "end": "55:5",
+            "verses": 12
+          }
+        ]
       }
     },
     {
@@ -12190,7 +13312,21 @@
       "parshaId": "Ki Teitzei",
       "combined": false,
       "specialReading": {
-        "haftara": "Ki Teitzei with 3rd Haftarah of Consolation"
+        "haftara": "Ki Teitzei with 3rd Haftarah of Consolation",
+        "haftaraRef": [
+          {
+            "book": "Isaiah",
+            "start": "54:1",
+            "end": "54:10",
+            "verses": 10
+          },
+          {
+            "book": "Isaiah",
+            "start": "54:11",
+            "end": "55:5",
+            "verses": 12
+          }
+        ]
       }
     },
     {
@@ -12289,7 +13425,21 @@
       "parshaId": "Vayeilech",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Shuva (with Vayeilech)"
+        "haftara": "Shabbat Shuva (with Vayeilech)",
+        "haftaraRef": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Micah",
+            "start": "7:18",
+            "end": "7:20",
+            "verses": 3
+          }
+        ]
       }
     },
     {
@@ -12308,7 +13458,21 @@
       "parshaId": "Vayeilech",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Shuva (with Vayeilech)"
+        "haftara": "Shabbat Shuva (with Vayeilech)",
+        "haftaraRef": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Micah",
+            "start": "7:18",
+            "end": "7:20",
+            "verses": 3
+          }
+        ]
       }
     },
     {
@@ -12784,7 +13948,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 7 (on Shabbat)",
-        "M": "Chanukah Day 7 (on Shabbat)"
+        "M": "Chanukah Day 7 (on Shabbat)",
+        "haftaraRef": {
+          "book": "Zechariah",
+          "start": "2:14",
+          "end": "4:7",
+          "verses": 21
+        }
       }
     },
     {
@@ -12804,7 +13974,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 7 (on Shabbat)",
-        "M": "Chanukah Day 7 (on Shabbat)"
+        "M": "Chanukah Day 7 (on Shabbat)",
+        "haftaraRef": {
+          "book": "Zechariah",
+          "start": "2:14",
+          "end": "4:7",
+          "verses": 21
+        }
       }
     },
     {
@@ -12904,7 +14080,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -12924,7 +14106,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -12983,7 +14171,13 @@
       "parshaId": "Mishpatim",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -12994,7 +14188,13 @@
       "parshaId": "Mishpatim",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -13095,7 +14295,13 @@
       "specialReading": {
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
-        "M": "Shabbat Shekalim"
+        "M": "Shabbat Shekalim",
+        "haftaraRef": {
+          "book": "II Kings",
+          "start": "12:1",
+          "end": "12:17",
+          "verses": 17
+        }
       }
     },
     {
@@ -13116,7 +14322,13 @@
       "specialReading": {
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
-        "M": "Shabbat Shekalim"
+        "M": "Shabbat Shekalim",
+        "haftaraRef": {
+          "book": "II Kings",
+          "start": "12:1",
+          "end": "12:17",
+          "verses": 17
+        }
       }
     },
     {
@@ -13186,7 +14398,13 @@
         "haftara": "Shabbat Zachor",
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
-        "M": "Shabbat Zachor"
+        "M": "Shabbat Zachor",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        }
       }
     },
     {
@@ -13208,7 +14426,13 @@
         "haftara": "Shabbat Zachor",
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
-        "M": "Shabbat Zachor"
+        "M": "Shabbat Zachor",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        }
       }
     },
     {
@@ -13285,7 +14509,13 @@
       "specialReading": {
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
-        "M": "Shabbat Parah"
+        "M": "Shabbat Parah",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:38",
+          "verses": 23
+        }
       }
     },
     {
@@ -13306,7 +14536,13 @@
       "specialReading": {
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
-        "M": "Shabbat Parah"
+        "M": "Shabbat Parah",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:38",
+          "verses": 23
+        }
       }
     },
     {
@@ -13328,7 +14564,13 @@
         "haftara": "Shabbat HaChodesh",
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
-        "M": "Shabbat HaChodesh"
+        "M": "Shabbat HaChodesh",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "45:16",
+          "end": "46:18",
+          "verses": 28
+        }
       }
     },
     {
@@ -13350,7 +14592,13 @@
         "haftara": "Shabbat HaChodesh",
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
-        "M": "Shabbat HaChodesh"
+        "M": "Shabbat HaChodesh",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "45:16",
+          "end": "46:18",
+          "verses": 28
+        }
       }
     },
     {
@@ -13401,7 +14649,13 @@
       "parshaId": "Metzora",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat HaGadol"
+        "haftara": "Shabbat HaGadol",
+        "haftaraRef": {
+          "book": "Malachi",
+          "start": "3:4",
+          "end": "3:24",
+          "verses": 21
+        }
       }
     },
     {
@@ -13420,7 +14674,13 @@
       "parshaId": "Metzora",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat HaGadol"
+        "haftara": "Shabbat HaGadol",
+        "haftaraRef": {
+          "book": "Malachi",
+          "start": "3:4",
+          "end": "3:24",
+          "verses": 21
+        }
       }
     },
     {
@@ -13592,7 +14852,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -13612,7 +14878,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -13687,7 +14959,13 @@
       "parshaId": "Bamidbar",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -13698,7 +14976,13 @@
       "parshaId": "Bamidbar",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -13885,7 +15169,13 @@
       "parshaId": "Pinchas",
       "combined": false,
       "specialReading": {
-        "haftara": "Pinchas occurring after 17 Tammuz"
+        "haftara": "Pinchas occurring after 17 Tammuz",
+        "haftaraRef": {
+          "book": "Jeremiah",
+          "start": "1:1",
+          "end": "2:3",
+          "verses": 22
+        }
       }
     },
     {
@@ -13896,7 +15186,13 @@
       "parshaId": "Pinchas",
       "combined": false,
       "specialReading": {
-        "haftara": "Pinchas occurring after 17 Tammuz"
+        "haftara": "Pinchas occurring after 17 Tammuz",
+        "haftaraRef": {
+          "book": "Jeremiah",
+          "start": "1:1",
+          "end": "2:3",
+          "verses": 22
+        }
       }
     },
     {
@@ -14188,7 +15484,21 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
-        "sephardic": "Shabbat Shuva (with Ha'azinu)"
+        "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "haftaraRef": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Joel",
+            "start": "2:15",
+            "end": "2:27",
+            "verses": 13
+          }
+        ]
       }
     },
     {
@@ -14208,7 +15518,21 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
-        "sephardic": "Shabbat Shuva (with Ha'azinu)"
+        "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "haftaraRef": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Joel",
+            "start": "2:15",
+            "end": "2:27",
+            "verses": 13
+          }
+        ]
       }
     },
     {
@@ -14371,7 +15695,13 @@
       "parshaId": "Bereshit",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -14382,7 +15712,13 @@
       "parshaId": "Bereshit",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -14578,7 +15914,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 1 (on Shabbat)",
-        "M": "Chanukah Day 1 (on Shabbat)"
+        "M": "Chanukah Day 1 (on Shabbat)",
+        "haftaraRef": {
+          "book": "Zechariah",
+          "start": "2:14",
+          "end": "4:7",
+          "verses": 21
+        }
       }
     },
     {
@@ -14598,7 +15940,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 1 (on Shabbat)",
-        "M": "Chanukah Day 1 (on Shabbat)"
+        "M": "Chanukah Day 1 (on Shabbat)",
+        "haftaraRef": {
+          "book": "Zechariah",
+          "start": "2:14",
+          "end": "4:7",
+          "verses": 21
+        }
       }
     },
     {
@@ -14714,7 +16062,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 8 (on Shabbat)",
-        "M": "Chanukah Day 8 (on Shabbat)"
+        "M": "Chanukah Day 8 (on Shabbat)",
+        "haftaraRef": {
+          "book": "I Kings",
+          "start": "7:40",
+          "end": "7:50",
+          "verses": 11
+        }
       }
     },
     {
@@ -14734,7 +16088,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 8 (on Shabbat)",
-        "M": "Chanukah Day 8 (on Shabbat)"
+        "M": "Chanukah Day 8 (on Shabbat)",
+        "haftaraRef": {
+          "book": "I Kings",
+          "start": "7:40",
+          "end": "7:50",
+          "verses": 11
+        }
       }
     },
     {
@@ -14818,7 +16178,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -14838,7 +16204,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -14907,7 +16279,13 @@
       "specialReading": {
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
-        "M": "Shabbat Shekalim"
+        "M": "Shabbat Shekalim",
+        "haftaraRef": {
+          "book": "II Kings",
+          "start": "12:1",
+          "end": "12:17",
+          "verses": 17
+        }
       }
     },
     {
@@ -14928,7 +16306,13 @@
       "specialReading": {
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
-        "M": "Shabbat Shekalim"
+        "M": "Shabbat Shekalim",
+        "haftaraRef": {
+          "book": "II Kings",
+          "start": "12:1",
+          "end": "12:17",
+          "verses": 17
+        }
       }
     },
     {
@@ -15022,7 +16406,13 @@
         "haftara": "Shabbat Zachor",
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
-        "M": "Shabbat Zachor"
+        "M": "Shabbat Zachor",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        }
       }
     },
     {
@@ -15052,7 +16442,13 @@
         "haftara": "Shabbat Zachor",
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
-        "M": "Shabbat Zachor"
+        "M": "Shabbat Zachor",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        }
       }
     },
     {
@@ -15097,7 +16493,13 @@
       "specialReading": {
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
-        "M": "Shabbat Parah"
+        "M": "Shabbat Parah",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:38",
+          "verses": 23
+        }
       }
     },
     {
@@ -15118,7 +16520,13 @@
       "specialReading": {
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
-        "M": "Shabbat Parah"
+        "M": "Shabbat Parah",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:38",
+          "verses": 23
+        }
       }
     },
     {
@@ -15140,7 +16548,13 @@
         "haftara": "Shabbat HaChodesh",
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
-        "M": "Shabbat HaChodesh"
+        "M": "Shabbat HaChodesh",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "45:16",
+          "end": "46:18",
+          "verses": 28
+        }
       }
     },
     {
@@ -15162,7 +16576,13 @@
         "haftara": "Shabbat HaChodesh",
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
-        "M": "Shabbat HaChodesh"
+        "M": "Shabbat HaChodesh",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "45:16",
+          "end": "46:18",
+          "verses": 28
+        }
       }
     },
     {
@@ -15213,7 +16633,13 @@
       "parshaId": "Tzav",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat HaGadol"
+        "haftara": "Shabbat HaGadol",
+        "haftaraRef": {
+          "book": "Malachi",
+          "start": "3:4",
+          "end": "3:24",
+          "verses": 21
+        }
       }
     },
     {
@@ -15232,7 +16658,13 @@
       "parshaId": "Tzav",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat HaGadol"
+        "haftara": "Shabbat HaGadol",
+        "haftaraRef": {
+          "book": "Malachi",
+          "start": "3:4",
+          "end": "3:24",
+          "verses": 21
+        }
       }
     },
     {
@@ -15604,7 +17036,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -15624,7 +17062,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -15699,7 +17143,13 @@
       "parshaId": "Pinchas",
       "combined": false,
       "specialReading": {
-        "haftara": "Pinchas occurring after 17 Tammuz"
+        "haftara": "Pinchas occurring after 17 Tammuz",
+        "haftaraRef": {
+          "book": "Jeremiah",
+          "start": "1:1",
+          "end": "2:3",
+          "verses": 22
+        }
       }
     },
     {
@@ -15710,7 +17160,13 @@
       "parshaId": "Pinchas",
       "combined": false,
       "specialReading": {
-        "haftara": "Pinchas occurring after 17 Tammuz"
+        "haftara": "Pinchas occurring after 17 Tammuz",
+        "haftaraRef": {
+          "book": "Jeremiah",
+          "start": "1:1",
+          "end": "2:3",
+          "verses": 22
+        }
       }
     },
     {
@@ -15986,7 +17442,21 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
-        "sephardic": "Shabbat Shuva (with Ha'azinu)"
+        "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "haftaraRef": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Joel",
+            "start": "2:15",
+            "end": "2:27",
+            "verses": 13
+          }
+        ]
       }
     },
     {
@@ -16006,7 +17476,21 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
-        "sephardic": "Shabbat Shuva (with Ha'azinu)"
+        "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "haftaraRef": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Joel",
+            "start": "2:15",
+            "end": "2:27",
+            "verses": 13
+          }
+        ]
       }
     },
     {
@@ -16226,7 +17710,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -16246,7 +17736,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -16305,7 +17801,13 @@
       "parshaId": "Toldot",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -16316,7 +17818,13 @@
       "parshaId": "Toldot",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -16448,7 +17956,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 3 (on Shabbat)",
-        "M": "Chanukah Day 3 (on Shabbat)"
+        "M": "Chanukah Day 3 (on Shabbat)",
+        "haftaraRef": {
+          "book": "Zechariah",
+          "start": "2:14",
+          "end": "4:7",
+          "verses": 21
+        }
       }
     },
     {
@@ -16468,7 +17982,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 3 (on Shabbat)",
-        "M": "Chanukah Day 3 (on Shabbat)"
+        "M": "Chanukah Day 3 (on Shabbat)",
+        "haftaraRef": {
+          "book": "Zechariah",
+          "start": "2:14",
+          "end": "4:7",
+          "verses": 21
+        }
       }
     },
     {
@@ -16744,7 +18264,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -16764,7 +18290,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -16833,7 +18365,13 @@
       "specialReading": {
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
-        "M": "Shabbat Shekalim"
+        "M": "Shabbat Shekalim",
+        "haftaraRef": {
+          "book": "II Kings",
+          "start": "12:1",
+          "end": "12:17",
+          "verses": 17
+        }
       }
     },
     {
@@ -16854,7 +18392,13 @@
       "specialReading": {
         "haftara": "Shabbat Shekalim",
         "sephardic": "Shabbat Shekalim",
-        "M": "Shabbat Shekalim"
+        "M": "Shabbat Shekalim",
+        "haftaraRef": {
+          "book": "II Kings",
+          "start": "12:1",
+          "end": "12:17",
+          "verses": 17
+        }
       }
     },
     {
@@ -16948,7 +18492,13 @@
         "haftara": "Shabbat Zachor",
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
-        "M": "Shabbat Zachor"
+        "M": "Shabbat Zachor",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        }
       }
     },
     {
@@ -16978,7 +18528,13 @@
         "haftara": "Shabbat Zachor",
         "sephardic": "Shabbat Zachor",
         "chabad": "Shabbat Zachor",
-        "M": "Shabbat Zachor"
+        "M": "Shabbat Zachor",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        }
       }
     },
     {
@@ -17023,7 +18579,13 @@
       "specialReading": {
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
-        "M": "Shabbat Parah"
+        "M": "Shabbat Parah",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:38",
+          "verses": 23
+        }
       }
     },
     {
@@ -17044,7 +18606,13 @@
       "specialReading": {
         "haftara": "Shabbat Parah",
         "sephardic": "Shabbat Parah",
-        "M": "Shabbat Parah"
+        "M": "Shabbat Parah",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:38",
+          "verses": 23
+        }
       }
     },
     {
@@ -17066,7 +18634,13 @@
         "haftara": "Shabbat HaChodesh",
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
-        "M": "Shabbat HaChodesh"
+        "M": "Shabbat HaChodesh",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "45:16",
+          "end": "46:18",
+          "verses": 28
+        }
       }
     },
     {
@@ -17088,7 +18662,13 @@
         "haftara": "Shabbat HaChodesh",
         "sephardic": "Shabbat HaChodesh",
         "chabad": "Shabbat HaChodesh",
-        "M": "Shabbat HaChodesh"
+        "M": "Shabbat HaChodesh",
+        "haftaraRef": {
+          "book": "Ezekiel",
+          "start": "45:16",
+          "end": "46:18",
+          "verses": 28
+        }
       }
     },
     {
@@ -17139,7 +18719,13 @@
       "parshaId": "Achrei Mot",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat HaGadol"
+        "haftara": "Shabbat HaGadol",
+        "haftaraRef": {
+          "book": "Malachi",
+          "start": "3:4",
+          "end": "3:24",
+          "verses": 21
+        }
       }
     },
     {
@@ -17158,7 +18744,13 @@
       "parshaId": "Achrei Mot",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat HaGadol"
+        "haftara": "Shabbat HaGadol",
+        "haftaraRef": {
+          "book": "Malachi",
+          "start": "3:4",
+          "end": "3:24",
+          "verses": 21
+        }
       }
     },
     {
@@ -17290,7 +18882,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Kedoshim following Special Shabbat",
-        "sephardic": "Kedoshim following Special Shabbat"
+        "sephardic": "Kedoshim following Special Shabbat",
+        "haftaraRef": {
+          "book": "Amos",
+          "start": "9:7",
+          "end": "9:15",
+          "verses": 9
+        }
       }
     },
     {
@@ -17302,7 +18900,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Kedoshim following Special Shabbat",
-        "sephardic": "Kedoshim following Special Shabbat"
+        "sephardic": "Kedoshim following Special Shabbat",
+        "haftaraRef": {
+          "book": "Amos",
+          "start": "9:7",
+          "end": "9:15",
+          "verses": 9
+        }
       }
     },
     {
@@ -17538,7 +19142,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -17558,7 +19168,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -17914,7 +19530,21 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
-        "sephardic": "Shabbat Shuva (with Ha'azinu)"
+        "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "haftaraRef": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Joel",
+            "start": "2:15",
+            "end": "2:27",
+            "verses": 13
+          }
+        ]
       }
     },
     {
@@ -17934,7 +19564,21 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Shuva (with Ha'azinu)",
-        "sephardic": "Shabbat Shuva (with Ha'azinu)"
+        "sephardic": "Shabbat Shuva (with Ha'azinu)",
+        "haftaraRef": [
+          {
+            "book": "Hosea",
+            "start": "14:2",
+            "end": "14:10",
+            "verses": 9
+          },
+          {
+            "book": "Joel",
+            "start": "2:15",
+            "end": "2:27",
+            "verses": 13
+          }
+        ]
       }
     },
     {
@@ -18154,7 +19798,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -18174,7 +19824,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Shabbat Rosh Chodesh",
-        "M": "Shabbat Rosh Chodesh"
+        "M": "Shabbat Rosh Chodesh",
+        "haftaraRef": {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
       }
     },
     {
@@ -18233,7 +19889,13 @@
       "parshaId": "Toldot",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -18244,7 +19906,13 @@
       "parshaId": "Toldot",
       "combined": false,
       "specialReading": {
-        "haftara": "Shabbat Machar Chodesh"
+        "haftara": "Shabbat Machar Chodesh",
+        "haftaraRef": {
+          "book": "I Samuel",
+          "start": "20:18",
+          "end": "20:42",
+          "verses": 25
+        }
       }
     },
     {
@@ -18376,7 +20044,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 4 (on Shabbat)",
-        "M": "Chanukah Day 4 (on Shabbat)"
+        "M": "Chanukah Day 4 (on Shabbat)",
+        "haftaraRef": {
+          "book": "Zechariah",
+          "start": "2:14",
+          "end": "4:7",
+          "verses": 21
+        }
       }
     },
     {
@@ -18396,7 +20070,13 @@
       "combined": false,
       "specialReading": {
         "haftara": "Chanukah Day 4 (on Shabbat)",
-        "M": "Chanukah Day 4 (on Shabbat)"
+        "M": "Chanukah Day 4 (on Shabbat)",
+        "haftaraRef": {
+          "book": "Zechariah",
+          "start": "2:14",
+          "end": "4:7",
+          "verses": 21
+        }
       }
     },
     {

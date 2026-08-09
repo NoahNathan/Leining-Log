@@ -63,7 +63,23 @@ for (let decadeStart = START_YEAR; decadeStart < END_YEAR; decadeStart += DECADE
           parshaId,
           combined: leyning.parsha.length === 2,
         };
-        if (leyning.reason) row.specialReading = leyning.reason;
+        if (leyning.reason) {
+          row.specialReading = leyning.reason;
+          // A handful of special-Shabbat labels (Machar Chodesh, Pinchas
+          // after 17 Tammuz, Ki Teitzei's 3rd Haftarah of Consolation,
+          // Kedoshim following a special Shabbat) are haftarah-only swaps
+          // with no separate maftir aliyah -- Hebcal never flags them as
+          // their own calendar event, so they get no companion 'holiday'
+          // row and no chagim.json entry (unlike Shekalim/Zachor/etc.,
+          // which do). leyning.haft carries the actual substitute haftarah
+          // reference; capture it here so the app can show real content
+          // instead of just the label.
+          if (leyning.haft) {
+            const toRef = (h) => ({ book: h.k, start: h.b, end: h.e, verses: h.v });
+            row.specialReading.haftaraRef = Array.isArray(leyning.haft)
+              ? leyning.haft.map(toRef) : toRef(leyning.haft);
+          }
+        }
         rows.push(row);
       } else {
         const rawDesc = ev.getDesc();

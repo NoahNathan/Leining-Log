@@ -1,7 +1,7 @@
-import { el, citeRange, displayParshaName, scoreColor, scoreColorBg, scoreLabel } from '../util.js';
+import { el, citeRange, displayParshaName, scoreColor, scoreColorBg, scoreLabel, formatDateLong } from '../util.js';
 import { contentTags } from '../contentTags.js';
 import { isConfigured, getCurrentUser } from '../auth.js';
-import { getMyLeiningLog, addLeiningLogEntry, removeLeiningLogEntry } from '../data.js';
+import { getMyLeiningLog, addLeiningLogEntry, removeLeiningLogEntry, getParshaDetail, getChagById, getAliyahSummaries } from '../data.js';
 
 function contentTagChips(tags) {
   if (!tags || !tags.length) return null;
@@ -570,4 +570,64 @@ export function renderChagDetail(chag, { summaries } = {}) {
     nusachRow(chag.nusach, null, summaries),
   ]));
   return card;
+}
+
+// A few special-Shabbat labels (Machar Chodesh, Pinchas occurring after 17
+// Tammuz, Ki Teitzei's 3rd Haftarah of Consolation, Kedoshim following a
+// special Shabbat) are haftarah-only swaps with no separate maftir aliyah --
+// unlike Shekalim/Zachor/Parah/HaChodesh/etc., Hebcal never flags them as
+// their own calendar event, so there's no chagim.json entry to show as a
+// second card. gen_calendar.mjs captures the real substitute haftarah
+// reference directly on the parsha's own calendar row
+// (specialReading.haftaraRef); this renders that as its own small card so
+// the actual reading shows up instead of a name with nothing behind it.
+function renderHaftarahOverrideCard(specialReading, parshaName) {
+  const ref = specialReading.haftaraRef;
+  if (!ref) return null;
+  const url = sefariaUrl(ref);
+  const urls = Array.isArray(url) ? url : (url ? [url] : []);
+  const links = urls.map((u, i) => el('a', {
+    href: u, target: '_blank', rel: 'noopener', class: 'tikkun-link', title: 'Read this on Sefaria',
+  }, urls.length > 1 ? `Text ${i + 1} ↗` : 'Text ↗'));
+  const card = el('div', { class: 'card detail-card' });
+  card.append(el('div', { class: 'detail-header' }, [
+    el('div', {}, [
+      el('div', { class: 'eyebrow' }, "This week's haftarah is different"),
+      el('h2', {}, specialReading.haftara),
+    ]),
+  ]));
+  card.append(el('p', { class: 'nusach-cite' }, [citeRange(ref), ...links]));
+  card.append(el('p', { class: 'muted small' }, `Replaces ${parshaName}'s usual haftarah this week -- the Torah reading itself is unchanged. This substitution isn't difficulty-scored yet.`));
+  return card;
+}
+
+// Renders every calendar row for one date as detail cards, in calendar
+// order -- a special-Shabbat date can carry a 'holiday' row (the special
+// maftir/haftarah that actually supersedes the parsha's own reading this
+// week) ahead of the underlying 'parsha' row. The parsha row's
+// specialReading tag/override is shown directly with its own card, since it
+// describes what's different about THIS week's version of that parsha.
+export async function renderDateCards(rows, { parshaEyebrow = 'Parashat HaShavua', showDate = false, extraBanner = [] } = {}) {
+  const summaries = await getAliyahSummaries();
+  const hasHolidaySibling = rows.some((r) => r.type === 'holiday');
+  const nodes = [];
+  for (const row of rows) {
+    if (row.type === 'parsha') {
+      const detail = await getParshaDetail(row.parshaId);
+      if (!detail) continue;
+      if (row.specialReading && row.specialReading.haftaraRef && !hasHolidaySibling) {
+        nodes.push(renderHaftarahOverrideCard(row.specialReading, displayParshaName(detail.parsha.englishName || detail.parsha.id)));
+      }
+      const bannerParts = [];
+      if (showDate) bannerParts.push(el('span', { class: 'date-banner-date' }, formatDateLong(row.date)));
+      bannerParts.push(...extraBanner);
+      if (row.specialReading) bannerParts.push(el('span', { class: 'tag' }, Object.values(row.specialReading).find((v) => typeof v === 'string')));
+      if (bannerParts.length) nodes.push(el('div', { class: 'date-banner' }, bannerParts));
+      nodes.push(renderParshaDetail(detail, { eyebrow: parshaEyebrow }));
+    } else {
+      const chag = await getChagById(row.chagId);
+      if (chag) nodes.push(renderChagDetail(chag, { summaries }));
+    }
+  }
+  return nodes;
 }

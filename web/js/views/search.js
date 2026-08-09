@@ -1,6 +1,6 @@
 import { el, todayISO, formatDateLong, displayParshaName } from '../util.js';
-import { findByDate, getParshaDetail, getChagById, getChagim, listAllParshiotForSearch, getAliyahSummaries } from '../data.js';
-import { renderParshaDetail, renderChagDetail } from './detail.js';
+import { findByDate, getChagim, listAllParshiotForSearch } from '../data.js';
+import { renderDateCards } from './detail.js';
 
 let mode = 'parsha';
 let region = 'diaspora';
@@ -102,21 +102,8 @@ export async function renderSearch(container) {
       resultsHost.append(el('p', {}, `No Shabbat/chag reading stored for ${formatDateLong(dateISO)} (${region}). It may be a regular weekday.`));
       return;
     }
-    for (const row of rows) {
-      if (row.type === 'parsha') {
-        const detail = await getParshaDetail(row.parshaId);
-        if (detail) {
-          const banner = el('div', { class: 'date-banner' }, [
-            el('span', { class: 'date-banner-date' }, formatDateLong(row.date)),
-            row.specialReading ? el('span', { class: 'tag' }, Object.values(row.specialReading)[0]) : null,
-          ]);
-          resultsHost.append(banner, renderParshaDetail(detail, { eyebrow: 'Parashat HaShavua' }));
-        }
-      } else {
-        const chag = await getChagById(row.chagId);
-        if (chag) resultsHost.append(renderChagDetail(chag, { summaries: await getAliyahSummaries() }));
-      }
-    }
+    const cards = await renderDateCards(rows, { parshaEyebrow: 'Parashat HaShavua', showDate: true });
+    resultsHost.append(...cards);
   }
 
   async function renderBrowser() {

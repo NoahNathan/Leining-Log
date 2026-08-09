@@ -1,6 +1,6 @@
-import { el, todayISO, formatDateLong } from '../util.js';
-import { findUpcomingParsha, getParshaDetail } from '../data.js';
-import { renderParshaDetail } from './detail.js';
+import { el, todayISO } from '../util.js';
+import { findUpcomingParsha, findByDate } from '../data.js';
+import { renderDateCards } from './detail.js';
 
 let region = 'diaspora';
 
@@ -28,17 +28,21 @@ export async function renderHome(container) {
       body.append(el('p', {}, 'Could not find an upcoming parsha in the stored calendar range.'));
       return;
     }
-    const detail = await getParshaDetail(row.parshaId);
-    if (!detail) {
+    // A special-Shabbat date can carry a second (holiday-type) calendar row
+    // alongside the parsha itself -- e.g. Shabbat Shekalim's own maftir and
+    // haftarah, which supersede Mishpatim's regular ones that week. Fetch
+    // every row on this date, not just the parsha, so it actually shows.
+    const rows = await findByDate(row.date, region);
+    const cards = await renderDateCards(rows, {
+      parshaEyebrow: 'Upcoming Parashat HaShavua',
+      showDate: true,
+      extraBanner: row.date === today ? [el('span', { class: 'tag tag-today' }, 'Today')] : [],
+    });
+    if (cards.length === 0) {
       body.append(el('p', {}, `No data found for ${row.parshaId}.`));
       return;
     }
-    const dateBanner = el('div', { class: 'date-banner' }, [
-      el('span', { class: 'date-banner-date' }, formatDateLong(row.date)),
-      row.date === today ? el('span', { class: 'tag tag-today' }, 'Today') : null,
-      row.specialReading ? el('span', { class: 'tag' }, Object.values(row.specialReading)[0]) : null,
-    ]);
-    body.append(dateBanner, renderParshaDetail(detail, { eyebrow: 'Upcoming Parashat HaShavua' }));
+    body.append(...cards);
   }
 
   function toggleBtn(label, value) {

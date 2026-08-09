@@ -1,7 +1,7 @@
 {
   "description": "Torah, maftir, and haftarah readings for every chag, fast day, Rosh Chodesh, and special Shabbat, for both Diaspora and Israel ('region': 'diaspora'|'israel'), sourced from the Hebcal @hebcal/leyning reference tables. Nusach (ashkenazi/sefardi/chabad) haftarah variants are included where those traditions differ; 'sameAs: ashkenazi' means no variance was found in this source. Run annotate.mjs afterwards to add hand-curated 'specialTrope' notes (well-established distinct cantillation/layout customs not covered by the Hebcal data itself); their absence on an entry does not mean 'no special customs exist', only that none are documented here yet.",
   "source": "@hebcal/leyning v10.0.0 (getLeyningForHoliday)",
-  "generatedAt": "2026-08-06T01:03:30.310Z",
+  "generatedAt": "2026-08-09T20:53:11.825Z",
   "count": 114,
   "chagim": [
     {
@@ -86,7 +86,7 @@
     },
     {
       "id": "Chanukah: 2 Candles__DIASPORA",
-      "name": "Chanukah: 2 Candles",
+      "name": "Chanukah Day 1",
       "region": "diaspora",
       "hebrewDate": "25 Kislev 5787",
       "aliyot": [],
@@ -114,7 +114,7 @@
     },
     {
       "id": "Chanukah: 2 Candles__IL",
-      "name": "Chanukah: 2 Candles",
+      "name": "Chanukah Day 1",
       "region": "israel",
       "hebrewDate": "25 Kislev 5787",
       "aliyot": [],
@@ -142,7 +142,7 @@
     },
     {
       "id": "Chanukah: 3 Candles__DIASPORA",
-      "name": "Chanukah: 3 Candles",
+      "name": "Chanukah Day 2",
       "region": "diaspora",
       "hebrewDate": "26 Kislev 5787",
       "aliyot": [
@@ -182,7 +182,7 @@
     },
     {
       "id": "Chanukah: 3 Candles__IL",
-      "name": "Chanukah: 3 Candles",
+      "name": "Chanukah Day 2",
       "region": "israel",
       "hebrewDate": "26 Kislev 5787",
       "aliyot": [
@@ -222,7 +222,7 @@
     },
     {
       "id": "Chanukah: 4 Candles__DIASPORA",
-      "name": "Chanukah: 4 Candles",
+      "name": "Chanukah Day 3",
       "region": "diaspora",
       "hebrewDate": "27 Kislev 5787",
       "aliyot": [
@@ -262,7 +262,7 @@
     },
     {
       "id": "Chanukah: 4 Candles__IL",
-      "name": "Chanukah: 4 Candles",
+      "name": "Chanukah Day 3",
       "region": "israel",
       "hebrewDate": "27 Kislev 5787",
       "aliyot": [
@@ -302,7 +302,7 @@
     },
     {
       "id": "Chanukah: 5 Candles__DIASPORA",
-      "name": "Chanukah: 5 Candles",
+      "name": "Chanukah Day 4",
       "region": "diaspora",
       "hebrewDate": "28 Kislev 5787",
       "aliyot": [
@@ -342,7 +342,7 @@
     },
     {
       "id": "Chanukah: 5 Candles__IL",
-      "name": "Chanukah: 5 Candles",
+      "name": "Chanukah Day 4",
       "region": "israel",
       "hebrewDate": "28 Kislev 5787",
       "aliyot": [
@@ -382,7 +382,7 @@
     },
     {
       "id": "Chanukah: 6 Candles__DIASPORA",
-      "name": "Chanukah: 6 Candles",
+      "name": "Chanukah Day 5",
       "region": "diaspora",
       "hebrewDate": "29 Kislev 5787",
       "aliyot": [
@@ -422,7 +422,7 @@
     },
     {
       "id": "Chanukah: 6 Candles__IL",
-      "name": "Chanukah: 6 Candles",
+      "name": "Chanukah Day 5",
       "region": "israel",
       "hebrewDate": "29 Kislev 5787",
       "aliyot": [
@@ -462,7 +462,7 @@
     },
     {
       "id": "Chanukah: 7 Candles__DIASPORA",
-      "name": "Chanukah: 7 Candles",
+      "name": "Chanukah Day 6",
       "region": "diaspora",
       "hebrewDate": "30 Kislev 5787",
       "aliyot": [
@@ -509,7 +509,7 @@
     },
     {
       "id": "Chanukah: 7 Candles__IL",
-      "name": "Chanukah: 7 Candles",
+      "name": "Chanukah Day 6",
       "region": "israel",
       "hebrewDate": "30 Kislev 5787",
       "aliyot": [
@@ -556,7 +556,7 @@
     },
     {
       "id": "Chanukah: 8 Candles__DIASPORA",
-      "name": "Chanukah: 8 Candles",
+      "name": "Chanukah Day 7",
       "region": "diaspora",
       "hebrewDate": "1 Tevet 5787",
       "aliyot": [
@@ -603,7 +603,7 @@
     },
     {
       "id": "Chanukah: 8 Candles__IL",
-      "name": "Chanukah: 8 Candles",
+      "name": "Chanukah Day 7",
       "region": "israel",
       "hebrewDate": "1 Tevet 5787",
       "aliyot": [
@@ -650,7 +650,7 @@
     },
     {
       "id": "Chanukah: 8th Day__DIASPORA",
-      "name": "Chanukah: 8th Day",
+      "name": "Chanukah Day 8",
       "region": "diaspora",
       "hebrewDate": "2 Tevet 5787",
       "aliyot": [],
@@ -678,7 +678,7 @@
     },
     {
       "id": "Chanukah: 8th Day__IL",
-      "name": "Chanukah: 8th Day",
+      "name": "Chanukah Day 8",
       "region": "israel",
       "hebrewDate": "2 Tevet 5787",
       "aliyot": [],
@@ -766,6 +766,147 @@
       "aliyot": [],
       "maftir": null,
       "summary": "Lamentations 1:1-5:22",
+      "nusach": {
+        "ashkenazi": null,
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      }
+    },
+    {
+      "id": "Pesach IV (CH''M)__DIASPORA",
+      "name": "Pesach Chol ha-Moed Day 2",
+      "region": "diaspora",
+      "hebrewDate": "18 Nisan 5786",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Exodus",
+          "start": "13:1",
+          "end": "13:4",
+          "verses": 4
+        },
+        {
+          "aliyah": 2,
+          "book": "Exodus",
+          "start": "13:5",
+          "end": "13:10",
+          "verses": 6
+        },
+        {
+          "aliyah": 3,
+          "book": "Exodus",
+          "start": "13:11",
+          "end": "13:16",
+          "verses": 6
+        },
+        {
+          "aliyah": 4,
+          "book": "Numbers",
+          "start": "28:19",
+          "end": "28:25",
+          "verses": 7
+        }
+      ],
+      "maftir": null,
+      "summary": "Exodus 13:1-16; Numbers 28:19-25",
+      "nusach": {
+        "ashkenazi": null,
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      }
+    },
+    {
+      "id": "Pesach V (CH''M)__DIASPORA",
+      "name": "Pesach Chol ha-Moed Day 3",
+      "region": "diaspora",
+      "hebrewDate": "19 Nisan 5786",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Exodus",
+          "start": "22:24",
+          "end": "22:26",
+          "verses": 3
+        },
+        {
+          "aliyah": 2,
+          "book": "Exodus",
+          "start": "22:27",
+          "end": "23:5",
+          "verses": 9
+        },
+        {
+          "aliyah": 3,
+          "book": "Exodus",
+          "start": "23:6",
+          "end": "23:19",
+          "verses": 14
+        },
+        {
+          "aliyah": 4,
+          "book": "Numbers",
+          "start": "28:19",
+          "end": "28:25",
+          "verses": 7
+        }
+      ],
+      "maftir": null,
+      "summary": "Exodus 22:24-23:19; Numbers 28:19-25",
+      "nusach": {
+        "ashkenazi": null,
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      }
+    },
+    {
+      "id": "Pesach VI (CH''M)__DIASPORA",
+      "name": "Pesach Chol ha-Moed Day 4",
+      "region": "diaspora",
+      "hebrewDate": "20 Nisan 5786",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Numbers",
+          "start": "9:1",
+          "end": "9:5",
+          "verses": 5
+        },
+        {
+          "aliyah": 2,
+          "book": "Numbers",
+          "start": "9:6",
+          "end": "9:8",
+          "verses": 3
+        },
+        {
+          "aliyah": 3,
+          "book": "Numbers",
+          "start": "9:9",
+          "end": "9:14",
+          "verses": 6
+        },
+        {
+          "aliyah": 4,
+          "book": "Numbers",
+          "start": "28:19",
+          "end": "28:25",
+          "verses": 7
+        }
+      ],
+      "maftir": null,
+      "summary": "Numbers 9:1-14, 28:19-25",
       "nusach": {
         "ashkenazi": null,
         "sefardi": {
@@ -1074,8 +1215,55 @@
       }
     },
     {
+      "id": "Pesach IV (CH''M)__IL",
+      "name": "Pesach IV (CH''M)",
+      "region": "israel",
+      "hebrewDate": "18 Nisan 5786",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Exodus",
+          "start": "22:24",
+          "end": "22:26",
+          "verses": 3
+        },
+        {
+          "aliyah": 2,
+          "book": "Exodus",
+          "start": "22:27",
+          "end": "23:5",
+          "verses": 9
+        },
+        {
+          "aliyah": 3,
+          "book": "Exodus",
+          "start": "23:6",
+          "end": "23:19",
+          "verses": 14
+        },
+        {
+          "aliyah": 4,
+          "book": "Numbers",
+          "start": "28:19",
+          "end": "28:25",
+          "verses": 7
+        }
+      ],
+      "maftir": null,
+      "summary": "Exodus 22:24-23:19; Numbers 28:19-25",
+      "nusach": {
+        "ashkenazi": null,
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      }
+    },
+    {
       "id": "Pesach III (CH''M)__DIASPORA",
-      "name": "Pesach III (CH''M)",
+      "name": "Pesach Shabbat Chol ha-Moed",
       "region": "diaspora",
       "hebrewDate": "17 Nisan 5786",
       "aliyot": [
@@ -1153,7 +1341,7 @@
     },
     {
       "id": "Pesach III (CH''M)__IL",
-      "name": "Pesach III (CH''M)",
+      "name": "Pesach Shabbat Chol ha-Moed",
       "region": "israel",
       "hebrewDate": "17 Nisan 5786",
       "aliyot": [
@@ -1230,147 +1418,6 @@
       }
     },
     {
-      "id": "Pesach IV (CH''M)__DIASPORA",
-      "name": "Pesach IV (CH''M)",
-      "region": "diaspora",
-      "hebrewDate": "18 Nisan 5786",
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "book": "Exodus",
-          "start": "13:1",
-          "end": "13:4",
-          "verses": 4
-        },
-        {
-          "aliyah": 2,
-          "book": "Exodus",
-          "start": "13:5",
-          "end": "13:10",
-          "verses": 6
-        },
-        {
-          "aliyah": 3,
-          "book": "Exodus",
-          "start": "13:11",
-          "end": "13:16",
-          "verses": 6
-        },
-        {
-          "aliyah": 4,
-          "book": "Numbers",
-          "start": "28:19",
-          "end": "28:25",
-          "verses": 7
-        }
-      ],
-      "maftir": null,
-      "summary": "Exodus 13:1-16; Numbers 28:19-25",
-      "nusach": {
-        "ashkenazi": null,
-        "sefardi": {
-          "sameAs": "ashkenazi"
-        },
-        "chabad": {
-          "sameAs": "ashkenazi"
-        }
-      }
-    },
-    {
-      "id": "Pesach IV (CH''M)__IL",
-      "name": "Pesach IV (CH''M)",
-      "region": "israel",
-      "hebrewDate": "18 Nisan 5786",
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "book": "Exodus",
-          "start": "22:24",
-          "end": "22:26",
-          "verses": 3
-        },
-        {
-          "aliyah": 2,
-          "book": "Exodus",
-          "start": "22:27",
-          "end": "23:5",
-          "verses": 9
-        },
-        {
-          "aliyah": 3,
-          "book": "Exodus",
-          "start": "23:6",
-          "end": "23:19",
-          "verses": 14
-        },
-        {
-          "aliyah": 4,
-          "book": "Numbers",
-          "start": "28:19",
-          "end": "28:25",
-          "verses": 7
-        }
-      ],
-      "maftir": null,
-      "summary": "Exodus 22:24-23:19; Numbers 28:19-25",
-      "nusach": {
-        "ashkenazi": null,
-        "sefardi": {
-          "sameAs": "ashkenazi"
-        },
-        "chabad": {
-          "sameAs": "ashkenazi"
-        }
-      }
-    },
-    {
-      "id": "Pesach V (CH''M)__DIASPORA",
-      "name": "Pesach V (CH''M)",
-      "region": "diaspora",
-      "hebrewDate": "19 Nisan 5786",
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "book": "Exodus",
-          "start": "22:24",
-          "end": "22:26",
-          "verses": 3
-        },
-        {
-          "aliyah": 2,
-          "book": "Exodus",
-          "start": "22:27",
-          "end": "23:5",
-          "verses": 9
-        },
-        {
-          "aliyah": 3,
-          "book": "Exodus",
-          "start": "23:6",
-          "end": "23:19",
-          "verses": 14
-        },
-        {
-          "aliyah": 4,
-          "book": "Numbers",
-          "start": "28:19",
-          "end": "28:25",
-          "verses": 7
-        }
-      ],
-      "maftir": null,
-      "summary": "Exodus 22:24-23:19; Numbers 28:19-25",
-      "nusach": {
-        "ashkenazi": null,
-        "sefardi": {
-          "sameAs": "ashkenazi"
-        },
-        "chabad": {
-          "sameAs": "ashkenazi"
-        }
-      }
-    },
-    {
       "id": "Pesach V (CH''M)__IL",
       "name": "Pesach V (CH''M)",
       "region": "israel",
@@ -1407,53 +1454,6 @@
       ],
       "maftir": null,
       "summary": "Exodus 34:1-26; Numbers 28:19-25",
-      "nusach": {
-        "ashkenazi": null,
-        "sefardi": {
-          "sameAs": "ashkenazi"
-        },
-        "chabad": {
-          "sameAs": "ashkenazi"
-        }
-      }
-    },
-    {
-      "id": "Pesach VI (CH''M)__DIASPORA",
-      "name": "Pesach VI (CH''M)",
-      "region": "diaspora",
-      "hebrewDate": "20 Nisan 5786",
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "book": "Numbers",
-          "start": "9:1",
-          "end": "9:5",
-          "verses": 5
-        },
-        {
-          "aliyah": 2,
-          "book": "Numbers",
-          "start": "9:6",
-          "end": "9:8",
-          "verses": 3
-        },
-        {
-          "aliyah": 3,
-          "book": "Numbers",
-          "start": "9:9",
-          "end": "9:14",
-          "verses": 6
-        },
-        {
-          "aliyah": 4,
-          "book": "Numbers",
-          "start": "28:19",
-          "end": "28:25",
-          "verses": 7
-        }
-      ],
-      "maftir": null,
-      "summary": "Numbers 9:1-14, 28:19-25",
       "nusach": {
         "ashkenazi": null,
         "sefardi": {
@@ -3885,84 +3885,6 @@
       }
     },
     {
-      "id": "Shmini Atzeret__IL",
-      "name": "Shmini Atzeret",
-      "region": "israel",
-      "hebrewDate": "22 Tishrei 5787",
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "book": "Deuteronomy",
-          "start": "33:1",
-          "end": "33:7",
-          "verses": 7
-        },
-        {
-          "aliyah": 2,
-          "book": "Deuteronomy",
-          "start": "33:8",
-          "end": "33:12",
-          "verses": 5
-        },
-        {
-          "aliyah": 3,
-          "book": "Deuteronomy",
-          "start": "33:13",
-          "end": "33:17",
-          "verses": 5
-        },
-        {
-          "aliyah": 4,
-          "book": "Deuteronomy",
-          "start": "33:18",
-          "end": "33:21",
-          "verses": 4
-        },
-        {
-          "aliyah": 5,
-          "book": "Deuteronomy",
-          "start": "33:22",
-          "end": "33:26",
-          "verses": 5
-        },
-        {
-          "aliyah": 6,
-          "book": "Deuteronomy",
-          "start": "33:27",
-          "end": "33:29",
-          "verses": 3
-        },
-        {
-          "aliyah": 7,
-          "book": "Deuteronomy",
-          "start": "34:1",
-          "end": "34:12",
-          "verses": 12
-        }
-      ],
-      "maftir": {
-        "book": "Numbers",
-        "start": "29:35",
-        "end": "30:1",
-        "verses": 6
-      },
-      "summary": "Deuteronomy 33:1-34:12; Genesis 1:1-2:3; Numbers 29:35-30:1; Ecclesiastes 1:1-12:14",
-      "nusach": {
-        "ashkenazi": {
-          "book": "Joshua",
-          "start": "1:1",
-          "end": "1:18",
-          "verses": 18
-        },
-        "sefardi": {
-          "sameAs": "ashkenazi"
-        },
-        "chabad": {
-          "sameAs": "ashkenazi"
-        }
-      }
-    },
-    {
       "id": "Shushan Purim__IL",
       "name": "Shushan Purim",
       "region": "israel",
@@ -4072,6 +3994,601 @@
           "end": "1:18",
           "verses": 18
         },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      }
+    },
+    {
+      "id": "Shmini Atzeret__IL",
+      "name": "Simchat Torah",
+      "region": "israel",
+      "hebrewDate": "22 Tishrei 5787",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Deuteronomy",
+          "start": "33:1",
+          "end": "33:7",
+          "verses": 7
+        },
+        {
+          "aliyah": 2,
+          "book": "Deuteronomy",
+          "start": "33:8",
+          "end": "33:12",
+          "verses": 5
+        },
+        {
+          "aliyah": 3,
+          "book": "Deuteronomy",
+          "start": "33:13",
+          "end": "33:17",
+          "verses": 5
+        },
+        {
+          "aliyah": 4,
+          "book": "Deuteronomy",
+          "start": "33:18",
+          "end": "33:21",
+          "verses": 4
+        },
+        {
+          "aliyah": 5,
+          "book": "Deuteronomy",
+          "start": "33:22",
+          "end": "33:26",
+          "verses": 5
+        },
+        {
+          "aliyah": 6,
+          "book": "Deuteronomy",
+          "start": "33:27",
+          "end": "33:29",
+          "verses": 3
+        },
+        {
+          "aliyah": 7,
+          "book": "Deuteronomy",
+          "start": "34:1",
+          "end": "34:12",
+          "verses": 12
+        }
+      ],
+      "maftir": {
+        "book": "Numbers",
+        "start": "29:35",
+        "end": "30:1",
+        "verses": 6
+      },
+      "summary": "Deuteronomy 33:1-34:12; Genesis 1:1-2:3; Numbers 29:35-30:1; Ecclesiastes 1:1-12:14",
+      "nusach": {
+        "ashkenazi": {
+          "book": "Joshua",
+          "start": "1:1",
+          "end": "1:18",
+          "verses": 18
+        },
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      }
+    },
+    {
+      "id": "Sukkot III (CH''M)__DIASPORA",
+      "name": "Sukkot Chol ha-Moed Day 1",
+      "region": "diaspora",
+      "hebrewDate": "17 Tishrei 5787",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Numbers",
+          "start": "29:17",
+          "end": "29:19",
+          "verses": 3
+        },
+        {
+          "aliyah": 2,
+          "book": "Numbers",
+          "start": "29:20",
+          "end": "29:22",
+          "verses": 3
+        },
+        {
+          "aliyah": 3,
+          "book": "Numbers",
+          "start": "29:23",
+          "end": "29:25",
+          "verses": 3
+        },
+        {
+          "aliyah": 4,
+          "book": "Numbers",
+          "start": "29:17",
+          "end": "29:22",
+          "verses": 6
+        }
+      ],
+      "maftir": null,
+      "summary": "Numbers 29:17-25, 29:17-22",
+      "nusach": {
+        "ashkenazi": null,
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      }
+    },
+    {
+      "id": "Sukkot II (CH''M)__IL",
+      "name": "Sukkot Chol ha-Moed Day 1",
+      "region": "israel",
+      "hebrewDate": "16 Tishrei 5787",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Numbers",
+          "start": "29:17",
+          "end": "29:19",
+          "verses": 3
+        },
+        {
+          "aliyah": 2,
+          "book": "Numbers",
+          "start": "29:20",
+          "end": "29:22",
+          "verses": 3
+        },
+        {
+          "aliyah": 3,
+          "book": "Numbers",
+          "start": "29:23",
+          "end": "29:25",
+          "verses": 3
+        },
+        {
+          "aliyah": 4,
+          "book": "Numbers",
+          "start": "29:17",
+          "end": "29:22",
+          "verses": 6
+        }
+      ],
+      "maftir": null,
+      "summary": "Numbers 29:17-25, 29:17-22",
+      "nusach": {
+        "ashkenazi": null,
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      }
+    },
+    {
+      "id": "Sukkot IV (CH''M)__DIASPORA",
+      "name": "Sukkot Chol ha-Moed Day 2",
+      "region": "diaspora",
+      "hebrewDate": "18 Tishrei 5787",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Numbers",
+          "start": "29:20",
+          "end": "29:22",
+          "verses": 3
+        },
+        {
+          "aliyah": 2,
+          "book": "Numbers",
+          "start": "29:23",
+          "end": "29:25",
+          "verses": 3
+        },
+        {
+          "aliyah": 3,
+          "book": "Numbers",
+          "start": "29:26",
+          "end": "29:28",
+          "verses": 3
+        },
+        {
+          "aliyah": 4,
+          "book": "Numbers",
+          "start": "29:20",
+          "end": "29:25",
+          "verses": 6
+        }
+      ],
+      "maftir": null,
+      "summary": "Numbers 29:20-28, 29:20-25",
+      "nusach": {
+        "ashkenazi": null,
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      }
+    },
+    {
+      "id": "Sukkot III (CH''M)__IL",
+      "name": "Sukkot Chol ha-Moed Day 2",
+      "region": "israel",
+      "hebrewDate": "17 Tishrei 5787",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Numbers",
+          "start": "29:20",
+          "end": "29:22",
+          "verses": 3
+        },
+        {
+          "aliyah": 2,
+          "book": "Numbers",
+          "start": "29:23",
+          "end": "29:25",
+          "verses": 3
+        },
+        {
+          "aliyah": 3,
+          "book": "Numbers",
+          "start": "29:26",
+          "end": "29:28",
+          "verses": 3
+        },
+        {
+          "aliyah": 4,
+          "book": "Numbers",
+          "start": "29:20",
+          "end": "29:25",
+          "verses": 6
+        }
+      ],
+      "maftir": null,
+      "summary": "Numbers 29:20-28, 29:20-25",
+      "nusach": {
+        "ashkenazi": null,
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      }
+    },
+    {
+      "id": "Sukkot V (CH''M)__DIASPORA",
+      "name": "Sukkot Chol ha-Moed Day 3",
+      "region": "diaspora",
+      "hebrewDate": "19 Tishrei 5787",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Numbers",
+          "start": "29:23",
+          "end": "29:25",
+          "verses": 3
+        },
+        {
+          "aliyah": 2,
+          "book": "Numbers",
+          "start": "29:26",
+          "end": "29:28",
+          "verses": 3
+        },
+        {
+          "aliyah": 3,
+          "book": "Numbers",
+          "start": "29:29",
+          "end": "29:31",
+          "verses": 3
+        },
+        {
+          "aliyah": 4,
+          "book": "Numbers",
+          "start": "29:23",
+          "end": "29:28",
+          "verses": 6
+        }
+      ],
+      "maftir": null,
+      "summary": "Numbers 29:23-31, 29:23-28",
+      "nusach": {
+        "ashkenazi": null,
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      }
+    },
+    {
+      "id": "Sukkot IV (CH''M)__IL",
+      "name": "Sukkot Chol ha-Moed Day 3",
+      "region": "israel",
+      "hebrewDate": "18 Tishrei 5787",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Numbers",
+          "start": "29:23",
+          "end": "29:25",
+          "verses": 3
+        },
+        {
+          "aliyah": 2,
+          "book": "Numbers",
+          "start": "29:26",
+          "end": "29:28",
+          "verses": 3
+        },
+        {
+          "aliyah": 3,
+          "book": "Numbers",
+          "start": "29:29",
+          "end": "29:31",
+          "verses": 3
+        },
+        {
+          "aliyah": 4,
+          "book": "Numbers",
+          "start": "29:23",
+          "end": "29:28",
+          "verses": 6
+        }
+      ],
+      "maftir": null,
+      "summary": "Numbers 29:23-31, 29:23-28",
+      "nusach": {
+        "ashkenazi": null,
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      }
+    },
+    {
+      "id": "Sukkot VI (CH''M)__DIASPORA",
+      "name": "Sukkot Chol ha-Moed Day 4",
+      "region": "diaspora",
+      "hebrewDate": "20 Tishrei 5787",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Numbers",
+          "start": "29:26",
+          "end": "29:28",
+          "verses": 3
+        },
+        {
+          "aliyah": 2,
+          "book": "Numbers",
+          "start": "29:29",
+          "end": "29:31",
+          "verses": 3
+        },
+        {
+          "aliyah": 3,
+          "book": "Numbers",
+          "start": "29:32",
+          "end": "29:34",
+          "verses": 3
+        },
+        {
+          "aliyah": 4,
+          "book": "Numbers",
+          "start": "29:26",
+          "end": "29:31",
+          "verses": 6
+        }
+      ],
+      "maftir": null,
+      "summary": "Numbers 29:26-34, 29:26-31",
+      "nusach": {
+        "ashkenazi": null,
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      }
+    },
+    {
+      "id": "Sukkot V (CH''M)__IL",
+      "name": "Sukkot Chol ha-Moed Day 4",
+      "region": "israel",
+      "hebrewDate": "19 Tishrei 5787",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Numbers",
+          "start": "29:26",
+          "end": "29:28",
+          "verses": 3
+        },
+        {
+          "aliyah": 2,
+          "book": "Numbers",
+          "start": "29:29",
+          "end": "29:31",
+          "verses": 3
+        },
+        {
+          "aliyah": 3,
+          "book": "Numbers",
+          "start": "29:32",
+          "end": "29:34",
+          "verses": 3
+        },
+        {
+          "aliyah": 4,
+          "book": "Numbers",
+          "start": "29:26",
+          "end": "29:31",
+          "verses": 6
+        }
+      ],
+      "maftir": null,
+      "summary": "Numbers 29:26-34, 29:26-31",
+      "nusach": {
+        "ashkenazi": null,
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      }
+    },
+    {
+      "id": "Sukkot VI (CH''M)__IL",
+      "name": "Sukkot Chol ha-Moed Day 5",
+      "region": "israel",
+      "hebrewDate": "20 Tishrei 5787",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Numbers",
+          "start": "29:29",
+          "end": "29:31",
+          "verses": 3
+        },
+        {
+          "aliyah": 2,
+          "book": "Numbers",
+          "start": "29:32",
+          "end": "29:34",
+          "verses": 3
+        },
+        {
+          "aliyah": 3,
+          "book": "Numbers",
+          "start": "29:35",
+          "end": "29:37",
+          "verses": 3
+        },
+        {
+          "aliyah": 4,
+          "book": "Numbers",
+          "start": "29:29",
+          "end": "29:34",
+          "verses": 6
+        }
+      ],
+      "maftir": null,
+      "summary": "Numbers 29:29-37, 29:29-34",
+      "nusach": {
+        "ashkenazi": null,
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      }
+    },
+    {
+      "id": "Sukkot VII (Hoshana Raba)__DIASPORA",
+      "name": "Sukkot Final Day (Hoshana Raba)",
+      "region": "diaspora",
+      "hebrewDate": "21 Tishrei 5787",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Numbers",
+          "start": "29:26",
+          "end": "29:28",
+          "verses": 3
+        },
+        {
+          "aliyah": 2,
+          "book": "Numbers",
+          "start": "29:29",
+          "end": "29:31",
+          "verses": 3
+        },
+        {
+          "aliyah": 3,
+          "book": "Numbers",
+          "start": "29:32",
+          "end": "29:34",
+          "verses": 3
+        },
+        {
+          "aliyah": 4,
+          "book": "Numbers",
+          "start": "29:29",
+          "end": "29:34",
+          "verses": 6
+        }
+      ],
+      "maftir": null,
+      "summary": "Numbers 29:26-34",
+      "nusach": {
+        "ashkenazi": null,
+        "sefardi": {
+          "sameAs": "ashkenazi"
+        },
+        "chabad": {
+          "sameAs": "ashkenazi"
+        }
+      }
+    },
+    {
+      "id": "Sukkot VII (Hoshana Raba)__IL",
+      "name": "Sukkot Final Day (Hoshana Raba)",
+      "region": "israel",
+      "hebrewDate": "21 Tishrei 5787",
+      "aliyot": [
+        {
+          "aliyah": 1,
+          "book": "Numbers",
+          "start": "29:26",
+          "end": "29:28",
+          "verses": 3
+        },
+        {
+          "aliyah": 2,
+          "book": "Numbers",
+          "start": "29:29",
+          "end": "29:31",
+          "verses": 3
+        },
+        {
+          "aliyah": 3,
+          "book": "Numbers",
+          "start": "29:32",
+          "end": "29:34",
+          "verses": 3
+        },
+        {
+          "aliyah": 4,
+          "book": "Numbers",
+          "start": "29:29",
+          "end": "29:34",
+          "verses": 6
+        }
+      ],
+      "maftir": null,
+      "summary": "Numbers 29:26-34",
+      "nusach": {
+        "ashkenazi": null,
         "sefardi": {
           "sameAs": "ashkenazi"
         },
@@ -4292,523 +4809,6 @@
           "end": "8:21",
           "verses": 20
         },
-        "sefardi": {
-          "sameAs": "ashkenazi"
-        },
-        "chabad": {
-          "sameAs": "ashkenazi"
-        }
-      }
-    },
-    {
-      "id": "Sukkot II (CH''M)__IL",
-      "name": "Sukkot II (CH''M)",
-      "region": "israel",
-      "hebrewDate": "16 Tishrei 5787",
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "book": "Numbers",
-          "start": "29:17",
-          "end": "29:19",
-          "verses": 3
-        },
-        {
-          "aliyah": 2,
-          "book": "Numbers",
-          "start": "29:20",
-          "end": "29:22",
-          "verses": 3
-        },
-        {
-          "aliyah": 3,
-          "book": "Numbers",
-          "start": "29:23",
-          "end": "29:25",
-          "verses": 3
-        },
-        {
-          "aliyah": 4,
-          "book": "Numbers",
-          "start": "29:17",
-          "end": "29:22",
-          "verses": 6
-        }
-      ],
-      "maftir": null,
-      "summary": "Numbers 29:17-25, 29:17-22",
-      "nusach": {
-        "ashkenazi": null,
-        "sefardi": {
-          "sameAs": "ashkenazi"
-        },
-        "chabad": {
-          "sameAs": "ashkenazi"
-        }
-      }
-    },
-    {
-      "id": "Sukkot III (CH''M)__DIASPORA",
-      "name": "Sukkot III (CH''M)",
-      "region": "diaspora",
-      "hebrewDate": "17 Tishrei 5787",
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "book": "Numbers",
-          "start": "29:17",
-          "end": "29:19",
-          "verses": 3
-        },
-        {
-          "aliyah": 2,
-          "book": "Numbers",
-          "start": "29:20",
-          "end": "29:22",
-          "verses": 3
-        },
-        {
-          "aliyah": 3,
-          "book": "Numbers",
-          "start": "29:23",
-          "end": "29:25",
-          "verses": 3
-        },
-        {
-          "aliyah": 4,
-          "book": "Numbers",
-          "start": "29:17",
-          "end": "29:22",
-          "verses": 6
-        }
-      ],
-      "maftir": null,
-      "summary": "Numbers 29:17-25, 29:17-22",
-      "nusach": {
-        "ashkenazi": null,
-        "sefardi": {
-          "sameAs": "ashkenazi"
-        },
-        "chabad": {
-          "sameAs": "ashkenazi"
-        }
-      }
-    },
-    {
-      "id": "Sukkot III (CH''M)__IL",
-      "name": "Sukkot III (CH''M)",
-      "region": "israel",
-      "hebrewDate": "17 Tishrei 5787",
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "book": "Numbers",
-          "start": "29:20",
-          "end": "29:22",
-          "verses": 3
-        },
-        {
-          "aliyah": 2,
-          "book": "Numbers",
-          "start": "29:23",
-          "end": "29:25",
-          "verses": 3
-        },
-        {
-          "aliyah": 3,
-          "book": "Numbers",
-          "start": "29:26",
-          "end": "29:28",
-          "verses": 3
-        },
-        {
-          "aliyah": 4,
-          "book": "Numbers",
-          "start": "29:20",
-          "end": "29:25",
-          "verses": 6
-        }
-      ],
-      "maftir": null,
-      "summary": "Numbers 29:20-28, 29:20-25",
-      "nusach": {
-        "ashkenazi": null,
-        "sefardi": {
-          "sameAs": "ashkenazi"
-        },
-        "chabad": {
-          "sameAs": "ashkenazi"
-        }
-      }
-    },
-    {
-      "id": "Sukkot IV (CH''M)__DIASPORA",
-      "name": "Sukkot IV (CH''M)",
-      "region": "diaspora",
-      "hebrewDate": "18 Tishrei 5787",
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "book": "Numbers",
-          "start": "29:20",
-          "end": "29:22",
-          "verses": 3
-        },
-        {
-          "aliyah": 2,
-          "book": "Numbers",
-          "start": "29:23",
-          "end": "29:25",
-          "verses": 3
-        },
-        {
-          "aliyah": 3,
-          "book": "Numbers",
-          "start": "29:26",
-          "end": "29:28",
-          "verses": 3
-        },
-        {
-          "aliyah": 4,
-          "book": "Numbers",
-          "start": "29:20",
-          "end": "29:25",
-          "verses": 6
-        }
-      ],
-      "maftir": null,
-      "summary": "Numbers 29:20-28, 29:20-25",
-      "nusach": {
-        "ashkenazi": null,
-        "sefardi": {
-          "sameAs": "ashkenazi"
-        },
-        "chabad": {
-          "sameAs": "ashkenazi"
-        }
-      }
-    },
-    {
-      "id": "Sukkot IV (CH''M)__IL",
-      "name": "Sukkot IV (CH''M)",
-      "region": "israel",
-      "hebrewDate": "18 Tishrei 5787",
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "book": "Numbers",
-          "start": "29:23",
-          "end": "29:25",
-          "verses": 3
-        },
-        {
-          "aliyah": 2,
-          "book": "Numbers",
-          "start": "29:26",
-          "end": "29:28",
-          "verses": 3
-        },
-        {
-          "aliyah": 3,
-          "book": "Numbers",
-          "start": "29:29",
-          "end": "29:31",
-          "verses": 3
-        },
-        {
-          "aliyah": 4,
-          "book": "Numbers",
-          "start": "29:23",
-          "end": "29:28",
-          "verses": 6
-        }
-      ],
-      "maftir": null,
-      "summary": "Numbers 29:23-31, 29:23-28",
-      "nusach": {
-        "ashkenazi": null,
-        "sefardi": {
-          "sameAs": "ashkenazi"
-        },
-        "chabad": {
-          "sameAs": "ashkenazi"
-        }
-      }
-    },
-    {
-      "id": "Sukkot V (CH''M)__DIASPORA",
-      "name": "Sukkot V (CH''M)",
-      "region": "diaspora",
-      "hebrewDate": "19 Tishrei 5787",
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "book": "Numbers",
-          "start": "29:23",
-          "end": "29:25",
-          "verses": 3
-        },
-        {
-          "aliyah": 2,
-          "book": "Numbers",
-          "start": "29:26",
-          "end": "29:28",
-          "verses": 3
-        },
-        {
-          "aliyah": 3,
-          "book": "Numbers",
-          "start": "29:29",
-          "end": "29:31",
-          "verses": 3
-        },
-        {
-          "aliyah": 4,
-          "book": "Numbers",
-          "start": "29:23",
-          "end": "29:28",
-          "verses": 6
-        }
-      ],
-      "maftir": null,
-      "summary": "Numbers 29:23-31, 29:23-28",
-      "nusach": {
-        "ashkenazi": null,
-        "sefardi": {
-          "sameAs": "ashkenazi"
-        },
-        "chabad": {
-          "sameAs": "ashkenazi"
-        }
-      }
-    },
-    {
-      "id": "Sukkot V (CH''M)__IL",
-      "name": "Sukkot V (CH''M)",
-      "region": "israel",
-      "hebrewDate": "19 Tishrei 5787",
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "book": "Numbers",
-          "start": "29:26",
-          "end": "29:28",
-          "verses": 3
-        },
-        {
-          "aliyah": 2,
-          "book": "Numbers",
-          "start": "29:29",
-          "end": "29:31",
-          "verses": 3
-        },
-        {
-          "aliyah": 3,
-          "book": "Numbers",
-          "start": "29:32",
-          "end": "29:34",
-          "verses": 3
-        },
-        {
-          "aliyah": 4,
-          "book": "Numbers",
-          "start": "29:26",
-          "end": "29:31",
-          "verses": 6
-        }
-      ],
-      "maftir": null,
-      "summary": "Numbers 29:26-34, 29:26-31",
-      "nusach": {
-        "ashkenazi": null,
-        "sefardi": {
-          "sameAs": "ashkenazi"
-        },
-        "chabad": {
-          "sameAs": "ashkenazi"
-        }
-      }
-    },
-    {
-      "id": "Sukkot VI (CH''M)__DIASPORA",
-      "name": "Sukkot VI (CH''M)",
-      "region": "diaspora",
-      "hebrewDate": "20 Tishrei 5787",
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "book": "Numbers",
-          "start": "29:26",
-          "end": "29:28",
-          "verses": 3
-        },
-        {
-          "aliyah": 2,
-          "book": "Numbers",
-          "start": "29:29",
-          "end": "29:31",
-          "verses": 3
-        },
-        {
-          "aliyah": 3,
-          "book": "Numbers",
-          "start": "29:32",
-          "end": "29:34",
-          "verses": 3
-        },
-        {
-          "aliyah": 4,
-          "book": "Numbers",
-          "start": "29:26",
-          "end": "29:31",
-          "verses": 6
-        }
-      ],
-      "maftir": null,
-      "summary": "Numbers 29:26-34, 29:26-31",
-      "nusach": {
-        "ashkenazi": null,
-        "sefardi": {
-          "sameAs": "ashkenazi"
-        },
-        "chabad": {
-          "sameAs": "ashkenazi"
-        }
-      }
-    },
-    {
-      "id": "Sukkot VI (CH''M)__IL",
-      "name": "Sukkot VI (CH''M)",
-      "region": "israel",
-      "hebrewDate": "20 Tishrei 5787",
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "book": "Numbers",
-          "start": "29:29",
-          "end": "29:31",
-          "verses": 3
-        },
-        {
-          "aliyah": 2,
-          "book": "Numbers",
-          "start": "29:32",
-          "end": "29:34",
-          "verses": 3
-        },
-        {
-          "aliyah": 3,
-          "book": "Numbers",
-          "start": "29:35",
-          "end": "29:37",
-          "verses": 3
-        },
-        {
-          "aliyah": 4,
-          "book": "Numbers",
-          "start": "29:29",
-          "end": "29:34",
-          "verses": 6
-        }
-      ],
-      "maftir": null,
-      "summary": "Numbers 29:29-37, 29:29-34",
-      "nusach": {
-        "ashkenazi": null,
-        "sefardi": {
-          "sameAs": "ashkenazi"
-        },
-        "chabad": {
-          "sameAs": "ashkenazi"
-        }
-      }
-    },
-    {
-      "id": "Sukkot VII (Hoshana Raba)__DIASPORA",
-      "name": "Sukkot VII (Hoshana Raba)",
-      "region": "diaspora",
-      "hebrewDate": "21 Tishrei 5787",
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "book": "Numbers",
-          "start": "29:26",
-          "end": "29:28",
-          "verses": 3
-        },
-        {
-          "aliyah": 2,
-          "book": "Numbers",
-          "start": "29:29",
-          "end": "29:31",
-          "verses": 3
-        },
-        {
-          "aliyah": 3,
-          "book": "Numbers",
-          "start": "29:32",
-          "end": "29:34",
-          "verses": 3
-        },
-        {
-          "aliyah": 4,
-          "book": "Numbers",
-          "start": "29:29",
-          "end": "29:34",
-          "verses": 6
-        }
-      ],
-      "maftir": null,
-      "summary": "Numbers 29:26-34",
-      "nusach": {
-        "ashkenazi": null,
-        "sefardi": {
-          "sameAs": "ashkenazi"
-        },
-        "chabad": {
-          "sameAs": "ashkenazi"
-        }
-      }
-    },
-    {
-      "id": "Sukkot VII (Hoshana Raba)__IL",
-      "name": "Sukkot VII (Hoshana Raba)",
-      "region": "israel",
-      "hebrewDate": "21 Tishrei 5787",
-      "aliyot": [
-        {
-          "aliyah": 1,
-          "book": "Numbers",
-          "start": "29:26",
-          "end": "29:28",
-          "verses": 3
-        },
-        {
-          "aliyah": 2,
-          "book": "Numbers",
-          "start": "29:29",
-          "end": "29:31",
-          "verses": 3
-        },
-        {
-          "aliyah": 3,
-          "book": "Numbers",
-          "start": "29:32",
-          "end": "29:34",
-          "verses": 3
-        },
-        {
-          "aliyah": 4,
-          "book": "Numbers",
-          "start": "29:29",
-          "end": "29:34",
-          "verses": 6
-        }
-      ],
-      "maftir": null,
-      "summary": "Numbers 29:26-34",
-      "nusach": {
-        "ashkenazi": null,
         "sefardi": {
           "sameAs": "ashkenazi"
         },

@@ -170,12 +170,16 @@ function sefariaUrl(ref) {
   return `https://www.sefaria.org/${book}.${start}-${end}`;
 }
 
-function nusachRow(nusach, haftScore) {
+function nusachRow(nusach, haftScore, summaries) {
   if (!nusach) return el('p', { class: 'muted' }, 'No haftarah data.');
   const entries = Object.entries(nusach).filter(([, v]) => v);
   const wrap = el('div', { class: 'nusach-tabs' });
   for (const [name, v] of entries) {
     const text = v.sameAs ? `Same as ${v.sameAs}` : citeRange(v);
+    const parts = v.sameAs ? [] : (Array.isArray(v) ? v : [v]);
+    const haftSummary = summaries
+      ? parts.map((q) => summaries[`${q.book} ${q.start}-${q.end}`]).filter(Boolean).join(' ')
+      : '';
     const url = sefariaUrl(v);
     const urls = Array.isArray(url) ? url : (url ? [url] : []);
     const links = urls.map((u, i) => el('a', {
@@ -188,6 +192,7 @@ function nusachRow(nusach, haftScore) {
         (name === 'ashkenazi' && haftScore) ? scoreBadge(haftScore.finalScore, { size: 'sm' }) : null,
       ]),
       el('span', { class: 'nusach-cite' }, [text, ...links]),
+      haftSummary ? el('p', { class: 'aliyah-summary muted small' }, haftSummary) : null,
       (name === 'ashkenazi' && haftScore) ? el('p', { class: 'nusach-note muted small' },
         `${haftScore.wordCount} words · scored out of 7, not 10 — a haftarah is chanted from a printed text with the nekudot and trope already on the page, so the misreading traps that drive Torah-reading difficulty don't apply.`) : null,
       v.specialTrope ? el('p', { class: 'nusach-note muted small' }, `${v.specialTrope.range}: ${v.specialTrope.note}`) : null,
@@ -419,7 +424,7 @@ export function renderParshaDetail({ parsha, haftarah, difficulty, haftarahScore
 
   card.append(el('div', { class: 'card subcard' }, [
     el('h3', {}, 'Haftarah by nusach'),
-    nusachRow(haftarah ? haftarah.nusach : null, haftarahScore),
+    nusachRow(haftarah ? haftarah.nusach : null, haftarahScore, summaries),
   ]));
 
   attachQuickLog(card, { readingId: parsha.id, aliyot: parsha.aliyot, maftir: parsha.maftir });
@@ -485,7 +490,7 @@ export function renderChagDetail(chag, { summaries } = {}) {
   }
   card.append(el('div', { class: 'card subcard' }, [
     el('h3', {}, 'Haftarah by nusach'),
-    nusachRow(chag.nusach),
+    nusachRow(chag.nusach, null, summaries),
   ]));
   return card;
 }

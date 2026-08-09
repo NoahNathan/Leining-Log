@@ -695,3 +695,10 @@ table { width: 100%; border-collapse: collapse; }
   .coverage-parsha-row { flex-wrap: wrap; }
   .coverage-parsha-label { flex-basis: 100%; white-space: normal; }
 }
+
+/* One-line "what happens here" summary under an aliyah's verse reference. */
+.aliyah-summary {
+  margin: 3px 0 0;
+  max-width: 46ch;
+  line-height: 1.35;
+}

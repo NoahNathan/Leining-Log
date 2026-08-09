@@ -52,6 +52,14 @@ export async function getChagDifficulty() {
 // Haftarah difficulty, ashkenazi only for now. Scored on a 1-7 band rather
 // than 1-10 -- see difficulty-rubric.md for why a haftarah is categorically
 // easier than the equivalent Torah reading.
+// One-line "what happens here" summaries, keyed by verse range so a passage
+// shared between a parsha, its double form, a maftir and a chag resolves to
+// the same entry. Coverage is partial; missing entries simply render nothing.
+export async function getAliyahSummaries() {
+  const d = await loadJSON(DATA + 'aliyah-summaries.json');
+  return d.summaries || {};
+}
+
 export async function getHaftarahScores() {
   const d = await loadJSON(DATA + 'difficulty-scores.json');
   return d.haftarot || [];
@@ -99,7 +107,8 @@ export async function getParshaDetail(id) {
   const haftarah = idx.haftarahById.get(id) || null;
   const difficulty = idx.difficultyById.get(id) || null;
   const haftarahScore = idx.haftarahScoreById.get(id) || null;
-  return { parsha, haftarah, difficulty, haftarahScore };
+  const summaries = await getAliyahSummaries();
+  return { parsha, haftarah, difficulty, haftarahScore, summaries };
 }
 
 export async function listAllParshiotForSearch() {

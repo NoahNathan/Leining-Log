@@ -277,7 +277,7 @@ function buildWhyPanel(d, a) {
   return wrap;
 }
 
-export function renderAliyahTable(aliyot, { maftir, difficultyAliyot, profile, readingId } = {}) {
+export function renderAliyahTable(aliyot, { maftir, difficultyAliyot, profile, readingId, summaries } = {}) {
   const table = el('table', { class: 'aliyah-table' });
   const thead = el('thead', {}, el('tr', {}, [
     el('th', {}, '#'), el('th', {}, 'Verses'), el('th', {}, 'Count'),
@@ -292,7 +292,12 @@ export function renderAliyahTable(aliyot, { maftir, difficultyAliyot, profile, r
     row.dataset.aliyahKey = String(a.aliyah);
     row.append(el('td', { class: 'aliyah-num' }, aliyahLabel(a.aliyah)));
     const tags = contentTags({ profile, aliyahKey: String(a.aliyah), readingId, wellKnown: d && d.wellKnown });
-    row.append(el('td', {}, [citeRange(a), contentTagChips(tags)]));
+    const summary = summaries && summaries[`${a.book} ${a.start}-${a.end}`];
+    row.append(el('td', {}, [
+      citeRange(a),
+      summary ? el('p', { class: 'aliyah-summary muted small' }, summary) : null,
+      contentTagChips(tags),
+    ]));
     row.append(el('td', { class: 'muted' }, `${a.verses}v`));
     const caret = d ? el('span', { class: 'why-caret' }, ' ⌄') : null;
     row.append(el('td', {}, d ? [scoreBadge(d.finalScore, { size: 'sm' }), caret] : '—'));
@@ -326,12 +331,14 @@ export function renderAliyahTable(aliyot, { maftir, difficultyAliyot, profile, r
   if (maftir) {
     const maftirDifficulty = byNum.get('M');
     const maftirTags = contentTags({ profile, aliyahKey: 'M', readingId, wellKnown: maftirDifficulty && maftirDifficulty.wellKnown });
+    const maftirSummary = summaries && summaries[`${maftir.book} ${maftir.start}-${maftir.end}`];
     const foot = el('div', { class: 'maftir-line' }, [
       el('strong', {}, 'Maftir: '), citeRange(maftir),
       maftir.reason ? el('span', { class: 'tag' }, maftir.reason) : null,
       maftirDifficulty ? scoreBadge(maftirDifficulty.finalScore, { size: 'sm' }) : null,
       tikkunLink(maftir),
       contentTagChips(maftirTags),
+      maftirSummary ? el('p', { class: 'aliyah-summary muted small' }, maftirSummary) : null,
     ]);
     return el('div', {}, [scrollWrap, foot]);
   }
@@ -349,7 +356,7 @@ function aliyahLabel(key) {
   return key === 'M' ? 'Maftir' : ordinal(Number(key));
 }
 
-export function renderParshaDetail({ parsha, haftarah, difficulty, haftarahScore }, opts = {}) {
+export function renderParshaDetail({ parsha, haftarah, difficulty, haftarahScore, summaries }, opts = {}) {
   const card = el('div', { class: 'card detail-card' });
 
   const header = el('div', { class: 'detail-header' }, [
@@ -407,7 +414,7 @@ export function renderParshaDetail({ parsha, haftarah, difficulty, haftarahScore
 
   card.append(el('div', { class: 'card subcard' }, [
     el('div', { class: 'subcard-heading-row' }, [el('h3', {}, 'Aliyot'), el('div', { class: 'subcard-actions' }, [wholeReadingTikkunLink(parsha.aliyot)])]),
-    renderAliyahTable(parsha.aliyot, { maftir: parsha.maftir, difficultyAliyot: difficulty && difficulty.aliyot, profile: difficulty && difficulty.profile, readingId: parsha.id }),
+    renderAliyahTable(parsha.aliyot, { maftir: parsha.maftir, difficultyAliyot: difficulty && difficulty.aliyot, profile: difficulty && difficulty.profile, readingId: parsha.id, summaries }),
   ]));
 
   card.append(el('div', { class: 'card subcard' }, [
@@ -426,7 +433,7 @@ function stat(label, value) {
   ]);
 }
 
-export function renderChagDetail(chag) {
+export function renderChagDetail(chag, { summaries } = {}) {
   const card = el('div', { class: 'card detail-card' });
   const difficulty = chag.difficulty || null;
   card.append(el('div', { class: 'detail-header' }, [
@@ -466,13 +473,13 @@ export function renderChagDetail(chag) {
   if (chag.aliyot && chag.aliyot.length) {
     card.append(el('div', { class: 'card subcard' }, [
       el('div', { class: 'subcard-heading-row' }, [el('h3', {}, 'Aliyot'), el('div', { class: 'subcard-actions' }, [wholeReadingTikkunLink(chag.aliyot)])]),
-      renderAliyahTable(chag.aliyot, { maftir: chag.maftir, difficultyAliyot: difficulty && difficulty.aliyot, profile: difficulty && difficulty.profile, readingId: chag.id }),
+      renderAliyahTable(chag.aliyot, { maftir: chag.maftir, difficultyAliyot: difficulty && difficulty.aliyot, profile: difficulty && difficulty.profile, readingId: chag.id, summaries }),
     ]));
     attachQuickLog(card, { readingId: chag.id, aliyot: chag.aliyot, maftir: chag.maftir });
   } else if (chag.maftir) {
     card.append(el('div', { class: 'card subcard' }, [
       el('h3', {}, 'Maftir only'),
-      renderAliyahTable([{ aliyah: 'M', ...chag.maftir }], { difficultyAliyot: difficulty && difficulty.aliyot, profile: difficulty && difficulty.profile, readingId: chag.id }),
+      renderAliyahTable([{ aliyah: 'M', ...chag.maftir }], { difficultyAliyot: difficulty && difficulty.aliyot, profile: difficulty && difficulty.profile, readingId: chag.id, summaries }),
     ]));
     attachQuickLog(card, { readingId: chag.id, aliyot: [{ aliyah: 'M' }], maftir: null });
   }

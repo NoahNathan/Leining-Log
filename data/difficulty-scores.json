@@ -1,7 +1,7 @@
 {
   "description": "Difficulty ratings (0-10 per criterion, plus a length-weighted, then dataset-wide-rescaled final score) for every aliyah of every parsha -- including the 7 combined (double) parshiot, each scored against its own combined-reading aliyah divisions rather than averaged from its two components -- AND every chag/fast/Rosh Chodesh/special-Shabbat reading in chagim.json (see the separate 'chagim' array). Generated with a transparent rule-based methodology, NOT a survey of actual leining outcomes. Vocabulary is computed from real word-frequency + pronunciation-complexity data over the Masoretic Torah text (see word-difficulty.json); the other four criteria are a content-profile heuristic. Final scores are rescaled against the full pool of ~860 aliyot (parshiot + combined + chagim) so the hardest aliyah in the dataset is a real 10 and the easiest a real 1. See difficulty-rubric.md for the full methodology and honest caveats.",
   "methodology": "difficulty-rubric.md",
-  "generatedAt": "2026-08-09T04:47:56.061Z",
+  "generatedAt": "2026-08-09T04:58:59.670Z",
   "count": 61,
   "individualCount": 54,
   "combinedCount": 7,
@@ -1698,7 +1698,7 @@
             "vocabulary": 3,
             "trope": 5,
             "repetition": 3,
-            "hiddenChallenges": 5
+            "hiddenChallenges": 6
           },
           "vocabDetail": {
             "rarity": 1.9,
@@ -1730,6 +1730,10 @@
             ]
           },
           "lookAlikeWordPairs": [
+            {
+              "a": "יִשְׁחַט",
+              "b": "יִשְׁחָט"
+            },
             {
               "a": "אֹתָם",
               "b": "אוֹתָֽם"
@@ -2036,7 +2040,7 @@
         "vocabulary": 4.4,
         "trope": 5,
         "repetition": 3,
-        "hiddenChallenges": 7
+        "hiddenChallenges": 7.1
       },
       "parshaFinalScore": 7.1,
       "hardestAliyah": "1",
@@ -2153,6 +2157,12 @@
             {
               "word": "וְהִוא",
               "note": "Spelled the same as הוּא (\"hu\", he) but read here as \"hi\" (she) -- an archaic Torah spelling."
+            }
+          ],
+          "lookAlikeWordPairs": [
+            {
+              "a": "בַּהֶרֶת",
+              "b": "בֶּֽהָרֹת"
             }
           ],
           "finalScore": 6
@@ -3641,7 +3651,7 @@
             "vocabulary": 6,
             "trope": 4,
             "repetition": 3,
-            "hiddenChallenges": 5
+            "hiddenChallenges": 6
           },
           "vocabDetail": {
             "rarity": 7.2,
@@ -3679,6 +3689,10 @@
             }
           ],
           "lookAlikeWordPairs": [
+            {
+              "a": "וַיַּֽעֲבֹר",
+              "b": "וַיַּֽעֲבֵר"
+            },
             {
               "a": "עַד",
               "b": "עוֹד"
@@ -3981,7 +3995,7 @@
         "vocabulary": 6,
         "trope": 4,
         "repetition": 3,
-        "hiddenChallenges": 5.3
+        "hiddenChallenges": 5.4
       },
       "parshaFinalScore": 6.6,
       "hardestAliyah": "5",
@@ -4566,7 +4580,7 @@
             "vocabulary": 5,
             "trope": 4,
             "repetition": 3,
-            "hiddenChallenges": 4
+            "hiddenChallenges": 5
           },
           "vocabDetail": {
             "rarity": 7.6,
@@ -4598,6 +4612,14 @@
             ]
           },
           "lookAlikeWordPairs": [
+            {
+              "a": "קַיִן",
+              "b": "קָיִן"
+            },
+            {
+              "a": "הָבֶל",
+              "b": "הֶבֶל"
+            },
             {
               "a": "אֶת",
               "b": "אוֹת"
@@ -4770,7 +4792,7 @@
         "vocabulary": 4.9,
         "trope": 4,
         "repetition": 3,
-        "hiddenChallenges": 5.6
+        "hiddenChallenges": 5.7
       },
       "parshaFinalScore": 6.4,
       "hardestAliyah": "1",
@@ -7113,7 +7135,7 @@
             "vocabulary": 6,
             "trope": 6,
             "repetition": 3,
-            "hiddenChallenges": 7
+            "hiddenChallenges": 8
           },
           "vocabDetail": {
             "rarity": 5.6,
@@ -7160,12 +7182,12 @@
               "b": "אֹתָם"
             },
             {
-              "a": "עַד",
-              "b": "עוֹד"
+              "a": "וַֽעֲבַדְתָּם",
+              "b": "וַֽעֲבַדְתֶּם"
             },
             {
-              "a": "הַגָּדוֹל",
-              "b": "הַגָּדֹל"
+              "a": "עַד",
+              "b": "עוֹד"
             }
           ],
           "finalScore": 9
@@ -7437,7 +7459,7 @@
         "vocabulary": 5,
         "trope": 6.3,
         "repetition": 3,
-        "hiddenChallenges": 5.4
+        "hiddenChallenges": 5.6
       },
       "parshaFinalScore": 6.1,
       "hardestAliyah": "2",
@@ -7614,7 +7636,7 @@
             "vocabulary": 3,
             "trope": 4,
             "repetition": 3,
-            "hiddenChallenges": 6
+            "hiddenChallenges": 7
           },
           "vocabDetail": {
             "rarity": 5.1,
@@ -7653,16 +7675,16 @@
           ],
           "lookAlikeWordPairs": [
             {
+              "a": "וְרָבוּ",
+              "b": "וּרְבוּ"
+            },
+            {
               "a": "עוֹד",
               "b": "עֹד"
             },
             {
               "a": "רוֹמֵשׂ",
               "b": "רֶמֶשׂ"
-            },
-            {
-              "a": "וַיַּעַל",
-              "b": "וְעַל"
             }
           ],
           "finalScore": 6
@@ -7769,16 +7791,16 @@
           ],
           "lookAlikeWordPairs": [
             {
+              "a": "יָלַד",
+              "b": "יֻלַּד"
+            },
+            {
               "a": "אֲשֶׁר",
               "b": "אַשּׁוּר"
             },
             {
               "a": "גִּבֹּר",
               "b": "גִּבּוֹר"
-            },
-            {
-              "a": "וּצְבוֹיִם",
-              "b": "וּצְבֹיִם"
             }
           ],
           "finalScore": 9
@@ -7840,7 +7862,7 @@
         "vocabulary": 4.4,
         "trope": 4,
         "repetition": 3,
-        "hiddenChallenges": 5.3
+        "hiddenChallenges": 5.4
       },
       "parshaFinalScore": 6,
       "hardestAliyah": "6",
@@ -8407,7 +8429,7 @@
             "vocabulary": 4,
             "trope": 9,
             "repetition": 3,
-            "hiddenChallenges": 8
+            "hiddenChallenges": 9
           },
           "vocabDetail": {
             "rarity": 9.4,
@@ -8440,16 +8462,16 @@
           },
           "lookAlikeWordPairs": [
             {
+              "a": "מִרְיָם",
+              "b": "מָרִים"
+            },
+            {
               "a": "הַיָּם",
               "b": "הֵם"
             },
             {
               "a": "אֵלִי",
               "b": "אֵילֵי"
-            },
-            {
-              "a": "יָֽדְךָ",
-              "b": "יָדֶֽיךָ"
             }
           ],
           "note": "Shirat HaYam / Az Yashir (Ex 15:1-19) -- special brick-layout & elevated melody Az Yashir is recited daily in Pesukei D'Zimra -- most daveners know the words well, though that familiarity doesn't fully prepare a reader to lead its special trope solo.",
@@ -8552,12 +8574,12 @@
               "b": "מִן"
             },
             {
-              "a": "יָמִים",
-              "b": "יוֹמָיִם"
+              "a": "אָכְלוֹ",
+              "b": "אָֽכְלוּ"
             },
             {
-              "a": "הֶעְדִּיף",
-              "b": "הָעֹדֵף"
+              "a": "יָמִים",
+              "b": "יוֹמָיִם"
             }
           ],
           "finalScore": 8
@@ -8623,7 +8645,7 @@
         "vocabulary": 4.1,
         "trope": 6.4,
         "repetition": 3,
-        "hiddenChallenges": 6.4
+        "hiddenChallenges": 6.6
       },
       "parshaFinalScore": 5.9,
       "hardestAliyah": "4",
@@ -12833,6 +12855,10 @@
             ]
           },
           "lookAlikeWordPairs": [
+            {
+              "a": "רֹעֶה",
+              "b": "רָעָה"
+            },
             {
               "a": "בָּנָיו",
               "b": "בָּנוּ"
@@ -19239,6 +19265,12 @@
               }
             ]
           },
+          "lookAlikeWordPairs": [
+            {
+              "a": "יִשְׁחַט",
+              "b": "יִשְׁחָט"
+            }
+          ],
           "finalScore": 3
         },
         {
@@ -19442,6 +19474,10 @@
             ]
           },
           "lookAlikeWordPairs": [
+            {
+              "a": "וַיִּקְרְבוּ",
+              "b": "וַיַּקְרִבוּ"
+            },
             {
               "a": "וְאַיִל",
               "b": "וְאֶל"
@@ -23941,7 +23977,7 @@
             "vocabulary": 4,
             "trope": 9,
             "repetition": 3,
-            "hiddenChallenges": 8
+            "hiddenChallenges": 9
           },
           "vocabDetail": {
             "rarity": 9.4,
@@ -23974,16 +24010,16 @@
           },
           "lookAlikeWordPairs": [
             {
+              "a": "מִרְיָם",
+              "b": "מָרִים"
+            },
+            {
               "a": "הַיָּם",
               "b": "הֵם"
             },
             {
               "a": "אֵלִי",
               "b": "אֵילֵי"
-            },
-            {
-              "a": "יָֽדְךָ",
-              "b": "יָדֶֽיךָ"
             }
           ],
           "note": "Shirat HaYam / Az Yashir (Ex 14:26-15:26) -- special brick-layout & elevated melody Az Yashir is recited daily in Pesukei D'Zimra -- most daveners know the words well, though that familiarity doesn't fully prepare a reader to lead its special trope solo.",
@@ -24043,7 +24079,7 @@
         "vocabulary": 4.8,
         "trope": 6.5,
         "repetition": 3,
-        "hiddenChallenges": 6
+        "hiddenChallenges": 6.2
       },
       "finalScore": 4.8,
       "hardestAliyah": "5",
@@ -24266,7 +24302,7 @@
             "vocabulary": 4,
             "trope": 9,
             "repetition": 3,
-            "hiddenChallenges": 8
+            "hiddenChallenges": 9
           },
           "vocabDetail": {
             "rarity": 9.4,
@@ -24299,16 +24335,16 @@
           },
           "lookAlikeWordPairs": [
             {
+              "a": "מִרְיָם",
+              "b": "מָרִים"
+            },
+            {
               "a": "הַיָּם",
               "b": "הֵם"
             },
             {
               "a": "אֵלִי",
               "b": "אֵילֵי"
-            },
-            {
-              "a": "יָֽדְךָ",
-              "b": "יָדֶֽיךָ"
             }
           ],
           "note": "Shirat HaYam / Az Yashir (Ex 14:26-15:26) -- special brick-layout & elevated melody Az Yashir is recited daily in Pesukei D'Zimra -- most daveners know the words well, though that familiarity doesn't fully prepare a reader to lead its special trope solo.",
@@ -24368,7 +24404,7 @@
         "vocabulary": 4.8,
         "trope": 6.5,
         "repetition": 3,
-        "hiddenChallenges": 6
+        "hiddenChallenges": 6.2
       },
       "finalScore": 4.8,
       "hardestAliyah": "5",

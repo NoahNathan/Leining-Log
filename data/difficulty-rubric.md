@@ -485,6 +485,48 @@ problem: it occurs only 7 times in the entire Torah, and only 1 of those
 included as a legitimate, low-noise "usual form vs. pausal form" trap for a
 reader used to seeing the common ending.
 
+**A systematic re-scan, not just the one reported case.** Rather than
+stopping at ידעתם, every aliyah was re-scanned for the same pattern:
+identical consonantal skeletons whose distinct vowel signatures actually
+co-occur within one aliyah (the same trigger condition the live detector
+uses), ranked by whole-Torah rarity. That surfaced 535 candidate
+skeletons -- confirming the same conclusion as the two earlier rejected
+attempts: the overwhelming majority, even restricted to rare words, are
+still ordinary Hebrew morphology (construct-vs-absolute noun pairs, the
+definite article's vowel shifting before a guttural, standard verb-suffix
+pausal endings) rather than genuine word-confusion traps. Rarity alone
+doesn't separate real traps from predictable grammar -- Hebrew's
+inflectional rules are exactly what make most rare-word collisions look
+rare in the first place.
+
+What's different this time is that each candidate was checked against the
+*actual verses* (not inferred from the vowel pattern alone) before being
+kept or discarded. That process found 11 more genuine entries beyond
+ידעתם, each verified against real text:
+
+| Skeleton | What's actually colliding |
+|---|---|
+| הבל | "Hevel/Abel" -- usual form vs. rare pausal ending (Genesis 4), same pattern as ידעתם |
+| קין | "Cain" -- usual form vs. rare pausal ending (Genesis 4), same story as הבל |
+| ורבו | "multiply!" (command) vs. "they will increase" (a promise) |
+| ויעבר | "he crossed over" vs. "he brought/led across" -- different verb stems, back-to-back in the Yabok crossing (Genesis 32:23-24) |
+| אכלו | "his ration" (noun) vs. "they ate" (verb) |
+| ויקרבו | "they drew near" vs. "they brought/offered" -- different verb stems, both within Shemini (Leviticus 9) |
+| ישחט | "he slaughters" -- usual form vs. rare pausal-type form, both *in the same verse*, Leviticus 17:3 |
+| ועבדתם | "you shall serve" -- usual ending vs. rare pausal ending, the same shape as ידעתם on a different verb |
+| בהרת | "bright spot" (singular) vs. "bright spots" (plural), Leviticus 13 |
+| מרים | "Miriam" vs. "bitter" vs. "one who lifts" -- three different words, and Miriam/bitter both appear within a few verses of each other in the Song of the Sea (Exodus 15) |
+| ילד | "he fathered" (active) vs. "he was born" (passive) -- opposite grammatical voice, all through the Genesis genealogies |
+| רעה | "shepherd" vs. "evil/bad" -- about as different as two meanings get, and they land in *the same verse*, Genesis 37:2 |
+
+Several of these (ישחט, רעה) are genuinely striking: the two colliding
+spellings sit in the very same verse, not just the same aliyah -- the
+strongest possible evidence that this isn't a hypothetical ambiguity. The
+allowlist now stands at 21 entries total. Dataset-wide impact stayed
+proportionate to what was found: only the 12 newly-affected aliyot moved
+(0-1-pair share moved from 75.7% to 75.4%), same low-noise shape as every
+prior addition here.
+
 **One more real bug found along the way:** the naive vowel-signature
 comparison also flagged לוֹ/לּוֹ ("to him," with vs. without an ordinary
 gemination dagesh on the lamed) as if it were the genuine לוֹ/לוּ contrast

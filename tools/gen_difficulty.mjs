@@ -159,9 +159,10 @@ function lengthScore(verses) {
   return clamp10(1 + pct * 9); // 1..10
 }
 
-// Length now dominates the final score by design (see difficulty-rubric.md):
-// it alone counts for as much as all four other criteria combined.
-const RUBRIC_WEIGHTS = { length: 4, vocab: 1, trope: 1, repetition: 1, hidden: 1 };
+// Length dominates the final score by design (see difficulty-rubric.md):
+// 50% length, 20% hidden challenges (gotchas), 10% each for vocabulary,
+// trope, and repetition.
+const RUBRIC_WEIGHTS = { length: 5, vocab: 1, trope: 1, repetition: 1, hidden: 2 };
 const TOTAL_WEIGHT = Object.values(RUBRIC_WEIGHTS).reduce((s, w) => s + w, 0);
 
 // ---- pass 1: score every reading's aliyot with RAW (unrescaled) final values ----

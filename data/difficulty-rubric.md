@@ -67,14 +67,24 @@ blending that feedback in.
 ## Weighting: length counts for as much as everything else combined
 
 ```
-final = (4 x length + 1 x vocabulary + 1 x trope + 1 x repetition + 1 x hiddenChallenges) / 8
+final = (5 x length + 1 x vocabulary + 1 x trope + 1 x repetition + 2 x hiddenChallenges) / 10
 ```
 
-Length alone is **half the final score**; the other four criteria share the
-remaining half. Raw length is the single most reliable, least subjective
-predictor of how hard an aliyah is to prepare and deliver -- a long,
-plain-vocabulary aliyah is still a bigger undertaking than a short, tricky
-one. Retune it via the `RUBRIC_WEIGHTS` constant in `tools/gen_difficulty.mjs`.
+That's 50% length, 20% hidden challenges (gotchas), and 10% each for
+vocabulary, trope, and repetition. Length alone is still **half the final
+score** -- the other four criteria share the remaining half -- but within
+that other half, hidden challenges now counts double any one of vocabulary,
+trope, or repetition individually.
+
+Raw length is the single most reliable, least subjective predictor of how
+hard an aliyah is to prepare and deliver -- a long, plain-vocabulary aliyah
+is still a bigger undertaking than a short, tricky one. Gotchas got the
+extra weight because it's the criterion most directly tied to *specific,
+avoidable reading mistakes* (the ambiguous-spelling and look-alike-pair
+work earlier in this document) rather than general unfamiliarity or
+character -- catching one matters more than catching an equivalent amount
+of generic vocabulary rarity. Retune via the `RUBRIC_WEIGHTS` constant in
+`tools/gen_difficulty.mjs`.
 
 ## Repetition changed direction
 

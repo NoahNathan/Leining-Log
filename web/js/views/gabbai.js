@@ -10,7 +10,7 @@ import {
   getSharedLogsForMinyan, getSharedDaveningLogForMinyan,
   listMyMinyanMemberships, listMyOpenReadingSignups,
   openReadingSignup, listReadingSlots, cancelReadingSlot,
-  claimReadingSlot, unclaimReadingSlot, sendReadingSignupInvite,
+  claimReadingSlot, unclaimReadingSlot,
 } from '../gabbai.js';
 
 const BOOK_ORDER = ['Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy'];
@@ -241,7 +241,7 @@ async function buildMinyanDetail(minyan, allParshiot, user, onChanged) {
   wrap.append(renderMembersCard(minyan, members, onChanged));
   wrap.append(renderDaveningRosterCard(accepted, daveningLogs));
   wrap.append(renderScheduleCard(minyan, accepted, assignments, onChanged));
-  wrap.append(renderSelfServeSignupCard(minyan, accepted, allParshiot, onChanged));
+  wrap.append(renderSelfServeSignupCard(minyan, accepted, allParshiot, user, onChanged));
   wrap.append(await renderCoverageCard(minyan, accepted, logs));
   return wrap;
 }
@@ -511,10 +511,10 @@ function renderScheduleCard(minyan, acceptedMembers, assignments, onChanged) {
 // one directly (see renderInvitationsCard's "Your invitations" section),
 // no per-leiner assignment step. Claiming credits the leiner's leining log
 // immediately (see db/schema.sql's reading_slots table).
-function renderSelfServeSignupCard(minyan, acceptedMembers, allParshiot, onChanged) {
+function renderSelfServeSignupCard(minyan, acceptedMembers, allParshiot, user, onChanged) {
   const card = el('div', { class: 'card subcard' }, [
     el('h3', {}, 'Open sign-up'),
-    el('p', { class: 'muted small' }, "Post a week's aliyot for anyone in the minyan to claim themselves, then email everyone a link in one click."),
+    el('p', { class: 'muted small' }, "Post a week's aliyot for anyone in the minyan to claim themselves, then email everyone a link in one click -- opens in your own mail app, addressed from you."),
   ]);
   if (!acceptedMembers.length) {
     card.append(el('p', { class: 'muted small' }, 'Get at least one accepted member before opening sign-up.'));
@@ -565,29 +565,22 @@ function renderSelfServeSignupCard(minyan, acceptedMembers, allParshiot, onChang
     slotsHost.append(el('h4', { class: 'book-heading' }, 'Open aliyot'), list);
 
     if (slots.some((s) => !s.claimed_by)) {
-      const emailBtn = el('button', {
-        class: 'btn-primary', type: 'button',
-        onclick: async () => {
-          emailBtn.disabled = true;
-          status.textContent = 'Sending…';
-          status.className = 'muted small';
-          try {
-            const openCount = slots.filter((s) => !s.claimed_by).length;
-            const label = `${displayParshaName(resolvedParshaId)} — ${formatDateLong(dateInput.value)}`;
-            const result = await sendReadingSignupInvite(minyan.id, {
-              minyanName: minyan.name,
-              parshaLabel: label,
-              blurb: `${openCount} aliyah${openCount === 1 ? '' : 'ot'} still open for ${label}.`,
-              signupUrl: `${location.origin}${location.pathname}#gabbai`,
-            });
-            status.textContent = `Sent to ${result.sent} of ${result.total}${result.failed ? ` (${result.failed} failed — see the Edge Function's README)` : ''}.`;
-            status.className = 'muted small';
-          } catch (err) {
-            status.textContent = err.message;
-            status.className = 'error small';
-          }
-          emailBtn.disabled = false;
-        },
+      const openCount = slots.filter((s) => !s.claimed_by).length;
+      const label = `${displayParshaName(resolvedParshaId)} — ${formatDateLong(dateInput.value)}`;
+      const subject = `Sign up to lein: ${label} (${minyan.name})`;
+      const body = `${openCount} aliyah${openCount === 1 ? '' : 'ot'} still open for ${label}.\n\n`
+        + `Sign up here: ${location.origin}${location.pathname}#gabbai`;
+      // Recipients go in bcc, not to, so leiners don't see each other's
+      // addresses -- "to" is the gabbai's own address, matching how a
+      // mail client's own "send to self, bcc everyone" pattern works.
+      const bcc = acceptedMembers.map((m) => m.leiner_email).join(',');
+      const mailtoUrl = `mailto:${user.email || ''}`
+        + `?bcc=${encodeURIComponent(bcc)}`
+        + `&subject=${encodeURIComponent(subject)}`
+        + `&body=${encodeURIComponent(body)}`;
+      const emailBtn = el('a', {
+        class: 'btn-primary', href: mailtoUrl,
+        title: 'Opens a new message in your own mail app, ready to send',
       }, 'Email leiners to sign up');
       slotsHost.append(el('div', { class: 'subcard-actions' }, [emailBtn]));
     }

@@ -354,3 +354,197 @@ begin
 end;
 $$;
 grant execute on function public.respond_to_reading_assignment(uuid, boolean, text) to authenticated;
+
+-- ==============================================================
+-- Gabbai Mode: self-serve reading sign-up.
+--
+-- Distinct from reading_assignments above (where the GABBAI picks a
+-- specific leiner for a specific date) -- this is the other direction:
+-- the gabbai opens a set of aliyot for an upcoming date, emails every
+-- accepted member a sign-up link, and each leiner independently claims
+-- whichever aliyah they want. Kept as its own table rather than
+-- overloading reading_assignments, since an "open, unclaimed" row has no
+-- leiner yet and needs its own aliyah_key from the moment it's opened (so
+-- the sign-up page can show "which aliyot are still available"), neither
+-- of which the assign-first flow needs.
+--
+-- Per product decision: claiming credits the leiner's leining_log
+-- IMMEDIATELY (not after the date passes, unlike reading_assignments'
+-- accept flow) -- optimistic, matching "you signed up for this."
+-- ==============================================================
+
+create table if not exists public.reading_slots (
+  id uuid primary key default gen_random_uuid(),
+  minyan_id uuid not null references public.minyanim(id) on delete cascade,
+  reading_date date not null,
+  parsha_id text not null,
+  region text not null default 'diaspora',
+  aliyah_key text not null,
+  claimed_by uuid references auth.users(id) on delete set null,
+  claimed_at timestamptz,
+  leining_log_id uuid references public.leining_log(id) on delete set null,
+  created_at timestamptz not null default now(),
+  unique (minyan_id, reading_date, aliyah_key)
+);
+create index if not exists reading_slots_minyan_idx on public.reading_slots (minyan_id);
+create index if not exists reading_slots_date_idx on public.reading_slots (reading_date);
+create index if not exists reading_slots_claimed_by_idx on public.reading_slots (claimed_by);
+
+alter table public.reading_slots enable row level security;
+
+-- Same reasoning as is_gabbai_of_minyan/is_member_of_minyan above:
+-- security definer so this table's policies don't need to re-query
+-- minyan_members in a way that could recurse back through its own
+-- policies. Deliberately stricter than is_member_of_minyan (which also
+-- allows 'pending') -- self-serve claiming is for ACCEPTED members only,
+-- per product decision.
+create or replace function public.is_accepted_member_of_minyan(p_minyan_id uuid)
+returns boolean language sql security definer stable set search_path = '' as $$
+  select exists (
+    select 1 from public.minyan_members
+    where minyan_id = p_minyan_id and leiner_user_id = auth.uid() and status = 'accepted'
+  );
+$$;
+grant execute on function public.is_accepted_member_of_minyan(uuid) to authenticated;
+
+-- No update policy for anyone, gabbai included -- claiming/unclaiming a
+-- slot (which also writes/removes the leiner's OWN leining_log row) only
+-- ever happens through the RPCs below, which independently verify
+-- auth.uid() is the leiner in question. A blanket gabbai "for all" policy
+-- here would let a gabbai claim slots on a leiner's behalf without their
+-- consent -- the same consent-integrity issue reading_assignments' RPCs
+-- were already written to avoid.
+drop policy if exists "reading_slots: gabbai can view" on public.reading_slots;
+create policy "reading_slots: gabbai can view" on public.reading_slots
+  for select using (public.is_gabbai_of_minyan(minyan_id));
+
+drop policy if exists "reading_slots: gabbai can open" on public.reading_slots;
+create policy "reading_slots: gabbai can open" on public.reading_slots
+  for insert with check (public.is_gabbai_of_minyan(minyan_id));
+
+-- Only unclaimed slots -- cancelling a slot someone has already claimed
+-- (and logged!) out from under them belongs to the leiner themselves
+-- (unclaim_reading_slot), not the gabbai.
+drop policy if exists "reading_slots: gabbai can cancel unclaimed" on public.reading_slots;
+create policy "reading_slots: gabbai can cancel unclaimed" on public.reading_slots
+  for delete using (public.is_gabbai_of_minyan(minyan_id) and claimed_by is null);
+
+drop policy if exists "reading_slots: accepted members can view" on public.reading_slots;
+create policy "reading_slots: accepted members can view" on public.reading_slots
+  for select using (public.is_accepted_member_of_minyan(minyan_id));
+
+grant select, insert, delete on public.reading_slots to authenticated;
+
+create or replace function public.open_reading_signup(
+  p_minyan_id uuid, p_reading_date date, p_parsha_id text, p_region text, p_aliyah_keys text[]
+) returns text -- 'opened' | 'not_authorized' | 'date_in_past' | 'no_keys'
+language plpgsql security definer set search_path = '' as $$
+begin
+  if not exists (select 1 from public.minyanim where id = p_minyan_id and gabbai_user_id = auth.uid()) then
+    return 'not_authorized';
+  end if;
+  if p_reading_date < current_date then return 'date_in_past'; end if;
+  if p_aliyah_keys is null or array_length(p_aliyah_keys, 1) is null then return 'no_keys'; end if;
+
+  insert into public.reading_slots (minyan_id, reading_date, parsha_id, region, aliyah_key)
+  select p_minyan_id, p_reading_date, p_parsha_id, p_region, k
+  from unnest(p_aliyah_keys) as k
+  on conflict (minyan_id, reading_date, aliyah_key) do nothing;
+
+  return 'opened';
+end;
+$$;
+grant execute on function public.open_reading_signup(uuid, date, text, text, text[]) to authenticated;
+
+-- Leiner-initiated. Upserts the leining_log row immediately (see the
+-- table comment above for why this differs from reading_assignments'
+-- accept flow), reusing the existing unique(user_id, parsha_id,
+-- aliyah_key) constraint the same way respond_to_reading_assignment does.
+create or replace function public.claim_reading_slot(p_slot_id uuid)
+returns text -- 'claimed' | 'not_accepted_member' | 'already_claimed' | 'not_found'
+language plpgsql security definer set search_path = '' as $$
+declare v_row public.reading_slots%rowtype; v_log_id uuid;
+begin
+  select * into v_row from public.reading_slots where id = p_slot_id for update;
+  if v_row.id is null then return 'not_found'; end if;
+  if v_row.claimed_by is not null then return 'already_claimed'; end if;
+  if not exists (select 1 from public.minyan_members where minyan_id = v_row.minyan_id
+                 and leiner_user_id = auth.uid() and status = 'accepted') then
+    return 'not_accepted_member';
+  end if;
+
+  insert into public.leining_log (user_id, parsha_id, aliyah_key, year_gregorian)
+  values (auth.uid(), v_row.parsha_id, v_row.aliyah_key, extract(year from v_row.reading_date)::int)
+  on conflict (user_id, parsha_id, aliyah_key) do nothing
+  returning id into v_log_id;
+
+  if v_log_id is null then
+    select id into v_log_id from public.leining_log
+      where user_id = auth.uid() and parsha_id = v_row.parsha_id and aliyah_key = v_row.aliyah_key;
+  end if;
+
+  update public.reading_slots
+    set claimed_by = auth.uid(), claimed_at = now(), leining_log_id = v_log_id
+    where id = p_slot_id;
+  return 'claimed';
+end;
+$$;
+grant execute on function public.claim_reading_slot(uuid) to authenticated;
+
+-- Symmetric undo: releases the slot and removes the leining_log row this
+-- specific claim created (only that row -- if the leiner separately
+-- logged the same parsha/aliyah some other way, this leaves that alone,
+-- since it deletes by leining_log_id, not by content match).
+create or replace function public.unclaim_reading_slot(p_slot_id uuid)
+returns text -- 'unclaimed' | 'not_authorized' | 'not_found'
+language plpgsql security definer set search_path = '' as $$
+declare v_row public.reading_slots%rowtype;
+begin
+  select * into v_row from public.reading_slots where id = p_slot_id for update;
+  if v_row.id is null then return 'not_found'; end if;
+  if v_row.claimed_by is distinct from auth.uid() then return 'not_authorized'; end if;
+
+  if v_row.leining_log_id is not null then
+    delete from public.leining_log where id = v_row.leining_log_id and user_id = auth.uid();
+  end if;
+
+  update public.reading_slots set claimed_by = null, claimed_at = null, leining_log_id = null where id = p_slot_id;
+  return 'unclaimed';
+end;
+$$;
+grant execute on function public.unclaim_reading_slot(uuid) to authenticated;
+
+-- ==============================================================
+-- Davening-leadership log: a deliberately tiny, separate cousin of
+-- leining_log for tracking who can lead which parts of the service --
+-- "who can lead Shabbat Shacharit" is then just "who has ever logged
+-- leading Shabbat Shacharit," the same pattern leining_log already uses
+-- rather than a separate capability/skill flag. No verse ranges, no
+-- difficulty scoring -- just a fixed role list and a log-once-ever row,
+-- same shape as leining_log's own unique(user, thing) constraint.
+-- ==============================================================
+
+create table if not exists public.davening_log (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users(id) on delete cascade,
+  role text not null check (role in (
+    'friday_night', 'pesukei_dzimrah', 'shabbat_shacharit', 'shabbat_musaf',
+    'shabbat_rosh_chodesh_musaf', 'chagim', 'rosh_hashana', 'yom_kippur'
+  )),
+  created_at timestamptz not null default now(),
+  unique (user_id, role)
+);
+create index if not exists davening_log_user_id_idx on public.davening_log (user_id);
+
+alter table public.davening_log enable row level security;
+
+drop policy if exists "davening_log: own rows only" on public.davening_log;
+create policy "davening_log: own rows only" on public.davening_log
+  for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
+
+-- Same additive-visibility pattern as leining_log's own gabbai policy.
+drop policy if exists "davening_log: gabbai can view shared members" on public.davening_log;
+create policy "davening_log: gabbai can view shared members" on public.davening_log
+  for select using (public.gabbai_can_view_user_log(user_id));
+
+grant select, insert, delete on public.davening_log to authenticated;

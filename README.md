@@ -126,12 +126,22 @@ Function that emails you on every new signup via Resend.
 
 **Gabbai Mode** (Beta) lets a signed-in user run one or more named minyanim,
 invite other existing users into a leining rotation, and -- once a leiner
-accepts -- see their shared reading history in a coverage summary and assign
-them to upcoming dates. It's built entirely on `db/schema.sql`, so re-running
-that file in the SQL Editor (safe, idempotent, same as step 2 above) is the
-only setup step needed; no new Supabase project settings to change. Sharing
-is opt-in per invite: a leiner's history is never visible to a gabbai until
-they explicitly accept.
+accepts -- see their shared reading history (leining and, separately, which
+davening roles they've led) in a coverage summary. Two ways to line people up
+for an upcoming date: assign a specific leiner directly, or open a week's
+aliyot for self-serve sign-up and email every accepted member a link in one
+click (claiming credits the leiner's log immediately). It's built entirely on
+`db/schema.sql`, so re-running that file in the SQL Editor (safe, idempotent,
+same as step 2 above) is the only setup step needed for the assign/coverage
+features; no new Supabase project settings to change. Sharing is opt-in per
+invite: a leiner's history is never visible to a gabbai until they explicitly
+accept.
+
+**Optional: email leiners to sign up.** The self-serve sign-up's "Email
+leiners" button needs `supabase/functions/notify-reading-signup` deployed
+(see its README) -- and, unlike `notify-signup` above, a verified Resend
+sending domain, since it emails potentially many different leiners rather
+than just the account owner.
 
 ## Nusach coverage
 

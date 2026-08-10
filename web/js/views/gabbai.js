@@ -1,13 +1,16 @@
 import { el, displayParshaName, todayISO, formatDateLong, scoreColor, scoreColorBg } from '../util.js';
 import { isConfigured, onAuthChange } from '../auth.js';
-import { listAllParshiotForSearch, findByDate, listUpcomingParshiot, computeTorahProgress, computeMinyanCoverage } from '../data.js';
+import { listAllParshiotForSearch, findByDate, listUpcomingParshiot, computeTorahProgress, computeMinyanCoverage, DAVENING_ROLES, computeDavenersByRole } from '../data.js';
 import {
   listMyMinyanim, createMinyan, deleteMinyan,
   listMinyanMembers, inviteMember, removeMember,
   listMyPendingMinyanInvites, respondToMinyanInvite,
   assignReading, listMinyanAssignments, cancelAssignment,
   listMyPendingReadingInvites, respondToReadingAssignment,
-  getSharedLogsForMinyan,
+  getSharedLogsForMinyan, getSharedDaveningLogForMinyan,
+  listMyMinyanMemberships, listMyOpenReadingSignups,
+  openReadingSignup, listReadingSlots, cancelReadingSlot,
+  claimReadingSlot, unclaimReadingSlot, sendReadingSignupInvite,
 } from '../gabbai.js';
 
 const BOOK_ORDER = ['Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy'];
@@ -35,6 +38,9 @@ function ordinal(n) {
   const s = ['th', 'st', 'nd', 'rd'];
   const v = n % 100;
   return n + (s[(v - 20) % 10] || s[v] || s[0]);
+}
+function aliyahKeyLabel(key) {
+  return key === 'M' ? 'Maftir' : `${ordinal(Number(key))} aliyah`;
 }
 
 export async function renderGabbai(container) {
@@ -76,28 +82,34 @@ async function renderLoggedIn(body, user) {
   body.innerHTML = '';
   body.append(el('p', { class: 'muted' }, 'Loading…'));
 
-  const [minyanInvites, readingInvites, myMinyanim, allParshiot] = await Promise.all([
+  const [minyanInvites, readingInvites, myMinyanim, allParshiot, myMemberships] = await Promise.all([
     listMyPendingMinyanInvites(user.id),
     listMyPendingReadingInvites(user.id),
     listMyMinyanim(user.id),
     listAllParshiotForSearch(),
+    // reading_slots is a newer table than minyan_members -- an existing
+    // Gabbai Mode user shouldn't see the whole tab break just because they
+    // haven't run the newer SQL yet.
+    listMyMinyanMemberships(user.id).catch((err) => { console.error('Minyan memberships unavailable:', err); return []; }),
   ]);
+  const openSignups = await listMyOpenReadingSignups(myMemberships.map((m) => m.minyan_id))
+    .catch((err) => { console.error('Open reading sign-ups unavailable:', err); return []; });
 
   const refresh = () => renderLoggedIn(body, user);
 
   const selected = myMinyanim.find((m) => m.id === selectedMinyanId);
   if (!selected) selectedMinyanId = null;
-  const detailNode = selected ? await buildMinyanDetail(selected, allParshiot, refresh) : null;
+  const detailNode = selected ? await buildMinyanDetail(selected, allParshiot, user, refresh) : null;
 
   body.innerHTML = '';
-  body.append(renderInvitationsCard(minyanInvites, readingInvites, allParshiot, refresh));
+  body.append(renderInvitationsCard(minyanInvites, readingInvites, openSignups, allParshiot, user, refresh));
   body.append(renderMinyanimCard(user, myMinyanim, refresh));
   if (detailNode) body.append(detailNode);
 }
 
-function renderInvitationsCard(minyanInvites, readingInvites, allParshiot, onChanged) {
+function renderInvitationsCard(minyanInvites, readingInvites, openSignups, allParshiot, user, onChanged) {
   const card = el('div', { class: 'card subcard' }, [el('h3', {}, 'Your invitations')]);
-  if (!minyanInvites.length && !readingInvites.length) {
+  if (!minyanInvites.length && !readingInvites.length && !openSignups.length) {
     card.append(el('p', { class: 'muted small' }, 'No pending invitations.'));
     return card;
   }
@@ -147,6 +159,34 @@ function renderInvitationsCard(minyanInvites, readingInvites, allParshiot, onCha
       ]),
     ]));
   }
+
+  // Self-serve sign-up slots -- distinct from readingInvites above (which
+  // the GABBAI picked a specific person for): these are open aliyot the
+  // gabbai posted for anyone in the minyan to claim. Claiming credits the
+  // leining log immediately (see db/schema.sql's reading_slots table).
+  for (const slot of openSignups) {
+    const claimedByMe = slot.claimed_by === user.id;
+    const claimedByOther = slot.claimed_by && !claimedByMe;
+    card.append(el('div', { class: 'log-row' }, [
+      el('div', {}, [
+        el('span', { class: 'log-parsha' }, (slot.minyanim ? slot.minyanim.name : 'A minyan') + ': '),
+        el('span', {}, `${displayParshaName(slot.parsha_id)} — ${aliyahKeyLabel(slot.aliyah_key)} — ${formatDateLong(slot.reading_date)}`),
+        claimedByOther ? el('span', { class: 'tag' }, 'Taken') : null,
+        claimedByMe ? el('span', { class: 'tag' }, 'You signed up') : null,
+      ]),
+      el('div', { class: 'subcard-actions' }, [
+        claimedByMe
+          ? el('button', {
+              class: 'btn-share', type: 'button',
+              onclick: async () => { await unclaimReadingSlot(slot.id); onChanged(); },
+            }, 'Cancel')
+          : el('button', {
+              class: 'btn-primary', type: 'button', disabled: !!claimedByOther,
+              onclick: async () => { await claimReadingSlot(slot.id); onChanged(); },
+            }, claimedByOther ? 'Already taken' : 'Sign up'),
+      ]),
+    ]));
+  }
   return card;
 }
 
@@ -187,18 +227,21 @@ function renderMinyanimCard(user, myMinyanim, onChanged) {
   return card;
 }
 
-async function buildMinyanDetail(minyan, allParshiot, onChanged) {
+async function buildMinyanDetail(minyan, allParshiot, user, onChanged) {
   const members = await listMinyanMembers(minyan.id);
   const accepted = members.filter((m) => m.status === 'accepted');
   const acceptedIds = accepted.map((m) => m.leiner_user_id);
-  const [logs, assignments] = await Promise.all([
+  const [logs, assignments, daveningLogs] = await Promise.all([
     getSharedLogsForMinyan(acceptedIds),
     listMinyanAssignments(minyan.id),
+    getSharedDaveningLogForMinyan(acceptedIds).catch((err) => { console.error('Davening roster unavailable:', err); return []; }),
   ]);
 
   const wrap = el('div');
   wrap.append(renderMembersCard(minyan, members, onChanged));
+  wrap.append(renderDaveningRosterCard(accepted, daveningLogs));
   wrap.append(renderScheduleCard(minyan, accepted, assignments, onChanged));
+  wrap.append(renderSelfServeSignupCard(minyan, accepted, allParshiot, onChanged));
   wrap.append(await renderCoverageCard(minyan, accepted, logs));
   return wrap;
 }
@@ -257,6 +300,31 @@ function coverageChip(label, covered, isMaftir) {
     style: `color:${color}; background:${bg}; border-color:${color}`,
     title,
   }, label);
+}
+
+// "Who can lead X" -- a leiner's own davening_log rows (see account.js's
+// button row) mean "I've led this before," so the roster is just those
+// rows grouped by role, labeled by email.
+function renderDaveningRosterCard(acceptedMembers, daveningLogs) {
+  const card = el('div', { class: 'card subcard' }, [el('h3', {}, 'Who can lead davening')]);
+  if (!acceptedMembers.length) {
+    card.append(el('p', { class: 'muted small' }, 'No accepted members yet.'));
+    return card;
+  }
+  const emailById = new Map(acceptedMembers.map((m) => [m.leiner_user_id, m.leiner_email]));
+  const byRole = computeDavenersByRole(daveningLogs, emailById);
+  let any = false;
+  for (const role of DAVENING_ROLES) {
+    const names = byRole[role.key];
+    if (!names.length) continue;
+    any = true;
+    card.append(el('div', { class: 'log-row' }, [
+      el('span', { class: 'log-parsha' }, role.label),
+      el('span', { class: 'muted small' }, names.join(', ')),
+    ]));
+  }
+  if (!any) card.append(el('p', { class: 'muted small' }, "No one's marked a davening role yet -- that's tracked from each leiner's own My Leining tab."));
+  return card;
 }
 
 function renderMembersCard(minyan, members, onChanged) {
@@ -435,5 +503,145 @@ function renderScheduleCard(minyan, acceptedMembers, assignments, onChanged) {
     }
     card.append(el('h4', { class: 'book-heading' }, 'Upcoming assignments'), list);
   }
+  return card;
+}
+
+// Self-serve, distinct from renderScheduleCard above -- the gabbai posts
+// which aliyot are up for grabs on a date, then any accepted member claims
+// one directly (see renderInvitationsCard's "Your invitations" section),
+// no per-leiner assignment step. Claiming credits the leiner's leining log
+// immediately (see db/schema.sql's reading_slots table).
+function renderSelfServeSignupCard(minyan, acceptedMembers, allParshiot, onChanged) {
+  const card = el('div', { class: 'card subcard' }, [
+    el('h3', {}, 'Open sign-up'),
+    el('p', { class: 'muted small' }, "Post a week's aliyot for anyone in the minyan to claim themselves, then email everyone a link in one click."),
+  ]);
+  if (!acceptedMembers.length) {
+    card.append(el('p', { class: 'muted small' }, 'Get at least one accepted member before opening sign-up.'));
+    return card;
+  }
+
+  const dateInput = el('input', { type: 'date', class: 'text-input', min: todayISO() });
+  const preview = el('p', { class: 'muted small' }, '');
+  const keysHost = el('div', { class: 'toggle-group' });
+  const openBtn = el('button', { class: 'btn-primary', type: 'button', disabled: true }, 'Open sign-up for this week');
+  const status = el('span', { class: 'muted small' }, '');
+  const slotsHost = el('div');
+
+  let resolvedParshaId = null;
+  let resolvedParsha = null;
+
+  function drawKeyPicker() {
+    keysHost.innerHTML = '';
+    if (!resolvedParsha) return;
+    const keys = [...resolvedParsha.aliyot.map((a) => String(a.aliyah)), ...(resolvedParsha.maftir ? ['M'] : [])];
+    for (const k of keys) {
+      const btn = el('button', { class: 'toggle-btn active', type: 'button' }, aliyahKeyLabel(k));
+      btn.dataset.key = k;
+      btn.addEventListener('click', () => btn.classList.toggle('active'));
+      keysHost.append(btn);
+    }
+  }
+
+  async function drawSlots() {
+    slotsHost.innerHTML = '';
+    if (!dateInput.value) return;
+    const slots = await listReadingSlots(minyan.id, dateInput.value);
+    if (!slots.length) return;
+    const byUser = new Map(acceptedMembers.map((m) => [m.leiner_user_id, m.leiner_email]));
+    const list = el('div', { class: 'log-list' });
+    for (const s of slots) {
+      list.append(el('div', { class: 'log-row' }, [
+        el('div', {}, [
+          el('span', { class: 'log-parsha' }, aliyahKeyLabel(s.aliyah_key)),
+          el('span', { class: 'tag' }, s.claimed_by ? (byUser.get(s.claimed_by) || 'claimed') : 'open'),
+        ]),
+        !s.claimed_by ? el('button', {
+          class: 'btn-share', type: 'button', title: 'Remove this slot',
+          onclick: async () => { await cancelReadingSlot(s.id); await drawSlots(); },
+        }, '✕') : null,
+      ]));
+    }
+    slotsHost.append(el('h4', { class: 'book-heading' }, 'Open aliyot'), list);
+
+    if (slots.some((s) => !s.claimed_by)) {
+      const emailBtn = el('button', {
+        class: 'btn-primary', type: 'button',
+        onclick: async () => {
+          emailBtn.disabled = true;
+          status.textContent = 'Sending…';
+          status.className = 'muted small';
+          try {
+            const openCount = slots.filter((s) => !s.claimed_by).length;
+            const label = `${displayParshaName(resolvedParshaId)} — ${formatDateLong(dateInput.value)}`;
+            const result = await sendReadingSignupInvite(minyan.id, {
+              minyanName: minyan.name,
+              parshaLabel: label,
+              blurb: `${openCount} aliyah${openCount === 1 ? '' : 'ot'} still open for ${label}.`,
+              signupUrl: `${location.origin}${location.pathname}#gabbai`,
+            });
+            status.textContent = `Sent to ${result.sent} of ${result.total}${result.failed ? ` (${result.failed} failed — see the Edge Function's README)` : ''}.`;
+            status.className = 'muted small';
+          } catch (err) {
+            status.textContent = err.message;
+            status.className = 'error small';
+          }
+          emailBtn.disabled = false;
+        },
+      }, 'Email leiners to sign up');
+      slotsHost.append(el('div', { class: 'subcard-actions' }, [emailBtn]));
+    }
+  }
+
+  dateInput.addEventListener('change', async () => {
+    resolvedParshaId = null;
+    resolvedParsha = null;
+    preview.textContent = '';
+    openBtn.disabled = true;
+    keysHost.innerHTML = '';
+    slotsHost.innerHTML = '';
+    status.textContent = '';
+    if (!dateInput.value) return;
+    const rows = await findByDate(dateInput.value, 'diaspora');
+    const parshaRow = rows.find((r) => r.type === 'parsha');
+    if (!parshaRow) {
+      preview.textContent = 'No weekly parsha reading on this date.';
+      return;
+    }
+    resolvedParshaId = parshaRow.parshaId;
+    resolvedParsha = allParshiot.find((p) => p.id === parshaRow.parshaId) || null;
+    preview.textContent = `Reading: ${displayParshaName(resolvedParshaId)} — tap any aliyah below to leave it out of this week's sign-up.`;
+    openBtn.disabled = false;
+    drawKeyPicker();
+    await drawSlots();
+  });
+
+  openBtn.addEventListener('click', async () => {
+    if (!resolvedParshaId) return;
+    const keys = [...keysHost.children].filter((b) => b.classList.contains('active')).map((b) => b.dataset.key);
+    if (!keys.length) {
+      status.textContent = 'Pick at least one aliyah to open.';
+      status.className = 'error small';
+      return;
+    }
+    status.textContent = 'Opening…';
+    status.className = 'muted small';
+    try {
+      const result = await openReadingSignup(minyan.id, dateInput.value, resolvedParshaId, 'diaspora', keys);
+      if (result === 'opened') {
+        status.textContent = 'Sign-up opened.';
+        status.className = 'muted small';
+        await drawSlots();
+      } else {
+        status.textContent = result;
+        status.className = 'error small';
+      }
+    } catch (err) {
+      status.textContent = err.message;
+      status.className = 'error small';
+    }
+  });
+
+  card.append(dateInput, preview, keysHost, openBtn, status, slotsHost);
   return card;
 }

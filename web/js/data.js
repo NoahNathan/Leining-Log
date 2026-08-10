@@ -445,3 +445,60 @@ export async function removeLeiningLogEntry(id) {
   const { error } = await client.from('leining_log').delete().eq('id', id);
   if (error) throw error;
 }
+
+// ---------- davening-leadership log ----------
+// A deliberately tiny cousin of leining_log, for the small set of
+// Shabbat/chag davening roles a gabbai actually needs a roster for --
+// see db/schema.sql's davening_log table. No verse ranges, no difficulty
+// scoring, just "have I ever led this."
+export const DAVENING_ROLES = [
+  { key: 'friday_night', label: 'Friday Night (Kabbalat Shabbat / Maariv)' },
+  { key: 'pesukei_dzimrah', label: 'Shabbat Pesukei D’Zimrah' },
+  { key: 'shabbat_shacharit', label: 'Shabbat Shacharit' },
+  { key: 'shabbat_musaf', label: 'Shabbat Musaf' },
+  { key: 'shabbat_rosh_chodesh_musaf', label: 'Shabbat Rosh Chodesh Musaf' },
+  { key: 'chagim', label: 'Chagim' },
+  { key: 'rosh_hashana', label: 'Rosh Hashana' },
+  { key: 'yom_kippur', label: 'Yom Kippur' },
+];
+
+export async function getMyDaveningLog(userId) {
+  const client = await sb();
+  if (!client) return [];
+  const { data, error } = await client.from('davening_log').select('*').eq('user_id', userId);
+  if (error) throw error;
+  return data || [];
+}
+
+export async function addDaveningLogEntry(userId, role) {
+  const client = await sb();
+  if (!client) throw new Error('Supabase is not configured yet.');
+  const { data, error } = await client
+    .from('davening_log')
+    .upsert({ user_id: userId, role }, { onConflict: 'user_id,role' })
+    .select('id')
+    .single();
+  if (error) throw error;
+  return data.id;
+}
+
+export async function removeDaveningLogEntry(id) {
+  const client = await sb();
+  if (!client) return;
+  const { error } = await client.from('davening_log').delete().eq('id', id);
+  if (error) throw error;
+}
+
+// "Who can lead X" -- a gabbai roster grouped by role, from the shared
+// davening_log rows RLS already scoped to accepted members (see
+// getSharedDaveningLogForMinyan in gabbai.js). memberNameById maps
+// user_id -> a display label (email or name), since davening_log itself
+// only ever stores user_id.
+export function computeDavenersByRole(daveningLogRows, memberNameById) {
+  const byRole = Object.fromEntries(DAVENING_ROLES.map((r) => [r.key, []]));
+  for (const row of daveningLogRows) {
+    if (!byRole[row.role]) continue;
+    byRole[row.role].push(memberNameById.get(row.user_id) || row.user_id);
+  }
+  return byRole;
+}

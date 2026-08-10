@@ -3,6 +3,7 @@ import { isConfigured, signUp, signInWithPassword, signOut, onAuthChange } from 
 import {
   listAllParshiotForSearch, clearBarMitzvahFlag,
   getMyLeiningLog, addLeiningLogEntry, removeLeiningLogEntry, computeTorahProgress,
+  DAVENING_ROLES, getMyDaveningLog, addDaveningLogEntry, removeDaveningLogEntry,
 } from '../data.js';
 
 const BOOK_ORDER = ['Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy'];
@@ -107,8 +108,13 @@ async function renderLoggedIn(body, user) {
   body.innerHTML = '';
   body.append(el('p', { class: 'muted' }, 'Loading your progress…'));
 
-  const [log, allParshiot] = await Promise.all([
+  const [log, allParshiot, daveningLog] = await Promise.all([
     getMyLeiningLog(user.id), listAllParshiotForSearch(),
+    // Isolated from the Promise.all above on purpose: davening_log is a
+    // newer table than leining_log, so an account created before it was
+    // added to schema.sql shouldn't have the whole My Leining page break
+    // just because that one table doesn't exist in their project yet.
+    getMyDaveningLog(user.id).catch((err) => { console.error('Davening log unavailable:', err); return []; }),
   ]);
   const progress = await computeTorahProgress(log);
   const individual = allParshiot.filter((p) => !p.combinedEntry).sort((a, b) => a.parshaNum - b.parshaNum);
@@ -124,9 +130,41 @@ async function renderLoggedIn(body, user) {
     el('button', { class: 'btn-share', type: 'button', onclick: () => signOut() }, 'Sign out'),
   ]));
 
+  body.append(renderDaveningCard(user, daveningLog, () => renderLoggedIn(body, user)));
   body.append(renderProgressCard(progress));
   body.append(renderAddEntryCard(user, individual, () => renderLoggedIn(body, user)));
   body.append(renderLogCard(log, byId, () => renderLoggedIn(body, user)));
+}
+
+// Deliberately tiny -- a row of toggles, not a form. "Who can lead
+// Shabbat Shacharit" for a gabbai is just "who has ever toggled this on"
+// (see computeDavenersByRole in data.js), so this is the whole feature.
+function renderDaveningCard(user, daveningLog, onChanged) {
+  const loggedByRole = new Map(daveningLog.map((e) => [e.role, e.id]));
+  const group = el('div', { class: 'toggle-group' });
+  for (const role of DAVENING_ROLES) {
+    const logged = loggedByRole.has(role.key);
+    const btn = el('button', {
+      class: `toggle-btn ${logged ? 'active' : ''}`, type: 'button',
+      title: logged ? "You've led this — click to remove" : "Mark that you've led this",
+    }, role.label);
+    btn.addEventListener('click', async () => {
+      btn.disabled = true;
+      try {
+        if (loggedByRole.has(role.key)) await removeDaveningLogEntry(loggedByRole.get(role.key));
+        else await addDaveningLogEntry(user.id, role.key);
+      } catch (err) {
+        console.error(err);
+      }
+      onChanged();
+    });
+    group.append(btn);
+  }
+  return el('div', { class: 'card subcard' }, [
+    el('h3', {}, 'Davening you can lead'),
+    el('p', { class: 'muted small' }, "Tap any you've led before — gabbaim in your minyanim can see who to ask."),
+    group,
+  ]);
 }
 
 function renderProgressCard(progress) {

@@ -142,6 +142,7 @@ async function renderLoggedIn(body, user) {
 function renderDaveningCard(user, daveningLog, onChanged) {
   const loggedByRole = new Map(daveningLog.map((e) => [e.role, e.id]));
   const group = el('div', { class: 'toggle-group' });
+  const status = el('p', { class: 'muted small' }, '');
   for (const role of DAVENING_ROLES) {
     const logged = loggedByRole.has(role.key);
     const btn = el('button', {
@@ -150,13 +151,20 @@ function renderDaveningCard(user, daveningLog, onChanged) {
     }, role.label);
     btn.addEventListener('click', async () => {
       btn.disabled = true;
+      status.textContent = '';
+      status.className = 'muted small';
       try {
         if (loggedByRole.has(role.key)) await removeDaveningLogEntry(loggedByRole.get(role.key));
         else await addDaveningLogEntry(user.id, role.key);
+        onChanged(); // only re-render (which rebuilds this card fresh) on success -- otherwise the error message below would get wiped out immediately
       } catch (err) {
         console.error(err);
+        status.textContent = err.message.includes('does not exist')
+          ? "This feature needs a database update -- see the app's README (db/schema.sql) for the one-time setup step."
+          : err.message;
+        status.className = 'error small';
+        btn.disabled = false;
       }
-      onChanged();
     });
     group.append(btn);
   }
@@ -164,6 +172,7 @@ function renderDaveningCard(user, daveningLog, onChanged) {
     el('h3', {}, 'Davening you can lead'),
     el('p', { class: 'muted small' }, "Tap any you've led before — gabbaim in your minyanim can see who to ask."),
     group,
+    status,
   ]);
 }
 

@@ -8,9 +8,70 @@ mkdirSync('../data/calendar-100y', { recursive: true });
 // (i.e. actually carries a distinct Torah/haftarah reading) are kept -- this
 // avoids dangling references to labels like "Erev Rosh Hashana" or "Leil
 // Selichot" that Hebcal marks as calendar events but that have no leyning.
-const validChagIds = new Set(
-  JSON.parse(readFileSync('../data/chagim.json', 'utf8')).chagim.map(c => c.id)
+const chagimData = JSON.parse(readFileSync('../data/chagim.json', 'utf8')).chagim;
+const validChagIds = new Set(chagimData.map(c => c.id));
+const difficultyData = JSON.parse(readFileSync('../data/difficulty-scores.json', 'utf8'));
+const haftarahDifficultyData = JSON.parse(readFileSync('../data/haftarah-difficulty.json', 'utf8'));
+
+// A verse-range -> difficulty lookup for Torah content, built by cross-
+// referencing chagim.json's book/start/end (difficulty-scores.json's own
+// chagim entries don't carry book/start/end, only 'aliyah'/'M') with its
+// scores. This lets a special-Shabbat/Rosh-Chodesh override reuse the score
+// that chagim.json's OWN standalone entry for that exact reading already
+// has, rather than needing a fresh computation: Shekalim's maftir here is
+// literally the same Exodus 30:11-16 already scored for the standalone
+// "Shabbat Shekalim" chag card, Rosh Chodesh's aliyah 7 is always Numbers
+// 28:9-15 (already scored via "Shabbat Rosh Chodesh"), and so on.
+const torahScoreByRange = new Map();
+for (const c of chagimData) {
+  const diff = difficultyData.chagim.find((d) => d.chagId === c.id);
+  if (!diff) continue;
+  const diffByAliyah = new Map(diff.aliyot.map((a) => [String(a.aliyah), a]));
+  for (const a of (c.aliyot || [])) {
+    const d = diffByAliyah.get(String(a.aliyah));
+    if (d) torahScoreByRange.set(`${a.book} ${a.start}-${a.end}`, d);
+  }
+  if (c.maftir) {
+    const d = diffByAliyah.get('M');
+    if (d) torahScoreByRange.set(`${c.maftir.book} ${c.maftir.start}-${c.maftir.end}`, d);
+  }
+}
+function torahDifficultyFor(ref) {
+  if (!ref) return null;
+  return torahScoreByRange.get(`${ref.book} ${ref.start}-${ref.end}`) || null;
+}
+// The reshaped-aliyah-6 pseudo-score (only the 6 parshiot that can ever host
+// a 3-scroll week produce one -- see gen_word_stats.mjs/gen_difficulty.mjs),
+// and the ashkenazi haftarah score for special-Shabbat/chag haftarot (see
+// gen_haftarah_stats.mjs/gen_difficulty.mjs) -- both optional-chained since
+// they only exist once those pipeline steps have been extended and re-run.
+const reshapedAliyotByParsha = new Map(
+  (difficultyData.reshapedAliyot || []).map((r) => [r.parshaId, r])
 );
+// Keyed by the FULL signature (every part, in order) rather than by any one
+// part alone -- some special-Shabbat haftarot have more than one real
+// composition (Shabbat Shuva reads Hosea+Micah+Joel standalone, but only
+// Joel alone some "with Ha'azinu" weeks), so matching on a single shared
+// part would attach one composition's score to a different, shorter one
+// that happens to overlap it. A signature match only ever hits an exact,
+// honest correspondence; anything that doesn't (Shabbat Shuva's variants,
+// and the haftarah-only labels with no chagim.json entry at all -- Machar
+// Chodesh, Pinchas after 17 Tammuz, Ki Teitzei's 3rd Haftarah of
+// Consolation, Kedoshim following a special Shabbat, Matot-Masei on Shabbat
+// Rosh Chodesh) simply renders with no score, same as before this change.
+function sigOf(ref) {
+  const parts = Array.isArray(ref) ? ref : [ref];
+  return parts.map((p) => `${p.book} ${p.start}-${p.end}`).join('|');
+}
+const haftarahScoreByRange = new Map();
+for (const h of (difficultyData.haftarot || [])) {
+  if (!h.chagId) continue; // only the chag/special-Shabbat additions are range-keyed; parsha haftarot are keyed by parsha id elsewhere
+  haftarahScoreByRange.set(sigOf(h.ref), h);
+}
+function haftarahDifficultyFor(ref) {
+  if (!ref) return null;
+  return haftarahScoreByRange.get(sigOf(ref)) || null;
+}
 
 const START_YEAR = 2026;
 const END_YEAR = 2126; // 100-year span
@@ -135,8 +196,21 @@ for (let decadeStart = START_YEAR; decadeStart < END_YEAR; decadeStart += DECADE
                 .filter((n) => leyning.fullkriyah?.[n])
                 .map((n) => [n, toRef(leyning.fullkriyah[n])])
             );
+            // Aliyah 7 is always Numbers 28:9-15, already scored via the
+            // "Shabbat Rosh Chodesh" chag entries -- reuse it directly.
+            const d7 = torahDifficultyFor(row.specialReading.aliyot['7']);
+            if (d7) row.specialReading.aliyot['7'].difficulty = d7;
+            // Aliyah 6's reshaped (parsha-specific) range has no existing
+            // chag entry to borrow from -- it's a fresh pseudo-aliyah scored
+            // once per hosting parsha, see gen_word_stats.mjs/gen_difficulty.mjs.
+            const d6 = reshapedAliyotByParsha.get(parshaId);
+            if (d6 && row.specialReading.aliyot['6']) row.specialReading.aliyot['6'].difficulty = d6;
           }
-          if (r.M) row.specialReading.maftirRef = toRef(leyning.fullkriyah?.M);
+          if (r.M) {
+            row.specialReading.maftirRef = toRef(leyning.fullkriyah?.M);
+            const dm = torahDifficultyFor(row.specialReading.maftirRef);
+            if (dm) row.specialReading.maftirRef.difficulty = dm;
+          }
           // A handful of special-Shabbat labels (Machar Chodesh, Pinchas
           // after 17 Tammuz, Ki Teitzei's 3rd Haftarah of Consolation,
           // Kedoshim following a special Shabbat) are haftarah-only swaps
@@ -144,7 +218,11 @@ for (let decadeStart = START_YEAR; decadeStart < END_YEAR; decadeStart += DECADE
           // their own calendar event, so they get no companion chagim.json
           // entry (unlike Shekalim/Zachor/etc., which do). leyning.haft
           // carries the actual substitute haftarah reference either way.
-          if (r.haftara && leyning.haft) row.specialReading.haftaraRef = toRef(leyning.haft);
+          if (r.haftara && leyning.haft) {
+            row.specialReading.haftaraRef = toRef(leyning.haft);
+            const dh = haftarahDifficultyFor(row.specialReading.haftaraRef);
+            if (dh) row.specialReading.haftarahDifficulty = dh;
+          }
           if (r.sephardic && leyning.seph) row.specialReading.haftaraRefSefardi = toRef(leyning.seph);
           if (r.chabad && leyning.chabad) row.specialReading.haftaraRefChabad = toRef(leyning.chabad);
         }

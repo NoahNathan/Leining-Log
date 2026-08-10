@@ -196,12 +196,25 @@ async function getChagDifficultyIndex() {
   return chagDifficultyIndex;
 }
 
+// Special-Shabbat/chag haftarah difficulty, ashkenazi only -- a subset of
+// getHaftarahScores() carrying a chagId (see gen_haftarah_stats.mjs). Not
+// every chag has one: Shabbat Shuva's several real compositions and the
+// haftarah-only labels with no chagim.json entry at all aren't scored.
+let chagHaftarahScoreIndex = null;
+async function getChagHaftarahScoreIndex() {
+  if (chagHaftarahScoreIndex) return chagHaftarahScoreIndex;
+  const scores = await getHaftarahScores();
+  chagHaftarahScoreIndex = new Map(scores.filter((h) => h.chagId).map((h) => [h.chagId, h]));
+  return chagHaftarahScoreIndex;
+}
+
 export async function getChagById(chagId) {
-  const [chagim, diffIdx] = await Promise.all([getChagim(), getChagDifficultyIndex()]);
+  const [chagim, diffIdx, haftIdx] = await Promise.all([getChagim(), getChagDifficultyIndex(), getChagHaftarahScoreIndex()]);
   const chag = chagim.find((c) => c.id === chagId) || null;
   if (!chag) return null;
   const difficulty = diffIdx.get(chagId) || null;
-  return { ...chag, difficulty };
+  const haftarahScore = haftIdx.get(chagId) || null;
+  return { ...chag, difficulty, haftarahScore };
 }
 
 // ---------- leining-log progress ("% of Torah learned") ----------

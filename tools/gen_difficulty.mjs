@@ -510,6 +510,26 @@ const chagResults = rawChagim.map(({ c, raw }) => {
   };
 }).sort((a,b) => b.finalScore - a.finalScore);
 
+// ---- Reshaped aliyah 6, for the parshiot that can host a 3-scroll week --
+// Shabbat Shekalim/HaChodesh/Rosh Chodesh Chanukah landing on Rosh Chodesh,
+// which reassigns aliyah 7 to Rosh Chodesh's own scroll and, in doing so,
+// extends aliyah 6 to absorb what would otherwise be aliyah 7's opening
+// verses (see gen_calendar.mjs). That merged range is real parsha text, so
+// it's scored exactly like any other aliyah -- scoreReadingRaw + the same
+// rescaleFinal anchor as everything else -- using the pseudo word-stats
+// entry gen_word_stats.mjs computed under RESHAPED__<parshaId>.
+const RESHAPED_SIXTH_ALIYAH_PARSHIOT = ['Miketz', 'Mishpatim', 'Pekudei', 'Tazria', 'Terumah', 'Vayikra'];
+const reshapedAliyotResults = RESHAPED_SIXTH_ALIYAH_PARSHIOT.map((parshaId) => {
+  const p = parshiot.find((x) => x.id === parshaId);
+  const a6 = p.aliyot.find((a) => String(a.aliyah) === '6');
+  const a7 = p.aliyot.find((a) => String(a.aliyah) === '7');
+  const raw = scoreReadingRaw(`RESHAPED__${parshaId}`, [{ key: '6', verses: a6.verses + a7.verses }], PARSHA_PROFILE[parshaId] || ['NARRATIVE'], {}, {});
+  const entry = raw.aliyot[0];
+  entry.finalScore = rescaleFinal(entry.rawFinal);
+  delete entry.rawFinal;
+  return { parshaId, ...entry };
+});
+
 
 // ---- Haftarot ----------------------------------------------------------
 // A haftarah is chanted from a printed, vocalized text: nekudot and trope
@@ -572,12 +592,13 @@ const haftarahResults = rawHaftarot.map((r) => {
     vocabDetail: { rarity: r.h.rarity, pronunciation: r.h.pronunciation, rareExamples: r.h.rareExamples, hardToPronounceExamples: r.h.hardToPronounceExamples },
     finalScore,
   };
+  if (r.h.chagId) e.chagId = r.h.chagId;
   if (r.h.rareTropeMarks && r.h.rareTropeMarks.length) e.rareTropeMarks = r.h.rareTropeMarks;
   return e;
 }).sort((a, b) => b.finalScore - a.finalScore);
 
 writeFileSync('../data/difficulty-scores.json', JSON.stringify({
-  description: "Difficulty ratings (0-10 per criterion, plus a length-weighted, then dataset-wide-rescaled final score) for every aliyah of every parsha -- including the 7 combined (double) parshiot, each scored against its own combined-reading aliyah divisions rather than averaged from its two components -- AND every chag/fast/Rosh Chodesh/special-Shabbat reading in chagim.json (see the separate 'chagim' array). Generated with a transparent rule-based methodology, NOT a survey of actual leining outcomes. Vocabulary is computed from real word-frequency + pronunciation-complexity data over the Masoretic Torah text (see word-difficulty.json); the other four criteria are a content-profile heuristic. Final scores are rescaled against the full pool of ~860 aliyot (parshiot + combined + chagim) so the hardest aliyah in the dataset is a real 10 and the easiest a real 1. See difficulty-rubric.md for the full methodology and honest caveats.",
+  description: "Difficulty ratings (0-10 per criterion, plus a length-weighted, then dataset-wide-rescaled final score) for every aliyah of every parsha -- including the 7 combined (double) parshiot, each scored against its own combined-reading aliyah divisions rather than averaged from its two components -- AND every chag/fast/Rosh Chodesh/special-Shabbat reading in chagim.json (see the separate 'chagim' array). Generated with a transparent rule-based methodology, NOT a survey of actual leining outcomes. Vocabulary is computed from real word-frequency + pronunciation-complexity data over the Masoretic Torah text (see word-difficulty.json); the other four criteria are a content-profile heuristic. Final scores are rescaled against the full pool of ~860 aliyot (parshiot + combined + chagim) so the hardest aliyah in the dataset is a real 10 and the easiest a real 1. 'haftarot' entries carrying a 'chagId' are special-Shabbat/chag haftarot (Shekalim, Zachor, Parah, HaChodesh, HaGadol, Rosh Chodesh alone, Chanukah, etc.) scored the same way as the 61 parsha haftarot, in the same percentile pool -- see gen_haftarah_stats.mjs; not every special-Shabbat haftarah has one, since a few (Shabbat Shuva's variable compositions, and the haftarah-only labels with no chagim.json entry at all) have no single fixed text to score against. 'reshapedAliyot' scores the merged aliyah 6 that appears on a 3-scroll week (Shekalim/HaChodesh/Rosh Chodesh Chanukah landing on Rosh Chodesh), for the 6 parshiot that can ever host one -- see gen_calendar.mjs for how it's attached to actual calendar rows. See difficulty-rubric.md for the full methodology and honest caveats.",
   methodology: "difficulty-rubric.md",
   generatedAt: new Date().toISOString(),
   count: allResults.length,
@@ -588,6 +609,7 @@ writeFileSync('../data/difficulty-scores.json', JSON.stringify({
   chagim: chagResults,
   haftarotCount: haftarahResults.length,
   haftarot: haftarahResults,
+  reshapedAliyot: reshapedAliyotResults,
 }, null, 2));
 
 console.log('Wrote difficulty-scores.json:', results.length, 'individual +', combinedResults.length, 'combined parshiot,', chagResults.length, 'chagim entries');

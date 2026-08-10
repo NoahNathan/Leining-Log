@@ -587,6 +587,32 @@ for (const c of chagim) {
   }
 }
 
+// ---- reshaped aliyah 6, for the handful of parshiot that can host a
+// 3-scroll week (Shabbat Shekalim/HaChodesh/Rosh Chodesh Chanukah landing on
+// Rosh Chodesh) ----
+// When aliyah 7 is reassigned to Rosh Chodesh's own scroll, aliyah 6 isn't
+// just left as-is -- it RESHAPES to absorb what would otherwise be aliyah
+// 7's opening verses (verified: Terumah's static aliyah 6 is Ex 27:1-8, but
+// on a Shekalim+Rosh-Chodesh Shabbat it's actually Ex 27:1-19). That merged
+// range is real parsha text (not Rosh Chodesh's), so it can and should be
+// scored the same way as any other aliyah -- just once per hosting parsha,
+// keyed distinctly (RESHAPED__<parshaId>) so it doesn't collide with or
+// overwrite that parsha's own static aliyah 6 entry. Checked against the
+// generated 100-year calendar (see gen_calendar.mjs): only these 6 parshiot
+// ever actually produce a 3-scroll week across 2026-2126 -- Miketz,
+// Mishpatim, Pekudei, Tazria, Terumah, Vayikra -- but the reshape itself is
+// a fixed function of aliyah 6/7's own boundaries, not of the calendar, so
+// listing them here doesn't need to track the calendar going forward.
+const RESHAPED_SIXTH_ALIYAH_PARSHIOT = ['Miketz', 'Mishpatim', 'Pekudei', 'Tazria', 'Terumah', 'Vayikra'];
+for (const parshaId of RESHAPED_SIXTH_ALIYAH_PARSHIOT) {
+  const p = parshiot.find((x) => x.id === parshaId);
+  const a6 = p?.aliyot.find((a) => String(a.aliyah) === '6');
+  const a7 = p?.aliyot.find((a) => String(a.aliyah) === '7');
+  if (!a6 || !a7) continue;
+  const raw = rawAliyahStats(a6.book, a6.start, a7.end);
+  if (raw) entries.push({ groupId: `RESHAPED__${parshaId}`, aliyahKey: '6', raw });
+}
+
 // ---- percentile-rank each aliyah's raw stats against all other aliyot ----
 const rawRarities = entries.map(e => e.raw.rawRarity).sort((a, b) => a - b);
 const rawPronunciations = entries.map(e => e.raw.rawPron).sort((a, b) => a - b);

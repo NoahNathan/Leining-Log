@@ -459,23 +459,34 @@ function applySpecialReading(parsha, difficulty, sr) {
     // aliyah 7 to Rosh Chodesh also RESHAPES aliyah 6 (it absorbs what would
     // normally be aliyah 7's opening verses, e.g. Terumah's aliyah 6 grows
     // from Ex 27:1-8 to 27:1-19) -- diffing generically catches that too.
+    // gen_calendar.mjs attaches a real difficulty score onto each changed
+    // aliyah's override (aliyah 7 reuses the "Shabbat Rosh Chodesh" chag
+    // score, aliyah 6 gets its own freshly-scored merged range) -- swap that
+    // in for the changed aliyah instead of just dropping its score.
     const changedNums = new Set();
+    const replacementDifficulty = [];
     aliyot = aliyot.map((a) => {
       const override = sr.aliyot[String(a.aliyah)];
       if (!override) return a;
       const same = override.book === a.book && override.start === a.start && override.end === a.end;
       if (same) return a;
       changedNums.add(String(a.aliyah));
+      if (override.difficulty) replacementDifficulty.push({ ...override.difficulty, aliyah: a.aliyah });
       const note = String(a.aliyah) === '7'
         ? `Read from the Rosh Chodesh scroll, not ${displayParshaName(parsha.englishName || parsha.id)}'s own text.`
         : `Extends to cover what would normally be the next aliyah too, since that one moves to the Rosh Chodesh scroll.`;
       return { ...a, ...override, specialTrope: note };
     });
-    if (difficultyAliyot) difficultyAliyot = difficultyAliyot.filter((a) => !changedNums.has(String(a.aliyah)));
+    if (difficultyAliyot) {
+      difficultyAliyot = difficultyAliyot.filter((a) => !changedNums.has(String(a.aliyah))).concat(replacementDifficulty);
+    }
   }
   if (sr.maftirRef) {
     maftir = { ...sr.maftirRef, reason: sr.label };
-    if (difficultyAliyot) difficultyAliyot = difficultyAliyot.filter((a) => String(a.aliyah) !== 'M');
+    if (difficultyAliyot) {
+      difficultyAliyot = difficultyAliyot.filter((a) => String(a.aliyah) !== 'M');
+      if (sr.maftirRef.difficulty) difficultyAliyot = difficultyAliyot.concat([{ ...sr.maftirRef.difficulty, aliyah: 'M' }]);
+    }
   }
   return { aliyot, maftir, difficultyAliyot };
 }
@@ -578,8 +589,15 @@ export function renderParshaDetail({ parsha, haftarah, difficulty, haftarahScore
     ? { ashkenazi: sr.haftaraRef, sefardi: sr.haftaraRefSefardi || { sameAs: 'ashkenazi' }, chabad: sr.haftaraRefChabad || { sameAs: 'ashkenazi' } }
     : (haftarah ? haftarah.nusach : null);
   card.append(el('div', { class: 'card subcard' }, [
-    el('h3', {}, 'Haftarah by nusach'),
-    nusachRow(nusachToShow, haftarahOverridden ? null : haftarahScore, summaries, haftarahOverridden ? null : (haftarah ? haftarah.id : null), haftarahLengthRecords),
+    el('div', { class: 'subcard-heading-row' }, [
+      el('h3', {}, 'Haftarah by nusach'),
+      // Which haftarah this actually is -- the parsha's own regular one, or
+      // a special-Shabbat/Rosh-Chodesh substitute -- since a reader looking
+      // straight at this card (rather than the scroll-count notice above)
+      // would otherwise have no way to tell the two apart.
+      el('span', { class: 'tag' }, haftarahOverridden ? sr.label : `${parshaName}'s own haftarah`),
+    ]),
+    nusachRow(nusachToShow, haftarahOverridden ? (sr.haftarahDifficulty || null) : haftarahScore, summaries, haftarahOverridden ? null : (haftarah ? haftarah.id : null), haftarahLengthRecords),
   ]));
 
   attachQuickLog(card, { readingId: parsha.id, aliyot: parsha.aliyot, maftir: parsha.maftir });
@@ -645,7 +663,7 @@ export function renderChagDetail(chag, { summaries } = {}) {
   }
   card.append(el('div', { class: 'card subcard' }, [
     el('h3', {}, 'Haftarah by nusach'),
-    nusachRow(chag.nusach, null, summaries),
+    nusachRow(chag.nusach, chag.haftarahScore || null, summaries),
   ]));
   return card;
 }

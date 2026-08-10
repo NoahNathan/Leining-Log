@@ -211,6 +211,78 @@ for (const h of haftarot) {
     rareExamples, hardToPronounceExamples: hardExamples, rareTropeMarks,
   });
 }
+// ---- chag/special-Shabbat haftarot (Shekalim, Zachor, Parah, HaChodesh,
+// HaGadol, Shuva, Rosh Chodesh alone, Machar Chodesh, Chanukah, etc.) ----
+// chagim.json carries these under each entry's own nusach.ashkenazi, exactly
+// like haftarot.json does for the 61 regular parsha haftarot -- they were
+// simply never fed into this scoring pipeline before, so a special-Shabbat
+// override always rendered with no score at all. Scored into the SAME pool
+// (percentile-ranked together with the parsha haftarot) so the two halves
+// of the dataset stay on one consistent scale.
+//
+// chagim.json stores a diaspora AND an israel copy of every entry, but a
+// weekly special-Shabbat/Rosh-Chodesh haftarah doesn't differ by region --
+// scoring both copies would silently double-count the exact same text in
+// the percentile pool. Dedupe by the reading's own verse-range signature
+// (first occurrence wins) rather than by chagId.
+const { chagim } = JSON.parse(readFileSync('../data/chagim.json', 'utf8'));
+const seenChagRanges = new Set();
+for (const c of chagim) {
+  const ash = c.nusach?.ashkenazi;
+  if (!ash) continue;
+  const parts = Array.isArray(ash) ? ash : [ash];
+  const sig = parts.map((p) => `${p.book} ${p.start}-${p.end}`).join('|');
+  if (seenChagRanges.has(sig)) continue;
+  seenChagRanges.add(sig);
+
+  let verses = [];
+  let ok = true;
+  for (const p of parts) {
+    const vs = versesIn(p.book, p.start, p.end);
+    if (!vs || vs.length === 0) { ok = false; missing.push(`${c.id}: ${p.book} ${p.start}-${p.end}`); break; }
+    verses = verses.concat(vs);
+  }
+  if (!ok) continue;
+  const words = verses.flatMap((v) => v.words);
+  if (words.length === 0) continue;
+
+  const rarityVals = words.map((w) => wordRarity(w.consonantal));
+  const pronVals = words.map((w) => wordPron(w.surface));
+  const seen = new Set(); const rareExamples = [];
+  for (const w of [...words].sort((a, b) => (freq.get(a.consonantal) || 0) - (freq.get(b.consonantal) || 0))) {
+    if (seen.has(w.consonantal)) continue;
+    const occ = freq.get(w.consonantal) || 0;
+    if (occ > RARE_OCCURRENCE_THRESHOLD) break;
+    seen.add(w.consonantal);
+    rareExamples.push({ word: w.surface, occurrencesInCorpus: occ });
+    if (rareExamples.length >= 3) break;
+  }
+  const seenH = new Set(); const hardExamples = [];
+  for (const w of [...words].sort((a, b) => pronRaw(b.surface) - pronRaw(a.surface))) {
+    if (seenH.has(w.surface)) continue;
+    seenH.add(w.surface);
+    hardExamples.push({ word: w.surface });
+    if (hardExamples.length >= 3) break;
+  }
+  const rareTropeMarks = [];
+  let tierB = 0;
+  for (const v of verses) { for (const t of v.tierA) rareTropeMarks.push({ mark: t.mark, word: t.word, verse: v.verse }); tierB += v.tierB; }
+
+  raws.push({
+    id: `chag:${c.id}`,
+    chagId: c.id,
+    parsha: c.name,
+    ref: parts.map((p) => ({ book: p.book, start: p.start, end: p.end, verses: p.verses })),
+    verseCount: verses.length,
+    wordCount: words.length,
+    rawRarity: rarityVals.reduce((s, v) => s + v, 0) / rarityVals.length,
+    rawPron: pronVals.reduce((s, v) => s + v, 0) / pronVals.length,
+    uncommonTropeDensity: tierB / words.length,
+    repetitionRatio: Math.max(recurringNgramShare(words.map((w) => w.consonantal), 4), repeatedVerseOpeningShare(verses)),
+    rareExamples, hardToPronounceExamples: hardExamples, rareTropeMarks,
+  });
+}
+
 if (missing.length) console.log('Could not resolve text for', missing.length, 'haftarah range(s):', missing.slice(0, 5).join('; '));
 
 // Percentile-rank each haftarah against the others, the same way aliyot are
@@ -240,6 +312,7 @@ for (const r of raws) {
     hardToPronounceExamples: r.hardToPronounceExamples,
     rareTropeMarks: r.rareTropeMarks,
   };
+  if (r.chagId) out[r.id].chagId = r.chagId;
 }
 
 writeFileSync('../data/haftarah-difficulty.json', JSON.stringify({

@@ -7,8 +7,8 @@
   },
   "nusach": "ashkenazi",
   "methodology": "difficulty-rubric.md",
-  "generatedAt": "2026-08-09T15:14:57.911Z",
-  "count": 61,
+  "generatedAt": "2026-08-09T22:30:08.454Z",
+  "count": 86,
   "haftarot": {
     "Bereshit": {
       "parsha": "Bereshit",
@@ -23,10 +23,10 @@
       ],
       "verseCount": 31,
       "wordCount": 386,
-      "rarity": 9.1,
-      "pronunciation": 9,
+      "rarity": 8.8,
+      "pronunciation": 8.7,
       "vocab": 9,
-      "tropeRarity": 7.2,
+      "tropeRarity": 7.1,
       "formulaicity": 6.6,
       "rareExamples": [
         {
@@ -68,11 +68,11 @@
       ],
       "verseCount": 22,
       "wordCount": 297,
-      "rarity": 8.5,
-      "pronunciation": 2.8,
-      "vocab": 6,
-      "tropeRarity": 4,
-      "formulaicity": 6.7,
+      "rarity": 8.4,
+      "pronunciation": 2.5,
+      "vocab": 5,
+      "tropeRarity": 4.3,
+      "formulaicity": 6.8,
       "rareExamples": [
         {
           "word": "פִּצְחִי",
@@ -113,11 +113,11 @@
       ],
       "verseCount": 21,
       "wordCount": 246,
-      "rarity": 8.6,
-      "pronunciation": 9.4,
+      "rarity": 8.5,
+      "pronunciation": 9.2,
       "vocab": 9,
       "tropeRarity": 3,
-      "formulaicity": 3.1,
+      "formulaicity": 3.3,
       "rareExamples": [
         {
           "word": "נִסְתְּרָה",
@@ -158,11 +158,11 @@
       ],
       "verseCount": 37,
       "wordCount": 575,
-      "rarity": 4.3,
-      "pronunciation": 5.7,
+      "rarity": 4.4,
+      "pronunciation": 5.3,
       "vocab": 5,
-      "tropeRarity": 3.3,
-      "formulaicity": 9.9,
+      "tropeRarity": 3.2,
+      "formulaicity": 9.8,
       "rareExamples": [
         {
           "word": "וְהַנּשֶׁה",
@@ -203,11 +203,11 @@
       ],
       "verseCount": 31,
       "wordCount": 462,
-      "rarity": 2.5,
-      "pronunciation": 7.2,
+      "rarity": 2.7,
+      "pronunciation": 6.8,
       "vocab": 5,
-      "tropeRarity": 7.6,
-      "formulaicity": 6.1,
+      "tropeRarity": 7.5,
+      "formulaicity": 6.2,
       "rareExamples": [
         {
           "word": "בַּבְּגָדִים",
@@ -248,8 +248,8 @@
       ],
       "verseCount": 21,
       "wordCount": 341,
-      "rarity": 5.5,
-      "pronunciation": 5.4,
+      "rarity": 5.7,
+      "pronunciation": 5.1,
       "vocab": 5,
       "tropeRarity": 7,
       "formulaicity": 4.5,
@@ -293,10 +293,10 @@
       ],
       "verseCount": 28,
       "wordCount": 306,
-      "rarity": 9.5,
-      "pronunciation": 6.1,
+      "rarity": 9.3,
+      "pronunciation": 5.8,
       "vocab": 8,
-      "tropeRarity": 1.9,
+      "tropeRarity": 1.8,
       "formulaicity": 1,
       "rareExamples": [
         {
@@ -338,10 +338,10 @@
       ],
       "verseCount": 21,
       "wordCount": 293,
-      "rarity": 6.4,
-      "pronunciation": 1.2,
+      "rarity": 6.3,
+      "pronunciation": 1.1,
       "vocab": 4,
-      "tropeRarity": 2.7,
+      "tropeRarity": 2.4,
       "formulaicity": 5.2,
       "rareExamples": [
         {
@@ -383,11 +383,11 @@
       ],
       "verseCount": 19,
       "wordCount": 248,
-      "rarity": 5.2,
-      "pronunciation": 5.2,
+      "rarity": 5.4,
+      "pronunciation": 5,
       "vocab": 5,
-      "tropeRarity": 4.6,
-      "formulaicity": 1.8,
+      "tropeRarity": 4.7,
+      "formulaicity": 1.7,
       "rareExamples": [
         {
           "word": "עֲנוּשִׁים",
@@ -428,11 +428,11 @@
       ],
       "verseCount": 15,
       "wordCount": 231,
-      "rarity": 2.7,
-      "pronunciation": 6.7,
+      "rarity": 2.8,
+      "pronunciation": 6.2,
       "vocab": 5,
-      "tropeRarity": 2.8,
-      "formulaicity": 9.1,
+      "tropeRarity": 2.5,
+      "formulaicity": 9.2,
       "rareExamples": [
         {
           "word": "וָאֵלֵד",
@@ -473,11 +473,11 @@
       ],
       "verseCount": 14,
       "wordCount": 244,
-      "rarity": 1.9,
-      "pronunciation": 7,
+      "rarity": 2.1,
+      "pronunciation": 6.6,
       "vocab": 4,
-      "tropeRarity": 8.8,
-      "formulaicity": 1.6,
+      "tropeRarity": 8.7,
+      "formulaicity": 1.4,
       "rareExamples": [
         {
           "word": "לַֽאֲחָדִים",
@@ -569,11 +569,11 @@
       ],
       "verseCount": 23,
       "wordCount": 324,
-      "rarity": 9,
-      "pronunciation": 3.6,
+      "rarity": 8.7,
+      "pronunciation": 3.5,
       "vocab": 6,
-      "tropeRarity": 4,
-      "formulaicity": 8.2,
+      "tropeRarity": 4.3,
+      "formulaicity": 8.3,
       "rareExamples": [
         {
           "word": "יַשְׁרֵשׁ",
@@ -615,10 +615,10 @@
       "verseCount": 23,
       "wordCount": 392,
       "rarity": 3,
-      "pronunciation": 3.1,
+      "pronunciation": 3,
       "vocab": 3,
-      "tropeRarity": 6.6,
-      "formulaicity": 5.5,
+      "tropeRarity": 6.4,
+      "formulaicity": 5.7,
       "rareExamples": [
         {
           "word": "בְּקַבְּצִי",
@@ -659,11 +659,11 @@
       ],
       "verseCount": 16,
       "wordCount": 239,
-      "rarity": 4.6,
-      "pronunciation": 2.2,
+      "rarity": 4.7,
+      "pronunciation": 2,
       "vocab": 3,
-      "tropeRarity": 4.5,
-      "formulaicity": 1.5,
+      "tropeRarity": 4.6,
+      "formulaicity": 1.3,
       "rareExamples": [
         {
           "word": "בְמִגְדּוֹל",
@@ -705,10 +705,10 @@
       "verseCount": 52,
       "wordCount": 744,
       "rarity": 7.8,
-      "pronunciation": 3,
+      "pronunciation": 2.7,
       "vocab": 5,
-      "tropeRarity": 8.1,
-      "formulaicity": 2.7,
+      "tropeRarity": 8,
+      "formulaicity": 2.9,
       "rareExamples": [
         {
           "word": "וּדְבוֹרָה",
@@ -755,11 +755,11 @@
       ],
       "verseCount": 21,
       "wordCount": 338,
-      "rarity": 5.8,
-      "pronunciation": 1.8,
+      "rarity": 5.9,
+      "pronunciation": 1.5,
       "vocab": 4,
-      "tropeRarity": 5.1,
-      "formulaicity": 3.1,
+      "tropeRarity": 5.3,
+      "formulaicity": 3.3,
       "rareExamples": [
         {
           "word": "וְשׁוּלָיו",
@@ -806,11 +806,11 @@
       ],
       "verseCount": 17,
       "wordCount": 320,
-      "rarity": 2.8,
-      "pronunciation": 6,
+      "rarity": 2.9,
+      "pronunciation": 5.7,
       "vocab": 4,
-      "tropeRarity": 7.5,
-      "formulaicity": 6.4,
+      "tropeRarity": 7.4,
+      "formulaicity": 6.5,
       "rareExamples": [
         {
           "word": "וְהָֽעִבְרִיָּה",
@@ -851,8 +851,8 @@
       ],
       "verseCount": 20,
       "wordCount": 290,
-      "rarity": 5.4,
-      "pronunciation": 7.5,
+      "rarity": 5.6,
+      "pronunciation": 7.2,
       "vocab": 6,
       "tropeRarity": 6,
       "formulaicity": 7.6,
@@ -897,10 +897,10 @@
       "verseCount": 18,
       "wordCount": 293,
       "rarity": 6,
-      "pronunciation": 9.9,
+      "pronunciation": 9.6,
       "vocab": 8,
-      "tropeRarity": 9.3,
-      "formulaicity": 3.6,
+      "tropeRarity": 9.2,
+      "formulaicity": 3.8,
       "rareExamples": [
         {
           "word": "מֵֽעֲוֹנֽוֹתֵיהֶם",
@@ -941,10 +941,10 @@
       ],
       "verseCount": 39,
       "wordCount": 633,
-      "rarity": 2.2,
-      "pronunciation": 10,
+      "rarity": 2.4,
+      "pronunciation": 9.7,
       "vocab": 6,
-      "tropeRarity": 3.4,
+      "tropeRarity": 3.3,
       "formulaicity": 9.3,
       "rareExamples": [
         {
@@ -986,11 +986,11 @@
       ],
       "verseCount": 11,
       "wordCount": 169,
-      "rarity": 4.8,
-      "pronunciation": 8.1,
+      "rarity": 4.9,
+      "pronunciation": 7.9,
       "vocab": 6,
       "tropeRarity": 1.3,
-      "formulaicity": 10,
+      "formulaicity": 9.9,
       "rareExamples": [
         {
           "word": "הַכִּיֹּרוֹת",
@@ -1032,10 +1032,10 @@
       "verseCount": 22,
       "wordCount": 353,
       "rarity": 1,
-      "pronunciation": 1.5,
+      "pronunciation": 1.3,
       "vocab": 1,
-      "tropeRarity": 6.7,
-      "formulaicity": 6.7,
+      "tropeRarity": 6.8,
+      "formulaicity": 6.8,
       "rareExamples": [
         {
           "word": "וַתִּשְׁלַם",
@@ -1076,10 +1076,10 @@
       ],
       "verseCount": 31,
       "wordCount": 407,
-      "rarity": 8.8,
-      "pronunciation": 4,
+      "rarity": 8.6,
+      "pronunciation": 3.9,
       "vocab": 6,
-      "tropeRarity": 6.3,
+      "tropeRarity": 6.2,
       "formulaicity": 5.4,
       "rareExamples": [
         {
@@ -1128,10 +1128,10 @@
       "verseCount": 19,
       "wordCount": 338,
       "rarity": 4.5,
-      "pronunciation": 8.4,
+      "pronunciation": 8.3,
       "vocab": 6,
       "tropeRarity": 6.1,
-      "formulaicity": 5.8,
+      "formulaicity": 5.9,
       "rareExamples": [
         {
           "word": "בְּמֹעֵצוֹת",
@@ -1172,10 +1172,10 @@
       ],
       "verseCount": 40,
       "wordCount": 633,
-      "rarity": 1.8,
-      "pronunciation": 4.6,
+      "rarity": 2,
+      "pronunciation": 4.4,
       "vocab": 3,
-      "tropeRarity": 5.4,
+      "tropeRarity": 5.6,
       "formulaicity": 8.1,
       "rareExamples": [
         {
@@ -1217,11 +1217,11 @@
       ],
       "verseCount": 22,
       "wordCount": 390,
-      "rarity": 3.9,
-      "pronunciation": 6.9,
+      "rarity": 3.8,
+      "pronunciation": 6.5,
       "vocab": 5,
-      "tropeRarity": 9.1,
-      "formulaicity": 8.6,
+      "tropeRarity": 9,
+      "formulaicity": 8.7,
       "rareExamples": [
         {
           "word": "בְּצִקְלֹנוֹ",
@@ -1262,11 +1262,11 @@
       ],
       "verseCount": 18,
       "wordCount": 370,
-      "rarity": 3.6,
-      "pronunciation": 9.5,
-      "vocab": 7,
+      "rarity": 3.5,
+      "pronunciation": 9.4,
+      "vocab": 6,
       "tropeRarity": 9.4,
-      "formulaicity": 8.4,
+      "formulaicity": 8.5,
       "rareExamples": [
         {
           "word": "מְצֹרָעִים",
@@ -1307,11 +1307,11 @@
       ],
       "verseCount": 9,
       "wordCount": 149,
-      "rarity": 4.9,
-      "pronunciation": 8.5,
+      "rarity": 5.1,
+      "pronunciation": 8.4,
       "vocab": 7,
-      "tropeRarity": 8.4,
-      "formulaicity": 3.6,
+      "tropeRarity": 8.2,
+      "formulaicity": 3.8,
       "rareExamples": [
         {
           "word": "כִבְנֵי",
@@ -1353,10 +1353,10 @@
       "verseCount": 19,
       "wordCount": 228,
       "rarity": 6.1,
-      "pronunciation": 1.9,
+      "pronunciation": 1.6,
       "vocab": 4,
-      "tropeRarity": 2.1,
-      "formulaicity": 1.8,
+      "tropeRarity": 2,
+      "formulaicity": 1.7,
       "rareExamples": [
         {
           "word": "וְהוֹדַעְתָּהּ",
@@ -1397,11 +1397,11 @@
       ],
       "verseCount": 17,
       "wordCount": 255,
-      "rarity": 6.3,
-      "pronunciation": 8.8,
-      "vocab": 8,
-      "tropeRarity": 2.5,
-      "formulaicity": 1.3,
+      "rarity": 6.2,
+      "pronunciation": 8.6,
+      "vocab": 7,
+      "tropeRarity": 2.3,
+      "formulaicity": 1.2,
       "rareExamples": [
         {
           "word": "בְּשָֽׁרְתָם",
@@ -1443,10 +1443,10 @@
       "verseCount": 22,
       "wordCount": 351,
       "rarity": 3.1,
-      "pronunciation": 9.1,
+      "pronunciation": 8.8,
       "vocab": 6,
       "tropeRarity": 8.6,
-      "formulaicity": 2.3,
+      "formulaicity": 2.4,
       "rareExamples": [
         {
           "word": "דֹּֽדְךָ",
@@ -1487,10 +1487,10 @@
       ],
       "verseCount": 17,
       "wordCount": 228,
-      "rarity": 7.3,
-      "pronunciation": 3.7,
+      "rarity": 7.4,
+      "pronunciation": 3.6,
       "vocab": 6,
-      "tropeRarity": 2.2,
+      "tropeRarity": 2.1,
       "formulaicity": 2.1,
       "rareExamples": [
         {
@@ -1532,10 +1532,10 @@
       ],
       "verseCount": 22,
       "wordCount": 298,
-      "rarity": 7.6,
-      "pronunciation": 9.3,
+      "rarity": 7.7,
+      "pronunciation": 9,
       "vocab": 8,
-      "tropeRarity": 7.3,
+      "tropeRarity": 7.2,
       "formulaicity": 6,
       "rareExamples": [
         {
@@ -1577,11 +1577,11 @@
       ],
       "verseCount": 24,
       "wordCount": 383,
-      "rarity": 2.3,
-      "pronunciation": 7.6,
+      "rarity": 2.6,
+      "pronunciation": 7.4,
       "vocab": 5,
-      "tropeRarity": 4.9,
-      "formulaicity": 7.8,
+      "tropeRarity": 5,
+      "formulaicity": 7.7,
       "rareExamples": [
         {
           "word": "וְהָרִית",
@@ -1622,10 +1622,10 @@
       ],
       "verseCount": 21,
       "wordCount": 316,
-      "rarity": 3.3,
-      "pronunciation": 5.8,
-      "vocab": 5,
-      "tropeRarity": 7.9,
+      "rarity": 3.2,
+      "pronunciation": 5.4,
+      "vocab": 4,
+      "tropeRarity": 7.7,
       "formulaicity": 4.5,
       "rareExamples": [
         {
@@ -1670,7 +1670,7 @@
       "rarity": 4,
       "pronunciation": 8.2,
       "vocab": 6,
-      "tropeRarity": 8.2,
+      "tropeRarity": 8.1,
       "formulaicity": 6.3,
       "rareExamples": [
         {
@@ -1712,11 +1712,11 @@
       ],
       "verseCount": 24,
       "wordCount": 425,
-      "rarity": 1.3,
-      "pronunciation": 7.8,
-      "vocab": 5,
-      "tropeRarity": 4.3,
-      "formulaicity": 7.8,
+      "rarity": 1.2,
+      "pronunciation": 7.6,
+      "vocab": 4,
+      "tropeRarity": 4.5,
+      "formulaicity": 7.7,
       "rareExamples": [
         {
           "word": "וּנְחַדֵּשׁ",
@@ -1757,8 +1757,8 @@
       ],
       "verseCount": 33,
       "wordCount": 533,
-      "rarity": 2.1,
-      "pronunciation": 3.3,
+      "rarity": 2.2,
+      "pronunciation": 3.1,
       "vocab": 3,
       "tropeRarity": 4.8,
       "formulaicity": 9.4,
@@ -1802,11 +1802,11 @@
       ],
       "verseCount": 17,
       "wordCount": 209,
-      "rarity": 6.6,
-      "pronunciation": 4.2,
+      "rarity": 6.4,
+      "pronunciation": 4.1,
       "vocab": 5,
       "tropeRarity": 1.6,
-      "formulaicity": 9.5,
+      "formulaicity": 9.6,
       "rareExamples": [
         {
           "word": "כִּרְבִיבִים",
@@ -1848,9 +1848,9 @@
       "verseCount": 22,
       "wordCount": 386,
       "rarity": 4.2,
-      "pronunciation": 5.5,
+      "pronunciation": 5.2,
       "vocab": 5,
-      "tropeRarity": 9.7,
+      "tropeRarity": 9.6,
       "formulaicity": 5.1,
       "rareExamples": [
         {
@@ -1892,11 +1892,11 @@
       ],
       "verseCount": 22,
       "wordCount": 306,
-      "rarity": 1.6,
-      "pronunciation": 7.9,
+      "rarity": 1.8,
+      "pronunciation": 7.7,
       "vocab": 5,
-      "tropeRarity": 5.8,
-      "formulaicity": 6.7,
+      "tropeRarity": 5.9,
+      "formulaicity": 6.8,
       "rareExamples": [
         {
           "word": "אֶצָּרְךָ",
@@ -1943,11 +1943,11 @@
       ],
       "verseCount": 26,
       "wordCount": 381,
-      "rarity": 6.9,
-      "pronunciation": 6.4,
+      "rarity": 7,
+      "pronunciation": 6,
       "vocab": 7,
-      "tropeRarity": 3.7,
-      "formulaicity": 4.2,
+      "tropeRarity": 4.1,
+      "formulaicity": 4.3,
       "rareExamples": [
         {
           "word": "הַמּוֹלִיךְ",
@@ -1988,8 +1988,8 @@
       ],
       "verseCount": 27,
       "wordCount": 324,
-      "rarity": 9.9,
-      "pronunciation": 4.5,
+      "rarity": 9.6,
+      "pronunciation": 4.3,
       "vocab": 7,
       "tropeRarity": 1.2,
       "formulaicity": 2.5,
@@ -2033,10 +2033,10 @@
       ],
       "verseCount": 26,
       "wordCount": 302,
-      "rarity": 9.7,
-      "pronunciation": 2.1,
+      "rarity": 9.5,
+      "pronunciation": 1.8,
       "vocab": 6,
-      "tropeRarity": 3.6,
+      "tropeRarity": 4,
       "formulaicity": 7.5,
       "rareExamples": [
         {
@@ -2079,10 +2079,10 @@
       "verseCount": 27,
       "wordCount": 399,
       "rarity": 8.1,
-      "pronunciation": 2.5,
+      "pronunciation": 2.2,
       "vocab": 5,
-      "tropeRarity": 5.2,
-      "formulaicity": 7.3,
+      "tropeRarity": 5.4,
+      "formulaicity": 7.2,
       "rareExamples": [
         {
           "word": "תִשְׁכַּחְנָה",
@@ -2123,10 +2123,10 @@
       ],
       "verseCount": 12,
       "wordCount": 160,
-      "rarity": 9.3,
-      "pronunciation": 1.3,
+      "rarity": 9,
+      "pronunciation": 1.2,
       "vocab": 5,
-      "tropeRarity": 9,
+      "tropeRarity": 8.8,
       "formulaicity": 4.8,
       "rareExamples": [
         {
@@ -2169,10 +2169,10 @@
       "verseCount": 24,
       "wordCount": 332,
       "rarity": 7.2,
-      "pronunciation": 2.3,
+      "pronunciation": 2.1,
       "vocab": 5,
       "tropeRarity": 3.1,
-      "formulaicity": 3.4,
+      "formulaicity": 3.6,
       "rareExamples": [
         {
           "word": "מְנַֽחֶמְכֶם",
@@ -2213,8 +2213,8 @@
       ],
       "verseCount": 10,
       "wordCount": 137,
-      "rarity": 7.9,
-      "pronunciation": 6.3,
+      "rarity": 8,
+      "pronunciation": 5.9,
       "vocab": 7,
       "tropeRarity": 1.5,
       "formulaicity": 9,
@@ -2258,11 +2258,11 @@
       ],
       "verseCount": 22,
       "wordCount": 297,
-      "rarity": 9.4,
-      "pronunciation": 7.3,
+      "rarity": 9.2,
+      "pronunciation": 7.1,
       "vocab": 8,
-      "tropeRarity": 6.4,
-      "formulaicity": 8.6,
+      "tropeRarity": 6.3,
+      "formulaicity": 8.7,
       "rareExamples": [
         {
           "word": "וְעָלַיִךְ",
@@ -2304,10 +2304,10 @@
       "verseCount": 23,
       "wordCount": 331,
       "rarity": 8.2,
-      "pronunciation": 4.8,
-      "vocab": 7,
-      "tropeRarity": 5.5,
-      "formulaicity": 2.8,
+      "pronunciation": 4.6,
+      "vocab": 6,
+      "tropeRarity": 5.7,
+      "formulaicity": 3,
       "rareExamples": [
         {
           "word": "שׂוֹשׂ",
@@ -2348,11 +2348,11 @@
       ],
       "verseCount": 16,
       "wordCount": 240,
-      "rarity": 5.7,
-      "pronunciation": 5.1,
+      "rarity": 5.8,
+      "pronunciation": 4.8,
       "vocab": 5,
-      "tropeRarity": 7.8,
-      "formulaicity": 5.7,
+      "tropeRarity": 7.6,
+      "formulaicity": 5.8,
       "rareExamples": [
         {
           "word": "בְּהִמָּצְאוֹ",
@@ -2393,8 +2393,8 @@
       ],
       "verseCount": 51,
       "wordCount": 394,
-      "rarity": 10,
-      "pronunciation": 3.4,
+      "rarity": 9.7,
+      "pronunciation": 3.3,
       "vocab": 7,
       "tropeRarity": 1,
       "formulaicity": 4.9,
@@ -2439,10 +2439,10 @@
       "verseCount": 18,
       "wordCount": 320,
       "rarity": 1.5,
-      "pronunciation": 2.7,
+      "pronunciation": 2.3,
       "vocab": 2,
-      "tropeRarity": 9.9,
-      "formulaicity": 3.6,
+      "tropeRarity": 9.8,
+      "formulaicity": 3.8,
       "rareExamples": [
         {
           "word": "גְּבֽוּלְכֶֽם",
@@ -2484,10 +2484,10 @@
       "verseCount": 22,
       "wordCount": 353,
       "rarity": 1,
-      "pronunciation": 1.5,
+      "pronunciation": 1.3,
       "vocab": 1,
-      "tropeRarity": 6.7,
-      "formulaicity": 6.7,
+      "tropeRarity": 6.8,
+      "formulaicity": 6.8,
       "rareExamples": [
         {
           "word": "וַתִּשְׁלַם",
@@ -2528,11 +2528,11 @@
       ],
       "verseCount": 18,
       "wordCount": 370,
-      "rarity": 3.6,
-      "pronunciation": 9.5,
-      "vocab": 7,
+      "rarity": 3.5,
+      "pronunciation": 9.4,
+      "vocab": 6,
       "tropeRarity": 9.4,
-      "formulaicity": 8.4,
+      "formulaicity": 8.5,
       "rareExamples": [
         {
           "word": "מְצֹרָעִים",
@@ -2573,11 +2573,11 @@
       ],
       "verseCount": 9,
       "wordCount": 149,
-      "rarity": 4.9,
-      "pronunciation": 8.5,
+      "rarity": 5.1,
+      "pronunciation": 8.4,
       "vocab": 7,
-      "tropeRarity": 8.4,
-      "formulaicity": 3.6,
+      "tropeRarity": 8.2,
+      "formulaicity": 3.8,
       "rareExamples": [
         {
           "word": "כִבְנֵי",
@@ -2618,10 +2618,10 @@
       ],
       "verseCount": 17,
       "wordCount": 228,
-      "rarity": 7.3,
-      "pronunciation": 3.7,
+      "rarity": 7.4,
+      "pronunciation": 3.6,
       "vocab": 6,
-      "tropeRarity": 2.2,
+      "tropeRarity": 2.1,
       "formulaicity": 2.1,
       "rareExamples": [
         {
@@ -2663,11 +2663,11 @@
       ],
       "verseCount": 17,
       "wordCount": 209,
-      "rarity": 6.6,
-      "pronunciation": 4.2,
+      "rarity": 6.4,
+      "pronunciation": 4.1,
       "vocab": 5,
       "tropeRarity": 1.6,
-      "formulaicity": 9.5,
+      "formulaicity": 9.6,
       "rareExamples": [
         {
           "word": "כִּרְבִיבִים",
@@ -2714,11 +2714,11 @@
       ],
       "verseCount": 26,
       "wordCount": 381,
-      "rarity": 6.9,
-      "pronunciation": 6.4,
+      "rarity": 7,
+      "pronunciation": 6,
       "vocab": 7,
-      "tropeRarity": 3.7,
-      "formulaicity": 4.2,
+      "tropeRarity": 4.1,
+      "formulaicity": 4.3,
       "rareExamples": [
         {
           "word": "הַמּוֹלִיךְ",
@@ -2760,10 +2760,10 @@
       "verseCount": 23,
       "wordCount": 331,
       "rarity": 8.2,
-      "pronunciation": 4.8,
-      "vocab": 7,
-      "tropeRarity": 5.5,
-      "formulaicity": 2.8,
+      "pronunciation": 4.6,
+      "vocab": 6,
+      "tropeRarity": 5.7,
+      "formulaicity": 3,
       "rareExamples": [
         {
           "word": "שׂוֹשׂ",
@@ -2790,6 +2790,1192 @@
         }
       ],
       "rareTropeMarks": []
+    },
+    "chag:Chanukah: 2 Candles__DIASPORA": {
+      "parsha": "Chanukah Day 1",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Zechariah",
+          "start": "2:14",
+          "end": "4:7",
+          "verses": 21
+        }
+      ],
+      "verseCount": 21,
+      "wordCount": 316,
+      "rarity": 3.2,
+      "pronunciation": 5.4,
+      "vocab": 4,
+      "tropeRarity": 7.7,
+      "formulaicity": 4.5,
+      "rareExamples": [
+        {
+          "word": "וְנָחַל",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "נֵעוֹר",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "וְהַשָּׂטָן",
+          "occurrencesInCorpus": 1
+        }
+      ],
+      "hardToPronounceExamples": [
+        {
+          "word": "הֶֽעֱבַרְתִּי"
+        },
+        {
+          "word": "הַהוּא"
+        },
+        {
+          "word": "הֲלוֹא"
+        }
+      ],
+      "rareTropeMarks": [],
+      "chagId": "Chanukah: 2 Candles__DIASPORA"
+    },
+    "chag:Chanukah: 8th Day__DIASPORA": {
+      "parsha": "Chanukah Day 8",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "I Kings",
+          "start": "7:40",
+          "end": "7:50",
+          "verses": 11
+        }
+      ],
+      "verseCount": 11,
+      "wordCount": 169,
+      "rarity": 4.9,
+      "pronunciation": 7.9,
+      "vocab": 6,
+      "tropeRarity": 1.3,
+      "formulaicity": 9.9,
+      "rareExamples": [
+        {
+          "word": "הַכִּיֹּרוֹת",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "וְהַשְּׂבָכוֹת",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "הַשְּׂבָכוֹת",
+          "occurrencesInCorpus": 1
+        }
+      ],
+      "hardToPronounceExamples": [
+        {
+          "word": "הָאֲדָמָה"
+        },
+        {
+          "word": "הַמְּלָאכָה"
+        },
+        {
+          "word": "הָעַמּוּדִֽים"
+        }
+      ],
+      "rareTropeMarks": [],
+      "chagId": "Chanukah: 8th Day__DIASPORA"
+    },
+    "chag:Pesach I__DIASPORA": {
+      "parsha": "Pesach I",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Joshua",
+          "start": "3:5",
+          "end": "3:7",
+          "verses": 3
+        },
+        {
+          "book": "Joshua",
+          "start": "5:2",
+          "end": "6:1",
+          "verses": 15
+        },
+        {
+          "book": "Joshua",
+          "start": "6:27",
+          "end": "6:27",
+          "verses": 1
+        }
+      ],
+      "verseCount": 19,
+      "wordCount": 319,
+      "rarity": 1.7,
+      "pronunciation": 7.8,
+      "vocab": 5,
+      "tropeRarity": 6.5,
+      "formulaicity": 9.5,
+      "rareExamples": [
+        {
+          "word": "הָֽעֲרָלֽוֹת",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "מֻלִים",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "הַרְאוֹתָם",
+          "occurrencesInCorpus": 1
+        }
+      ],
+      "hardToPronounceExamples": [
+        {
+          "word": "הַכֹּֽהֲנִים"
+        },
+        {
+          "word": "בַּֽמַּֽחֲנֶה"
+        },
+        {
+          "word": "בְּאַרְבָּעָה"
+        }
+      ],
+      "rareTropeMarks": [],
+      "chagId": "Pesach I__DIASPORA"
+    },
+    "chag:Pesach II__DIASPORA": {
+      "parsha": "Pesach II",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "II Kings",
+          "start": "23:1",
+          "end": "23:9",
+          "verses": 9
+        },
+        {
+          "book": "II Kings",
+          "start": "23:21",
+          "end": "23:25",
+          "verses": 5
+        }
+      ],
+      "verseCount": 14,
+      "wordCount": 310,
+      "rarity": 2.3,
+      "pronunciation": 7,
+      "vocab": 5,
+      "tropeRarity": 9.7,
+      "formulaicity": 5.2,
+      "rareExamples": [
+        {
+          "word": "הָֽעֲשׂוּיִם",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "וְלָֽאֲשֵׁרָה",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "וַֽיִּשְׁרְפֵם",
+          "occurrencesInCorpus": 1
+        }
+      ],
+      "hardToPronounceExamples": [
+        {
+          "word": "וְהַכֹּֽהֲנִים"
+        },
+        {
+          "word": "הָֽעֲשׂוּיִם"
+        },
+        {
+          "word": "הָאֲשֵׁרָה"
+        }
+      ],
+      "rareTropeMarks": [],
+      "chagId": "Pesach II__DIASPORA"
+    },
+    "chag:Pesach Shabbat Chol ha-Moed__DIASPORA": {
+      "parsha": "Pesach Shabbat Chol ha-Moed",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Ezekiel",
+          "start": "37:1",
+          "end": "37:14",
+          "verses": 14
+        }
+      ],
+      "verseCount": 14,
+      "wordCount": 210,
+      "rarity": 4.3,
+      "pronunciation": 10,
+      "vocab": 7,
+      "tropeRarity": 9.3,
+      "formulaicity": 8.2,
+      "rareExamples": [
+        {
+          "word": "וְהֶֽעֱבִירַנִי",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "יְבֵשׁוֹת",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "הֲתִֽחְיֶינָה",
+          "occurrencesInCorpus": 1
+        }
+      ],
+      "hardToPronounceExamples": [
+        {
+          "word": "הֲתִֽחְיֶינָה"
+        },
+        {
+          "word": "וּבְהַֽעֲלוֹתִי"
+        },
+        {
+          "word": "וְהֶֽעֱבִירַנִי"
+        }
+      ],
+      "rareTropeMarks": [],
+      "chagId": "Pesach Shabbat Chol ha-Moed__DIASPORA"
+    },
+    "chag:Pesach VII__DIASPORA": {
+      "parsha": "Pesach VII",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "II Samuel",
+          "start": "22:1",
+          "end": "22:51",
+          "verses": 51
+        }
+      ],
+      "verseCount": 51,
+      "wordCount": 394,
+      "rarity": 9.7,
+      "pronunciation": 3.3,
+      "vocab": 7,
+      "tropeRarity": 1,
+      "formulaicity": 4.9,
+      "rareExamples": [
+        {
+          "word": "סַֽלְעִי",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "וּמְצֻדָתִי",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "וּמְפַלְטִי",
+          "occurrencesInCorpus": 1
+        }
+      ],
+      "hardToPronounceExamples": [
+        {
+          "word": "וַיִּֽתְגָּעֲשׁוּ"
+        },
+        {
+          "word": "אֱלֹהֵֽינוּ"
+        },
+        {
+          "word": "אֶחֱסֶה"
+        }
+      ],
+      "rareTropeMarks": [],
+      "chagId": "Pesach VII__DIASPORA"
+    },
+    "chag:Pesach VIII__DIASPORA": {
+      "parsha": "Pesach VIII",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Isaiah",
+          "start": "10:32",
+          "end": "12:6",
+          "verses": 25
+        }
+      ],
+      "verseCount": 25,
+      "wordCount": 315,
+      "rarity": 9.4,
+      "pronunciation": 6.7,
+      "vocab": 8,
+      "tropeRarity": 2.7,
+      "formulaicity": 3.5,
+      "rareExamples": [
+        {
+          "word": "יְנֹפֵף",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "מְסָעֵף",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "פֻּארָה",
+          "occurrencesInCorpus": 1
+        }
+      ],
+      "hardToPronounceExamples": [
+        {
+          "word": "וְהָֽאֱמוּנָה"
+        },
+        {
+          "word": "בְּמַֽעֲרָצָה"
+        },
+        {
+          "word": "וַֽהֲרִיחוֹ"
+        }
+      ],
+      "rareTropeMarks": [],
+      "chagId": "Pesach VIII__DIASPORA"
+    },
+    "chag:Rosh Hashana I__DIASPORA": {
+      "parsha": "Rosh Hashana I",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "I Samuel",
+          "start": "1:1",
+          "end": "2:10",
+          "verses": 38
+        }
+      ],
+      "verseCount": 38,
+      "wordCount": 539,
+      "rarity": 6.8,
+      "pronunciation": 4.9,
+      "vocab": 6,
+      "tropeRarity": 2.8,
+      "formulaicity": 7.9,
+      "rareExamples": [
+        {
+          "word": "הָרָמָתַיִם",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "צוֹפִים",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "אֱלִיהוּא",
+          "occurrencesInCorpus": 1
+        }
+      ],
+      "hardToPronounceExamples": [
+        {
+          "word": "אֱלִיהוּא"
+        },
+        {
+          "word": "הִשְׁאִלְתִּיהוּ"
+        },
+        {
+          "word": "לְהִֽשְׁתַּחֲוֹת"
+        }
+      ],
+      "rareTropeMarks": [],
+      "chagId": "Rosh Hashana I__DIASPORA"
+    },
+    "chag:Rosh Hashana II__DIASPORA": {
+      "parsha": "Rosh Hashana II",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Jeremiah",
+          "start": "31:2",
+          "end": "31:20",
+          "verses": 19
+        }
+      ],
+      "verseCount": 19,
+      "wordCount": 291,
+      "rarity": 7.6,
+      "pronunciation": 2.9,
+      "vocab": 5,
+      "tropeRarity": 8.9,
+      "formulaicity": 7.9,
+      "rareExamples": [
+        {
+          "word": "מְשַׁכְתִּיךְ",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "אֶבְנֵךְ",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "וְֽנִבְנֵית",
+          "occurrencesInCorpus": 1
+        }
+      ],
+      "hardToPronounceExamples": [
+        {
+          "word": "וּֽבְתַחֲנוּנִים"
+        },
+        {
+          "word": "שַֽׁעֲשׁוּעִים"
+        },
+        {
+          "word": "אֲרַֽחֲמֶנּוּ"
+        }
+      ],
+      "rareTropeMarks": [],
+      "chagId": "Rosh Hashana II__DIASPORA"
+    },
+    "chag:Shabbat HaChodesh__DIASPORA": {
+      "parsha": "Shabbat HaChodesh",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Ezekiel",
+          "start": "45:16",
+          "end": "46:18",
+          "verses": 28
+        }
+      ],
+      "verseCount": 28,
+      "wordCount": 435,
+      "rarity": 6.9,
+      "pronunciation": 9.3,
+      "vocab": 8,
+      "tropeRarity": 8.5,
+      "formulaicity": 6.7,
+      "rareExamples": [
+        {
+          "word": "הָֽעוֹלוֹת",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "וְהַנֵּסֶךְ",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "בַּֽחַגִּים",
+          "occurrencesInCorpus": 1
+        }
+      ],
+      "hardToPronounceExamples": [
+        {
+          "word": "וְהִֽשְׁתַּֽחֲוָה"
+        },
+        {
+          "word": "וְהִֽשְׁתַּֽחֲווּ"
+        },
+        {
+          "word": "הַמַּֽעֲשֶׂה"
+        }
+      ],
+      "rareTropeMarks": [],
+      "chagId": "Shabbat HaChodesh__DIASPORA"
+    },
+    "chag:Shabbat HaGadol__DIASPORA": {
+      "parsha": "Shabbat HaGadol",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Malachi",
+          "start": "3:4",
+          "end": "3:24",
+          "verses": 21
+        }
+      ],
+      "verseCount": 21,
+      "wordCount": 313,
+      "rarity": 5.3,
+      "pronunciation": 6.4,
+      "vocab": 6,
+      "tropeRarity": 7.9,
+      "formulaicity": 1.6,
+      "rareExamples": [
+        {
+          "word": "וּכְשָׁנִים",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "קַדְמֹֽנִיּֽוֹת",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "וְקָֽרַבְתִּי",
+          "occurrencesInCorpus": 1
+        }
+      ],
+      "hardToPronounceExamples": [
+        {
+          "word": "וּבַמְנָאֲפִים"
+        },
+        {
+          "word": "הָֽאֲדָמָה"
+        },
+        {
+          "word": "הֲיִקְבַּע"
+        }
+      ],
+      "rareTropeMarks": [],
+      "chagId": "Shabbat HaGadol__DIASPORA"
+    },
+    "chag:Shabbat Parah__DIASPORA": {
+      "parsha": "Shabbat Parah",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Ezekiel",
+          "start": "36:16",
+          "end": "36:38",
+          "verses": 23
+        }
+      ],
+      "verseCount": 23,
+      "wordCount": 316,
+      "rarity": 4.6,
+      "pronunciation": 9.8,
+      "vocab": 7,
+      "tropeRarity": 3.9,
+      "formulaicity": 1.5,
+      "rareExamples": [
+        {
+          "word": "בְּדַרְכָּם",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "וּבַֽעֲלִֽילוֹתָם",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "טִמְּאֽוּהָ",
+          "occurrencesInCorpus": 1
+        }
+      ],
+      "hardToPronounceExamples": [
+        {
+          "word": "וְהַנֶּֽהֱרָסוֹת"
+        },
+        {
+          "word": "וּבַֽעֲלִֽילוֹתָם"
+        },
+        {
+          "word": "הַנֶּֽהֱרָסוֹת"
+        }
+      ],
+      "rareTropeMarks": [],
+      "chagId": "Shabbat Parah__DIASPORA"
+    },
+    "chag:Shabbat Rosh Chodesh__DIASPORA": {
+      "parsha": "Shabbat Rosh Chodesh",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Isaiah",
+          "start": "66:1",
+          "end": "66:24",
+          "verses": 24
+        }
+      ],
+      "verseCount": 24,
+      "wordCount": 388,
+      "rarity": 6.6,
+      "pronunciation": 6.9,
+      "vocab": 7,
+      "tropeRarity": 4.9,
+      "formulaicity": 2.8,
+      "rareExamples": [
+        {
+          "word": "מְנֽוּחָתִֽי",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "זוֹבֵחַ",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "עוֹרֵֽף",
+          "occurrencesInCorpus": 1
+        }
+      ],
+      "hardToPronounceExamples": [
+        {
+          "word": "וְהַמִּֽטַּהֲרִים"
+        },
+        {
+          "word": "בְּתַֽעֲלֻֽלֵיהֶם"
+        },
+        {
+          "word": "תְּשָֽׁעֳשָֽׁעוּ"
+        }
+      ],
+      "rareTropeMarks": [],
+      "chagId": "Shabbat Rosh Chodesh__DIASPORA"
+    },
+    "chag:Shabbat Shekalim__DIASPORA": {
+      "parsha": "Shabbat Shekalim",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "II Kings",
+          "start": "12:1",
+          "end": "12:17",
+          "verses": 17
+        }
+      ],
+      "verseCount": 17,
+      "wordCount": 275,
+      "rarity": 3.9,
+      "pronunciation": 3.2,
+      "vocab": 4,
+      "tropeRarity": 3.8,
+      "formulaicity": 2.1,
+      "rareExamples": [
+        {
+          "word": "לְיֵהוּא",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "הוֹרָהוּ",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "לִיהוֹיָדָע",
+          "occurrencesInCorpus": 1
+        }
+      ],
+      "hardToPronounceExamples": [
+        {
+          "word": "הַכֹּהֲנִים"
+        },
+        {
+          "word": "הַכֹּֽהֲנִים"
+        },
+        {
+          "word": "וַיּוֹצִיאֻהוּ"
+        }
+      ],
+      "rareTropeMarks": [],
+      "chagId": "Shabbat Shekalim__DIASPORA"
+    },
+    "chag:Shabbat Shuva__DIASPORA": {
+      "parsha": "Shabbat Shuva",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Hosea",
+          "start": "14:2",
+          "end": "14:10",
+          "verses": 9
+        },
+        {
+          "book": "Micah",
+          "start": "7:18",
+          "end": "7:20",
+          "verses": 3
+        },
+        {
+          "book": "Joel",
+          "start": "2:15",
+          "end": "2:27",
+          "verses": 13
+        }
+      ],
+      "verseCount": 25,
+      "wordCount": 333,
+      "rarity": 7.9,
+      "pronunciation": 6.3,
+      "vocab": 7,
+      "tropeRarity": 3.5,
+      "formulaicity": 2.7,
+      "rareExamples": [
+        {
+          "word": "כָשַׁלְתָּ",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "בַּֽעֲוֹנֶֽךָ",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "וּנְשַׁלְּמָה",
+          "occurrencesInCorpus": 1
+        }
+      ],
+      "hardToPronounceExamples": [
+        {
+          "word": "אֱלֹֽהֵיהֶֽם"
+        },
+        {
+          "word": "הָאַֽחֲרוֹן"
+        },
+        {
+          "word": "אֱלֹהֵינוּ"
+        }
+      ],
+      "rareTropeMarks": [],
+      "chagId": "Shabbat Shuva__DIASPORA"
+    },
+    "chag:Shabbat Zachor__DIASPORA": {
+      "parsha": "Shabbat Zachor",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "I Samuel",
+          "start": "15:2",
+          "end": "15:34",
+          "verses": 33
+        }
+      ],
+      "verseCount": 33,
+      "wordCount": 491,
+      "rarity": 2.5,
+      "pronunciation": 8.1,
+      "vocab": 5,
+      "tropeRarity": 3.4,
+      "formulaicity": 8.7,
+      "rareExamples": [
+        {
+          "word": "בַּעֲלֹתוֹ",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "וְהַֽחֲרַמְתֶּם",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "מֵֽעֹלֵל",
+          "occurrencesInCorpus": 1
+        }
+      ],
+      "hardToPronounceExamples": [
+        {
+          "word": "וְהַחֲרַמְתָּה"
+        },
+        {
+          "word": "וְאֶֽשְׁתַּחֲוֶה"
+        },
+        {
+          "word": "וְהִֽשְׁתַּחֲוֵיתִי"
+        }
+      ],
+      "rareTropeMarks": [],
+      "chagId": "Shabbat Zachor__DIASPORA"
+    },
+    "chag:Shavuot__IL": {
+      "parsha": "Shavuot",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Ezekiel",
+          "start": "1:1",
+          "end": "1:28",
+          "verses": 28
+        },
+        {
+          "book": "Ezekiel",
+          "start": "3:12",
+          "end": "3:12",
+          "verses": 1
+        }
+      ],
+      "verseCount": 29,
+      "wordCount": 397,
+      "rarity": 8.9,
+      "pronunciation": 9.9,
+      "vocab": 9,
+      "tropeRarity": 6.6,
+      "formulaicity": 6.4,
+      "rareExamples": [
+        {
+          "word": "בָּֽרְבִיעִי",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "יֽוֹיָכִֽין",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "הַֽחַשְׁמַל",
+          "occurrencesInCorpus": 1
+        }
+      ],
+      "hardToPronounceExamples": [
+        {
+          "word": "אֲחוֹתָהּ"
+        },
+        {
+          "word": "וּמַֽעֲשֵׂיהֶם"
+        },
+        {
+          "word": "בַּֽחֲמִשָּׁה"
+        }
+      ],
+      "rareTropeMarks": [],
+      "chagId": "Shavuot__IL"
+    },
+    "chag:Shavuot II__DIASPORA": {
+      "parsha": "Shavuot II",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Habakkuk",
+          "start": "3:1",
+          "end": "3:19",
+          "verses": 19
+        }
+      ],
+      "verseCount": 19,
+      "wordCount": 216,
+      "rarity": 10,
+      "pronunciation": 2.8,
+      "vocab": 6,
+      "tropeRarity": 5.1,
+      "formulaicity": 1.7,
+      "rareExamples": [
+        {
+          "word": "לַֽחֲבַקּוּק",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "שִׁגְיֹנֽוֹת",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "פָּֽעָלְךָ",
+          "occurrencesInCorpus": 1
+        }
+      ],
+      "hardToPronounceExamples": [
+        {
+          "word": "אֶֽעֱלוֹזָה"
+        },
+        {
+          "word": "הֲבִנְהָרִים"
+        },
+        {
+          "word": "לַֽחֲבַקּוּק"
+        }
+      ],
+      "rareTropeMarks": [],
+      "chagId": "Shavuot II__DIASPORA"
+    },
+    "chag:Shmini Atzeret__DIASPORA": {
+      "parsha": "Shmini Atzeret",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "I Kings",
+          "start": "8:54",
+          "end": "8:66",
+          "verses": 13
+        }
+      ],
+      "verseCount": 13,
+      "wordCount": 240,
+      "rarity": 1.4,
+      "pronunciation": 4,
+      "vocab": 3,
+      "tropeRarity": 5.2,
+      "formulaicity": 2.6,
+      "rareExamples": [
+        {
+          "word": "וְהַתְּחִנָּה",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "מִכְּרֹעַ",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "פְּרֻשֹוֹת",
+          "occurrencesInCorpus": 1
+        }
+      ],
+      "hardToPronounceExamples": [
+        {
+          "word": "לְאָהֳלֵיהֶם"
+        },
+        {
+          "word": "הָאֱלֹהִים"
+        },
+        {
+          "word": "וְהַתְּחִנָּה"
+        }
+      ],
+      "rareTropeMarks": [],
+      "chagId": "Shmini Atzeret__DIASPORA"
+    },
+    "chag:Simchat Torah__DIASPORA": {
+      "parsha": "Simchat Torah",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Joshua",
+          "start": "1:1",
+          "end": "1:18",
+          "verses": 18
+        }
+      ],
+      "verseCount": 18,
+      "wordCount": 320,
+      "rarity": 1.5,
+      "pronunciation": 2.3,
+      "vocab": 2,
+      "tropeRarity": 9.8,
+      "formulaicity": 3.8,
+      "rareExamples": [
+        {
+          "word": "גְּבֽוּלְכֶֽם",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "אַרְפְּךָ",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "תַּנְחִיל",
+          "occurrencesInCorpus": 1
+        }
+      ],
+      "hardToPronounceExamples": [
+        {
+          "word": "הַמַּֽחֲנֶה"
+        },
+        {
+          "word": "אֱלֹֽהֵיכֶם"
+        },
+        {
+          "word": "אֱלֹהֵיכֶם"
+        }
+      ],
+      "rareTropeMarks": [],
+      "chagId": "Simchat Torah__DIASPORA"
+    },
+    "chag:Sukkot I__DIASPORA": {
+      "parsha": "Sukkot I",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Zechariah",
+          "start": "14:1",
+          "end": "14:21",
+          "verses": 21
+        }
+      ],
+      "verseCount": 21,
+      "wordCount": 366,
+      "rarity": 4.1,
+      "pronunciation": 8.9,
+      "vocab": 7,
+      "tropeRarity": 2.9,
+      "formulaicity": 7.4,
+      "rareExamples": [
+        {
+          "word": "שְׁלָלֵךְ",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "וְנִלְכְּדָה",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "וְנָשַׁסּוּ",
+          "occurrencesInCorpus": 1
+        }
+      ],
+      "hardToPronounceExamples": [
+        {
+          "word": "הָאַֽחֲרוֹן"
+        },
+        {
+          "word": "וְהֶחֱזִיקוּ"
+        },
+        {
+          "word": "לְהִֽשְׁתַּחֲוֹת"
+        }
+      ],
+      "rareTropeMarks": [],
+      "chagId": "Sukkot I__DIASPORA"
+    },
+    "chag:Sukkot II__DIASPORA": {
+      "parsha": "Sukkot II",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "I Kings",
+          "start": "8:2",
+          "end": "8:21",
+          "verses": 20
+        }
+      ],
+      "verseCount": 20,
+      "wordCount": 301,
+      "rarity": 1.3,
+      "pronunciation": 1.7,
+      "vocab": 2,
+      "tropeRarity": 6.7,
+      "formulaicity": 5.6,
+      "rareExamples": [
+        {
+          "word": "הָאֵֽתָנִים",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "יִמָּנוּ",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "וַיָּסֹכּוּ",
+          "occurrencesInCorpus": 1
+        }
+      ],
+      "hardToPronounceExamples": [
+        {
+          "word": "הַכֹּהֲנִים"
+        },
+        {
+          "word": "וַיִּקָּהֲלוּ"
+        },
+        {
+          "word": "וַֽיַּאֲרִכוּ"
+        }
+      ],
+      "rareTropeMarks": [],
+      "chagId": "Sukkot II__DIASPORA"
+    },
+    "chag:Sukkot Shabbat Chol ha-Moed__DIASPORA": {
+      "parsha": "Sukkot Shabbat Chol ha-Moed",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Ezekiel",
+          "start": "38:18",
+          "end": "39:16",
+          "verses": 22
+        }
+      ],
+      "verseCount": 22,
+      "wordCount": 333,
+      "rarity": 4.8,
+      "pronunciation": 7.5,
+      "vocab": 6,
+      "tropeRarity": 2.6,
+      "formulaicity": 3.2,
+      "rareExamples": [
+        {
+          "word": "וּבְקִנְאָתִי",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "הַמַּדְרֵגוֹת",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "וְגָפְרִית",
+          "occurrencesInCorpus": 1
+        }
+      ],
+      "hardToPronounceExamples": [
+        {
+          "word": "וְהַֽעֲלִיתִיךָ"
+        },
+        {
+          "word": "הָֽאֲדָמָה"
+        },
+        {
+          "word": "וַֽהֲבִֽאוֹתִךָ"
+        }
+      ],
+      "rareTropeMarks": [],
+      "chagId": "Sukkot Shabbat Chol ha-Moed__DIASPORA"
+    },
+    "chag:Tish'a B'Av__DIASPORA": {
+      "parsha": "Tish'a B'Av",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Jeremiah",
+          "start": "8:13",
+          "end": "9:23",
+          "verses": 34
+        }
+      ],
+      "verseCount": 34,
+      "wordCount": 484,
+      "rarity": 6.7,
+      "pronunciation": 4.5,
+      "vocab": 6,
+      "tropeRarity": 3.6,
+      "formulaicity": 8.4,
+      "rareExamples": [
+        {
+          "word": "אֲסִיפֵם",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "בַּגֶּפֶן",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "יַֽעַבְרֽוּם",
+          "occurrencesInCorpus": 1
+        }
+      ],
+      "hardToPronounceExamples": [
+        {
+          "word": "אַֽחֲרֵיהֶם"
+        },
+        {
+          "word": "אֱלֹהֵינוּ"
+        },
+        {
+          "word": "וַֽאֲנַחְנוּ"
+        }
+      ],
+      "rareTropeMarks": [],
+      "chagId": "Tish'a B'Av__DIASPORA"
+    },
+    "chag:Yom Kippur__DIASPORA": {
+      "parsha": "Yom Kippur",
+      "nusach": "ashkenazi",
+      "ref": [
+        {
+          "book": "Isaiah",
+          "start": "57:14",
+          "end": "58:14",
+          "verses": 22
+        }
+      ],
+      "verseCount": 22,
+      "wordCount": 315,
+      "rarity": 9.9,
+      "pronunciation": 2.6,
+      "vocab": 6,
+      "tropeRarity": 8.4,
+      "formulaicity": 6,
+      "rareExamples": [
+        {
+          "word": "אֶשְׁכּוֹן",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "שְׁפָלִים",
+          "occurrencesInCorpus": 1
+        },
+        {
+          "word": "נִדְכָּאִֽים",
+          "occurrencesInCorpus": 1
+        }
+      ],
+      "hardToPronounceExamples": [
+        {
+          "word": "וְהַֽאֲכַלְתִּיךָ"
+        },
+        {
+          "word": "וּלְהַֽחֲיוֹת"
+        },
+        {
+          "word": "וְאֶרְפָּאֵהוּ"
+        }
+      ],
+      "rareTropeMarks": [],
+      "chagId": "Yom Kippur__DIASPORA"
     }
   }
 }

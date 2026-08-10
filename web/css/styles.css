@@ -400,6 +400,18 @@ body { min-height: 100vh; display: flex; flex-direction: column; }
 .log-row:last-child { border-bottom: none; }
 .log-parsha { font-weight: 600; }
 
+.log-group { padding: 9px 0; border-bottom: 1px solid var(--card-border); }
+.log-group:last-child { border-bottom: none; }
+.log-group .log-parsha { margin-bottom: 4px; }
+.log-group-aliyah {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 4px 0 4px 10px;
+  font-size: 0.9rem;
+}
+
 .howitworks-section p { line-height: 1.6; margin: 0 0 10px; }
 .howitworks-section p:last-child { margin-bottom: 0; }
 .howitworks-section .plain-list li { line-height: 1.6; margin-bottom: 6px; }

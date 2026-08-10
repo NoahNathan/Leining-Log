@@ -1,4 +1,4 @@
-import { el, citeRange, displayParshaName, scoreColor, scoreColorBg, scoreLabel, formatDateLong } from '../util.js';
+import { el, citeRange, displayParshaName, scoreColor, scoreColorBg, scoreLabel, formatDateLong, gregorianToHebrewYear, hebrewToGregorianYear } from '../util.js';
 import { contentTags } from '../contentTags.js';
 import { isConfigured, getCurrentUser } from '../auth.js';
 import { getMyLeiningLog, addLeiningLogEntry, removeLeiningLogEntry, getParshaDetail, getChagById, getAliyahSummaries } from '../data.js';
@@ -45,6 +45,20 @@ function wholeReadingTikkunLink(aliyot) {
 
 function logKeyStr(k) { return `${k.parshaId}::${k.aliyahKey}`; }
 
+// The year(s) recorded on a log entry, for a hover tooltip -- filling in
+// whichever one is missing via the same Hebrew<->Gregorian correspondence
+// used on the My Leining log form, so old entries that only ever recorded
+// one still show both.
+function yearsTooltip(entry) {
+  if (!entry) return '';
+  let heb = entry.yearHebrew || null;
+  let greg = entry.yearGregorian || null;
+  if (greg && !heb) heb = String(gregorianToHebrewYear(greg));
+  else if (heb && !greg && /^\d+$/.test(heb)) greg = hebrewToGregorianYear(Number(heb));
+  const years = [heb, greg].filter(Boolean).join(' / ');
+  return years ? ` (${years})` : '';
+}
+
 // A toggle that logs/un-logs a reading slot as leined, right from wherever
 // it's shown -- This Week, Search, or a permalink -- not just from the My
 // Leining tab. `keys` is normally one (parshaId, aliyahKey) pair, but can be
@@ -55,37 +69,68 @@ function logKeyStr(k) { return `${k.parshaId}::${k.aliyahKey}`; }
 // Chodesh's OWN identity instead of this parsha's, so it's not falsely
 // recorded as this parsha's real aliyah 7 (see applySpecialReading and
 // computeTorahProgress -- this is what keeps "% of Torah learned" honest).
-// `logIndex` is a shared Map(`${parshaId}::${aliyahKey}` -> log row id)
-// across the WHOLE card (every reading a log row could belong to, not just
-// this one), kept in sync across every button so state stays consistent.
-function quickLogButton(userId, keys, logIndex) {
+// `logIndex` is a shared Map(`${parshaId}::${aliyahKey}` -> {id, yearHebrew,
+// yearGregorian}) across the WHOLE card (every reading a log row could
+// belong to, not just this one), kept in sync across every button so state
+// stays consistent. `subscribers` collects every button's own update() on
+// this card so a change from ANY button (e.g. removing a whole-parsha entry
+// that was covering several per-aliyah buttons too) refreshes all of them,
+// not just the one that was clicked.
+function quickLogButton(userId, keys, logIndex, subscribers = []) {
   const btn = el('button', { type: 'button' });
-  function isLogged() { return keys.every((k) => logIndex.has(logKeyStr(k))); }
+  // Which logIndex entry actually accounts for this key being logged -- the
+  // exact key itself, or (for anything other than an 'ALL' key) a same-
+  // reading 'ALL' entry, since a whole-parsha/whole-chag log covers every
+  // one of its aliyot too.
+  function coveringKey(k) {
+    const exact = logKeyStr(k);
+    if (logIndex.has(exact)) return exact;
+    if (k.aliyahKey === 'ALL') return null;
+    const whole = logKeyStr({ parshaId: k.parshaId, aliyahKey: 'ALL' });
+    return logIndex.has(whole) ? whole : null;
+  }
+  function isLogged() { return keys.every((k) => coveringKey(k) !== null); }
   function update() {
     const logged = isLogged();
     btn.textContent = logged ? '✓ Leined' : 'Mark leined';
     btn.className = `quicklog-btn${logged ? ' quicklog-btn-active' : ''}`;
-    btn.title = logged ? 'Marked as leined -- click to remove' : "Mark this as leined";
+    if (!logged) {
+      btn.title = 'Mark this as leined';
+      return;
+    }
+    const firstKey = keys[0];
+    const coveredBy = coveringKey(firstKey);
+    const years = yearsTooltip(logIndex.get(coveredBy));
+    const viaWhole = firstKey.aliyahKey !== 'ALL' && coveredBy === logKeyStr({ parshaId: firstKey.parshaId, aliyahKey: 'ALL' });
+    btn.title = viaWhole
+      ? `Logged as part of the whole reading${years} -- click to un-mark the whole reading`
+      : `Marked as leined${years} -- click to remove`;
   }
+  subscribers.push(update);
   btn.addEventListener('click', async (e) => {
     e.stopPropagation();
     btn.disabled = true;
     try {
       if (isLogged()) {
-        await Promise.all(keys.map((k) => removeLeiningLogEntry(logIndex.get(logKeyStr(k)))));
-        for (const k of keys) logIndex.delete(logKeyStr(k));
+        // Remove whichever entries actually cover these keys -- may be the
+        // exact per-aliyah rows, or a whole-parsha/chag 'ALL' row (removing
+        // that correctly un-marks every aliyah it was covering).
+        const toRemove = new Set(keys.map(coveringKey).filter(Boolean));
+        await Promise.all([...toRemove].map((k) => removeLeiningLogEntry(logIndex.get(k).id)));
+        for (const k of toRemove) logIndex.delete(k);
       } else {
         for (const k of keys) {
-          if (logIndex.has(logKeyStr(k))) continue; // already logged via another button on this page
+          const strKey = logKeyStr(k);
+          if (logIndex.has(strKey)) continue; // already logged via another button on this page
           const id = await addLeiningLogEntry(userId, { parshaId: k.parshaId, aliyahKey: k.aliyahKey });
-          logIndex.set(logKeyStr(k), id);
+          logIndex.set(strKey, { id, yearHebrew: null, yearGregorian: null });
         }
       }
     } catch (err) {
       console.error(err);
     }
     btn.disabled = false;
-    update();
+    subscribers.forEach((fn) => fn());
   });
   update();
   return btn;
@@ -129,11 +174,19 @@ async function attachQuickLog(card, { readingId, aliyot, maftir, overlaps, overl
   // Indexed by EVERY reading a log row could belong to, not just readingId
   // -- a content-overridden slot logs under a different reading's identity
   // entirely (see quickLogButton above), so its button needs to see that
-  // reading's log rows too, not only this one's.
-  const logIndex = new Map(log.map((e) => [logKeyStr({ parshaId: e.parsha_id, aliyahKey: e.aliyah_key }), e.id]));
+  // reading's log rows too, not only this one's. Each value carries the
+  // recorded year(s) too, for the "logged as leined" tooltip.
+  const logIndex = new Map(log.map((e) => [
+    logKeyStr({ parshaId: e.parsha_id, aliyahKey: e.aliyah_key }),
+    { id: e.id, yearHebrew: e.year_hebrew, yearGregorian: e.year_gregorian },
+  ]));
+  // Shared across every button on this card so marking/un-marking one (e.g.
+  // a whole-parsha entry that also covers several per-aliyah buttons) keeps
+  // every other button's displayed state in sync without a full re-render.
+  const subscribers = [];
 
   const actions = card.querySelector('.subcard-actions');
-  if (actions) actions.append(quickLogButton(user.id, [{ parshaId: readingId, aliyahKey: 'ALL' }], logIndex));
+  if (actions) actions.append(quickLogButton(user.id, [{ parshaId: readingId, aliyahKey: 'ALL' }], logIndex, subscribers));
 
   for (const a of aliyot || []) {
     const row = card.querySelector(`.aliyah-row[data-aliyah-key="${a.aliyah}"]`);
@@ -146,7 +199,7 @@ async function attachQuickLog(card, { readingId, aliyot, maftir, overlaps, overl
     const keys = a.sourceChagId
       ? [{ parshaId: a.sourceChagId, aliyahKey: a.sourceAliyahKey }]
       : (a.mergedFrom || [String(a.aliyah)]).map((k) => ({ parshaId: readingId, aliyahKey: k }));
-    if (cell) cell.append(quickLogButton(user.id, keys, logIndex));
+    if (cell) cell.append(quickLogButton(user.id, keys, logIndex, subscribers));
     // Redundant to point out "you already know this" on an aliyah they've
     // logged directly -- the ✓ Leined button already says so.
     if (overlaps && !keys.every((k) => logIndex.has(logKeyStr(k)))) {
@@ -160,7 +213,7 @@ async function attachQuickLog(card, { readingId, aliyot, maftir, overlaps, overl
     const keys = maftir.sourceChagId
       ? [{ parshaId: maftir.sourceChagId, aliyahKey: maftir.sourceAliyahKey }]
       : [{ parshaId: readingId, aliyahKey: 'M' }];
-    if (line) line.append(quickLogButton(user.id, keys, logIndex));
+    if (line) line.append(quickLogButton(user.id, keys, logIndex, subscribers));
     if (overlaps && !keys.every((k) => logIndex.has(logKeyStr(k)))) {
       const note = alreadyKnownNote(overlaps.M, overlapDirection, log);
       if (note && line) line.append(el('p', { class: 'aliyah-summary muted small already-known-note' }, note));

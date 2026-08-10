@@ -24,6 +24,18 @@ export function displayParshaName(id) {
   return id.replace(/-/g, ' – ');
 }
 
+// A Hebrew year runs Rosh Hashanah (~September) to the next Rosh Hashanah,
+// so a bare Gregorian year (no month/day, which is all this app stores)
+// doesn't map to a single Hebrew year -- but the Jan-Sept portion, which is
+// most of any given Gregorian year, falls in Gregorian+3760, so that's the
+// convention used here (e.g. 2026 -> 5786).
+export function gregorianToHebrewYear(gregorianYear) {
+  return gregorianYear + 3760;
+}
+export function hebrewToGregorianYear(hebrewYear) {
+  return hebrewYear - 3760;
+}
+
 // score 0-10 -> a color on a green(easy) -> amber -> red(hard) scale
 export function scoreColor(score) {
   const t = Math.max(0, Math.min(10, score)) / 10;

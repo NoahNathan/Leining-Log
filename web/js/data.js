@@ -76,6 +76,13 @@ export async function getHaftarahLengthRecords() {
   return d.records || {};
 }
 
+// Which aliyot/maftirim share real verse text with a chag/fast/Rosh-
+// Chodesh/special-Shabbat reading -- a static content fact (see
+// gen_reading_overlaps.mjs), independent of any specific calendar date.
+export async function getReadingOverlaps() {
+  return loadJSON(DATA + 'reading-overlaps.json');
+}
+
 export async function getCalendarIndex() {
   return loadJSON(DATA + 'calendar-100y/index.json');
 }
@@ -120,7 +127,15 @@ export async function getParshaDetail(id) {
   const haftarahScore = idx.haftarahScoreById.get(id) || null;
   const summaries = await getAliyahSummaries();
   const haftarahLengthRecords = await getHaftarahLengthRecords();
-  return { parsha, haftarah, difficulty, haftarahScore, summaries, haftarahLengthRecords };
+  const allOverlaps = await getReadingOverlaps();
+  // Combined (double) parshiot aren't in reading-overlaps.json (see
+  // gen_reading_overlaps.mjs) -- overlapsByAliyah is simply empty for them.
+  const overlapsByAliyah = {};
+  for (const key of ['1', '2', '3', '4', '5', '6', '7', 'M']) {
+    const hit = allOverlaps.byParshaAliyah[`${id}:${key}`];
+    if (hit) overlapsByAliyah[key] = hit;
+  }
+  return { parsha, haftarah, difficulty, haftarahScore, summaries, haftarahLengthRecords, overlapsByAliyah };
 }
 
 export async function listAllParshiotForSearch() {
@@ -209,52 +224,117 @@ async function getChagHaftarahScoreIndex() {
 }
 
 export async function getChagById(chagId) {
-  const [chagim, diffIdx, haftIdx] = await Promise.all([getChagim(), getChagDifficultyIndex(), getChagHaftarahScoreIndex()]);
+  const [chagim, diffIdx, haftIdx, allOverlaps] = await Promise.all([
+    getChagim(), getChagDifficultyIndex(), getChagHaftarahScoreIndex(), getReadingOverlaps(),
+  ]);
   const chag = chagim.find((c) => c.id === chagId) || null;
   if (!chag) return null;
   const difficulty = diffIdx.get(chagId) || null;
   const haftarahScore = haftIdx.get(chagId) || null;
-  return { ...chag, difficulty, haftarahScore };
+  const overlapsByAliyah = {};
+  for (const key of [...(chag.aliyot || []).map((a) => String(a.aliyah)), ...(chag.maftir ? ['M'] : [])]) {
+    const hit = allOverlaps.byChagAliyah[`${chagId}:${key}`];
+    if (hit) overlapsByAliyah[key] = hit;
+  }
+  return { ...chag, difficulty, haftarahScore, overlapsByAliyah };
+}
+
+// Verse count per chapter for the 5 Torah books (see gen_book_chapters.mjs),
+// used to convert a 'C:V' reference into a flat sequential verse index for
+// exact interval math -- see computeTorahProgress below.
+export async function getBookChapters() {
+  const d = await loadJSON(DATA + 'book-chapters.json');
+  return d.books;
+}
+function verseIndex(chapters, ref) {
+  const [ch, v] = ref.split(':').map(Number);
+  let idx = 0;
+  for (let c = 1; c < ch; c++) idx += chapters[String(c)] || 0;
+  return idx + v;
+}
+// Sorts and merges overlapping/adjacent [start, end] verse-index ranges so
+// a verse counted via two different paths (e.g. a parsha's own aliyah AND
+// an overlapping chag reading -- Pinchas's aliyah 5 and every Rosh Chodesh
+// reading are the literal same Numbers 28:1-15) is only ever counted once.
+function mergeIntervals(intervals) {
+  if (!intervals.length) return [];
+  const sorted = [...intervals].sort((a, b) => a[0] - b[0]);
+  const merged = [sorted[0].slice()];
+  for (let i = 1; i < sorted.length; i++) {
+    const last = merged[merged.length - 1];
+    const [s, e] = sorted[i];
+    if (s <= last[1] + 1) last[1] = Math.max(last[1], e);
+    else merged.push([s, e]);
+  }
+  return merged;
 }
 
 // ---------- leining-log progress ("% of Torah learned") ----------
-// Computed entirely client-side from real per-aliyah verse counts already
-// in parshiot.json -- the DB only needs to store which (parsha, aliyah)
-// pairs a user has logged, not any verse-count math.
+// Computed entirely client-side from real per-aliyah verse ranges already in
+// parshiot.json/chagim.json -- the DB only needs to store which (reading,
+// aliyah) pairs a user has logged, not any verse-count math.
+//
+// A chag/fast/Rosh-Chodesh reading's Torah content (its 'aliyot'/'maftir' --
+// never its haftarah, which is Nevi'im, not Torah) counts toward "% of Torah
+// learned" exactly like a parsha aliyah does, since it genuinely is Torah
+// text someone read. The two paths can reach the SAME verses though (see
+// gen_reading_overlaps.mjs) -- logging both this parsha's own aliyah 7 on
+// one week AND a Rosh Chodesh reading covering the same Numbers 28:9-15 on
+// another must not count those verses twice. Verse-interval union math
+// (mergeIntervals, above) is what makes that exact rather than a guess.
 export async function computeTorahProgress(logEntries) {
-  const parshiot = await getParshiot();
+  const [parshiot, chagim, bookChapters] = await Promise.all([getParshiot(), getChagim(), getBookChapters()]);
   const byId = new Map(parshiot.map((p) => [p.id, p]));
+  const chagById = new Map(chagim.map((c) => [c.id, c]));
   const totalVerses = parshiot.reduce((s, p) => s + p.totalVerses, 0);
   const books = ['Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy'];
-  const byBook = Object.fromEntries(books.map((b) => [b, { learned: 0, total: 0 }]));
+  const byBook = Object.fromEntries(books.map((b) => [b, { learned: 0, total: 0, intervals: [] }]));
   for (const p of parshiot) byBook[p.book].total += p.totalVerses;
 
-  // Whole-parsha entries subsume any specific-aliyah entries for that same
-  // parsha (no double counting); otherwise sum the distinct aliyot logged.
-  const wholeParshaIds = new Set(logEntries.filter((e) => e.aliyah_key === 'ALL').map((e) => e.parsha_id));
-  const loggedAliyot = new Map(); // parshaId -> Set of aliyah_key
+  function addRange(book, start, end) {
+    const chapters = bookChapters[book];
+    if (!chapters) return; // a haftarah's book -- never Torah content, never counted
+    byBook[book].intervals.push([verseIndex(chapters, start), verseIndex(chapters, end)]);
+  }
+
+  // Whole-reading entries subsume any specific-aliyah entries for that same
+  // reading (no double counting); otherwise sum the distinct aliyot logged.
+  const wholeParshaIds = new Set(logEntries.filter((e) => e.aliyah_key === 'ALL' && byId.has(e.parsha_id)).map((e) => e.parsha_id));
+  const wholeChagIds = new Set(logEntries.filter((e) => e.aliyah_key === 'ALL' && chagById.has(e.parsha_id)).map((e) => e.parsha_id));
+
+  for (const parshaId of wholeParshaIds) {
+    for (const a of byId.get(parshaId).aliyot) addRange(a.book, a.start, a.end);
+  }
+  for (const chagId of wholeChagIds) {
+    const c = chagById.get(chagId);
+    for (const a of (c.aliyot || [])) addRange(a.book, a.start, a.end);
+    if (c.maftir) addRange(c.maftir.book, c.maftir.start, c.maftir.end);
+  }
   for (const e of logEntries) {
-    if (e.aliyah_key === 'ALL' || wholeParshaIds.has(e.parsha_id)) continue;
-    if (!loggedAliyot.has(e.parsha_id)) loggedAliyot.set(e.parsha_id, new Set());
-    loggedAliyot.get(e.parsha_id).add(e.aliyah_key);
+    if (e.aliyah_key === 'ALL') continue;
+    const p = byId.get(e.parsha_id);
+    if (p) {
+      if (wholeParshaIds.has(e.parsha_id)) continue;
+      const a = p.aliyot.find((a) => String(a.aliyah) === e.aliyah_key);
+      if (a) addRange(a.book, a.start, a.end);
+      continue;
+    }
+    const c = chagById.get(e.parsha_id);
+    if (!c || wholeChagIds.has(e.parsha_id)) continue;
+    if (e.aliyah_key === 'M') {
+      if (c.maftir) addRange(c.maftir.book, c.maftir.start, c.maftir.end);
+    } else {
+      const a = (c.aliyot || []).find((a) => String(a.aliyah) === e.aliyah_key);
+      if (a) addRange(a.book, a.start, a.end);
+    }
   }
 
   let learnedVerses = 0;
-  for (const parshaId of wholeParshaIds) {
-    const p = byId.get(parshaId);
-    if (!p) continue;
-    learnedVerses += p.totalVerses;
-    byBook[p.book].learned += p.totalVerses;
-  }
-  for (const [parshaId, keys] of loggedAliyot) {
-    const p = byId.get(parshaId);
-    if (!p) continue;
-    for (const key of keys) {
-      const a = p.aliyot.find((a) => String(a.aliyah) === key);
-      if (!a) continue;
-      learnedVerses += a.verses;
-      byBook[p.book].learned += a.verses;
-    }
+  for (const book of books) {
+    const count = mergeIntervals(byBook[book].intervals).reduce((s, [a, b]) => s + (b - a + 1), 0);
+    byBook[book].learned = count;
+    delete byBook[book].intervals;
+    learnedVerses += count;
   }
 
   return {

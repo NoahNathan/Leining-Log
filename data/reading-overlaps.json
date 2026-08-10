@@ -1,0 +1,8529 @@
+{
+  "description": "Which aliyot/maftirim share real verse text with a chag/fast/Rosh-Chodesh/special-Shabbat reading, independent of any specific calendar date (contrast with a calendar row's specialReading in calendar-100y/, which is about what actually gets substituted on one particular week). 'kind' is 'full' when one range is entirely contained in the other (either direction) or 'partial' when they merely share some verses. byParshaAliyah is keyed '<parshaId>:<aliyahKey>' (aliyahKey is a number or 'M'), each entry a deduplicated-by-name list of {name, kind, book, start, end, refs} -- diaspora/israel copies of the same chag reading collapse to one entry since the text is identical, and the 12 individual Rosh Chodesh months + Shabbat Rosh Chodesh collapse to one 'Rosh Chodesh (every month)' entry when they all show up together (they always do, since every month reads the identical Numbers 28:9-15 musaf text). 'refs' is every (chagId, aliyahKey) pair the display name was actually sourced from -- e.g. both diaspora and israel copies, or (for the Rosh Chodesh collapse) all 26 region x month combinations -- so a client checking 'has this user already logged this via a chag' can match against their leining_log rows directly without needing its own name -> id lookup. byChagAliyah is keyed '<chagId>:<aliyahKey>' (region-specific, since a chag's own page is looked up by its exact id, and NOT Rosh-Chodesh-collapsed), each entry {parshaId, aliyahKey, kind, book, start, end} -- already precise enough to match a leining_log row directly, no refs needed. Computed with exact verse-index interval math (book-chapters.json), not string matching.",
+  "generatedAt": "2026-08-10T06:30:10.901Z",
+  "parshaAliyahCount": 66,
+  "chagAliyahCount": 457,
+  "byParshaAliyah": {
+    "Bereshit:1": [
+      {
+        "name": "Simchat Torah",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "1:1",
+        "end": "2:3",
+        "refs": [
+          {
+            "chagId": "Simchat Torah__DIASPORA",
+            "aliyahKey": "7"
+          }
+        ]
+      }
+    ],
+    "Vayera:4": [
+      {
+        "name": "Rosh Hashana I",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "21:1",
+        "end": "21:4",
+        "refs": [
+          {
+            "chagId": "Rosh Hashana I__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Hashana I__IL",
+            "aliyahKey": "1"
+          }
+        ]
+      }
+    ],
+    "Vayera:5": [
+      {
+        "name": "Rosh Hashana I",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "21:5",
+        "end": "21:8",
+        "refs": [
+          {
+            "chagId": "Rosh Hashana I__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Hashana I__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Hashana I__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Hashana I__DIASPORA",
+            "aliyahKey": "5"
+          },
+          {
+            "chagId": "Rosh Hashana I__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Hashana I__IL",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Hashana I__IL",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Hashana I__IL",
+            "aliyahKey": "5"
+          }
+        ]
+      }
+    ],
+    "Vayera:6": [
+      {
+        "name": "Rosh Hashana I",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "21:22",
+        "end": "21:27",
+        "refs": [
+          {
+            "chagId": "Rosh Hashana I__DIASPORA",
+            "aliyahKey": "6"
+          },
+          {
+            "chagId": "Rosh Hashana I__DIASPORA",
+            "aliyahKey": "7"
+          },
+          {
+            "chagId": "Rosh Hashana I__IL",
+            "aliyahKey": "6"
+          },
+          {
+            "chagId": "Rosh Hashana I__IL",
+            "aliyahKey": "7"
+          }
+        ]
+      }
+    ],
+    "Vayera:7": [
+      {
+        "name": "Rosh Hashana II",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "22:1",
+        "end": "22:3",
+        "refs": [
+          {
+            "chagId": "Rosh Hashana II__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Hashana II__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Hashana II__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Hashana II__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Hashana II__DIASPORA",
+            "aliyahKey": "5"
+          },
+          {
+            "chagId": "Rosh Hashana II__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Hashana II__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Hashana II__IL",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Hashana II__IL",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Hashana II__IL",
+            "aliyahKey": "5"
+          }
+        ]
+      }
+    ],
+    "Vayera:M": [
+      {
+        "name": "Rosh Hashana II",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "22:20",
+        "end": "22:24",
+        "refs": [
+          {
+            "chagId": "Rosh Hashana II__DIASPORA",
+            "aliyahKey": "5"
+          },
+          {
+            "chagId": "Rosh Hashana II__IL",
+            "aliyahKey": "5"
+          }
+        ]
+      }
+    ],
+    "Bo:4": [
+      {
+        "name": "Shabbat HaChodesh",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "12:1",
+        "end": "12:20",
+        "refs": [
+          {
+            "chagId": "Shabbat HaChodesh__DIASPORA",
+            "aliyahKey": "M"
+          },
+          {
+            "chagId": "Shabbat HaChodesh__IL",
+            "aliyahKey": "M"
+          }
+        ]
+      }
+    ],
+    "Bo:5": [
+      {
+        "name": "Pesach I",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "12:21",
+        "end": "12:24",
+        "refs": [
+          {
+            "chagId": "Pesach I__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Pesach I__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Pesach I__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Pesach I__IL",
+            "aliyahKey": "2"
+          }
+        ]
+      }
+    ],
+    "Bo:6": [
+      {
+        "name": "Pesach I",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "12:29",
+        "end": "12:36",
+        "refs": [
+          {
+            "chagId": "Pesach I__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Pesach I__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Pesach I__DIASPORA",
+            "aliyahKey": "5"
+          },
+          {
+            "chagId": "Pesach I__IL",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Pesach I__IL",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Pesach I__IL",
+            "aliyahKey": "5"
+          }
+        ]
+      }
+    ],
+    "Bo:7": [
+      {
+        "name": "Pesach Chol ha-Moed Day 1",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "13:1",
+        "end": "13:4",
+        "refs": [
+          {
+            "chagId": "Pesach III (CH''M)__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Pesach III (CH''M)__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Pesach III (CH''M)__DIASPORA",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Pesach Chol ha-Moed Day 2",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "13:1",
+        "end": "13:4",
+        "refs": [
+          {
+            "chagId": "Pesach IV (CH''M)__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Pesach IV (CH''M)__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Pesach IV (CH''M)__DIASPORA",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Pesach III (CH''M)",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "13:1",
+        "end": "13:4",
+        "refs": [
+          {
+            "chagId": "Pesach III (CH''M)__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Pesach III (CH''M)__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Pesach III (CH''M)__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      }
+    ],
+    "Bo:M": [
+      {
+        "name": "Pesach Chol ha-Moed Day 1",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "13:11",
+        "end": "13:16",
+        "refs": [
+          {
+            "chagId": "Pesach III (CH''M)__DIASPORA",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Pesach Chol ha-Moed Day 2",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "13:11",
+        "end": "13:16",
+        "refs": [
+          {
+            "chagId": "Pesach IV (CH''M)__DIASPORA",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Pesach III (CH''M)",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "13:11",
+        "end": "13:16",
+        "refs": [
+          {
+            "chagId": "Pesach III (CH''M)__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      }
+    ],
+    "Beshalach:1": [
+      {
+        "name": "Pesach VII",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "13:17",
+        "end": "13:22",
+        "refs": [
+          {
+            "chagId": "Pesach VII__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Pesach VII__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Pesach VII__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Pesach VII__IL",
+            "aliyahKey": "2"
+          }
+        ]
+      }
+    ],
+    "Beshalach:2": [
+      {
+        "name": "Pesach VII",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "14:9",
+        "end": "14:14",
+        "refs": [
+          {
+            "chagId": "Pesach VII__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Pesach VII__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      }
+    ],
+    "Beshalach:3": [
+      {
+        "name": "Pesach VII",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "14:15",
+        "end": "14:25",
+        "refs": [
+          {
+            "chagId": "Pesach VII__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Pesach VII__IL",
+            "aliyahKey": "4"
+          }
+        ]
+      }
+    ],
+    "Beshalach:4": [
+      {
+        "name": "Pesach VII",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "14:26",
+        "end": "15:26",
+        "refs": [
+          {
+            "chagId": "Pesach VII__DIASPORA",
+            "aliyahKey": "5"
+          },
+          {
+            "chagId": "Pesach VII__IL",
+            "aliyahKey": "5"
+          }
+        ]
+      }
+    ],
+    "Beshalach:7": [
+      {
+        "name": "Purim",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "17:8",
+        "end": "17:10",
+        "refs": [
+          {
+            "chagId": "Purim__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Purim__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Purim__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Purim__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Purim__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Purim__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Shushan Purim",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "17:8",
+        "end": "17:10",
+        "refs": [
+          {
+            "chagId": "Shushan Purim__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Shushan Purim__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Shushan Purim__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      }
+    ],
+    "Beshalach:M": [
+      {
+        "name": "Purim",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "17:14",
+        "end": "17:16",
+        "refs": [
+          {
+            "chagId": "Purim__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Purim__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Shushan Purim",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "17:14",
+        "end": "17:16",
+        "refs": [
+          {
+            "chagId": "Shushan Purim__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      }
+    ],
+    "Yitro:4": [
+      {
+        "name": "Shavuot",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "19:1",
+        "end": "19:6",
+        "refs": [
+          {
+            "chagId": "Shavuot__IL",
+            "aliyahKey": "1"
+          }
+        ]
+      },
+      {
+        "name": "Shavuot I",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "19:1",
+        "end": "19:6",
+        "refs": [
+          {
+            "chagId": "Shavuot I__DIASPORA",
+            "aliyahKey": "1"
+          }
+        ]
+      }
+    ],
+    "Yitro:5": [
+      {
+        "name": "Shavuot",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "19:7",
+        "end": "19:13",
+        "refs": [
+          {
+            "chagId": "Shavuot__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Shavuot__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Shavuot I",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "19:7",
+        "end": "19:13",
+        "refs": [
+          {
+            "chagId": "Shavuot I__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Shavuot I__DIASPORA",
+            "aliyahKey": "3"
+          }
+        ]
+      }
+    ],
+    "Yitro:6": [
+      {
+        "name": "Shavuot",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "19:20",
+        "end": "20:14",
+        "refs": [
+          {
+            "chagId": "Shavuot__IL",
+            "aliyahKey": "4"
+          }
+        ]
+      },
+      {
+        "name": "Shavuot I",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "19:20",
+        "end": "20:14",
+        "refs": [
+          {
+            "chagId": "Shavuot I__DIASPORA",
+            "aliyahKey": "4"
+          }
+        ]
+      }
+    ],
+    "Yitro:7": [
+      {
+        "name": "Shavuot",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "20:15",
+        "end": "20:23",
+        "refs": [
+          {
+            "chagId": "Shavuot__IL",
+            "aliyahKey": "5"
+          }
+        ]
+      },
+      {
+        "name": "Shavuot I",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "20:15",
+        "end": "20:23",
+        "refs": [
+          {
+            "chagId": "Shavuot I__DIASPORA",
+            "aliyahKey": "5"
+          }
+        ]
+      }
+    ],
+    "Yitro:M": [
+      {
+        "name": "Shavuot",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "20:15",
+        "end": "20:23",
+        "refs": [
+          {
+            "chagId": "Shavuot__IL",
+            "aliyahKey": "5"
+          }
+        ]
+      },
+      {
+        "name": "Shavuot I",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "20:15",
+        "end": "20:23",
+        "refs": [
+          {
+            "chagId": "Shavuot I__DIASPORA",
+            "aliyahKey": "5"
+          }
+        ]
+      }
+    ],
+    "Mishpatim:3": [
+      {
+        "name": "Pesach Chol ha-Moed Day 3",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "22:24",
+        "end": "22:26",
+        "refs": [
+          {
+            "chagId": "Pesach V (CH''M)__DIASPORA",
+            "aliyahKey": "1"
+          }
+        ]
+      },
+      {
+        "name": "Pesach IV (CH''M)",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "22:24",
+        "end": "22:26",
+        "refs": [
+          {
+            "chagId": "Pesach IV (CH''M)__IL",
+            "aliyahKey": "1"
+          }
+        ]
+      }
+    ],
+    "Mishpatim:4": [
+      {
+        "name": "Pesach Chol ha-Moed Day 3",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "22:27",
+        "end": "23:5",
+        "refs": [
+          {
+            "chagId": "Pesach V (CH''M)__DIASPORA",
+            "aliyahKey": "2"
+          }
+        ]
+      },
+      {
+        "name": "Pesach IV (CH''M)",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "22:27",
+        "end": "23:5",
+        "refs": [
+          {
+            "chagId": "Pesach IV (CH''M)__IL",
+            "aliyahKey": "2"
+          }
+        ]
+      }
+    ],
+    "Mishpatim:5": [
+      {
+        "name": "Pesach Chol ha-Moed Day 3",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "23:6",
+        "end": "23:19",
+        "refs": [
+          {
+            "chagId": "Pesach V (CH''M)__DIASPORA",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Pesach IV (CH''M)",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "23:6",
+        "end": "23:19",
+        "refs": [
+          {
+            "chagId": "Pesach IV (CH''M)__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      }
+    ],
+    "Ki Tisa:1": [
+      {
+        "name": "Shabbat Shekalim",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "30:11",
+        "end": "30:16",
+        "refs": [
+          {
+            "chagId": "Shabbat Shekalim__DIASPORA",
+            "aliyahKey": "M"
+          },
+          {
+            "chagId": "Shabbat Shekalim__IL",
+            "aliyahKey": "M"
+          }
+        ]
+      }
+    ],
+    "Ki Tisa:2": [
+      {
+        "name": "Asara B'Tevet",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "32:11",
+        "end": "32:14",
+        "refs": [
+          {
+            "chagId": "Asara B'Tevet__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Asara B'Tevet__IL",
+            "aliyahKey": "1"
+          }
+        ]
+      },
+      {
+        "name": "Ta'anit Esther",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "32:11",
+        "end": "32:14",
+        "refs": [
+          {
+            "chagId": "Ta'anit Esther__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Ta'anit Esther__IL",
+            "aliyahKey": "1"
+          }
+        ]
+      },
+      {
+        "name": "Tzom Gedaliah",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "32:11",
+        "end": "32:14",
+        "refs": [
+          {
+            "chagId": "Tzom Gedaliah__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Tzom Gedaliah__IL",
+            "aliyahKey": "1"
+          }
+        ]
+      },
+      {
+        "name": "Tzom Tammuz",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "32:11",
+        "end": "32:14",
+        "refs": [
+          {
+            "chagId": "Tzom Tammuz__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Tzom Tammuz__IL",
+            "aliyahKey": "1"
+          }
+        ]
+      }
+    ],
+    "Ki Tisa:3": [
+      {
+        "name": "Pesach Shabbat Chol ha-Moed",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "33:12",
+        "end": "33:16",
+        "refs": [
+          {
+            "chagId": "Pesach Shabbat Chol ha-Moed__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Pesach Shabbat Chol ha-Moed__IL",
+            "aliyahKey": "1"
+          }
+        ]
+      },
+      {
+        "name": "Sukkot Shabbat Chol ha-Moed",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "33:12",
+        "end": "33:16",
+        "refs": [
+          {
+            "chagId": "Sukkot Shabbat Chol ha-Moed__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Sukkot Shabbat Chol ha-Moed__IL",
+            "aliyahKey": "1"
+          }
+        ]
+      }
+    ],
+    "Ki Tisa:4": [
+      {
+        "name": "Pesach Shabbat Chol ha-Moed",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "33:17",
+        "end": "33:19",
+        "refs": [
+          {
+            "chagId": "Pesach Shabbat Chol ha-Moed__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Pesach Shabbat Chol ha-Moed__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Pesach Shabbat Chol ha-Moed__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Pesach Shabbat Chol ha-Moed__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Sukkot Shabbat Chol ha-Moed",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "33:17",
+        "end": "33:19",
+        "refs": [
+          {
+            "chagId": "Sukkot Shabbat Chol ha-Moed__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Sukkot Shabbat Chol ha-Moed__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Sukkot Shabbat Chol ha-Moed__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Sukkot Shabbat Chol ha-Moed__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      }
+    ],
+    "Ki Tisa:5": [
+      {
+        "name": "Asara B'Tevet",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:3",
+        "refs": [
+          {
+            "chagId": "Asara B'Tevet__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Asara B'Tevet__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Asara B'Tevet__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Asara B'Tevet__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Pesach Shabbat Chol ha-Moed",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:3",
+        "refs": [
+          {
+            "chagId": "Pesach Shabbat Chol ha-Moed__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Pesach Shabbat Chol ha-Moed__DIASPORA",
+            "aliyahKey": "5"
+          },
+          {
+            "chagId": "Pesach Shabbat Chol ha-Moed__IL",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Pesach Shabbat Chol ha-Moed__IL",
+            "aliyahKey": "5"
+          }
+        ]
+      },
+      {
+        "name": "Pesach V (CH''M)",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:10",
+        "refs": [
+          {
+            "chagId": "Pesach V (CH''M)__IL",
+            "aliyahKey": "1"
+          }
+        ]
+      },
+      {
+        "name": "Sukkot Shabbat Chol ha-Moed",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:3",
+        "refs": [
+          {
+            "chagId": "Sukkot Shabbat Chol ha-Moed__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Sukkot Shabbat Chol ha-Moed__DIASPORA",
+            "aliyahKey": "5"
+          },
+          {
+            "chagId": "Sukkot Shabbat Chol ha-Moed__IL",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Sukkot Shabbat Chol ha-Moed__IL",
+            "aliyahKey": "5"
+          }
+        ]
+      },
+      {
+        "name": "Ta'anit Esther",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:3",
+        "refs": [
+          {
+            "chagId": "Ta'anit Esther__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Ta'anit Esther__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Ta'anit Esther__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Ta'anit Esther__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Tzom Gedaliah",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:3",
+        "refs": [
+          {
+            "chagId": "Tzom Gedaliah__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Tzom Gedaliah__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Tzom Gedaliah__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Tzom Gedaliah__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Tzom Tammuz",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:3",
+        "refs": [
+          {
+            "chagId": "Tzom Tammuz__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Tzom Tammuz__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Tzom Tammuz__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Tzom Tammuz__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      }
+    ],
+    "Ki Tisa:6": [
+      {
+        "name": "Asara B'Tevet",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:4",
+        "end": "34:10",
+        "refs": [
+          {
+            "chagId": "Asara B'Tevet__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Asara B'Tevet__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Pesach Shabbat Chol ha-Moed",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:4",
+        "end": "34:10",
+        "refs": [
+          {
+            "chagId": "Pesach Shabbat Chol ha-Moed__DIASPORA",
+            "aliyahKey": "5"
+          },
+          {
+            "chagId": "Pesach Shabbat Chol ha-Moed__DIASPORA",
+            "aliyahKey": "6"
+          },
+          {
+            "chagId": "Pesach Shabbat Chol ha-Moed__DIASPORA",
+            "aliyahKey": "7"
+          },
+          {
+            "chagId": "Pesach Shabbat Chol ha-Moed__IL",
+            "aliyahKey": "5"
+          },
+          {
+            "chagId": "Pesach Shabbat Chol ha-Moed__IL",
+            "aliyahKey": "6"
+          },
+          {
+            "chagId": "Pesach Shabbat Chol ha-Moed__IL",
+            "aliyahKey": "7"
+          }
+        ]
+      },
+      {
+        "name": "Pesach V (CH''M)",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:10",
+        "refs": [
+          {
+            "chagId": "Pesach V (CH''M)__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Pesach V (CH''M)__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Pesach V (CH''M)__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Sukkot Shabbat Chol ha-Moed",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:4",
+        "end": "34:10",
+        "refs": [
+          {
+            "chagId": "Sukkot Shabbat Chol ha-Moed__DIASPORA",
+            "aliyahKey": "5"
+          },
+          {
+            "chagId": "Sukkot Shabbat Chol ha-Moed__DIASPORA",
+            "aliyahKey": "6"
+          },
+          {
+            "chagId": "Sukkot Shabbat Chol ha-Moed__DIASPORA",
+            "aliyahKey": "7"
+          },
+          {
+            "chagId": "Sukkot Shabbat Chol ha-Moed__IL",
+            "aliyahKey": "5"
+          },
+          {
+            "chagId": "Sukkot Shabbat Chol ha-Moed__IL",
+            "aliyahKey": "6"
+          },
+          {
+            "chagId": "Sukkot Shabbat Chol ha-Moed__IL",
+            "aliyahKey": "7"
+          }
+        ]
+      },
+      {
+        "name": "Ta'anit Esther",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:4",
+        "end": "34:10",
+        "refs": [
+          {
+            "chagId": "Ta'anit Esther__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Ta'anit Esther__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Tzom Gedaliah",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:4",
+        "end": "34:10",
+        "refs": [
+          {
+            "chagId": "Tzom Gedaliah__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Tzom Gedaliah__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Tzom Tammuz",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:4",
+        "end": "34:10",
+        "refs": [
+          {
+            "chagId": "Tzom Tammuz__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Tzom Tammuz__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      }
+    ],
+    "Achrei Mot:1": [
+      {
+        "name": "Yom Kippur",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "16:1",
+        "end": "16:6",
+        "refs": [
+          {
+            "chagId": "Yom Kippur__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Yom Kippur__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Yom Kippur__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Yom Kippur__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Yom Kippur__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Yom Kippur__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      }
+    ],
+    "Achrei Mot:2": [
+      {
+        "name": "Yom Kippur",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "16:18",
+        "end": "16:24",
+        "refs": [
+          {
+            "chagId": "Yom Kippur__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Yom Kippur__IL",
+            "aliyahKey": "4"
+          }
+        ]
+      }
+    ],
+    "Achrei Mot:3": [
+      {
+        "name": "Yom Kippur",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "16:25",
+        "end": "16:30",
+        "refs": [
+          {
+            "chagId": "Yom Kippur__DIASPORA",
+            "aliyahKey": "5"
+          },
+          {
+            "chagId": "Yom Kippur__DIASPORA",
+            "aliyahKey": "6"
+          },
+          {
+            "chagId": "Yom Kippur__IL",
+            "aliyahKey": "5"
+          },
+          {
+            "chagId": "Yom Kippur__IL",
+            "aliyahKey": "6"
+          }
+        ]
+      }
+    ],
+    "Emor:3": [
+      {
+        "name": "Pesach II",
+        "kind": "partial",
+        "book": "Leviticus",
+        "start": "22:26",
+        "end": "23:3",
+        "refs": [
+          {
+            "chagId": "Pesach II__DIASPORA",
+            "aliyahKey": "1"
+          }
+        ]
+      },
+      {
+        "name": "Pesach II (CH''M)",
+        "kind": "partial",
+        "book": "Leviticus",
+        "start": "22:26",
+        "end": "23:8",
+        "refs": [
+          {
+            "chagId": "Pesach II (CH''M)__IL",
+            "aliyahKey": "1"
+          }
+        ]
+      },
+      {
+        "name": "Sukkot I",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "22:26",
+        "end": "22:33",
+        "refs": [
+          {
+            "chagId": "Sukkot I__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Sukkot I__IL",
+            "aliyahKey": "1"
+          }
+        ]
+      },
+      {
+        "name": "Sukkot II",
+        "kind": "partial",
+        "book": "Leviticus",
+        "start": "22:26",
+        "end": "23:3",
+        "refs": [
+          {
+            "chagId": "Sukkot II__DIASPORA",
+            "aliyahKey": "1"
+          }
+        ]
+      }
+    ],
+    "Emor:4": [
+      {
+        "name": "Pesach II",
+        "kind": "partial",
+        "book": "Leviticus",
+        "start": "22:26",
+        "end": "23:3",
+        "refs": [
+          {
+            "chagId": "Pesach II__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Pesach II__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Pesach II__DIASPORA",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Pesach II (CH''M)",
+        "kind": "partial",
+        "book": "Leviticus",
+        "start": "22:26",
+        "end": "23:8",
+        "refs": [
+          {
+            "chagId": "Pesach II (CH''M)__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Pesach II (CH''M)__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Pesach II (CH''M)__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Sukkot I",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:1",
+        "end": "23:3",
+        "refs": [
+          {
+            "chagId": "Sukkot I__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Sukkot I__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Sukkot I__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Sukkot I__DIASPORA",
+            "aliyahKey": "5"
+          },
+          {
+            "chagId": "Sukkot I__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Sukkot I__IL",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Sukkot I__IL",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Sukkot I__IL",
+            "aliyahKey": "5"
+          }
+        ]
+      },
+      {
+        "name": "Sukkot II",
+        "kind": "partial",
+        "book": "Leviticus",
+        "start": "22:26",
+        "end": "23:3",
+        "refs": [
+          {
+            "chagId": "Sukkot II__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Sukkot II__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Sukkot II__DIASPORA",
+            "aliyahKey": "3"
+          }
+        ]
+      }
+    ],
+    "Emor:5": [
+      {
+        "name": "Pesach II",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:23",
+        "end": "23:32",
+        "refs": [
+          {
+            "chagId": "Pesach II__DIASPORA",
+            "aliyahKey": "4"
+          }
+        ]
+      },
+      {
+        "name": "Pesach II (CH''M)",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:15",
+        "end": "23:44",
+        "refs": [
+          {
+            "chagId": "Pesach II (CH''M)__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Sukkot I",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:23",
+        "end": "23:32",
+        "refs": [
+          {
+            "chagId": "Sukkot I__DIASPORA",
+            "aliyahKey": "6"
+          },
+          {
+            "chagId": "Sukkot I__IL",
+            "aliyahKey": "6"
+          }
+        ]
+      },
+      {
+        "name": "Sukkot II",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:23",
+        "end": "23:32",
+        "refs": [
+          {
+            "chagId": "Sukkot II__DIASPORA",
+            "aliyahKey": "4"
+          }
+        ]
+      }
+    ],
+    "Emor:6": [
+      {
+        "name": "Pesach II",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:33",
+        "end": "23:44",
+        "refs": [
+          {
+            "chagId": "Pesach II__DIASPORA",
+            "aliyahKey": "5"
+          }
+        ]
+      },
+      {
+        "name": "Pesach II (CH''M)",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:15",
+        "end": "23:44",
+        "refs": [
+          {
+            "chagId": "Pesach II (CH''M)__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Sukkot I",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:33",
+        "end": "23:44",
+        "refs": [
+          {
+            "chagId": "Sukkot I__DIASPORA",
+            "aliyahKey": "7"
+          },
+          {
+            "chagId": "Sukkot I__IL",
+            "aliyahKey": "7"
+          }
+        ]
+      },
+      {
+        "name": "Sukkot II",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:33",
+        "end": "23:44",
+        "refs": [
+          {
+            "chagId": "Sukkot II__DIASPORA",
+            "aliyahKey": "5"
+          }
+        ]
+      }
+    ],
+    "Nasso:5": [
+      {
+        "name": "Chanukah Day 1",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:1",
+        "end": "7:17",
+        "refs": [
+          {
+            "chagId": "Chanukah: 2 Candles__DIASPORA",
+            "aliyahKey": "M"
+          },
+          {
+            "chagId": "Chanukah: 2 Candles__IL",
+            "aliyahKey": "M"
+          }
+        ]
+      },
+      {
+        "name": "Chanukah Day 2",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:18",
+        "end": "7:20",
+        "refs": [
+          {
+            "chagId": "Chanukah: 3 Candles__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Chanukah: 3 Candles__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Chanukah: 3 Candles__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Chanukah: 3 Candles__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Chanukah: 3 Candles__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Chanukah: 3 Candles__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Chanukah Day 3",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:24",
+        "end": "7:26",
+        "refs": [
+          {
+            "chagId": "Chanukah: 4 Candles__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Chanukah: 4 Candles__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Chanukah: 4 Candles__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Chanukah: 4 Candles__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Chanukah: 4 Candles__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Chanukah: 4 Candles__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Chanukah Day 4",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:30",
+        "end": "7:32",
+        "refs": [
+          {
+            "chagId": "Chanukah: 5 Candles__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Chanukah: 5 Candles__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Chanukah: 5 Candles__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Chanukah: 5 Candles__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Chanukah: 5 Candles__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Chanukah: 5 Candles__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Chanukah Day 5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:36",
+        "end": "7:38",
+        "refs": [
+          {
+            "chagId": "Chanukah: 6 Candles__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Chanukah: 6 Candles__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Chanukah: 6 Candles__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Chanukah: 6 Candles__IL",
+            "aliyahKey": "2"
+          }
+        ]
+      }
+    ],
+    "Nasso:6": [
+      {
+        "name": "Chanukah Day 5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:42",
+        "end": "7:47",
+        "refs": [
+          {
+            "chagId": "Chanukah: 6 Candles__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Chanukah: 6 Candles__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Chanukah Day 6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:42",
+        "end": "7:47",
+        "refs": [
+          {
+            "chagId": "Chanukah: 7 Candles__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Chanukah: 7 Candles__IL",
+            "aliyahKey": "4"
+          }
+        ]
+      },
+      {
+        "name": "Chanukah Day 7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:48",
+        "end": "7:53",
+        "refs": [
+          {
+            "chagId": "Chanukah: 8 Candles__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Chanukah: 8 Candles__IL",
+            "aliyahKey": "4"
+          }
+        ]
+      },
+      {
+        "name": "Chanukah Day 8",
+        "kind": "partial",
+        "book": "Numbers",
+        "start": "7:54",
+        "end": "8:4",
+        "refs": [
+          {
+            "chagId": "Chanukah: 8th Day__DIASPORA",
+            "aliyahKey": "M"
+          },
+          {
+            "chagId": "Chanukah: 8th Day__IL",
+            "aliyahKey": "M"
+          }
+        ]
+      }
+    ],
+    "Nasso:7": [
+      {
+        "name": "Chanukah Day 8",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:54",
+        "end": "8:4",
+        "refs": [
+          {
+            "chagId": "Chanukah: 8th Day__DIASPORA",
+            "aliyahKey": "M"
+          },
+          {
+            "chagId": "Chanukah: 8th Day__IL",
+            "aliyahKey": "M"
+          }
+        ]
+      }
+    ],
+    "Nasso:M": [
+      {
+        "name": "Chanukah Day 8",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:54",
+        "end": "8:4",
+        "refs": [
+          {
+            "chagId": "Chanukah: 8th Day__DIASPORA",
+            "aliyahKey": "M"
+          },
+          {
+            "chagId": "Chanukah: 8th Day__IL",
+            "aliyahKey": "M"
+          }
+        ]
+      }
+    ],
+    "Beha'alotcha:1": [
+      {
+        "name": "Chanukah Day 8",
+        "kind": "partial",
+        "book": "Numbers",
+        "start": "7:54",
+        "end": "8:4",
+        "refs": [
+          {
+            "chagId": "Chanukah: 8th Day__DIASPORA",
+            "aliyahKey": "M"
+          },
+          {
+            "chagId": "Chanukah: 8th Day__IL",
+            "aliyahKey": "M"
+          }
+        ]
+      }
+    ],
+    "Beha'alotcha:3": [
+      {
+        "name": "Pesach Chol ha-Moed Day 4",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "9:1",
+        "end": "9:5",
+        "refs": [
+          {
+            "chagId": "Pesach VI (CH''M)__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Pesach VI (CH''M)__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Pesach VI (CH''M)__DIASPORA",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Pesach VI (CH''M)",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "9:1",
+        "end": "9:5",
+        "refs": [
+          {
+            "chagId": "Pesach VI (CH''M)__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Pesach VI (CH''M)__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Pesach VI (CH''M)__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      }
+    ],
+    "Chukat:1": [
+      {
+        "name": "Shabbat Parah",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "19:1",
+        "end": "19:22",
+        "refs": [
+          {
+            "chagId": "Shabbat Parah__DIASPORA",
+            "aliyahKey": "M"
+          },
+          {
+            "chagId": "Shabbat Parah__IL",
+            "aliyahKey": "M"
+          }
+        ]
+      }
+    ],
+    "Chukat:2": [
+      {
+        "name": "Shabbat Parah",
+        "kind": "partial",
+        "book": "Numbers",
+        "start": "19:1",
+        "end": "19:22",
+        "refs": [
+          {
+            "chagId": "Shabbat Parah__DIASPORA",
+            "aliyahKey": "M"
+          },
+          {
+            "chagId": "Shabbat Parah__IL",
+            "aliyahKey": "M"
+          }
+        ]
+      }
+    ],
+    "Pinchas:5": [
+      {
+        "name": "Rosh Chodesh (every month)",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:3",
+        "refs": [
+          {
+            "chagId": "Rosh Chodesh Adar__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Chodesh Adar__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Chodesh Adar__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Chodesh Adar__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Chodesh Adar__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Chodesh Adar__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Chodesh Adar__IL",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Chodesh Adar__IL",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Chodesh Adar I__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Chodesh Adar I__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Chodesh Adar I__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Chodesh Adar I__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Chodesh Adar I__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Chodesh Adar I__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Chodesh Adar I__IL",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Chodesh Adar I__IL",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Chodesh Adar II__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Chodesh Adar II__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Chodesh Adar II__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Chodesh Adar II__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Chodesh Adar II__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Chodesh Adar II__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Chodesh Adar II__IL",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Chodesh Adar II__IL",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Chodesh Av__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Chodesh Av__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Chodesh Av__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Chodesh Av__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Chodesh Av__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Chodesh Av__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Chodesh Av__IL",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Chodesh Av__IL",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Chodesh Cheshvan__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Chodesh Cheshvan__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Chodesh Cheshvan__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Chodesh Cheshvan__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Chodesh Cheshvan__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Chodesh Cheshvan__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Chodesh Cheshvan__IL",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Chodesh Cheshvan__IL",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Chodesh Elul__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Chodesh Elul__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Chodesh Elul__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Chodesh Elul__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Chodesh Elul__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Chodesh Elul__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Chodesh Elul__IL",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Chodesh Elul__IL",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Chodesh Iyyar__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Chodesh Iyyar__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Chodesh Iyyar__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Chodesh Iyyar__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Chodesh Iyyar__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Chodesh Iyyar__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Chodesh Iyyar__IL",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Chodesh Iyyar__IL",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Chodesh Kislev__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Chodesh Kislev__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Chodesh Kislev__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Chodesh Kislev__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Chodesh Kislev__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Chodesh Kislev__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Chodesh Kislev__IL",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Chodesh Kislev__IL",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Chodesh Nisan__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Chodesh Nisan__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Chodesh Nisan__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Chodesh Nisan__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Chodesh Nisan__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Chodesh Nisan__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Chodesh Nisan__IL",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Chodesh Nisan__IL",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Chodesh Sh'vat__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Chodesh Sh'vat__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Chodesh Sh'vat__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Chodesh Sh'vat__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Chodesh Sh'vat__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Chodesh Sh'vat__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Chodesh Sh'vat__IL",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Chodesh Sh'vat__IL",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Chodesh Sivan__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Chodesh Sivan__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Chodesh Sivan__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Chodesh Sivan__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Chodesh Sivan__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Chodesh Sivan__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Chodesh Sivan__IL",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Chodesh Sivan__IL",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Chodesh Tamuz__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Chodesh Tamuz__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Chodesh Tamuz__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Chodesh Tamuz__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Rosh Chodesh Tamuz__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Rosh Chodesh Tamuz__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Rosh Chodesh Tamuz__IL",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Rosh Chodesh Tamuz__IL",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Shabbat Rosh Chodesh__DIASPORA",
+            "aliyahKey": "M"
+          },
+          {
+            "chagId": "Shabbat Rosh Chodesh__IL",
+            "aliyahKey": "M"
+          }
+        ]
+      },
+      {
+        "name": "Chanukah Day 6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:5",
+        "refs": [
+          {
+            "chagId": "Chanukah: 7 Candles__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Chanukah: 7 Candles__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Chanukah: 7 Candles__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Chanukah: 7 Candles__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Chanukah: 7 Candles__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Chanukah: 7 Candles__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Chanukah Day 7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:5",
+        "refs": [
+          {
+            "chagId": "Chanukah: 8 Candles__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Chanukah: 8 Candles__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Chanukah: 8 Candles__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Chanukah: 8 Candles__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Chanukah: 8 Candles__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Chanukah: 8 Candles__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      }
+    ],
+    "Pinchas:6": [
+      {
+        "name": "Pesach Chol ha-Moed Day 1",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:19",
+        "end": "28:25",
+        "refs": [
+          {
+            "chagId": "Pesach III (CH''M)__DIASPORA",
+            "aliyahKey": "4"
+          }
+        ]
+      },
+      {
+        "name": "Pesach Chol ha-Moed Day 2",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:19",
+        "end": "28:25",
+        "refs": [
+          {
+            "chagId": "Pesach IV (CH''M)__DIASPORA",
+            "aliyahKey": "4"
+          }
+        ]
+      },
+      {
+        "name": "Pesach Chol ha-Moed Day 3",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:19",
+        "end": "28:25",
+        "refs": [
+          {
+            "chagId": "Pesach V (CH''M)__DIASPORA",
+            "aliyahKey": "4"
+          }
+        ]
+      },
+      {
+        "name": "Pesach Chol ha-Moed Day 4",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:19",
+        "end": "28:25",
+        "refs": [
+          {
+            "chagId": "Pesach VI (CH''M)__DIASPORA",
+            "aliyahKey": "4"
+          }
+        ]
+      },
+      {
+        "name": "Pesach I",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "28:25",
+        "refs": [
+          {
+            "chagId": "Pesach I__DIASPORA",
+            "aliyahKey": "M"
+          },
+          {
+            "chagId": "Pesach I__IL",
+            "aliyahKey": "M"
+          }
+        ]
+      },
+      {
+        "name": "Pesach II",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "28:25",
+        "refs": [
+          {
+            "chagId": "Pesach II__DIASPORA",
+            "aliyahKey": "M"
+          }
+        ]
+      },
+      {
+        "name": "Pesach II (CH''M)",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:19",
+        "end": "28:25",
+        "refs": [
+          {
+            "chagId": "Pesach II (CH''M)__IL",
+            "aliyahKey": "4"
+          }
+        ]
+      },
+      {
+        "name": "Pesach III (CH''M)",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:19",
+        "end": "28:25",
+        "refs": [
+          {
+            "chagId": "Pesach III (CH''M)__IL",
+            "aliyahKey": "4"
+          }
+        ]
+      },
+      {
+        "name": "Pesach IV (CH''M)",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:19",
+        "end": "28:25",
+        "refs": [
+          {
+            "chagId": "Pesach IV (CH''M)__IL",
+            "aliyahKey": "4"
+          }
+        ]
+      },
+      {
+        "name": "Pesach Shabbat Chol ha-Moed",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:19",
+        "end": "28:25",
+        "refs": [
+          {
+            "chagId": "Pesach Shabbat Chol ha-Moed__DIASPORA",
+            "aliyahKey": "M"
+          },
+          {
+            "chagId": "Pesach Shabbat Chol ha-Moed__IL",
+            "aliyahKey": "M"
+          }
+        ]
+      },
+      {
+        "name": "Pesach V (CH''M)",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:19",
+        "end": "28:25",
+        "refs": [
+          {
+            "chagId": "Pesach V (CH''M)__IL",
+            "aliyahKey": "4"
+          }
+        ]
+      },
+      {
+        "name": "Pesach VI (CH''M)",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:19",
+        "end": "28:25",
+        "refs": [
+          {
+            "chagId": "Pesach VI (CH''M)__IL",
+            "aliyahKey": "4"
+          }
+        ]
+      },
+      {
+        "name": "Pesach VII",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:19",
+        "end": "28:25",
+        "refs": [
+          {
+            "chagId": "Pesach VII__DIASPORA",
+            "aliyahKey": "M"
+          },
+          {
+            "chagId": "Pesach VII__IL",
+            "aliyahKey": "M"
+          }
+        ]
+      },
+      {
+        "name": "Pesach VIII",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:19",
+        "end": "28:25",
+        "refs": [
+          {
+            "chagId": "Pesach VIII__DIASPORA",
+            "aliyahKey": "M"
+          }
+        ]
+      },
+      {
+        "name": "Rosh Hashana I",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:1",
+        "end": "29:6",
+        "refs": [
+          {
+            "chagId": "Rosh Hashana I__DIASPORA",
+            "aliyahKey": "M"
+          },
+          {
+            "chagId": "Rosh Hashana I__IL",
+            "aliyahKey": "M"
+          }
+        ]
+      },
+      {
+        "name": "Rosh Hashana II",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:1",
+        "end": "29:6",
+        "refs": [
+          {
+            "chagId": "Rosh Hashana II__DIASPORA",
+            "aliyahKey": "M"
+          },
+          {
+            "chagId": "Rosh Hashana II__IL",
+            "aliyahKey": "M"
+          }
+        ]
+      },
+      {
+        "name": "Shavuot",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:26",
+        "end": "28:31",
+        "refs": [
+          {
+            "chagId": "Shavuot__IL",
+            "aliyahKey": "M"
+          }
+        ]
+      },
+      {
+        "name": "Shavuot I",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:26",
+        "end": "28:31",
+        "refs": [
+          {
+            "chagId": "Shavuot I__DIASPORA",
+            "aliyahKey": "M"
+          }
+        ]
+      },
+      {
+        "name": "Shavuot II",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:26",
+        "end": "28:31",
+        "refs": [
+          {
+            "chagId": "Shavuot II__DIASPORA",
+            "aliyahKey": "M"
+          }
+        ]
+      },
+      {
+        "name": "Yom Kippur",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:7",
+        "end": "29:11",
+        "refs": [
+          {
+            "chagId": "Yom Kippur__DIASPORA",
+            "aliyahKey": "M"
+          },
+          {
+            "chagId": "Yom Kippur__IL",
+            "aliyahKey": "M"
+          }
+        ]
+      }
+    ],
+    "Pinchas:7": [
+      {
+        "name": "Shmini Atzeret",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:35",
+        "end": "30:1",
+        "refs": [
+          {
+            "chagId": "Shmini Atzeret__DIASPORA",
+            "aliyahKey": "M"
+          }
+        ]
+      },
+      {
+        "name": "Simchat Torah",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:35",
+        "end": "30:1",
+        "refs": [
+          {
+            "chagId": "Simchat Torah__DIASPORA",
+            "aliyahKey": "M"
+          },
+          {
+            "chagId": "Shmini Atzeret__IL",
+            "aliyahKey": "M"
+          }
+        ]
+      },
+      {
+        "name": "Sukkot Chol ha-Moed Day 1",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:17",
+        "end": "29:19",
+        "refs": [
+          {
+            "chagId": "Sukkot III (CH''M)__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Sukkot III (CH''M)__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Sukkot III (CH''M)__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Sukkot III (CH''M)__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Sukkot II (CH''M)__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Sukkot II (CH''M)__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Sukkot II (CH''M)__IL",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Sukkot II (CH''M)__IL",
+            "aliyahKey": "4"
+          }
+        ]
+      },
+      {
+        "name": "Sukkot Chol ha-Moed Day 2",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:20",
+        "end": "29:22",
+        "refs": [
+          {
+            "chagId": "Sukkot IV (CH''M)__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Sukkot IV (CH''M)__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Sukkot IV (CH''M)__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Sukkot IV (CH''M)__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Sukkot III (CH''M)__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Sukkot III (CH''M)__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Sukkot III (CH''M)__IL",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Sukkot III (CH''M)__IL",
+            "aliyahKey": "4"
+          }
+        ]
+      },
+      {
+        "name": "Sukkot Chol ha-Moed Day 3",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:23",
+        "end": "29:25",
+        "refs": [
+          {
+            "chagId": "Sukkot V (CH''M)__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Sukkot V (CH''M)__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Sukkot V (CH''M)__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Sukkot V (CH''M)__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Sukkot IV (CH''M)__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Sukkot IV (CH''M)__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Sukkot IV (CH''M)__IL",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Sukkot IV (CH''M)__IL",
+            "aliyahKey": "4"
+          }
+        ]
+      },
+      {
+        "name": "Sukkot Chol ha-Moed Day 4",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:26",
+        "end": "29:28",
+        "refs": [
+          {
+            "chagId": "Sukkot VI (CH''M)__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Sukkot VI (CH''M)__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Sukkot VI (CH''M)__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Sukkot VI (CH''M)__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Sukkot V (CH''M)__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Sukkot V (CH''M)__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Sukkot V (CH''M)__IL",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Sukkot V (CH''M)__IL",
+            "aliyahKey": "4"
+          }
+        ]
+      },
+      {
+        "name": "Sukkot Chol ha-Moed Day 5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:29",
+        "end": "29:31",
+        "refs": [
+          {
+            "chagId": "Sukkot VI (CH''M)__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Sukkot VI (CH''M)__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Sukkot VI (CH''M)__IL",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Sukkot VI (CH''M)__IL",
+            "aliyahKey": "4"
+          }
+        ]
+      },
+      {
+        "name": "Sukkot Final Day (Hoshana Raba)",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:26",
+        "end": "29:28",
+        "refs": [
+          {
+            "chagId": "Sukkot VII (Hoshana Raba)__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Sukkot VII (Hoshana Raba)__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Sukkot VII (Hoshana Raba)__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Sukkot VII (Hoshana Raba)__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Sukkot VII (Hoshana Raba)__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Sukkot VII (Hoshana Raba)__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Sukkot VII (Hoshana Raba)__IL",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Sukkot VII (Hoshana Raba)__IL",
+            "aliyahKey": "4"
+          }
+        ]
+      },
+      {
+        "name": "Sukkot I",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "29:16",
+        "refs": [
+          {
+            "chagId": "Sukkot I__DIASPORA",
+            "aliyahKey": "M"
+          },
+          {
+            "chagId": "Sukkot I__IL",
+            "aliyahKey": "M"
+          }
+        ]
+      },
+      {
+        "name": "Sukkot II",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "29:16",
+        "refs": [
+          {
+            "chagId": "Sukkot II__DIASPORA",
+            "aliyahKey": "M"
+          }
+        ]
+      },
+      {
+        "name": "Sukkot Shabbat Chol ha-Moed",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:17",
+        "end": "29:22",
+        "refs": [
+          {
+            "chagId": "Sukkot Shabbat Chol ha-Moed__DIASPORA",
+            "aliyahKey": "M"
+          },
+          {
+            "chagId": "Sukkot Shabbat Chol ha-Moed__IL",
+            "aliyahKey": "M"
+          }
+        ]
+      }
+    ],
+    "Pinchas:M": [
+      {
+        "name": "Shmini Atzeret",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:35",
+        "end": "30:1",
+        "refs": [
+          {
+            "chagId": "Shmini Atzeret__DIASPORA",
+            "aliyahKey": "M"
+          }
+        ]
+      },
+      {
+        "name": "Simchat Torah",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:35",
+        "end": "30:1",
+        "refs": [
+          {
+            "chagId": "Simchat Torah__DIASPORA",
+            "aliyahKey": "M"
+          },
+          {
+            "chagId": "Shmini Atzeret__IL",
+            "aliyahKey": "M"
+          }
+        ]
+      },
+      {
+        "name": "Sukkot Chol ha-Moed Day 5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:35",
+        "end": "29:37",
+        "refs": [
+          {
+            "chagId": "Sukkot VI (CH''M)__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      }
+    ],
+    "Vaetchanan:2": [
+      {
+        "name": "Tish'a B'Av",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "4:25",
+        "end": "4:29",
+        "refs": [
+          {
+            "chagId": "Tish'a B'Av__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Tish'a B'Av__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Tish'a B'Av__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Tish'a B'Av__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Tish'a B'Av__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Tish'a B'Av__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      },
+      {
+        "name": "Tish'a B'Av (observed)",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "4:25",
+        "end": "4:29",
+        "refs": [
+          {
+            "chagId": "Tish'a B'Av (observed)__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Tish'a B'Av (observed)__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Tish'a B'Av (observed)__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Tish'a B'Av (observed)__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Tish'a B'Av (observed)__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Tish'a B'Av (observed)__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      }
+    ],
+    "Eikev:1": [
+      {
+        "name": "Yom HaAtzma'ut",
+        "kind": "partial",
+        "book": "Deuteronomy",
+        "start": "7:12",
+        "end": "7:21",
+        "refs": [
+          {
+            "chagId": "Yom HaAtzma'ut__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Yom HaAtzma'ut__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Yom HaAtzma'ut__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Yom HaAtzma'ut__IL",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Yom HaAtzma'ut__IL",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Yom HaAtzma'ut__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      }
+    ],
+    "Eikev:2": [
+      {
+        "name": "Yom HaAtzma'ut",
+        "kind": "partial",
+        "book": "Deuteronomy",
+        "start": "8:4",
+        "end": "8:18",
+        "refs": [
+          {
+            "chagId": "Yom HaAtzma'ut__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Yom HaAtzma'ut__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      }
+    ],
+    "Re'eh:5": [
+      {
+        "name": "Shavuot II",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "14:22",
+        "end": "14:29",
+        "refs": [
+          {
+            "chagId": "Shavuot II__DIASPORA",
+            "aliyahKey": "1"
+          }
+        ]
+      },
+      {
+        "name": "Shmini Atzeret",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "14:22",
+        "end": "14:29",
+        "refs": [
+          {
+            "chagId": "Shmini Atzeret__DIASPORA",
+            "aliyahKey": "1"
+          }
+        ]
+      }
+    ],
+    "Re'eh:6": [
+      {
+        "name": "Shavuot II",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "15:1",
+        "end": "15:18",
+        "refs": [
+          {
+            "chagId": "Shavuot II__DIASPORA",
+            "aliyahKey": "2"
+          }
+        ]
+      },
+      {
+        "name": "Shmini Atzeret",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "15:1",
+        "end": "15:18",
+        "refs": [
+          {
+            "chagId": "Shmini Atzeret__DIASPORA",
+            "aliyahKey": "2"
+          }
+        ]
+      }
+    ],
+    "Re'eh:7": [
+      {
+        "name": "Pesach VIII",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "15:19",
+        "end": "15:23",
+        "refs": [
+          {
+            "chagId": "Pesach VIII__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Pesach VIII__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Pesach VIII__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Pesach VIII__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Pesach VIII__DIASPORA",
+            "aliyahKey": "5"
+          }
+        ]
+      },
+      {
+        "name": "Shavuot II",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "15:19",
+        "end": "15:23",
+        "refs": [
+          {
+            "chagId": "Shavuot II__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Shavuot II__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Shavuot II__DIASPORA",
+            "aliyahKey": "5"
+          },
+          {
+            "chagId": "Shavuot II__DIASPORA",
+            "aliyahKey": "6"
+          },
+          {
+            "chagId": "Shavuot II__DIASPORA",
+            "aliyahKey": "7"
+          }
+        ]
+      },
+      {
+        "name": "Shmini Atzeret",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "15:19",
+        "end": "15:23",
+        "refs": [
+          {
+            "chagId": "Shmini Atzeret__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Shmini Atzeret__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Shmini Atzeret__DIASPORA",
+            "aliyahKey": "5"
+          },
+          {
+            "chagId": "Shmini Atzeret__DIASPORA",
+            "aliyahKey": "6"
+          },
+          {
+            "chagId": "Shmini Atzeret__DIASPORA",
+            "aliyahKey": "7"
+          }
+        ]
+      }
+    ],
+    "Re'eh:M": [
+      {
+        "name": "Pesach VIII",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "16:13",
+        "end": "16:17",
+        "refs": [
+          {
+            "chagId": "Pesach VIII__DIASPORA",
+            "aliyahKey": "5"
+          }
+        ]
+      },
+      {
+        "name": "Shavuot II",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "16:13",
+        "end": "16:17",
+        "refs": [
+          {
+            "chagId": "Shavuot II__DIASPORA",
+            "aliyahKey": "7"
+          }
+        ]
+      },
+      {
+        "name": "Shmini Atzeret",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "16:13",
+        "end": "16:17",
+        "refs": [
+          {
+            "chagId": "Shmini Atzeret__DIASPORA",
+            "aliyahKey": "7"
+          }
+        ]
+      }
+    ],
+    "Ki Teitzei:7": [
+      {
+        "name": "Shabbat Zachor",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "25:17",
+        "end": "25:19",
+        "refs": [
+          {
+            "chagId": "Shabbat Zachor__DIASPORA",
+            "aliyahKey": "M"
+          },
+          {
+            "chagId": "Shabbat Zachor__IL",
+            "aliyahKey": "M"
+          }
+        ]
+      }
+    ],
+    "Ki Teitzei:M": [
+      {
+        "name": "Shabbat Zachor",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "25:17",
+        "end": "25:19",
+        "refs": [
+          {
+            "chagId": "Shabbat Zachor__DIASPORA",
+            "aliyahKey": "M"
+          },
+          {
+            "chagId": "Shabbat Zachor__IL",
+            "aliyahKey": "M"
+          }
+        ]
+      }
+    ],
+    "Vezot Haberakhah:1": [
+      {
+        "name": "Simchat Torah",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "33:1",
+        "end": "33:7",
+        "refs": [
+          {
+            "chagId": "Simchat Torah__DIASPORA",
+            "aliyahKey": "1"
+          },
+          {
+            "chagId": "Shmini Atzeret__IL",
+            "aliyahKey": "1"
+          }
+        ]
+      }
+    ],
+    "Vezot Haberakhah:2": [
+      {
+        "name": "Simchat Torah",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "33:8",
+        "end": "33:12",
+        "refs": [
+          {
+            "chagId": "Simchat Torah__DIASPORA",
+            "aliyahKey": "2"
+          },
+          {
+            "chagId": "Shmini Atzeret__IL",
+            "aliyahKey": "2"
+          }
+        ]
+      }
+    ],
+    "Vezot Haberakhah:3": [
+      {
+        "name": "Simchat Torah",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "33:13",
+        "end": "33:17",
+        "refs": [
+          {
+            "chagId": "Simchat Torah__DIASPORA",
+            "aliyahKey": "3"
+          },
+          {
+            "chagId": "Shmini Atzeret__IL",
+            "aliyahKey": "3"
+          }
+        ]
+      }
+    ],
+    "Vezot Haberakhah:4": [
+      {
+        "name": "Simchat Torah",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "33:18",
+        "end": "33:21",
+        "refs": [
+          {
+            "chagId": "Simchat Torah__DIASPORA",
+            "aliyahKey": "4"
+          },
+          {
+            "chagId": "Shmini Atzeret__IL",
+            "aliyahKey": "4"
+          }
+        ]
+      }
+    ],
+    "Vezot Haberakhah:5": [
+      {
+        "name": "Simchat Torah",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "33:22",
+        "end": "33:26",
+        "refs": [
+          {
+            "chagId": "Simchat Torah__DIASPORA",
+            "aliyahKey": "5"
+          },
+          {
+            "chagId": "Shmini Atzeret__IL",
+            "aliyahKey": "5"
+          }
+        ]
+      }
+    ],
+    "Vezot Haberakhah:6": [
+      {
+        "name": "Simchat Torah",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "33:27",
+        "end": "34:12",
+        "refs": [
+          {
+            "chagId": "Simchat Torah__DIASPORA",
+            "aliyahKey": "6"
+          },
+          {
+            "chagId": "Shmini Atzeret__IL",
+            "aliyahKey": "6"
+          }
+        ]
+      }
+    ],
+    "Vezot Haberakhah:7": [
+      {
+        "name": "Simchat Torah",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "33:27",
+        "end": "34:12",
+        "refs": [
+          {
+            "chagId": "Simchat Torah__DIASPORA",
+            "aliyahKey": "6"
+          },
+          {
+            "chagId": "Shmini Atzeret__IL",
+            "aliyahKey": "7"
+          }
+        ]
+      }
+    ]
+  },
+  "byChagAliyah": {
+    "Simchat Torah__DIASPORA:7": [
+      {
+        "parshaId": "Bereshit",
+        "aliyahKey": "1",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "1:1",
+        "end": "2:3"
+      }
+    ],
+    "Rosh Hashana I__DIASPORA:1": [
+      {
+        "parshaId": "Vayera",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "19:21",
+        "end": "21:4"
+      }
+    ],
+    "Rosh Hashana I__IL:1": [
+      {
+        "parshaId": "Vayera",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "19:21",
+        "end": "21:4"
+      }
+    ],
+    "Rosh Hashana I__DIASPORA:2": [
+      {
+        "parshaId": "Vayera",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "21:5",
+        "end": "21:21"
+      }
+    ],
+    "Rosh Hashana I__DIASPORA:3": [
+      {
+        "parshaId": "Vayera",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "21:5",
+        "end": "21:21"
+      }
+    ],
+    "Rosh Hashana I__DIASPORA:4": [
+      {
+        "parshaId": "Vayera",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "21:5",
+        "end": "21:21"
+      }
+    ],
+    "Rosh Hashana I__DIASPORA:5": [
+      {
+        "parshaId": "Vayera",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "21:5",
+        "end": "21:21"
+      }
+    ],
+    "Rosh Hashana I__IL:2": [
+      {
+        "parshaId": "Vayera",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "21:5",
+        "end": "21:21"
+      }
+    ],
+    "Rosh Hashana I__IL:3": [
+      {
+        "parshaId": "Vayera",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "21:5",
+        "end": "21:21"
+      }
+    ],
+    "Rosh Hashana I__IL:4": [
+      {
+        "parshaId": "Vayera",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "21:5",
+        "end": "21:21"
+      }
+    ],
+    "Rosh Hashana I__IL:5": [
+      {
+        "parshaId": "Vayera",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "21:5",
+        "end": "21:21"
+      }
+    ],
+    "Rosh Hashana I__DIASPORA:6": [
+      {
+        "parshaId": "Vayera",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "21:22",
+        "end": "21:34"
+      }
+    ],
+    "Rosh Hashana I__DIASPORA:7": [
+      {
+        "parshaId": "Vayera",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "21:22",
+        "end": "21:34"
+      }
+    ],
+    "Rosh Hashana I__IL:6": [
+      {
+        "parshaId": "Vayera",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "21:22",
+        "end": "21:34"
+      }
+    ],
+    "Rosh Hashana I__IL:7": [
+      {
+        "parshaId": "Vayera",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "21:22",
+        "end": "21:34"
+      }
+    ],
+    "Rosh Hashana II__DIASPORA:1": [
+      {
+        "parshaId": "Vayera",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "22:1",
+        "end": "22:24"
+      }
+    ],
+    "Rosh Hashana II__DIASPORA:2": [
+      {
+        "parshaId": "Vayera",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "22:1",
+        "end": "22:24"
+      }
+    ],
+    "Rosh Hashana II__DIASPORA:3": [
+      {
+        "parshaId": "Vayera",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "22:1",
+        "end": "22:24"
+      }
+    ],
+    "Rosh Hashana II__DIASPORA:4": [
+      {
+        "parshaId": "Vayera",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "22:1",
+        "end": "22:24"
+      }
+    ],
+    "Rosh Hashana II__DIASPORA:5": [
+      {
+        "parshaId": "Vayera",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "22:1",
+        "end": "22:24"
+      },
+      {
+        "parshaId": "Vayera",
+        "aliyahKey": "M",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "22:20",
+        "end": "22:24"
+      }
+    ],
+    "Rosh Hashana II__IL:1": [
+      {
+        "parshaId": "Vayera",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "22:1",
+        "end": "22:24"
+      }
+    ],
+    "Rosh Hashana II__IL:2": [
+      {
+        "parshaId": "Vayera",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "22:1",
+        "end": "22:24"
+      }
+    ],
+    "Rosh Hashana II__IL:3": [
+      {
+        "parshaId": "Vayera",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "22:1",
+        "end": "22:24"
+      }
+    ],
+    "Rosh Hashana II__IL:4": [
+      {
+        "parshaId": "Vayera",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "22:1",
+        "end": "22:24"
+      }
+    ],
+    "Rosh Hashana II__IL:5": [
+      {
+        "parshaId": "Vayera",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "22:1",
+        "end": "22:24"
+      },
+      {
+        "parshaId": "Vayera",
+        "aliyahKey": "M",
+        "kind": "full",
+        "book": "Genesis",
+        "start": "22:20",
+        "end": "22:24"
+      }
+    ],
+    "Shabbat HaChodesh__DIASPORA:M": [
+      {
+        "parshaId": "Bo",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "11:4",
+        "end": "12:20"
+      }
+    ],
+    "Shabbat HaChodesh__IL:M": [
+      {
+        "parshaId": "Bo",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "11:4",
+        "end": "12:20"
+      }
+    ],
+    "Pesach I__DIASPORA:1": [
+      {
+        "parshaId": "Bo",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "12:21",
+        "end": "12:28"
+      }
+    ],
+    "Pesach I__DIASPORA:2": [
+      {
+        "parshaId": "Bo",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "12:21",
+        "end": "12:28"
+      }
+    ],
+    "Pesach I__IL:1": [
+      {
+        "parshaId": "Bo",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "12:21",
+        "end": "12:28"
+      }
+    ],
+    "Pesach I__IL:2": [
+      {
+        "parshaId": "Bo",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "12:21",
+        "end": "12:28"
+      }
+    ],
+    "Pesach I__DIASPORA:3": [
+      {
+        "parshaId": "Bo",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "12:29",
+        "end": "12:51"
+      }
+    ],
+    "Pesach I__DIASPORA:4": [
+      {
+        "parshaId": "Bo",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "12:29",
+        "end": "12:51"
+      }
+    ],
+    "Pesach I__DIASPORA:5": [
+      {
+        "parshaId": "Bo",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "12:29",
+        "end": "12:51"
+      }
+    ],
+    "Pesach I__IL:3": [
+      {
+        "parshaId": "Bo",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "12:29",
+        "end": "12:51"
+      }
+    ],
+    "Pesach I__IL:4": [
+      {
+        "parshaId": "Bo",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "12:29",
+        "end": "12:51"
+      }
+    ],
+    "Pesach I__IL:5": [
+      {
+        "parshaId": "Bo",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "12:29",
+        "end": "12:51"
+      }
+    ],
+    "Pesach III (CH''M)__DIASPORA:1": [
+      {
+        "parshaId": "Bo",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "13:1",
+        "end": "13:16"
+      }
+    ],
+    "Pesach III (CH''M)__DIASPORA:2": [
+      {
+        "parshaId": "Bo",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "13:1",
+        "end": "13:16"
+      }
+    ],
+    "Pesach III (CH''M)__DIASPORA:3": [
+      {
+        "parshaId": "Bo",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "13:1",
+        "end": "13:16"
+      },
+      {
+        "parshaId": "Bo",
+        "aliyahKey": "M",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "13:14",
+        "end": "13:16"
+      }
+    ],
+    "Pesach IV (CH''M)__DIASPORA:1": [
+      {
+        "parshaId": "Bo",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "13:1",
+        "end": "13:16"
+      }
+    ],
+    "Pesach IV (CH''M)__DIASPORA:2": [
+      {
+        "parshaId": "Bo",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "13:1",
+        "end": "13:16"
+      }
+    ],
+    "Pesach IV (CH''M)__DIASPORA:3": [
+      {
+        "parshaId": "Bo",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "13:1",
+        "end": "13:16"
+      },
+      {
+        "parshaId": "Bo",
+        "aliyahKey": "M",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "13:14",
+        "end": "13:16"
+      }
+    ],
+    "Pesach III (CH''M)__IL:1": [
+      {
+        "parshaId": "Bo",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "13:1",
+        "end": "13:16"
+      }
+    ],
+    "Pesach III (CH''M)__IL:2": [
+      {
+        "parshaId": "Bo",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "13:1",
+        "end": "13:16"
+      }
+    ],
+    "Pesach III (CH''M)__IL:3": [
+      {
+        "parshaId": "Bo",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "13:1",
+        "end": "13:16"
+      },
+      {
+        "parshaId": "Bo",
+        "aliyahKey": "M",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "13:14",
+        "end": "13:16"
+      }
+    ],
+    "Pesach VII__DIASPORA:1": [
+      {
+        "parshaId": "Beshalach",
+        "aliyahKey": "1",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "13:17",
+        "end": "14:8"
+      }
+    ],
+    "Pesach VII__DIASPORA:2": [
+      {
+        "parshaId": "Beshalach",
+        "aliyahKey": "1",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "13:17",
+        "end": "14:8"
+      }
+    ],
+    "Pesach VII__IL:1": [
+      {
+        "parshaId": "Beshalach",
+        "aliyahKey": "1",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "13:17",
+        "end": "14:8"
+      }
+    ],
+    "Pesach VII__IL:2": [
+      {
+        "parshaId": "Beshalach",
+        "aliyahKey": "1",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "13:17",
+        "end": "14:8"
+      }
+    ],
+    "Pesach VII__DIASPORA:3": [
+      {
+        "parshaId": "Beshalach",
+        "aliyahKey": "2",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "14:9",
+        "end": "14:14"
+      }
+    ],
+    "Pesach VII__IL:3": [
+      {
+        "parshaId": "Beshalach",
+        "aliyahKey": "2",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "14:9",
+        "end": "14:14"
+      }
+    ],
+    "Pesach VII__DIASPORA:4": [
+      {
+        "parshaId": "Beshalach",
+        "aliyahKey": "3",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "14:15",
+        "end": "14:25"
+      }
+    ],
+    "Pesach VII__IL:4": [
+      {
+        "parshaId": "Beshalach",
+        "aliyahKey": "3",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "14:15",
+        "end": "14:25"
+      }
+    ],
+    "Pesach VII__DIASPORA:5": [
+      {
+        "parshaId": "Beshalach",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "14:26",
+        "end": "15:26"
+      }
+    ],
+    "Pesach VII__IL:5": [
+      {
+        "parshaId": "Beshalach",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "14:26",
+        "end": "15:26"
+      }
+    ],
+    "Purim__DIASPORA:1": [
+      {
+        "parshaId": "Beshalach",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "17:1",
+        "end": "17:16"
+      }
+    ],
+    "Purim__DIASPORA:2": [
+      {
+        "parshaId": "Beshalach",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "17:1",
+        "end": "17:16"
+      }
+    ],
+    "Purim__DIASPORA:3": [
+      {
+        "parshaId": "Beshalach",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "17:1",
+        "end": "17:16"
+      },
+      {
+        "parshaId": "Beshalach",
+        "aliyahKey": "M",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "17:14",
+        "end": "17:16"
+      }
+    ],
+    "Purim__IL:1": [
+      {
+        "parshaId": "Beshalach",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "17:1",
+        "end": "17:16"
+      }
+    ],
+    "Purim__IL:2": [
+      {
+        "parshaId": "Beshalach",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "17:1",
+        "end": "17:16"
+      }
+    ],
+    "Purim__IL:3": [
+      {
+        "parshaId": "Beshalach",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "17:1",
+        "end": "17:16"
+      },
+      {
+        "parshaId": "Beshalach",
+        "aliyahKey": "M",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "17:14",
+        "end": "17:16"
+      }
+    ],
+    "Shushan Purim__IL:1": [
+      {
+        "parshaId": "Beshalach",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "17:1",
+        "end": "17:16"
+      }
+    ],
+    "Shushan Purim__IL:2": [
+      {
+        "parshaId": "Beshalach",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "17:1",
+        "end": "17:16"
+      }
+    ],
+    "Shushan Purim__IL:3": [
+      {
+        "parshaId": "Beshalach",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "17:1",
+        "end": "17:16"
+      },
+      {
+        "parshaId": "Beshalach",
+        "aliyahKey": "M",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "17:14",
+        "end": "17:16"
+      }
+    ],
+    "Shavuot__IL:1": [
+      {
+        "parshaId": "Yitro",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "19:1",
+        "end": "19:6"
+      }
+    ],
+    "Shavuot I__DIASPORA:1": [
+      {
+        "parshaId": "Yitro",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "19:1",
+        "end": "19:6"
+      }
+    ],
+    "Shavuot__IL:2": [
+      {
+        "parshaId": "Yitro",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "19:7",
+        "end": "19:19"
+      }
+    ],
+    "Shavuot__IL:3": [
+      {
+        "parshaId": "Yitro",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "19:7",
+        "end": "19:19"
+      }
+    ],
+    "Shavuot I__DIASPORA:2": [
+      {
+        "parshaId": "Yitro",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "19:7",
+        "end": "19:19"
+      }
+    ],
+    "Shavuot I__DIASPORA:3": [
+      {
+        "parshaId": "Yitro",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "19:7",
+        "end": "19:19"
+      }
+    ],
+    "Shavuot__IL:4": [
+      {
+        "parshaId": "Yitro",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "19:20",
+        "end": "20:14"
+      }
+    ],
+    "Shavuot I__DIASPORA:4": [
+      {
+        "parshaId": "Yitro",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "19:20",
+        "end": "20:14"
+      }
+    ],
+    "Shavuot__IL:5": [
+      {
+        "parshaId": "Yitro",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "20:15",
+        "end": "20:23"
+      },
+      {
+        "parshaId": "Yitro",
+        "aliyahKey": "M",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "20:19",
+        "end": "20:23"
+      }
+    ],
+    "Shavuot I__DIASPORA:5": [
+      {
+        "parshaId": "Yitro",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "20:15",
+        "end": "20:23"
+      },
+      {
+        "parshaId": "Yitro",
+        "aliyahKey": "M",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "20:19",
+        "end": "20:23"
+      }
+    ],
+    "Pesach V (CH''M)__DIASPORA:1": [
+      {
+        "parshaId": "Mishpatim",
+        "aliyahKey": "3",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "22:4",
+        "end": "22:26"
+      }
+    ],
+    "Pesach IV (CH''M)__IL:1": [
+      {
+        "parshaId": "Mishpatim",
+        "aliyahKey": "3",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "22:4",
+        "end": "22:26"
+      }
+    ],
+    "Pesach V (CH''M)__DIASPORA:2": [
+      {
+        "parshaId": "Mishpatim",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "22:27",
+        "end": "23:5"
+      }
+    ],
+    "Pesach IV (CH''M)__IL:2": [
+      {
+        "parshaId": "Mishpatim",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "22:27",
+        "end": "23:5"
+      }
+    ],
+    "Pesach V (CH''M)__DIASPORA:3": [
+      {
+        "parshaId": "Mishpatim",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "23:6",
+        "end": "23:19"
+      }
+    ],
+    "Pesach IV (CH''M)__IL:3": [
+      {
+        "parshaId": "Mishpatim",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "23:6",
+        "end": "23:19"
+      }
+    ],
+    "Shabbat Shekalim__DIASPORA:M": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "1",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "30:11",
+        "end": "31:17"
+      }
+    ],
+    "Shabbat Shekalim__IL:M": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "1",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "30:11",
+        "end": "31:17"
+      }
+    ],
+    "Asara B'Tevet__DIASPORA:1": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "2",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "31:18",
+        "end": "33:11"
+      }
+    ],
+    "Asara B'Tevet__IL:1": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "2",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "31:18",
+        "end": "33:11"
+      }
+    ],
+    "Ta'anit Esther__DIASPORA:1": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "2",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "31:18",
+        "end": "33:11"
+      }
+    ],
+    "Ta'anit Esther__IL:1": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "2",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "31:18",
+        "end": "33:11"
+      }
+    ],
+    "Tzom Gedaliah__DIASPORA:1": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "2",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "31:18",
+        "end": "33:11"
+      }
+    ],
+    "Tzom Gedaliah__IL:1": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "2",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "31:18",
+        "end": "33:11"
+      }
+    ],
+    "Tzom Tammuz__DIASPORA:1": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "2",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "31:18",
+        "end": "33:11"
+      }
+    ],
+    "Tzom Tammuz__IL:1": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "2",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "31:18",
+        "end": "33:11"
+      }
+    ],
+    "Pesach Shabbat Chol ha-Moed__DIASPORA:1": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "3",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "33:12",
+        "end": "33:16"
+      }
+    ],
+    "Pesach Shabbat Chol ha-Moed__IL:1": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "3",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "33:12",
+        "end": "33:16"
+      }
+    ],
+    "Sukkot Shabbat Chol ha-Moed__DIASPORA:1": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "3",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "33:12",
+        "end": "33:16"
+      }
+    ],
+    "Sukkot Shabbat Chol ha-Moed__IL:1": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "3",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "33:12",
+        "end": "33:16"
+      }
+    ],
+    "Pesach Shabbat Chol ha-Moed__DIASPORA:2": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "33:17",
+        "end": "33:23"
+      }
+    ],
+    "Pesach Shabbat Chol ha-Moed__DIASPORA:3": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "33:17",
+        "end": "33:23"
+      }
+    ],
+    "Pesach Shabbat Chol ha-Moed__IL:2": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "33:17",
+        "end": "33:23"
+      }
+    ],
+    "Pesach Shabbat Chol ha-Moed__IL:3": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "33:17",
+        "end": "33:23"
+      }
+    ],
+    "Sukkot Shabbat Chol ha-Moed__DIASPORA:2": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "33:17",
+        "end": "33:23"
+      }
+    ],
+    "Sukkot Shabbat Chol ha-Moed__DIASPORA:3": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "33:17",
+        "end": "33:23"
+      }
+    ],
+    "Sukkot Shabbat Chol ha-Moed__IL:2": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "33:17",
+        "end": "33:23"
+      }
+    ],
+    "Sukkot Shabbat Chol ha-Moed__IL:3": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "33:17",
+        "end": "33:23"
+      }
+    ],
+    "Asara B'Tevet__DIASPORA:2": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:9"
+      }
+    ],
+    "Asara B'Tevet__DIASPORA:3": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "5",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:9"
+      },
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "6",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:10",
+        "end": "34:26"
+      }
+    ],
+    "Asara B'Tevet__IL:2": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:9"
+      }
+    ],
+    "Asara B'Tevet__IL:3": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "5",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:9"
+      },
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "6",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:10",
+        "end": "34:26"
+      }
+    ],
+    "Pesach Shabbat Chol ha-Moed__DIASPORA:4": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:9"
+      }
+    ],
+    "Pesach Shabbat Chol ha-Moed__DIASPORA:5": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "5",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:9"
+      },
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "6",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:10",
+        "end": "34:26"
+      }
+    ],
+    "Pesach Shabbat Chol ha-Moed__IL:4": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:9"
+      }
+    ],
+    "Pesach Shabbat Chol ha-Moed__IL:5": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "5",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:9"
+      },
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "6",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:10",
+        "end": "34:26"
+      }
+    ],
+    "Pesach V (CH''M)__IL:1": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:9"
+      },
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "6",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:10",
+        "end": "34:26"
+      }
+    ],
+    "Sukkot Shabbat Chol ha-Moed__DIASPORA:4": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:9"
+      }
+    ],
+    "Sukkot Shabbat Chol ha-Moed__DIASPORA:5": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "5",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:9"
+      },
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "6",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:10",
+        "end": "34:26"
+      }
+    ],
+    "Sukkot Shabbat Chol ha-Moed__IL:4": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:9"
+      }
+    ],
+    "Sukkot Shabbat Chol ha-Moed__IL:5": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "5",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:9"
+      },
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "6",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:10",
+        "end": "34:26"
+      }
+    ],
+    "Ta'anit Esther__DIASPORA:2": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:9"
+      }
+    ],
+    "Ta'anit Esther__DIASPORA:3": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "5",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:9"
+      },
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "6",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:10",
+        "end": "34:26"
+      }
+    ],
+    "Ta'anit Esther__IL:2": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:9"
+      }
+    ],
+    "Ta'anit Esther__IL:3": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "5",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:9"
+      },
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "6",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:10",
+        "end": "34:26"
+      }
+    ],
+    "Tzom Gedaliah__DIASPORA:2": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:9"
+      }
+    ],
+    "Tzom Gedaliah__DIASPORA:3": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "5",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:9"
+      },
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "6",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:10",
+        "end": "34:26"
+      }
+    ],
+    "Tzom Gedaliah__IL:2": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:9"
+      }
+    ],
+    "Tzom Gedaliah__IL:3": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "5",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:9"
+      },
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "6",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:10",
+        "end": "34:26"
+      }
+    ],
+    "Tzom Tammuz__DIASPORA:2": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:9"
+      }
+    ],
+    "Tzom Tammuz__DIASPORA:3": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "5",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:9"
+      },
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "6",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:10",
+        "end": "34:26"
+      }
+    ],
+    "Tzom Tammuz__IL:2": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:9"
+      }
+    ],
+    "Tzom Tammuz__IL:3": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "5",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:1",
+        "end": "34:9"
+      },
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "6",
+        "kind": "partial",
+        "book": "Exodus",
+        "start": "34:10",
+        "end": "34:26"
+      }
+    ],
+    "Pesach Shabbat Chol ha-Moed__DIASPORA:6": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "34:10",
+        "end": "34:26"
+      }
+    ],
+    "Pesach Shabbat Chol ha-Moed__DIASPORA:7": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "34:10",
+        "end": "34:26"
+      }
+    ],
+    "Pesach Shabbat Chol ha-Moed__IL:6": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "34:10",
+        "end": "34:26"
+      }
+    ],
+    "Pesach Shabbat Chol ha-Moed__IL:7": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "34:10",
+        "end": "34:26"
+      }
+    ],
+    "Pesach V (CH''M)__IL:2": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "34:10",
+        "end": "34:26"
+      }
+    ],
+    "Pesach V (CH''M)__IL:3": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "34:10",
+        "end": "34:26"
+      }
+    ],
+    "Sukkot Shabbat Chol ha-Moed__DIASPORA:6": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "34:10",
+        "end": "34:26"
+      }
+    ],
+    "Sukkot Shabbat Chol ha-Moed__DIASPORA:7": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "34:10",
+        "end": "34:26"
+      }
+    ],
+    "Sukkot Shabbat Chol ha-Moed__IL:6": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "34:10",
+        "end": "34:26"
+      }
+    ],
+    "Sukkot Shabbat Chol ha-Moed__IL:7": [
+      {
+        "parshaId": "Ki Tisa",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Exodus",
+        "start": "34:10",
+        "end": "34:26"
+      }
+    ],
+    "Yom Kippur__DIASPORA:1": [
+      {
+        "parshaId": "Achrei Mot",
+        "aliyahKey": "1",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "16:1",
+        "end": "16:17"
+      }
+    ],
+    "Yom Kippur__DIASPORA:2": [
+      {
+        "parshaId": "Achrei Mot",
+        "aliyahKey": "1",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "16:1",
+        "end": "16:17"
+      }
+    ],
+    "Yom Kippur__DIASPORA:3": [
+      {
+        "parshaId": "Achrei Mot",
+        "aliyahKey": "1",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "16:1",
+        "end": "16:17"
+      }
+    ],
+    "Yom Kippur__IL:1": [
+      {
+        "parshaId": "Achrei Mot",
+        "aliyahKey": "1",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "16:1",
+        "end": "16:17"
+      }
+    ],
+    "Yom Kippur__IL:2": [
+      {
+        "parshaId": "Achrei Mot",
+        "aliyahKey": "1",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "16:1",
+        "end": "16:17"
+      }
+    ],
+    "Yom Kippur__IL:3": [
+      {
+        "parshaId": "Achrei Mot",
+        "aliyahKey": "1",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "16:1",
+        "end": "16:17"
+      }
+    ],
+    "Yom Kippur__DIASPORA:4": [
+      {
+        "parshaId": "Achrei Mot",
+        "aliyahKey": "2",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "16:18",
+        "end": "16:24"
+      }
+    ],
+    "Yom Kippur__IL:4": [
+      {
+        "parshaId": "Achrei Mot",
+        "aliyahKey": "2",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "16:18",
+        "end": "16:24"
+      }
+    ],
+    "Yom Kippur__DIASPORA:5": [
+      {
+        "parshaId": "Achrei Mot",
+        "aliyahKey": "3",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "16:25",
+        "end": "16:34"
+      }
+    ],
+    "Yom Kippur__DIASPORA:6": [
+      {
+        "parshaId": "Achrei Mot",
+        "aliyahKey": "3",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "16:25",
+        "end": "16:34"
+      }
+    ],
+    "Yom Kippur__IL:5": [
+      {
+        "parshaId": "Achrei Mot",
+        "aliyahKey": "3",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "16:25",
+        "end": "16:34"
+      }
+    ],
+    "Yom Kippur__IL:6": [
+      {
+        "parshaId": "Achrei Mot",
+        "aliyahKey": "3",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "16:25",
+        "end": "16:34"
+      }
+    ],
+    "Pesach II__DIASPORA:1": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "3",
+        "kind": "partial",
+        "book": "Leviticus",
+        "start": "22:17",
+        "end": "22:33"
+      },
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "4",
+        "kind": "partial",
+        "book": "Leviticus",
+        "start": "23:1",
+        "end": "23:22"
+      }
+    ],
+    "Pesach II (CH''M)__IL:1": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "3",
+        "kind": "partial",
+        "book": "Leviticus",
+        "start": "22:17",
+        "end": "22:33"
+      },
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "4",
+        "kind": "partial",
+        "book": "Leviticus",
+        "start": "23:1",
+        "end": "23:22"
+      }
+    ],
+    "Sukkot I__DIASPORA:1": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "3",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "22:17",
+        "end": "22:33"
+      }
+    ],
+    "Sukkot I__IL:1": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "3",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "22:17",
+        "end": "22:33"
+      }
+    ],
+    "Sukkot II__DIASPORA:1": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "3",
+        "kind": "partial",
+        "book": "Leviticus",
+        "start": "22:17",
+        "end": "22:33"
+      },
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "4",
+        "kind": "partial",
+        "book": "Leviticus",
+        "start": "23:1",
+        "end": "23:22"
+      }
+    ],
+    "Pesach II__DIASPORA:2": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:1",
+        "end": "23:22"
+      }
+    ],
+    "Pesach II__DIASPORA:3": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:1",
+        "end": "23:22"
+      }
+    ],
+    "Pesach II (CH''M)__IL:2": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:1",
+        "end": "23:22"
+      }
+    ],
+    "Pesach II (CH''M)__IL:3": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "4",
+        "kind": "partial",
+        "book": "Leviticus",
+        "start": "23:1",
+        "end": "23:22"
+      },
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:23",
+        "end": "23:32"
+      },
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:33",
+        "end": "23:44"
+      }
+    ],
+    "Sukkot I__DIASPORA:2": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:1",
+        "end": "23:22"
+      }
+    ],
+    "Sukkot I__DIASPORA:3": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:1",
+        "end": "23:22"
+      }
+    ],
+    "Sukkot I__DIASPORA:4": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:1",
+        "end": "23:22"
+      }
+    ],
+    "Sukkot I__DIASPORA:5": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:1",
+        "end": "23:22"
+      }
+    ],
+    "Sukkot I__IL:2": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:1",
+        "end": "23:22"
+      }
+    ],
+    "Sukkot I__IL:3": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:1",
+        "end": "23:22"
+      }
+    ],
+    "Sukkot I__IL:4": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:1",
+        "end": "23:22"
+      }
+    ],
+    "Sukkot I__IL:5": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:1",
+        "end": "23:22"
+      }
+    ],
+    "Sukkot II__DIASPORA:2": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:1",
+        "end": "23:22"
+      }
+    ],
+    "Sukkot II__DIASPORA:3": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:1",
+        "end": "23:22"
+      }
+    ],
+    "Pesach II__DIASPORA:4": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:23",
+        "end": "23:32"
+      }
+    ],
+    "Sukkot I__DIASPORA:6": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:23",
+        "end": "23:32"
+      }
+    ],
+    "Sukkot I__IL:6": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:23",
+        "end": "23:32"
+      }
+    ],
+    "Sukkot II__DIASPORA:4": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:23",
+        "end": "23:32"
+      }
+    ],
+    "Pesach II__DIASPORA:5": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:33",
+        "end": "23:44"
+      }
+    ],
+    "Sukkot I__DIASPORA:7": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:33",
+        "end": "23:44"
+      }
+    ],
+    "Sukkot I__IL:7": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:33",
+        "end": "23:44"
+      }
+    ],
+    "Sukkot II__DIASPORA:5": [
+      {
+        "parshaId": "Emor",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Leviticus",
+        "start": "23:33",
+        "end": "23:44"
+      }
+    ],
+    "Chanukah: 2 Candles__DIASPORA:M": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:1",
+        "end": "7:41"
+      }
+    ],
+    "Chanukah: 2 Candles__IL:M": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:1",
+        "end": "7:41"
+      }
+    ],
+    "Chanukah: 3 Candles__DIASPORA:1": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:1",
+        "end": "7:41"
+      }
+    ],
+    "Chanukah: 3 Candles__DIASPORA:2": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:1",
+        "end": "7:41"
+      }
+    ],
+    "Chanukah: 3 Candles__DIASPORA:3": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:1",
+        "end": "7:41"
+      }
+    ],
+    "Chanukah: 3 Candles__IL:1": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:1",
+        "end": "7:41"
+      }
+    ],
+    "Chanukah: 3 Candles__IL:2": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:1",
+        "end": "7:41"
+      }
+    ],
+    "Chanukah: 3 Candles__IL:3": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:1",
+        "end": "7:41"
+      }
+    ],
+    "Chanukah: 4 Candles__DIASPORA:1": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:1",
+        "end": "7:41"
+      }
+    ],
+    "Chanukah: 4 Candles__DIASPORA:2": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:1",
+        "end": "7:41"
+      }
+    ],
+    "Chanukah: 4 Candles__DIASPORA:3": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:1",
+        "end": "7:41"
+      }
+    ],
+    "Chanukah: 4 Candles__IL:1": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:1",
+        "end": "7:41"
+      }
+    ],
+    "Chanukah: 4 Candles__IL:2": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:1",
+        "end": "7:41"
+      }
+    ],
+    "Chanukah: 4 Candles__IL:3": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:1",
+        "end": "7:41"
+      }
+    ],
+    "Chanukah: 5 Candles__DIASPORA:1": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:1",
+        "end": "7:41"
+      }
+    ],
+    "Chanukah: 5 Candles__DIASPORA:2": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:1",
+        "end": "7:41"
+      }
+    ],
+    "Chanukah: 5 Candles__DIASPORA:3": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:1",
+        "end": "7:41"
+      }
+    ],
+    "Chanukah: 5 Candles__IL:1": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:1",
+        "end": "7:41"
+      }
+    ],
+    "Chanukah: 5 Candles__IL:2": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:1",
+        "end": "7:41"
+      }
+    ],
+    "Chanukah: 5 Candles__IL:3": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:1",
+        "end": "7:41"
+      }
+    ],
+    "Chanukah: 6 Candles__DIASPORA:1": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:1",
+        "end": "7:41"
+      }
+    ],
+    "Chanukah: 6 Candles__DIASPORA:2": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:1",
+        "end": "7:41"
+      }
+    ],
+    "Chanukah: 6 Candles__IL:1": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:1",
+        "end": "7:41"
+      }
+    ],
+    "Chanukah: 6 Candles__IL:2": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:1",
+        "end": "7:41"
+      }
+    ],
+    "Chanukah: 6 Candles__DIASPORA:3": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:42",
+        "end": "7:71"
+      }
+    ],
+    "Chanukah: 6 Candles__IL:3": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:42",
+        "end": "7:71"
+      }
+    ],
+    "Chanukah: 7 Candles__DIASPORA:4": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:42",
+        "end": "7:71"
+      }
+    ],
+    "Chanukah: 7 Candles__IL:4": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:42",
+        "end": "7:71"
+      }
+    ],
+    "Chanukah: 8 Candles__DIASPORA:4": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:42",
+        "end": "7:71"
+      }
+    ],
+    "Chanukah: 8 Candles__IL:4": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:42",
+        "end": "7:71"
+      }
+    ],
+    "Chanukah: 8th Day__DIASPORA:M": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "6",
+        "kind": "partial",
+        "book": "Numbers",
+        "start": "7:42",
+        "end": "7:71"
+      },
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:72",
+        "end": "7:89"
+      },
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "M",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:87",
+        "end": "7:89"
+      },
+      {
+        "parshaId": "Beha'alotcha",
+        "aliyahKey": "1",
+        "kind": "partial",
+        "book": "Numbers",
+        "start": "8:1",
+        "end": "8:14"
+      }
+    ],
+    "Chanukah: 8th Day__IL:M": [
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "6",
+        "kind": "partial",
+        "book": "Numbers",
+        "start": "7:42",
+        "end": "7:71"
+      },
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:72",
+        "end": "7:89"
+      },
+      {
+        "parshaId": "Nasso",
+        "aliyahKey": "M",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "7:87",
+        "end": "7:89"
+      },
+      {
+        "parshaId": "Beha'alotcha",
+        "aliyahKey": "1",
+        "kind": "partial",
+        "book": "Numbers",
+        "start": "8:1",
+        "end": "8:14"
+      }
+    ],
+    "Pesach VI (CH''M)__DIASPORA:1": [
+      {
+        "parshaId": "Beha'alotcha",
+        "aliyahKey": "3",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "9:1",
+        "end": "9:14"
+      }
+    ],
+    "Pesach VI (CH''M)__DIASPORA:2": [
+      {
+        "parshaId": "Beha'alotcha",
+        "aliyahKey": "3",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "9:1",
+        "end": "9:14"
+      }
+    ],
+    "Pesach VI (CH''M)__DIASPORA:3": [
+      {
+        "parshaId": "Beha'alotcha",
+        "aliyahKey": "3",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "9:1",
+        "end": "9:14"
+      }
+    ],
+    "Pesach VI (CH''M)__IL:1": [
+      {
+        "parshaId": "Beha'alotcha",
+        "aliyahKey": "3",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "9:1",
+        "end": "9:14"
+      }
+    ],
+    "Pesach VI (CH''M)__IL:2": [
+      {
+        "parshaId": "Beha'alotcha",
+        "aliyahKey": "3",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "9:1",
+        "end": "9:14"
+      }
+    ],
+    "Pesach VI (CH''M)__IL:3": [
+      {
+        "parshaId": "Beha'alotcha",
+        "aliyahKey": "3",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "9:1",
+        "end": "9:14"
+      }
+    ],
+    "Shabbat Parah__DIASPORA:M": [
+      {
+        "parshaId": "Chukat",
+        "aliyahKey": "1",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "19:1",
+        "end": "19:17"
+      },
+      {
+        "parshaId": "Chukat",
+        "aliyahKey": "2",
+        "kind": "partial",
+        "book": "Numbers",
+        "start": "19:18",
+        "end": "20:6"
+      }
+    ],
+    "Shabbat Parah__IL:M": [
+      {
+        "parshaId": "Chukat",
+        "aliyahKey": "1",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "19:1",
+        "end": "19:17"
+      },
+      {
+        "parshaId": "Chukat",
+        "aliyahKey": "2",
+        "kind": "partial",
+        "book": "Numbers",
+        "start": "19:18",
+        "end": "20:6"
+      }
+    ],
+    "Chanukah: 7 Candles__DIASPORA:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Chanukah: 7 Candles__DIASPORA:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Chanukah: 7 Candles__DIASPORA:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Chanukah: 7 Candles__IL:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Chanukah: 7 Candles__IL:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Chanukah: 7 Candles__IL:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Chanukah: 8 Candles__DIASPORA:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Chanukah: 8 Candles__DIASPORA:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Chanukah: 8 Candles__DIASPORA:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Chanukah: 8 Candles__IL:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Chanukah: 8 Candles__IL:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Chanukah: 8 Candles__IL:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Adar__DIASPORA:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Adar__DIASPORA:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Adar__DIASPORA:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Adar__DIASPORA:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Adar__IL:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Adar__IL:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Adar__IL:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Adar__IL:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Adar I__DIASPORA:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Adar I__DIASPORA:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Adar I__DIASPORA:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Adar I__DIASPORA:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Adar I__IL:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Adar I__IL:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Adar I__IL:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Adar I__IL:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Adar II__DIASPORA:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Adar II__DIASPORA:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Adar II__DIASPORA:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Adar II__DIASPORA:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Adar II__IL:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Adar II__IL:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Adar II__IL:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Adar II__IL:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Av__DIASPORA:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Av__DIASPORA:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Av__DIASPORA:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Av__DIASPORA:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Av__IL:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Av__IL:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Av__IL:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Av__IL:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Cheshvan__DIASPORA:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Cheshvan__DIASPORA:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Cheshvan__DIASPORA:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Cheshvan__DIASPORA:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Cheshvan__IL:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Cheshvan__IL:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Cheshvan__IL:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Cheshvan__IL:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Elul__DIASPORA:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Elul__DIASPORA:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Elul__DIASPORA:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Elul__DIASPORA:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Elul__IL:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Elul__IL:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Elul__IL:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Elul__IL:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Iyyar__DIASPORA:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Iyyar__DIASPORA:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Iyyar__DIASPORA:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Iyyar__DIASPORA:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Iyyar__IL:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Iyyar__IL:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Iyyar__IL:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Iyyar__IL:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Kislev__DIASPORA:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Kislev__DIASPORA:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Kislev__DIASPORA:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Kislev__DIASPORA:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Kislev__IL:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Kislev__IL:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Kislev__IL:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Kislev__IL:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Nisan__DIASPORA:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Nisan__DIASPORA:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Nisan__DIASPORA:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Nisan__DIASPORA:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Nisan__IL:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Nisan__IL:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Nisan__IL:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Nisan__IL:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Sh'vat__DIASPORA:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Sh'vat__DIASPORA:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Sh'vat__DIASPORA:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Sh'vat__DIASPORA:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Sh'vat__IL:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Sh'vat__IL:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Sh'vat__IL:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Sh'vat__IL:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Sivan__DIASPORA:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Sivan__DIASPORA:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Sivan__DIASPORA:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Sivan__DIASPORA:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Sivan__IL:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Sivan__IL:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Sivan__IL:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Sivan__IL:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Tamuz__DIASPORA:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Tamuz__DIASPORA:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Tamuz__DIASPORA:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Tamuz__DIASPORA:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Tamuz__IL:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Tamuz__IL:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Tamuz__IL:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Rosh Chodesh Tamuz__IL:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Shabbat Rosh Chodesh__DIASPORA:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Shabbat Rosh Chodesh__IL:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:1",
+        "end": "28:15"
+      }
+    ],
+    "Pesach III (CH''M)__DIASPORA:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "29:11"
+      }
+    ],
+    "Pesach IV (CH''M)__DIASPORA:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "29:11"
+      }
+    ],
+    "Pesach V (CH''M)__DIASPORA:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "29:11"
+      }
+    ],
+    "Pesach VI (CH''M)__DIASPORA:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "29:11"
+      }
+    ],
+    "Pesach I__DIASPORA:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "29:11"
+      }
+    ],
+    "Pesach I__IL:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "29:11"
+      }
+    ],
+    "Pesach II__DIASPORA:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "29:11"
+      }
+    ],
+    "Pesach II (CH''M)__IL:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "29:11"
+      }
+    ],
+    "Pesach III (CH''M)__IL:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "29:11"
+      }
+    ],
+    "Pesach IV (CH''M)__IL:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "29:11"
+      }
+    ],
+    "Pesach Shabbat Chol ha-Moed__DIASPORA:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "29:11"
+      }
+    ],
+    "Pesach Shabbat Chol ha-Moed__IL:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "29:11"
+      }
+    ],
+    "Pesach V (CH''M)__IL:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "29:11"
+      }
+    ],
+    "Pesach VI (CH''M)__IL:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "29:11"
+      }
+    ],
+    "Pesach VII__DIASPORA:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "29:11"
+      }
+    ],
+    "Pesach VII__IL:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "29:11"
+      }
+    ],
+    "Pesach VIII__DIASPORA:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "29:11"
+      }
+    ],
+    "Rosh Hashana I__DIASPORA:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "29:11"
+      }
+    ],
+    "Rosh Hashana I__IL:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "29:11"
+      }
+    ],
+    "Rosh Hashana II__DIASPORA:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "29:11"
+      }
+    ],
+    "Rosh Hashana II__IL:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "29:11"
+      }
+    ],
+    "Shavuot__IL:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "29:11"
+      }
+    ],
+    "Shavuot I__DIASPORA:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "29:11"
+      }
+    ],
+    "Shavuot II__DIASPORA:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "29:11"
+      }
+    ],
+    "Yom Kippur__DIASPORA:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "29:11"
+      }
+    ],
+    "Yom Kippur__IL:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "28:16",
+        "end": "29:11"
+      }
+    ],
+    "Shmini Atzeret__DIASPORA:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      },
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "M",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:35",
+        "end": "30:1"
+      }
+    ],
+    "Simchat Torah__DIASPORA:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      },
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "M",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:35",
+        "end": "30:1"
+      }
+    ],
+    "Shmini Atzeret__IL:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      },
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "M",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:35",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot III (CH''M)__DIASPORA:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot III (CH''M)__DIASPORA:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot III (CH''M)__DIASPORA:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot III (CH''M)__DIASPORA:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot II (CH''M)__IL:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot II (CH''M)__IL:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot II (CH''M)__IL:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot II (CH''M)__IL:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot IV (CH''M)__DIASPORA:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot IV (CH''M)__DIASPORA:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot IV (CH''M)__DIASPORA:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot IV (CH''M)__DIASPORA:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot III (CH''M)__IL:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot III (CH''M)__IL:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot III (CH''M)__IL:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot III (CH''M)__IL:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot V (CH''M)__DIASPORA:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot V (CH''M)__DIASPORA:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot V (CH''M)__DIASPORA:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot V (CH''M)__DIASPORA:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot IV (CH''M)__IL:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot IV (CH''M)__IL:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot IV (CH''M)__IL:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot IV (CH''M)__IL:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot VI (CH''M)__DIASPORA:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot VI (CH''M)__DIASPORA:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot VI (CH''M)__DIASPORA:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot VI (CH''M)__DIASPORA:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot V (CH''M)__IL:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot V (CH''M)__IL:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot V (CH''M)__IL:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot V (CH''M)__IL:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot VI (CH''M)__IL:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot VI (CH''M)__IL:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot VI (CH''M)__IL:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      },
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "M",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:35",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot VI (CH''M)__IL:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot VII (Hoshana Raba)__DIASPORA:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot VII (Hoshana Raba)__DIASPORA:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot VII (Hoshana Raba)__DIASPORA:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot VII (Hoshana Raba)__DIASPORA:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot VII (Hoshana Raba)__IL:1": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot VII (Hoshana Raba)__IL:2": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot VII (Hoshana Raba)__IL:3": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot VII (Hoshana Raba)__IL:4": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot I__DIASPORA:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot I__IL:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot II__DIASPORA:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot Shabbat Chol ha-Moed__DIASPORA:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Sukkot Shabbat Chol ha-Moed__IL:M": [
+      {
+        "parshaId": "Pinchas",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Numbers",
+        "start": "29:12",
+        "end": "30:1"
+      }
+    ],
+    "Tish'a B'Av__DIASPORA:1": [
+      {
+        "parshaId": "Vaetchanan",
+        "aliyahKey": "2",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "4:5",
+        "end": "4:40"
+      }
+    ],
+    "Tish'a B'Av__DIASPORA:2": [
+      {
+        "parshaId": "Vaetchanan",
+        "aliyahKey": "2",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "4:5",
+        "end": "4:40"
+      }
+    ],
+    "Tish'a B'Av__DIASPORA:3": [
+      {
+        "parshaId": "Vaetchanan",
+        "aliyahKey": "2",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "4:5",
+        "end": "4:40"
+      }
+    ],
+    "Tish'a B'Av__IL:1": [
+      {
+        "parshaId": "Vaetchanan",
+        "aliyahKey": "2",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "4:5",
+        "end": "4:40"
+      }
+    ],
+    "Tish'a B'Av__IL:2": [
+      {
+        "parshaId": "Vaetchanan",
+        "aliyahKey": "2",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "4:5",
+        "end": "4:40"
+      }
+    ],
+    "Tish'a B'Av__IL:3": [
+      {
+        "parshaId": "Vaetchanan",
+        "aliyahKey": "2",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "4:5",
+        "end": "4:40"
+      }
+    ],
+    "Tish'a B'Av (observed)__DIASPORA:1": [
+      {
+        "parshaId": "Vaetchanan",
+        "aliyahKey": "2",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "4:5",
+        "end": "4:40"
+      }
+    ],
+    "Tish'a B'Av (observed)__DIASPORA:2": [
+      {
+        "parshaId": "Vaetchanan",
+        "aliyahKey": "2",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "4:5",
+        "end": "4:40"
+      }
+    ],
+    "Tish'a B'Av (observed)__DIASPORA:3": [
+      {
+        "parshaId": "Vaetchanan",
+        "aliyahKey": "2",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "4:5",
+        "end": "4:40"
+      }
+    ],
+    "Tish'a B'Av (observed)__IL:1": [
+      {
+        "parshaId": "Vaetchanan",
+        "aliyahKey": "2",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "4:5",
+        "end": "4:40"
+      }
+    ],
+    "Tish'a B'Av (observed)__IL:2": [
+      {
+        "parshaId": "Vaetchanan",
+        "aliyahKey": "2",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "4:5",
+        "end": "4:40"
+      }
+    ],
+    "Tish'a B'Av (observed)__IL:3": [
+      {
+        "parshaId": "Vaetchanan",
+        "aliyahKey": "2",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "4:5",
+        "end": "4:40"
+      }
+    ],
+    "Yom HaAtzma'ut__DIASPORA:1": [
+      {
+        "parshaId": "Eikev",
+        "aliyahKey": "1",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "7:12",
+        "end": "8:10"
+      }
+    ],
+    "Yom HaAtzma'ut__DIASPORA:2": [
+      {
+        "parshaId": "Eikev",
+        "aliyahKey": "1",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "7:12",
+        "end": "8:10"
+      }
+    ],
+    "Yom HaAtzma'ut__DIASPORA:3": [
+      {
+        "parshaId": "Eikev",
+        "aliyahKey": "1",
+        "kind": "partial",
+        "book": "Deuteronomy",
+        "start": "7:12",
+        "end": "8:10"
+      },
+      {
+        "parshaId": "Eikev",
+        "aliyahKey": "2",
+        "kind": "partial",
+        "book": "Deuteronomy",
+        "start": "8:11",
+        "end": "9:3"
+      }
+    ],
+    "Yom HaAtzma'ut__IL:1": [
+      {
+        "parshaId": "Eikev",
+        "aliyahKey": "1",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "7:12",
+        "end": "8:10"
+      }
+    ],
+    "Yom HaAtzma'ut__IL:2": [
+      {
+        "parshaId": "Eikev",
+        "aliyahKey": "1",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "7:12",
+        "end": "8:10"
+      }
+    ],
+    "Yom HaAtzma'ut__IL:3": [
+      {
+        "parshaId": "Eikev",
+        "aliyahKey": "1",
+        "kind": "partial",
+        "book": "Deuteronomy",
+        "start": "7:12",
+        "end": "8:10"
+      },
+      {
+        "parshaId": "Eikev",
+        "aliyahKey": "2",
+        "kind": "partial",
+        "book": "Deuteronomy",
+        "start": "8:11",
+        "end": "9:3"
+      }
+    ],
+    "Shavuot II__DIASPORA:1": [
+      {
+        "parshaId": "Re'eh",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "14:22",
+        "end": "14:29"
+      }
+    ],
+    "Shmini Atzeret__DIASPORA:1": [
+      {
+        "parshaId": "Re'eh",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "14:22",
+        "end": "14:29"
+      }
+    ],
+    "Shavuot II__DIASPORA:2": [
+      {
+        "parshaId": "Re'eh",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "15:1",
+        "end": "15:18"
+      }
+    ],
+    "Shmini Atzeret__DIASPORA:2": [
+      {
+        "parshaId": "Re'eh",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "15:1",
+        "end": "15:18"
+      }
+    ],
+    "Pesach VIII__DIASPORA:1": [
+      {
+        "parshaId": "Re'eh",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "15:19",
+        "end": "16:17"
+      }
+    ],
+    "Pesach VIII__DIASPORA:2": [
+      {
+        "parshaId": "Re'eh",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "15:19",
+        "end": "16:17"
+      }
+    ],
+    "Pesach VIII__DIASPORA:3": [
+      {
+        "parshaId": "Re'eh",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "15:19",
+        "end": "16:17"
+      }
+    ],
+    "Pesach VIII__DIASPORA:4": [
+      {
+        "parshaId": "Re'eh",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "15:19",
+        "end": "16:17"
+      }
+    ],
+    "Pesach VIII__DIASPORA:5": [
+      {
+        "parshaId": "Re'eh",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "15:19",
+        "end": "16:17"
+      },
+      {
+        "parshaId": "Re'eh",
+        "aliyahKey": "M",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "16:13",
+        "end": "16:17"
+      }
+    ],
+    "Shavuot II__DIASPORA:3": [
+      {
+        "parshaId": "Re'eh",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "15:19",
+        "end": "16:17"
+      }
+    ],
+    "Shavuot II__DIASPORA:4": [
+      {
+        "parshaId": "Re'eh",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "15:19",
+        "end": "16:17"
+      }
+    ],
+    "Shavuot II__DIASPORA:5": [
+      {
+        "parshaId": "Re'eh",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "15:19",
+        "end": "16:17"
+      }
+    ],
+    "Shavuot II__DIASPORA:6": [
+      {
+        "parshaId": "Re'eh",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "15:19",
+        "end": "16:17"
+      }
+    ],
+    "Shavuot II__DIASPORA:7": [
+      {
+        "parshaId": "Re'eh",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "15:19",
+        "end": "16:17"
+      },
+      {
+        "parshaId": "Re'eh",
+        "aliyahKey": "M",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "16:13",
+        "end": "16:17"
+      }
+    ],
+    "Shmini Atzeret__DIASPORA:3": [
+      {
+        "parshaId": "Re'eh",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "15:19",
+        "end": "16:17"
+      }
+    ],
+    "Shmini Atzeret__DIASPORA:4": [
+      {
+        "parshaId": "Re'eh",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "15:19",
+        "end": "16:17"
+      }
+    ],
+    "Shmini Atzeret__DIASPORA:5": [
+      {
+        "parshaId": "Re'eh",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "15:19",
+        "end": "16:17"
+      }
+    ],
+    "Shmini Atzeret__DIASPORA:6": [
+      {
+        "parshaId": "Re'eh",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "15:19",
+        "end": "16:17"
+      }
+    ],
+    "Shmini Atzeret__DIASPORA:7": [
+      {
+        "parshaId": "Re'eh",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "15:19",
+        "end": "16:17"
+      },
+      {
+        "parshaId": "Re'eh",
+        "aliyahKey": "M",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "16:13",
+        "end": "16:17"
+      }
+    ],
+    "Shabbat Zachor__DIASPORA:M": [
+      {
+        "parshaId": "Ki Teitzei",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "24:14",
+        "end": "25:19"
+      },
+      {
+        "parshaId": "Ki Teitzei",
+        "aliyahKey": "M",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "25:17",
+        "end": "25:19"
+      }
+    ],
+    "Shabbat Zachor__IL:M": [
+      {
+        "parshaId": "Ki Teitzei",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "24:14",
+        "end": "25:19"
+      },
+      {
+        "parshaId": "Ki Teitzei",
+        "aliyahKey": "M",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "25:17",
+        "end": "25:19"
+      }
+    ],
+    "Simchat Torah__DIASPORA:1": [
+      {
+        "parshaId": "Vezot Haberakhah",
+        "aliyahKey": "1",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "33:1",
+        "end": "33:7"
+      }
+    ],
+    "Shmini Atzeret__IL:1": [
+      {
+        "parshaId": "Vezot Haberakhah",
+        "aliyahKey": "1",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "33:1",
+        "end": "33:7"
+      }
+    ],
+    "Simchat Torah__DIASPORA:2": [
+      {
+        "parshaId": "Vezot Haberakhah",
+        "aliyahKey": "2",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "33:8",
+        "end": "33:12"
+      }
+    ],
+    "Shmini Atzeret__IL:2": [
+      {
+        "parshaId": "Vezot Haberakhah",
+        "aliyahKey": "2",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "33:8",
+        "end": "33:12"
+      }
+    ],
+    "Simchat Torah__DIASPORA:3": [
+      {
+        "parshaId": "Vezot Haberakhah",
+        "aliyahKey": "3",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "33:13",
+        "end": "33:17"
+      }
+    ],
+    "Shmini Atzeret__IL:3": [
+      {
+        "parshaId": "Vezot Haberakhah",
+        "aliyahKey": "3",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "33:13",
+        "end": "33:17"
+      }
+    ],
+    "Simchat Torah__DIASPORA:4": [
+      {
+        "parshaId": "Vezot Haberakhah",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "33:18",
+        "end": "33:21"
+      }
+    ],
+    "Shmini Atzeret__IL:4": [
+      {
+        "parshaId": "Vezot Haberakhah",
+        "aliyahKey": "4",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "33:18",
+        "end": "33:21"
+      }
+    ],
+    "Simchat Torah__DIASPORA:5": [
+      {
+        "parshaId": "Vezot Haberakhah",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "33:22",
+        "end": "33:26"
+      }
+    ],
+    "Shmini Atzeret__IL:5": [
+      {
+        "parshaId": "Vezot Haberakhah",
+        "aliyahKey": "5",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "33:22",
+        "end": "33:26"
+      }
+    ],
+    "Simchat Torah__DIASPORA:6": [
+      {
+        "parshaId": "Vezot Haberakhah",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "33:27",
+        "end": "33:29"
+      },
+      {
+        "parshaId": "Vezot Haberakhah",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "34:1",
+        "end": "34:12"
+      }
+    ],
+    "Shmini Atzeret__IL:6": [
+      {
+        "parshaId": "Vezot Haberakhah",
+        "aliyahKey": "6",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "33:27",
+        "end": "33:29"
+      }
+    ],
+    "Shmini Atzeret__IL:7": [
+      {
+        "parshaId": "Vezot Haberakhah",
+        "aliyahKey": "7",
+        "kind": "full",
+        "book": "Deuteronomy",
+        "start": "34:1",
+        "end": "34:12"
+      }
+    ]
+  }
+}

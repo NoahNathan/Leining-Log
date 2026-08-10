@@ -13,32 +13,42 @@ const validChagIds = new Set(chagimData.map(c => c.id));
 const difficultyData = JSON.parse(readFileSync('../data/difficulty-scores.json', 'utf8'));
 const haftarahDifficultyData = JSON.parse(readFileSync('../data/haftarah-difficulty.json', 'utf8'));
 
-// A verse-range -> difficulty lookup for Torah content, built by cross-
-// referencing chagim.json's book/start/end (difficulty-scores.json's own
-// chagim entries don't carry book/start/end, only 'aliyah'/'M') with its
-// scores. This lets a special-Shabbat/Rosh-Chodesh override reuse the score
-// that chagim.json's OWN standalone entry for that exact reading already
-// has, rather than needing a fresh computation: Shekalim's maftir here is
-// literally the same Exodus 30:11-16 already scored for the standalone
-// "Shabbat Shekalim" chag card, Rosh Chodesh's aliyah 7 is always Numbers
-// 28:9-15 (already scored via "Shabbat Rosh Chodesh"), and so on.
-const torahScoreByRange = new Map();
+// A verse-range -> {chagId, aliyahKey, difficulty} lookup for Torah content,
+// built by cross-referencing chagim.json's book/start/end (difficulty-
+// scores.json's own chagim entries don't carry book/start/end, only
+// 'aliyah'/'M') with its scores. This lets a special-Shabbat/Rosh-Chodesh
+// override reuse the score that chagim.json's OWN standalone entry for that
+// exact reading already has, rather than needing a fresh computation:
+// Shekalim's maftir here is literally the same Exodus 30:11-16 already
+// scored for the standalone "Shabbat Shekalim" chag card, Rosh Chodesh's
+// aliyah 7 is always Numbers 28:9-15 (already scored via "Shabbat Rosh
+// Chodesh"), and so on. It also identifies WHICH chag reading (and which of
+// its own aliyah numbers) this override's content actually is, so the app
+// can record a "mark leined" against that real reading's own identity
+// instead of the parsha's -- see detail.js's applySpecialReading/
+// attachQuickLog for why that distinction matters. One map per region,
+// since the app should reference the SAME region's chagId the calendar row
+// itself is for, even though diaspora/israel content is always identical
+// for these particular readings.
+const torahScoreByRangeByRegion = { DIASPORA: new Map(), IL: new Map() };
 for (const c of chagimData) {
   const diff = difficultyData.chagim.find((d) => d.chagId === c.id);
   if (!diff) continue;
+  const regionTag = c.region === 'israel' ? 'IL' : 'DIASPORA';
+  const map = torahScoreByRangeByRegion[regionTag];
   const diffByAliyah = new Map(diff.aliyot.map((a) => [String(a.aliyah), a]));
   for (const a of (c.aliyot || [])) {
     const d = diffByAliyah.get(String(a.aliyah));
-    if (d) torahScoreByRange.set(`${a.book} ${a.start}-${a.end}`, d);
+    if (d) map.set(`${a.book} ${a.start}-${a.end}`, { chagId: c.id, aliyahKey: String(a.aliyah), difficulty: d });
   }
   if (c.maftir) {
     const d = diffByAliyah.get('M');
-    if (d) torahScoreByRange.set(`${c.maftir.book} ${c.maftir.start}-${c.maftir.end}`, d);
+    if (d) map.set(`${c.maftir.book} ${c.maftir.start}-${c.maftir.end}`, { chagId: c.id, aliyahKey: 'M', difficulty: d });
   }
 }
-function torahDifficultyFor(ref) {
+function torahSourceFor(ref, regionTag) {
   if (!ref) return null;
-  return torahScoreByRange.get(`${ref.book} ${ref.start}-${ref.end}`) || null;
+  return torahScoreByRangeByRegion[regionTag].get(`${ref.book} ${ref.start}-${ref.end}`) || null;
 }
 // The reshaped-aliyah-6 pseudo-score (only the 6 parshiot that can ever host
 // a 3-scroll week produce one -- see gen_word_stats.mjs/gen_difficulty.mjs),
@@ -197,19 +207,38 @@ for (let decadeStart = START_YEAR; decadeStart < END_YEAR; decadeStart += DECADE
                 .map((n) => [n, toRef(leyning.fullkriyah[n])])
             );
             // Aliyah 7 is always Numbers 28:9-15, already scored via the
-            // "Shabbat Rosh Chodesh" chag entries -- reuse it directly.
-            const d7 = torahDifficultyFor(row.specialReading.aliyot['7']);
-            if (d7) row.specialReading.aliyot['7'].difficulty = d7;
+            // "Shabbat Rosh Chodesh" chag entries -- reuse it directly, and
+            // record which chag reading (and its own aliyah key) this
+            // content actually is, so a "mark leined" on this row can log
+            // against that reading's own identity instead of the parsha's
+            // (see detail.js's applySpecialReading/attachQuickLog).
+            const src7 = torahSourceFor(row.specialReading.aliyot['7'], regionTag);
+            if (src7) {
+              row.specialReading.aliyot['7'].difficulty = src7.difficulty;
+              row.specialReading.aliyot['7'].sourceChagId = src7.chagId;
+              row.specialReading.aliyot['7'].sourceAliyahKey = src7.aliyahKey;
+            }
             // Aliyah 6's reshaped (parsha-specific) range has no existing
             // chag entry to borrow from -- it's a fresh pseudo-aliyah scored
-            // once per hosting parsha, see gen_word_stats.mjs/gen_difficulty.mjs.
+            // once per hosting parsha (see gen_word_stats.mjs/gen_difficulty.mjs),
+            // and it's real content of THIS parsha's own aliyot 6+7 merged
+            // together, not chag-sourced -- so it carries mergedFrom instead
+            // of a sourceChagId, telling the app to log both static aliyah
+            // keys under this parsha's own id rather than under a chag's.
             const d6 = reshapedAliyotByParsha.get(parshaId);
-            if (d6 && row.specialReading.aliyot['6']) row.specialReading.aliyot['6'].difficulty = d6;
+            if (d6 && row.specialReading.aliyot['6']) {
+              row.specialReading.aliyot['6'].difficulty = d6;
+              row.specialReading.aliyot['6'].mergedFrom = ['6', '7'];
+            }
           }
           if (r.M) {
             row.specialReading.maftirRef = toRef(leyning.fullkriyah?.M);
-            const dm = torahDifficultyFor(row.specialReading.maftirRef);
-            if (dm) row.specialReading.maftirRef.difficulty = dm;
+            const srcM = torahSourceFor(row.specialReading.maftirRef, regionTag);
+            if (srcM) {
+              row.specialReading.maftirRef.difficulty = srcM.difficulty;
+              row.specialReading.maftirRef.sourceChagId = srcM.chagId;
+              row.specialReading.maftirRef.sourceAliyahKey = srcM.aliyahKey;
+            }
           }
           // A handful of special-Shabbat labels (Machar Chodesh, Pinchas
           // after 17 Tammuz, Ki Teitzei's 3rd Haftarah of Consolation,

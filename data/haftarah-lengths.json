@@ -1,6 +1,6 @@
 {
   "description": "Verse/word counts for every haftarah nusach variant (ashkenazi, sefardi, chabad), used only to identify the longest and shortest reading within each tradition on the site. NOT a difficulty measurement -- only the ashkenazi reading has full difficulty stats (see haftarah-difficulty.json); sefardi and chabad are not otherwise scored. Word counts are computed from the same Masoretic Nevi'im text as the difficulty pipeline. A nusach entry that is textually identical to another (e.g. most chabad readings are the same as ashkenazi) reuses that reading's counts and carries a 'sameAs' field.",
-  "generatedAt": "2026-08-09T22:30:08.458Z",
+  "generatedAt": "2026-08-10T06:30:15.312Z",
   "lengths": {
     "Bereshit": {
       "ashkenazi": {

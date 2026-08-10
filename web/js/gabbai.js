@@ -285,16 +285,3 @@ export async function listMyOpenReadingSignups(minyanIds) {
   return data || [];
 }
 
-// Fires the "email every accepted member" side -- calls the
-// notify-reading-signup Edge Function directly (see its README: needs a
-// verified Resend sending domain to actually deliver to anyone but the
-// account owner). Returns { sent, failed, total }.
-export async function sendReadingSignupInvite(minyanId, { minyanName, parshaLabel, blurb, signupUrl }) {
-  const client = await sb();
-  const { data, error } = await client.functions.invoke('notify-reading-signup', {
-    body: { minyan_id: minyanId, minyan_name: minyanName, parsha_label: parshaLabel, blurb, signup_url: signupUrl },
-  });
-  if (error) throw error;
-  return data;
-}
-

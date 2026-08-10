@@ -1,4 +1,4 @@
-import { el, displayParshaName } from '../util.js';
+import { el, displayParshaName, gregorianToHebrewYear, hebrewToGregorianYear } from '../util.js';
 import { isConfigured, signUp, signInWithPassword, signOut, onAuthChange } from '../auth.js';
 import {
   listAllParshiotForSearch, clearBarMitzvahFlag,
@@ -19,6 +19,22 @@ function aliyahLabel(key) {
   if (key === 'ALL') return 'Whole parsha';
   if (key === 'M') return 'Maftir';
   return ordinal(Number(key)) + ' aliyah';
+}
+function aliyahSortKey(key) {
+  if (key === 'ALL') return -1;
+  if (key === 'M') return 999;
+  return Number(key);
+}
+
+// Fills in whichever year is missing from the other, via the Hebrew-calendar
+// correspondence in util.js -- so an entry always shows both once one is
+// known, whether the user typed only one or an older row only ever had one.
+function deriveYears(yearHebrew, yearGregorian) {
+  let heb = yearHebrew || null;
+  let greg = yearGregorian || null;
+  if (greg && !heb) heb = String(gregorianToHebrewYear(greg));
+  else if (heb && !greg && /^\d+$/.test(heb)) greg = hebrewToGregorianYear(Number(heb));
+  return { yearHebrew: heb, yearGregorian: greg };
 }
 
 export async function renderAccount(container) {
@@ -227,17 +243,33 @@ function renderAddEntryCard(user, individual, onSaved) {
   const barMitzvah = el('input', { type: 'checkbox' });
   const status = el('span', { class: 'muted small' }, '');
 
+  // Live preview only -- doesn't touch the fields themselves, so a user who
+  // knows their reading actually fell right around Rosh Hashanah can still
+  // type the other year exactly rather than getting the approximation.
+  const yearHint = el('p', { class: 'muted small' }, '');
+  function updateYearHint() {
+    const { yearHebrew: heb, yearGregorian: greg } = deriveYears(yearHebrew.value, yearGregorian.value ? Number(yearGregorian.value) : null);
+    if (yearGregorian.value && !yearHebrew.value) yearHint.textContent = `≈ Hebrew year ${heb}`;
+    else if (yearHebrew.value && !yearGregorian.value && greg) yearHint.textContent = `≈ ${greg}`;
+    else yearHint.textContent = '';
+  }
+  yearHebrew.addEventListener('input', updateYearHint);
+  yearGregorian.addEventListener('input', updateYearHint);
+
   const form = el('form', {
     onsubmit: async (e) => {
       e.preventDefault();
       // Only one entry can be the bar mitzvah parsha -- clear any earlier
       // one first so checking this box always replaces it, never adds a second.
       if (barMitzvah.checked) await clearBarMitzvahFlag(user.id);
+      const { yearHebrew: heb, yearGregorian: greg } = deriveYears(
+        yearHebrew.value, yearGregorian.value ? Number(yearGregorian.value) : null
+      );
       await addLeiningLogEntry(user.id, {
         parshaId: parshaSelect.value,
         aliyahKey: aliyahSelect.value,
-        yearHebrew: yearHebrew.value || null,
-        yearGregorian: yearGregorian.value ? Number(yearGregorian.value) : null,
+        yearHebrew: heb,
+        yearGregorian: greg,
         isBarMitzvah: barMitzvah.checked,
       });
       status.textContent = 'Logged!';
@@ -246,6 +278,7 @@ function renderAddEntryCard(user, individual, onSaved) {
   }, [
     el('div', { class: 'search-row' }, [parshaSelect, aliyahSelect]),
     el('div', { class: 'search-row' }, [yearHebrew, yearGregorian]),
+    yearHint,
     el('label', { class: 'checkbox-label' }, [barMitzvah, ' This was my bar mitzvah parsha (replaces any previous one)']),
     el('div', { class: 'search-row' }, [el('button', { class: 'btn-primary', type: 'submit' }, 'Mark as leined'), status]),
   ]);
@@ -259,22 +292,37 @@ function renderLogCard(log, byId, onChanged) {
     card.append(el('p', { class: 'muted small' }, 'Nothing logged yet -- add your first reading above.'));
     return card;
   }
-  const list = el('div', { class: 'log-list' });
+  // Group by parsha so logging several aliyot of the same parsha shows up
+  // as one block listing them together, not a separate row repeating the
+  // parsha name each time.
+  const byParsha = new Map();
   for (const entry of log) {
-    const p = byId.get(entry.parsha_id);
-    const years = [entry.year_hebrew, entry.year_gregorian].filter(Boolean).join(' / ');
-    list.append(el('div', { class: 'log-row' }, [
-      el('div', {}, [
-        el('span', { class: 'log-parsha' }, p ? displayParshaName(p.englishName || p.id) : entry.parsha_id),
-        el('span', { class: 'muted small' }, ` — ${aliyahLabel(entry.aliyah_key)}`),
-        entry.is_bar_mitzvah ? el('span', { class: 'tag' }, 'Bar Mitzvah') : null,
-        years ? el('span', { class: 'muted small' }, ` · ${years}`) : null,
-      ]),
-      el('button', {
-        class: 'btn-share', type: 'button', title: 'Remove',
-        onclick: async () => { await removeLeiningLogEntry(entry.id); onChanged(); },
-      }, '✕'),
-    ]));
+    if (!byParsha.has(entry.parsha_id)) byParsha.set(entry.parsha_id, []);
+    byParsha.get(entry.parsha_id).push(entry);
+  }
+  const list = el('div', { class: 'log-list' });
+  for (const [parshaId, entries] of byParsha) {
+    const p = byId.get(parshaId);
+    entries.sort((a, b) => aliyahSortKey(a.aliyah_key) - aliyahSortKey(b.aliyah_key));
+    const group = el('div', { class: 'log-group' }, [
+      el('div', { class: 'log-parsha' }, p ? displayParshaName(p.englishName || p.id) : parshaId),
+    ]);
+    for (const entry of entries) {
+      const { yearHebrew: heb, yearGregorian: greg } = deriveYears(entry.year_hebrew, entry.year_gregorian);
+      const years = [heb, greg].filter(Boolean).join(' / ');
+      group.append(el('div', { class: 'log-group-aliyah' }, [
+        el('div', {}, [
+          el('span', {}, aliyahLabel(entry.aliyah_key)),
+          entry.is_bar_mitzvah ? el('span', { class: 'tag' }, 'Bar Mitzvah') : null,
+          years ? el('span', { class: 'muted small' }, ` · ${years}`) : null,
+        ]),
+        el('button', {
+          class: 'btn-share', type: 'button', title: 'Remove',
+          onclick: async () => { await removeLeiningLogEntry(entry.id); onChanged(); },
+        }, '✕'),
+      ]));
+    }
+    list.append(group);
   }
   card.append(list);
   return card;

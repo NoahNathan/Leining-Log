@@ -43,15 +43,26 @@ function wholeReadingTikkunLink(aliyot) {
   return el('a', { href: url, target: '_blank', rel: 'noopener', class: 'tikkun-link', title: 'Find the whole reading in the Tikkun' }, 'Whole reading in Tikkun ↗');
 }
 
-// A toggle that logs/un-logs a specific aliyah (or 'ALL' for the whole
-// reading) as leined, right from wherever the reading is shown -- This
-// Week, Search, or a permalink -- not just from the My Leining tab.
-// `mine` is a shared Map(aliyahKey -> log row id) for this reading, kept in
-// sync across every button on the page so the state stays consistent.
-function quickLogButton(userId, readingId, aliyahKey, mine) {
+function logKeyStr(k) { return `${k.parshaId}::${k.aliyahKey}`; }
+
+// A toggle that logs/un-logs a reading slot as leined, right from wherever
+// it's shown -- This Week, Search, or a permalink -- not just from the My
+// Leining tab. `keys` is normally one (parshaId, aliyahKey) pair, but can be
+// more than one when a single slot's real content spans more than one
+// reading's own identity -- e.g. a 3-scroll week's reshaped aliyah 6 covers
+// this parsha's own aliyah 6 AND what would have been aliyah 7, so marking
+// it leined logs both; a Rosh-Chodesh-content aliyah 7 logs under Rosh
+// Chodesh's OWN identity instead of this parsha's, so it's not falsely
+// recorded as this parsha's real aliyah 7 (see applySpecialReading and
+// computeTorahProgress -- this is what keeps "% of Torah learned" honest).
+// `logIndex` is a shared Map(`${parshaId}::${aliyahKey}` -> log row id)
+// across the WHOLE card (every reading a log row could belong to, not just
+// this one), kept in sync across every button so state stays consistent.
+function quickLogButton(userId, keys, logIndex) {
   const btn = el('button', { type: 'button' });
+  function isLogged() { return keys.every((k) => logIndex.has(logKeyStr(k))); }
   function update() {
-    const logged = mine.has(aliyahKey);
+    const logged = isLogged();
     btn.textContent = logged ? '✓ Leined' : 'Mark leined';
     btn.className = `quicklog-btn${logged ? ' quicklog-btn-active' : ''}`;
     btn.title = logged ? 'Marked as leined -- click to remove' : "Mark this as leined";
@@ -60,12 +71,15 @@ function quickLogButton(userId, readingId, aliyahKey, mine) {
     e.stopPropagation();
     btn.disabled = true;
     try {
-      if (mine.has(aliyahKey)) {
-        await removeLeiningLogEntry(mine.get(aliyahKey));
-        mine.delete(aliyahKey);
+      if (isLogged()) {
+        await Promise.all(keys.map((k) => removeLeiningLogEntry(logIndex.get(logKeyStr(k)))));
+        for (const k of keys) logIndex.delete(logKeyStr(k));
       } else {
-        const id = await addLeiningLogEntry(userId, { parshaId: readingId, aliyahKey });
-        mine.set(aliyahKey, id);
+        for (const k of keys) {
+          if (logIndex.has(logKeyStr(k))) continue; // already logged via another button on this page
+          const id = await addLeiningLogEntry(userId, { parshaId: k.parshaId, aliyahKey: k.aliyahKey });
+          logIndex.set(logKeyStr(k), id);
+        }
       }
     } catch (err) {
       console.error(err);
@@ -77,11 +91,31 @@ function quickLogButton(userId, readingId, aliyahKey, mine) {
   return btn;
 }
 
+// Has this user already logged the OTHER reading(s) that share this
+// aliyah's real verse text (see gen_reading_overlaps.mjs)? A whole-reading
+// ('ALL') log entry for that other reading covers it too, not just an exact
+// aliyah-key match. Returns a ready-to-show sentence, or null.
+function alreadyKnownNote(overlapList, direction, log) {
+  if (!overlapList || !overlapList.length) return null;
+  if (direction === 'chag') {
+    for (const o of overlapList) {
+      const hit = log.some((e) => e.parsha_id === o.parshaId && (e.aliyah_key === o.aliyahKey || e.aliyah_key === 'ALL'));
+      if (hit) return `You've already leined this — as part of ${displayParshaName(o.parshaId)} ${aliyahLabel(o.aliyahKey)}.`;
+    }
+    return null;
+  }
+  for (const o of overlapList) {
+    const hit = (o.refs || []).some((r) => log.some((e) => e.parsha_id === r.chagId && (e.aliyah_key === r.aliyahKey || e.aliyah_key === 'ALL')));
+    if (hit) return `You've already leined this — via ${o.name}.`;
+  }
+  return null;
+}
+
 // Fire-and-forget: renderParshaDetail/renderChagDetail must stay synchronous
 // (existing callers append their return value directly), so this resolves
 // the logged-in state after the fact and injects quick-log buttons in place
 // once it's known, rather than blocking the initial render on a network call.
-async function attachQuickLog(card, { readingId, aliyot, maftir }) {
+async function attachQuickLog(card, { readingId, aliyot, maftir, overlaps, overlapDirection = 'parsha' }) {
   if (!isConfigured) return;
   let user, log;
   try {
@@ -92,19 +126,45 @@ async function attachQuickLog(card, { readingId, aliyot, maftir }) {
     console.error('Quick-log unavailable:', err);
     return;
   }
-  const mine = new Map(log.filter((e) => e.parsha_id === readingId).map((e) => [e.aliyah_key, e.id]));
+  // Indexed by EVERY reading a log row could belong to, not just readingId
+  // -- a content-overridden slot logs under a different reading's identity
+  // entirely (see quickLogButton above), so its button needs to see that
+  // reading's log rows too, not only this one's.
+  const logIndex = new Map(log.map((e) => [logKeyStr({ parshaId: e.parsha_id, aliyahKey: e.aliyah_key }), e.id]));
 
   const actions = card.querySelector('.subcard-actions');
-  if (actions) actions.append(quickLogButton(user.id, readingId, 'ALL', mine));
+  if (actions) actions.append(quickLogButton(user.id, [{ parshaId: readingId, aliyahKey: 'ALL' }], logIndex));
 
   for (const a of aliyot || []) {
     const row = card.querySelector(`.aliyah-row[data-aliyah-key="${a.aliyah}"]`);
     const cell = row && row.querySelector('.aliyah-note');
-    if (cell) cell.append(quickLogButton(user.id, readingId, String(a.aliyah), mine));
+    // A content-overridden slot (Rosh Chodesh's own text standing in for
+    // this parsha's real aliyah 7) logs under that OTHER reading's own
+    // identity; a merged slot (the reshaped aliyah 6, which really is this
+    // parsha's own aliyah 6 AND 7 read together) logs both of this parsha's
+    // own keys at once; everything else is the ordinary single key.
+    const keys = a.sourceChagId
+      ? [{ parshaId: a.sourceChagId, aliyahKey: a.sourceAliyahKey }]
+      : (a.mergedFrom || [String(a.aliyah)]).map((k) => ({ parshaId: readingId, aliyahKey: k }));
+    if (cell) cell.append(quickLogButton(user.id, keys, logIndex));
+    // Redundant to point out "you already know this" on an aliyah they've
+    // logged directly -- the ✓ Leined button already says so.
+    if (overlaps && !keys.every((k) => logIndex.has(logKeyStr(k)))) {
+      const note = alreadyKnownNote(overlaps[String(a.aliyah)], overlapDirection, log);
+      const content = row && row.querySelector('.aliyah-content');
+      if (note && content) content.append(el('p', { class: 'aliyah-summary muted small already-known-note' }, note));
+    }
   }
   if (maftir) {
     const line = card.querySelector('.maftir-line');
-    if (line) line.append(quickLogButton(user.id, readingId, 'M', mine));
+    const keys = maftir.sourceChagId
+      ? [{ parshaId: maftir.sourceChagId, aliyahKey: maftir.sourceAliyahKey }]
+      : [{ parshaId: readingId, aliyahKey: 'M' }];
+    if (line) line.append(quickLogButton(user.id, keys, logIndex));
+    if (overlaps && !keys.every((k) => logIndex.has(logKeyStr(k)))) {
+      const note = alreadyKnownNote(overlaps.M, overlapDirection, log);
+      if (note && line) line.append(el('p', { class: 'aliyah-summary muted small already-known-note' }, note));
+    }
   }
 }
 
@@ -359,7 +419,37 @@ function buildWhyPanel(d, a) {
   return wrap;
 }
 
-export function renderAliyahTable(aliyot, { maftir, difficultyAliyot, profile, readingId, summaries } = {}) {
+// A single overlap label, with a "(partial)" qualifier only when the two
+// readings don't fully contain one another -- 'full' is the common case and
+// left unmarked rather than stated every time.
+function overlapLabel(o) {
+  return o.kind === 'partial' ? `${o.name} (partial)` : o.name;
+}
+// Static content fact: this aliyah/maftir's verses also make up (in full or
+// in part) some chag/fast/Rosh-Chodesh/special-Shabbat reading -- e.g.
+// Pinchas's aliyah 5 is also the Torah reading for every Rosh Chodesh.
+// Independent of the calendar (contrast with the scroll-count notice, which
+// is about what happens on one particular week) -- see gen_reading_overlaps.mjs.
+function overlapNote(list) {
+  if (!list || !list.length) return null;
+  const MAX = 4;
+  const labels = list.map(overlapLabel);
+  const shown = labels.slice(0, MAX).join(', ');
+  const extra = labels.length > MAX ? ` +${labels.length - MAX} more` : '';
+  return el('p', { class: 'aliyah-summary muted small' }, `Also read on: ${shown}${extra}`);
+}
+// Reverse direction, for a chag's own aliyot -- names the parsha aliyah(s)
+// that share this same text instead of a chag name.
+function reverseOverlapNote(list) {
+  if (!list || !list.length) return null;
+  const MAX = 4;
+  const labels = list.map((o) => overlapLabel({ ...o, name: `${displayParshaName(o.parshaId)} ${aliyahLabel(o.aliyahKey)}` }));
+  const shown = labels.slice(0, MAX).join(', ');
+  const extra = labels.length > MAX ? ` +${labels.length - MAX} more` : '';
+  return el('p', { class: 'aliyah-summary muted small' }, `Also read as part of: ${shown}${extra}`);
+}
+
+export function renderAliyahTable(aliyot, { maftir, difficultyAliyot, profile, readingId, summaries, overlaps, overlapDirection = 'parsha' } = {}) {
   const table = el('table', { class: 'aliyah-table' });
   const thead = el('thead', {}, el('tr', {}, [
     el('th', {}, '#'), el('th', {}, 'Verses'), el('th', {}, 'Count'),
@@ -375,9 +465,15 @@ export function renderAliyahTable(aliyot, { maftir, difficultyAliyot, profile, r
     row.append(el('td', { class: 'aliyah-num' }, aliyahLabel(a.aliyah)));
     const tags = contentTags({ profile, aliyahKey: String(a.aliyah), readingId, wellKnown: d && d.wellKnown });
     const summary = summaries && summaries[`${a.book} ${a.start}-${a.end}`];
-    row.append(el('td', {}, [
+    // A content-overridden row (e.g. aliyah 7 = Rosh Chodesh's own text
+    // this week, not this parsha's own aliyah 7) isn't showing this
+    // parsha's static text, so its static content-overlap facts don't
+    // apply to what's actually in the row -- see applySpecialReading.
+    const overlapList = overlaps && !a.contentOverridden && overlaps[String(a.aliyah)];
+    row.append(el('td', { class: 'aliyah-content' }, [
       citeRange(a),
       summary ? el('p', { class: 'aliyah-summary muted small' }, summary) : null,
+      overlapDirection === 'chag' ? reverseOverlapNote(overlapList) : overlapNote(overlapList),
       contentTagChips(tags),
     ]));
     row.append(el('td', { class: 'muted' }, `${a.verses}v`));
@@ -414,6 +510,10 @@ export function renderAliyahTable(aliyot, { maftir, difficultyAliyot, profile, r
     const maftirDifficulty = byNum.get('M');
     const maftirTags = contentTags({ profile, aliyahKey: 'M', readingId, wellKnown: maftirDifficulty && maftirDifficulty.wellKnown });
     const maftirSummary = summaries && summaries[`${maftir.book} ${maftir.start}-${maftir.end}`];
+    // maftir.reason is only ever set on a special-Shabbat override (see
+    // applySpecialReading) -- an overridden maftir isn't this parsha's own
+    // static text, so its static content-overlap facts don't apply.
+    const maftirOverlapList = overlaps && !maftir.reason && overlaps.M;
     const foot = el('div', { class: 'maftir-line' }, [
       el('strong', {}, 'Maftir: '), citeRange(maftir),
       maftir.reason ? el('span', { class: 'tag' }, maftir.reason) : null,
@@ -421,6 +521,7 @@ export function renderAliyahTable(aliyot, { maftir, difficultyAliyot, profile, r
       tikkunLink(maftir),
       contentTagChips(maftirTags),
       maftirSummary ? el('p', { class: 'aliyah-summary muted small' }, maftirSummary) : null,
+      overlapDirection === 'chag' ? reverseOverlapNote(maftirOverlapList) : overlapNote(maftirOverlapList),
     ]);
     return el('div', {}, [scrollWrap, foot]);
   }
@@ -475,7 +576,11 @@ function applySpecialReading(parsha, difficulty, sr) {
       const note = String(a.aliyah) === '7'
         ? `Read from the Rosh Chodesh scroll, not ${displayParshaName(parsha.englishName || parsha.id)}'s own text.`
         : `Extends to cover what would normally be the next aliyah too, since that one moves to the Rosh Chodesh scroll.`;
-      return { ...a, ...override, specialTrope: note };
+      // Marks this row as not-the-parsha's-own-static-content, so callers
+      // don't apply this parsha's OWN static content-overlap facts (see
+      // gen_reading_overlaps.mjs) to text that isn't actually showing here
+      // this week.
+      return { ...a, ...override, specialTrope: note, contentOverridden: true };
     });
     if (difficultyAliyot) {
       difficultyAliyot = difficultyAliyot.filter((a) => !changedNums.has(String(a.aliyah))).concat(replacementDifficulty);
@@ -517,7 +622,7 @@ function buildScrollNotice(parshaName, sr) {
   ]);
 }
 
-export function renderParshaDetail({ parsha, haftarah, difficulty, haftarahScore, summaries, haftarahLengthRecords }, opts = {}) {
+export function renderParshaDetail({ parsha, haftarah, difficulty, haftarahScore, summaries, haftarahLengthRecords, overlapsByAliyah }, opts = {}) {
   const card = el('div', { class: 'card detail-card' });
   const sr = opts.specialReading || null;
   const parshaName = displayParshaName(parsha.englishName || parsha.id);
@@ -581,7 +686,7 @@ export function renderParshaDetail({ parsha, haftarah, difficulty, haftarahScore
 
   card.append(el('div', { class: 'card subcard' }, [
     el('div', { class: 'subcard-heading-row' }, [el('h3', {}, 'Aliyot'), el('div', { class: 'subcard-actions' }, [wholeReadingTikkunLink(parsha.aliyot)])]),
-    renderAliyahTable(aliyot, { maftir, difficultyAliyot, profile: difficulty && difficulty.profile, readingId: parsha.id, summaries }),
+    renderAliyahTable(aliyot, { maftir, difficultyAliyot, profile: difficulty && difficulty.profile, readingId: parsha.id, summaries, overlaps: overlapsByAliyah }),
   ]));
 
   const haftarahOverridden = !!(sr && sr.haftaraRef);
@@ -600,7 +705,10 @@ export function renderParshaDetail({ parsha, haftarah, difficulty, haftarahScore
     nusachRow(nusachToShow, haftarahOverridden ? (sr.haftarahDifficulty || null) : haftarahScore, summaries, haftarahOverridden ? null : (haftarah ? haftarah.id : null), haftarahLengthRecords),
   ]));
 
-  attachQuickLog(card, { readingId: parsha.id, aliyot: parsha.aliyot, maftir: parsha.maftir });
+  // The OVERRIDDEN aliyot/maftir (not parsha.aliyot/parsha.maftir) -- quick-
+  // log needs to see sourceChagId/mergedFrom to log against what's actually
+  // being read this week, not this parsha's static definition of the slot.
+  attachQuickLog(card, { readingId: parsha.id, aliyot, maftir, overlaps: overlapsByAliyah });
   return card;
 }
 
@@ -651,15 +759,15 @@ export function renderChagDetail(chag, { summaries } = {}) {
   if (chag.aliyot && chag.aliyot.length) {
     card.append(el('div', { class: 'card subcard' }, [
       el('div', { class: 'subcard-heading-row' }, [el('h3', {}, 'Aliyot'), el('div', { class: 'subcard-actions' }, [wholeReadingTikkunLink(chag.aliyot)])]),
-      renderAliyahTable(chag.aliyot, { maftir: chag.maftir, difficultyAliyot: difficulty && difficulty.aliyot, profile: difficulty && difficulty.profile, readingId: chag.id, summaries }),
+      renderAliyahTable(chag.aliyot, { maftir: chag.maftir, difficultyAliyot: difficulty && difficulty.aliyot, profile: difficulty && difficulty.profile, readingId: chag.id, summaries, overlaps: chag.overlapsByAliyah, overlapDirection: 'chag' }),
     ]));
-    attachQuickLog(card, { readingId: chag.id, aliyot: chag.aliyot, maftir: chag.maftir });
+    attachQuickLog(card, { readingId: chag.id, aliyot: chag.aliyot, maftir: chag.maftir, overlaps: chag.overlapsByAliyah, overlapDirection: 'chag' });
   } else if (chag.maftir) {
     card.append(el('div', { class: 'card subcard' }, [
       el('h3', {}, 'Maftir only'),
-      renderAliyahTable([{ aliyah: 'M', ...chag.maftir }], { difficultyAliyot: difficulty && difficulty.aliyot, profile: difficulty && difficulty.profile, readingId: chag.id, summaries }),
+      renderAliyahTable([{ aliyah: 'M', ...chag.maftir }], { difficultyAliyot: difficulty && difficulty.aliyot, profile: difficulty && difficulty.profile, readingId: chag.id, summaries, overlaps: chag.overlapsByAliyah, overlapDirection: 'chag' }),
     ]));
-    attachQuickLog(card, { readingId: chag.id, aliyot: [{ aliyah: 'M' }], maftir: null });
+    attachQuickLog(card, { readingId: chag.id, aliyot: [{ aliyah: 'M' }], maftir: null, overlaps: chag.overlapsByAliyah, overlapDirection: 'chag' });
   }
   card.append(el('div', { class: 'card subcard' }, [
     el('h3', {}, 'Haftarah by nusach'),

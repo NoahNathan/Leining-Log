@@ -1,7 +1,7 @@
 {
   "description": "Index of the 100-year (2026-2126) Torah-reading calendar, split into decade files to keep individual files manageable. Each row's parshaId/chagId references parshiot.json/parshiot-combined.json/chagim.json rather than duplicating aliyah data.",
   "source": "@hebcal/core + @hebcal/leyning v10.0.0, computed locally (not a third-party API call)",
-  "generatedAt": "2026-08-10T02:14:12.206Z",
+  "generatedAt": "2026-08-10T06:30:16.793Z",
   "totalRows": 19557,
   "files": [
     {

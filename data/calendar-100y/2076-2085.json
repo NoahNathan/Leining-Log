@@ -4,7 +4,7 @@
     2076,
     2085
   ],
-  "generatedAt": "2026-08-10T02:14:11.955Z",
+  "generatedAt": "2026-08-10T06:30:16.495Z",
   "count": 1951,
   "rows": [
     {
@@ -242,7 +242,9 @@
               ]
             },
             "finalScore": 3
-          }
+          },
+          "sourceChagId": "Shabbat Shekalim__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "II Kings",
@@ -369,7 +371,9 @@
               ]
             },
             "finalScore": 3
-          }
+          },
+          "sourceChagId": "Shabbat Shekalim__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "II Kings",
@@ -551,7 +555,9 @@
               }
             ],
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Zachor__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Samuel",
@@ -691,7 +697,9 @@
               }
             ],
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Zachor__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Samuel",
@@ -897,7 +905,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Shabbat Parah__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -1041,7 +1051,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Shabbat Parah__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -1214,7 +1226,11 @@
                 }
               ],
               "finalScore": 8
-            }
+            },
+            "mergedFrom": [
+              "6",
+              "7"
+            ]
           },
           "7": {
             "book": "Numbers",
@@ -1262,7 +1278,9 @@
                 ]
               },
               "finalScore": 2
-            }
+            },
+            "sourceChagId": "Shabbat Rosh Chodesh__DIASPORA",
+            "sourceAliyahKey": "M"
           }
         },
         "maftirRef": {
@@ -1332,7 +1350,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Shabbat HaChodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -1505,7 +1525,11 @@
                 }
               ],
               "finalScore": 8
-            }
+            },
+            "mergedFrom": [
+              "6",
+              "7"
+            ]
           },
           "7": {
             "book": "Numbers",
@@ -1553,7 +1577,9 @@
                 ]
               },
               "finalScore": 2
-            }
+            },
+            "sourceChagId": "Shabbat Rosh Chodesh__IL",
+            "sourceAliyahKey": "M"
           }
         },
         "maftirRef": {
@@ -1623,7 +1649,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Shabbat HaChodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -2510,7 +2538,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -2630,7 +2660,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -3486,7 +3518,11 @@
                 }
               ],
               "finalScore": 10
-            }
+            },
+            "mergedFrom": [
+              "6",
+              "7"
+            ]
           },
           "7": {
             "book": "Numbers",
@@ -3534,7 +3570,9 @@
                 ]
               },
               "finalScore": 2
-            }
+            },
+            "sourceChagId": "Shabbat Rosh Chodesh__DIASPORA",
+            "sourceAliyahKey": "M"
           }
         },
         "maftirRef": {
@@ -3575,7 +3613,9 @@
               ]
             },
             "finalScore": 4
-          }
+          },
+          "sourceChagId": "Chanukah: 7 Candles__DIASPORA",
+          "sourceAliyahKey": "4"
         },
         "haftaraRef": {
           "book": "Zechariah",
@@ -3755,7 +3795,11 @@
                 }
               ],
               "finalScore": 10
-            }
+            },
+            "mergedFrom": [
+              "6",
+              "7"
+            ]
           },
           "7": {
             "book": "Numbers",
@@ -3803,7 +3847,9 @@
                 ]
               },
               "finalScore": 2
-            }
+            },
+            "sourceChagId": "Shabbat Rosh Chodesh__IL",
+            "sourceAliyahKey": "M"
           }
         },
         "maftirRef": {
@@ -3844,7 +3890,9 @@
               ]
             },
             "finalScore": 4
-          }
+          },
+          "sourceChagId": "Chanukah: 7 Candles__IL",
+          "sourceAliyahKey": "4"
         },
         "haftaraRef": {
           "book": "Zechariah",
@@ -4141,7 +4189,9 @@
               ]
             },
             "finalScore": 3
-          }
+          },
+          "sourceChagId": "Shabbat Shekalim__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "II Kings",
@@ -4268,7 +4318,9 @@
               ]
             },
             "finalScore": 3
-          }
+          },
+          "sourceChagId": "Shabbat Shekalim__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "II Kings",
@@ -4450,7 +4502,9 @@
               }
             ],
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Zachor__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Samuel",
@@ -4590,7 +4644,9 @@
               }
             ],
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Zachor__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Samuel",
@@ -4780,7 +4836,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Shabbat Parah__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -4924,7 +4982,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Shabbat Parah__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -5073,7 +5133,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Shabbat HaChodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -5228,7 +5290,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Shabbat HaChodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -5686,7 +5750,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -5806,7 +5872,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -6962,7 +7030,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Chanukah: 2 Candles__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Zechariah",
@@ -7096,7 +7166,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Chanukah: 2 Candles__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Zechariah",
@@ -7333,7 +7405,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Chanukah: 8th Day__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Kings",
@@ -7474,7 +7548,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Chanukah: 8th Day__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Kings",
@@ -7658,7 +7734,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -7778,7 +7856,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -7947,7 +8027,9 @@
               ]
             },
             "finalScore": 3
-          }
+          },
+          "sourceChagId": "Shabbat Shekalim__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "II Kings",
@@ -8074,7 +8156,9 @@
               ]
             },
             "finalScore": 3
-          }
+          },
+          "sourceChagId": "Shabbat Shekalim__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "II Kings",
@@ -8272,7 +8356,9 @@
               }
             ],
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Zachor__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Samuel",
@@ -8412,7 +8498,9 @@
               }
             ],
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Zachor__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Samuel",
@@ -8586,7 +8674,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Shabbat Parah__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -8730,7 +8820,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Shabbat Parah__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -8879,7 +8971,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Shabbat HaChodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -9034,7 +9128,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Shabbat HaChodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -9692,7 +9788,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -9812,7 +9910,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -10558,7 +10658,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -10678,7 +10780,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -10996,7 +11100,9 @@
               ]
             },
             "finalScore": 4
-          }
+          },
+          "sourceChagId": "Chanukah: 4 Candles__DIASPORA",
+          "sourceAliyahKey": "3"
         },
         "haftaraRef": {
           "book": "Zechariah",
@@ -11116,7 +11222,9 @@
               ]
             },
             "finalScore": 4
-          }
+          },
+          "sourceChagId": "Chanukah: 4 Candles__IL",
+          "sourceAliyahKey": "3"
         },
         "haftaraRef": {
           "book": "Zechariah",
@@ -11618,7 +11726,11 @@
                 }
               ],
               "finalScore": 7
-            }
+            },
+            "mergedFrom": [
+              "6",
+              "7"
+            ]
           },
           "7": {
             "book": "Numbers",
@@ -11666,7 +11778,9 @@
                 ]
               },
               "finalScore": 2
-            }
+            },
+            "sourceChagId": "Shabbat Rosh Chodesh__DIASPORA",
+            "sourceAliyahKey": "M"
           }
         },
         "maftirRef": {
@@ -11715,7 +11829,9 @@
               ]
             },
             "finalScore": 3
-          }
+          },
+          "sourceChagId": "Shabbat Shekalim__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "II Kings",
@@ -11887,7 +12003,11 @@
                 }
               ],
               "finalScore": 7
-            }
+            },
+            "mergedFrom": [
+              "6",
+              "7"
+            ]
           },
           "7": {
             "book": "Numbers",
@@ -11935,7 +12055,9 @@
                 ]
               },
               "finalScore": 2
-            }
+            },
+            "sourceChagId": "Shabbat Rosh Chodesh__IL",
+            "sourceAliyahKey": "M"
           }
         },
         "maftirRef": {
@@ -11984,7 +12106,9 @@
               ]
             },
             "finalScore": 3
-          }
+          },
+          "sourceChagId": "Shabbat Shekalim__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "II Kings",
@@ -12118,7 +12242,9 @@
               }
             ],
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Zachor__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Samuel",
@@ -12258,7 +12384,9 @@
               }
             ],
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Zachor__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Samuel",
@@ -12456,7 +12584,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Shabbat Parah__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -12600,7 +12730,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Shabbat Parah__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -12749,7 +12881,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Shabbat HaChodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -12904,7 +13038,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Shabbat HaChodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -13711,7 +13847,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": [
           {
@@ -13814,7 +13952,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": [
           {
@@ -14694,7 +14834,11 @@
                 }
               ],
               "finalScore": 10
-            }
+            },
+            "mergedFrom": [
+              "6",
+              "7"
+            ]
           },
           "7": {
             "book": "Numbers",
@@ -14742,7 +14886,9 @@
                 ]
               },
               "finalScore": 2
-            }
+            },
+            "sourceChagId": "Shabbat Rosh Chodesh__DIASPORA",
+            "sourceAliyahKey": "M"
           }
         },
         "maftirRef": {
@@ -14783,7 +14929,9 @@
               ]
             },
             "finalScore": 4
-          }
+          },
+          "sourceChagId": "Chanukah: 7 Candles__DIASPORA",
+          "sourceAliyahKey": "4"
         },
         "haftaraRef": {
           "book": "Zechariah",
@@ -14963,7 +15111,11 @@
                 }
               ],
               "finalScore": 10
-            }
+            },
+            "mergedFrom": [
+              "6",
+              "7"
+            ]
           },
           "7": {
             "book": "Numbers",
@@ -15011,7 +15163,9 @@
                 ]
               },
               "finalScore": 2
-            }
+            },
+            "sourceChagId": "Shabbat Rosh Chodesh__IL",
+            "sourceAliyahKey": "M"
           }
         },
         "maftirRef": {
@@ -15052,7 +15206,9 @@
               ]
             },
             "finalScore": 4
-          }
+          },
+          "sourceChagId": "Chanukah: 7 Candles__IL",
+          "sourceAliyahKey": "4"
         },
         "haftaraRef": {
           "book": "Zechariah",
@@ -15349,7 +15505,9 @@
               ]
             },
             "finalScore": 3
-          }
+          },
+          "sourceChagId": "Shabbat Shekalim__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "II Kings",
@@ -15476,7 +15634,9 @@
               ]
             },
             "finalScore": 3
-          }
+          },
+          "sourceChagId": "Shabbat Shekalim__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "II Kings",
@@ -15658,7 +15818,9 @@
               }
             ],
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Zachor__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Samuel",
@@ -15798,7 +15960,9 @@
               }
             ],
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Zachor__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Samuel",
@@ -15988,7 +16152,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Shabbat Parah__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -16132,7 +16298,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Shabbat Parah__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -16281,7 +16449,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Shabbat HaChodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -16436,7 +16606,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Shabbat HaChodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -16894,7 +17066,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -17014,7 +17188,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -18170,7 +18346,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Chanukah: 2 Candles__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Zechariah",
@@ -18304,7 +18482,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Chanukah: 2 Candles__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Zechariah",
@@ -18541,7 +18721,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Chanukah: 8th Day__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Kings",
@@ -18682,7 +18864,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Chanukah: 8th Day__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Kings",
@@ -18866,7 +19050,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -18986,7 +19172,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -19273,7 +19461,9 @@
               ]
             },
             "finalScore": 3
-          }
+          },
+          "sourceChagId": "Shabbat Shekalim__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "II Kings",
@@ -19400,7 +19590,9 @@
               ]
             },
             "finalScore": 3
-          }
+          },
+          "sourceChagId": "Shabbat Shekalim__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "II Kings",
@@ -19582,7 +19774,9 @@
               }
             ],
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Zachor__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Samuel",
@@ -19722,7 +19916,9 @@
               }
             ],
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Zachor__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Samuel",
@@ -19912,7 +20108,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Shabbat Parah__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -20056,7 +20254,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Shabbat Parah__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -20205,7 +20405,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Shabbat HaChodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -20360,7 +20562,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Shabbat HaChodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -20818,7 +21022,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -20938,7 +21144,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -22094,7 +22302,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Chanukah: 2 Candles__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Zechariah",
@@ -22228,7 +22438,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Chanukah: 2 Candles__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Zechariah",
@@ -22465,7 +22677,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Chanukah: 8th Day__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Kings",
@@ -22606,7 +22820,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Chanukah: 8th Day__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Kings",
@@ -22790,7 +23006,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -22910,7 +23128,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -23079,7 +23299,9 @@
               ]
             },
             "finalScore": 3
-          }
+          },
+          "sourceChagId": "Shabbat Shekalim__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "II Kings",
@@ -23206,7 +23428,9 @@
               ]
             },
             "finalScore": 3
-          }
+          },
+          "sourceChagId": "Shabbat Shekalim__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "II Kings",
@@ -23404,7 +23628,9 @@
               }
             ],
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Zachor__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Samuel",
@@ -23544,7 +23770,9 @@
               }
             ],
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Zachor__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Samuel",
@@ -23718,7 +23946,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Shabbat Parah__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -23862,7 +24092,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Shabbat Parah__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -24011,7 +24243,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Shabbat HaChodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -24166,7 +24400,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Shabbat HaChodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -24824,7 +25060,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -24944,7 +25182,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -25690,7 +25930,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -25810,7 +26052,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -26128,7 +26372,9 @@
               ]
             },
             "finalScore": 4
-          }
+          },
+          "sourceChagId": "Chanukah: 4 Candles__DIASPORA",
+          "sourceAliyahKey": "3"
         },
         "haftaraRef": {
           "book": "Zechariah",
@@ -26248,7 +26494,9 @@
               ]
             },
             "finalScore": 4
-          }
+          },
+          "sourceChagId": "Chanukah: 4 Candles__IL",
+          "sourceAliyahKey": "3"
         },
         "haftaraRef": {
           "book": "Zechariah",
@@ -26577,7 +26825,9 @@
               ]
             },
             "finalScore": 3
-          }
+          },
+          "sourceChagId": "Shabbat Shekalim__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "II Kings",
@@ -26704,7 +26954,9 @@
               ]
             },
             "finalScore": 3
-          }
+          },
+          "sourceChagId": "Shabbat Shekalim__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "II Kings",
@@ -26886,7 +27138,9 @@
               }
             ],
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Zachor__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Samuel",
@@ -27026,7 +27280,9 @@
               }
             ],
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Zachor__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Samuel",
@@ -27232,7 +27488,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Shabbat Parah__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -27376,7 +27634,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Shabbat Parah__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -27556,7 +27816,11 @@
                 }
               ],
               "finalScore": 8
-            }
+            },
+            "mergedFrom": [
+              "6",
+              "7"
+            ]
           },
           "7": {
             "book": "Numbers",
@@ -27604,7 +27868,9 @@
                 ]
               },
               "finalScore": 2
-            }
+            },
+            "sourceChagId": "Shabbat Rosh Chodesh__DIASPORA",
+            "sourceAliyahKey": "M"
           }
         },
         "maftirRef": {
@@ -27674,7 +27940,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Shabbat HaChodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -27854,7 +28122,11 @@
                 }
               ],
               "finalScore": 8
-            }
+            },
+            "mergedFrom": [
+              "6",
+              "7"
+            ]
           },
           "7": {
             "book": "Numbers",
@@ -27902,7 +28174,9 @@
                 ]
               },
               "finalScore": 2
-            }
+            },
+            "sourceChagId": "Shabbat Rosh Chodesh__IL",
+            "sourceAliyahKey": "M"
           }
         },
         "maftirRef": {
@@ -27972,7 +28246,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Shabbat HaChodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -28852,7 +29128,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -28972,7 +29250,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -29760,7 +30040,9 @@
               ]
             },
             "finalScore": 4
-          }
+          },
+          "sourceChagId": "Chanukah: 8 Candles__DIASPORA",
+          "sourceAliyahKey": "4"
         },
         "haftaraRef": {
           "book": "Zechariah",
@@ -29872,7 +30154,9 @@
               ]
             },
             "finalScore": 4
-          }
+          },
+          "sourceChagId": "Chanukah: 8 Candles__IL",
+          "sourceAliyahKey": "4"
         },
         "haftaraRef": {
           "book": "Zechariah",
@@ -30072,7 +30356,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -30192,7 +30478,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -30479,7 +30767,9 @@
               ]
             },
             "finalScore": 3
-          }
+          },
+          "sourceChagId": "Shabbat Shekalim__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "II Kings",
@@ -30606,7 +30896,9 @@
               ]
             },
             "finalScore": 3
-          }
+          },
+          "sourceChagId": "Shabbat Shekalim__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "II Kings",
@@ -30788,7 +31080,9 @@
               }
             ],
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Zachor__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Samuel",
@@ -30928,7 +31222,9 @@
               }
             ],
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Zachor__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Samuel",
@@ -31118,7 +31414,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Shabbat Parah__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -31262,7 +31560,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Shabbat Parah__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -31411,7 +31711,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Shabbat HaChodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -31566,7 +31868,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Shabbat HaChodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -32024,7 +32328,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -32144,7 +32450,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -33300,7 +33608,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Chanukah: 2 Candles__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Zechariah",
@@ -33434,7 +33744,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Chanukah: 2 Candles__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Zechariah",
@@ -33671,7 +33983,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Chanukah: 8th Day__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Kings",
@@ -33812,7 +34126,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Chanukah: 8th Day__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Kings",
@@ -33996,7 +34312,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -34116,7 +34434,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -34285,7 +34605,9 @@
               ]
             },
             "finalScore": 3
-          }
+          },
+          "sourceChagId": "Shabbat Shekalim__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "II Kings",
@@ -34412,7 +34734,9 @@
               ]
             },
             "finalScore": 3
-          }
+          },
+          "sourceChagId": "Shabbat Shekalim__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "II Kings",
@@ -34610,7 +34934,9 @@
               }
             ],
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Zachor__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Samuel",
@@ -34750,7 +35076,9 @@
               }
             ],
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Zachor__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "I Samuel",
@@ -34924,7 +35252,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Shabbat Parah__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -35068,7 +35398,9 @@
               }
             ],
             "finalScore": 7
-          }
+          },
+          "sourceChagId": "Shabbat Parah__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -35217,7 +35549,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Shabbat HaChodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -35372,7 +35706,9 @@
               }
             ],
             "finalScore": 8
-          }
+          },
+          "sourceChagId": "Shabbat HaChodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Ezekiel",
@@ -36030,7 +36366,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -36150,7 +36488,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -36896,7 +37236,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__DIASPORA",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -37016,7 +37358,9 @@
               ]
             },
             "finalScore": 2
-          }
+          },
+          "sourceChagId": "Shabbat Rosh Chodesh__IL",
+          "sourceAliyahKey": "M"
         },
         "haftaraRef": {
           "book": "Isaiah",
@@ -37334,7 +37678,9 @@
               ]
             },
             "finalScore": 4
-          }
+          },
+          "sourceChagId": "Chanukah: 4 Candles__DIASPORA",
+          "sourceAliyahKey": "3"
         },
         "haftaraRef": {
           "book": "Zechariah",
@@ -37454,7 +37800,9 @@
               ]
             },
             "finalScore": 4
-          }
+          },
+          "sourceChagId": "Chanukah: 4 Candles__IL",
+          "sourceAliyahKey": "3"
         },
         "haftaraRef": {
           "book": "Zechariah",

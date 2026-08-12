@@ -29,10 +29,14 @@ function aliyahSortKey(key) {
 // Fills in whichever year is missing from the other, via the Hebrew-calendar
 // correspondence in util.js -- so an entry always shows both once one is
 // known, whether the user typed only one or an older row only ever had one.
-function deriveYears(yearHebrew, yearGregorian) {
+// gregorianMonth (1-12, optional) makes the Gregorian->Hebrew direction
+// exact by splitting at the real Rosh Hashanah date instead of guessing;
+// without it, this falls back to the same "most of this year" approximation
+// as before.
+function deriveYears(yearHebrew, yearGregorian, gregorianMonth) {
   let heb = yearHebrew || null;
   let greg = yearGregorian || null;
-  if (greg && !heb) heb = String(gregorianToHebrewYear(greg));
+  if (greg && !heb) heb = String(gregorianToHebrewYear(greg, gregorianMonth));
   else if (heb && !greg && /^\d+$/.test(heb)) greg = hebrewToGregorianYear(Number(heb));
   return { yearHebrew: heb, yearGregorian: greg };
 }
@@ -240,21 +244,34 @@ function renderAddEntryCard(user, individual, onSaved) {
 
   const yearHebrew = el('input', { type: 'text', class: 'text-input', placeholder: 'Hebrew year (e.g. 5784)' });
   const yearGregorian = el('input', { type: 'number', class: 'text-input', placeholder: 'Year (e.g. 2024)', min: '1900', max: '2200' });
+  const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  // Optional -- Rosh Hashanah (~September) splits any Gregorian year into
+  // two different Hebrew years, so a month is what makes the derived
+  // Hebrew year exact instead of an approximation (see gregorianToHebrewYear).
+  const yearMonth = el('select', { class: 'text-input' }, [
+    el('option', { value: '' }, 'Month (optional, for exact Hebrew year)'),
+    ...MONTH_NAMES.map((m, i) => el('option', { value: String(i + 1) }, m)),
+  ]);
   const barMitzvah = el('input', { type: 'checkbox' });
   const status = el('span', { class: 'muted small' }, '');
+
+  function currentMonth() { return yearMonth.value ? Number(yearMonth.value) : undefined; }
 
   // Live preview only -- doesn't touch the fields themselves, so a user who
   // knows their reading actually fell right around Rosh Hashanah can still
   // type the other year exactly rather than getting the approximation.
   const yearHint = el('p', { class: 'muted small' }, '');
   function updateYearHint() {
-    const { yearHebrew: heb, yearGregorian: greg } = deriveYears(yearHebrew.value, yearGregorian.value ? Number(yearGregorian.value) : null);
-    if (yearGregorian.value && !yearHebrew.value) yearHint.textContent = `≈ Hebrew year ${heb}`;
+    const month = currentMonth();
+    const { yearHebrew: heb, yearGregorian: greg } = deriveYears(yearHebrew.value, yearGregorian.value ? Number(yearGregorian.value) : null, month);
+    const approx = month ? '' : '≈ ';
+    if (yearGregorian.value && !yearHebrew.value) yearHint.textContent = `${approx}Hebrew year ${heb}`;
     else if (yearHebrew.value && !yearGregorian.value && greg) yearHint.textContent = `≈ ${greg}`;
     else yearHint.textContent = '';
   }
   yearHebrew.addEventListener('input', updateYearHint);
   yearGregorian.addEventListener('input', updateYearHint);
+  yearMonth.addEventListener('change', updateYearHint);
 
   const form = el('form', {
     onsubmit: async (e) => {
@@ -263,7 +280,7 @@ function renderAddEntryCard(user, individual, onSaved) {
       // one first so checking this box always replaces it, never adds a second.
       if (barMitzvah.checked) await clearBarMitzvahFlag(user.id);
       const { yearHebrew: heb, yearGregorian: greg } = deriveYears(
-        yearHebrew.value, yearGregorian.value ? Number(yearGregorian.value) : null
+        yearHebrew.value, yearGregorian.value ? Number(yearGregorian.value) : null, currentMonth()
       );
       await addLeiningLogEntry(user.id, {
         parshaId: parshaSelect.value,
@@ -277,7 +294,7 @@ function renderAddEntryCard(user, individual, onSaved) {
     },
   }, [
     el('div', { class: 'search-row' }, [parshaSelect, aliyahSelect]),
-    el('div', { class: 'search-row' }, [yearHebrew, yearGregorian]),
+    el('div', { class: 'search-row' }, [yearHebrew, yearGregorian, yearMonth]),
     yearHint,
     el('label', { class: 'checkbox-label' }, [barMitzvah, ' This was my bar mitzvah parsha (replaces any previous one)']),
     el('div', { class: 'search-row' }, [el('button', { class: 'btn-primary', type: 'submit' }, 'Mark as leined'), status]),

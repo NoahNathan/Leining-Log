@@ -25,13 +25,25 @@ export function displayParshaName(id) {
 }
 
 // A Hebrew year runs Rosh Hashanah (~September) to the next Rosh Hashanah,
-// so a bare Gregorian year (no month/day, which is all this app stores)
-// doesn't map to a single Hebrew year -- but the Jan-Sept portion, which is
-// most of any given Gregorian year, falls in Gregorian+3760, so that's the
-// convention used here (e.g. 2026 -> 5786).
-export function gregorianToHebrewYear(gregorianYear) {
-  return gregorianYear + 3760;
+// so a bare Gregorian year alone doesn't map to a single Hebrew year -- it
+// splits into two: Jan through Rosh Hashanah is the OLDER Hebrew year, and
+// Rosh Hashanah through Dec is the next one. When the month is known, this
+// asks the browser's own ICU Hebrew calendar (Intl) for the exact answer,
+// splitting at the real Rosh Hashanah date rather than a fixed month --
+// e.g. Dec 2025 correctly comes back 5786, not 5785. The 15th of the month
+// is used as a stand-in day (harmless for every month except September,
+// where Rosh Hashanah's exact date can occasionally still fall on the
+// other side of the 15th). When no month is given, this defaults to a
+// mid-year proxy (June), which is always safely before Rosh Hashanah --
+// i.e. the same "most of this Gregorian year" guess as before.
+export function gregorianToHebrewYear(gregorianYear, gregorianMonth) {
+  const month = gregorianMonth || 6;
+  const dt = new Date(Date.UTC(gregorianYear, month - 1, 15));
+  const parts = new Intl.DateTimeFormat('en-US-u-ca-hebrew', { year: 'numeric', timeZone: 'UTC' }).formatToParts(dt);
+  return Number(parts.find((p) => p.type === 'year').value);
 }
+// Approximate only -- a Hebrew year spans two Gregorian years, and there's
+// no month to disambiguate on this side (a bare Hebrew year, as typed).
 export function hebrewToGregorianYear(hebrewYear) {
   return hebrewYear - 3760;
 }

@@ -7,6 +7,13 @@ ideally by letting gabbaim/baalei korei rate their own aliyot in the app and
 blending that feedback in.
 
 > **Revision history, newest first:**
+> 7. **Whole-parsha scores are now measured directly instead of averaged
+>    from their aliyot** -- each of the five criteria is computed for the
+>    reading as a whole and rescaled against the other parshiot, and the
+>    overall parsha score is a plain weighted blend of those five that is
+>    deliberately NOT stretched to fill the scale. See "Whole-parsha scores"
+>    below for the bug that prompted this and why the composite is left
+>    unstretched.
 > 6. **"Rare word" examples now require a real absolute rarity threshold**
 >    (occurring at most 5 times across the whole Torah), instead of always
 >    showing the 3 least-common words in that one aliyah regardless of
@@ -161,6 +168,96 @@ for the traditional fast/quiet reading custom) -- four aliyot, all scoring
 a genuine 10. Re-run `npm run gen:difficulty` (or `gen:all`) any time the
 overrides or weights change; the rescale bounds are recomputed from
 whatever the pool actually contains, not hard-coded.
+
+Everything in this section is about the **aliyah-level** score. The
+whole-parsha score is computed differently -- see the next section.
+
+## Whole-parsha scores: measured, not averaged from the aliyot
+
+Each of the five criteria shown on a parsha's page rates the reading **as a
+whole**, measured against the other parshiot directly. It is not the average
+of that parsha's aliyot's own scores, which is what an earlier version did
+and which produced a real ranking failure.
+
+**The bug.** Each aliyah's own length score is a percentile rank against
+every other aliyah in the corpus. Averaging seven of those ranks measures
+how *consistently* long a parsha's aliyot are, not how long the reading
+actually is -- so it rewarded an evenly-long reading over a genuinely longer
+one whose length is concentrated in a few big aliyot. Matot-Masei is the
+longest reading in the Torah (2,949 words against Chukat-Balak's 2,702), yet
+averaging aliyah-level length scores ranked it *behind* Chukat-Balak, 8.0 to
+8.1, because its aliyot 3, 5 and 6 are only mid-length while Chukat-Balak's
+seven are uniformly long.
+
+**What it does now.** Length uses the parsha's own total word count; the
+other four use the mean of its aliyot's scores as the raw signal (there is
+no separately-measured whole-parsha signal for those yet -- see the
+limitation below). Either way the raw value is then rescaled against the
+same pool, which is what actually fixes the ranking.
+
+**Median-anchored rescale.** The pool is split at its own median and each
+half is stretched independently to fill [1, 5.5] and [5.5, 10]. Three
+reasons over a plain min/max stretch:
+- The median lands at the centre of the scale by construction, matching
+  where these criteria already sat naturally under averaging (their means
+  were all 4.8-5.6) rather than by luck.
+- The real 1 and 10 are reached. Under averaging, gotchas never exceeded
+  6.5 for any parsha in the corpus -- the criterion looked far more uniform
+  across parshiot than it actually is.
+- A single outlier stretches only its own half, so the rest of the
+  distribution keeps its true relative spacing. This is deliberately *not*
+  an order-based percentile: real gaps between parshiot survive, including
+  skew, instead of being flattened into an even spread.
+
+The pool is all 61 real parshiot -- the 54 individual **and** the 7 combined
+ones, since a combined reading is a parsha someone actually leins on a given
+Shabbat. Anchoring on the 54 individual ones alone was tried and rejected:
+every combined parsha's total exceeds that ceiling, so four of the seven
+(Matot-Masei and Chukat-Balak among them) clamped to an identical flat 10
+with no way to tell them apart. Chagim and special readings are scored
+against this scale but excluded from defining it, so their much shorter
+readings don't compress it. Maftir is excluded from each parsha's totals
+(on an ordinary Shabbat it re-reads the end of aliyah 7) unless it is the
+reading's only content, as on several fast days, in which case it counts in
+full.
+
+### The overall parsha score is deliberately NOT stretched
+
+The number in the badge at the top of a parsha's page is the plain weighted
+blend of the five rescaled criteria, using the same `RUBRIC_WEIGHTS` as
+everywhere else. Unlike the individual criteria, and unlike the aliyah-level
+score in the previous section, it is **not** rescaled to fill 1-10. Rescaling
+it was tried and rejected on two grounds:
+
+1. **It is tautological.** A min/max stretch maps whichever parsha scores
+   highest to exactly 10 by construction. The top score then measures rank,
+   not difficulty -- if the whole corpus were easy, the least-easy reading
+   would still print 10.
+2. **It asserted things that are false about the readings.** Matot-Masei
+   came out a forced 10 while scoring 4.8 on trope and 2 on repetition (its
+   42-station journey list is highly formulaic). "Maximally hard on every
+   axis" is not true of it. The bottom end broke the same way: Vezot
+   Haberakhah forced to a flat 1 despite scoring 8.9 on repetition, i.e.
+   genuinely novel text with no formulaic pattern to lean on.
+
+The clustering short of the extremes that a weighted blend produces is the
+real signal here, not an artifact to correct: almost no reading is hard on
+all five semi-independent criteria at once, and the overall score should say
+so. Keeping the *per-criterion* rescales is what lets the composite still
+reach ~8 at the top rather than collapsing into a narrow 5-6 band, so the
+scale stays useful without overclaiming. As of this revision the hardest
+parshiot are Matot-Masei (8.1), Vayakhel-Pekudei (7.5) and Chukat-Balak
+(7.2); the easiest is Vezot Haberakhah (2.7).
+
+**Known limitation.** For vocabulary, trope, repetition and gotchas the raw
+whole-parsha signal is still the mean of per-aliyah scores, so those four
+inherit whatever the aliyah-level measurement missed -- most notably that a
+formulaic pattern spanning an aliyah boundary (Masei's journey list is the
+clear case) is invisible to a per-aliyah repetition measurement. Only length
+is genuinely re-measured from the parsha's own text. Computing the other
+four from the pooled text of the whole reading -- which would also give
+vocabulary a much larger and steadier sample than seven ~300-word slices --
+is the natural next step and is not done here.
 
 ## Vocabulary: computed from real word data, not a category guess
 

@@ -457,58 +457,171 @@ function rescaleFinal(rawFinal) {
   return clamp10(1 + pct * 9);
 }
 
-function finalizeReading(raw) {
+// ---- reading-level (whole-parsha) criterion scores ----
+// Deliberately NOT the average of the aliyot's own (order-based percentile
+// rank) scores -- that flattens out real differences between readings. A
+// reading's length, say, can be front-loaded into one huge aliyah plus some
+// average ones (e.g. Matot-Masei: one 650-word aliyah, but others only
+// mid-length), or spread evenly across several long-but-not-extreme aliyot
+// (e.g. Chukat-Balak). Averaging the aliyot's own percentile ranks rewards
+// the second shape over the first even when the first reading is genuinely
+// bigger overall -- confirmed directly: Matot-Masei totals more words than
+// any other reading in the dataset, yet averaging aliyah-level length scores
+// put Chukat-Balak fractionally ahead of it.
+//
+// Instead, each reading's own RAW total (summed word count for length;
+// summed per-aliyah criterion score for the other four, which is the same
+// thing as their average since every parsha has exactly 7 numbered aliyot --
+// summing just avoids re-deriving a separate raw signal per criterion) is
+// rescaled against the pool of all 61 real parshiot's own totals. Two
+// reasons this beats a plain min/max stretch (which is what the length fix
+// used at first):
+// 1. Median-anchored, not extremes-anchored: the population is split at its
+//    own median, and each half is independently stretched to fill [1, 5.5]
+//    and [5.5, 10]. That guarantees the median lands at the true center of
+//    the scale -- matching how these criteria already centered near 5 under
+//    plain averaging -- while still reaching the real 1 and 10, which
+//    plain averaging never did (gotchas topped out at 6.5 dataset-wide).
+// 2. Robust to a single outlier: with a plain min/max stretch, one extreme
+//    value would compress every OTHER value into a narrow band alongside
+//    it. Splitting at the median means an outlier only stretches its own
+//    half, leaving the rest of the distribution's real shape (including
+//    real skew) intact on the other side -- "stack ranked" order-based
+//    percentile is exactly what this is NOT: values keep their true
+//    relative spacing, just anchored so the center sits at 5.5.
+//
+// Anchored on all 61 real parshiot -- the 54 individual ones AND the 7
+// combined ones, since a combined reading is still a parsha someone actually
+// leins on a given Shabbat, not a special/holiday reading. Combined parshiot
+// must be IN this population, not just measured against it: an earlier
+// version anchored on the 54 individual parshiot only, and every combined
+// parsha's total exceeded that ceiling -- 4 of the 7 (including both
+// Matot-Masei and Chukat-Balak) all clamped to the same flat 10 with no way
+// to tell them apart, which defeats the point. Maftir is excluded from
+// every total (it re-reads the end of aliyah 7 on an ordinary Shabbat, same
+// reasoning as the aliyah-level anchor above) UNLESS it's the reading's only
+// content (several fast days, Shabbat HaChodesh's own maftir, etc. -- no
+// numbered aliyot at all), in which case it counts in full since there's
+// nothing for it to be a repeat of. Chagim/special readings are still
+// scored against this same scale -- not included in defining it -- so a
+// chag's usually-much-shorter reading doesn't compress the scale.
+function numberedAliyot(raw) {
+  return raw.aliyot.filter(a => a.aliyah !== 'M');
+}
+function readingTotalWords(raw) {
+  const numbered = numberedAliyot(raw);
+  if (numbered.length > 0) return numbered.reduce((s, a) => s + (a.wordCount || 0), 0);
+  const maftirOnly = raw.aliyot.find(a => a.aliyah === 'M');
+  return maftirOnly ? (maftirOnly.wordCount || 0) : 0;
+}
+function readingAvgScore(raw, key) {
+  const numbered = numberedAliyot(raw);
+  if (numbered.length > 0) return numbered.reduce((s, a) => s + a.scores[key], 0) / numbered.length;
+  const maftirOnly = raw.aliyot.find(a => a.aliyah === 'M');
+  return maftirOnly ? maftirOnly.scores[key] : 0;
+}
+
+function median(vals) {
+  const s = [...vals].sort((a, b) => a - b);
+  const n = s.length;
+  return n % 2 ? s[(n - 1) / 2] : (s[n / 2 - 1] + s[n / 2]) / 2;
+}
+function medianAnchoredRescale(vals) {
+  const med = median(vals);
+  const min = Math.min(...vals);
+  const max = Math.max(...vals);
+  return (v) => {
+    const raw = v <= med
+      ? (med === min ? 5.5 : 1 + ((v - min) / (med - min)) * 4.5)
+      : (max === med ? 5.5 : 5.5 + ((v - med) / (max - med)) * 4.5);
+    return Math.round(Math.max(1, Math.min(10, raw)) * 10) / 10;
+  };
+}
+
+const parshaPool = [...rawParshiot, ...rawCombined];
+const rescaleLength = medianAnchoredRescale(parshaPool.map(({ raw }) => readingTotalWords(raw)));
+const rescaleVocab = medianAnchoredRescale(parshaPool.map(({ raw }) => readingAvgScore(raw, 'vocabulary')));
+const rescaleTrope = medianAnchoredRescale(parshaPool.map(({ raw }) => readingAvgScore(raw, 'trope')));
+const rescaleRepetition = medianAnchoredRescale(parshaPool.map(({ raw }) => readingAvgScore(raw, 'repetition')));
+const rescaleHidden = medianAnchoredRescale(parshaPool.map(({ raw }) => readingAvgScore(raw, 'hiddenChallenges')));
+
+// The composite is the plain weighted blend of the five rescaled criteria,
+// and is deliberately NOT itself rescaled to fill 1-10.
+//
+// Rescaling it was tried and rejected as tautological: a min/max stretch
+// maps whichever parsha happens to score highest to exactly 10 by
+// construction, so the top score measures RANK, not difficulty -- if the
+// whole corpus were easy, the least-easy reading would still print 10. It
+// also asserted something false about the actual readings. Matot-Masei came
+// out a forced 10 while scoring 4.8 on trope and 2 on repetition (its
+// journey list is highly formulaic): "maximally hard on every axis" is not
+// true of it. The same broke the bottom end -- Vezot Haberakhah forced to a
+// flat 1 despite a repetition score of 8.9, i.e. genuinely novel text with
+// no formulaic pattern to lean on.
+//
+// The clustering short of the extremes that a weighted blend produces is
+// the real signal here, not an artifact to correct: almost no reading is
+// hard on all five semi-independent criteria at once, and the composite
+// should say so. That is a different situation from the individual
+// criteria (and from the aliyah-level rescaleFinal above), where full-range
+// IS meaningful, because "the longest reading in the Torah" is a real fact
+// about length rather than an artifact of ranking. Keeping the per-criterion
+// rescales is also what lets the composite still reach ~8 at the top
+// instead of collapsing into a narrow 5-6 band.
+function scoreReadingCriteria(raw) {
   for (const a of raw.aliyot) {
     a.finalScore = rescaleFinal(a.rawFinal);
     delete a.rawFinal;
   }
-  const avg = (key) => Math.round((raw.aliyot.reduce((s,a)=>s+a.scores[key],0)/raw.aliyot.length)*10)/10;
-  const finalScore = Math.round((raw.aliyot.reduce((s,a)=>s+a.finalScore,0)/raw.aliyot.length)*10)/10;
+  const scores = {
+    length: rescaleLength(readingTotalWords(raw)),
+    vocabulary: rescaleVocab(readingAvgScore(raw, 'vocabulary')),
+    trope: rescaleTrope(readingAvgScore(raw, 'trope')),
+    repetition: rescaleRepetition(readingAvgScore(raw, 'repetition')),
+    hiddenChallenges: rescaleHidden(readingAvgScore(raw, 'hiddenChallenges')),
+  };
+  const composite = (scores.length * RUBRIC_WEIGHTS.length + scores.vocabulary * RUBRIC_WEIGHTS.vocab +
+    scores.trope * RUBRIC_WEIGHTS.trope + scores.repetition * RUBRIC_WEIGHTS.repetition +
+    scores.hiddenChallenges * RUBRIC_WEIGHTS.hidden) / TOTAL_WEIGHT;
   return {
     profile: raw.profile,
     aliyot: raw.aliyot,
-    scores: {
-      length: avg('length'), vocabulary: avg('vocabulary'), trope: avg('trope'),
-      repetition: avg('repetition'), hiddenChallenges: avg('hiddenChallenges'),
-    },
-    finalScore,
+    scores,
+    composite: Math.round(Math.max(1, Math.min(10, composite)) * 10) / 10,
     hardestAliyah: raw.aliyot.reduce((m,a)=>a.finalScore>m.finalScore?a:m, raw.aliyot[0]).aliyah,
     easiestAliyah: raw.aliyot.reduce((m,a)=>a.finalScore<m.finalScore?a:m, raw.aliyot[0]).aliyah,
   };
 }
 
-const results = rawParshiot.map(({ p, combined, raw }) => {
-  const scored = finalizeReading(raw);
+const scoredParshiot = rawParshiot.map(({ p, combined, raw }) => ({ p, combined, scored: scoreReadingCriteria(raw) }));
+const scoredCombined = rawCombined.map(({ p, combined, raw }) => ({ p, combined, scored: scoreReadingCriteria(raw) }));
+const scoredChagim = rawChagim.map(({ c, raw }) => ({ c, scored: scoreReadingCriteria(raw) }));
+
+const results = scoredParshiot.map(({ p, combined, scored }) => {
   const result = {
     parshaId: p.id, combined,
     profile: scored.profile, aliyot: scored.aliyot,
-    parshaScores: scored.scores, parshaFinalScore: scored.finalScore,
+    parshaScores: scored.scores, parshaFinalScore: scored.composite,
     hardestAliyah: scored.hardestAliyah, easiestAliyah: scored.easiestAliyah,
   };
   if (combined) result.componentParshiot = p.id.split('-');
   return result;
 });
-const combinedResults = rawCombined.map(({ p, combined, raw }) => {
-  const scored = finalizeReading(raw);
-  return {
-    parshaId: p.id, combined,
-    profile: scored.profile, aliyot: scored.aliyot,
-    parshaScores: scored.scores, parshaFinalScore: scored.finalScore,
-    hardestAliyah: scored.hardestAliyah, easiestAliyah: scored.easiestAliyah,
-    componentParshiot: p.id.split('-'),
-  };
-});
+const combinedResults = scoredCombined.map(({ p, combined, scored }) => ({
+  parshaId: p.id, combined,
+  profile: scored.profile, aliyot: scored.aliyot,
+  parshaScores: scored.scores, parshaFinalScore: scored.composite,
+  hardestAliyah: scored.hardestAliyah, easiestAliyah: scored.easiestAliyah,
+  componentParshiot: p.id.split('-'),
+}));
 const allResults = [...results, ...combinedResults].sort((a,b) => b.parshaFinalScore - a.parshaFinalScore);
 
-const chagResults = rawChagim.map(({ c, raw }) => {
-  const scored = finalizeReading(raw);
-  return {
-    chagId: c.id, name: c.name, region: c.region,
-    profile: scored.profile, aliyot: scored.aliyot,
-    scores: scored.scores, finalScore: scored.finalScore,
-    hardestAliyah: scored.hardestAliyah, easiestAliyah: scored.easiestAliyah,
-  };
-}).sort((a,b) => b.finalScore - a.finalScore);
+const chagResults = scoredChagim.map(({ c, scored }) => ({
+  chagId: c.id, name: c.name, region: c.region,
+  profile: scored.profile, aliyot: scored.aliyot,
+  scores: scored.scores, finalScore: scored.composite,
+  hardestAliyah: scored.hardestAliyah, easiestAliyah: scored.easiestAliyah,
+})).sort((a,b) => b.finalScore - a.finalScore);
 
 // ---- Reshaped aliyah 6, for the parshiot that can host a 3-scroll week --
 // Shabbat Shekalim/HaChodesh/Rosh Chodesh Chanukah landing on Rosh Chodesh,

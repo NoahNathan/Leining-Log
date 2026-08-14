@@ -16,7 +16,7 @@ const VIEWS = {
   account: { label: 'My Leining', render: renderAccount },
   gabbai: { label: 'Gabbai Mode', badge: 'Beta', render: renderGabbai },
   howitworks: { label: 'How It Works', render: renderHowItWorks },
-  contact: { label: 'Contact', render: renderContact },
+  contact: { label: 'Contact Us', render: renderContact },
 };
 
 const tabsHost = document.getElementById('tabs');

@@ -7,6 +7,13 @@ ideally by letting gabbaim/baalei korei rate their own aliyot in the app and
 blending that feedback in.
 
 > **Revision history, newest first:**
+> 8. **"Hard to pronounce" word examples are now gated on document
+>    frequency**, not just raw pronunciation complexity -- a word appearing
+>    in more than 12% of all real aliyot (Elokim's various forms, "you
+>    shall do", "the ground") no longer counts as an example, even though
+>    it may still be objectively complex to say, since most readers have
+>    already encountered it constantly. See "Hardest-to-pronounce words are
+>    also gated on familiarity" below.
 > 7. **Whole-parsha scores are now measured directly instead of averaged
 >    from their aliyot** -- each of the five criteria is computed for the
 >    reading as a whole and rescaled against the other parshiot, and the
@@ -323,10 +330,33 @@ the full ~918-aliyah pool, only 2 aliyot have no word meeting the threshold
 (a 3-verse Sukkot Chol HaMoed reading where every word, while collectively
 driving a high vocabulary score, individually occurs more than 5 times).
 
+**Hardest-to-pronounce words are also gated on familiarity, not just raw
+complexity.** Pronunciation-complexity scoring (consonant count, gutturals,
+chataf vowels, dagesh) had no frequency awareness at all until this pass --
+a word could be maximally complex in isolation and still be one a fluent
+reader has already said hundreds of times (Elokim's various forms, "you
+shall do" [תעשה], "the ground" [האדמה] were the worst offenders, each
+showing up as a flagged example in 50-100+ of the 950 aliyot). The fix
+measures **document frequency** -- in how many *distinct* aliyot a word
+appears at all, not raw token count -- and excludes any word appearing in
+more than 12% of all real aliyot from the hardest-to-pronounce examples.
+Document frequency, not token count, because a word crammed 100 times into
+3 aliyot is still genuinely unfamiliar to most readers, while one spread
+across an eighth of all aliyot is something almost everyone has already
+practiced repeatedly regardless of how it scores in isolation. This cut
+Elokim-family words flagged as an example from 195 aliyot to 103, and
+eliminated תעשה entirely (was flagged 114 times). The 12% bar was chosen by
+inspecting the actual document-frequency distribution: common function
+words and names sit at 26-62% (את, אל, בני, כי, ישראל, משה...) and clear the
+bar by a wide margin, while the genuinely obscure vocabulary this criterion
+is meant to catch sits well under it.
+
 **Honest limitations of this method:**
-- Frequency is counted on the **exact inflected surface form** (consonants
-  only, but prefixes/suffixes like ב־, ו־, ־ים, ־ך included), not the
-  underlying root/lemma. A very common root can still register as "rare" in
+- Both frequency measures -- token count (rarity) and document count (the
+  hardest-to-pronounce filter above) -- count the **exact inflected surface
+  form** (consonants only, but prefixes/suffixes like ב־, ו־, ־ים, ־ך
+  included), not the underlying root/lemma. A very common root can still
+  register as "rare" in
   one particular prefixed form (e.g. "בְּרֵאשִׁית" itself, with the ב
   prefix, is a near-hapax exact form even though the root ראשית is
   familiar) -- a fluent reader would find that word easier than its raw

@@ -5,6 +5,7 @@ import { renderCompare } from './views/compare.js';
 import { renderAccount } from './views/account.js';
 import { renderGabbai } from './views/gabbai.js';
 import { renderHowItWorks } from './views/howitworks.js';
+import { renderContact } from './views/contact.js';
 import { renderParshaPermalink, renderChagPermalink } from './views/permalink.js';
 import { initAccountBanner } from './accountBanner.js';
 
@@ -15,6 +16,7 @@ const VIEWS = {
   account: { label: 'My Leining', render: renderAccount },
   gabbai: { label: 'Gabbai Mode', badge: 'Beta', render: renderGabbai },
   howitworks: { label: 'How It Works', render: renderHowItWorks },
+  contact: { label: 'Contact', render: renderContact },
 };
 
 const tabsHost = document.getElementById('tabs');

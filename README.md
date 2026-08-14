@@ -139,6 +139,23 @@ same as step 2 above) is the only setup step needed. Sharing is opt-in per
 invite: a leiner's history is never visible to a gabbai until they explicitly
 accept.
 
+## Contact Us
+
+The Contact Us tab is a public feedback form -- name, email, and a message
+-- open to anyone, signed in or not, since it needs to work for visitors
+who've never created an account. Submitting emails you via
+[Resend](https://resend.com), gated by a free
+[Cloudflare Turnstile](https://www.cloudflare.com/products/turnstile/)
+captcha so it isn't an open spam relay -- Turnstile verification happens
+server-side in the `contact-form` Edge Function, not just in the browser.
+
+**One-time setup:** see `supabase/functions/contact-form/README.md` for the
+full walkthrough (Resend API key, a free Turnstile site, pasting its
+public Site Key into `web/js/turnstileClient.js`, deploying the function,
+and setting its secrets). Until that's done, the tab shows a friendly
+"not configured yet" notice instead of a broken form, same as My Leining
+above.
+
 ## Nusach coverage
 
 - **Ashkenazi, Sefardi, and Chabad** haftarah/maftir variants are populated

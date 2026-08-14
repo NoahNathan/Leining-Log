@@ -1,7 +1,7 @@
 {
   "description": "Difficulty ratings (0-10 per criterion, plus a length-weighted, then dataset-wide-rescaled final score) for every aliyah of every parsha -- including the 7 combined (double) parshiot, each scored against its own combined-reading aliyah divisions rather than averaged from its two components -- AND every chag/fast/Rosh Chodesh/special-Shabbat reading in chagim.json (see the separate 'chagim' array). Generated with a transparent rule-based methodology, NOT a survey of actual leining outcomes. Vocabulary is computed from real word-frequency + pronunciation-complexity data over the Masoretic Torah text (see word-difficulty.json); the other four criteria are a content-profile heuristic. Final scores are rescaled against the full pool of ~860 aliyot (parshiot + combined + chagim) so the hardest aliyah in the dataset is a real 10 and the easiest a real 1. 'haftarot' entries carrying a 'chagId' are special-Shabbat/chag haftarot (Shekalim, Zachor, Parah, HaChodesh, HaGadol, Rosh Chodesh alone, Chanukah, etc.) scored the same way as the 61 parsha haftarot, in the same percentile pool -- see gen_haftarah_stats.mjs; not every special-Shabbat haftarah has one, since a few (Shabbat Shuva's variable compositions, and the haftarah-only labels with no chagim.json entry at all) have no single fixed text to score against. 'reshapedAliyot' scores the merged aliyah 6 that appears on a 3-scroll week (Shekalim/HaChodesh/Rosh Chodesh Chanukah landing on Rosh Chodesh), for the 6 parshiot that can ever host one -- see gen_calendar.mjs for how it's attached to actual calendar rows. See difficulty-rubric.md for the full methodology and honest caveats.",
   "methodology": "difficulty-rubric.md",
-  "generatedAt": "2026-08-14T05:45:41.666Z",
+  "generatedAt": "2026-08-14T19:01:24.301Z",
   "count": 61,
   "individualCount": 54,
   "combinedCount": 7,
@@ -2472,13 +2472,13 @@
             ],
             "hardToPronounceExamples": [
               {
-                "word": "וְהַכֹּֽהֲנִים"
-              },
-              {
                 "word": "הָֽאֲבָנִים"
               },
               {
                 "word": "וְהַֽעֲלִיתָ"
+              },
+              {
+                "word": "עֲלֵיהֶן"
               }
             ]
           },
@@ -3621,13 +3621,13 @@
             ],
             "hardToPronounceExamples": [
               {
-                "word": "הַכֹּֽהֲנִֽים"
-              },
-              {
                 "word": "טָֽהֳרָֽהּ"
               },
               {
                 "word": "טָֽהֳרָהּ"
+              },
+              {
+                "word": "וְטָֽהֲרָה"
               }
             ]
           },
@@ -5618,10 +5618,10 @@
                 "word": "וַֽאֲבִיהוּא"
               },
               {
-                "word": "הַכֹּֽהֲנִים"
+                "word": "וְהַֽעֲמַדְתָּ"
               },
               {
-                "word": "וְהַֽעֲמַדְתָּ"
+                "word": "אֲבִיהֶֽם"
               }
             ]
           },
@@ -11044,13 +11044,13 @@
             ],
             "hardToPronounceExamples": [
               {
-                "word": "הַכֹּֽהֲנִים"
-              },
-              {
                 "word": "הָֽעֲבוֹט"
               },
               {
                 "word": "הַחֽוּצָה"
+              },
+              {
+                "word": "חֲדָשָׁה"
               }
             ]
           },
@@ -13415,13 +13415,13 @@
             ],
             "hardToPronounceExamples": [
               {
-                "word": "הַכֹּֽהֲנִים"
-              },
-              {
-                "word": "הַכֹּהֲנִים"
-              },
-              {
                 "word": "הַמִּזְבֵּחָה"
+              },
+              {
+                "word": "הַבְּהֵמָה"
+              },
+              {
+                "word": "וְהַכְּרָעַיִם"
               }
             ]
           },
@@ -13473,7 +13473,7 @@
                 "word": "הַמִּזְבֵּחָה"
               },
               {
-                "word": "הַכֹּֽהֲנִים"
+                "word": "הַמַּֽחֲבַת"
               }
             ]
           },
@@ -13565,13 +13565,13 @@
             ],
             "hardToPronounceExamples": [
               {
-                "word": "הַכֹּֽהֲנִים"
-              },
-              {
                 "word": "הַמִּזְבֵּחָה"
               },
               {
                 "word": "הַמִּזְבֵּחַ"
+              },
+              {
+                "word": "עֲלֵהֶן"
               }
             ]
           },
@@ -13848,10 +13848,10 @@
                 "word": "אֱלֹֽהֵיהֶם"
               },
               {
-                "word": "הַכֹּֽהֲנִים"
+                "word": "וְלַֽאֲחֹתוֹ"
               },
               {
-                "word": "וְלַֽאֲחֹתוֹ"
+                "word": "לֵאלֹהֵיהֶם"
               }
             ]
           },
@@ -14728,10 +14728,10 @@
                 "word": "בָּאַֽחֲרֹנָה"
               },
               {
-                "word": "הַכֹּֽהֲנִים"
+                "word": "הַתּֽוֹעֵבָה"
               },
               {
-                "word": "הַתּֽוֹעֵבָה"
+                "word": "אֲחֵרִים"
               }
             ]
           },
@@ -14780,13 +14780,13 @@
             ],
             "hardToPronounceExamples": [
               {
-                "word": "הַכֹּֽהֲנִים"
-              },
-              {
                 "word": "אֱלֹהָיו"
               },
               {
                 "word": "הָאֵלֶּה"
+              },
+              {
+                "word": "וִֽירִשְׁתָּהּ"
               }
             ]
           },
@@ -14822,13 +14822,13 @@
             ],
             "hardToPronounceExamples": [
               {
-                "word": "הַכֹּֽהֲנִים"
-              },
-              {
                 "word": "לַכֹּֽהֲנִים"
               },
               {
                 "word": "וְנַֽחֲלָה"
+              },
+              {
+                "word": "וְהַלְּחָיַיִם"
               }
             ]
           },
@@ -14962,13 +14962,13 @@
             ],
             "hardToPronounceExamples": [
               {
-                "word": "הַכֹּֽהֲנִים"
-              },
-              {
                 "word": "הָֽאֲנָשִׁים"
               },
               {
                 "word": "וְהַנִּשְׁאָרִים"
+              },
+              {
+                "word": "הַמִּלְחָמָה"
               }
             ]
           },
@@ -15016,7 +15016,7 @@
                 "word": "הַכְּנַֽעֲנִי"
               },
               {
-                "word": "הַכֹּֽהֲנִים"
+                "word": "וְהַבְּהֵמָה"
               }
             ]
           },
@@ -15966,7 +15966,7 @@
                 "word": "הֶֽחֱיִתָנוּ"
               },
               {
-                "word": "הַכֹּֽהֲנִים"
+                "word": "וַיֹּֽאמְרוּ"
               }
             ]
           },
@@ -22143,13 +22143,13 @@
             ],
             "hardToPronounceExamples": [
               {
-                "word": "הַכֹּֽהֲנִים"
-              },
-              {
                 "word": "הָאֲדָמָה"
               },
               {
                 "word": "תַּנְחִילֶנָּה"
+              },
+              {
+                "word": "הָֽאֲנָשִׁים"
               }
             ]
           },
@@ -23149,13 +23149,13 @@
             ],
             "hardToPronounceExamples": [
               {
-                "word": "הַכֹּֽהֲנִֽים"
-              },
-              {
                 "word": "טָֽהֳרָֽהּ"
               },
               {
                 "word": "טָֽהֳרָהּ"
+              },
+              {
+                "word": "וְטָֽהֲרָה"
               }
             ]
           },
@@ -23678,7 +23678,7 @@
                 "word": "הַמִּזְבֵּֽחָה"
               },
               {
-                "word": "הַכֹּֽהֲנִים"
+                "word": "לַֽעֲזָאזֵל"
               }
             ]
           },
@@ -24916,7 +24916,7 @@
                 "word": "וַיַּֽחֲנוּ"
               },
               {
-                "word": "כֹּֽהֲנִים"
+                "word": "הָעַמִּים"
               }
             ]
           },
@@ -25008,13 +25008,13 @@
             ],
             "hardToPronounceExamples": [
               {
-                "word": "וְהַכֹּֽהֲנִים"
-              },
-              {
-                "word": "הַכֹּֽהֲנִים"
-              },
-              {
                 "word": "תִשְׁתַּֽחֲוֶה"
+              },
+              {
+                "word": "הָֽאֲדָמָה"
+              },
+              {
+                "word": "וְאַֽהֲרֹן"
               }
             ]
           },
@@ -25635,13 +25635,13 @@
             ],
             "hardToPronounceExamples": [
               {
-                "word": "הַכֹּֽהֲנִים"
-              },
-              {
                 "word": "תַּנְחִילֶנָּה"
               },
               {
                 "word": "הַנֹּשְׂאִים"
+              },
+              {
+                "word": "לִֽיהוֹשֻׁעַ"
               }
             ]
           },
@@ -40546,13 +40546,13 @@
             ],
             "hardToPronounceExamples": [
               {
-                "word": "הַכֹּֽהֲנִים"
-              },
-              {
                 "word": "הַמִּזְבֵּחַ"
               },
               {
                 "word": "חַטֹּאתָם"
+              },
+              {
+                "word": "וְעִנִּיתֶם"
               }
             ]
           },
@@ -40880,13 +40880,13 @@
             ],
             "hardToPronounceExamples": [
               {
-                "word": "הַכֹּֽהֲנִים"
-              },
-              {
                 "word": "הַמִּזְבֵּחַ"
               },
               {
                 "word": "חַטֹּאתָם"
+              },
+              {
+                "word": "וְעִנִּיתֶם"
               }
             ]
           },
@@ -42132,7 +42132,7 @@
                 "word": "וַיַּֽחֲנוּ"
               },
               {
-                "word": "כֹּֽהֲנִים"
+                "word": "הָעַמִּים"
               }
             ]
           },
@@ -42262,13 +42262,13 @@
             ],
             "hardToPronounceExamples": [
               {
-                "word": "וְהַכֹּֽהֲנִים"
-              },
-              {
-                "word": "הַכֹּֽהֲנִים"
-              },
-              {
                 "word": "תִשְׁתַּֽחֲוֶה"
+              },
+              {
+                "word": "הָֽאֲדָמָה"
+              },
+              {
+                "word": "וְאַֽהֲרֹן"
               }
             ]
           },
@@ -42427,7 +42427,7 @@
                 "word": "וַיַּֽחֲנוּ"
               },
               {
-                "word": "כֹּֽהֲנִים"
+                "word": "הָעַמִּים"
               }
             ]
           },
@@ -42557,13 +42557,13 @@
             ],
             "hardToPronounceExamples": [
               {
-                "word": "וְהַכֹּֽהֲנִים"
-              },
-              {
-                "word": "הַכֹּֽהֲנִים"
-              },
-              {
                 "word": "תִשְׁתַּֽחֲוֶה"
+              },
+              {
+                "word": "הָֽאֲדָמָה"
+              },
+              {
+                "word": "וְאַֽהֲרֹן"
               }
             ]
           },

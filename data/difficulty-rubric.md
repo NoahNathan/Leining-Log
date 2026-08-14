@@ -351,6 +351,26 @@ words and names sit at 26-62% (את, אל, בני, כי, ישראל, משה...) 
 bar by a wide margin, while the genuinely obscure vocabulary this criterion
 is meant to catch sits well under it.
 
+**כהן ("kohen") needed a hand-added exception to the 12% rule, and it's the
+clearest real example of the surface-form-vs-lemma limitation below.** A
+user reported "הַכֹּהֲנִים" ("the kohanim") showing up as a flagged
+hard-to-pronounce example on an ordinary Shabbat, despite being one of the
+most recognizable words in the whole Torah/tefillah vocabulary. The doc-freq
+numbers explain why: the *root* appears in roughly 15% of all aliyot, well
+over the 12% bar, but that's split across several distinct exact forms --
+singular "הַכֹּהֵן" alone sits at ~11% (just *under* the bar on its own),
+and the definite plural "הַכֹּהֲנִים" that was actually getting flagged
+clears only ~2.6%. Each inflection is measured as if it were an unrelated
+word. Rather than build the general lemmatizer this would really call for
+(see below), the fix is a tiny four-line, hand-verified exception --
+`ALREADY_FAMILIAR_ROOTS` in `gen_word_stats.mjs` -- that strips a leading
+vav-conjunctive/definite-article and a plain plural ־ים suffix *only* when
+checking a word against this short explicit list, never in the general
+frequency math. This resolved 30 of the 31 flagged כהן-root instances
+dataset-wide; the one holdout ("לַכֹּֽהֲנִים", with a ל preposition instead
+of the article) is left as-is rather than widening the stripping rule on the
+strength of a single low-count case.
+
 **Honest limitations of this method:**
 - Both frequency measures -- token count (rarity) and document count (the
   hardest-to-pronounce filter above) -- count the **exact inflected surface

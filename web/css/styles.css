@@ -215,6 +215,7 @@ body { min-height: 100vh; display: flex; flex-direction: column; }
 .text-input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 .textarea-input { display: block; width: 100%; min-height: 110px; resize: vertical; font-family: inherit; }
 .turnstile-host { margin: 10px 0; }
+.honeypot-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; opacity: 0; }
 
 .btn-primary {
   font-family: inherit;

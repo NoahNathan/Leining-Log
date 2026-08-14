@@ -1,19 +1,27 @@
-// Handles the public Contact Us form: verifies a Cloudflare Turnstile
-// token, then emails the site owner via Resend with the submitter's name,
-// email, and message (reply_to set to their address, so replying from your
-// inbox goes straight back to them).
+// Handles the public Contact Us form: emails the site owner via Resend
+// with the submitter's name, email, and message (reply_to set to their
+// address, so replying from your inbox goes straight back to them).
 //
 // Invoked directly by anyone visiting the Contact Us tab -- no Supabase
 // auth required, since a contact form has to work for visitors who've
 // never signed up. That also makes this the one Edge Function in this repo
-// that's genuinely open to the public internet, which is exactly what
-// Turnstile is here to gate: without a valid, freshly-verified token this
-// returns 403 before ever touching Resend.
+// that's genuinely open to the public internet, so CORS is handled
+// explicitly (unlike notify-signup, which only ever receives server-to-
+// server Database Webhook calls, or notify-reading-signup, invoked from an
+// already cross-origin-configured authenticated session).
 //
-// CORS is handled explicitly (unlike notify-signup, which only ever
-// receives server-to-server Database Webhook calls, or notify-reading-signup,
-// invoked from an already cross-origin-configured authenticated session) --
-// see CORS_HEADERS below.
+// Spam defense is layered, and NEITHER layer blocks the form from working
+// on top of whatever Resend setup notify-signup already uses -- RESEND_API_KEY
+// and NOTIFY_EMAIL are shared secrets, so if those are already set for
+// notify-signup, this function works immediately with no extra setup:
+// 1. A honeypot field (see `website` below) -- zero setup, catches
+//    unsophisticated bots that blindly fill every field in a form.
+// 2. Cloudflare Turnstile, verified server-side -- OPTIONAL. If
+//    TURNSTILE_SECRET_KEY isn't set, verification is simply skipped rather
+//    than blocking every submission on a piece of infrastructure the site
+//    owner may not have set up yet. Once set, it applies immediately with
+//    no code change -- a real, upgradeable second layer for when the
+//    honeypot alone isn't enough.
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
@@ -36,23 +44,30 @@ Deno.serve(async (req) => {
   } catch {
     return respond('Invalid JSON payload', 400);
   }
-  const { name, email, message, turnstileToken } = body || {};
-  if (!name || !email || !message || !turnstileToken) {
-    return respond('Missing required field', 400);
-  }
+  const { name, email, message, turnstileToken, website } = body || {};
+
+  // Honeypot: a real visitor never sees or fills this field (hidden via CSS
+  // in contact.js, not a `type="hidden"` input -- see that file for why).
+  // A non-empty value means whatever submitted this ignored the page's
+  // actual layout, which no human does. Return a normal-looking success so
+  // as not to tip off whatever's doing the submitting.
+  if (website) return respond('ok');
+
+  if (!name || !email || !message) return respond('Missing required field', 400);
   if (!EMAIL_RE.test(email)) return respond('Invalid email address', 400);
   if (String(message).length > MAX_MESSAGE_LENGTH) return respond('Message too long', 400);
 
   const turnstileSecret = Deno.env.get('TURNSTILE_SECRET_KEY');
-  if (!turnstileSecret) return respond('Missing TURNSTILE_SECRET_KEY secret', 500);
-
-  const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams({ secret: turnstileSecret, response: turnstileToken }),
-  });
-  const verify = await verifyRes.json();
-  if (!verify.success) return respond('Captcha verification failed -- please try again', 403);
+  if (turnstileSecret) {
+    if (!turnstileToken) return respond('Missing captcha token', 400);
+    const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ secret: turnstileSecret, response: turnstileToken }),
+    });
+    const verify = await verifyRes.json();
+    if (!verify.success) return respond('Captcha verification failed -- please try again', 403);
+  }
 
   const resendApiKey = Deno.env.get('RESEND_API_KEY');
   const notifyEmail = Deno.env.get('NOTIFY_EMAIL');

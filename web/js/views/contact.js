@@ -47,6 +47,15 @@ export async function renderContact(container) {
     class: 'text-input textarea-input', rows: '6', maxlength: '5000', required: true,
     placeholder: 'Feedback, bug reports, ideas -- anything at all',
   });
+  // Honeypot: real visitors never see this (hidden via CSS, not a hidden
+  // input type -- unsophisticated bots that parse raw HTML skip type="hidden"
+  // fields but still blindly fill anything that looks like an ordinary text
+  // field). A filled-in value tells the Edge Function to silently no-op.
+  // tabindex/aria-hidden keep it out of keyboard and screen-reader nav too.
+  const honeypot = el('input', {
+    type: 'text', class: 'honeypot-field', name: 'website', tabindex: '-1',
+    autocomplete: 'off', 'aria-hidden': 'true',
+  });
   const captchaHost = el('div', { class: 'turnstile-host' });
   const status = el('span', { class: 'muted small' }, '');
   const submitBtn = el('button', { class: 'btn-primary', type: 'submit', disabled: true }, 'Send');
@@ -74,7 +83,7 @@ export async function renderContact(container) {
       status.className = 'error small';
     });
   } else {
-    captchaHost.append(el('p', { class: 'muted small' }, 'Spam-check widget not configured -- see README.md. The form still works, just without a captcha.'));
+    captchaHost.append(el('p', { class: 'muted small' }, "A stronger captcha isn't configured yet -- see README.md. Basic spam filtering is still active."));
     submitBtn.disabled = false;
   }
 
@@ -89,7 +98,7 @@ export async function renderContact(container) {
       try {
         const client = await getSupabase();
         const { error } = await client.functions.invoke('contact-form', {
-          body: { name: name.value, email: email.value, message: message.value, turnstileToken },
+          body: { name: name.value, email: email.value, message: message.value, turnstileToken, website: honeypot.value },
         });
         if (error) throw error;
         form.innerHTML = '';
@@ -106,6 +115,7 @@ export async function renderContact(container) {
   }, [
     el('div', { class: 'search-row' }, [name, email]),
     message,
+    honeypot,
     captchaHost,
     el('div', { class: 'search-row' }, [submitBtn, status]),
   ]);

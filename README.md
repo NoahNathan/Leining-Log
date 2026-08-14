@@ -144,17 +144,22 @@ accept.
 The Contact Us tab is a public feedback form -- name, email, and a message
 -- open to anyone, signed in or not, since it needs to work for visitors
 who've never created an account. Submitting emails you via
-[Resend](https://resend.com), gated by a free
+[Resend](https://resend.com) -- **the same Resend account and API key
+`notify-signup` already uses**, if you've set that up, since Supabase
+secrets are shared across every function in a project. Spam defense is
+layered: a zero-setup honeypot field is always on, and a free
 [Cloudflare Turnstile](https://www.cloudflare.com/products/turnstile/)
-captcha so it isn't an open spam relay -- Turnstile verification happens
-server-side in the `contact-form` Edge Function, not just in the browser.
+captcha (verified server-side, not just in the browser) is available as an
+optional upgrade rather than something you need before the form works at
+all.
 
 **One-time setup:** see `supabase/functions/contact-form/README.md` for the
-full walkthrough (Resend API key, a free Turnstile site, pasting its
-public Site Key into `web/js/turnstileClient.js`, deploying the function,
-and setting its secrets). Until that's done, the tab shows a friendly
-"not configured yet" notice instead of a broken form, same as My Leining
-above.
+full walkthrough. The minimum to get email working (Resend API key, deploy
+the function, set two secrets) is a few minutes, and shorter still if
+`notify-signup` is already set up. Turnstile is a separate, optional
+section in that same file. Until the function is deployed, the tab shows a
+friendly "not configured yet" notice instead of a broken form, same as My
+Leining above.
 
 ## Nusach coverage
 

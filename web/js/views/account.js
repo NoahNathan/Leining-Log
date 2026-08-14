@@ -1,10 +1,10 @@
-import { el, displayParshaName, gregorianToHebrewYear, hebrewToGregorianYear } from '../util.js';
+import { el, displayParshaName, gregorianToHebrewYear, hebrewToGregorianYear, scoreColor, scoreColorBg, scoreLabel } from '../util.js';
 import { isConfigured, signUp, signInWithPassword, signOut, onAuthChange } from '../auth.js';
 import {
   listAllParshiotForSearch, clearBarMitzvahFlag,
   getMyLeiningLog, addLeiningLogEntry, removeLeiningLogEntry, computeTorahProgress,
   DAVENING_ROLES, getMyDaveningLog, addDaveningLogEntry, removeDaveningLogEntry,
-  getParshaTypicalMonths,
+  getParshaTypicalMonths, getDifficulty,
 } from '../data.js';
 
 const BOOK_ORDER = ['Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy'];
@@ -25,6 +25,28 @@ function aliyahSortKey(key) {
   if (key === 'ALL') return -1;
   if (key === 'M') return 999;
   return Number(key);
+}
+// Individual parshiot have a plain parshaNum; combined ones (Vayakhel-Pekudei
+// etc.) carry both component numbers as a pair -- the first one is what
+// "Torah order" means for a combined reading.
+function parshaSortNum(p) {
+  if (!p) return 999;
+  return Array.isArray(p.parshaNum) ? p.parshaNum[0] : p.parshaNum;
+}
+function scoreBadge(score) {
+  return el('span', {
+    class: 'badge badge-sm',
+    style: `color:${scoreColor(score)}; background:${scoreColorBg(score)}; border-color:${scoreColor(score)}33`,
+  }, `${Number.isInteger(score) ? score : score.toFixed(1)} · ${scoreLabel(score)}`);
+}
+// 'ALL' entries use the parsha's own composite score; specific aliyot
+// (including 'M' for maftir) are scored individually -- both live in the
+// same aliyot array in difficulty-scores.json.
+function difficultyForEntry(difficultyEntry, aliyahKey) {
+  if (!difficultyEntry) return null;
+  if (aliyahKey === 'ALL') return difficultyEntry.parshaFinalScore;
+  const a = difficultyEntry.aliyot.find((x) => String(x.aliyah) === aliyahKey);
+  return a ? a.finalScore : null;
 }
 
 // Fills in whichever year is missing from the other, via the Hebrew-calendar
@@ -129,7 +151,7 @@ async function renderLoggedIn(body, user) {
   body.innerHTML = '';
   body.append(el('p', { class: 'muted' }, 'Loading your progress…'));
 
-  const [log, allParshiot, daveningLog, typicalMonths] = await Promise.all([
+  const [log, allParshiot, daveningLog, typicalMonths, difficulty] = await Promise.all([
     getMyLeiningLog(user.id), listAllParshiotForSearch(),
     // Isolated from the Promise.all above on purpose: davening_log is a
     // newer table than leining_log, so an account created before it was
@@ -137,10 +159,17 @@ async function renderLoggedIn(body, user) {
     // just because that one table doesn't exist in their project yet.
     getMyDaveningLog(user.id).catch((err) => { console.error('Davening log unavailable:', err); return []; }),
     getParshaTypicalMonths(),
+    getDifficulty(),
   ]);
   const progress = await computeTorahProgress(log);
   const individual = allParshiot.filter((p) => !p.combinedEntry).sort((a, b) => a.parshaNum - b.parshaNum);
   const byId = new Map(individual.map((p) => [p.id, p]));
+  // Unlike byId above (individual parshiot only -- what the "Log a reading"
+  // dropdown offers), the log itself can hold entries against a combined
+  // parsha id (logged via quick-log on a combined reading's detail page), so
+  // the log card gets its own lookup covering both.
+  const byIdAll = new Map(allParshiot.map((p) => [p.id, p]));
+  const difficultyById = new Map(difficulty.map((d) => [d.parshaId, d]));
 
   body.innerHTML = '';
 
@@ -155,7 +184,7 @@ async function renderLoggedIn(body, user) {
   body.append(renderDaveningCard(user, daveningLog, () => renderLoggedIn(body, user)));
   body.append(renderProgressCard(progress));
   body.append(renderAddEntryCard(user, individual, typicalMonths, () => renderLoggedIn(body, user)));
-  body.append(renderLogCard(log, byId, () => renderLoggedIn(body, user)));
+  body.append(renderLogCard(log, byIdAll, difficultyById, () => renderLoggedIn(body, user)));
 }
 
 // Deliberately tiny -- a row of toggles, not a form. "Who can lead
@@ -322,12 +351,18 @@ function renderAddEntryCard(user, individual, typicalMonths, onSaved) {
   return el('div', { class: 'card subcard' }, [el('h3', {}, 'Log a reading'), form]);
 }
 
-function renderLogCard(log, byId, onChanged) {
-  const card = el('div', { class: 'card subcard' }, [el('h3', {}, 'Your log')]);
+// Module-level so both survive a full "My Leining" re-render (e.g. after
+// logging or removing an entry), not just clicks within one render pass.
+let logSortMode = 'recent'; // 'recent' | 'most' | 'torah'
+let showDifficultyInLog = false;
+
+function renderLogCard(log, byId, difficultyById, onChanged) {
+  const card = el('div', { class: 'card subcard' });
   if (!log.length) {
-    card.append(el('p', { class: 'muted small' }, 'Nothing logged yet -- add your first reading above.'));
+    card.append(el('h3', {}, 'Your log'), el('p', { class: 'muted small' }, 'Nothing logged yet -- add your first reading above.'));
     return card;
   }
+
   // Group by parsha so logging several aliyot of the same parsha shows up
   // as one block listing them together, not a separate row repeating the
   // parsha name each time.
@@ -336,30 +371,76 @@ function renderLogCard(log, byId, onChanged) {
     if (!byParsha.has(entry.parsha_id)) byParsha.set(entry.parsha_id, []);
     byParsha.get(entry.parsha_id).push(entry);
   }
+  for (const entries of byParsha.values()) entries.sort((a, b) => aliyahSortKey(a.aliyah_key) - aliyahSortKey(b.aliyah_key));
+
+  const sortSelect = el('select', { class: 'text-input' }, [
+    el('option', { value: 'recent' }, 'Sort: most recently leined'),
+    // "Leined the most" has no real repeat-count in the data -- logging is a
+    // toggle per (parsha, aliyah), not a tally -- so this instead ranks by
+    // how many distinct aliyot of a parsha are logged, i.e. how much of it
+    // you've covered.
+    el('option', { value: 'most' }, 'Sort: most aliyot logged'),
+    el('option', { value: 'torah' }, 'Sort: Torah order'),
+  ]);
+  sortSelect.value = logSortMode;
+  sortSelect.addEventListener('change', () => { logSortMode = sortSelect.value; renderList(); });
+
+  const diffToggle = el('button', {
+    class: `toggle-btn ${showDifficultyInLog ? 'active' : ''}`, type: 'button',
+    title: 'Show each logged reading\'s difficulty rating',
+  }, 'Show difficulty rating');
+  diffToggle.addEventListener('click', () => {
+    showDifficultyInLog = !showDifficultyInLog;
+    diffToggle.classList.toggle('active', showDifficultyInLog);
+    renderList();
+  });
+
+  card.append(el('div', { class: 'subcard-heading-row' }, [
+    el('h3', {}, 'Your log'),
+    el('div', { class: 'subcard-actions' }, [sortSelect, diffToggle]),
+  ]));
   const list = el('div', { class: 'log-list' });
-  for (const [parshaId, entries] of byParsha) {
-    const p = byId.get(parshaId);
-    entries.sort((a, b) => aliyahSortKey(a.aliyah_key) - aliyahSortKey(b.aliyah_key));
-    const group = el('div', { class: 'log-group' }, [
-      el('div', { class: 'log-parsha' }, p ? displayParshaName(p.englishName || p.id) : parshaId),
-    ]);
-    for (const entry of entries) {
-      const { yearHebrew: heb, yearGregorian: greg } = deriveYears(entry.year_hebrew, entry.year_gregorian);
-      const years = [heb, greg].filter(Boolean).join(' / ');
-      group.append(el('div', { class: 'log-group-aliyah' }, [
-        el('div', {}, [
-          el('span', {}, aliyahLabel(entry.aliyah_key)),
-          entry.is_bar_mitzvah ? el('span', { class: 'tag' }, 'Bar Mitzvah') : null,
-          years ? el('span', { class: 'muted small' }, ` · ${years}`) : null,
-        ]),
-        el('button', {
-          class: 'btn-share', type: 'button', title: 'Remove',
-          onclick: async () => { await removeLeiningLogEntry(entry.id); onChanged(); },
-        }, '✕'),
-      ]));
-    }
-    list.append(group);
-  }
   card.append(list);
+
+  function renderList() {
+    list.innerHTML = '';
+    const groups = [...byParsha.entries()];
+    if (logSortMode === 'torah') {
+      groups.sort((a, b) => parshaSortNum(byId.get(a[0])) - parshaSortNum(byId.get(b[0])));
+    } else if (logSortMode === 'most') {
+      groups.sort((a, b) => b[1].length - a[1].length);
+    } else {
+      const mostRecent = (entries) => entries.reduce((max, e) => (e.created_at > max ? e.created_at : max), entries[0].created_at);
+      groups.sort((a, b) => (mostRecent(b[1]) > mostRecent(a[1]) ? 1 : -1));
+    }
+
+    for (const [parshaId, entries] of groups) {
+      const p = byId.get(parshaId);
+      const difficultyEntry = difficultyById.get(parshaId);
+      const group = el('div', { class: 'log-group' }, [
+        el('div', { class: 'log-parsha' }, p ? displayParshaName(p.englishName || p.id) : parshaId),
+      ]);
+      for (const entry of entries) {
+        const { yearHebrew: heb, yearGregorian: greg } = deriveYears(entry.year_hebrew, entry.year_gregorian);
+        const years = [heb, greg].filter(Boolean).join(' / ');
+        const score = showDifficultyInLog ? difficultyForEntry(difficultyEntry, entry.aliyah_key) : null;
+        group.append(el('div', { class: 'log-group-aliyah' }, [
+          el('div', {}, [
+            el('span', {}, aliyahLabel(entry.aliyah_key)),
+            entry.is_bar_mitzvah ? el('span', { class: 'tag' }, 'Bar Mitzvah') : null,
+            years ? el('span', { class: 'muted small' }, ` · ${years}`) : null,
+            score != null ? scoreBadge(score) : null,
+          ]),
+          el('button', {
+            class: 'btn-share', type: 'button', title: 'Remove',
+            onclick: async () => { await removeLeiningLogEntry(entry.id); onChanged(); },
+          }, '✕'),
+        ]));
+      }
+      list.append(group);
+    }
+  }
+
+  renderList();
   return card;
 }

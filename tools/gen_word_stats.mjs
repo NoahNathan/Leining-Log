@@ -461,6 +461,7 @@ function rawAliyahStats(bookEn, startRef, endRef) {
     seenH.add(w.surface);
     const docFreqPct = (aliyahDocFreq.get(w.consonantal) || 0) / totalRealAliyot;
     if (docFreqPct > HARD_TO_PRONOUNCE_DOC_FREQ_CEILING) continue;
+    if (isAlreadyFamiliarWord(w.consonantal)) continue;
     hardExamples.push({ word: w.surface });
     if (hardExamples.length >= 3) break;
   }
@@ -608,6 +609,41 @@ for (const c of chagim) {
 // to pronounce in isolation -- see the exact threshold analysis in
 // difficulty-rubric.md.
 const HARD_TO_PRONOUNCE_DOC_FREQ_CEILING = 0.12;
+
+// The doc-freq ceiling above counts each EXACT prefixed/suffixed surface
+// string as its own form (see the "surface-form vs. lemma" limitation in
+// difficulty-rubric.md), which can badly understate how familiar a common
+// root actually is once it's split across many inflections. כהן ("kohen") is
+// the concrete case that surfaced this: "הַכֹּהֲנִים" (definite plural,
+// "the kohanim") alone clears only ~2.6% of aliyot, well under the ceiling,
+// even though the root appears in roughly 15% of all aliyot once its most
+// common form -- singular "הַכֹּהֵן" at ~11%, itself just under the ceiling
+// -- is pooled with the definite/plain plural and bare-singular variants.
+// Rather than a general lemmatizer (out of scope, see the rubric), this is a
+// tiny, hand-verified allowlist in the same spirit as HOMOGRAPH_SKELETONS
+// below: only a leading vav-conjunctive and/or the definite article, and/or
+// a plain plural ־ים suffix, are stripped -- and ONLY for checking against
+// this explicit short list, never for the frequency/rarity math itself -- so
+// it can't misfire on some other root that happens to start or end the same
+// way.
+const ALREADY_FAMILIAR_ROOTS = new Set(['כהנ']); // regular-nun form -- see finalToRegular below
+const FINAL_TO_REGULAR = { ך: 'כ', ם: 'מ', ן: 'נ', ף: 'פ', ץ: 'צ' };
+function familiarRootKey(consonantal) {
+  let s = consonantal;
+  if (s.startsWith('ו')) s = s.slice(1);
+  if (s.startsWith('ה')) s = s.slice(1);
+  if (s.endsWith('ים') && s.length > 3) s = s.slice(0, -2);
+  // Stripping ־ים can leave a mid-word regular letter where the unsuffixed
+  // root has the word-final form of the same letter (e.g. כהנ-ים -> כהנ, but
+  // the singular root is spelled כה-ן with final nun) -- normalize both to
+  // the regular form so the two actually compare equal.
+  const last = s.slice(-1);
+  if (FINAL_TO_REGULAR[last]) s = s.slice(0, -1) + FINAL_TO_REGULAR[last];
+  return s;
+}
+function isAlreadyFamiliarWord(consonantal) {
+  return ALREADY_FAMILIAR_ROOTS.has(familiarRootKey(consonantal));
+}
 
 const entries = []; // { groupId, aliyahKey, raw }
 for (const p of [...parshiot, ...combinedParshiot]) {

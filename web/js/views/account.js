@@ -4,6 +4,7 @@ import {
   listAllParshiotForSearch, clearBarMitzvahFlag,
   getMyLeiningLog, addLeiningLogEntry, removeLeiningLogEntry, computeTorahProgress,
   DAVENING_ROLES, getMyDaveningLog, addDaveningLogEntry, removeDaveningLogEntry,
+  getParshaTypicalMonths,
 } from '../data.js';
 
 const BOOK_ORDER = ['Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy'];
@@ -128,13 +129,14 @@ async function renderLoggedIn(body, user) {
   body.innerHTML = '';
   body.append(el('p', { class: 'muted' }, 'Loading your progress…'));
 
-  const [log, allParshiot, daveningLog] = await Promise.all([
+  const [log, allParshiot, daveningLog, typicalMonths] = await Promise.all([
     getMyLeiningLog(user.id), listAllParshiotForSearch(),
     // Isolated from the Promise.all above on purpose: davening_log is a
     // newer table than leining_log, so an account created before it was
     // added to schema.sql shouldn't have the whole My Leining page break
     // just because that one table doesn't exist in their project yet.
     getMyDaveningLog(user.id).catch((err) => { console.error('Davening log unavailable:', err); return []; }),
+    getParshaTypicalMonths(),
   ]);
   const progress = await computeTorahProgress(log);
   const individual = allParshiot.filter((p) => !p.combinedEntry).sort((a, b) => a.parshaNum - b.parshaNum);
@@ -152,7 +154,7 @@ async function renderLoggedIn(body, user) {
 
   body.append(renderDaveningCard(user, daveningLog, () => renderLoggedIn(body, user)));
   body.append(renderProgressCard(progress));
-  body.append(renderAddEntryCard(user, individual, () => renderLoggedIn(body, user)));
+  body.append(renderAddEntryCard(user, individual, typicalMonths, () => renderLoggedIn(body, user)));
   body.append(renderLogCard(log, byId, () => renderLoggedIn(body, user)));
 }
 
@@ -220,7 +222,7 @@ function renderProgressCard(progress) {
   return card;
 }
 
-function renderAddEntryCard(user, individual, onSaved) {
+function renderAddEntryCard(user, individual, typicalMonths, onSaved) {
   const parshaSelect = el('select', { class: 'text-input' });
   for (const book of BOOK_ORDER) {
     const inBook = individual.filter((p) => p.book === book);
@@ -245,11 +247,14 @@ function renderAddEntryCard(user, individual, onSaved) {
   const yearHebrew = el('input', { type: 'text', class: 'text-input', placeholder: 'Hebrew year (e.g. 5784)' });
   const yearGregorian = el('input', { type: 'number', class: 'text-input', placeholder: 'Year (e.g. 2024)', min: '1900', max: '2200' });
   const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  // Optional -- Rosh Hashanah (~September) splits any Gregorian year into
-  // two different Hebrew years, so a month is what makes the derived
-  // Hebrew year exact instead of an approximation (see gregorianToHebrewYear).
+  // Rosh Hashanah (~September) splits any Gregorian year into two different
+  // Hebrew years, so a month is what makes the derived Hebrew year exact
+  // instead of an approximation (see gregorianToHebrewYear). Auto-filled
+  // below from the parsha selected -- each one is read in essentially the
+  // same Gregorian month every year (see gen_parsha_typical_month.mjs) -- so
+  // this is usually already right; still editable for the rare correction.
   const yearMonth = el('select', { class: 'text-input' }, [
-    el('option', { value: '' }, 'Month (optional, for exact Hebrew year)'),
+    el('option', { value: '' }, 'Month (for exact Hebrew year)'),
     ...MONTH_NAMES.map((m, i) => el('option', { value: String(i + 1) }, m)),
   ]);
   const barMitzvah = el('input', { type: 'checkbox' });
@@ -271,7 +276,21 @@ function renderAddEntryCard(user, individual, onSaved) {
   }
   yearHebrew.addEventListener('input', updateYearHint);
   yearGregorian.addEventListener('input', updateYearHint);
-  yearMonth.addEventListener('change', updateYearHint);
+
+  // Auto-fills the month from whichever parsha is currently selected, but
+  // only until the user picks one themselves -- after that, switching
+  // parshiot (e.g. logging several readings in a row) never overwrites
+  // their own explicit choice.
+  let monthManuallySet = false;
+  function applyTypicalMonth() {
+    if (monthManuallySet) return;
+    const typical = typicalMonths[parshaSelect.value];
+    yearMonth.value = typical ? String(typical) : '';
+    updateYearHint();
+  }
+  yearMonth.addEventListener('change', () => { monthManuallySet = true; updateYearHint(); });
+  parshaSelect.addEventListener('change', applyTypicalMonth);
+  applyTypicalMonth();
 
   const form = el('form', {
     onsubmit: async (e) => {

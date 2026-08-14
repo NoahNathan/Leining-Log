@@ -6,7 +6,7 @@
     "aliyotScored": 950
   },
   "methodology": "difficulty-rubric.md",
-  "generatedAt": "2026-08-10T06:30:13.643Z",
+  "generatedAt": "2026-08-14T05:44:00.890Z",
   "aliyot": {
     "Bereshit": {
       "1": {
@@ -761,7 +761,7 @@
             "word": "וְנִרְאֲתָה"
           },
           {
-            "word": "אֱלֹהִים"
+            "word": "וּרְאִיתִיהָ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -1748,13 +1748,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהִים"
-          },
-          {
             "word": "הִשָּׁבְעָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "לַֽאֲבִימֶלֶךְ"
+          },
+          {
+            "word": "בַּֽעֲבוּר"
           }
         ],
         "ambiguousSpellingExamples": [
@@ -3024,13 +3024,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהִים"
-          },
-          {
             "word": "עֲבַדְתִּֽיךָ"
           },
           {
             "word": "מִדּֽוּדָאֵי"
+          },
+          {
+            "word": "הַלַּיְלָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -3242,13 +3242,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהִֽים"
-          },
-          {
-            "word": "אֱלֹהִים"
-          },
-          {
             "word": "מַֽחֲנֵה"
+          },
+          {
+            "word": "וְיַֽעֲקֹב"
+          },
+          {
+            "word": "וַיִּפְגְּעוּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -4377,13 +4377,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהִים"
-          },
-          {
             "word": "אַֽחֲרֵי"
           },
           {
             "word": "וַיַּֽעֲבֹר"
+          },
+          {
+            "word": "הַכִּסֵּא"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -4867,7 +4867,7 @@
             "word": "וַֽאֲמַרְתֶּם"
           },
           {
-            "word": "אֱלֹהִים"
+            "word": "וְאַחֲרֵי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -4969,7 +4969,7 @@
             "word": "וְאֶרְאֶנּוּ"
           },
           {
-            "word": "אֱלֹהִים"
+            "word": "אֲבִיהֶם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -5263,10 +5263,10 @@
             "word": "הָֽאֱלֹהִים"
           },
           {
-            "word": "אֱלֹהִים"
+            "word": "הִתְהַלְּכוּ"
           },
           {
-            "word": "הִתְהַלְּכוּ"
+            "word": "הַנְּעָרִים"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -5304,13 +5304,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהִים"
-          },
-          {
             "word": "הָֽאֱמֹרִי"
           },
           {
-            "word": "הַהוּא"
+            "word": "אֲבֹֽתֵיכֶֽם"
+          },
+          {
+            "word": "בְּעֵינָיו"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -5687,7 +5687,7 @@
             "word": "וְנַֽעֲרֹתֶיהָ"
           },
           {
-            "word": "אֱלֹהִים"
+            "word": "אֲמָתָהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -6077,7 +6077,7 @@
             "word": "אֱלֹהֵיכֶם"
           },
           {
-            "word": "אֱלֹהִים"
+            "word": "וּלְיַֽעֲקֹב"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -6173,13 +6173,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהִים"
-          },
-          {
             "word": "וְאַֽהֲרֹן"
           },
           {
             "word": "וְאַהֲרֹן"
+          },
+          {
+            "word": "אֲצַוֶּךָּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -6938,7 +6938,7 @@
             "word": "וְהַֽעֲלִיתֶם"
           },
           {
-            "word": "אֱלֹהִים"
+            "word": "וַיַּֽחֲנוּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -7708,10 +7708,10 @@
             "word": "וַתְּחַֽלֲלֶֽהָ"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "תַֽעֲשׂוּן"
           },
           {
-            "word": "תַֽעֲשׂוּן"
+            "word": "אֱלֹהֵי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -7938,13 +7938,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהִים"
-          },
-          {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "אַֽחֲרֵֽי"
+          },
+          {
+            "word": "תַֽעֲנֶה"
+          },
+          {
+            "word": "אַֽחֲרֵי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -7988,7 +7988,7 @@
             "word": "וְהַשְּׁבִיעִת"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "אֲחֵרִים"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -8122,10 +8122,10 @@
             "word": "וְאַרְבָּעִים"
           },
           {
-            "word": "הַשְּׁבִיעִי"
+            "word": "אַרְבָּעִים"
           },
           {
-            "word": "אַרְבָּעִים"
+            "word": "וַיְכַסֵּהוּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -8227,7 +8227,7 @@
             "word": "וּמַחְתֹּתֶיהָ"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "אֲצַוֶּה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -8284,7 +8284,7 @@
             "word": "אֲחֹתָֽהּ"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הַיְרִיעָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -8333,7 +8333,7 @@
             "word": "וַֽחֲמִשָּׁה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "וְאַרְבָּעִים"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -8425,13 +8425,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "הַמִּזְבֵּחַ"
           },
           {
             "word": "וּמַחְתֹּתָיו"
+          },
+          {
+            "word": "מַֽעֲשֵׂה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -8633,7 +8633,7 @@
             "word": "כְּמַֽעֲשֵׂה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעֲבֹתֹת"
           }
         ],
         "ambiguousSpellingExamples": [
@@ -8696,7 +8696,7 @@
             "word": "הַקֳּדָשִׁים"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "אַֽחֲרָֽיו"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -8851,7 +8851,7 @@
             "word": "אֱלֹֽהֵיהֶֽם"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הַמִּזְבֵּחַ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -8892,10 +8892,10 @@
             "word": "וּבְהַֽעֲלֹת"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבַּיִם"
           },
           {
-            "word": "אַֽהֲרֹן"
+            "word": "בָּהֵֽמָּה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -8936,10 +8936,10 @@
             "word": "וּבְהַֽעֲלֹת"
           },
           {
-            "word": "אַֽהֲרֹן"
+            "word": "הָֽעַרְבַּיִם"
           },
           {
-            "word": "הָֽעַרְבַּיִם"
+            "word": "יַקְטִירֶנָּה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -9358,10 +9358,10 @@
             "word": "הַמַּסְוֶה"
           },
           {
-            "word": "יְהֹוָה"
+            "word": "וּבְבֹא"
           },
           {
-            "word": "אֲשֶׁר"
+            "word": "יְצֻוֶּֽה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -10384,7 +10384,7 @@
             "word": "הַמִּזְבֵּחָה"
           },
           {
-            "word": "אַֽהֲרֹן"
+            "word": "הַמִּזְבֵּחַ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -10841,7 +10841,7 @@
             "word": "הַֽחַטָּאת"
           },
           {
-            "word": "אַֽהֲרֹן"
+            "word": "הָֽאוּרִים"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -11032,13 +11032,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אַֽהֲרֹן"
-          },
-          {
-            "word": "כַּֽאֲשֶׁר"
-          },
-          {
             "word": "עֲלֵיכֶֽם"
+          },
+          {
+            "word": "וּמִפֶּתַח"
+          },
+          {
+            "word": "מִלֻּֽאֵיכֶם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -11585,10 +11585,10 @@
             "word": "הַמִּסְפַּחַת"
           },
           {
-            "word": "הַשְּׁבִיעִי"
+            "word": "אַֽחֲרֵי"
           },
           {
-            "word": "אַֽחֲרֵי"
+            "word": "לְטָֽהֳרָתוֹ"
           }
         ],
         "ambiguousSpellingExamples": [
@@ -11685,10 +11685,10 @@
             "word": "אֲדַמְדֶּמֶת"
           },
           {
-            "word": "הַשְּׁבִיעִי"
+            "word": "תַּחְתֶּיהָ"
           },
           {
-            "word": "תַּחְתֶּיהָ"
+            "word": "הַמִּכְוָה"
           }
         ],
         "ambiguousSpellingExamples": [
@@ -11743,7 +11743,7 @@
             "word": "וּמַרְאֵהוּ"
           },
           {
-            "word": "הַשְּׁבִיעִי"
+            "word": "אַֽחֲרֵי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -12160,10 +12160,10 @@
             "word": "וַֽאֲמַרְתֶּם"
           },
           {
-            "word": "אַֽהֲרֹן"
+            "word": "וְהַנּוֹשֵׂא"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "לְטָֽהֳרָתוֹ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -12274,10 +12274,10 @@
             "word": "וְהֵֽבִיאָה"
           },
           {
-            "word": "הָֽאֶחָד"
+            "word": "טֻמְאָתָֽהּ"
           },
           {
-            "word": "טֻמְאָתָֽהּ"
+            "word": "וְהִזַּרְתֶּם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -13309,10 +13309,10 @@
             "word": "אֱלֹֽהֵיכֶם"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הַמִּזְבֵּחַ"
           },
           {
-            "word": "אַֽהֲרֹן"
+            "word": "וָהָלְאָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -13429,7 +13429,7 @@
             "word": "אֱלֹֽהֵיכֶֽם"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "תְּרוּעָה"
           }
         ],
         "ambiguousSpellingExamples": [
@@ -14382,7 +14382,7 @@
             "word": "יַֽעֲבֹר"
           },
           {
-            "word": "לַֽיהֹוָֽה"
+            "word": "וּתְמֽוּרָתוֹ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -14783,10 +14783,10 @@
             "word": "הַקֳּדָשִׁים"
           },
           {
-            "word": "אַֽהֲרֹן"
+            "word": "הַקְּהָתִי"
           },
           {
-            "word": "הַקְּהָתִי"
+            "word": "עֲבֹֽדָתוֹ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -15968,13 +15968,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַֽעֲשֶׂה"
-          },
-          {
             "word": "תַּֽעֲשׂוּ"
           },
           {
             "word": "הָֽאֶזְרָח"
+          },
+          {
+            "word": "יַֽעֲשֶׂה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -16018,7 +16018,7 @@
             "word": "עֲרִסֹתֵיכֶם"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "בְּבֹֽאֲכֶם"
           }
         ],
         "ambiguousSpellingExamples": [
@@ -16394,7 +16394,7 @@
             "word": "וַֽהֲשִׁכֹּתִי"
           },
           {
-            "word": "אַֽהֲרֹן"
+            "word": "נְשִֽׂיאֵיהֶם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -16564,7 +16564,7 @@
             "word": "וַֽאֲכַלְתֶּם"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "עֲבֹֽדַתְכֶם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -16985,7 +16985,7 @@
             "word": "וַיַּֽחֲנוּ"
           },
           {
-            "word": "כַּֽאֲשֶׁר"
+            "word": "בְּחֶשְׁבּֽוֹן"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -17084,7 +17084,7 @@
             "word": "הָֽאֲנָשִׁים"
           },
           {
-            "word": "אֱלֹהִים"
+            "word": "אֲכַבֶּדְךָ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -17133,7 +17133,7 @@
             "word": "הָאֲנָשִׁים"
           },
           {
-            "word": "אֱלֹהִים"
+            "word": "הִתְעַלַּלְתְּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -17411,10 +17411,10 @@
             "word": "אַרְבָּעָה"
           },
           {
-            "word": "אַֽהֲרֹן"
+            "word": "הָֽאִשָּׁה"
           },
           {
-            "word": "הָֽאִשָּׁה"
+            "word": "הַמַּגֵּפָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -17457,10 +17457,10 @@
             "word": "אַֽחֲרָיו"
           },
           {
-            "word": "אַֽהֲרֹן"
+            "word": "הָֽאִשָּׁה"
           },
           {
-            "word": "הָֽאִשָּׁה"
+            "word": "אֲחֹתָם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -17688,7 +17688,7 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "וַֽעֲשִׂירִית"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -17732,7 +17732,7 @@
             "word": "בְּאַרְבָּעָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "וּמִנְחָתָהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -19843,7 +19843,7 @@
             "word": "וְנַֽחֲלָה"
           },
           {
-            "word": "אֱלֹהֶיךָ"
+            "word": "וְאַרְבָּעִים"
           }
         ],
         "ambiguousSpellingExamples": [
@@ -20337,10 +20337,10 @@
             "word": "וְהָֽאַלְמָנָה"
           },
           {
-            "word": "אֱלֹהֶיךָ"
+            "word": "וְנַֽחֲלָה"
           },
           {
-            "word": "אֱלֹהֶֽיךָ"
+            "word": "וְהִנַּחְתָּ"
           }
         ],
         "ambiguousSpellingExamples": [
@@ -20443,7 +20443,7 @@
             "word": "וְהָֽאַלְמָנָה"
           },
           {
-            "word": "אֱלֹהֶיךָ"
+            "word": "וְהַטָּהוֹר"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -20497,10 +20497,10 @@
             "word": "וְהָֽאַלְמָנָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "מַֽעֲשֵׂה"
           },
           {
-            "word": "אֱלֹהֶיךָ"
+            "word": "הַשָּֽׁבֻעוֹת"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -20614,10 +20614,10 @@
             "word": "הַכֹּֽהֲנִים"
           },
           {
-            "word": "אֱלֹהֶיךָ"
+            "word": "אֱלֹהָיו"
           },
           {
-            "word": "אֱלֹהָיו"
+            "word": "הָאֵלֶּה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -20708,10 +20708,10 @@
             "word": "אֱלֹהָיו"
           },
           {
-            "word": "אֱלֹהֶיךָ"
+            "word": "כְּתֽוֹעֲבֹת"
           },
           {
-            "word": "כְּתֽוֹעֲבֹת"
+            "word": "הַתּֽוֹעֵבֹת"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -20921,13 +20921,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַֽעֲשֶׂה"
-          },
-          {
             "word": "וְעֵינֵינוּ"
           },
           {
             "word": "וְאַתָּה"
+          },
+          {
+            "word": "וְאָֽמְרוּ"
           }
         ],
         "ambiguousSpellingExamples": [
@@ -21261,10 +21261,10 @@
             "word": "הַכֹּֽהֲנִים"
           },
           {
-            "word": "אֱלֹהֶיךָ"
+            "word": "הָֽעֲבוֹט"
           },
           {
-            "word": "הָֽעֲבוֹט"
+            "word": "הַחֽוּצָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -21365,7 +21365,7 @@
             "word": "אַֽחֲרֶיךָ"
           },
           {
-            "word": "אֱלֹהִֽים"
+            "word": "נַֽחֲלָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -21509,7 +21509,7 @@
             "word": "הֶֽאֱמִֽירְךָ"
           },
           {
-            "word": "אֱלֹהֶיךָ"
+            "word": "הָאֵלֶּה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -21602,13 +21602,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהֶיךָ"
+            "word": "וִֽיהוּדָה"
           },
           {
-            "word": "אֱלֹהֶֽיךָ"
+            "word": "יַֽעֲשֶׂה"
           },
           {
-            "word": "הַהוּא"
+            "word": "תּֽוֹעֲבַת"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -21818,10 +21818,10 @@
             "word": "אֱלֹֽהֵיכֶם"
           },
           {
-            "word": "אֱלֹהֶיךָ"
+            "word": "מַֽחֲנֶיךָ"
           },
           {
-            "word": "מַֽחֲנֶיךָ"
+            "word": "וּבְאָֽלָתוֹ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -22013,13 +22013,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהֶיךָ"
-          },
-          {
             "word": "הַכְּתוּבָה"
           },
           {
             "word": "הָאֵלֶּה"
+          },
+          {
+            "word": "מַֽעֲשֵׂה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -22202,13 +22202,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהֶיךָ"
-          },
-          {
             "word": "הָאֵלֶּה"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "הַדְּבָרִים"
+          },
+          {
+            "word": "וַֽיהֹוָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -22249,10 +22249,10 @@
             "word": "הָֽאֱמֹרִי"
           },
           {
-            "word": "אֱלֹהֶיךָ"
+            "word": "וַֽעֲשִׂיתֶם"
           },
           {
-            "word": "וַֽעֲשִׂיתֶם"
+            "word": "הַמִּצְוָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -22664,7 +22664,7 @@
             "word": "יַכְעִיסֻֽהוּ"
           },
           {
-            "word": "אֱלֹהִים"
+            "word": "וְעַתּוּדִים"
           }
         ],
         "ambiguousSpellingExamples": [
@@ -22908,7 +22908,7 @@
             "word": "הָֽעֲבָרִים"
           },
           {
-            "word": "אַֽהֲרֹן"
+            "word": "וּרְאֵה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -25139,7 +25139,7 @@
             "word": "יַֽעֲבֹר"
           },
           {
-            "word": "לַֽיהֹוָֽה"
+            "word": "וּתְמֽוּרָתוֹ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -25617,10 +25617,10 @@
             "word": "אַרְבָּעָה"
           },
           {
-            "word": "אַֽהֲרֹן"
+            "word": "הָֽאִשָּׁה"
           },
           {
-            "word": "הָֽאִשָּׁה"
+            "word": "הַמַּגֵּפָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -26267,10 +26267,10 @@
             "word": "וְנַֽעֲשֶֽׂנָּה"
           },
           {
-            "word": "אֱלֹהֶיךָ"
+            "word": "הַכְּתוּבָה"
           },
           {
-            "word": "הַכְּתוּבָה"
+            "word": "הָאֵלֶּה"
           }
         ],
         "ambiguousSpellingExamples": [
@@ -26605,7 +26605,7 @@
             "word": "יַֽעֲלֶה"
           },
           {
-            "word": "הַהֽוּא"
+            "word": "אֲבָנִים"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -26744,7 +26744,7 @@
             "word": "יַֽעֲלֶה"
           },
           {
-            "word": "הַהֽוּא"
+            "word": "אֲבָנִים"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -27924,10 +27924,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "וַֽעֲשִׂירִית"
           },
           {
-            "word": "וַֽעֲשִׂירִית"
+            "word": "הָֽאִשֶּׁה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -27968,10 +27968,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -28009,13 +28009,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -28094,10 +28094,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "וַֽעֲשִׂירִית"
           },
           {
-            "word": "וַֽעֲשִׂירִית"
+            "word": "הָֽאִשֶּׁה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -28138,10 +28138,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -28179,13 +28179,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -28264,10 +28264,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "וַֽעֲשִׂירִית"
           },
           {
-            "word": "וַֽעֲשִׂירִית"
+            "word": "הָֽאִשֶּׁה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -28308,10 +28308,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -28349,13 +28349,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -28434,10 +28434,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "וַֽעֲשִׂירִית"
           },
           {
-            "word": "וַֽעֲשִׂירִית"
+            "word": "הָֽאִשֶּׁה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -28478,10 +28478,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -28519,13 +28519,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -28868,13 +28868,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "תַּֽעֲשֽׂוּ"
           },
           {
             "word": "תַּֽעֲשׂוּ"
+          },
+          {
+            "word": "עֲבֹדָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -29056,13 +29056,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "תַּֽעֲשֽׂוּ"
           },
           {
             "word": "תַּֽעֲשׂוּ"
+          },
+          {
+            "word": "עֲבֹדָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -29162,13 +29162,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהִים"
-          },
-          {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "אַֽחֲרֵֽי"
+          },
+          {
+            "word": "תַֽעֲנֶה"
+          },
+          {
+            "word": "אַֽחֲרֵי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -29212,7 +29212,7 @@
             "word": "וְהַשְּׁבִיעִת"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "אֲחֵרִים"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -29250,13 +29250,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "תַּֽעֲשֽׂוּ"
           },
           {
             "word": "תַּֽעֲשׂוּ"
+          },
+          {
+            "word": "עֲבֹדָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -29444,13 +29444,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "תַּֽעֲשֽׂוּ"
           },
           {
             "word": "תַּֽעֲשׂוּ"
+          },
+          {
+            "word": "עֲבֹדָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -29501,7 +29501,7 @@
             "word": "וְהִגַּעְתֶּם"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "וְשַֽׁחֲטוּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -29688,7 +29688,7 @@
             "word": "וַיַּֽעֲשׂוּ"
           },
           {
-            "word": "אַֽהֲרֹן"
+            "word": "יַֽעֲשׂוּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -29732,7 +29732,7 @@
             "word": "בְּאַרְבָּעָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "עֲבֹדָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -29783,7 +29783,7 @@
             "word": "וְהִגַּעְתֶּם"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "וְשַֽׁחֲטוּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -29970,7 +29970,7 @@
             "word": "וַיַּֽעֲשׂוּ"
           },
           {
-            "word": "אַֽהֲרֹן"
+            "word": "יַֽעֲשׂוּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -30014,7 +30014,7 @@
             "word": "בְּאַרְבָּעָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "עֲבֹדָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -30065,7 +30065,7 @@
             "word": "תִשְׁחֲטוּ"
           },
           {
-            "word": "הַהוּא"
+            "word": "וַֽעֲשִׂיתֶם"
           }
         ],
         "ambiguousSpellingExamples": [
@@ -30214,7 +30214,7 @@
             "word": "אֱלֹֽהֵיכֶֽם"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "תְּרוּעָה"
           }
         ],
         "ambiguousSpellingExamples": [
@@ -30327,7 +30327,7 @@
             "word": "בְּאַרְבָּעָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "עֲבֹדָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -30540,13 +30540,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "תַּֽעֲשֽׂוּ"
           },
           {
             "word": "תַּֽעֲשׂוּ"
+          },
+          {
+            "word": "עֲבֹדָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -30728,13 +30728,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "תַּֽעֲשֽׂוּ"
           },
           {
             "word": "תַּֽעֲשׂוּ"
+          },
+          {
+            "word": "עֲבֹדָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -30834,13 +30834,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהִים"
-          },
-          {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "אַֽחֲרֵֽי"
+          },
+          {
+            "word": "תַֽעֲנֶה"
+          },
+          {
+            "word": "אַֽחֲרֵי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -30884,7 +30884,7 @@
             "word": "וְהַשְּׁבִיעִת"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "אֲחֵרִים"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -30922,13 +30922,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "תַּֽעֲשֽׂוּ"
           },
           {
             "word": "תַּֽעֲשׂוּ"
+          },
+          {
+            "word": "עֲבֹדָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -31111,7 +31111,7 @@
             "word": "יַֽעֲלֶה"
           },
           {
-            "word": "הַהֽוּא"
+            "word": "אֲבָנִים"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -31245,10 +31245,10 @@
             "word": "וַֽעֲרַפְתּוֹ"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "וְהִרְחַבְתִּי"
           },
           {
-            "word": "וְהִרְחַבְתִּי"
+            "word": "אֱלֹהֵי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -31286,13 +31286,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "תַּֽעֲשֽׂוּ"
           },
           {
             "word": "תַּֽעֲשׂוּ"
+          },
+          {
+            "word": "עֲבֹדָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -31475,7 +31475,7 @@
             "word": "יַֽעֲלֶה"
           },
           {
-            "word": "הַהֽוּא"
+            "word": "אֲבָנִים"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -31609,10 +31609,10 @@
             "word": "וַֽעֲרַפְתּוֹ"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "וְהִרְחַבְתִּי"
           },
           {
-            "word": "וְהִרְחַבְתִּי"
+            "word": "אֱלֹהֵי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -31650,13 +31650,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "תַּֽעֲשֽׂוּ"
           },
           {
             "word": "תַּֽעֲשׂוּ"
+          },
+          {
+            "word": "עֲבֹדָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -31797,10 +31797,10 @@
             "word": "וַֽעֲרַפְתּוֹ"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "וְהִרְחַבְתִּי"
           },
           {
-            "word": "וְהִרְחַבְתִּי"
+            "word": "אֱלֹהֵי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -31838,13 +31838,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "תַּֽעֲשֽׂוּ"
           },
           {
             "word": "תַּֽעֲשׂוּ"
+          },
+          {
+            "word": "עֲבֹדָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -32032,13 +32032,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "תַּֽעֲשֽׂוּ"
           },
           {
             "word": "תַּֽעֲשׂוּ"
+          },
+          {
+            "word": "עֲבֹדָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -32086,10 +32086,10 @@
             "word": "וְהַֽעֲלִיתֶם"
           },
           {
-            "word": "אֱלֹהִים"
+            "word": "וַיַּֽחֲנוּ"
           },
           {
-            "word": "וַיַּֽחֲנוּ"
+            "word": "וַֽחֲמֻשִׁים"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -32354,13 +32354,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "תַּֽעֲשֽׂוּ"
           },
           {
             "word": "תַּֽעֲשׂוּ"
+          },
+          {
+            "word": "עֲבֹדָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -32408,10 +32408,10 @@
             "word": "וְהַֽעֲלִיתֶם"
           },
           {
-            "word": "אֱלֹהִים"
+            "word": "וַיַּֽחֲנוּ"
           },
           {
-            "word": "וַיַּֽחֲנוּ"
+            "word": "וַֽחֲמֻשִׁים"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -32676,13 +32676,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "תַּֽעֲשֽׂוּ"
           },
           {
             "word": "תַּֽעֲשׂוּ"
+          },
+          {
+            "word": "עֲבֹדָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -32727,13 +32727,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהֶיךָ"
-          },
-          {
-            "word": "אֱלֹהֶֽיךָ"
-          },
-          {
             "word": "וְהַטָּהוֹר"
+          },
+          {
+            "word": "תֹֽאכְלֶנּוּ"
+          },
+          {
+            "word": "תִזְבָּחֶנּוּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -32774,10 +32774,10 @@
             "word": "הוֹצִיאֲךָ"
           },
           {
-            "word": "אֱלֹהֶיךָ"
+            "word": "הָֽאָבִיב"
           },
           {
-            "word": "הָֽאָבִיב"
+            "word": "בְחִפָּזוֹן"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -32815,13 +32815,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהֶיךָ"
+            "word": "הָֽרִאשׁוֹן"
           },
           {
-            "word": "הַשְּׁבִיעִי"
+            "word": "לְאֹֽהָלֶֽיךָ"
           },
           {
-            "word": "תַֽעֲשֶׂה"
+            "word": "הַפָּסַח"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -32862,10 +32862,10 @@
             "word": "וְהָֽאַלְמָנָה"
           },
           {
-            "word": "אֱלֹהֶיךָ"
+            "word": "הָאֵֽלֶּה"
           },
           {
-            "word": "אֱלֹהֶֽיךָ"
+            "word": "וַֽאֲמָתֶךָ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -32911,10 +32911,10 @@
             "word": "וְהָֽאַלְמָנָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "מַֽעֲשֵׂה"
           },
           {
-            "word": "אֱלֹהֶיךָ"
+            "word": "הַשָּֽׁבֻעוֹת"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -32957,13 +32957,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "תַּֽעֲשֽׂוּ"
           },
           {
             "word": "תַּֽעֲשׂוּ"
+          },
+          {
+            "word": "עֲבֹדָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -33289,10 +33289,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "הָֽאִשֶּׁה"
           },
           {
-            "word": "הָֽאִשֶּׁה"
+            "word": "נִֽיחֹחִי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -33330,13 +33330,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "וַֽעֲשִׂירִית"
           },
           {
             "word": "הָֽאִשֶּׁה"
+          },
+          {
+            "word": "הָֽעַרְבָּֽיִם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -33377,10 +33377,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -33418,13 +33418,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -33467,10 +33467,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "הָֽאִשֶּׁה"
           },
           {
-            "word": "הָֽאִשֶּׁה"
+            "word": "נִֽיחֹחִי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -33508,13 +33508,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "וַֽעֲשִׂירִית"
           },
           {
             "word": "הָֽאִשֶּׁה"
+          },
+          {
+            "word": "הָֽעַרְבָּֽיִם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -33555,10 +33555,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -33596,13 +33596,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -33645,10 +33645,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "הָֽאִשֶּׁה"
           },
           {
-            "word": "הָֽאִשֶּׁה"
+            "word": "נִֽיחֹחִי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -33686,13 +33686,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "וַֽעֲשִׂירִית"
           },
           {
             "word": "הָֽאִשֶּׁה"
+          },
+          {
+            "word": "הָֽעַרְבָּֽיִם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -33733,10 +33733,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -33774,13 +33774,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -33823,10 +33823,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "הָֽאִשֶּׁה"
           },
           {
-            "word": "הָֽאִשֶּׁה"
+            "word": "נִֽיחֹחִי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -33864,13 +33864,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "וַֽעֲשִׂירִית"
           },
           {
             "word": "הָֽאִשֶּׁה"
+          },
+          {
+            "word": "הָֽעַרְבָּֽיִם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -33911,10 +33911,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -33952,13 +33952,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -34001,10 +34001,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "הָֽאִשֶּׁה"
           },
           {
-            "word": "הָֽאִשֶּׁה"
+            "word": "נִֽיחֹחִי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -34042,13 +34042,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "וַֽעֲשִׂירִית"
           },
           {
             "word": "הָֽאִשֶּׁה"
+          },
+          {
+            "word": "הָֽעַרְבָּֽיִם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -34089,10 +34089,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -34130,13 +34130,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -34179,10 +34179,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "הָֽאִשֶּׁה"
           },
           {
-            "word": "הָֽאִשֶּׁה"
+            "word": "נִֽיחֹחִי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -34220,13 +34220,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "וַֽעֲשִׂירִית"
           },
           {
             "word": "הָֽאִשֶּׁה"
+          },
+          {
+            "word": "הָֽעַרְבָּֽיִם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -34267,10 +34267,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -34308,13 +34308,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -34357,10 +34357,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "הָֽאִשֶּׁה"
           },
           {
-            "word": "הָֽאִשֶּׁה"
+            "word": "נִֽיחֹחִי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -34398,13 +34398,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "וַֽעֲשִׂירִית"
           },
           {
             "word": "הָֽאִשֶּׁה"
+          },
+          {
+            "word": "הָֽעַרְבָּֽיִם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -34445,10 +34445,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -34486,13 +34486,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -34535,10 +34535,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "הָֽאִשֶּׁה"
           },
           {
-            "word": "הָֽאִשֶּׁה"
+            "word": "נִֽיחֹחִי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -34576,13 +34576,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "וַֽעֲשִׂירִית"
           },
           {
             "word": "הָֽאִשֶּׁה"
+          },
+          {
+            "word": "הָֽעַרְבָּֽיִם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -34623,10 +34623,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -34664,13 +34664,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -34713,10 +34713,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "הָֽאִשֶּׁה"
           },
           {
-            "word": "הָֽאִשֶּׁה"
+            "word": "נִֽיחֹחִי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -34754,13 +34754,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "וַֽעֲשִׂירִית"
           },
           {
             "word": "הָֽאִשֶּׁה"
+          },
+          {
+            "word": "הָֽעַרְבָּֽיִם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -34801,10 +34801,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -34842,13 +34842,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -34891,10 +34891,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "הָֽאִשֶּׁה"
           },
           {
-            "word": "הָֽאִשֶּׁה"
+            "word": "נִֽיחֹחִי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -34932,13 +34932,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "וַֽעֲשִׂירִית"
           },
           {
             "word": "הָֽאִשֶּׁה"
+          },
+          {
+            "word": "הָֽעַרְבָּֽיִם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -34979,10 +34979,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -35020,13 +35020,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -35069,10 +35069,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "הָֽאִשֶּׁה"
           },
           {
-            "word": "הָֽאִשֶּׁה"
+            "word": "נִֽיחֹחִי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -35110,13 +35110,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "וַֽעֲשִׂירִית"
           },
           {
             "word": "הָֽאִשֶּׁה"
+          },
+          {
+            "word": "הָֽעַרְבָּֽיִם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -35157,10 +35157,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -35198,13 +35198,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -35247,10 +35247,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "הָֽאִשֶּׁה"
           },
           {
-            "word": "הָֽאִשֶּׁה"
+            "word": "נִֽיחֹחִי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -35288,13 +35288,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "וַֽעֲשִׂירִית"
           },
           {
             "word": "הָֽאִשֶּׁה"
+          },
+          {
+            "word": "הָֽעַרְבָּֽיִם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -35335,10 +35335,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -35376,13 +35376,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -35425,10 +35425,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "הָֽאִשֶּׁה"
           },
           {
-            "word": "הָֽאִשֶּׁה"
+            "word": "נִֽיחֹחִי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -35466,13 +35466,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "וַֽעֲשִׂירִית"
           },
           {
             "word": "הָֽאִשֶּׁה"
+          },
+          {
+            "word": "הָֽעַרְבָּֽיִם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -35513,10 +35513,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -35554,13 +35554,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -35603,10 +35603,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "הָֽאִשֶּׁה"
           },
           {
-            "word": "הָֽאִשֶּׁה"
+            "word": "נִֽיחֹחִי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -35644,13 +35644,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "וַֽעֲשִׂירִית"
           },
           {
             "word": "הָֽאִשֶּׁה"
+          },
+          {
+            "word": "הָֽעַרְבָּֽיִם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -35691,10 +35691,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -35732,13 +35732,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -35781,10 +35781,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "הָֽאִשֶּׁה"
           },
           {
-            "word": "הָֽאִשֶּׁה"
+            "word": "נִֽיחֹחִי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -35822,13 +35822,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "וַֽעֲשִׂירִית"
           },
           {
             "word": "הָֽאִשֶּׁה"
+          },
+          {
+            "word": "הָֽעַרְבָּֽיִם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -35869,10 +35869,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -35910,13 +35910,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -35959,10 +35959,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "הָֽאִשֶּׁה"
           },
           {
-            "word": "הָֽאִשֶּׁה"
+            "word": "נִֽיחֹחִי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -36000,13 +36000,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "וַֽעֲשִׂירִית"
           },
           {
             "word": "הָֽאִשֶּׁה"
+          },
+          {
+            "word": "הָֽעַרְבָּֽיִם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -36047,10 +36047,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -36088,13 +36088,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -36137,10 +36137,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "הָֽאִשֶּׁה"
           },
           {
-            "word": "הָֽאִשֶּׁה"
+            "word": "נִֽיחֹחִי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -36178,13 +36178,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "וַֽעֲשִׂירִית"
           },
           {
             "word": "הָֽאִשֶּׁה"
+          },
+          {
+            "word": "הָֽעַרְבָּֽיִם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -36225,10 +36225,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -36266,13 +36266,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -36315,10 +36315,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "הָֽאִשֶּׁה"
           },
           {
-            "word": "הָֽאִשֶּׁה"
+            "word": "נִֽיחֹחִי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -36356,13 +36356,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "וַֽעֲשִׂירִית"
           },
           {
             "word": "הָֽאִשֶּׁה"
+          },
+          {
+            "word": "הָֽעַרְבָּֽיִם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -36403,10 +36403,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -36444,13 +36444,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -36493,10 +36493,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "הָֽאִשֶּׁה"
           },
           {
-            "word": "הָֽאִשֶּׁה"
+            "word": "נִֽיחֹחִי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -36534,13 +36534,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "וַֽעֲשִׂירִית"
           },
           {
             "word": "הָֽאִשֶּׁה"
+          },
+          {
+            "word": "הָֽעַרְבָּֽיִם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -36581,10 +36581,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -36622,13 +36622,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -36671,10 +36671,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "הָֽאִשֶּׁה"
           },
           {
-            "word": "הָֽאִשֶּׁה"
+            "word": "נִֽיחֹחִי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -36712,13 +36712,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "וַֽעֲשִׂירִית"
           },
           {
             "word": "הָֽאִשֶּׁה"
+          },
+          {
+            "word": "הָֽעַרְבָּֽיִם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -36759,10 +36759,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -36800,13 +36800,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -36849,10 +36849,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "הָֽאִשֶּׁה"
           },
           {
-            "word": "הָֽאִשֶּׁה"
+            "word": "נִֽיחֹחִי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -36890,13 +36890,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "וַֽעֲשִׂירִית"
           },
           {
             "word": "הָֽאִשֶּׁה"
+          },
+          {
+            "word": "הָֽעַרְבָּֽיִם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -36937,10 +36937,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -36978,13 +36978,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -37027,10 +37027,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "הָֽאִשֶּׁה"
           },
           {
-            "word": "הָֽאִשֶּׁה"
+            "word": "נִֽיחֹחִי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -37068,13 +37068,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "וַֽעֲשִׂירִית"
           },
           {
             "word": "הָֽאִשֶּׁה"
+          },
+          {
+            "word": "הָֽעַרְבָּֽיִם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -37115,10 +37115,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -37156,13 +37156,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -37205,10 +37205,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "הָֽאִשֶּׁה"
           },
           {
-            "word": "הָֽאִשֶּׁה"
+            "word": "נִֽיחֹחִי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -37246,13 +37246,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "וַֽעֲשִׂירִית"
           },
           {
             "word": "הָֽאִשֶּׁה"
+          },
+          {
+            "word": "הָֽעַרְבָּֽיִם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -37293,10 +37293,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -37334,13 +37334,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -37383,10 +37383,10 @@
             "word": "בְּמֽוֹעֲדֽוֹ"
           },
           {
-            "word": "אֲלֵהֶם"
+            "word": "הָֽאִשֶּׁה"
           },
           {
-            "word": "הָֽאִשֶּׁה"
+            "word": "נִֽיחֹחִי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -37424,13 +37424,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "תַּֽעֲשֶׂה"
-          },
-          {
             "word": "וַֽעֲשִׂירִית"
           },
           {
             "word": "הָֽאִשֶּׁה"
+          },
+          {
+            "word": "הָֽעַרְבָּֽיִם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -37471,10 +37471,10 @@
             "word": "הָֽעֲשֻׂיָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "הָֽעַרְבָּיִם"
           },
           {
-            "word": "הָֽעַרְבָּיִם"
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -37512,13 +37512,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וּבְרָאשֵׁי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -37558,13 +37558,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהִֽים"
-          },
-          {
-            "word": "כַּֽאֲשֶׁר"
-          },
-          {
             "word": "לְאַבְרָהָם"
+          },
+          {
+            "word": "וַֽיהֹוָה"
+          },
+          {
+            "word": "אַבְרָהָם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -37602,13 +37602,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהִים"
-          },
-          {
             "word": "וְאַבְרָהָם"
           },
           {
             "word": "לְאַבְרָהָם"
+          },
+          {
+            "word": "הֵינִיקָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -37646,13 +37646,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהִים"
-          },
-          {
             "word": "לְאַבְרָהָם"
           },
           {
             "word": "הָֽאָמָה"
+          },
+          {
+            "word": "הַמִּצְרִית"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -37696,7 +37696,7 @@
             "word": "כִּמְטַֽחֲוֵי"
           },
           {
-            "word": "אֱלֹהִים"
+            "word": "וַיְשַׁלְּחֶהָ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -37740,7 +37740,7 @@
             "word": "אֲשִׂימֶֽנּוּ"
           },
           {
-            "word": "אֱלֹהִים"
+            "word": "הַנַּעַר"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -37778,13 +37778,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהִים"
-          },
-          {
             "word": "הִשָּׁבְעָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "לַֽאֲבִימֶלֶךְ"
+          },
+          {
+            "word": "אֲבִימֶלֶךְ"
           }
         ],
         "ambiguousSpellingExamples": [
@@ -37875,10 +37875,10 @@
             "word": "וּמִנְחָתָהּ"
           },
           {
-            "word": "הַשְּׁבִיעִי"
+            "word": "עֲבֹדָה"
           },
           {
-            "word": "עֲבֹדָה"
+            "word": "תְּרוּעָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -37918,13 +37918,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהִֽים"
-          },
-          {
-            "word": "כַּֽאֲשֶׁר"
-          },
-          {
             "word": "לְאַבְרָהָם"
+          },
+          {
+            "word": "וַֽיהֹוָה"
+          },
+          {
+            "word": "אַבְרָהָם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -37962,13 +37962,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהִים"
-          },
-          {
             "word": "וְאַבְרָהָם"
           },
           {
             "word": "לְאַבְרָהָם"
+          },
+          {
+            "word": "הֵינִיקָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -38006,13 +38006,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהִים"
-          },
-          {
             "word": "לְאַבְרָהָם"
           },
           {
             "word": "הָֽאָמָה"
+          },
+          {
+            "word": "הַמִּצְרִית"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -38056,7 +38056,7 @@
             "word": "כִּמְטַֽחֲוֵי"
           },
           {
-            "word": "אֱלֹהִים"
+            "word": "וַיְשַׁלְּחֶהָ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -38100,7 +38100,7 @@
             "word": "אֲשִׂימֶֽנּוּ"
           },
           {
-            "word": "אֱלֹהִים"
+            "word": "הַנַּעַר"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -38138,13 +38138,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהִים"
-          },
-          {
             "word": "הִשָּׁבְעָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "לַֽאֲבִימֶלֶךְ"
+          },
+          {
+            "word": "אֲבִימֶלֶךְ"
           }
         ],
         "ambiguousSpellingExamples": [
@@ -38235,10 +38235,10 @@
             "word": "וּמִנְחָתָהּ"
           },
           {
-            "word": "הַשְּׁבִיעִי"
+            "word": "עֲבֹדָה"
           },
           {
-            "word": "עֲבֹדָה"
+            "word": "תְּרוּעָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -38523,10 +38523,10 @@
             "word": "וּמִנְחָתָהּ"
           },
           {
-            "word": "הַשְּׁבִיעִי"
+            "word": "עֲבֹדָה"
           },
           {
-            "word": "עֲבֹדָה"
+            "word": "תְּרוּעָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -38811,10 +38811,10 @@
             "word": "וּמִנְחָתָהּ"
           },
           {
-            "word": "הַשְּׁבִיעִי"
+            "word": "עֲבֹדָה"
           },
           {
-            "word": "עֲבֹדָה"
+            "word": "תְּרוּעָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -39118,13 +39118,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -39164,13 +39164,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "הָֽאֶחָד"
-          },
-          {
-            "word": "הָֽאֶחָֽד"
-          },
-          {
             "word": "וְנִסְכֵּיהֶם"
+          },
+          {
+            "word": "לְחַטָּאת"
+          },
+          {
+            "word": "וְנִסְכָּֽהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -39308,7 +39308,7 @@
             "word": "אַֽחֲרֶיךָ"
           },
           {
-            "word": "אֱלֹהִֽים"
+            "word": "נַֽחֲלָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -39359,7 +39359,7 @@
             "word": "אַֽחֲרֶיךָ"
           },
           {
-            "word": "אֱלֹהִֽים"
+            "word": "נַֽחֲלָה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -39975,10 +39975,10 @@
             "word": "וְהָֽאַלְמָנָה"
           },
           {
-            "word": "אֱלֹהֶיךָ"
+            "word": "וְנַֽחֲלָה"
           },
           {
-            "word": "אֱלֹהֶֽיךָ"
+            "word": "וְהִנַּחְתָּ"
           }
         ],
         "ambiguousSpellingExamples": [
@@ -40075,13 +40075,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהֶיךָ"
-          },
-          {
-            "word": "אֱלֹהֶֽיךָ"
-          },
-          {
             "word": "וְהַטָּהוֹר"
+          },
+          {
+            "word": "תֹֽאכְלֶנּוּ"
+          },
+          {
+            "word": "תִזְבָּחֶנּוּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -40122,10 +40122,10 @@
             "word": "הוֹצִיאֲךָ"
           },
           {
-            "word": "אֱלֹהֶיךָ"
+            "word": "הָֽאָבִיב"
           },
           {
-            "word": "הָֽאָבִיב"
+            "word": "בְחִפָּזוֹן"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -40163,13 +40163,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהֶיךָ"
+            "word": "הָֽרִאשׁוֹן"
           },
           {
-            "word": "הַשְּׁבִיעִי"
+            "word": "לְאֹֽהָלֶֽיךָ"
           },
           {
-            "word": "תַֽעֲשֶׂה"
+            "word": "הַפָּסַח"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -40210,10 +40210,10 @@
             "word": "וְהָֽאַלְמָנָה"
           },
           {
-            "word": "אֱלֹהֶיךָ"
+            "word": "הָאֵֽלֶּה"
           },
           {
-            "word": "אֱלֹהֶֽיךָ"
+            "word": "וַֽאֲמָתֶךָ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -40259,10 +40259,10 @@
             "word": "וְהָֽאַלְמָנָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "מַֽעֲשֵׂה"
           },
           {
-            "word": "אֱלֹהֶיךָ"
+            "word": "הַשָּֽׁבֻעוֹת"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -40354,10 +40354,10 @@
             "word": "וְהָֽאַלְמָנָה"
           },
           {
-            "word": "אֱלֹהֶיךָ"
+            "word": "וְנַֽחֲלָה"
           },
           {
-            "word": "אֱלֹהֶֽיךָ"
+            "word": "וְהִנַּחְתָּ"
           }
         ],
         "ambiguousSpellingExamples": [
@@ -40454,13 +40454,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהֶיךָ"
-          },
-          {
-            "word": "אֱלֹהֶֽיךָ"
-          },
-          {
             "word": "וְהַטָּהוֹר"
+          },
+          {
+            "word": "תֹֽאכְלֶנּוּ"
+          },
+          {
+            "word": "תִזְבָּחֶנּוּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -40501,10 +40501,10 @@
             "word": "הוֹצִיאֲךָ"
           },
           {
-            "word": "אֱלֹהֶיךָ"
+            "word": "הָֽאָבִיב"
           },
           {
-            "word": "הָֽאָבִיב"
+            "word": "בְחִפָּזוֹן"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -40542,13 +40542,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהֶיךָ"
+            "word": "הָֽרִאשׁוֹן"
           },
           {
-            "word": "הַשְּׁבִיעִי"
+            "word": "לְאֹֽהָלֶֽיךָ"
           },
           {
-            "word": "תַֽעֲשֶׂה"
+            "word": "הַפָּסַח"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -40589,10 +40589,10 @@
             "word": "וְהָֽאַלְמָנָה"
           },
           {
-            "word": "אֱלֹהֶיךָ"
+            "word": "הָאֵֽלֶּה"
           },
           {
-            "word": "אֱלֹהֶֽיךָ"
+            "word": "וַֽאֲמָתֶךָ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -40638,10 +40638,10 @@
             "word": "וְהָֽאַלְמָנָה"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "מַֽעֲשֵׂה"
           },
           {
-            "word": "אֱלֹהֶיךָ"
+            "word": "הַשָּֽׁבֻעוֹת"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -42708,10 +42708,10 @@
             "word": "אַרְבָּעָה"
           },
           {
-            "word": "הַשְּׁבִיעִי"
+            "word": "מִנְחָתָהּ"
           },
           {
-            "word": "מִנְחָתָהּ"
+            "word": "וּמִנְחָתָם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -42883,10 +42883,10 @@
             "word": "אַרְבָּעָה"
           },
           {
-            "word": "הַשְּׁבִיעִי"
+            "word": "מִנְחָתָהּ"
           },
           {
-            "word": "מִנְחָתָהּ"
+            "word": "וּמִנְחָתָם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -43018,10 +43018,10 @@
             "word": "אַרְבָּעָה"
           },
           {
-            "word": "הַשְּׁבִיעִי"
+            "word": "מִנְחָתָהּ"
           },
           {
-            "word": "מִנְחָתָהּ"
+            "word": "וּמִנְחָתָם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -43102,10 +43102,10 @@
             "word": "אַרְבָּעָה"
           },
           {
-            "word": "הַשְּׁבִיעִי"
+            "word": "וְנִסְכֵּיהֶם"
           },
           {
-            "word": "וְנִסְכֵּיהֶם"
+            "word": "מִנְחָתָהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -43237,10 +43237,10 @@
             "word": "אַרְבָּעָה"
           },
           {
-            "word": "הַשְּׁבִיעִי"
+            "word": "מִנְחָתָהּ"
           },
           {
-            "word": "מִנְחָתָהּ"
+            "word": "וּמִנְחָתָם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -43281,10 +43281,10 @@
             "word": "אַרְבָּעָה"
           },
           {
-            "word": "הַשְּׁבִיעִי"
+            "word": "וְנִסְכֵּיהֶם"
           },
           {
-            "word": "וְנִסְכֵּיהֶם"
+            "word": "מִנְחָתָהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -43416,10 +43416,10 @@
             "word": "אַרְבָּעָה"
           },
           {
-            "word": "הַשְּׁבִיעִי"
+            "word": "מִנְחָתָהּ"
           },
           {
-            "word": "מִנְחָתָהּ"
+            "word": "וּמִנְחָתָם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -43460,10 +43460,10 @@
             "word": "אַרְבָּעָה"
           },
           {
-            "word": "הַשְּׁבִיעִי"
+            "word": "וְנִסְכֵּיהֶם"
           },
           {
-            "word": "וְנִסְכֵּיהֶם"
+            "word": "מִנְחָתָהּ"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -43518,7 +43518,7 @@
             "word": "תִשְׁחֲטוּ"
           },
           {
-            "word": "הַהוּא"
+            "word": "וַֽעֲשִׂיתֶם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -43556,13 +43556,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֲלֵהֶם"
-          },
-          {
-            "word": "הַשְּׁבִיעִי"
-          },
-          {
             "word": "מֽוֹעֲדֵי"
+          },
+          {
+            "word": "מֽוֹעֲדָֽי"
+          },
+          {
+            "word": "תַֽעֲשׂוּ"
           }
         ],
         "ambiguousSpellingExamples": [
@@ -43750,7 +43750,7 @@
             "word": "אֱלֹֽהֵיכֶֽם"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "תְּרוּעָה"
           }
         ],
         "ambiguousSpellingExamples": [
@@ -43909,7 +43909,7 @@
             "word": "תִשְׁחֲטוּ"
           },
           {
-            "word": "הַהוּא"
+            "word": "וַֽעֲשִׂיתֶם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -43947,13 +43947,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֲלֵהֶם"
-          },
-          {
-            "word": "הַשְּׁבִיעִי"
-          },
-          {
             "word": "מֽוֹעֲדֵי"
+          },
+          {
+            "word": "מֽוֹעֲדָֽי"
+          },
+          {
+            "word": "תַֽעֲשׂוּ"
           }
         ],
         "ambiguousSpellingExamples": [
@@ -44141,7 +44141,7 @@
             "word": "אֱלֹֽהֵיכֶֽם"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "תְּרוּעָה"
           }
         ],
         "ambiguousSpellingExamples": [
@@ -44300,7 +44300,7 @@
             "word": "תִשְׁחֲטוּ"
           },
           {
-            "word": "הַהוּא"
+            "word": "וַֽעֲשִׂיתֶם"
           }
         ],
         "ambiguousSpellingExamples": [
@@ -44449,7 +44449,7 @@
             "word": "אֱלֹֽהֵיכֶֽם"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "תְּרוּעָה"
           }
         ],
         "ambiguousSpellingExamples": [
@@ -44740,7 +44740,7 @@
             "word": "יַֽעֲלֶה"
           },
           {
-            "word": "הַהֽוּא"
+            "word": "אֲבָנִים"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -44874,10 +44874,10 @@
             "word": "וַֽעֲרַפְתּוֹ"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "וְהִרְחַבְתִּי"
           },
           {
-            "word": "וְהִרְחַבְתִּי"
+            "word": "אֱלֹהֵי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -45091,7 +45091,7 @@
             "word": "יַֽעֲלֶה"
           },
           {
-            "word": "הַהֽוּא"
+            "word": "אֲבָנִים"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -45225,10 +45225,10 @@
             "word": "וַֽעֲרַפְתּוֹ"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "וְהִרְחַבְתִּי"
           },
           {
-            "word": "וְהִרְחַבְתִּי"
+            "word": "אֱלֹהֵי"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -45362,7 +45362,7 @@
             "word": "יַֽעֲלֶה"
           },
           {
-            "word": "הַהֽוּא"
+            "word": "אֲבָנִים"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -45501,7 +45501,7 @@
             "word": "יַֽעֲלֶה"
           },
           {
-            "word": "הַהֽוּא"
+            "word": "אֲבָנִים"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -45590,13 +45590,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהֶיךָ"
-          },
-          {
             "word": "וַֽעֲבַדְתֶּם"
           },
           {
-            "word": "אֱלֹהִים"
+            "word": "וְהִשְׁחַתֶּם"
+          },
+          {
+            "word": "וַֽעֲשִׂיתֶם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -45729,13 +45729,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהֶיךָ"
-          },
-          {
             "word": "וַֽעֲבַדְתֶּם"
           },
           {
-            "word": "אֱלֹהִים"
+            "word": "וְהִשְׁחַתֶּם"
+          },
+          {
+            "word": "וַֽעֲשִׂיתֶם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -45868,13 +45868,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהֶיךָ"
-          },
-          {
             "word": "וַֽעֲבַדְתֶּם"
           },
           {
-            "word": "אֱלֹהִים"
+            "word": "וְהִשְׁחַתֶּם"
+          },
+          {
+            "word": "וַֽעֲשִׂיתֶם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -46007,13 +46007,13 @@
         ],
         "hardToPronounceExamples": [
           {
-            "word": "אֱלֹהֶיךָ"
-          },
-          {
             "word": "וַֽעֲבַדְתֶּם"
           },
           {
-            "word": "אֱלֹהִים"
+            "word": "וְהִשְׁחַתֶּם"
+          },
+          {
+            "word": "וַֽעֲשִׂיתֶם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -46196,7 +46196,7 @@
             "word": "יַֽעֲלֶה"
           },
           {
-            "word": "הַהֽוּא"
+            "word": "אֲבָנִים"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -46335,7 +46335,7 @@
             "word": "יַֽעֲלֶה"
           },
           {
-            "word": "הַהֽוּא"
+            "word": "אֲבָנִים"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -46474,7 +46474,7 @@
             "word": "יַֽעֲלֶה"
           },
           {
-            "word": "הַהֽוּא"
+            "word": "אֲבָנִים"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -46613,7 +46613,7 @@
             "word": "יַֽעֲלֶה"
           },
           {
-            "word": "הַהֽוּא"
+            "word": "אֲבָנִים"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -47008,7 +47008,7 @@
             "word": "אַֽחֲרֵי"
           },
           {
-            "word": "אַֽהֲרֹן"
+            "word": "אֵֽרָאֶה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -47291,10 +47291,10 @@
             "word": "וּמִנְחָתָהּ"
           },
           {
-            "word": "הַשְּׁבִיעִי"
+            "word": "תַֽעֲשֽׂוּ"
           },
           {
-            "word": "תַֽעֲשֽׂוּ"
+            "word": "וְהִקְרַבְתֶּם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -47340,7 +47340,7 @@
             "word": "אַֽחֲרֵי"
           },
           {
-            "word": "אַֽהֲרֹן"
+            "word": "אֵֽרָאֶה"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -47623,10 +47623,10 @@
             "word": "וּמִנְחָתָהּ"
           },
           {
-            "word": "הַשְּׁבִיעִי"
+            "word": "תַֽעֲשֽׂוּ"
           },
           {
-            "word": "תַֽעֲשֽׂוּ"
+            "word": "וְהִקְרַבְתֶּם"
           }
         ],
         "ambiguousSpellingExamples": [],
@@ -47908,7 +47908,7 @@
             "word": "בַּֽחֲמִשִּׁים"
           },
           {
-            "word": "תַּֽעֲשֶׂה"
+            "word": "אַרְבָּעָה"
           }
         ],
         "ambiguousSpellingExamples": [

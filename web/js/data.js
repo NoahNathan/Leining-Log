@@ -87,6 +87,16 @@ export async function getCalendarIndex() {
   return loadJSON(DATA + 'calendar-100y/index.json');
 }
 
+// The Gregorian month (1-12) each parsha is most commonly read in, sampled
+// across the 100-year calendar -- see gen_parsha_typical_month.mjs. Used to
+// auto-derive an exact Hebrew year from a bare Gregorian year on My
+// Leining's log form, without asking the user to remember which month they
+// read it.
+export async function getParshaTypicalMonths() {
+  const d = await loadJSON(DATA + 'parsha-typical-month.json');
+  return d.months || {};
+}
+
 function decadeFileForYear(year, files) {
   return files.find((f) => year >= f.yearRange[0] && year <= f.yearRange[1]);
 }

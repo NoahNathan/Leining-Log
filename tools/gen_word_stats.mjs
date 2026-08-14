@@ -444,11 +444,23 @@ function rawAliyahStats(bookEn, startRef, endRef) {
     rareExamples.push({ word: w.surface, occurrencesInTorah: occ });
     if (rareExamples.length >= 3) break;
   }
+  // Same idea as the rarity gate above, but pronunciation complexity had no
+  // equivalent filter at all until now: a word can be maximally complex by
+  // letter-count/gutturals/chataf-vowels (Elokim's many forms, "ha'adamah",
+  // "ta'aseh") and STILL be one a fluent reader has already said hundreds of
+  // times. Document frequency -- in how many DISTINCT aliyot the word
+  // appears at all, not raw token count -- is the right measure of that:
+  // a word crammed 100 times into 3 aliyot is still genuinely unfamiliar to
+  // most readers, while one appearing in a fifth of all aliyot is something
+  // almost everyone has already practiced repeatedly, however hard it
+  // objectively is to pronounce. See aliyahDocFreq below.
   const seenH = new Set();
   const hardExamples = [];
   for (const w of [...words].sort((a, b) => pronRaw(b.surface) - pronRaw(a.surface))) {
     if (seenH.has(w.surface)) continue;
     seenH.add(w.surface);
+    const docFreqPct = (aliyahDocFreq.get(w.consonantal) || 0) / totalRealAliyot;
+    if (docFreqPct > HARD_TO_PRONOUNCE_DOC_FREQ_CEILING) continue;
     hardExamples.push({ word: w.surface });
     if (hardExamples.length >= 3) break;
   }
@@ -564,6 +576,38 @@ function rawAliyahStats(bookEn, startRef, endRef) {
 const parshiot = JSON.parse(readFileSync('../data/parshiot.json', 'utf8')).parshiot;
 const combinedParshiot = JSON.parse(readFileSync('../data/parshiot-combined.json', 'utf8')).combinedParshiot;
 const chagim = JSON.parse(readFileSync('../data/chagim.json', 'utf8')).chagim;
+
+// ---- document frequency: in how many DISTINCT real aliyot does a word
+// appear at least once -- used to gate hardToPronounceExamples above.
+// Deliberately a document count (once per aliyah, however many times the
+// word actually occurs in it), not the token-frequency `freq` map used for
+// rarity, which counts every occurrence across the continuous Torah text
+// with no aliyah boundaries at all. The pool is the same set of real
+// readings rareExamples/rescaleFinal etc. anchor on -- individual +
+// combined parshiot and chagim, not the synthetic reshaped-aliyah-6 entries.
+const aliyahDocFreq = new Map(); // consonantal form -> count of aliyot containing it
+let totalRealAliyot = 0;
+function collectDocFreq(bookEn, startRef, endRef) {
+  const verses = getVerseRange(bookEn, startRef, endRef);
+  if (!verses.length) return;
+  totalRealAliyot++;
+  const seen = new Set();
+  for (const v of verses) for (const w of v.words) seen.add(w.consonantal);
+  for (const cons of seen) aliyahDocFreq.set(cons, (aliyahDocFreq.get(cons) || 0) + 1);
+}
+for (const p of [...parshiot, ...combinedParshiot]) {
+  for (const a of p.aliyot) collectDocFreq(a.book, a.start, a.end);
+  if (p.maftir) collectDocFreq(p.maftir.book, p.maftir.start, p.maftir.end);
+}
+for (const c of chagim) {
+  for (const a of (c.aliyot || [])) collectDocFreq(a.book, a.start, a.end);
+  if (c.maftir) collectDocFreq(c.maftir.book, c.maftir.start, c.maftir.end);
+}
+// A word appearing in more than this share of all real aliyot is treated as
+// "already familiar from constant exposure" regardless of how complex it is
+// to pronounce in isolation -- see the exact threshold analysis in
+// difficulty-rubric.md.
+const HARD_TO_PRONOUNCE_DOC_FREQ_CEILING = 0.12;
 
 const entries = []; // { groupId, aliyahKey, raw }
 for (const p of [...parshiot, ...combinedParshiot]) {

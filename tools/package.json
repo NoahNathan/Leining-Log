@@ -15,7 +15,8 @@
     "gen:haftarahstats": "node gen_haftarah_stats.mjs",
     "gen:difficulty": "node gen_difficulty.mjs",
     "gen:calendar": "node gen_calendar.mjs",
-    "gen:all": "npm run gen:parshiot && npm run gen:haftarot && npm run gen:chagim && npm run gen:annotate && npm run gen:bookchapters && npm run gen:overlaps && npm run gen:wordstats && npm run gen:haftarahstats && npm run gen:difficulty && npm run gen:calendar"
+    "gen:typicalmonth": "node gen_parsha_typical_month.mjs",
+    "gen:all": "npm run gen:parshiot && npm run gen:haftarot && npm run gen:chagim && npm run gen:annotate && npm run gen:bookchapters && npm run gen:overlaps && npm run gen:wordstats && npm run gen:haftarahstats && npm run gen:difficulty && npm run gen:calendar && npm run gen:typicalmonth"
   },
   "license": "ISC",
   "dependencies": {

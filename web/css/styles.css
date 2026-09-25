@@ -400,6 +400,8 @@ body { min-height: 100vh; display: flex; flex-direction: column; }
   border-bottom: 1px solid var(--card-border);
   font-size: 0.9rem;
 }
+a.log-row { color: inherit; text-decoration: none; }
+a.log-row:hover .log-parsha { text-decoration: underline; }
 .log-row:last-child { border-bottom: none; }
 .log-parsha { font-weight: 600; }
 

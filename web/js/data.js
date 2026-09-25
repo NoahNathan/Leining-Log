@@ -177,6 +177,25 @@ export async function findByDate(dateISO, region = 'diaspora') {
   return rows.filter((r) => r.date === dateISO && r.region === region);
 }
 
+// Holiday/fast/Rosh-Chodesh readings strictly between fromISO (inclusive)
+// and beforeISO (exclusive) -- e.g. everything leined between today and the
+// upcoming Shabbat's own parsha, so a midweek Yom Tov, fast day, or Rosh
+// Chodesh doesn't get missed just because the home page otherwise only
+// looks at the next Shabbat. Same-day overlap with the parsha itself
+// (findByDate already surfaces that) is naturally excluded since beforeISO
+// is exclusive. Checks both endpoints' decade files in case the range
+// happens to straddle a year boundary (e.g. late December into January).
+export async function findHolidaysBefore(region, fromISO, beforeISO) {
+  const fromYear = Number(fromISO.split('-')[0]);
+  const beforeYear = Number(beforeISO.split('-')[0]);
+  const years = fromYear === beforeYear ? [fromYear] : [fromYear, beforeYear];
+  const rows = [];
+  for (const y of years) rows.push(...(await getDecadeRows(y)));
+  const matches = rows.filter((r) => r.type === 'holiday' && r.region === region && r.date >= fromISO && r.date < beforeISO);
+  matches.sort((a, b) => a.date.localeCompare(b.date));
+  return matches;
+}
+
 // Next N calendar occurrences of a given parshaId, for a region, from a date.
 export async function findUpcomingOccurrences(parshaId, region = 'diaspora', fromISO = todayISO(), count = 3) {
   const [y] = fromISO.split('-').map(Number);
